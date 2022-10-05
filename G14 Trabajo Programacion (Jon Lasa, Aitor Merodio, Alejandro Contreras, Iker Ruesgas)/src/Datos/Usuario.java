@@ -10,7 +10,7 @@ public class Usuario {
 	
 	//METODO DE PAGO
 	
-	private String contraseña;
+	private String contrasenya;
 	
 	
 	private int puntosDeusto;

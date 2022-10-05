@@ -3,12 +3,12 @@ package Datos;
 public class Administrador {
 	
 	private String nombreUsuario;
-	private String contraseña;
+	private String contrasenya;
 	
-	public Administrador(String nombreUsuario, String contraseña) {
+	public Administrador(String nombreUsuario, String contrasenya) {
 		super();
 		this.nombreUsuario = nombreUsuario;
-		this.contraseña = contraseña;
+		this.contrasenya = contrasenya;
 	}
 
 	public String getNombreUsuario() {
@@ -19,17 +19,17 @@ public class Administrador {
 		this.nombreUsuario = nombreUsuario;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasenya() {
+		return contrasenya;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasenya(String contrasenya) {
+		this.contrasenya = contrasenya;
 	}
 
 	@Override
 	public String toString() {
-		return "Administrador [nombre del Usuario=" + nombreUsuario + ", Contraseña=" + contraseña + "]";
+		return "Administrador [nombre del Usuario=" + nombreUsuario + ", Contrasenya=" + contrasenya + "]";
 	}
 	
 	
