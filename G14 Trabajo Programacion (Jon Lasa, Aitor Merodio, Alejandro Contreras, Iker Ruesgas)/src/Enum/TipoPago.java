@@ -1,4 +1,4 @@
-package Datos;
+package Enum;
 
 public enum TipoPago {
 	TARJETA_CREDITO, PAYPAL

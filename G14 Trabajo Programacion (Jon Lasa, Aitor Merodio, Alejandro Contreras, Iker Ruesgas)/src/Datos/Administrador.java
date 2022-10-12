@@ -1,39 +1,35 @@
 package Datos;
 
-public class Administrador {
+public class Administrador extends Registro {
 	
-	private String nombreUsuario;
-	private String contrasenya;
+	private int codAcceso;
+
+	public Administrador(String nombre, String apellido, String nombreUsuario, int codAcceso) {
+		super(nombre, apellido, nombreUsuario);
+		this.codAcceso = codAcceso;
+	}
 	
-	public Administrador(String nombreUsuario, String contrasenya) {
+	
+	public Administrador() {
 		super();
-		this.nombreUsuario = nombreUsuario;
-		this.contrasenya = contrasenya;
+		this.codAcceso = 000;
 	}
 
-	public String getNombreUsuario() {
-		return nombreUsuario;
+
+	public int getCodAcceso() {
+		return codAcceso;
 	}
 
-	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
-	}
 
-	public String getContrasenya() {
-		return contrasenya;
-	}
-
-	public void setContrasenya(String contrasenya) {
-		this.contrasenya = contrasenya;
-	}
-
-	@Override
-	public String toString() {
-		return "Administrador [nombre del Usuario=" + nombreUsuario + ", Contrasenya=" + contrasenya + "]";
+	public void setCodAcceso(int codAcceso) {
+		this.codAcceso = codAcceso;
 	}
 	
 	
-	
+	public String toString () {
+		
+		return super.toString() + "Codigo acceso: " + codAcceso;
+	}
 	
 
 }

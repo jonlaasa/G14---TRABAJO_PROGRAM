@@ -4,6 +4,8 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
+import Enum.TipoPago;
+
 public class MetodoPago {
 	 //CAMBIARIA A UNA ENUM CON (PAPYPAL O CREDITO)
 	private TipoPago tipoPago;
