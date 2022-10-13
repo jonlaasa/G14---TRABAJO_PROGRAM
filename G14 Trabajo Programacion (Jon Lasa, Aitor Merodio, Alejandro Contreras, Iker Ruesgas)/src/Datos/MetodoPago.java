@@ -4,11 +4,9 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-import Enum.TipoPago;
 
 public class MetodoPago {
 	 //CAMBIARIA A UNA ENUM CON (PAPYPAL O CREDITO)
-	private TipoPago tipoPago;
 	
 	private String numeroTarjeta;
 	
@@ -26,10 +24,10 @@ public class MetodoPago {
 	
 	SimpleDateFormat formatoCaducidad =new SimpleDateFormat("MM/YY");
 
-	public MetodoPago(TipoPago tipoPago, String numeroTarjeta, String nombreCompleto, String fechaCaducidad,
+	public MetodoPago( String numeroTarjeta, String nombreCompleto, String fechaCaducidad,
 			String codigoSeguridad, String provincia, String ciudad, String direccion) {
 		super();
-		this.tipoPago = tipoPago;
+		
 		this.numeroTarjeta = numeroTarjeta;
 		this.nombreCompleto = nombreCompleto;
 		this.fechaCaducidad = fechaCaducidad;
@@ -42,7 +40,7 @@ public class MetodoPago {
 
 	
 	public MetodoPago() {
-		this.tipoPago = TipoPago.TARJETA_CREDITO;
+		
 		this.numeroTarjeta = "0000 0000 0000 0000";
 		this.nombreCompleto = "";
 		this.fechaCaducidad =formatoCaducidad.format(System.currentTimeMillis());
@@ -53,16 +51,6 @@ public class MetodoPago {
 	}
 
 
-
-	public TipoPago getTipoPago() {
-		return tipoPago;
-	}
-
-
-
-	public void setTipoPago(TipoPago tipoPago) {
-		this.tipoPago = tipoPago;
-	}
 
 
 
@@ -159,6 +147,18 @@ public class MetodoPago {
 	public void setFormatoCaducidad(SimpleDateFormat formatoCaducidad) {
 		this.formatoCaducidad = formatoCaducidad;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "MetodoPago [numeroTarjeta=" + numeroTarjeta + ", nombreCompleto=" + nombreCompleto + ", fechaCaducidad="
+				+ fechaCaducidad + ", codigoSeguridad=" + codigoSeguridad + ", provincia=" + provincia + ", ciudad="
+				+ ciudad + ", direccion=" + direccion + ", formatoCaducidad=" + formatoCaducidad + "]";
+	}
+	
+	
+	
 	
 	
 	
