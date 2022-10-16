@@ -6,37 +6,37 @@ import Enum.TipoServicio;
 
 public class Bus extends Servicio {
 
-	private String compañia;
+	private String companya;
 
 	
 	//Constructor con parametros
 	public Bus(int codigo, Date fecha, int duracion,  String origen, String destino, double precio, TipoServicio tipoServicio,
-			int plazarRestantes, String compañia) {
+			int plazarRestantes, String companya) {
 		super(codigo, fecha, duracion,  origen, destino, precio, tipoServicio, plazarRestantes);
-		this.compañia = compañia;
+		this.companya = companya;
 	}
 
 	
 	//Constructor sin parametros, basandonos en el super de SERVICIO
 	public Bus(Date fecha, TipoServicio tipoServicio) {
 		super(fecha, tipoServicio);
-		this.compañia = "Sin compañia";
+		this.companya = "Sin companya";
 	}
 
 
-	public String getCompañia() {
-		return compañia;
+	public String getCompanya() {
+		return companya;
 	}
 
 
-	public void setCompañia(String compañia) {
-		this.compañia = compañia;
+	public void setCompanya(String companya) {
+		this.companya = companya;
 	}
 
 
 	@Override
 	public String toString() {
-		return super.toString() + " Compañia: " + compañia;
+		return super.toString() + " Companya: " + companya;
 	}
 	
 	
