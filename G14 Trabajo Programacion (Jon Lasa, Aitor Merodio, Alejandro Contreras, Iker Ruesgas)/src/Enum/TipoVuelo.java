@@ -1,4 +1,4 @@
-package enumeraciones;
+package Enum;
 
 public enum TipoVuelo {
 
