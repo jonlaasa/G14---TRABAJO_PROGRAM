@@ -1,4 +1,4 @@
-package Ventanas;
+package VentanasRegistro;
 
 import java.awt.EventQueue;
 
