@@ -146,6 +146,6 @@ public class VentanaRegistro extends JFrame {
 			vr.setVisible(true);
 			dispose();
 		});
-
+//
 	}
 }

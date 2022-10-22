@@ -37,5 +37,5 @@ public class VentanaMetodoPago extends JFrame {
 
 		setContentPane(contentPane);
 	}
-
+//
 }

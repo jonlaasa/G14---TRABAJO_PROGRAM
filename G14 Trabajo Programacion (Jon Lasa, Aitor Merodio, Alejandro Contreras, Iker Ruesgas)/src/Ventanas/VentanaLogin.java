@@ -46,25 +46,7 @@ public class VentanaLogin extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnRegistrarse = new JButton("Registrarse");
-		btnRegistrarse.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnRegistrarse.setBounds(179, 308, 112, 23);
-		contentPane.add(btnRegistrarse);
-		
-		JButton btnLogin = new JButton("Iniciar Sesion");
-		btnLogin.setBounds(395, 308, 124, 23);
-		contentPane.add(btnLogin);
-		
-		
-		btnRegistrarse.addActionListener(e -> {
-			VentanaRegistro vr = null;
-			vr = new VentanaRegistro();
-			vr.setVisible(true);
-			dispose();
-		});
+//
 
 		
 	}
