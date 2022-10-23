@@ -62,7 +62,7 @@ public class Vuelo extends Servicio {
 	@Override
 	public String toString() {
 		return super.toString() + "Companya: "+ companya + "TipoVuelo: " + tipoVuelo + "ZonaAsientoVuelo: " + zonaAsientoVuelo;
-		
+	}
 				
 
 	

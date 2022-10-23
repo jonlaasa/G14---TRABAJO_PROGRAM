@@ -8,8 +8,7 @@ public class Main {
 		// TODO Auto-generated method stub
 
 
-		VentanaInicio vr = null;
-		vr = new VentanaInicio();
+		VentanaInicio vr = new VentanaInicio();
 		vr.setVisible(true);
 
 	}

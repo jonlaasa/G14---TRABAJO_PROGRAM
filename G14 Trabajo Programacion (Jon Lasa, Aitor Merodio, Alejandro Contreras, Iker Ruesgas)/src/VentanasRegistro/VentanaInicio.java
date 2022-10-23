@@ -15,27 +15,13 @@ import java.awt.Font;
 public class VentanaInicio extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaInicio frame = new VentanaInicio();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	
+	
+	public  VentanaInicio () {
+		inicializar();
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public VentanaInicio() {
+	private void inicializar() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
@@ -43,7 +29,7 @@ public class VentanaInicio extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JButton btnRegistrarse = new JButton("Registrarse");
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -51,29 +37,29 @@ public class VentanaInicio extends JFrame {
 		});
 		btnRegistrarse.setBounds(176, 343, 127, 23);
 		contentPane.add(btnRegistrarse);
-		
+
 		JButton btnIniciarSesion = new JButton("Iniciar Sesion");
 		btnIniciarSesion.setBounds(404, 343, 127, 23);
 		contentPane.add(btnIniciarSesion);
-		
+
 		JLabel lblBienvenido = new JLabel("Bienvenido");
 		lblBienvenido.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblBienvenido.setForeground(new Color(255, 128, 0));
 		lblBienvenido.setBounds(286, 35, 127, 71);
 		contentPane.add(lblBienvenido);
-		
+
 		JLabel lblNewLabel = new JLabel("*LOGO*");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblNewLabel.setBounds(268, 169, 209, 86);
 		contentPane.add(lblNewLabel);
-		
+
 		btnRegistrarse.addActionListener(e -> {
 			VentanaRegistro vr = null;
 			vr = new VentanaRegistro();
 			vr.setVisible(true);
 			dispose();
 		});
-		
+
 		btnIniciarSesion.addActionListener(e -> {
 			VentanaLogin vr = null;
 			vr = new VentanaLogin();

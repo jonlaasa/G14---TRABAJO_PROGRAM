@@ -1,6 +1,6 @@
 package VentanasRegistro;
 
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -26,26 +26,10 @@ public class VentanaLogin extends JFrame {
 	private JPasswordField contrasenya;
 	private JTextField usuario;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaLogin frame = new VentanaLogin();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public   VentanaLogin () {
+		inicializar();
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public VentanaLogin() {
+	private void inicializar() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 537, 354);
 		contentPane = new JPanel();
@@ -95,6 +79,9 @@ public class VentanaLogin extends JFrame {
 		contentPane.add(usuario);
 		usuario.setColumns(10);
 		
+		
+		
+		//UTILIZACION DE JAVA FUNCIONAL 
 
 		btnVolver.addActionListener(e -> {
 			VentanaInicio vr = null;
@@ -120,25 +107,6 @@ public class VentanaLogin extends JFrame {
 		});
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

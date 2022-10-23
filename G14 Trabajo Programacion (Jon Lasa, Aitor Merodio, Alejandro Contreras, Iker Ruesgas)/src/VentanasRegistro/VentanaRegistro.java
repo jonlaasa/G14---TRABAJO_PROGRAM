@@ -1,6 +1,6 @@
 package VentanasRegistro;
 
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -32,27 +32,17 @@ public class VentanaRegistro extends JFrame {
 	private JPasswordField contraseña;
 	private JPasswordField passwordField_1;
 	private JButton btnVolverRegistro;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaRegistro frame = new VentanaRegistro();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	
+	
+	
+	
+	public VentanaRegistro () {
+		
+		inicializar();
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public VentanaRegistro() {
+
+	private void  inicializar() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();

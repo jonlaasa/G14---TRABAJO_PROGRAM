@@ -2,28 +2,36 @@ package Datos;
 
 import Enum.ClaseCoche;
 import Enum.TipoServicio;
-import Enum.TipoServicioAdic;
 
-public class RentingCoche extends ServicioAdicional {
-
+public class RentingCoche {
+	
+	private double precio;
 	private int diasAlquilado;
 	private ClaseCoche claseCoche;
 	
 	//Constructor con parametros
-	public RentingCoche(int precio, TipoServicioAdic servicioAdicional, int diasAlquilado, ClaseCoche claseCoche) {
-		super(precio, servicioAdicional);
+	public RentingCoche(double precio, int diasAlquilado, ClaseCoche claseCoche) {
+		this.precio=precio;
 		this.diasAlquilado = diasAlquilado;
 		this.claseCoche = claseCoche;
 	}
 	
-	//Constructor solo con tipo de servicio Adicional (gamaBaja por defecto y dias alquilados: 0.
-	public RentingCoche(TipoServicioAdic servicioAdicional) {
-		super (servicioAdicional);
+	//Constructor vacio, con valores por defecto.
+	public RentingCoche() {
+		this.precio=0;
 		this.diasAlquilado = 0;
 		this.claseCoche = ClaseCoche.gamaBaja;
 	}
 	
 	
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
 
 	public int getDiasAlquilado() {
 		return diasAlquilado;
@@ -41,17 +49,12 @@ public class RentingCoche extends ServicioAdicional {
 		this.claseCoche = claseCoche;
 	}
 
-	
-	
-	public String toString () {
-		
-		return super.toString() + "Dias alquilados: "+ diasAlquilado+ " Clase del coche : " + claseCoche;
-		
+	@Override
+	public String toString() {
+		return "RentingCoche [precio=" + precio + ", diasAlquilado=" + diasAlquilado + ", claseCoche=" + claseCoche
+				+ "]";
 	}
-	
-	
-	
-	
+
 	
 
 	
