@@ -10,6 +10,7 @@ import VentanasAdministardor.VentanaLoginAdmin;
 import erm.dataBase.DBException;
 import erm.ventanasPrimarias.VentanaRegistro;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.net.BindException;
@@ -40,12 +41,12 @@ public class VentanaLogin extends JFrame {
 		
 		JLabel lblUsuario = new JLabel("Usuario:");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblUsuario.setBounds(60, 105, 79, 31);
+		lblUsuario.setBounds(90, 105, 79, 31);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblNewLabel_1 = new JLabel("Contrasea\u00F1a:");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(60, 165, 110, 31);
+		lblNewLabel_1.setBounds(90, 165, 110, 31);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblIniciarSesion = new JLabel("Iniciar Sesion");
@@ -71,11 +72,11 @@ public class VentanaLogin extends JFrame {
 		contentPane.add(btnVolver);
 		
 		contrasenya = new JPasswordField();
-		contrasenya.setBounds(185, 172, 122, 20);
+		contrasenya.setBounds(222, 172, 122, 20);
 		contentPane.add(contrasenya);
 		
 		usuario = new JTextField();
-		usuario.setBounds(185, 112, 122, 20);
+		usuario.setBounds(222, 112, 122, 20);
 		contentPane.add(usuario);
 		usuario.setColumns(10);
 		

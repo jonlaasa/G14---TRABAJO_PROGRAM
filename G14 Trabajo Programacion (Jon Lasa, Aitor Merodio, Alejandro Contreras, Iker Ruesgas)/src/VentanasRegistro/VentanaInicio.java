@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.SystemColor;
 
 public class VentanaInicio extends JFrame {
 
@@ -33,16 +34,20 @@ public class VentanaInicio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JButton btnRegistrarse = new JButton("Registrarse");
+		JButton btnRegistrarse = new JButton("");
+		btnRegistrarse.setBackground(new Color(255, 255, 255));
+		btnRegistrarse.setIcon(new ImageIcon("imagenes//iconoRegistrarse.png"));
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnRegistrarse.setBounds(147, 343, 127, 23);
+		btnRegistrarse.setBounds(232, 329, 53, 54);
 		contentPane.add(btnRegistrarse);
 
-		JButton btnIniciarSesion = new JButton("Iniciar Sesion");
-		btnIniciarSesion.setBounds(404, 343, 127, 23);
+		JButton btnIniciarSesion = new JButton("");
+		btnIniciarSesion.setBackground(new Color(255, 255, 255));
+		btnIniciarSesion.setIcon(new ImageIcon("imagenes//iconoLogin.png"));
+		btnIniciarSesion.setBounds(403, 329, 53, 54);
 		contentPane.add(btnIniciarSesion);
 
 		JLabel lblBienvenido = new JLabel("Bienvenido");
