@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -25,6 +26,8 @@ public class VentanaInicio extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setForeground(new Color(192, 192, 192));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -35,7 +38,7 @@ public class VentanaInicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnRegistrarse.setBounds(176, 343, 127, 23);
+		btnRegistrarse.setBounds(147, 343, 127, 23);
 		contentPane.add(btnRegistrarse);
 
 		JButton btnIniciarSesion = new JButton("Iniciar Sesion");
@@ -47,10 +50,10 @@ public class VentanaInicio extends JFrame {
 		lblBienvenido.setForeground(new Color(255, 128, 0));
 		lblBienvenido.setBounds(286, 35, 127, 71);
 		contentPane.add(lblBienvenido);
-
-		JLabel lblNewLabel = new JLabel("*LOGO*");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		lblNewLabel.setBounds(268, 169, 209, 86);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("imagenes\\logo.jpeg"));
+		lblNewLabel.setBounds(27, 56, 594, 373);
 		contentPane.add(lblNewLabel);
 
 		btnRegistrarse.addActionListener(e -> {
