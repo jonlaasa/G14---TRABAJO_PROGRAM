@@ -9,9 +9,9 @@ public class Registro {
 	
 	// Constructor con parametros
 	public Registro(String nombre, String apellido, String nombreUsuario) {super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.nombreUsuario = nombreUsuario;
+		setNombre(nombre);
+		setApellido(apellido);
+		setNombreUsuario(nombreUsuario);
 	}
 	
 	
@@ -29,7 +29,13 @@ public class Registro {
 
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		if (nombre==null) {
+			this.nombre ="";
+		}
+		else {
+			this.nombre = nombre;
+		}
+		
 	}
 
 
@@ -39,7 +45,12 @@ public class Registro {
 
 
 	public void setApellido(String apellido) {
-		this.apellido = apellido;
+		if (apellido==null) {
+			this.apellido ="";
+		}
+		else {
+			this.apellido = apellido;
+		}
 	}
 
 
@@ -49,7 +60,14 @@ public class Registro {
 
 
 	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
+		if (nombreUsuario==null) {
+			this.nombreUsuario ="";
+		}
+		else {
+			this.nombreUsuario = nombreUsuario;
+		}
+		
+		
 	}
 
 	

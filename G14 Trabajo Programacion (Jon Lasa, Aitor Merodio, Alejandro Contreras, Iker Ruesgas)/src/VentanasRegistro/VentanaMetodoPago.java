@@ -18,6 +18,13 @@ import javax.swing.border.EmptyBorder;
 public class VentanaMetodoPago extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField titularTarjeta;
+	private JTextField direccion;
+	private JTextField ciudad;
+	private JTextField codigoPostal;
+	private JTextField numeroTarjeta;
+	private JTextField fechaCaducidad;
+	private JTextField codigoSeguridad;
 	
 	
 	
@@ -38,37 +45,94 @@ public class VentanaMetodoPago extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Usuario:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel.setBounds(80, 200, 84, 14);
-		contentPane.add(lblNewLabel);
+		JLabel titular = new JLabel("Titular de la tarjeta:");
+		titular.setForeground(new Color(255, 128, 64));
+		titular.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		titular.setBounds(80, 95, 141, 14);
+		contentPane.add(titular);
 		
-		JLabel lblNewLabel_1 = new JLabel("Apellidos:");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(80, 140, 84, 14);
-		contentPane.add(lblNewLabel_1);
+		JLabel introduzca = new JLabel("INTRODUZCA LOS DATOS DEL METODO DE PAGO A UTILIZAR");
+		introduzca.setForeground(new Color(255, 128, 64));
+		introduzca.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		introduzca.setBounds(80, 27, 479, 45);
+		contentPane.add(introduzca);
 		
-		JLabel lblNewLabel_2 = new JLabel("Nombre:");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_2.setBounds(80, 105, 84, 14);
-		contentPane.add(lblNewLabel_2);
+		JLabel dir = new JLabel("Direccion:");
+		dir.setForeground(new Color(255, 128, 64));
+		dir.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		dir.setBounds(80, 130, 141, 14);
+		contentPane.add(dir);
 		
-		JLabel lblNewLabel_3 = new JLabel("DNI:");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_3.setBounds(80, 170, 84, 14);
-		contentPane.add(lblNewLabel_3);
+		JLabel ciud = new JLabel("Ciudad:");
+		ciud.setForeground(new Color(255, 128, 64));
+		ciud.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		ciud.setBounds(80, 170, 141, 14);
+		contentPane.add(ciud);
 		
-		JLabel lblNewLabel_5 = new JLabel("Contrase\u00F1a:");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_5.setBounds(80, 230, 113, 14);
-		contentPane.add(lblNewLabel_5);
+		JLabel codpostal = new JLabel("Codigo postal:");
+		codpostal.setForeground(new Color(255, 128, 64));
+		codpostal.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		codpostal.setBounds(80, 210, 141, 20);
+		contentPane.add(codpostal);
+		
+		JLabel numtarjeta = new JLabel("Numero de tarjeta:");
+		numtarjeta.setForeground(new Color(255, 128, 64));
+		numtarjeta.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		numtarjeta.setBounds(80, 247, 141, 14);
+		contentPane.add(numtarjeta);
+		
+		JLabel fechacad = new JLabel("Fecha de caducidad:");
+		fechacad.setForeground(new Color(255, 128, 64));
+		fechacad.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		fechacad.setBounds(80, 290, 153, 14);
+		contentPane.add(fechacad);
+		
+		JLabel codseguridad = new JLabel("Codigo de seguridad");
+		codseguridad.setForeground(new Color(255, 128, 64));
+		codseguridad.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		codseguridad.setBounds(80, 329, 164, 20);
+		contentPane.add(codseguridad);
+		
+		titularTarjeta = new JTextField();
+		titularTarjeta.setBounds(254, 94, 120, 20);
+		contentPane.add(titularTarjeta);
+		titularTarjeta.setColumns(10);
+		
+		direccion = new JTextField();
+		direccion.setColumns(10);
+		direccion.setBounds(254, 129, 170, 20);
+		contentPane.add(direccion);
+		
+		ciudad = new JTextField();
+		ciudad.setColumns(10);
+		ciudad.setBounds(254, 160, 120, 20);
+		contentPane.add(ciudad);
+		
+		codigoPostal = new JTextField();
+		codigoPostal.setColumns(10);
+		codigoPostal.setBounds(254, 212, 86, 20);
+		contentPane.add(codigoPostal);
+		
+		numeroTarjeta = new JTextField();
+		numeroTarjeta.setColumns(10);
+		numeroTarjeta.setBounds(254, 246, 170, 20);
+		contentPane.add(numeroTarjeta);
+		
+		fechaCaducidad = new JTextField();
+		fechaCaducidad.setColumns(10);
+		fechaCaducidad.setBounds(254, 289, 78, 20);
+		contentPane.add(fechaCaducidad);
+		
+		codigoSeguridad = new JTextField();
+		codigoSeguridad.setColumns(10);
+		codigoSeguridad.setBounds(254, 331, 64, 20);
+		contentPane.add(codigoSeguridad);
+		
+		JButton confirmar = new JButton("Confirmar");
+		confirmar.setBounds(438, 336, 121, 39);
+		contentPane.add(confirmar);
 		
 
 //
 	}
-		
-		
-		
-		
-		
 }
