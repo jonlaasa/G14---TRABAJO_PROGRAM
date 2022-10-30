@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 public class Usuario extends Registro {
 	
+	
 	private String contrasenya; 
 	private String dni;
 	private MetodoPago metodoPago;
 	private int puntos ;
+	
 	private int codigo;
 	
 	private static int claveClase=1;
@@ -15,13 +17,13 @@ public class Usuario extends Registro {
 	
 	//Constructor con parametros
 	
-	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String dni, int clave,
+	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String dni,
 			MetodoPago metodoPago) {
 		super(nombre, apellido, usuario);
-		this.contrasenya = contrasenya;
-		this.dni = dni;
-		this.metodoPago = metodoPago;
-		this.puntos = 0;
+		setContrasenya(contrasenya);
+		setDni(dni); 
+		setMetodoPago(metodoPago);
+		setPuntos(0);
 		this.codigo=claveClase;
 		claveClase++;
 		
@@ -51,7 +53,12 @@ public class Usuario extends Registro {
 
 
 	public void setContrasenya(String contrasenya) {
-		this.contrasenya = contrasenya;
+		if (contrasenya==null) {
+			this.contrasenya="";
+		}
+		else {
+			this.contrasenya = contrasenya;
+		}
 	}
 
 
@@ -61,7 +68,12 @@ public class Usuario extends Registro {
 
 
 	public void setDni(String dni) {
-		this.dni = dni;
+		if (dni==null) {
+			this.dni="";
+		}
+		else {
+			this.dni = dni;
+		}
 	}
 
 
@@ -71,7 +83,12 @@ public class Usuario extends Registro {
 
 
 	public void setMetodoPago(MetodoPago metodoPago) {
-		this.metodoPago = metodoPago;
+		if (metodoPago==null) {
+			this.metodoPago=new MetodoPago();
+		}
+		else {
+			this.metodoPago = metodoPago;
+		}
 	}
 
 
@@ -82,7 +99,12 @@ public class Usuario extends Registro {
 
 
 	public void setPuntos(int puntos) {
-		this.puntos = puntos;
+		if (puntos<0) {
+			this.puntos=0;
+		}
+		else {
+			this.puntos = puntos;
+		}
 	}
 
 

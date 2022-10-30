@@ -1,4 +1,5 @@
-package Test;
+package TestDatos;
+
 
 import static org.junit.Assert.*;
 
@@ -14,11 +15,14 @@ public class TestRegistro {
 	Registro r1;
 	Registro r3;
 	Registro r4;
+	Registro r5;
 	@Before
 	public void setUp() throws Exception {
 		r1 = new Registro("Iker", "Sanz", "iker_sanz");
 		r3 = new Registro();
 		 r4 = new Registro("Asier","Pintos", "a_Pintos");
+		 r5 = new Registro ("Borja", "Castri", "bo8castri");
+
 	}
 
 	@After
@@ -80,6 +84,52 @@ public class TestRegistro {
 		
 		
 	}
+	
+	@Test
+	public void testSetNombre() {
+		r5.setNombre("Gorka");
+		assertEquals("Gorka", r5.getNombre() );
+		
+		r5.setNombre("");
+		assertEquals("", r5.getNombre() );
+		
+		r5.setNombre(null);
+		assertEquals("", r5.getNombre() );
+		
+		
+	}
+	
+	
+	@Test
+	public void testSetApellido() {
+		r5.setApellido("Merodio");
+		assertEquals("Merodio", r5.getApellido() );
+		
+		r5.setApellido("");
+		assertEquals("", r5.getApellido() );
+		
+		r5.setApellido(null);
+		assertEquals("", r5.getApellido() );
+		
+		
+	}
+	
+	
+	@Test
+	public void testSetNombreUsuario() {
+		r5.setNombreUsuario("x_krl");
+		assertEquals("x_krl", r5.getNombreUsuario() );
+		
+		r5.setNombreUsuario("");
+		assertEquals("", r5.getNombreUsuario() );
+		
+		r5.setNombreUsuario(null);
+		assertEquals("", r5.getNombreUsuario() );
+		
+		
+	}
+	
+	
 	
 	
 	

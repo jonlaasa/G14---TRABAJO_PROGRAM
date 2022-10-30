@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import VentanasAdministardor.VentanaLoginAdmin;
+import VentanasAdministrador.VentanaLoginAdmin;
 import erm.dataBase.DBException;
 import erm.ventanasPrimarias.VentanaRegistro;
 

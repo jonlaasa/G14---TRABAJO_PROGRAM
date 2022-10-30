@@ -16,8 +16,6 @@ public class MetodoPago {
 	
 	private String codigoSeguridad;
 	
-	private String provincia;
-	
 	private String ciudad;
 	
 	private String direccion;
@@ -25,14 +23,14 @@ public class MetodoPago {
 	SimpleDateFormat formatoCaducidad =new SimpleDateFormat("MM/YY");
 
 	public MetodoPago( String numeroTarjeta, String nombreCompleto, String fechaCaducidad,
-			String codigoSeguridad, String provincia, String ciudad, String direccion) {
+			String codigoSeguridad, String ciudad, String direccion) {
 		super();
 		
 		this.numeroTarjeta = numeroTarjeta;
 		this.nombreCompleto = nombreCompleto;
-		this.fechaCaducidad = fechaCaducidad;
+		this.fechaCaducidad = formatoCaducidad.format(fechaCaducidad);
 		this.codigoSeguridad = codigoSeguridad;
-		this.provincia = provincia;
+		
 		this.ciudad = ciudad;
 		this.direccion = direccion;
 	}
@@ -45,7 +43,6 @@ public class MetodoPago {
 		this.nombreCompleto = "";
 		this.fechaCaducidad =formatoCaducidad.format(System.currentTimeMillis());
 		this.codigoSeguridad = "000";
-		this.provincia = "";
 		this.ciudad = "";
 		this.direccion = "";
 	}
@@ -101,19 +98,6 @@ public class MetodoPago {
 	}
 
 
-
-	public String getProvincia() {
-		return provincia;
-	}
-
-
-
-	public void setProvincia(String provincia) {
-		this.provincia = provincia;
-	}
-
-
-
 	public String getCiudad() {
 		return ciudad;
 	}
@@ -153,7 +137,7 @@ public class MetodoPago {
 	@Override
 	public String toString() {
 		return "MetodoPago [numeroTarjeta=" + numeroTarjeta + ", nombreCompleto=" + nombreCompleto + ", fechaCaducidad="
-				+ fechaCaducidad + ", codigoSeguridad=" + codigoSeguridad + ", provincia=" + provincia + ", ciudad="
+				+ fechaCaducidad + ", codigoSeguridad=" + codigoSeguridad + ", ciudad="
 				+ ciudad + ", direccion=" + direccion + ", formatoCaducidad=" + formatoCaducidad + "]";
 	}
 	

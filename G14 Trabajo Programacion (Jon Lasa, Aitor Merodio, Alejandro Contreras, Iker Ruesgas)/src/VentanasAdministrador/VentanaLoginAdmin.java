@@ -1,4 +1,4 @@
-package VentanasAdministardor;
+package VentanasAdministrador;
 
 import java.awt.Color;
 import java.awt.EventQueue;
