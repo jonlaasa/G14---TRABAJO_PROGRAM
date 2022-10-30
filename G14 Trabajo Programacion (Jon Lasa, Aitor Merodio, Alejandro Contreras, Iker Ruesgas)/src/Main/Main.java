@@ -1,5 +1,6 @@
 package Main;
 
+import VentanasRegistro.VentanaDescripcion;
 import VentanasRegistro.VentanaInicio;
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
 		// TODO Auto-generated method stub
 
 
-		VentanaInicio vr = new VentanaInicio();
+	VentanaInicio vr = new VentanaInicio();
 		vr.setVisible(true);
 
 	}

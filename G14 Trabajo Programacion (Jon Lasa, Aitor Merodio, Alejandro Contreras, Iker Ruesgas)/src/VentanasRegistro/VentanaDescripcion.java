@@ -23,30 +23,53 @@ public class VentanaDescripcion extends JFrame {
 	
 	public VentanaDescripcion() {
 		setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
-		setTitle( "Descripcio" );
+		setTitle( "Descripcion" );
 		setSize( 500, 600 );
 		setLocationRelativeTo( null );
 		// Pone la ventana relativa a la pantalla
+		JPanel panelArriba = new JPanel();
+		JLabel labelDescripcion = new JLabel("Descripcion de T&T");
+		labelDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		labelDescripcion.setForeground(new Color(255, 128, 0));
+		panelArriba.add(labelDescripcion,BorderLayout.CENTER);
+		getContentPane().add(panelArriba, BorderLayout.NORTH );
+		
 		taTexto = new JTextArea();
 		spTexto = new JScrollPane( taTexto );
-		getContentPane().add( spTexto, BorderLayout.NORTH );
+		getContentPane().add( spTexto, BorderLayout.CENTER );
 		JPanel pBotonera = new JPanel();
 		JButton bPagArriba = new JButton( "^" );
 		bPagAbajo = new JButton( "v" );
+		JButton bcerrar = new JButton("Cerrar");
 		pBotonera.add( bPagArriba );
 		pBotonera.add( bPagAbajo );
+		pBotonera.add( bcerrar );
+		
+		
+		bcerrar.addActionListener((e) -> {
+			
+			dispose();
+			
+			
+			
+			
+		});
+		
 		getContentPane().add( pBotonera, BorderLayout.SOUTH );
+		
+		
+		
 		this.cargaQuijote();
 		bPagArriba.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				muevePagina( -(spTexto.getHeight()-20) );
+				muevePagina( -(spTexto.getHeight()-400) );
 			}
 		});
 		bPagAbajo.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				muevePagina( (spTexto.getHeight()-20) );
+				muevePagina( (spTexto.getHeight()-400) );
 			}
 		});
 	}
@@ -97,7 +120,7 @@ public class VentanaDescripcion extends JFrame {
 			Scanner scanner = new Scanner( VentanaDescripcion.class.getResourceAsStream( "t_descripcion.txt" ), "UTF-8" );
 			while (scanner.hasNextLine()) {
 				String linea = scanner.nextLine();
-				taTexto.append( linea + "\n" );
+				taTexto.append( linea + "\n" + "\n" );
 			}
 			scanner.close();
 		} catch (Exception e) {

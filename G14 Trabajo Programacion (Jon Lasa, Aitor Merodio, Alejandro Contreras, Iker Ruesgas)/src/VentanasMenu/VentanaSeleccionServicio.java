@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import VentanasRegistro.VentanaDescripcion;
+
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -50,53 +53,59 @@ public class VentanaSeleccionServicio extends JFrame {
 		lblSeleccionaUnaOpcion.setBounds(155, 56, 356, 21);
 		contentPane.add(lblSeleccionaUnaOpcion);
 		
-		JButton btnNewButton = new JButton("COMPRAR VUELO");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnVuelo = new JButton("COMPRAR VUELO");
+		btnVuelo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(27, 128, 162, 69);
-		contentPane.add(btnNewButton);
+		btnVuelo.setBounds(27, 128, 162, 69);
+		contentPane.add(btnVuelo);
 		
-		JButton btnComprarBus = new JButton("COMPRAR BUS");
-		btnComprarBus.addActionListener(new ActionListener() {
+		JButton btnBus = new JButton("COMPRAR BUS");
+		btnBus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnComprarBus.setBounds(261, 215, 181, 69);
-		contentPane.add(btnComprarBus);
+		btnBus.setBounds(261, 215, 181, 69);
+		contentPane.add(btnBus);
 		
-		JButton btnNewButton_1 = new JButton("COMPRAR VIAJE. COMB");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnCombinado = new JButton("COMPRAR VIAJE. COMB");
+		btnCombinado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setBounds(464, 127, 189, 71);
-		contentPane.add(btnNewButton_1);
+		btnCombinado.setBounds(464, 127, 189, 71);
+		contentPane.add(btnCombinado);
 		
-		JButton btnNewButton_2 = new JButton("PERFIL");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton btnPerfil = new JButton("PERFIL");
+		btnPerfil.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2.setBounds(305, 351, 116, 33);
-		contentPane.add(btnNewButton_2);
+		btnPerfil.setBounds(305, 351, 116, 33);
+		contentPane.add(btnPerfil);
 		
 		JButton btnInfoApp = new JButton("INFO DE LA APP");
 		btnInfoApp.setBounds(562, 312, 112, 23);
 		contentPane.add(btnInfoApp);
 		
+		btnInfoApp.addActionListener((e) -> {
+			
+			VentanaDescripcion vd = new VentanaDescripcion ();
+			vd.setVisible(true);
+			
+		});
 		JButton btnConsulta = new JButton("CONSULTA ANALITICA DE DATOS");
 		btnConsulta.setBounds(27, 346, 213, 33);
 		contentPane.add(btnConsulta);
 		
-		JButton btnNewButton_3 = new JButton("POLITICA PRIVACIDAD");
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton btnPolitica = new JButton("POLITICA PRIVACIDAD");
+		btnPolitica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_3.setBounds(518, 351, 156, 23);
-		contentPane.add(btnNewButton_3);
+		btnPolitica.setBounds(518, 351, 156, 23);
+		contentPane.add(btnPolitica);
 		
 	}
 }

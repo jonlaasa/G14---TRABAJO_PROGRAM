@@ -1,11 +1,28 @@
 T&T LA REVOLUCION DE LAS AGENCIAS DE VIAJE. 
-Nuestra aplicación, se describe como una aplicación para compras de billetes de vuelos buses y viajes combinados a nivel nacional con precios competitivos y una aplicación web intuitiva y muy senclla de utilizar y manejar. En ella, los usuarios se registraran y podrán acceder a la compra de los diferentes servicios al igual que a las consultas realizadas sobre los diferentes destinos. La aplicación se ira actualizando de manera constante para poder ofrecer los viajes mas deseados en diferentes épocas del año con destinos a Barcelona, Madrid, Valencia, Sevilla, y muchos otros mas. 
+	Nuestra aplicación, se describe como una aplicacion para compras 
+de billetes de vuelos buses y viajes combinados a nivel nacional con precios
+ competitivos y una aplicacion web intuitiva y muy sencilla de utilizar y manejar. 
+En ella los usuarios se registraran y podrán acceder a la compra de los diferentes
+ Servicios  al igual que a las consultas realizadas sobre los diferentes destinos.
+ La aplicación se ira actualizando de manera constante para poder ofrecer los
+viajes mas deseados en diferentes epocas del anyo con destinos a Barcelona, Madrid, 
+Valencia, Sevilla,  y muchos otros mas. 
 
-La compañía T&T tiene origen en Bilbao, por lo que se le dará prioridad a los residentes en el Euskal Herria, generando de esta forma mas viajes con destino final en Bilbao.  Inicialmente, tal y como hemos mencionado anteriormente, nos centraremos a nivel nacional (España), sin embargo, tenemos pensado en un futuro poder expandirnos hacia otros países.
+	La compania T&T tiene origen en Bilbao, por lo que se le dara prioridad
+ a los residentes en el Euskal Herria, generando de esta forma mas viajes con destino
+ final en Bilbao.  Inicialmente, tal y como hemos mencionado anteriormente, nos
+ centraremos  a nivel nacional (Espanya), sin embargo, tenemos pensado en un futuro
+ poder expandirnos hacia otros países.
 
-Los servicios principales serán la compra de vuelos, buses y viajes combinados. Los viajes combinados, constan de viajes formados por la combinación de buses y vuelos, de modo que nuestro servicio este totalmente enlazado para poder ofrecer una aplicación optima de ello.
+	Los servicios principales seran la compra de vuelos, buses y viajes combinados.
+ Los viajes combinados, constan de viajes formados por la combinacion de buses y 
+vuelos,  de modo que nuestro servicio este totalmente enlazado para poder ofrecer 
+una aplicacion optima de ello.
 
-Es importante mencionar, que ofreceremos un servicio de renting de coches allá donde sea su destino. De este modo podrá desplazarse sin problema alguno por el destino que haya escogido. En el servicio se especificara la clase del coche así como los días que utilizara este servicio, así podremos calcular su coste aproximado.
+	Es importante mencionar, que ofreceremos un servicio de renting de coches
+ alla  donde sea su destino. De este modo podra desplazarse sin problema alguno por
+ el destino que haya escogido. En el servicio se especificara la clase del coche asi como
+ los dias que utilizara este servicio, asi podremos calcular su coste aproximado.
 
 Muchas gracias por escogernos esperamos que cada viaje sea una experiencia UNICA!!!
 
