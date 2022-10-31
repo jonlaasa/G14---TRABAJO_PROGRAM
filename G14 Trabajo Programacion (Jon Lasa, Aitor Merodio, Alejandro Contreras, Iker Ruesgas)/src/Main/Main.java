@@ -2,6 +2,7 @@ package Main;
 
 import VentanasRegistro.VentanaDescripcion;
 import VentanasRegistro.VentanaInicio;
+import BD.BD;
 
 public class Main {
 
@@ -9,7 +10,8 @@ public class Main {
 		// TODO Auto-generated method stub
 
 
-	VentanaInicio vr = new VentanaInicio();
+	VentanaDescripcion vr = new VentanaDescripcion();
+	
 		vr.setVisible(true);
 
 	}
