@@ -15,7 +15,7 @@ public class BD {
 	
 	static Logger logger= Logger.getLogger( BD.class.getName() );
 	
-	public static  Connection abrirBaseDatos(String nombrebD) {
+	public static  Connection abrirBaseDatos(String base) {
 		try {
 			Class.forName("org.sqlite.JDBC");
 		} catch (ClassNotFoundException e) {
@@ -25,7 +25,7 @@ public class BD {
 		
 		
 		try {
-			conn = DriverManager.getConnection("jdbc:sqlite:"+ nombrebD);
+			conn = DriverManager.getConnection("jdbc:sqlite:"+base);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

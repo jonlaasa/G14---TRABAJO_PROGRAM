@@ -6,23 +6,30 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import erm.dataBase.DBException;
-import erm.ventanasPrimarias.VentanaRegistro;
+import org.sqlite.core.CorePreparedStatement;
+import org.sqlite.jdbc3.JDBC3PreparedStatement;
+
+import BD.BD;
+import BD.usuariosSQL;
+import Datos.Usuario;
+
 
 import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JProgressBar;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.sound.sampled.Port;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import java.net.BindException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
 
 public class VentanaRegistro extends JFrame {
+
 
 	private JPanel contentPane;
 	private JTextField usuario;
@@ -33,12 +40,14 @@ public class VentanaRegistro extends JFrame {
 	private JPasswordField passwordField_1;
 	private JButton btnVolverRegistro;
 	
-	
-	
+
+
 	
 	public VentanaRegistro () {
 		
 		inicializar();
+		
+		
 	}
 
 
@@ -136,6 +145,39 @@ public class VentanaRegistro extends JFrame {
 			vr.setVisible(true);
 			dispose();
 		});
-//
+
+		btnRegistrarse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				usuariosSQL modSql = new usuariosSQL();
+				Usuario mod = new Usuario();
+				
+
+
+
+					mod.setNombreUsuario(usuario.getText());
+					mod.setContrasenya(contraseña.getText());
+					mod.setApellido(apellido.getText());
+					mod.setNombre(nombre.getText());
+					mod.setDni(dni.getText());
+
+					
+					try {
+						if(modSql.registrar(mod)) {
+							JOptionPane.showMessageDialog(null, "registro guardado");
+						}else
+						{
+							JOptionPane.showMessageDialog(null, "error al guardar");
+						}
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+				}
+				
+
+				
+		});
+		
 	}
 }

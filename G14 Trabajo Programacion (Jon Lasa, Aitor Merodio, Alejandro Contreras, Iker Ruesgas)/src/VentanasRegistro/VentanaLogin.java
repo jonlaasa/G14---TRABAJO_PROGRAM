@@ -7,14 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import VentanasAdministrador.VentanaLoginAdmin;
-import erm.dataBase.DBException;
-import erm.ventanasPrimarias.VentanaRegistro;
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.net.BindException;
-import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JPasswordField;
