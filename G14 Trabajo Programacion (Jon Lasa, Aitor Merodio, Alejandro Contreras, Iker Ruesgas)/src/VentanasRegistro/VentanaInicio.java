@@ -43,11 +43,7 @@ public class VentanaInicio extends JFrame {
 
 		JButton btnRegistrarse = new JButton("");
 		btnRegistrarse.setBackground(new Color(255, 255, 255));
-		btnRegistrarse.setIcon(new ImageIcon("imagenes//iconoRegistrarse.png"));
-		btnRegistrarse.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnRegistrarse.setIcon(new ImageIcon("imagenes//iconoRegistro.png"));
 		btnRegistrarse.setBounds(232, 329, 53, 54);
 		contentPane.add(btnRegistrarse);
 

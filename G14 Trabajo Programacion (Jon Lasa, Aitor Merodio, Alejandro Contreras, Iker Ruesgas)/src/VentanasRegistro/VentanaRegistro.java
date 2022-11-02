@@ -148,7 +148,7 @@ public class VentanaRegistro extends JFrame {
 
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				usuariosSQL modSql = new usuariosSQL();
+				BD modSql = new BD();
 				Usuario mod = new Usuario();
 				
 
@@ -159,19 +159,14 @@ public class VentanaRegistro extends JFrame {
 					mod.setApellido(apellido.getText());
 					mod.setNombre(nombre.getText());
 					mod.setDni(dni.getText());
-
-					
 					try {
-						if(modSql.registrar(mod)) {
-							JOptionPane.showMessageDialog(null, "registro guardado");
-						}else
-						{
-							JOptionPane.showMessageDialog(null, "error al guardar");
-						}
-					} catch (Exception e1) {
+						modSql.registrar(mod);
+					} catch (Exception e2) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						e2.printStackTrace();
 					}
+					
+		
 					
 				}
 				

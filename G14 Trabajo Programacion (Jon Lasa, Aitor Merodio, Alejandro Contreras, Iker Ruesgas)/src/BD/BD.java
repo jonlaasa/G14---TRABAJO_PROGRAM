@@ -2,16 +2,21 @@ package BD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.swing.JOptionPane;
+
+import Datos.Usuario;
 
 
 
 public class BD {
 	
-	
-	private static Connection conn;
+	private static PreparedStatement pst = null;
+	private static Connection conn=null;
 	
 	static Logger logger= Logger.getLogger( BD.class.getName() );
 	
@@ -52,8 +57,28 @@ public class BD {
 	
 	
 	
-	
-	
+	public boolean registrar(Usuario usr) throws Exception {
+		
+		Connection con = abrirBaseDatos("baseDatos");
+		String sql = "INSERT INTO Usuario (Nombre,	Apellidos, Usuario, Contrasenya, DNI, puntosDeusto ) VALUES(?,?,?,?,?,?)";
+		
+		try {
+			pst=con.prepareStatement(sql);
+			pst.setString(1, usr.getNombre());
+			pst.setString(2, usr.getApellido());
+			pst.setString(3, usr.getNombreUsuario());
+			pst.setString(4, usr.getContrasenya());
+			pst.setString(5, usr.getDni());
+			pst.setInt(6, 0);
+			pst.execute();
+			JOptionPane.showMessageDialog(null, "Registro completado");
+			return true;
+		}catch(SQLException e){
+			JOptionPane.showMessageDialog(null, "Registro fallido");
+			return false;
+		}
+		
+	}
 	
 	
 	
