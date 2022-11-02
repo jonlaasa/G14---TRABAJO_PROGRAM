@@ -27,9 +27,9 @@ public class TestServicio {
 	@Before
 	public void setUp() throws Exception {
 		
-		s1 = new Servicio(001, "2-5-2023",6300,"Bilbao", "Barcelona", 50 , TipoServicio.vuelo ,96);
-		s2 = new Servicio(932, "04-11-2022",3000,"Santander", "Valencia", 45, TipoServicio.bus, 45);
-		s3 = new Servicio("30-08-2024",TipoServicio.viajeCombinado);
+		s1 = new Servicio(001, "2023/05/02",6300,"Bilbao", "Barcelona", 50 , TipoServicio.vuelo ,96);
+		s2 = new Servicio(932, "2022/11/10",3000,"Santander", "Valencia", 45, TipoServicio.bus, 45);
+		s3 = new Servicio("2024/08/30",TipoServicio.viajeCombinado);
 		s4 = new Servicio();
 		s5 = new Servicio(0, "",0,"","",0,TipoServicio.bus,0);
 		s6 = new Servicio(0,null,0,null,null,0,TipoServicio.bus,0);
@@ -39,7 +39,7 @@ public class TestServicio {
 	@Test
 	public void testConstructorConParametros() {
 		assertEquals(001, s1.getCodigo());
-		assertEquals("2-5-2023", s1.getFecha());
+		assertEquals("2023/05/02", s1.getFecha());
 		assertEquals(6300, s1.getDuracion());
 		assertEquals("Bilbao", s1.getOrigen());
 		assertEquals("Barcelona", s1.getDestino());
@@ -73,7 +73,7 @@ public class TestServicio {
 	
 	@Test
 	public void testConstructorFechaTipoServicio() {
-		assertEquals("30-08-2024", s3.getFecha());
+		assertEquals("2024/08/30", s3.getFecha());
 		assertEquals(TipoServicio.viajeCombinado, s3.getTipoServicio());
 	}
 	
@@ -111,7 +111,7 @@ public class TestServicio {
 	
 	@Test
 	public void testGetFecha() {
-		assertEquals("2-5-2023", s1.getFecha() );
+		assertEquals("2023/05/02", s1.getFecha() );
 		assertEquals("",s5.getFecha() );
 	}
 	
@@ -120,8 +120,8 @@ public class TestServicio {
 	public void testSetFecha() {
 		
 		try {
-			s1.setFecha("20/03/2040");
-			assertEquals("20/03/2040", s1.getFecha());
+			s1.setFecha("2040/03/20");
+			assertEquals("2040/03/20", s1.getFecha());
 		} catch (FechaException | ParseException e1) {
 			e1.printStackTrace();
 		}

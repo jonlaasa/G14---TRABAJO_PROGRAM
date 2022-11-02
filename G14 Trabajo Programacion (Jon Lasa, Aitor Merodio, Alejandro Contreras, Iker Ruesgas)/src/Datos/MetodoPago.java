@@ -1,6 +1,5 @@
 package Datos;
 
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
@@ -14,18 +13,21 @@ public class MetodoPago {
 	
 	private String fechaCaducidad;
 	
-	private String codigoSeguridad;
+	private int codigoSeguridad;
 	
 	private String ciudad;
 	
 	private String direccion;
 	
+	private int codigoUsuario;
+	
 	SimpleDateFormat formatoCaducidad =new SimpleDateFormat("MM/YY");
 
-	public MetodoPago( String numeroTarjeta, String nombreCompleto, String fechaCaducidad,
-			String codigoSeguridad, String ciudad, String direccion) {
+	public MetodoPago( int codigoUsuario, String numeroTarjeta, String nombreCompleto, String fechaCaducidad,
+			int codigoSeguridad, String ciudad, String direccion) {
 		super();
 		
+		this.codigoUsuario = codigoUsuario;
 		this.numeroTarjeta = numeroTarjeta;
 		this.nombreCompleto = nombreCompleto;
 		this.fechaCaducidad = formatoCaducidad.format(fechaCaducidad);
@@ -39,10 +41,11 @@ public class MetodoPago {
 	
 	public MetodoPago() {
 		
+		this.codigoUsuario=0000;
 		this.numeroTarjeta = "0000 0000 0000 0000";
 		this.nombreCompleto = "";
-		this.fechaCaducidad =formatoCaducidad.format(System.currentTimeMillis());
-		this.codigoSeguridad = "000";
+		this.fechaCaducidad ="00/00";
+		this.codigoSeguridad = 000;
 		this.ciudad = "";
 		this.direccion = "";
 	}
@@ -58,7 +61,9 @@ public class MetodoPago {
 
 
 	public void setNumeroTarjeta(String numeroTarjeta) {
-		this.numeroTarjeta = numeroTarjeta;
+		if (numeroTarjeta==null) {
+			this.numeroTarjeta="0";
+		}this.numeroTarjeta = numeroTarjeta;
 	}
 
 
@@ -70,7 +75,9 @@ public class MetodoPago {
 
 
 	public void setNombreCompleto(String nombreCompleto) {
-		this.nombreCompleto = nombreCompleto;
+		if (nombreCompleto==null) {
+			this.nombreCompleto= "0";
+		}this.nombreCompleto = nombreCompleto;
 	}
 
 
@@ -82,18 +89,20 @@ public class MetodoPago {
 
 
 	public void setFechaCaducidad(String fechaCaducidad) {
-		this.fechaCaducidad = fechaCaducidad;
+		if (fechaCaducidad==null) {
+			this.fechaCaducidad="0";
+		}this.fechaCaducidad = fechaCaducidad;
 	}
 
 
 
-	public String getCodigoSeguridad() {
+	public int getCodigoSeguridad() {
 		return codigoSeguridad;
 	}
 
 
 
-	public void setCodigoSeguridad(String codigoSeguridad) {
+	public void setCodigoSeguridad(int codigoSeguridad) {
 		this.codigoSeguridad = codigoSeguridad;
 	}
 
@@ -105,7 +114,9 @@ public class MetodoPago {
 
 
 	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
+		if (ciudad==null) {
+			this.ciudad="0";
+		}this.ciudad = ciudad;
 	}
 
 
@@ -117,7 +128,9 @@ public class MetodoPago {
 
 
 	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+		if (direccion==null) {
+			this.direccion="0";
+		}this.direccion = direccion;
 	}
 
 
@@ -130,6 +143,17 @@ public class MetodoPago {
 
 	public void setFormatoCaducidad(SimpleDateFormat formatoCaducidad) {
 		this.formatoCaducidad = formatoCaducidad;
+	}
+
+
+	public int getCodigoUsuario() {
+		return codigoUsuario;
+	}
+
+
+
+	public void setCodigoUsuario(int codigoUsuario) {
+		this.codigoUsuario = codigoUsuario;
 	}
 
 

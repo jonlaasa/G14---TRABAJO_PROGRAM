@@ -95,7 +95,7 @@ public class Servicio {
 	}
 	else {
 	
-		SimpleDateFormat formato = new SimpleDateFormat("dd/M/yyyy");
+		SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
 		Date date = formato.parse(fecha); // Convierte String a Date
 		String hoy = LocalDateTime.now().toString(); // Convierte Date a String
 		Date now = formato.parse(hoy);
