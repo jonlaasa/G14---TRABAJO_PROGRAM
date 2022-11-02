@@ -1,12 +1,15 @@
 package Main;
 
+import VentanasRegistro.VentanaInicio;
 
 public class Main {
 
 	public static void main(String[] args) {
-
-
-    System.out.println("hola");
+		
+		
+		VentanaInicio vr = new VentanaInicio ();
+		vr.setVisible(true);
+		
 
 	}
 	
