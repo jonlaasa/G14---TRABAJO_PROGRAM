@@ -7,7 +7,6 @@ public class Usuario extends Registro {
 	
 	private String contrasenya; 
 	private String dni;
-	private MetodoPago metodoPago;
 	private int puntos ;
 	
 	private int codigo;
@@ -17,12 +16,10 @@ public class Usuario extends Registro {
 	
 	//Constructor con parametros
 	
-	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String dni,
-			MetodoPago metodoPago) {
+	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String dni) {
 		super(nombre, apellido, usuario);
 		setContrasenya(contrasenya);
 		setDni(dni); 
-		setMetodoPago(metodoPago);
 		setPuntos(0);
 		this.codigo=claveClase;
 		claveClase++;
@@ -39,7 +36,6 @@ public class Usuario extends Registro {
 		super();
 		this.contrasenya = "";
 		this.dni = "";
-		this.metodoPago = new MetodoPago();
 		this.puntos = 0;
 		this.codigo=claveClase;
 		claveClase++;
@@ -76,20 +72,6 @@ public class Usuario extends Registro {
 		}
 	}
 
-
-	public MetodoPago getMetodoPago() {
-		return metodoPago;
-	}
-
-
-	public void setMetodoPago(MetodoPago metodoPago) {
-		if (metodoPago==null) {
-			this.metodoPago=new MetodoPago();
-		}
-		else {
-			this.metodoPago = metodoPago;
-		}
-	}
 
 
 
@@ -130,7 +112,7 @@ public class Usuario extends Registro {
 
 	@Override
 	public String toString() {
-		return "Usuario: " + "Nombre: " + getNombre() +" Apellido: " + getApellido() + "Nombre usuario: "  + getNombreUsuario() + " [contrasenya=" + contrasenya + ", dni=" + dni + ", metodoPago=" + metodoPago 
+		return "Usuario: " + "Nombre: " + getNombre() +" Apellido: " + getApellido() + "Nombre usuario: "  + getNombreUsuario() + " [contrasenya=" + contrasenya + ", dni=" + dni  
 			 + ", puntos=" + puntos;
 	}
 	
