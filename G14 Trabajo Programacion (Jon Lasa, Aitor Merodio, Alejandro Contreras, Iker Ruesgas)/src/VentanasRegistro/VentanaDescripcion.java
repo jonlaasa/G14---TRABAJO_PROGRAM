@@ -24,6 +24,7 @@ public class VentanaDescripcion extends JFrame {
 		getContentPane().add(panelArriba, BorderLayout.NORTH );
 		
 		textArea = new JTextArea();
+		textArea.setEditable(false);
 		scroll = new JScrollPane( textArea );
 		getContentPane().add( scroll, BorderLayout.CENTER );
 		JPanel panelBotonera = new JPanel();
@@ -106,7 +107,7 @@ public class VentanaDescripcion extends JFrame {
 			Scanner scanner = new Scanner( VentanaDescripcion.class.getResourceAsStream( "t_descripcion.txt" ));
 			while (scanner.hasNextLine()) {
 				String lineaEscribir = scanner.nextLine();
-				textArea.append( lineaEscribir + "\n" + "\n" );
+				textArea.append( lineaEscribir + "\n" );
 			}
 			scanner.close();
 		} catch (Exception e) {

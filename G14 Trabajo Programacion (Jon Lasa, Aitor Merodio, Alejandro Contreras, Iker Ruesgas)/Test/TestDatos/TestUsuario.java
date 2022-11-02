@@ -20,8 +20,8 @@ public class TestUsuario {
 	@Before
 	public void setUp() throws Exception {
 		
-		u1= new Usuario ("Alejandro", "Contreras","a_contreras" ,"ab236", "76743324J", new MetodoPago ());
-		u5= new Usuario("Mikel", "Ortiz","mikel" ,"erte", "76675643L", new MetodoPago ());
+		u1= new Usuario ("Alejandro", "Contreras","a_contreras" ,"ab236", "76743324J");
+		u5= new Usuario("Mikel", "Ortiz","mikel" ,"erte", "76675643L");
 		u6 = new Usuario();
 		
 		
@@ -39,7 +39,7 @@ public class TestUsuario {
 		//No comprobamos aqui el MetodoPago, ya que no seran iguales, por el "System.currentTimeMillis, variara por muy poco 
 		
 		//Comprobamos con valores vacios.
-		Usuario u2 = new Usuario ("","","","", "",new MetodoPago());
+		Usuario u2 = new Usuario ("","","","", "");
 		assertEquals("", u2.getNombre());
 		assertEquals("", u2.getApellido());
 		assertEquals("", u2.getNombreUsuario());
@@ -52,7 +52,7 @@ public class TestUsuario {
 		//No comprobamos con null, ya que si se da, lo sustituimos a traves del set. 
 		
 		
-		Usuario u3 = new Usuario (null,null,null,null, null,new MetodoPago());
+		Usuario u3 = new Usuario (null,null,null,null, null);
 		assertEquals("", u3.getNombre());
 		assertEquals("", u3.getApellido());
 		assertEquals("", u3.getNombreUsuario());
@@ -124,24 +124,7 @@ public class TestUsuario {
 		
 	}
 	
-	
-//	
-//	@Test
-//	public void testGetMetodoPago() {
-//		assertEquals(metodopag, u5.getDni() );
-//		
-//		//El vacio no comprobamos por lo dicho anteriormente sobre esta clase y sus constructores (MIRAR CODIGO DE LA CLASE)	
-//	}
-//	
-//	@Test
-//	public void testsetMetodoPago() {
-//		MetodoPago metodopag2 =new MetodoPago("julen", "ruesgas","2023","123", "Bilbao", "Indautux 10 1.C" ); 
-//		u6.setMetodoPago(metodopag2);
-//		assertEquals(metodopag2, u6.getMetodoPago());
-//		
-//		//El vacio no comprobamos por lo dicho anteriormente sobre esta clase , ya que creara nuevo a partir del vacio (MIRAR CODIGO)
-//		
-//	}
+
 	
 	
 	
