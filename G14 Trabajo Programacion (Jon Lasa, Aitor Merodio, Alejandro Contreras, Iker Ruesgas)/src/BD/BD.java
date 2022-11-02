@@ -80,7 +80,16 @@ public class BD {
 		
 	}
 	
+	public boolean login(String usr, String contra ) throws Exception{
+		Connection con = abrirBaseDatos("baseDatos");
+		String sql ="SELECT Usuario,Contrasenya FROM Usuario where Usuario="+ usr+ "and Contrasenya="+ contra; 
+		
 	
+		
+		
+		return false;
+		
+	}
 	
 	
 	
