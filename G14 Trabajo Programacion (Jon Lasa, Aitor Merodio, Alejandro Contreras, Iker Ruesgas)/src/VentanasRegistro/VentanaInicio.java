@@ -5,17 +5,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 
-import BD.BD;
 
 public class VentanaInicio extends JFrame {
 

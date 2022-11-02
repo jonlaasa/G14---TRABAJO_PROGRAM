@@ -1,6 +1,5 @@
 package Main;
 
-import VentanasRegistro.VentanaDescripcion;
 import VentanasRegistro.VentanaInicio;
 
 public class Main {

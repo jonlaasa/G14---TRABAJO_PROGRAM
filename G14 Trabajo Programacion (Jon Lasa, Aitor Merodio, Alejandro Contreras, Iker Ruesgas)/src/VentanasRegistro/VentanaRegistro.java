@@ -6,26 +6,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import org.sqlite.core.CorePreparedStatement;
-import org.sqlite.jdbc3.JDBC3PreparedStatement;
 
 import BD.BD;
-import BD.usuariosSQL;
 import Datos.Usuario;
 
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.sound.sampled.Port;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
 
 public class VentanaRegistro extends JFrame {
