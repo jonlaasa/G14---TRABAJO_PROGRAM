@@ -35,7 +35,7 @@ public class usuariosSQL extends BD{
 	public boolean registrar(Usuario usr) throws Exception {
 		
 	Connection con = abrirBaseDatos("baseDatos");
-	String sql = "INSERT INTO Usuario (Nombre,	Apellidos, Usuario, Contrasenya, DNI) VALUES(?,?,?,?,?)";
+	String sql = "INSERT INTO Usuario (Nombre,	Apellidos, Usuario, Contrasenya, DNI, puntosDeusto ) VALUES(?,?,?,?,?,?)";
 	
 	try {
 		pst=con.prepareStatement(sql);
@@ -44,6 +44,7 @@ public class usuariosSQL extends BD{
 		pst.setString(3, usr.getNombreUsuario());
 		pst.setString(4, usr.getContrasenya());
 		pst.setString(5, usr.getDni());
+		pst.setInt(6, 0);
 		pst.execute();
 		
 		
