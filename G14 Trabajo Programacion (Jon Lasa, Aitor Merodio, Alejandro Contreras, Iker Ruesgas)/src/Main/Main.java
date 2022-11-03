@@ -1,5 +1,7 @@
 package Main;
 
+import VentanasMenu.ini;
+import VentanasMenu.ventperf;
 import VentanasRegistro.VentanaInicio;
 
 public class Main {
@@ -7,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		VentanaInicio vr = new VentanaInicio ();
+		ventperf vr = new ventperf ();
 		vr.setVisible(true);
 		
 
