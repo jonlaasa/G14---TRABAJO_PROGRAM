@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		ventperf vr = new ventperf ();
+		VentanaInicio vr = new VentanaInicio();
 		vr.setVisible(true);
 		
 

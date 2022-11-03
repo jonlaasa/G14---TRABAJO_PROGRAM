@@ -6,9 +6,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import BD.BD;
 import VentanasAdministrador.VentanaLoginAdmin;
+import VentanasMenu.VentanaSeleccionServicio;
+import VentanasMenu.ini;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -98,6 +104,30 @@ public class VentanaLogin extends JFrame {
 			vr = new VentanaLoginAdmin();
 			vr.setVisible(true);
 			dispose();
+		});
+		
+		btnIniciarSesion.addActionListener(e->{
+			String usr=usuario.getText();
+			String contra=contrasenya.getText();
+			BD bd = new BD();
+			
+			try {
+				bd.login(usr, contra);
+				JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
+				ini vr = null;
+				vr = new ini();
+				vr.setVisible(true);
+				dispose();			
+				
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Inicio de sesion incorrecto");
+			}
+			
+			
+			
+			
 		});
 	}
 }

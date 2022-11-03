@@ -3,6 +3,7 @@ package BD;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -82,9 +83,15 @@ public class BD {
 	
 	public boolean login(String usr, String contra ) throws Exception{
 		Connection con = abrirBaseDatos("baseDatos");
-		String sql ="SELECT Usuario,Contrasenya FROM Usuario where Usuario="+ usr+ "and Contrasenya="+ contra; 
+		String sql ="SELECT Usuario,Contrasenya FROM Usuario where Usuario=?and Contrasenya=?"; 
+		PreparedStatement rst = con.prepareStatement(sql);
+		ResultSet rs = rst.executeQuery();
+		boolean valido=false;
 		
-	
+		if(rs.next()) {
+			valido=true;
+		}
+		
 		
 		
 		return false;
