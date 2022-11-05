@@ -42,8 +42,9 @@ public class ini extends JFrame {
 	 * Create the frame.
 	 */
 	public ini() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 506, 334);
+		setBounds(100, 100, 451, 334);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(new Color(0, 204, 255));
@@ -84,7 +85,7 @@ public class ini extends JFrame {
 		
 		JButton btnNewButton_1 = new JButton("Vuelos");
 		btnNewButton_1.setIcon(null);
-		btnNewButton_1.setBounds(10, 35, 111, 23);
+		btnNewButton_1.setBounds(10, 35, 137, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
@@ -93,11 +94,11 @@ public class ini extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JButton btnNewButton_2 = new JButton("Buses");
-		btnNewButton_2.setBounds(10, 101, 111, 23);
+		btnNewButton_2.setBounds(10, 101, 137, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Viaje Combinado");
-		btnNewButton_3.setBounds(10, 167, 111, 23);
+		btnNewButton_3.setBounds(10, 167, 133, 23);
 		contentPane.add(btnNewButton_3);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
@@ -106,7 +107,7 @@ public class ini extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("EUROPA");
-		lblNewLabel_3.setBounds(41, 11, 46, 14);
+		lblNewLabel_3.setBounds(41, 11, 80, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("NACIONAL");
