@@ -68,12 +68,13 @@ public class ini extends JFrame {
 		JMenu mnNewMenu_4 = new JMenu("TOP");
 		menuBar.add(mnNewMenu_4);
 		
-		JButton btnNewButton = new JButton("");
-		menuBar.add(btnNewButton);
-		btnNewButton.setIcon(new ImageIcon("imagenes/icons//kisspng-computer-icons-user-membership-vector-5b498fc76f2a07.4607730515315475914553.jpg"));
+		JButton btnUsuario = new JButton("");
+		menuBar.add(btnUsuario);
+		btnUsuario.setIcon(new ImageIcon("imagenes/icons//kisspng-computer-icons-user-membership-vector-5b498fc76f2a07.4607730515315475914553.jpg"));
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -122,8 +123,23 @@ public class ini extends JFrame {
 		lblNewLabel_6.setIcon(new ImageIcon("imagenes/icons/avionNN.jpg"));
 		lblNewLabel_6.setBounds(272, 11, 139, 179);
 		contentPane.add(lblNewLabel_6);
+		
+		
+		
+		
+		btnUsuario.addActionListener(e -> {
+			
+			
+			VentanaPerfil vp = new VentanaPerfil();
+			vp.setVisible(true);
+			
+			
+			
+		});
+		
+		
 	}
-
+	
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {

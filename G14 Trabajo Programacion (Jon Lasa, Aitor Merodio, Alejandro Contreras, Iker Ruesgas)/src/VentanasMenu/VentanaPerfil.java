@@ -18,7 +18,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JTextField;
 import java.awt.Color;
 
-public class ventperf extends JFrame {
+public class VentanaPerfil extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -31,7 +31,7 @@ public class ventperf extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ventperf frame = new ventperf();
+					VentanaPerfil frame = new VentanaPerfil();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class ventperf extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ventperf() {
+	public VentanaPerfil() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

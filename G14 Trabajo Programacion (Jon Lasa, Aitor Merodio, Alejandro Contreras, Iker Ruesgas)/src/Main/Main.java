@@ -1,7 +1,7 @@
 package Main;
 
 import VentanasMenu.ini;
-import VentanasMenu.ventperf;
+import VentanasMenu.VentanaPerfil;
 import VentanasRegistro.VentanaInicio;
 
 public class Main {
