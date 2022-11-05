@@ -22,55 +22,54 @@ public class Servicio {
 	private int duracion;
 	private String origen;
 	private String destino;
-	private int precio;
+	private double precio;
 	private TipoServicio tipoServicio;
 	private int plazasRestantes;
 	
 	//Constructor con parametros
-	public Servicio(int codigo, String fecha, int duracion,  String origen, String destino, int precio, TipoServicio tipoServicio,
-			int plazasRestantes) {
+	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
 		super();
-		this.codigo = codigo;
-		this.fecha = fecha;
-		this.duracion= duracion;
-		this.origen = origen;
-		this.destino = destino;
-		this.precio = precio;
-		this.tipoServicio = tipoServicio;
-		this.plazasRestantes = plazasRestantes;
+		setCodigo(codigo);
+		this.fecha=fecha;
+		setDuracion(duracion);
+		setOrigen(origen);
+		setDestino(destino);
+		setPrecio(precio);
+		setTipoServicio(tipoServicio);
+		setPlazasRestantes(plazas);
 	}
 	
 	
 	//Por defecto 100 plazas restantes
 	
 	
-	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, int precio, TipoServicio tipoServicio) {
+	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
 		super();
-		this.codigo = codigo;
-		this.fecha = fecha;
-		this.duracion = duracion;
-		this.origen = origen;
-		this.destino = destino;
-		this.precio = precio;
-		this.tipoServicio = tipoServicio;
-		this.plazasRestantes = 100;
+		setCodigo(codigo);
+		setFecha(fecha);
+		setDuracion(duracion);
+		setOrigen(origen);
+		setDestino(destino);
+		setPrecio(precio);
+		setTipoServicio(tipoServicio);
+		setPlazasRestantes(100);
 	}
 	
 	//Constructor sin parametros
 	public Servicio() {}
 		
 	//Constructor con tipoServicio y fecha solo
-	public Servicio(String fecha, TipoServicio tipoServicio) {
+	public Servicio(String fecha, TipoServicio tipoServicio) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
 		super();
-		this.codigo = 0000;
-		this.fecha = fecha;
-		this.duracion=0;
-		this.origen = "";
-		this.destino = "";
-		this.precio = 0;
-		this.tipoServicio = tipoServicio;
-		this.plazasRestantes = 100;
-	}
+	         setCodigo(codigo);
+			setFecha("");
+			setDuracion(0);
+			setOrigen("");
+			setDestino("");
+			setPrecio(0);
+			setTipoServicio(tipoServicio);
+			setPlazasRestantes(100);
+		}
 
 
 	public int getCodigo() {
@@ -79,6 +78,10 @@ public class Servicio {
 
 
 	public void setCodigo(int codigo) {
+		if (codigo<0) {
+			codigo=000;
+			
+		}
 			this.codigo = codigo;
 	}
 
@@ -115,7 +118,8 @@ public class Servicio {
 
 
 	public void setDuracion(int duracion) throws DuracionException {
-	if (duracion<600) {
+	if (duracion<0) {
+		this.duracion=0;
 		throw new DuracionException( "Duracion incorrecta: " + getDuracionString());
 	}
 		this.duracion = duracion;
@@ -152,12 +156,12 @@ public class Servicio {
 	}
 
 
-	public int getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
 
-	public void setPrecio(int precio) throws PrecioException {
+	public void setPrecio(double precio) throws PrecioException {
 		if (precio<0) {
 			throw new PrecioException( "Precio incorrecta: " + precio);
 		}
@@ -181,7 +185,7 @@ public class Servicio {
 
 
 	public void setPlazasRestantes(int plazasRestantes) throws PlazasRestantesException {
-		if (plazasRestantes>100) {
+		if (plazasRestantes>100 | plazasRestantes <0) {
 			throw new PlazasRestantesException("Número de plazas incorrecto: "+ plazasRestantes);
 		}
 			this.plazasRestantes = plazasRestantes;

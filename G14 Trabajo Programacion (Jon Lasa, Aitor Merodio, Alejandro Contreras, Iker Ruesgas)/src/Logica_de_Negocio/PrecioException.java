@@ -5,3 +5,4 @@ public class PrecioException extends Exception {
 		super(mensaje);
 	}
 }
+

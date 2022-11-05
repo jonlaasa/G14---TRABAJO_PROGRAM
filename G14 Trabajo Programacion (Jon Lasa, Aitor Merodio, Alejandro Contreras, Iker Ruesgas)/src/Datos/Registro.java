@@ -1,5 +1,7 @@
 package Datos;
 
+import Logica_de_Negocio.LongitudStringException;
+
 public class Registro {
 	
 	private String nombre;
@@ -8,7 +10,8 @@ public class Registro {
 	
 	
 	// Constructor con parametros
-	public Registro(String nombre, String apellido, String nombreUsuario) {super();
+	public Registro(String nombre, String apellido, String nombreUsuario) throws LongitudStringException {
+		super();
 		setNombre(nombre);
 		setApellido(apellido);
 		setNombreUsuario(nombreUsuario);
@@ -59,9 +62,9 @@ public class Registro {
 	}
 
 
-	public void setNombreUsuario(String nombreUsuario) {
-		if (nombreUsuario==null) {
-			this.nombreUsuario ="";
+	public void setNombreUsuario(String nombreUsuario) throws LongitudStringException {
+		if (nombreUsuario==null|nombreUsuario.length()<6) {
+			throw new LongitudStringException("Parametros usuario/contrasenya tiene que tener mas de 6 caracteres: ");
 		}
 		else {
 			this.nombreUsuario = nombreUsuario;

@@ -5,3 +5,5 @@ public class PlazasRestantesException extends Exception {
 		super(mensaje);
 	}
 }
+
+

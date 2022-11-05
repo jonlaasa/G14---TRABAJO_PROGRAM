@@ -9,13 +9,13 @@ import org.junit.Test;
 import Datos.MetodoPago;
 import Datos.Registro;
 import Datos.Usuario;
+import Logica_de_Negocio.LongitudStringException;
 
 public class TestUsuario {
 	
 	Usuario u1;
 	Usuario u5;
 	Usuario u6;
-	MetodoPago metodopag;
 
 	@Before
 	public void setUp() throws Exception {
@@ -29,7 +29,7 @@ public class TestUsuario {
 
 
 	@Test
-	public void testConstructorConParametros() {
+	public void testConstructorConParametros() throws LongitudStringException {
 		assertEquals("Alejandro", u1.getNombre());
 		assertEquals("Contreras", u1.getApellido());
 		assertEquals("a_contreras", u1.getNombreUsuario());
@@ -89,7 +89,7 @@ public class TestUsuario {
 	
 	@Test
 	
-	public void testSetContrasenya() {
+	public void testSetContrasenya() throws LongitudStringException {
 		u6.setContrasenya("aaaaa");
 		assertEquals("aaaaa", u6.getContrasenya());
 		

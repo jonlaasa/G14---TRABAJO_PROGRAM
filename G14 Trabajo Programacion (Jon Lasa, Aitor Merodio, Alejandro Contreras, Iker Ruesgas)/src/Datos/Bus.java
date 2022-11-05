@@ -1,8 +1,13 @@
 package Datos;
 
 import java.sql.Date;
+import java.text.ParseException;
 
 import Enum.TipoServicio;
+import Logica_de_Negocio.DuracionException;
+import Logica_de_Negocio.FechaException;
+import Logica_de_Negocio.PlazasRestantesException;
+import Logica_de_Negocio.PrecioException;
 
 public class Bus extends Servicio {
 
@@ -10,17 +15,17 @@ public class Bus extends Servicio {
 
 	
 	//Constructor con parametros
-	public Bus(int codigo, Date fecha, int duracion,  String origen, String destino, double precio, TipoServicio tipoServicio,
-			int plazarRestantes, String companya) {
+	public Bus(int codigo, String fecha, int duracion,  String origen, String destino, double precio, TipoServicio tipoServicio,
+			int plazarRestantes, String companya) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
 		super(codigo, fecha, duracion,  origen, destino, precio, tipoServicio, plazarRestantes);
-		this.companya = companya;
+		setCompanya(companya);
 	}
 
 	
 	//Constructor sin parametros, basandonos en el super de SERVICIO
-	public Bus(Date fecha, TipoServicio tipoServicio) {
+	public Bus(String fecha, TipoServicio tipoServicio) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
 		super(fecha, tipoServicio);
-		this.companya = "Sin companya";
+		setCompanya("Sin compañia");
 	}
 
 
@@ -30,7 +35,12 @@ public class Bus extends Servicio {
 
 
 	public void setCompanya(String companya) {
-		this.companya = companya;
+		if(companya ==null) {
+			this.companya="";
+		}
+		else {
+			this.companya = companya;
+		}
 	}
 
 

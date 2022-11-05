@@ -5,3 +5,5 @@ public class DuracionException extends Exception {
 		super(mensaje);
 	}
 }
+
+

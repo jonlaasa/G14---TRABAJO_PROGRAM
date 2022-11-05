@@ -12,10 +12,11 @@ public class VentanaDescripcion extends JFrame {
 	JScrollPane scroll;  
 	
 	public VentanaDescripcion() {
+		
+		//Creamos la  ventana Descripcion 
 		setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
 		setSize( 500, 600 );
 		setLocationRelativeTo( null );
-		// Pone la ventana relativa a la pantalla
 		JPanel panelArriba = new JPanel();
 		JLabel labelDescripcion = new JLabel("Descripcion de T&T");
 		labelDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 22));
@@ -23,11 +24,16 @@ public class VentanaDescripcion extends JFrame {
 		panelArriba.add(labelDescripcion,BorderLayout.CENTER);
 		getContentPane().add(panelArriba, BorderLayout.NORTH );
 		
+		//Creamos los JTextArea y lo introducimos en el JScrollPane
+		
 		textArea = new JTextArea();
 		textArea.setEditable(false);
 		scroll = new JScrollPane( textArea );
 		getContentPane().add( scroll, BorderLayout.CENTER );
 		JPanel panelBotonera = new JPanel();
+		
+		//Botones para subir y bajar el texto, que funcionaran con hilos 
+		
 		JButton botonSubir = new JButton( "^" );
 		JButton botonBajar = new JButton( "v" );
 		JButton bcerrar = new JButton("Cerrar");
@@ -35,6 +41,8 @@ public class VentanaDescripcion extends JFrame {
 		panelBotonera.add( botonBajar );
 		panelBotonera.add( bcerrar );
 		
+		
+		//SI PULSAMOSS CERRAR, CERRAMOS LA DESCRIPCION
 		
 		bcerrar.addActionListener((e) -> {
 			
@@ -48,8 +56,10 @@ public class VentanaDescripcion extends JFrame {
 		getContentPane().add( panelBotonera, BorderLayout.SOUTH );
 		
 		
-		
+		//Cargamos el fichero .txt
 		this.cargaDescripcion();
+		
+		//FUNCIONAMIENTO BOTONES SUBIR Y BAJAR (LLAMAN A LA FUNCION PARA MOVERLO, PASANDO COMO PARAMETRO EL VALOR ACTUAL +-UN INCREMENTO
 		botonSubir.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -64,12 +74,15 @@ public class VentanaDescripcion extends JFrame {
 		});
 	}
 	
-	private Thread hiloUltimo = null;  // El último hilo programado
+	//A traves de hilos, haremos que si clica dos veces, se guarden y se ejecuten en serie. 
+	
+	private Thread hiloUltimo = null;  
 	
 	private void muevePagina( int pixelsVertical ) {
-		Thread hiloAEjecutar = new Thread() {  // ...porque solo lo usamos aquí
+		Thread hiloAEjecutar = new Thread() {  // 
 			public void run() {
-				if (hiloUltimo!=null) {  // Si hay otro hilo funcionando esperar a que acabe
+				if (hiloUltimo!=null) {  // Si hay otro hilo funcionando esperar a que acabe A TRAVES DE JOIN CON ESE. EL NUEVO, LO FIJAMOS COMO ULTIMO
+					
 					try {
 						Thread anterior = hiloUltimo;
 						hiloUltimo = this;
@@ -81,20 +94,18 @@ public class VentanaDescripcion extends JFrame {
 					hiloUltimo = this;
 				}
 				JScrollBar bVertical = scroll.getVerticalScrollBar();
-				// bVertical.setValue( bVertical.getValue() + pixelsVertical );
 				if (pixelsVertical>0) {
 					for (int i=0; i<pixelsVertical; i++) {
 						bVertical.setValue( bVertical.getValue() + 1 );
 						try {Thread.sleep(10); } catch (InterruptedException e) {}
 					}
 				} else {
-					// for (int i=0; i>pixelsVertical; i--) {
 					for (int i=0; i<Math.abs(pixelsVertical); i++) {
 						bVertical.setValue( bVertical.getValue() - 1 );
 						try {Thread.sleep(10); } catch (InterruptedException e) {}
 					}
 				}
-				if (hiloUltimo==this) {  // Si soy el último, marco que ya no queda ninguno
+				if (hiloUltimo==this) {  // SI ES EL ULTIMO, EJECUTA Y EL ULTIMO QUEDA A NULL
 					hiloUltimo = null;
 				}
 			}
@@ -102,15 +113,22 @@ public class VentanaDescripcion extends JFrame {
 		hiloAEjecutar.start();
 	}
 	
+	
+	//LECTURA DE TEXTO A TRAVES DE SCANNER
+	
 	public void cargaDescripcion() { 
 		try {
 			Scanner scanner = new Scanner( VentanaDescripcion.class.getResourceAsStream( "t_descripcion.txt" ));
 			while (scanner.hasNextLine()) {
 				String lineaEscribir = scanner.nextLine();
-				textArea.append( lineaEscribir + "\n" );
+				textArea.append( lineaEscribir + "\n" + "\n" );
 			}
+			
+			//COLOCAMOS LA POSICION INICIAL DEL TEXTO EN LA PARTE DE MAS ARRIBA (LOGICAMENTE)
+			textArea.setCaretPosition(0);
 			scanner.close();
 		} catch (Exception e) {
+			//SI NO CONSEGUIMOS CARGARLO, MENSAJE PARA NOTIFICARLO
 			JOptionPane.showMessageDialog( this, "El fichero con la descripcion no se ha podido cargar" );
 		}
 	}

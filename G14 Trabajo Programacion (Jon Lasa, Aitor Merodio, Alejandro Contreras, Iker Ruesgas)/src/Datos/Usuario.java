@@ -2,6 +2,8 @@ package Datos;
 
 import java.util.ArrayList;
 
+import Logica_de_Negocio.LongitudStringException;
+
 public class Usuario extends Registro {
 	
 	
@@ -11,18 +13,15 @@ public class Usuario extends Registro {
 	
 	private int codigo;
 	
-	private static int claveClase=1;
 	
 	
 	//Constructor con parametros
 	
-	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String dni) {
+	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String dni) throws LongitudStringException {
 		super(nombre, apellido, usuario);
 		setContrasenya(contrasenya);
 		setDni(dni); 
 		setPuntos(0);
-		this.codigo=claveClase;
-		claveClase++;
 		
 	
 		
@@ -37,8 +36,6 @@ public class Usuario extends Registro {
 		this.contrasenya = "";
 		this.dni = "";
 		this.puntos = 0;
-		this.codigo=claveClase;
-		claveClase++;
 	
 	}
 
@@ -48,9 +45,9 @@ public class Usuario extends Registro {
 	}
 
 
-	public void setContrasenya(String contrasenya) {
-		if (contrasenya==null) {
-			this.contrasenya="";
+	public void setContrasenya(String contrasenya) throws LongitudStringException {
+		if (contrasenya==null|contrasenya.length()<6) {
+			throw new LongitudStringException("Parametros usuario/contrasenya tiene que tener mas de 6 caracteres: ");
 		}
 		else {
 			this.contrasenya = contrasenya;
@@ -62,6 +59,8 @@ public class Usuario extends Registro {
 		return dni;
 	}
 
+	
+	//FALTA EL PATTERN DEL DNI
 
 	public void setDni(String dni) {
 		if (dni==null) {
@@ -99,15 +98,7 @@ public class Usuario extends Registro {
 		this.codigo = codigo;
 	}
 
-
-	public static int getClaveClase() {
-		return claveClase;
-	}
-
-
-	public static void setClaveClase(int claveClase) {
-		Usuario.claveClase = claveClase;
-	}
+	
 
 
 	@Override
