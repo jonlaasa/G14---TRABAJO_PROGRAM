@@ -51,7 +51,7 @@ public class Registro {
 
 	public void setApellido(String apellido){
 		if (apellido==null) {
-			this.apellido=apellido;
+			this.apellido="";
 		}
 		else {
 			this.apellido = apellido;
