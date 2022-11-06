@@ -1,4 +1,4 @@
-package Logica_de_Negocio;
+package logicaDeNegocio;
 
 public class FechaValidaException extends Exception {
 	public FechaValidaException (String mensaje) {

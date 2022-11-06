@@ -2,7 +2,10 @@ package Datos;
 
 import java.util.ArrayList;
 
-import Logica_de_Negocio.LongitudStringException;
+import javax.swing.JOptionPane;
+
+import logicaDeNegocio.LongitudStringException;
+import logicaDeNegocio.StringValidoException;
 
 public class Usuario extends Registro {
 	
@@ -47,7 +50,9 @@ public class Usuario extends Registro {
 
 	public void setContrasenya(String contrasenya) throws LongitudStringException {
 		if (contrasenya==null|contrasenya.length()<6) {
+			JOptionPane.showMessageDialog(null, "La contraseña debe tener mas de 6 caracteres");
 			throw new LongitudStringException("Parametros usuario/contrasenya tiene que tener mas de 6 caracteres: ");
+			
 		}
 		else {
 			this.contrasenya = contrasenya;

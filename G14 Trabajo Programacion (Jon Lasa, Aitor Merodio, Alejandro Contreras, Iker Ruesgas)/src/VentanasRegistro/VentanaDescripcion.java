@@ -1,7 +1,6 @@
 package VentanasRegistro;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.*;

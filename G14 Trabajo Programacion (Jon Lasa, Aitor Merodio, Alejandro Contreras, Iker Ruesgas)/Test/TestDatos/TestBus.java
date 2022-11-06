@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import Enum.TipoServicio;
-import Logica_de_Negocio.DuracionException;
+import logicaDeNegocio.DuracionException;
 import Datos.Bus;
 
 public class TestBus {

@@ -1,4 +1,4 @@
-package Logica_de_Negocio;
+package logicaDeNegocio;
 
 public class PlazasRestantesException extends Exception {
 	public PlazasRestantesException (String mensaje) {

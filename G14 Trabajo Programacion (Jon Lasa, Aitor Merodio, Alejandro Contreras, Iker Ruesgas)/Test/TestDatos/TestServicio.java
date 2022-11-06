@@ -10,9 +10,9 @@ import org.junit.Test;
 
 import Datos.Servicio;
 import Enum.TipoServicio;
-import Logica_de_Negocio.FechaException;
-import Logica_de_Negocio.PlazasRestantesException;
-import Logica_de_Negocio.PrecioException;
+import logicaDeNegocio.FechaException;
+import logicaDeNegocio.PlazasRestantesException;
+import logicaDeNegocio.PrecioException;
 
 public class TestServicio {
 
