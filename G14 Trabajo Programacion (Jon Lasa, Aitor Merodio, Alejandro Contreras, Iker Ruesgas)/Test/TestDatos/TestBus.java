@@ -10,9 +10,9 @@ import Logica_de_Negocio.DuracionException;
 import Datos.Bus;
 
 public class TestBus {
-	Bus b1;
-	Bus b2;
-	Bus b3;
+		Bus b1;
+		Bus b2;
+		Bus b3;
 	@Before
 	public void setUp() throws Exception {
 		
@@ -68,13 +68,13 @@ public class TestBus {
 	
 	
 	//EL CONSTRUCTOR SIN PARAMETROS FUNCIONA CON EL SUPER (EL DE SERVICIO YA PROBADO ANTERIORMENTE) 
-//	AÑADE SOLO EL SET COMPAÑIA, YA PROBADO ANTERIORMENTE
+//	ANYADE SOLO EL SET COMPANYIA, YA PROBADO ANTERIORMENTE
 	
 	
-	//AHORA PROBAREMOS LOS GET Y SET DE LA COMPAÑIA
+	//AHORA PROBAREMOS LOS GET Y SET DE LA COMPANYIA
 	
 	@Test
-	public void testGetCompañia() {
+	public void testGetCompanya() {
 		assertEquals("Alsa", b1.getCompanya() );
 		assertEquals("",b2.getCompanya() );
 		//NULO NO PODRA SER
@@ -83,7 +83,7 @@ public class TestBus {
 	
 	
 	@Test
-	public void testSetCompañia() {
+	public void testSetCompanya() {
 		
 		b1.setCompanya("Bizkaibus");
 		assertEquals("Bizkaibus", b1.getCompanya() );

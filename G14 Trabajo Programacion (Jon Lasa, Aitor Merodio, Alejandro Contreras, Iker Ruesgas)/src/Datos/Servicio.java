@@ -1,12 +1,6 @@
 package Datos;
 
-//import java.sql.Date;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-
-import java.util.Date;
+import java.sql.Date;
 
 import Enum.TipoServicio;
 import Logica_de_Negocio.DuracionException;
@@ -27,10 +21,10 @@ public class Servicio {
 	private int plazasRestantes;
 	
 	//Constructor con parametros
-	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
+	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas) throws FechaException, DuracionException, PrecioException, PlazasRestantesException {
 		super();
 		setCodigo(codigo);
-		this.fecha=fecha;
+		setFecha(fecha);
 		setDuracion(duracion);
 		setOrigen(origen);
 		setDestino(destino);
@@ -43,7 +37,7 @@ public class Servicio {
 	//Por defecto 100 plazas restantes
 	
 	
-	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
+	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) throws FechaException, DuracionException, PrecioException, PlazasRestantesException {
 		super();
 		setCodigo(codigo);
 		setFecha(fecha);
@@ -59,7 +53,7 @@ public class Servicio {
 	public Servicio() {}
 		
 	//Constructor con tipoServicio y fecha solo
-	public Servicio(String fecha, TipoServicio tipoServicio) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
+	public Servicio(String fecha, TipoServicio tipoServicio) throws FechaException, DuracionException, PrecioException, PlazasRestantesException {
 		super();
 	         setCodigo(codigo);
 			setFecha("");
@@ -87,26 +81,20 @@ public class Servicio {
 
 
 	public String getFecha() {
-		
 		return fecha;
 	}
 
-	public void setFecha(String fecha) throws FechaException, ParseException {
-    
-	if (fecha==null) {
-		this.fecha="";
+	public void setFecha(String fecha) throws FechaException {
+ 
+	    java.sql.Date date1=java.sql.Date.valueOf(fecha);//Convertir string en sql date    	
+        long millis=System.currentTimeMillis();  
+        java.sql.Date date2=new java.sql.Date(millis);  
+        int diferencia= date1.compareTo(date2);  
+		
+	if (fecha==null || diferencia<=0) {
+		throw new FechaException( "Fecha incorrecta: " + fecha);
 	}
 	else {
-	
-		SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
-		Date date = formato.parse(fecha); // Convierte String a Date
-		String hoy = LocalDateTime.now().toString(); // Convierte Date a String
-		Date now = formato.parse(hoy);
-		int diferencia;
-		diferencia= date.compareTo(now);
-		if (diferencia<=0) {
-			throw new FechaException( "Fecha incorrecta: " + fecha);
-		}
 			this.fecha = fecha;
 		}
 	}
@@ -185,7 +173,7 @@ public class Servicio {
 
 
 	public void setPlazasRestantes(int plazasRestantes) throws PlazasRestantesException {
-		if (plazasRestantes>100 | plazasRestantes <0) {
+		if (plazasRestantes>=100 || plazasRestantes <0) {
 			throw new PlazasRestantesException("Número de plazas incorrecto: "+ plazasRestantes);
 		}
 			this.plazasRestantes = plazasRestantes;

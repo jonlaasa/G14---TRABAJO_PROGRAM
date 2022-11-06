@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Datos.Registro;
+import Logica_de_Negocio.LongitudStringException;
 
 public class TestRegistro {
 
@@ -31,7 +32,7 @@ public class TestRegistro {
 
 
 	@Test
-	public void testConstructorConParametros() {
+	public void testConstructorConParametros() throws LongitudStringException {
 		assertEquals("Iker", r1.getNombre() );
 		assertEquals("Sanz", r1.getApellido() );
 		assertEquals("iker_sanz", r1.getNombreUsuario() );
@@ -55,9 +56,9 @@ public class TestRegistro {
 		
 	}
 	
-	//HEMOS DISEÑADO  EL CODIGO DE SET NOMBRE DE MODO QUE NUNCA SE PUEDA PONER NULO, DE MODO QUE EN EL GET NUNCA TENDREMOS VALO NULO
+	//HEMOS DISEï¿½ADO  EL CODIGO DE SET NOMBRE DE MODO QUE NUNCA SE PUEDA PONER NULO, DE MODO QUE EN EL GET NUNCA TENDREMOS VALO NULO
 	@Test
-	public void testGetNombre() {
+	public void testGetNombre() throws LongitudStringException {
 		
 		Registro r4 = new Registro("Asier","Pintos", "a_Pintos");
 		
@@ -116,7 +117,7 @@ public class TestRegistro {
 	
 	
 	@Test
-	public void testSetNombreUsuario() {
+	public void testSetNombreUsuario() throws LongitudStringException {
 		r5.setNombreUsuario("x_krl");
 		assertEquals("x_krl", r5.getNombreUsuario() );
 		

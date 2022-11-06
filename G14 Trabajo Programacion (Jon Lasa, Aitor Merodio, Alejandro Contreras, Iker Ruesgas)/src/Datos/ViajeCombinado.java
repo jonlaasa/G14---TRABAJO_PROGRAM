@@ -14,7 +14,6 @@ public class ViajeCombinado extends Servicio {
 	
 	public ViajeCombinado(int codigo, Date fecha, int duracion, String origen, String destino, double precio,
 			TipoServicio tipoServicio, int plazarRestantes, int ntrasbordo, ArrayList<String> nombreTrasbordo) {
-		super(codigo, fecha, duracion, origen, destino, precio, tipoServicio, plazarRestantes);
 		this.ntrasbordo = ntrasbordo;
 		this.nombreTrasbordo = nombreTrasbordo;
 	}
@@ -22,7 +21,6 @@ public class ViajeCombinado extends Servicio {
 	
 	//Constructor sin parametros usando los de la clase padre de la que hereda (SERVICIO)
 	public ViajeCombinado(Date fecha,TipoServicio tipoServicio) {
-		super(fecha, tipoServicio);
 		this.ntrasbordo = 0;
 		this.nombreTrasbordo = new ArrayList<String> ();
 	}
