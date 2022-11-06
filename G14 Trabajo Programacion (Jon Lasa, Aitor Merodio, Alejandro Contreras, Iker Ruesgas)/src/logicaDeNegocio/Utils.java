@@ -1,6 +1,4 @@
-package Logica_de_Negocio;
-
-
+package logicaDeNegocio;
 
 public class Utils {
 	
@@ -14,7 +12,7 @@ public class Utils {
 			return true;
 		}
 		else {
-			throw new StringValidoException();
+			throw new StringValidoException(a);
 		}
 	}
 	

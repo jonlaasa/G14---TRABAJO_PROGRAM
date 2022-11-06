@@ -9,8 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import BD.BD;
 import Datos.Usuario;
-
-
+import logicaDeNegocio.LongitudStringException;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -28,8 +27,8 @@ public class VentanaRegistro extends JFrame {
 	private JTextField dni;
 	private JTextField apellido;
 	private JTextField nombre;
-	private JPasswordField contraseña;
-	private JPasswordField passwordField_1;
+	private JPasswordField contrasenya;
+	private JPasswordField contrasenyaRepetida;
 	private JButton btnVolverRegistro;
 	
 
@@ -98,18 +97,18 @@ public class VentanaRegistro extends JFrame {
 		contentPane.add(nombre);
 		nombre.setColumns(10);
 		
-		contraseña = new JPasswordField();
-		contraseña.setBounds(189, 227, 86, 20);
-		contentPane.add(contraseña);
+		contrasenya = new JPasswordField();
+		contrasenya.setBounds(189, 227, 86, 20);
+		contentPane.add(contrasenya);
 		
 		JLabel lblNewLabel_6 = new JLabel("Repetir Contrase\u00F1a:");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_6.setBounds(295, 230, 153, 14);
 		contentPane.add(lblNewLabel_6);
 		
-		passwordField_1 = new JPasswordField();
-		passwordField_1.setBounds(442, 229, 86, 20);
-		contentPane.add(passwordField_1);
+		contrasenyaRepetida = new JPasswordField();
+		contrasenyaRepetida.setBounds(442, 229, 86, 20);
+		contentPane.add(contrasenyaRepetida);
 		
 		btnVolverRegistro = new JButton("Volver");
 		btnVolverRegistro.setBounds(210, 335, 89, 23);
@@ -139,32 +138,49 @@ public class VentanaRegistro extends JFrame {
 		});
 
 		btnRegistrarse.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e)  {
 				BD modSql = new BD();
 				Usuario mod = new Usuario();
 				
 
 
 
-					mod.setNombreUsuario(usuario.getText());
-					mod.setContrasenya(contraseña.getText());
+				
+					try {
+						mod.setNombreUsuario(usuario.getText());
+					} catch (LongitudStringException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					try {
+						mod.setContrasenya(contrasenya.getText());
+					} catch (LongitudStringException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					mod.setApellido(apellido.getText());
 					mod.setNombre(nombre.getText());
 					mod.setDni(dni.getText());
-					try {
-						modSql.registrar(mod);
-					} catch (Exception e2) {
-						// TODO Auto-generated catch block
-						e2.printStackTrace();
+					
+					if(mod.getNombre()=="" || mod.getApellido()=="" || mod.getContrasenya()=="" || mod.getDni()=="" || mod.getNombreUsuario()=="" ) {}
+					else{
+						try {
+							modSql.registrar(mod);
+						} catch (Exception e2) {
+							// TODO Auto-generated catch block
+							e2.printStackTrace();
+						
+						}	
 					}
 					
-		
-					
-				}
+			}
 				
 
 				
 		});
 		
+		
 	}
+	
+	
 }

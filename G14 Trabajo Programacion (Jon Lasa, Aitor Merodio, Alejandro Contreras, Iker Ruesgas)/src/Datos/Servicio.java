@@ -3,10 +3,10 @@ package Datos;
 import java.sql.Date;
 
 import Enum.TipoServicio;
-import Logica_de_Negocio.DuracionException;
-import Logica_de_Negocio.FechaException;
-import Logica_de_Negocio.PlazasRestantesException;
-import Logica_de_Negocio.PrecioException;
+import logicaDeNegocio.DuracionException;
+import logicaDeNegocio.FechaException;
+import logicaDeNegocio.PlazasRestantesException;
+import logicaDeNegocio.PrecioException;
 
 
 public class Servicio {

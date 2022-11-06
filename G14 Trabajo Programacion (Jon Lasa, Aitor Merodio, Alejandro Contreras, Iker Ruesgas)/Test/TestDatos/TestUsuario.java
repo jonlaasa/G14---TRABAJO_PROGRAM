@@ -9,7 +9,7 @@ import org.junit.Test;
 import Datos.MetodoPago;
 import Datos.Registro;
 import Datos.Usuario;
-import Logica_de_Negocio.LongitudStringException;
+import logicaDeNegocio.LongitudStringException;
 
 public class TestUsuario {
 	

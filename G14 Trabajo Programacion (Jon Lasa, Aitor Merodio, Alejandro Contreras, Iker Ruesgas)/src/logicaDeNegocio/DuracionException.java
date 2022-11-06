@@ -1,4 +1,4 @@
-package Logica_de_Negocio;
+package logicaDeNegocio;
 
 public class DuracionException extends Exception {
 	public DuracionException (String mensaje) {

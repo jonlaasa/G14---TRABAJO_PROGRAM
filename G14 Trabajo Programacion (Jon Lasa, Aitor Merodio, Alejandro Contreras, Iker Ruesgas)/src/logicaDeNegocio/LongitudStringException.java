@@ -1,4 +1,4 @@
-package Logica_de_Negocio;
+package logicaDeNegocio;
 
 public class LongitudStringException extends Exception {
 	public LongitudStringException (String mensaje) {

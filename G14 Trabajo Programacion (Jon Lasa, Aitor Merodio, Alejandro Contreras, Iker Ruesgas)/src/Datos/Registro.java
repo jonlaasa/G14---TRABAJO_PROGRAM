@@ -1,6 +1,8 @@
 package Datos;
 
-import Logica_de_Negocio.LongitudStringException;
+import javax.swing.JOptionPane;
+
+import logicaDeNegocio.LongitudStringException;
 
 public class Registro {
 	
@@ -33,7 +35,7 @@ public class Registro {
 
 	public void setNombre(String nombre) {
 		if (nombre==null) {
-			this.nombre ="";
+			this.nombre="";
 		}
 		else {
 			this.nombre = nombre;
@@ -47,9 +49,9 @@ public class Registro {
 	}
 
 
-	public void setApellido(String apellido) {
+	public void setApellido(String apellido){
 		if (apellido==null) {
-			this.apellido ="";
+			this.apellido="";
 		}
 		else {
 			this.apellido = apellido;
@@ -64,6 +66,7 @@ public class Registro {
 
 	public void setNombreUsuario(String nombreUsuario) throws LongitudStringException {
 		if (nombreUsuario==null|nombreUsuario.length()<6) {
+			JOptionPane.showMessageDialog(null, "El usuario debe tener mas de 6 caracteres");
 			throw new LongitudStringException("Parametros usuario/contrasenya tiene que tener mas de 6 caracteres: ");
 		}
 		else {
