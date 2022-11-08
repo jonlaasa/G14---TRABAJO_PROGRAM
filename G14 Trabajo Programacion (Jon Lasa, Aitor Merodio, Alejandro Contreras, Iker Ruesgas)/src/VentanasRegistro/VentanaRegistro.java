@@ -163,7 +163,7 @@ public class VentanaRegistro extends JFrame {
 				
 				
 				try {
-					
+					//Comprobaciones de los parametros del registro
 					Utils.comprobarString(usr);
 					Utils.comprobarString(contra);					
 					Utils.comprobarString(ape);

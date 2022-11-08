@@ -1,12 +1,12 @@
 package Datos;
 
-import Logica_de_Negocio.LongitudStringException;
+import logicaDeNegocio.LongitudStringException;
 
 public class Administrador extends Registro {
 	
 	private int codAcceso;
 
-	public Administrador(String nombre, String apellido, String nombreUsuario, int codAcceso) throws LongitudStringException {
+	public Administrador(String nombre, String apellido, String nombreUsuario, int codAcceso) throws LongitudStringException{
 		super(nombre, apellido, nombreUsuario);
 		this.codAcceso = codAcceso;
 	}
