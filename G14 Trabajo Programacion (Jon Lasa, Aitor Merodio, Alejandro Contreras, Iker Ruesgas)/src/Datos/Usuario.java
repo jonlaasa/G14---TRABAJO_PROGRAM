@@ -48,11 +48,9 @@ public class Usuario extends Registro {
 	}
 
 
-	public void setContrasenya(String contrasenya) throws LongitudStringException {
-		if (contrasenya==null|contrasenya.length()<6) {
-			JOptionPane.showMessageDialog(null, "La contraseña debe tener mas de 6 caracteres");
-			throw new LongitudStringException("Parametros usuario/contrasenya tiene que tener mas de 6 caracteres: ");
-			
+	public void setContrasenya(String contrasenya)  {
+		if (contrasenya==null) {
+			this.contrasenya=null;
 		}
 		else {
 			this.contrasenya = contrasenya;

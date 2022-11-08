@@ -10,6 +10,7 @@ public class Main {
 		
 		
 		VentanaInicio vr = new VentanaInicio();
+		
 		vr.setVisible(true);
 		
 

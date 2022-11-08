@@ -64,10 +64,9 @@ public class Registro {
 	}
 
 
-	public void setNombreUsuario(String nombreUsuario) throws LongitudStringException {
-		if (nombreUsuario==null|nombreUsuario.length()<6) {
-			JOptionPane.showMessageDialog(null, "El usuario debe tener mas de 6 caracteres");
-			throw new LongitudStringException("Parametros usuario/contrasenya tiene que tener mas de 6 caracteres: ");
+	public void setNombreUsuario(String nombreUsuario){
+		if (nombreUsuario==null) {
+			this.nombreUsuario=null;
 		}
 		else {
 			this.nombreUsuario = nombreUsuario;

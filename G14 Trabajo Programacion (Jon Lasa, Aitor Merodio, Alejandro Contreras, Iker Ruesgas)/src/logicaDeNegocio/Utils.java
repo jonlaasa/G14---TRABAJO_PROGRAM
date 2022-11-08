@@ -1,5 +1,9 @@
 package logicaDeNegocio;
 
+import javax.swing.JOptionPane;
+
+import Datos.Usuario;
+
 public class Utils {
 	
 	
@@ -12,6 +16,7 @@ public class Utils {
 			return true;
 		}
 		else {
+			JOptionPane.showMessageDialog(null, "Rellene todos los campos");
 			throw new StringValidoException(a);
 		}
 	}
@@ -88,11 +93,12 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	public static boolean comprobarStringUsuario(String a) throws LongitudStringException{
 		try {
 			if(a.length()<=6) {
+				JOptionPane.showMessageDialog(null,"El usuario debe contener mas de 6 caracteres" );
 				throw new LongitudStringException("Longitud no VALIDA (TIENE QUE SER MAYOR QUE 6 : " + a);
 			}
 			char[] palabra = a.toCharArray();
 			if(!Character.isLetter(palabra[0])) {
-				
+				JOptionPane.showMessageDialog(null,"El usuario debe empezar por una letra" );
 				throw new LongitudStringException("Primer caracter no valido, tiene que empezar por letra : " + a);
 			}
 			
@@ -104,16 +110,46 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 			
 		}catch(IllegalArgumentException b) {
 			throw new IllegalArgumentException();
+			}
 		}
+	
+	public static boolean comprobarStringContra(String a) throws LongitudStringException{
+		try {
+			if(a.length()<=6) {
+				JOptionPane.showMessageDialog(null,"La contraseña debe contener mas de 6 caracteres" );
+				throw new LongitudStringException("Longitud no VALIDA (TIENE QUE SER MAYOR QUE 6 : " + a);
+			}	
+			else {
+				return true;
+			}
+				
+			
+		}catch(IllegalArgumentException b) {
+			throw new IllegalArgumentException();
+			}
+		}
+	
+
 		
 		
+	public static boolean comprobarContraseñas(String a,String b) throws Exception {
+	if(a.equals(b)) {
+		return true;
+	}else {
+		JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
+		throw new Exception("Las contraseña no coinciden");
+		}
 	}
 	
+		
+		
 	
 	
 	
 	
 	
+	
+
 	
 	
 

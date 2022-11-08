@@ -10,7 +10,10 @@ import javax.swing.border.EmptyBorder;
 import BD.BD;
 import Datos.Usuario;
 import logicaDeNegocio.LongitudStringException;
+import logicaDeNegocio.Utils;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -20,6 +23,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class VentanaRegistro extends JFrame {
+
 
 
 	private JPanel contentPane;
@@ -136,46 +140,50 @@ public class VentanaRegistro extends JFrame {
 			vr.setVisible(true);
 			dispose();
 		});
+		
 
-		btnRegistrarse.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e)  {
-				BD modSql = new BD();
-				Usuario mod = new Usuario();
+		btnRegistrarse.addActionListener(e -> {
+			BD modSql = new BD();
+			Usuario mod = new Usuario();
+			String usr=usuario.getText();
+			String nom=nombre.getText();
+			String dn=dni.getText();
+			String ape=apellido.getText();
+			String contra=contrasenya.getText();
+			String contraRepe=contrasenyaRepetida.getText();
+
+			
+			
+				mod.setNombreUsuario(usr);
+				mod.setContrasenya(contra);
+				mod.setApellido(ape);
+				mod.setNombre(nom);
+				mod.setDni(dn);
 				
-
-
-
 				
-					try {
-						mod.setNombreUsuario(usuario.getText());
-					} catch (LongitudStringException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					try {
-						mod.setContrasenya(contrasenya.getText());
-					} catch (LongitudStringException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					mod.setApellido(apellido.getText());
-					mod.setNombre(nombre.getText());
-					mod.setDni(dni.getText());
+				
+				try {
 					
-					if(mod.getNombre()=="" || mod.getApellido()=="" || mod.getContrasenya()=="" || mod.getDni()=="" || mod.getNombreUsuario()=="" ) {}
-					else{
-						try {
-							modSql.registrar(mod);
-						} catch (Exception e2) {
-							// TODO Auto-generated catch block
-							e2.printStackTrace();
-						
-						}	
-					}
+					Utils.comprobarString(usr);
+					Utils.comprobarString(contra);					
+					Utils.comprobarString(ape);
+					Utils.comprobarString(nom);
+					Utils.comprobarString(dn);
+					Utils.comprobarStringUsuario(usr);
+					Utils.comprobarStringContra(contra);
+					Utils.comprobarContraseñas(contra, contraRepe);
 					
-			}
-				
-
+					try {
+						modSql.registrar(mod);
+					} catch (Exception e2) {
+							
+						e2.printStackTrace();						
+					}	
+					
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 		});
 		
