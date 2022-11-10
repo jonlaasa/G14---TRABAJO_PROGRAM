@@ -85,16 +85,21 @@ public class BD {
 		Connection con = abrirBaseDatos("baseDatos");
 		String sql ="SELECT Usuario,Contrasenya FROM Usuario where Usuario=?and Contrasenya=?"; 
 		PreparedStatement rst = con.prepareStatement(sql);
+		rst.setString(1, usr);
+		rst.setString(2, contra);
 		ResultSet rs = rst.executeQuery();
-		boolean valido=false;
+
+		
 		
 		if(rs.next()) {
-			valido=true;
+			return true;
+		}else {
+			return false;
 		}
 		
 		
 		
-		return false;
+		
 		
 	}
 	

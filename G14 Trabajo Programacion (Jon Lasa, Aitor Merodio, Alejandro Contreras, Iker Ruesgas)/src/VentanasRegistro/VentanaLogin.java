@@ -111,17 +111,18 @@ public class VentanaLogin extends JFrame {
 			BD bd = new BD();
 			
 			try {
-				bd.login(usr, contra);
-				JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
-				ini vr = null;
-				vr = new ini();
-				vr.setVisible(true);
-				dispose();			
-				
+				if(bd.login(usr, contra)==true) {
+					JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
+					ini vr = null;
+					vr = new ini();
+					vr.setVisible(true);
+					dispose();	
+				}
+				else JOptionPane.showMessageDialog(null, "Inicio de sesion incorrecto");
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-				JOptionPane.showMessageDialog(null, "Inicio de sesion incorrecto");
+				
 			}
 			
 			
