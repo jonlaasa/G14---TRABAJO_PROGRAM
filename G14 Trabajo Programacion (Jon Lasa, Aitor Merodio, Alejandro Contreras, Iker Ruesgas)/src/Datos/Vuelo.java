@@ -13,7 +13,7 @@ public class Vuelo extends Servicio {
 	private ZonaAsientoVuelo zonaAsientoVuelo;
 
 	//Constructor con parametros
-	public Vuelo(int codigo, Date fecha, int duracion,  String origen, String destino, double precio, TipoServicio tipoServicio,
+	public Vuelo(int codigo, long fecha, int duracion,  String origen, String destino, double precio, TipoServicio tipoServicio,
 			int plazarRestantes, String companya, TipoVuelo tipoVuelo, ZonaAsientoVuelo zonaAsientoVuelo) {
 		this.companya = companya;
 		this.tipoVuelo = tipoVuelo;
@@ -22,7 +22,7 @@ public class Vuelo extends Servicio {
 
 	
 	//Constructor Fecha y Tipo de Servicio
-	public Vuelo(Date fecha, TipoServicio tipoServicio) {
+	public Vuelo(long fecha, TipoServicio tipoServicio) {
 		this.companya = "Sin companya";
 	}
 

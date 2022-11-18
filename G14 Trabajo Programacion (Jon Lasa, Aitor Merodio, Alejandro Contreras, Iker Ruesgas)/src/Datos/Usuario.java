@@ -14,13 +14,14 @@ public class Usuario extends Registro {
 	private String dni;
 	private int puntos ;
 	
+	private String correoElectronico;
 	private int codigo;
 	
 	
 	
 	//Constructor con parametros
 	
-	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String dni) throws LongitudStringException {
+	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String correoElectronico,String dni)  {
 		super(nombre, apellido, usuario);
 		setContrasenya(contrasenya);
 		setDni(dni); 
@@ -49,12 +50,9 @@ public class Usuario extends Registro {
 
 
 	public void setContrasenya(String contrasenya)  {
-		if (contrasenya==null) {
-			this.contrasenya=null;
-		}
-		else {
+		
 			this.contrasenya = contrasenya;
-		}
+		
 	}
 
 
@@ -66,12 +64,10 @@ public class Usuario extends Registro {
 	//FALTA EL PATTERN DEL DNI
 
 	public void setDni(String dni) {
-		if (dni==null) {
-			this.dni="";
-		}
-		else {
+		
+		
 			this.dni = dni;
-		}
+		
 	}
 
 
@@ -83,12 +79,9 @@ public class Usuario extends Registro {
 
 
 	public void setPuntos(int puntos) {
-		if (puntos<0) {
-			this.puntos=0;
-		}
-		else {
+	
 			this.puntos = puntos;
-		}
+		
 	}
 
 
@@ -102,6 +95,15 @@ public class Usuario extends Registro {
 	}
 
 	
+
+	public String getCorreoElectronico() {
+		return correoElectronico;
+	}
+
+
+	public void setCorreoElectronico(String correoElectronico) {
+		this.correoElectronico = correoElectronico;
+	}
 
 
 	@Override

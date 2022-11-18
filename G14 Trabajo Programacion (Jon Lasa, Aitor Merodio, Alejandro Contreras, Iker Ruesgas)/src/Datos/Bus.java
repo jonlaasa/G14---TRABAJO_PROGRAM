@@ -15,7 +15,7 @@ public class Bus extends Servicio {
 
 	
 	//Constructor con parametros
-	public Bus(int codigo, String fecha, int duracion,  String origen, String destino, double precio, TipoServicio tipoServicio,
+	public Bus(int codigo, long fecha, int duracion,  String origen, String destino, double precio, TipoServicio tipoServicio,
 			int plazarRestantes, String companya) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
 		super(codigo, fecha, duracion,  origen, destino, precio, tipoServicio, plazarRestantes);
 		setCompanya(companya);
@@ -23,9 +23,9 @@ public class Bus extends Servicio {
 
 	
 	//Constructor sin parametros, basandonos en el super de SERVICIO
-	public Bus(String fecha, TipoServicio tipoServicio) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
+	public Bus(long fecha, TipoServicio tipoServicio) {
 		super(fecha, tipoServicio);
-		setCompanya("Sin compañia");
+		setCompanya("Sin compaï¿½ia");
 	}
 
 
@@ -35,12 +35,9 @@ public class Bus extends Servicio {
 
 
 	public void setCompanya(String companya) {
-		if(companya ==null) {
-			this.companya="";
-		}
-		else {
+		
 			this.companya = companya;
-		}
+	
 	}
 
 

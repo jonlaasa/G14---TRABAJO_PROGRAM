@@ -90,7 +90,7 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	}
 	
 	
-	public static boolean comprobarStringUsuario(String a) throws LongitudStringException{
+	public static boolean comprobarStringUsuario(String a) throws LongitudStringException, CaracterNoValidoExcepcion{
 		try {
 			if(a.length()<=6) {
 				JOptionPane.showMessageDialog(null,"El usuario debe contener mas de 6 caracteres" );
@@ -99,11 +99,23 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 			char[] palabra = a.toCharArray();
 			if(!Character.isLetter(palabra[0])) {
 				JOptionPane.showMessageDialog(null,"El usuario debe empezar por una letra" );
-				throw new LongitudStringException("Primer caracter no valido, tiene que empezar por letra : " + a);
+				throw new CaracterNoValidoExcepcion("Primer caracter no valido, tiene que empezar por letra : " + a);
 			}
-			
-			
 			else {
+				boolean comilla=false;
+				
+				for( int i =0;i<palabra.length;i++) {
+					if(Character.toString(palabra[i])=="'") {
+						comilla=true;
+					}
+				}
+				//una vez sabemos si tiene comillas, LO NOTIFICAMOS,
+				//NO VAMOS A REEMPLAZARLAS, YA QUE EL USUARIO PODRIA NO SABERLO
+				
+				if(comilla==true) {
+					throw new CaracterNoValidoExcepcion("No puede contener caracteres"+ "'"+", ningun campo de escritura de caracteres");
+				}
+				
 				return true;
 			}
 				

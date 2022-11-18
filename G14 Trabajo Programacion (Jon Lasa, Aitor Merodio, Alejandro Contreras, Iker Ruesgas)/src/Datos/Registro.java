@@ -12,7 +12,7 @@ public class Registro {
 	
 	
 	// Constructor con parametros
-	public Registro(String nombre, String apellido, String nombreUsuario) throws LongitudStringException {
+	public Registro(String nombre, String apellido, String nombreUsuario)  {
 		super();
 		setNombre(nombre);
 		setApellido(apellido);
@@ -34,12 +34,8 @@ public class Registro {
 
 
 	public void setNombre(String nombre) {
-		if (nombre==null) {
-			this.nombre="";
-		}
-		else {
-			this.nombre = nombre;
-		}
+		this.nombre = nombre;
+		
 		
 	}
 
@@ -50,12 +46,9 @@ public class Registro {
 
 
 	public void setApellido(String apellido){
-		if (apellido==null) {
-			this.apellido="";
-		}
-		else {
+		
 			this.apellido = apellido;
-		}
+		
 	}
 
 
@@ -65,15 +58,15 @@ public class Registro {
 
 
 	public void setNombreUsuario(String nombreUsuario){
-		if (nombreUsuario==null) {
-			this.nombreUsuario=null;
-		}
-		else {
+	
 			this.nombreUsuario = nombreUsuario;
-		}
+		
 		
 		
 	}
+	
+	
+	
 
 	
 	

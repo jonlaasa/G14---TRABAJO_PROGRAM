@@ -11,7 +11,7 @@ import logicaDeNegocio.PrecioException;
 
 public class Servicio {
 	private int codigo;
-	private String fecha;
+	private long fecha;
 	//Duracion en minutos
 	private int duracion;
 	private String origen;
@@ -21,7 +21,7 @@ public class Servicio {
 	private int plazasRestantes;
 	
 	//Constructor con parametros
-	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas) throws FechaException, DuracionException, PrecioException, PlazasRestantesException {
+	public Servicio(int codigo, long fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas) throws FechaException, DuracionException, PrecioException, PlazasRestantesException {
 		super();
 		setCodigo(codigo);
 		setFecha(fecha);
@@ -37,7 +37,7 @@ public class Servicio {
 	//Por defecto 100 plazas restantes
 	
 	
-	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) throws FechaException, DuracionException, PrecioException, PlazasRestantesException {
+	public Servicio(int codigo, long fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) throws FechaException, DuracionException, PrecioException, PlazasRestantesException {
 		super();
 		setCodigo(codigo);
 		setFecha(fecha);
@@ -53,10 +53,10 @@ public class Servicio {
 	public Servicio() {}
 		
 	//Constructor con tipoServicio y fecha solo
-	public Servicio(String fecha, TipoServicio tipoServicio) throws FechaException, DuracionException, PrecioException, PlazasRestantesException {
+	public Servicio(long fecha, TipoServicio tipoServicio)  {
 		super();
 	         setCodigo(codigo);
-			setFecha("");
+			setFecha(0);
 			setDuracion(0);
 			setOrigen("");
 			setDestino("");
@@ -66,37 +66,29 @@ public class Servicio {
 		}
 
 
+	
+	
+	//IMPORTANTE, LA VALIDACION DE LOS VALORES, LA HAREMOS EN LAS VENTANAS, AL PULSAR LOS BOTONES PARA CONFRIMAR LOS DATOS
+	//AHI GESTIONAREMOS LAS EXCPECIONES
 	public int getCodigo() {
 		return codigo;
 	}
 
 
 	public void setCodigo(int codigo) {
-		if (codigo<0) {
-			codigo=000;
-			
-		}
-			this.codigo = codigo;
+		this.codigo = codigo;
 	}
 
 
-	public String getFecha() {
+	public long getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(String fecha) throws FechaException {
+	public void setFecha(long fecha) {
  
-	    java.sql.Date date1=java.sql.Date.valueOf(fecha);//Convertir string en sql date    	
-        long millis=System.currentTimeMillis();  
-        java.sql.Date date2=new java.sql.Date(millis);  
-        int diferencia= date1.compareTo(date2);  
-		
-	if (fecha==null || diferencia<=0) {
-		throw new FechaException( "Fecha incorrecta: " + fecha);
-	}
-	else {
-			this.fecha = fecha;
-		}
+	    this.fecha=fecha;
+	    
+	    
 	}
 	
 
@@ -105,15 +97,12 @@ public class Servicio {
 	}
 
 
-	public void setDuracion(int duracion) throws DuracionException {
-	if (duracion<0) {
+	public void setDuracion(int duracion)  {
+	
 		this.duracion=0;
-		throw new DuracionException( "Duracion incorrecta: " + getDuracionString());
-	}
-		this.duracion = duracion;
-	}
+	
 
-
+	}
 	public void setOrigen(String origen) {
 		if (origen==null) {
 			this.origen="";
@@ -135,12 +124,9 @@ public class Servicio {
 
 
 	public void setDestino(String destino) {
-		if (destino==null) {
-			this.destino="";
-		}
-		else {
+	
 			this.destino = destino;
-	}
+	
 	}
 
 
@@ -149,10 +135,7 @@ public class Servicio {
 	}
 
 
-	public void setPrecio(double precio) throws PrecioException {
-		if (precio<0) {
-			throw new PrecioException( "Precio incorrecta: " + precio);
-		}
+	public void setPrecio(double precio)  {
 		this.precio = precio;
 	}
 
@@ -172,10 +155,8 @@ public class Servicio {
 	}
 
 
-	public void setPlazasRestantes(int plazasRestantes) throws PlazasRestantesException {
-		if (plazasRestantes>=100 || plazasRestantes <0) {
-			throw new PlazasRestantesException("Número de plazas incorrecto: "+ plazasRestantes);
-		}
+	public void setPlazasRestantes(int plazasRestantes)  {
+		
 			this.plazasRestantes = plazasRestantes;
 	}
 
@@ -187,6 +168,9 @@ public class Servicio {
 				+ "]";
 	}
 	
+	
+	
+	//ESTO IGUAL NO ES NECESARIO
 
 	public String getDuracionString() {
 		int horas = duracion / 3600;

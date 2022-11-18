@@ -20,12 +20,14 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
 
 public class VentanaRegistro extends JFrame {
 
 
-
+    Logger log = Logger.getLogger("loger-usuario");
 	private JPanel contentPane;
 	private JTextField usuario;
 	private JTextField dni;
@@ -175,9 +177,10 @@ public class VentanaRegistro extends JFrame {
 					
 					try {
 						modSql.registrar(mod);
-					} catch (Exception e2) {
-							
-						e2.printStackTrace();						
+						log.log(Level.INFO, "USUARIO REGISTRADO EN LA BASE DE DATOS");
+					} catch (LongitudStringException e2) {
+						log.log(Level.SEVERE, "Longitud de datos de registro no valida:");
+											
 					}	
 					
 				} catch (Exception e1) {
