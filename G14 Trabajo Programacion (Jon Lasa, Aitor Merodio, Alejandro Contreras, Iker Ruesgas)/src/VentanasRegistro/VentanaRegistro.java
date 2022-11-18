@@ -171,7 +171,7 @@ public class VentanaRegistro extends JFrame {
 					Utils.comprobarString(dn);
 					Utils.comprobarStringUsuario(usr);
 					Utils.comprobarStringContra(contra);
-					Utils.comprobarContraseñas(contra, contraRepe);
+					Utils.comprobarContrasenyas(contra, contraRepe);
 					
 					try {
 						modSql.registrar(mod);

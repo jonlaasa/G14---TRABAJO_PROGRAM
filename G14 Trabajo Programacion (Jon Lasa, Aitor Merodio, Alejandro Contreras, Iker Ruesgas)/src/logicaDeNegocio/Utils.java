@@ -116,7 +116,7 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	public static boolean comprobarStringContra(String a) throws LongitudStringException{
 		try {
 			if(a.length()<=6) {
-				JOptionPane.showMessageDialog(null,"La contraseña debe contener mas de 6 caracteres" );
+				JOptionPane.showMessageDialog(null,"La contraseï¿½a debe contener mas de 6 caracteres" );
 				throw new LongitudStringException("Longitud no VALIDA (TIENE QUE SER MAYOR QUE 6 : " + a);
 			}	
 			else {
@@ -132,12 +132,12 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 
 		
 		
-	public static boolean comprobarContraseñas(String a,String b) throws Exception {
+	public static boolean comprobarContrasenyas(String a,String b) throws Exception {
 	if(a.equals(b)) {
 		return true;
 	}else {
-		JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
-		throw new Exception("Las contraseña no coinciden");
+		JOptionPane.showMessageDialog(null, "Las contraseï¿½as no coinciden");
+		throw new Exception("Las contraseï¿½a no coinciden");
 		}
 	}
 	

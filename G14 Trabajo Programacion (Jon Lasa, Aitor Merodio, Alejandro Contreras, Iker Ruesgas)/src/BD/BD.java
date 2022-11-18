@@ -97,8 +97,24 @@ public class BD {
 			return false;
 		}
 		
+	}
 		
-		
+		public boolean loginAdmin(String usr, String contra, int cod ) throws Exception{
+			Connection con = abrirBaseDatos("baseDatos");
+			String sql ="SELECT Usuario,Contrasenya,codAcceso FROM Admin where Usuario=? and Contrasenya=? and codAcceso=?"; 
+			PreparedStatement rst = con.prepareStatement(sql);
+			rst.setString(1, usr);
+			rst.setString(2, contra);
+			rst.setInt(3, cod);
+			ResultSet rs = rst.executeQuery();
+
+			
+			
+			if(rs.next()) {
+				return true;
+			}else {
+				return false;
+			}
 		
 		
 	}
