@@ -3,6 +3,8 @@ package Datos;
 import java.util.ArrayList;
 import java.util.Date;
 
+import Enum.TipoServicio;
+
 public class VueloComprado extends Compra {
 	
 	private Vuelo vuelo;
@@ -10,9 +12,9 @@ public class VueloComprado extends Compra {
 	private String asiento;
 	
 	//Constructor con Parametros
-	public VueloComprado(int codigoUsuario, int cantidad, Date fechaCompra, Vuelo vuelo,
+	public VueloComprado(int codigoUsuario, int cantidad, long fechaCompra, TipoServicio tipo,int codigoCompra,  Vuelo vuelo,
 			ArrayList<RentingCoche> listaRenting, String asiento) {
-		super(codigoUsuario, cantidad, fechaCompra);
+		super(codigoUsuario, cantidad, fechaCompra, tipo,codigoCompra);
 		this.vuelo = vuelo;
 		this.listaRenting = listaRenting;
 		this.asiento = asiento;
@@ -21,8 +23,8 @@ public class VueloComprado extends Compra {
 	
 	//Constructor sin asiento asignado y lista vacia
 	
-	public VueloComprado(int codigoUsuario, int cantidad, Date fechaCompra, Vuelo vuelo) {
-		super(codigoUsuario, cantidad, fechaCompra);
+	public VueloComprado(int codigoUsuario, int cantidad, long fechaCompra, TipoServicio tipoServicio,int codigoCompra, Vuelo vuelo) {
+		super(codigoUsuario, cantidad, fechaCompra,tipoServicio,codigoCompra);
 		this.listaRenting= new ArrayList<RentingCoche> ();
 		this.asiento = "000";
 	}

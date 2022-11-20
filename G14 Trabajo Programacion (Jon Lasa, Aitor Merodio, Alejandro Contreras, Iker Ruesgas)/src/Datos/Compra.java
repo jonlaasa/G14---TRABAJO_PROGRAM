@@ -2,21 +2,27 @@ package Datos;
 
 import java.util.Date;
 
+import Enum.TipoServicio;
+
 public class Compra {
 	
 	
 	private int codigoUsuario;
 	private int cantidad;
-	private Date fechaCompra;
+	private long fechaCompra;
+	private TipoServicio tipoServicio;
+	private int codigoServicio;
 	
 	
 	//Constructor con parametros
 	
-	public Compra(int codigoUsuario, int cantidad, Date fechaCompra) {
+	public Compra(int codigoUsuario, int cantidad, long fechaCompra,TipoServicio tipoServicio, int codigoServicio) {
 		super();
 		this.codigoUsuario = codigoUsuario;
 		this.cantidad = cantidad;
 		this.fechaCompra = fechaCompra;
+		this.tipoServicio = tipoServicio;
+		this.codigoServicio=codigoServicio;
 	}
 
 
@@ -40,13 +46,34 @@ public class Compra {
 	}
 
 
-	public Date getFechaCompra() {
+	public long getFechaCompra() {
 		return fechaCompra;
 	}
 
 
-	public void setFechaCompra(Date fechaCompra) {
+	public void setFechaCompra(long fechaCompra) {
 		this.fechaCompra = fechaCompra;
+	}
+	
+	public TipoServicio getTipoServicio() {
+		return tipoServicio;
+	}
+
+
+	public void setTipoServicio(TipoServicio tipoServicio) {
+		this.tipoServicio = tipoServicio;
+	}
+	
+	
+
+
+	public int getCodigoServicio() {
+		return codigoServicio;
+	}
+
+
+	public void setCodigoServicio(int codigoServicio) {
+		this.codigoServicio = codigoServicio;
 	}
 
 

@@ -10,16 +10,16 @@ public class BusComprado extends Compra {
 	private String asiento;
 	
 	//Constructor con parametros
-	public BusComprado(int codigoUsuario, int cantidad, Date fechaCompra, Bus bus, String asiento) {
-		super(codigoUsuario, cantidad, fechaCompra);
+	public BusComprado(int codigoUsuario, int cantidad, long fechaCompra, TipoServicio tipoServicio, int codigoServicio, Bus bus, String asiento) {
+		super(codigoUsuario, cantidad, fechaCompra,tipoServicio, codigoServicio);
 		this.bus = bus;
 		this.asiento = asiento;
 	}
 	
 	//Constructor sin asiento asignado
 	
-	public BusComprado (int codigoUsuario, int cantidad, Date fechaCompra,Bus bus) {
-		super(codigoUsuario,cantidad,fechaCompra);
+	public BusComprado (int codigoUsuario, int cantidad, long fechaCompra, TipoServicio tipoServicio, int codigoServicio,Bus bus) {
+		super(codigoUsuario,cantidad,fechaCompra, tipoServicio,  codigoServicio);
 		this.bus = bus;
 		this.asiento = "000";
 	}

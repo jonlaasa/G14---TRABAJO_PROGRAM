@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
-import BD.BD;
+import BD.BDRegistro;
 import VentanasMenu.ini;
 import VentanasRegistro.VentanaInicio;
 import VentanasRegistro.VentanaLogin;
@@ -97,7 +97,7 @@ public class VentanaLoginAdmin extends JFrame {
 			String contra=contrasenya.getText();
 			String cod = codAcceso.getText();
 			int codigo = Integer.parseInt(cod);
-			BD bd = new BD();
+			BDRegistro bd = new BDRegistro();
 			
 			try {
 				if(bd.loginAdmin(usr, contra, codigo)==true) {

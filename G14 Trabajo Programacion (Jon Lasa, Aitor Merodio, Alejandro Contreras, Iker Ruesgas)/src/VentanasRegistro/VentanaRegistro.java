@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 
-import BD.BD;
+import BD.BDRegistro;
 import Datos.Usuario;
 import logicaDeNegocio.LongitudStringException;
 import logicaDeNegocio.Utils;
@@ -145,7 +145,7 @@ public class VentanaRegistro extends JFrame {
 		
 
 		btnRegistrarse.addActionListener(e -> {
-			BD modSql = new BD();
+			BDRegistro modSql = new BDRegistro();
 			Usuario mod = new Usuario();
 			String usr=usuario.getText();
 			String nom=nombre.getText();

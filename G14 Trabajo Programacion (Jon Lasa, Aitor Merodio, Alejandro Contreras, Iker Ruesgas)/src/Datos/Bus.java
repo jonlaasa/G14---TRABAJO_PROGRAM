@@ -16,7 +16,7 @@ public class Bus extends Servicio {
 	
 	//Constructor con parametros
 	public Bus(int codigo, long fecha, int duracion,  String origen, String destino, double precio, TipoServicio tipoServicio,
-			int plazarRestantes, String companya) throws FechaException, ParseException, DuracionException, PrecioException, PlazasRestantesException {
+			int plazarRestantes, String companya)  {
 		super(codigo, fecha, duracion,  origen, destino, precio, tipoServicio, plazarRestantes);
 		setCompanya(companya);
 	}

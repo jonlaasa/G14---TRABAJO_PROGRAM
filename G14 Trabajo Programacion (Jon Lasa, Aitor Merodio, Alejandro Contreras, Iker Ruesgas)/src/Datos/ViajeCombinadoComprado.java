@@ -3,6 +3,8 @@ package Datos;
 import java.util.ArrayList;
 import java.util.Date;
 
+import Enum.TipoServicio;
+
 public class ViajeCombinadoComprado extends Compra {
 	
 	
@@ -10,17 +12,17 @@ public class ViajeCombinadoComprado extends Compra {
 	private ArrayList<Compra> transporte;
 	
 	//Constructor con parametros
-	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, Date fechaCompra, ViajeCombinado viajeCombinado,
+	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, long fechaCompra,TipoServicio tipo, int codigoCompra, ViajeCombinado viajeCombinado,
 			ArrayList<Compra> transporte) {
-		super(codigoUsuario, cantidad, fechaCompra);
+		super(codigoUsuario, cantidad, fechaCompra,tipo, codigoCompra);
 		this.viajeCombinado = viajeCombinado;
 		this.transporte = transporte;
 	}
 	
-	//Constructor con transporte vacio para poder añadirle nosotros?  
+	//Constructor con transporte vacio para poder aï¿½adirle nosotros?  
 	
-	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, Date fechaCompra, ViajeCombinado viajeCombinado) {
-		super(codigoUsuario, cantidad, fechaCompra);
+	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, long fechaCompra,TipoServicio tipo, int codigoCompra, ViajeCombinado viajeCombinado) {
+		super(codigoUsuario, cantidad, fechaCompra,tipo,codigoCompra);
 		this.viajeCombinado = viajeCombinado;
 		this.transporte =  new ArrayList<Compra> ();
 	}

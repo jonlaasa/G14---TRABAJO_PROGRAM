@@ -8,7 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Datos.Registro;
-import Logica_de_Negocio.LongitudStringException;
 
 public class TestRegistro {
 
@@ -23,6 +22,7 @@ public class TestRegistro {
 		r3 = new Registro();
 		 r4 = new Registro("Asier","Pintos", "a_Pintos");
 		 r5 = new Registro ("Borja", "Castri", "bo8castri");
+		 
 
 	}
 
@@ -32,7 +32,7 @@ public class TestRegistro {
 
 
 	@Test
-	public void testConstructorConParametros() throws LongitudStringException {
+	public void testConstructorConParametros() {
 		assertEquals("Iker", r1.getNombre() );
 		assertEquals("Sanz", r1.getApellido() );
 		assertEquals("iker_sanz", r1.getNombreUsuario() );
@@ -42,6 +42,15 @@ public class TestRegistro {
 		assertEquals("", r2.getNombre() );
 		assertEquals("", r2.getApellido() );
 		assertEquals("", r2.getNombreUsuario() );
+		
+		
+		//Comprobamos con parametros null
+		Registro r6 = new Registro(null,null,null);
+		
+		
+		assertNull(r6.getNombre());
+		assertNull(r6.getApellido());
+		assertNull(r6.getNombreUsuario());
 	
 		
 	}
@@ -58,7 +67,7 @@ public class TestRegistro {
 	
 	//HEMOS DISE�ADO  EL CODIGO DE SET NOMBRE DE MODO QUE NUNCA SE PUEDA PONER NULO, DE MODO QUE EN EL GET NUNCA TENDREMOS VALO NULO
 	@Test
-	public void testGetNombre() throws LongitudStringException {
+	public void testGetNombre()  {
 		
 		Registro r4 = new Registro("Asier","Pintos", "a_Pintos");
 		
@@ -86,6 +95,8 @@ public class TestRegistro {
 		
 	}
 	
+	
+	
 	@Test
 	public void testSetNombre() {
 		r5.setNombre("Gorka");
@@ -95,7 +106,7 @@ public class TestRegistro {
 		assertEquals("", r5.getNombre() );
 		
 		r5.setNombre(null);
-		assertEquals("", r5.getNombre() );
+		assertEquals(null, r5.getNombre() );
 		
 		
 	}
@@ -110,14 +121,14 @@ public class TestRegistro {
 		assertEquals("", r5.getApellido() );
 		
 		r5.setApellido(null);
-		assertEquals("", r5.getApellido() );
+		assertEquals(null, r5.getApellido() );
 		
 		
 	}
 	
 	
 	@Test
-	public void testSetNombreUsuario() throws LongitudStringException {
+	public void testSetNombreUsuario() {
 		r5.setNombreUsuario("x_krl");
 		assertEquals("x_krl", r5.getNombreUsuario() );
 		
@@ -125,7 +136,7 @@ public class TestRegistro {
 		assertEquals("", r5.getNombreUsuario() );
 		
 		r5.setNombreUsuario(null);
-		assertEquals("", r5.getNombreUsuario() );
+		assertEquals(null, r5.getNombreUsuario() );
 		
 		
 	}

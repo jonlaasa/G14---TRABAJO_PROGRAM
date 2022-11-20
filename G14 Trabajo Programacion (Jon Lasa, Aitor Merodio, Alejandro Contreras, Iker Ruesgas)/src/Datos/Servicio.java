@@ -21,7 +21,7 @@ public class Servicio {
 	private int plazasRestantes;
 	
 	//Constructor con parametros
-	public Servicio(int codigo, long fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas) throws FechaException, DuracionException, PrecioException, PlazasRestantesException {
+	public Servicio(int codigo, long fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas)  {
 		super();
 		setCodigo(codigo);
 		setFecha(fecha);
@@ -37,7 +37,7 @@ public class Servicio {
 	//Por defecto 100 plazas restantes
 	
 	
-	public Servicio(int codigo, long fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) throws FechaException, DuracionException, PrecioException, PlazasRestantesException {
+	public Servicio(int codigo, long fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) {
 		super();
 		setCodigo(codigo);
 		setFecha(fecha);
@@ -99,18 +99,14 @@ public class Servicio {
 
 	public void setDuracion(int duracion)  {
 	
-		this.duracion=0;
+		this.duracion=duracion;
 	
 
 	}
 	public void setOrigen(String origen) {
-		if (origen==null) {
-			this.origen="";
-		}
-		else {
 			this.origen = origen;
 	}
-	}
+	
 
 
 	public String getOrigen() {

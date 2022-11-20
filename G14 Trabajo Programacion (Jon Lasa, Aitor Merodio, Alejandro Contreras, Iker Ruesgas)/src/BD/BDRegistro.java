@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,12 +15,12 @@ import Datos.Usuario;
 
 
 
-public class BD {
+public class BDRegistro {
 	
 	private static PreparedStatement pst = null;
 	private static Connection conn=null;
 	
-	static Logger logger= Logger.getLogger( BD.class.getName() );
+	private static Logger logger;
 	
 	public static  Connection abrirBaseDatos(String base) {
 		try {
@@ -36,7 +37,7 @@ public class BD {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		logger.log(Level.INFO, "Conexion establecida");
+		log(Level.INFO, "Conexion establecida",null);
 		return conn;
 
 		
@@ -48,7 +49,7 @@ public class BD {
 		
 		
 		try {
-			logger.log(Level.INFO, "Conexion cerrada");
+			log(Level.INFO, "Conexion cerrada",null);
 			conn.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -99,25 +100,57 @@ public class BD {
 		
 	}
 		
-		public boolean loginAdmin(String usr, String contra, int cod ) throws Exception{
+		public boolean loginAdmin(String usr, String contra, int cod ){
 			Connection con = abrirBaseDatos("baseDatos");
 			String sql ="SELECT Usuario,Contrasenya,codAcceso FROM Admin where Usuario=? and Contrasenya=? and codAcceso=?"; 
-			PreparedStatement rst = con.prepareStatement(sql);
-			rst.setString(1, usr);
-			rst.setString(2, contra);
-			rst.setInt(3, cod);
-			ResultSet rs = rst.executeQuery();
-
+			PreparedStatement rst;
+			try {
+				rst = con.prepareStatement(sql);
+				rst.setString(1, usr);
+				rst.setString(2, contra);
+				rst.setInt(3, cod);
+				ResultSet rs = rst.executeQuery();
+				if(rs.next()) {
+					log(Level.INFO, "Sesion iniciada con administrador: " + rs.getString("Usuario"), null);
+					return true;
+				}else {
+					log(Level.SEVERE, "No existe ADMINISTRADOR con usuario "+usr, null);
+					return false;
+				}
+			} catch (SQLException e) {
 			
-			
-			if(rs.next()) {
-				return true;
-			}else {
+				e.printStackTrace();
+				log(Level.SEVERE, "Error al establecer conexion ", e);
 				return false;
 			}
+
+			
+		
 		
 		
 	}
+		
+		
+		public void setLogger(Logger logger) {
+			this.logger = logger;
+		}
+		
+		public static void log( Level level, String msg, Throwable excepcion ) {
+			if (logger==null) {  // Logger por defecto sera el local:
+				logger = Logger.getLogger( "Log-BD" );  // Nombre del logger
+				logger.setLevel( Level.ALL );  // Loguea todos los niveles
+				try {
+					logger.addHandler( new FileHandler( "T&T-log.xml", true ) );  // Y saca el log a fichero xml
+				} catch (Exception e) {
+					logger.log( Level.SEVERE, "No se pudo crear fichero de log", e );
+				}
+			}
+			if (excepcion==null)
+				logger.log( level, msg );
+			else
+				logger.log( level, msg, excepcion );
+		}
+
 	
 	
 	

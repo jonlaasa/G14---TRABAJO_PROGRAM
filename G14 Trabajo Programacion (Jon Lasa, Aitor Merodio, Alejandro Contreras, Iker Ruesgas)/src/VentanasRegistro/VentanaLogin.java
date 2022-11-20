@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import BD.BD;
+import BD.BDRegistro;
 import VentanasAdministrador.VentanaLoginAdmin;
 import VentanasMenu.ini;
 
@@ -108,7 +108,7 @@ public class VentanaLogin extends JFrame {
 		btnIniciarSesion.addActionListener(e->{
 			String usr=usuario.getText();
 			String contra=contrasenya.getText();
-			BD bd = new BD();
+			BDRegistro bd = new BDRegistro();
 			
 			try {
 				if(bd.login(usr, contra)==true) {

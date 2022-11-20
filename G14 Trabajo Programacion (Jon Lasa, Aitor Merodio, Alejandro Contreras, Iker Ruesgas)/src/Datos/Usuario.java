@@ -24,6 +24,7 @@ public class Usuario extends Registro {
 	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String correoElectronico,String dni)  {
 		super(nombre, apellido, usuario);
 		setContrasenya(contrasenya);
+		setCorreoElectronico(correoElectronico);
 		setDni(dni); 
 		setPuntos(0);
 		
@@ -38,6 +39,7 @@ public class Usuario extends Registro {
 	public Usuario() {
 		super();
 		this.contrasenya = "";
+		this.correoElectronico="";
 		this.dni = "";
 		this.puntos = 0;
 	
