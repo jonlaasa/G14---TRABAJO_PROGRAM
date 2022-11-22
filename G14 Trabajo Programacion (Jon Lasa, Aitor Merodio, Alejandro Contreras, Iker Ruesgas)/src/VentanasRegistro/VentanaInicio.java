@@ -3,11 +3,16 @@ package VentanasRegistro;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import BD.BDRegistro;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.Date;
+import java.util.logging.Level;
 
 
 public class VentanaInicio extends JFrame {
@@ -60,8 +65,13 @@ public class VentanaInicio extends JFrame {
 		JButton btnDescripcion = new JButton("Conocenos");
 		btnDescripcion.setBounds(502, 11, 135, 23);
 		contentPane.add(btnDescripcion);
+		
+		Date fecha = new Date(System.currentTimeMillis());
+		BDRegistro.log(Level.INFO, "Iniciando aplicacion T&T, en hora: " +fecha , null);
+		
 
 		btnRegistrarse.addActionListener(e -> {
+			BDRegistro.log(Level.INFO, "Accediendo a REGISTRO" , null);
 			VentanaRegistro vr = null;
 			vr = new VentanaRegistro();
 			vr.setVisible(true);
@@ -69,6 +79,7 @@ public class VentanaInicio extends JFrame {
 		});
 
 		btnIniciarSesion.addActionListener(e -> {
+			BDRegistro.log(Level.INFO, "Accediendo a Inicio de sesion" , null);
 			VentanaLogin vr = null;
 			vr = new VentanaLogin();
 			vr.setVisible(true);
@@ -76,6 +87,8 @@ public class VentanaInicio extends JFrame {
 		});
 		
 		btnDescripcion.addActionListener(e -> {
+			BDRegistro.log(Level.INFO, "Accediendo a la descripcion de T&T" , null);
+			
 			VentanaDescripcion vr = null;
 			vr = new VentanaDescripcion();
 			vr.setVisible(true);

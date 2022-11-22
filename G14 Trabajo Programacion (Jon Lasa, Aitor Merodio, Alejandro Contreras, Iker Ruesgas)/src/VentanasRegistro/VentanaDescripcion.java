@@ -2,8 +2,11 @@ package VentanasRegistro;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Scanner;
+import java.util.logging.Level;
 
 import javax.swing.*;
+
+import BD.BDRegistro;
 
 public class VentanaDescripcion extends JFrame {
 
@@ -44,6 +47,7 @@ public class VentanaDescripcion extends JFrame {
 		//SI PULSAMOSS CERRAR, CERRAMOS LA DESCRIPCION
 		
 		bcerrar.addActionListener((e) -> {
+			BDRegistro.log(Level.INFO, "Volviendo a la ventana de Inicio" , null);
 			
 			dispose();
 			
@@ -125,10 +129,12 @@ public class VentanaDescripcion extends JFrame {
 			
 			//COLOCAMOS LA POSICION INICIAL DEL TEXTO EN LA PARTE DE MAS ARRIBA (LOGICAMENTE)
 			textArea.setCaretPosition(0);
+			BDRegistro.log(Level.INFO, "Descripcion descargada con exito" , null);
 			scanner.close();
 		} catch (Exception e) {
 			//SI NO CONSEGUIMOS CARGARLO, MENSAJE PARA NOTIFICARLO
 			JOptionPane.showMessageDialog( this, "El fichero con la descripcion no se ha podido cargar" );
+			BDRegistro.log(Level.SEVERE, "Error al cargar descripcion" , e);
 		}
 	}
 

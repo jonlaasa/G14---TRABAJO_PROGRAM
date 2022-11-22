@@ -4,20 +4,24 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import Enum.TipoServicio;
+import Enum.TipoVuelo;
+import Enum.ZonaAsientoVuelo;
 
 public class VueloComprado extends Compra {
 	
 	private Vuelo vuelo;
 	private ArrayList<RentingCoche> listaRenting; 
-	private String asiento;
+	private TipoVuelo tipoVuelo;
+	private ZonaAsientoVuelo zonaAsientoVuelo;
 	
 	//Constructor con Parametros
 	public VueloComprado(int codigoUsuario, int cantidad, long fechaCompra, TipoServicio tipo,int codigoCompra,  Vuelo vuelo,
-			ArrayList<RentingCoche> listaRenting, String asiento) {
+			ArrayList<RentingCoche> listaRenting, String asiento, TipoVuelo tipoVuelo,ZonaAsientoVuelo zonaAsientoVuelo) {
 		super(codigoUsuario, cantidad, fechaCompra, tipo,codigoCompra);
 		this.vuelo = vuelo;
 		this.listaRenting = listaRenting;
-		this.asiento = asiento;
+		this.tipoVuelo=tipoVuelo;
+		this.zonaAsientoVuelo=zonaAsientoVuelo;
 	}
 	
 	
@@ -45,19 +49,32 @@ public class VueloComprado extends Compra {
 		this.listaRenting = listaRenting;
 	}
 
-	public String getAsiento() {
-		return asiento;
+	
+	public TipoVuelo getTipoVuelo() {
+		return tipoVuelo;
 	}
 
-	public void setAsiento(String asiento) {
-		this.asiento = asiento;
+
+	public void setTipoVuelo(TipoVuelo tipoVuelo) {
+		this.tipoVuelo = tipoVuelo;
 	}
+
+
+	public ZonaAsientoVuelo getZonaAsientoVuelo() {
+		return zonaAsientoVuelo;
+	}
+
+
+	public void setZonaAsientoVuelo(ZonaAsientoVuelo zonaAsientoVuelo) {
+		this.zonaAsientoVuelo = zonaAsientoVuelo;
+	}
+
 
 	@Override
 	public String toString() {
-		return  super.toString()+ "VueloComprado [vuelo=" + vuelo + ", listaRenting=" + listaRenting + ", asiento=" + asiento + "]";
+		return "VueloComprado [vuelo=" + vuelo + ", listaRenting=" + listaRenting + ", tipoVuelo=" + tipoVuelo
+				+ ", zonaAsientoVuelo=" + zonaAsientoVuelo + "]";
 	}
-	
-	
+
 
 }

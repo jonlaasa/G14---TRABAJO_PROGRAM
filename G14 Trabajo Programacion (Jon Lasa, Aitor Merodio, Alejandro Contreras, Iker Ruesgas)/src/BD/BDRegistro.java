@@ -136,7 +136,6 @@ public class BDRegistro {
 		}
 		
 		public static void log( Level level, String msg, Throwable excepcion ) {
-			if (logger==null) {  // Logger por defecto sera el local:
 				logger = Logger.getLogger( "Log-BD" );  // Nombre del logger
 				logger.setLevel( Level.ALL );  // Loguea todos los niveles
 				try {
@@ -144,7 +143,7 @@ public class BDRegistro {
 				} catch (Exception e) {
 					logger.log( Level.SEVERE, "No se pudo crear fichero de log", e );
 				}
-			}
+			
 			if (excepcion==null)
 				logger.log( level, msg );
 			else

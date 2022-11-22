@@ -20,6 +20,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
@@ -137,6 +138,7 @@ public class VentanaRegistro extends JFrame {
 		
 		
 		btnVolverRegistro.addActionListener(e -> {
+			BDRegistro.log(Level.INFO, "Volviendo a ventana de inicio" , null);
 			VentanaInicio vr = null;
 			vr = new VentanaInicio();
 			vr.setVisible(true);
@@ -178,14 +180,19 @@ public class VentanaRegistro extends JFrame {
 					try {
 						modSql.registrar(mod);
 						log.log(Level.INFO, "USUARIO REGISTRADO EN LA BASE DE DATOS");
-					} catch (LongitudStringException e2) {
+						BDRegistro.log(Level.INFO, "Registro con exito del usuario: "+usr , null);
+					} catch (LongitudStringException e1) {
 						log.log(Level.SEVERE, "Longitud de datos de registro no valida:");
+						BDRegistro.log(Level.SEVERE, "Error en validacion de datos de registro" , e1);
 											
 					}	
 					
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				} catch (SQLException e2) {
+					BDRegistro.log(Level.SEVERE, "Error al intentar acceder en la base de datos" , e2);
+					e2.printStackTrace();
+				}catch(Exception e3) {
+					BDRegistro.log(Level.SEVERE, "Error en la validacion de datos" , e3);
+					
 				}
 				
 		});

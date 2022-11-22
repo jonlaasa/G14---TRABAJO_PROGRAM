@@ -15,6 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.util.logging.Level;
+
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import java.awt.Color;
@@ -83,6 +85,7 @@ public class VentanaLogin extends JFrame {
 		//UTILIZACION DE JAVA FUNCIONAL 
 
 		btnVolver.addActionListener(e -> {
+			BDRegistro.log(Level.INFO, "Volviendo a ventana de inicio" , null);
 			VentanaInicio vr = null;
 			vr = new VentanaInicio();
 			vr.setVisible(true);
@@ -91,6 +94,7 @@ public class VentanaLogin extends JFrame {
 		
 
 		btnRegistrarse.addActionListener(e -> {
+			BDRegistro.log(Level.INFO, "Accediendo a REGISTRO" , null);
 			VentanaRegistro vr = null;
 			vr = new VentanaRegistro();
 			vr.setVisible(true);
@@ -99,6 +103,7 @@ public class VentanaLogin extends JFrame {
 		
 		
 		btnAdmin.addActionListener(e -> {
+			BDRegistro.log(Level.INFO, "Accediendo a INICIO DE SESION DE ADMINISTRADOR" , null);
 			VentanaLoginAdmin vr = null;
 			vr = new VentanaLoginAdmin();
 			vr.setVisible(true);
@@ -113,14 +118,17 @@ public class VentanaLogin extends JFrame {
 			try {
 				if(bd.login(usr, contra)==true) {
 					JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
+					BDRegistro.log(Level.INFO, "Sesion iniciada con exito del usuario: "+usr , null);
 					ini vr = null;
 					vr = new ini();
 					vr.setVisible(true);
 					dispose();	
 				}
 				else JOptionPane.showMessageDialog(null, "Inicio de sesion incorrecto");
+				BDRegistro.log(Level.SEVERE, "Inicio de sesion no valido" , null);
+				
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
+				BDRegistro.log(Level.SEVERE, "Error al intentar comprobar el usario con la base de datos" , null);
 				e1.printStackTrace();
 				
 			}
