@@ -89,6 +89,17 @@ private static Connection conn=null;
 	}
 	
 	
+	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
+	public static void mostrarVuelos() {
+		
+		
+		
+		
+		
+		
+	}
+	
+	
 	
 	
 	

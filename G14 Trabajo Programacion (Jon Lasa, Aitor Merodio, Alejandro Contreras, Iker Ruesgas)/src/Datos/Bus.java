@@ -10,6 +10,10 @@ import logicaDeNegocio.PlazasRestantesException;
 import logicaDeNegocio.PrecioException;
 
 public class Bus extends Servicio {
+	
+	//Clase bus la cual hereda de Servicio
+	
+	//El bus tendra un atributo String compañia
 
 	private String companya;
 
@@ -28,6 +32,7 @@ public class Bus extends Servicio {
 		setCompanya("Sin compa�ia");
 	}
 
+	//Get y set de la clase bus
 
 	public String getCompanya() {
 		return companya;
@@ -40,6 +45,7 @@ public class Bus extends Servicio {
 	
 	}
 
+	// Metodo toString
 
 	@Override
 	public String toString() {

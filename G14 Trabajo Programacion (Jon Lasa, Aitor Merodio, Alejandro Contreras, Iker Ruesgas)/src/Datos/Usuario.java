@@ -9,6 +9,11 @@ import logicaDeNegocio.StringValidoException;
 
 public class Usuario extends Registro {
 	
+	//Clase Usuario, para guardarv los usuarios que accedan a la aplicacion
+	//Con ella registraremos sus compras(servicios adquiridos)
+	
+	//Atributos de la clase Usuario, con su dni, contraseña, numero de puntos T&T
+	//ademas del correo y codigo IDENTIFICADOR, muy util para la BASE DE DATOS
 	
 	private String contrasenya; 
 	private String dni;
@@ -45,15 +50,15 @@ public class Usuario extends Registro {
 	
 	}
 
-
+	//Metodos get y set de los atributos de la clase
+	
 	public String getContrasenya() {
 		return contrasenya;
 	}
 
 
 	public void setContrasenya(String contrasenya)  {
-		
-			this.contrasenya = contrasenya;
+		this.contrasenya = contrasenya;
 		
 	}
 
@@ -63,12 +68,10 @@ public class Usuario extends Registro {
 	}
 
 	
-	//FALTA EL PATTERN DEL DNI
+	//FALTA EL PATTERN DEL DNI //SU COMPROBACION!, PERO EN LA VENTANA DE REGISTRO!!!
 
 	public void setDni(String dni) {
-		
-		
-			this.dni = dni;
+		this.dni = dni;
 		
 	}
 
@@ -81,7 +84,6 @@ public class Usuario extends Registro {
 
 
 	public void setPuntos(int puntos) {
-	
 			this.puntos = puntos;
 		
 	}
@@ -108,6 +110,8 @@ public class Usuario extends Registro {
 	}
 
 
+	//Metodo toString
+	
 	@Override
 	public String toString() {
 		return "Usuario: " + "Nombre: " + getNombre() +" Apellido: " + getApellido() + "Nombre usuario: "  + getNombreUsuario() + " [contrasenya=" + contrasenya + ", dni=" + dni  

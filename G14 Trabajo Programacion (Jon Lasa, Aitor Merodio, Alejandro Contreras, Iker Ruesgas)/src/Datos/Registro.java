@@ -1,11 +1,14 @@
 package Datos;
 
 import javax.swing.JOptionPane;
-
 import logicaDeNegocio.LongitudStringException;
 
 public class Registro {
 	
+	//Clase registro, la cual usaremos como padre para USUARIO Y ADMINISTRADOR
+	
+	
+	//Parametros, nombre, apellido y nombre de usuario
 	private String nombre;
 	private String apellido;
 	private String nombreUsuario;
@@ -20,6 +23,8 @@ public class Registro {
 	}
 	
 	
+	//Constructor sin parametros
+	
 	public Registro() {
 		super();
 	this.nombre = "";
@@ -27,6 +32,7 @@ public class Registro {
 	this.nombreUsuario = "";
 }
 
+	//Metodos get y set de los atributos de la clase
 
 	public String getNombre() {
 		return nombre;
@@ -68,7 +74,7 @@ public class Registro {
 	
 	
 
-	
+	//Metodo toString
 	
 	public String toString () {
 		
