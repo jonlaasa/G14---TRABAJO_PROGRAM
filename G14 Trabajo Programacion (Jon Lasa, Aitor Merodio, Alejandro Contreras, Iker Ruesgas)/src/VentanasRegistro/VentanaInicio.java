@@ -20,9 +20,6 @@ public class VentanaInicio extends JFrame {
 	private JPanel contentPane;
 	
 	
-
-	
-	
 	public  VentanaInicio () {
 		inicializar();
 
