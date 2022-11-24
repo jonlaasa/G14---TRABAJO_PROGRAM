@@ -20,7 +20,6 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
@@ -37,6 +36,7 @@ public class VentanaRegistro extends JFrame {
 	private JPasswordField contrasenya;
 	private JPasswordField contrasenyaRepetida;
 	private JButton btnVolverRegistro;
+	private JTextField mail;
 	
 
 
@@ -80,41 +80,41 @@ public class VentanaRegistro extends JFrame {
 		
 		JLabel lblNewLabel_5 = new JLabel("Contrase\u00F1a:");
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_5.setBounds(80, 230, 113, 14);
+		lblNewLabel_5.setBounds(77, 274, 113, 14);
 		contentPane.add(lblNewLabel_5);
 		
 		usuario = new JTextField();
-		usuario.setBounds(189, 197, 86, 20);
+		usuario.setBounds(189, 197, 110, 20);
 		contentPane.add(usuario);
 		usuario.setColumns(10);
 		
 		dni = new JTextField();
-		dni.setBounds(189, 167, 86, 20);
+		dni.setBounds(189, 167, 110, 20);
 		contentPane.add(dni);
 		dni.setColumns(10);
 		
 		apellido = new JTextField();
-		apellido.setBounds(189, 137, 86, 20);
+		apellido.setBounds(189, 137, 110, 20);
 		contentPane.add(apellido);
 		apellido.setColumns(10);
 		
 		nombre = new JTextField();
 		nombre.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		nombre.setBounds(189, 102, 86, 20);
+		nombre.setBounds(189, 102, 110, 20);
 		contentPane.add(nombre);
 		nombre.setColumns(10);
 		
 		contrasenya = new JPasswordField();
-		contrasenya.setBounds(189, 227, 86, 20);
+		contrasenya.setBounds(189, 273, 110, 20);
 		contentPane.add(contrasenya);
 		
 		JLabel lblNewLabel_6 = new JLabel("Repetir Contrase\u00F1a:");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_6.setBounds(295, 230, 153, 14);
+		lblNewLabel_6.setBounds(315, 274, 153, 14);
 		contentPane.add(lblNewLabel_6);
 		
 		contrasenyaRepetida = new JPasswordField();
-		contrasenyaRepetida.setBounds(442, 229, 86, 20);
+		contrasenyaRepetida.setBounds(462, 273, 113, 20);
 		contentPane.add(contrasenyaRepetida);
 		
 		btnVolverRegistro = new JButton("Volver");
@@ -135,10 +135,19 @@ public class VentanaRegistro extends JFrame {
 		lblNewLabel_4.setBounds(189, 25, 349, 50);
 		contentPane.add(lblNewLabel_4);
 		
+		JLabel lblNewLabel_7 = new JLabel("Mail:");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel_7.setBounds(80, 237, 73, 14);
+		contentPane.add(lblNewLabel_7);
+		
+		mail = new JTextField();
+		mail.setBounds(189, 236, 110, 20);
+		contentPane.add(mail);
+		mail.setColumns(10);
+		
 		
 		
 		btnVolverRegistro.addActionListener(e -> {
-			BDRegistro.log(Level.INFO, "Volviendo a ventana de inicio" , null);
 			VentanaInicio vr = null;
 			vr = new VentanaInicio();
 			vr.setVisible(true);
@@ -155,7 +164,7 @@ public class VentanaRegistro extends JFrame {
 			String ape=apellido.getText();
 			String contra=contrasenya.getText();
 			String contraRepe=contrasenyaRepetida.getText();
-
+			String correo=mail.getText();
 			
 			
 				mod.setNombreUsuario(usr);
@@ -163,7 +172,7 @@ public class VentanaRegistro extends JFrame {
 				mod.setApellido(ape);
 				mod.setNombre(nom);
 				mod.setDni(dn);
-				
+				mod.setCorreoElectronico(correo);
 				
 				
 				try {
@@ -180,25 +189,19 @@ public class VentanaRegistro extends JFrame {
 					try {
 						modSql.registrar(mod);
 						log.log(Level.INFO, "USUARIO REGISTRADO EN LA BASE DE DATOS");
-						BDRegistro.log(Level.INFO, "Registro con exito del usuario: "+usr , null);
-					} catch (LongitudStringException e1) {
+					} catch (LongitudStringException e2) {
 						log.log(Level.SEVERE, "Longitud de datos de registro no valida:");
-						BDRegistro.log(Level.SEVERE, "Error en validacion de datos de registro" , e1);
 											
 					}	
 					
-				} catch (SQLException e2) {
-					BDRegistro.log(Level.SEVERE, "Error al intentar acceder en la base de datos" , e2);
-					e2.printStackTrace();
-				}catch(Exception e3) {
-					BDRegistro.log(Level.SEVERE, "Error en la validacion de datos" , e3);
-					
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 				
 		});
 		
 		
 	}
-	
-	
 }
+

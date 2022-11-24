@@ -62,7 +62,7 @@ public class BDRegistro {
 	public boolean registrar(Usuario usr) throws Exception {
 		
 		Connection con = abrirBaseDatos("baseDatos");
-		String sql = "INSERT INTO Usuario (Nombre,	Apellidos, Usuario, Contrasenya, DNI, puntosDeusto ) VALUES(?,?,?,?,?,?)";
+		String sql = "INSERT INTO Usuario (Nombre,	Apellidos, Usuario, Contrasenya, DNI, puntosDeusto,Mail ) VALUES(?,?,?,?,?,?)";
 		
 		try {
 			pst=con.prepareStatement(sql);
@@ -72,6 +72,7 @@ public class BDRegistro {
 			pst.setString(4, usr.getContrasenya());
 			pst.setString(5, usr.getDni());
 			pst.setInt(6, 0);
+			pst.setString(7, usr.getCorreoElectronico());
 			pst.execute();
 			JOptionPane.showMessageDialog(null, "Registro completado");
 			return true;
@@ -101,7 +102,7 @@ public class BDRegistro {
 	}
 		
 		public boolean loginAdmin(String usr, String contra, int cod ){
-			Connection con = abrirBaseDatos("baseDatos");
+			Connection con = abrirBaseDatos("serviciosCompanya");
 			String sql ="SELECT Usuario,Contrasenya,codAcceso FROM Admin where Usuario=? and Contrasenya=? and codAcceso=?"; 
 			PreparedStatement rst;
 			try {
@@ -136,6 +137,7 @@ public class BDRegistro {
 		}
 		
 		public static void log( Level level, String msg, Throwable excepcion ) {
+			if (logger==null) {  // Logger por defecto sera el local:
 				logger = Logger.getLogger( "Log-BD" );  // Nombre del logger
 				logger.setLevel( Level.ALL );  // Loguea todos los niveles
 				try {
@@ -143,14 +145,14 @@ public class BDRegistro {
 				} catch (Exception e) {
 					logger.log( Level.SEVERE, "No se pudo crear fichero de log", e );
 				}
-			
+			}
 			if (excepcion==null)
 				logger.log( level, msg );
 			else
 				logger.log( level, msg, excepcion );
 		}
 
-	
+
 	
 	
 	
