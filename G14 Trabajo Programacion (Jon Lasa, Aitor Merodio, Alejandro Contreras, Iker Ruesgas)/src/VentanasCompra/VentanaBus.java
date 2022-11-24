@@ -24,18 +24,17 @@ import java.awt.event.ActionEvent;
 import java.awt.Panel;
 import javax.swing.JScrollBar;
 
-public class VentanaVuelo extends JFrame {
+public class VentanaBus extends JFrame {
 
 	private JPanel contentPane;
-	private JTable tableVuelos;
+	private JTable tableBus;
 	private JCalendar calendarioIda;
 	private JCalendar calendarioVuelta;
-
 
 	/**
 	 * Create the frame.
 	 */
-	public VentanaVuelo() {
+	public VentanaBus() {
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 574, 719);
@@ -66,9 +65,9 @@ public class VentanaVuelo extends JFrame {
 		lblDestino.setBounds(22, 56, 58, 25);
 		contentPane.add(lblDestino);
 		
-		tableVuelos = new JTable();
-		tableVuelos.setBounds(22, 248, 498, 390);
-		contentPane.add(tableVuelos);
+		tableBus = new JTable();
+		tableBus.setBounds(22, 248, 498, 390);
+		contentPane.add(tableBus);
 		
 		JLabel lblPrecio = new JLabel("Precio");
 		lblPrecio.setForeground(Color.BLACK);
