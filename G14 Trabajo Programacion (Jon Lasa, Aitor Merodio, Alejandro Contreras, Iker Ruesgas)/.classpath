@@ -12,7 +12,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/jonme/git/G14---TRABAJO_PROGRAM/G14 Trabajo Programacion (Jon Lasa, Aitor Merodio, Alejandro Contreras, Iker Ruesgas)/Librerias/jcalendar-1.4.jar">
+	<classpathentry kind="lib" path="Librerias/jcalendar-1.4.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

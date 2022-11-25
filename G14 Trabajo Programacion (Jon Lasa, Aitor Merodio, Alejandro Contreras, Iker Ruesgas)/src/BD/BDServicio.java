@@ -2,15 +2,19 @@ package BD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import Datos.Bus;
 import Datos.Compra;
 import Datos.Usuario;
+import Datos.Vuelo;
 import Enum.TipoServicio;
 
 public class BDServicio {
@@ -89,15 +93,94 @@ private static Connection conn=null;
 	}
 	
 	
-	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
-	public static void mostrarVuelos() {
+	//METODO QUE DEVUELVE UNA LISTA CON LOS BUSES PARA MOSTRAR EN LA TABLA
+	public static ArrayList <Bus> mostrarBusesTotal() {
 		
+		//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
+		ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
 		
+		try {
+			Statement st = conn.createStatement();
+			
+			String resp = "select * from buses";
+			ResultSet rs = st.executeQuery(resp);
+			while(rs.next()) {
+				int codigoVuelo = rs.getInt("Codigo");
+				long FechaVuelo = rs.getDate("Fecha").getTime();
+				int duracion = rs.getInt("Duracion");
+				String origen = rs.getString("Origen");
+				String destino = rs.getString("Destino");
+				Double precio = rs.getDouble("Precio");
+				TipoServicio tipo = TipoServicio.vuelo;
+				int plazasRestantes = rs.getInt("Plazas_restantes");
+				String companya = rs.getString("Compania");
+				
+				
+				
+				Bus busNuevo = new Bus(codigoVuelo, FechaVuelo, duracion, origen,
+						destino, precio, tipo,plazasRestantes,companya);
+				listaConBus.add(busNuevo);
+				
+				
+				
+				
+			}
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER BUSES DE LA BASE DE DATOS", e);
+			e.printStackTrace();
+		}
 		
-		
+		log(Level.INFO, "DEVOLVIENDO BUSES DE LA BASE DE DATOS", null);
+		return listaConBus;
 		
 		
 	}
+	
+	
+	
+	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
+		public static ArrayList <Vuelo> mostrarVuelosTotal() {
+			
+			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
+			ArrayList <Vuelo> listaConVuelos = new ArrayList <Vuelo> ();
+			
+			try {
+				Statement st = conn.createStatement();
+				
+				String resp = "select * from vuelos";
+				ResultSet rs = st.executeQuery(resp);
+				while(rs.next()) {
+					int codigoVuelo = rs.getInt("Codigo");
+					long FechaVuelo = rs.getDate("Fecha").getTime();
+					int duracion = rs.getInt("Duracion");
+					String origen = rs.getString("Origen");
+					String destino = rs.getString("Destino");
+					Double precio = rs.getDouble("Precio");
+					TipoServicio tipo = TipoServicio.vuelo;
+					int plazasRestantes = rs.getInt("Plazas_restantes");
+					
+					
+					Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, duracion, origen,
+							destino, precio, tipo,plazasRestantes);
+					listaConVuelos.add(vueloNuevo);
+					
+					
+					
+					
+				}
+				
+			} catch (SQLException e) {
+				log(Level.SEVERE, "ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS", e);
+				e.printStackTrace();
+			}
+			
+			log(Level.INFO, "DEVOLVIENDO VUELOS DE LA BASE DE DATOS", null);
+			return listaConVuelos;
+			
+			
+		}
+		
 	
 	
 	

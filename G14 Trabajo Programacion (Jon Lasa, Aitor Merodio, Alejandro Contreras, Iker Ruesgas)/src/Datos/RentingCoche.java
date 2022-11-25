@@ -10,17 +10,17 @@ public class RentingCoche {
 	private ClaseCoche claseCoche;
 	
 	//Constructor con parametros
-	public RentingCoche(double precio, int diasAlquilado, ClaseCoche claseCoche) {
-		this.precio=precio;
+	public RentingCoche(int diasAlquilado, ClaseCoche claseCoche) {
 		this.diasAlquilado = diasAlquilado;
 		this.claseCoche = claseCoche;
+		setPrecio();
 	}
 	
 	//Constructor vacio, con valores por defecto.
 	public RentingCoche() {
-		this.precio=0;
 		this.diasAlquilado = 0;
 		this.claseCoche = ClaseCoche.gamaBaja;
+		setPrecio();
 	}
 	
 	
@@ -29,10 +29,9 @@ public class RentingCoche {
 		return precio;
 	}
 
-	public void setPrecio(double precio) {
-		this.precio = precio;
+	public void setPrecio() {
+		this.precio = diasAlquilado * claseCoche.precio();
 	}
-
 	public int getDiasAlquilado() {
 		return diasAlquilado;
 	}

@@ -30,7 +30,6 @@ public class VueloComprado extends Compra {
 	public VueloComprado(int codigoUsuario, int cantidad, long fechaCompra, TipoServicio tipoServicio,int codigoCompra, Vuelo vuelo) {
 		super(codigoUsuario, cantidad, fechaCompra,tipoServicio,codigoCompra);
 		this.listaRenting= new ArrayList<RentingCoche> ();
-		this.asiento = "000";
 	}
 
 	public Vuelo getVuelo() {

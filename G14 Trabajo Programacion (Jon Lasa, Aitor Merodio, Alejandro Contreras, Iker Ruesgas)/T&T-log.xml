@@ -266,3 +266,35 @@
   <message>Iniciando aplicacion T&amp;T, en hora: Wed Nov 23 22:04:34 CET 2022</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-25T17:49:50.162002700Z</date>
+  <millis>1669398590162</millis>
+  <nanos>2700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Fri Nov 25 18:49:50 CET 2022</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-25T17:51:52.446578300Z</date>
+  <millis>1669398712446</millis>
+  <nanos>578300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Fri Nov 25 18:51:52 CET 2022</message>
+</record>
+</log>
