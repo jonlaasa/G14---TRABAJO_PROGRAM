@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import java.awt.Color;
 
-public class ini extends JFrame {
+public class VentanaMenu extends JFrame {
 
 	private JPanel contentPane;
 
@@ -29,7 +29,7 @@ public class ini extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ini frame = new ini();
+					VentanaMenu frame = new VentanaMenu();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +41,7 @@ public class ini extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ini() {
+	public VentanaMenu() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 451, 334);

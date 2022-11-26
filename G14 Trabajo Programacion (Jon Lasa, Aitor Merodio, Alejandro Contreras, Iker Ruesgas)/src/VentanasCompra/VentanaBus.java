@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
 import java.awt.Color;
 import javax.swing.JTable;
 import java.awt.BorderLayout;
@@ -13,6 +15,8 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Graphics;
+
 import javax.swing.SwingConstants;
 import javax.swing.JRadioButton;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
@@ -20,16 +24,24 @@ import com.toedter.calendar.JCalendar;
 
 import java.awt.Button;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 import java.awt.event.ActionEvent;
 import java.awt.Panel;
 import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.ButtonGroup;
+import javax.swing.JCheckBox;
+import javax.swing.ScrollPaneConstants;
+import java.awt.Dimension;
 
 public class VentanaBus extends JFrame {
 
 	private JPanel contentPane;
-	private JTable tableBus;
+	private DefaultTableModel modeloTabla;
 	private JCalendar calendarioIda;
 	private JCalendar calendarioVuelta;
+	private JTable tableVuelos;
+
 
 	/**
 	 * Create the frame.
@@ -37,7 +49,7 @@ public class VentanaBus extends JFrame {
 	public VentanaBus() {
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 574, 719);
+		setBounds(100, 100, 600, 650);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 240, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -46,11 +58,11 @@ public class VentanaBus extends JFrame {
 		contentPane.setLayout(null);
 		
 		JComboBox comboBoxOrigen = new JComboBox();
-		comboBoxOrigen.setBounds(90, 25, 457, 22);
+		comboBoxOrigen.setBounds(89, 28, 167, 22);
 		contentPane.add(comboBoxOrigen);
 		
 		JComboBox comboBoxDestino = new JComboBox();
-		comboBoxDestino.setBounds(90, 61, 457, 22);
+		comboBoxDestino.setBounds(89, 61, 167, 22);
 		contentPane.add(comboBoxDestino);
 		
 		JLabel lblNewLabel = new JLabel("Origen");
@@ -65,58 +77,78 @@ public class VentanaBus extends JFrame {
 		lblDestino.setBounds(22, 56, 58, 25);
 		contentPane.add(lblDestino);
 		
-		tableBus = new JTable();
-		tableBus.setBounds(22, 248, 498, 390);
-		contentPane.add(tableBus);
+		
+		
+		JPanel panelTabla = new JPanel();
+		panelTabla.setBounds(10, 266, 574, 260);
+		contentPane.add(panelTabla);
+		
+		modeloTabla = new DefaultTableModel( new Object [] {"CODIGO","FECHA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
+		tableVuelos=new JTable(modeloTabla);
+		// Cambios de anchura
+		
+		tableVuelos.getColumnModel().getColumn(1).setMinWidth(75);
+		
+		tableVuelos.getColumnModel().getColumn(3).setMinWidth(75);
+		tableVuelos.getColumnModel().getColumn(4).setMinWidth(75);
+		
+		panelTabla.setLayout(new BorderLayout());
+		
+		JScrollPane scroll = new JScrollPane(tableVuelos,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		
+		panelTabla.add(scroll);
+		
+		
+		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0,0});
+		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0,0});
+		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
+		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
+		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
+		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
+		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
+		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
+		modeloTabla.addRow(new Object [] {002,"444","45"});
+		modeloTabla.addRow(new Object [] {002,"444","45"});
+		modeloTabla.addRow(new Object [] {002,"444","45"});
+		modeloTabla.addRow(new Object [] {002,"444","45"});
+		modeloTabla.addRow(new Object [] {002,"444","45"});
+		modeloTabla.addRow(new Object [] {002,"444","45"});
+		modeloTabla.addRow(new Object [] {002,"444","45"});
+		modeloTabla.addRow(new Object [] {002,"444","45"});
+		
 		
 		JLabel lblPrecio = new JLabel("Precio");
 		lblPrecio.setForeground(Color.BLACK);
 		lblPrecio.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
-		lblPrecio.setBounds(22, 92, 58, 25);
+		lblPrecio.setBounds(333, 23, 58, 25);
 		contentPane.add(lblPrecio);
 		
 		JLabel lblFiltart = new JLabel("Filtrar por:");
 		lblFiltart.setHorizontalAlignment(SwingConstants.LEFT);
 		lblFiltart.setForeground(Color.BLACK);
 		lblFiltart.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblFiltart.setBounds(48, 113, 58, 22);
+		lblFiltart.setBounds(333, 50, 58, 22);
 		contentPane.add(lblFiltart);
-		
-		JRadioButton rdbtnDeMayorAMenor = new JRadioButton("De mayor a menor");
-		rdbtnDeMayorAMenor.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		rdbtnDeMayorAMenor.setBounds(22, 136, 109, 23);
-		contentPane.add(rdbtnDeMayorAMenor);
-		
-		JRadioButton rdbtnDeMenorA = new JRadioButton("De menor a mayor");
-		rdbtnDeMenorA.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		rdbtnDeMenorA.setBounds(22, 162, 109, 23);
-		contentPane.add(rdbtnDeMenorA);
 		
 		JLabel lblFecha = new JLabel("Fecha");
 		lblFecha.setForeground(Color.BLACK);
 		lblFecha.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
-		lblFecha.setBounds(121, 94, 58, 25);
+		lblFecha.setBounds(245, 100, 58, 25);
 		contentPane.add(lblFecha);
 		
 		JLabel lblInicio = new JLabel("Ida:");
 		lblInicio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblInicio.setForeground(Color.BLACK);
 		lblInicio.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblInicio.setBounds(189, 83, 58, 22);
+		lblInicio.setBounds(146, 83, 58, 22);
 		contentPane.add(lblInicio);
 		
 		JLabel lblVuelta = new JLabel("Vuelta:");
 		lblVuelta.setHorizontalAlignment(SwingConstants.LEFT);
 		lblVuelta.setForeground(Color.BLACK);
 		lblVuelta.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblVuelta.setBounds(364, 83, 58, 22);
+		lblVuelta.setBounds(315, 83, 58, 22);
 		contentPane.add(lblVuelta);
-		
-		Button buttonBuscarVuelo = new Button("BUSCAR");
-		buttonBuscarVuelo.setActionCommand("buscarVuelo");
-		buttonBuscarVuelo.setBackground(new Color(102, 204, 204));
-		buttonBuscarVuelo.setBounds(22, 201, 70, 22);
-		contentPane.add(buttonBuscarVuelo);
 		
 		Button buttonVolver = new Button("VOLVER");
 		buttonVolver.addActionListener(new ActionListener() {
@@ -125,7 +157,7 @@ public class VentanaBus extends JFrame {
 		});
 		buttonVolver.setBackground(new Color(102, 204, 204));
 		buttonVolver.setActionCommand("buscarVuelo");
-		buttonVolver.setBounds(22, 636, 70, 22);
+		buttonVolver.setBounds(72, 549, 63, 31);
 		contentPane.add(buttonVolver);
 		
 		Button buttonAceptar = new Button("ACEPTAR");
@@ -135,21 +167,45 @@ public class VentanaBus extends JFrame {
 		});
 		buttonAceptar.setBackground(new Color(102, 204, 204));
 		buttonAceptar.setActionCommand("buscarVuelo");
-		buttonAceptar.setBounds(450, 636, 70, 22);
+		buttonAceptar.setBounds(359, 549, 124, 31);
 		contentPane.add(buttonAceptar);
-		
-		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(530, 248, 17, 390);
-		contentPane.add(scrollBar);
 		
 		JCalendar calendarIda = new JCalendar();
 		calendarIda.setWeekOfYearVisible(false);
-		calendarIda.setBounds(168, 102, 184, 153);
+		calendarIda.setBounds(45, 102, 184, 153);
 		contentPane.add(calendarIda);
 		
 		JCalendar calendarVuelta = new JCalendar();
 		calendarVuelta.setWeekOfYearVisible(false);
-		calendarVuelta.setBounds(363, 102, 184, 153);
+		calendarVuelta.setBounds(320, 100, 184, 153);
 		contentPane.add(calendarVuelta);
+		
+		Button buttonBuscarVuelo = new Button("BUSCAR");
+		buttonBuscarVuelo.setBounds(245, 208, 70, 19);
+		contentPane.add(buttonBuscarVuelo);
+		buttonBuscarVuelo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		buttonBuscarVuelo.setActionCommand("buscarVuelo");
+		buttonBuscarVuelo.setBackground(new Color(102, 204, 204));
+		
+		ButtonGroup bg=new ButtonGroup();
+		
+		JCheckBox menorMayor = new JCheckBox("Menor a mayor");
+		menorMayor.setBounds(410, 28, 110, 23);
+		contentPane.add(menorMayor);
+		
+		JCheckBox mayorMenor = new JCheckBox("Mayor a menor");
+		mayorMenor.setBounds(407, 56, 113, 23);
+		contentPane.add(mayorMenor);
+		
+		bg.add(menorMayor);
+		bg.add(mayorMenor);
+		
+
+		
+		
+		
 	}
 }

@@ -8,7 +8,7 @@ import javax.swing.border.EmptyBorder;
 
 import BD.BDRegistro;
 import VentanasAdministrador.VentanaLoginAdmin;
-import VentanasMenu.ini;
+import VentanasMenu.VentanaMenu;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -119,8 +119,8 @@ public class VentanaLogin extends JFrame {
 				if(bd.login(usr, contra)==true) {
 					JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
 					BDRegistro.log(Level.INFO, "Sesion iniciada con exito del usuario: "+usr , null);
-					ini vr = null;
-					vr = new ini();
+					VentanaMenu vr = null;
+					vr = new VentanaMenu();
 					vr.setVisible(true);
 					dispose();	
 				}

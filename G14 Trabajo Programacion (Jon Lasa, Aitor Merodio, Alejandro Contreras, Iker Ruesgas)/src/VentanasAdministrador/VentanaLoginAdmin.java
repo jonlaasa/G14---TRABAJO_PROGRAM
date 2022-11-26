@@ -13,7 +13,7 @@ import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import BD.BDRegistro;
-import VentanasMenu.ini;
+import VentanasMenu.VentanaMenu;
 import VentanasRegistro.VentanaInicio;
 import VentanasRegistro.VentanaLogin;
 
@@ -102,8 +102,8 @@ public class VentanaLoginAdmin extends JFrame {
 			try {
 				if(bd.loginAdmin(usr, contra, codigo)==true) {
 					JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
-					ini vr = null;
-					vr = new ini();
+					VentanaMenu vr = null;
+					vr = new VentanaMenu();
 					vr.setVisible(true);
 					dispose();	
 				}
