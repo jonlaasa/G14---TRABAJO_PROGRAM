@@ -22,14 +22,20 @@ import javax.swing.JRadioButton;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import com.toedter.calendar.JCalendar;
 
+import BD.BDServicio;
+import Datos.Vuelo;
+
 import java.awt.Button;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Vector;
 import java.awt.event.ActionEvent;
 import java.awt.Panel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultListModel;
 import javax.swing.JCheckBox;
 import javax.swing.ScrollPaneConstants;
 import java.awt.Dimension;
@@ -41,6 +47,9 @@ public class VentanaVuelo extends JFrame {
 	private JCalendar calendarioIda;
 	private JCalendar calendarioVuelta;
 	private JTable tableVuelos;
+	private DefaultListModel<Vuelo> mVuelos = new DefaultListModel<>();
+	private ArrayList<Vuelo> listaVuelos;
+	
 
 
 	/**
@@ -77,13 +86,12 @@ public class VentanaVuelo extends JFrame {
 		lblDestino.setBounds(22, 56, 58, 25);
 		contentPane.add(lblDestino);
 		
-		
-		
 		JPanel panelTabla = new JPanel();
 		panelTabla.setBounds(10, 266, 574, 260);
 		contentPane.add(panelTabla);
 		
-		modeloTabla = new DefaultTableModel( new Object [] {"CODIGO","FECHA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
+		modeloTabla = new DefaultTableModel( new Object [] {
+				"FECHA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
 		tableVuelos=new JTable(modeloTabla);
 		// Cambios de anchura
 		
@@ -99,22 +107,22 @@ public class VentanaVuelo extends JFrame {
 		panelTabla.add(scroll);
 		
 		
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
+		//LLENAMOS LA LISTA de VUELOS ACTUALES CON LOS VUELOS  DE BD
+		
+		listaVuelos = BDServicio.mostrarVuelosTotal();
+		
+		//CARGAMOS EL MODELO
+		for(Vuelo vuelo: listaVuelos) {
+			modeloTabla.addRow(new Object [] {new Date (vuelo.getFecha()),vuelo.getDuracion(),vuelo.getOrigen(),
+					vuelo.getDestino(),vuelo.getPrecio(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
+			});
+		}
+		
+		
+		
+	
+		
+		
 		
 		
 		JLabel lblPrecio = new JLabel("Precio");

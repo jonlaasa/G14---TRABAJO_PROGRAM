@@ -818,6 +818,7 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
+<<<<<<< HEAD
   <date>2022-11-28T16:00:53.807531Z</date>
   <millis>1669651253807</millis>
   <nanos>531000</nanos>
@@ -2108,5 +2109,1879 @@
   <method>log</method>
   <thread>21</thread>
   <message>Conexion establecida</message>
+=======
+  <date>2022-11-28T16:14:23.230128300Z</date>
+  <millis>1669652063230</millis>
+  <nanos>128300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:14:23.273099800Z</date>
+  <millis>1669652063273</millis>
+  <nanos>99800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelos)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:14:23.283093500Z</date>
+  <millis>1669652063283</millis>
+  <nanos>93500</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:14:23.287091600Z</date>
+  <millis>1669652063287</millis>
+  <nanos>91600</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:16:19.006894700Z</date>
+  <millis>1669652179006</millis>
+  <nanos>894700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:16:19.044872400Z</date>
+  <millis>1669652179044</millis>
+  <nanos>872400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:16:19.050870100Z</date>
+  <millis>1669652179050</millis>
+  <nanos>870100</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:16:19.052897500Z</date>
+  <millis>1669652179052</millis>
+  <nanos>897500</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:21:51.485311300Z</date>
+  <millis>1669652511485</millis>
+  <nanos>311300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:21:51.526315300Z</date>
+  <millis>1669652511526</millis>
+  <nanos>315300</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: servicio)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:21:51.534284800Z</date>
+  <millis>1669652511534</millis>
+  <nanos>284800</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:21:51.535283700Z</date>
+  <millis>1669652511535</millis>
+  <nanos>283700</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:22:25.328557400Z</date>
+  <millis>1669652545328</millis>
+  <nanos>557400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:22:25.368532200Z</date>
+  <millis>1669652545368</millis>
+  <nanos>532200</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: servicio)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:22:25.373528600Z</date>
+  <millis>1669652545373</millis>
+  <nanos>528600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:22:25.374528800Z</date>
+  <millis>1669652545374</millis>
+  <nanos>528800</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:22:38.262942400Z</date>
+  <millis>1669652558262</millis>
+  <nanos>942400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:22:38.293923200Z</date>
+  <millis>1669652558293</millis>
+  <nanos>923200</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: servicio)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:22:38.295922200Z</date>
+  <millis>1669652558295</millis>
+  <nanos>922200</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:22:38.296922700Z</date>
+  <millis>1669652558296</millis>
+  <nanos>922700</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:23:24.205061400Z</date>
+  <millis>1669652604205</millis>
+  <nanos>61400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:23:24.238042900Z</date>
+  <millis>1669652604238</millis>
+  <nanos>42900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: servicio)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:23:24.241041300Z</date>
+  <millis>1669652604241</millis>
+  <nanos>41300</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:23:24.243037800Z</date>
+  <millis>1669652604243</millis>
+  <nanos>37800</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:23:43.243785400Z</date>
+  <millis>1669652623243</millis>
+  <nanos>785400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:23:43.284760500Z</date>
+  <millis>1669652623284</millis>
+  <nanos>760500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: servicio)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:23:43.293754900Z</date>
+  <millis>1669652623293</millis>
+  <nanos>754900</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:23:43.294755300Z</date>
+  <millis>1669652623294</millis>
+  <nanos>755300</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:25:37.764082100Z</date>
+  <millis>1669652737764</millis>
+  <nanos>82100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:25:37.806074300Z</date>
+  <millis>1669652737806</millis>
+  <nanos>74300</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:25:37.812055300Z</date>
+  <millis>1669652737812</millis>
+  <nanos>55300</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:25:37.813054100Z</date>
+  <millis>1669652737813</millis>
+  <nanos>54100</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:26:36.288755100Z</date>
+  <millis>1669652796288</millis>
+  <nanos>755100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:26:36.352717800Z</date>
+  <millis>1669652796352</millis>
+  <nanos>717800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:26:36.356715100Z</date>
+  <millis>1669652796356</millis>
+  <nanos>715100</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:26:36.358714600Z</date>
+  <millis>1669652796358</millis>
+  <nanos>714600</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:30:47.506543700Z</date>
+  <millis>1669653047506</millis>
+  <nanos>543700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:30:47.545521100Z</date>
+  <millis>1669653047545</millis>
+  <nanos>521100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>156</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:30:47.549519500Z</date>
+  <millis>1669653047549</millis>
+  <nanos>519500</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:30:47.550518500Z</date>
+  <millis>1669653047550</millis>
+  <nanos>518500</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:31:44.779870900Z</date>
+  <millis>1669653104779</millis>
+  <nanos>870900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:31:44.812852800Z</date>
+  <millis>1669653104812</millis>
+  <nanos>852800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:31:44.814851200Z</date>
+  <millis>1669653104814</millis>
+  <nanos>851200</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:31:44.815851100Z</date>
+  <millis>1669653104815</millis>
+  <nanos>851100</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:39:19.067959600Z</date>
+  <millis>1669653559067</millis>
+  <nanos>959600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:39:19.104936300Z</date>
+  <millis>1669653559104</millis>
+  <nanos>936300</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:39:19.111932100Z</date>
+  <millis>1669653559111</millis>
+  <nanos>932100</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:39:19.113931100Z</date>
+  <millis>1669653559113</millis>
+  <nanos>931100</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:40:17.837223400Z</date>
+  <millis>1669653617837</millis>
+  <nanos>223400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:40:17.878200800Z</date>
+  <millis>1669653617878</millis>
+  <nanos>200800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:40:17.882197400Z</date>
+  <millis>1669653617882</millis>
+  <nanos>197400</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:40:17.883197200Z</date>
+  <millis>1669653617883</millis>
+  <nanos>197200</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:40:47.986905200Z</date>
+  <millis>1669653647986</millis>
+  <nanos>905200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:40:48.040874100Z</date>
+  <millis>1669653648040</millis>
+  <nanos>874100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:40:48.045871Z</date>
+  <millis>1669653648045</millis>
+  <nanos>871000</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO VUELOS DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T16:40:48.046871200Z</date>
+  <millis>1669653648046</millis>
+  <nanos>871200</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:42:13.863165400Z</date>
+  <millis>1669653733863</millis>
+  <nanos>165400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:42:13.901139300Z</date>
+  <millis>1669653733901</millis>
+  <nanos>139300</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:42:39.943942600Z</date>
+  <millis>1669653759943</millis>
+  <nanos>942600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:42:39.989917900Z</date>
+  <millis>1669653759989</millis>
+  <nanos>917900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:42:39.994913300Z</date>
+  <millis>1669653759994</millis>
+  <nanos>913300</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:44:08.114770600Z</date>
+  <millis>1669653848114</millis>
+  <nanos>770600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>152</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:44:08.139741800Z</date>
+  <millis>1669653848139</millis>
+  <nanos>741800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+>>>>>>> branch 'master' of https://github.com/jonlaasa/G14---TRABAJO_PROGRAM
 </record>
 </log>
