@@ -240,8 +240,7 @@ public class VentanaBus extends JFrame {
 					}
 				};
 				
-				tableBus
-				.addKeyListener(key);
+				tableBus.addKeyListener(key);
 				this.addKeyListener(key);
 				buttonAceptar.addKeyListener(key);
 				buttonBuscarVuelo.addKeyListener(key);
