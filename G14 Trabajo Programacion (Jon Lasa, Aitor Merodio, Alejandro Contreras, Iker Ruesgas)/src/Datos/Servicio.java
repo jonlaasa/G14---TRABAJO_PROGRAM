@@ -11,7 +11,7 @@ import logicaDeNegocio.PrecioException;
 
 public class Servicio {
 	private int codigo;
-	private long fecha;
+	private String fecha;
 	//Duracion en minutos
 	private int duracion;
 	private String origen;
@@ -21,7 +21,7 @@ public class Servicio {
 	private int plazasRestantes;
 	
 	//Constructor con parametros
-	public Servicio(int codigo, long fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas)  {
+	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas)  {
 		super();
 		setCodigo(codigo);
 		setFecha(fecha);
@@ -37,7 +37,7 @@ public class Servicio {
 	//Por defecto 100 plazas restantes
 	
 	
-	public Servicio(int codigo, long fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) {
+	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) {
 		super();
 		setCodigo(codigo);
 		setFecha(fecha);
@@ -56,7 +56,7 @@ public class Servicio {
 	public Servicio(long fecha, TipoServicio tipoServicio)  {
 		super();
 	         setCodigo(codigo);
-			setFecha(0);
+			setFecha("");
 			setDuracion(0);
 			setOrigen("");
 			setDestino("");
@@ -80,11 +80,11 @@ public class Servicio {
 	}
 
 
-	public long getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(long fecha) {
+	public void setFecha(String fecha) {
  
 	    this.fecha=fecha;
 	    

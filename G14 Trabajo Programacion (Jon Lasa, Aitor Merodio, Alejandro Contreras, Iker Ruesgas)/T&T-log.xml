@@ -4435,3 +4435,251 @@
   <message>Conexion cerrada</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:10:23.105063800Z</date>
+  <millis>1669655423105</millis>
+  <nanos>63800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 18:10:23 CET 2022</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:10:42.926252600Z</date>
+  <millis>1669655442926</millis>
+  <nanos>252600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: Error parsing time stamp</message>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getDate</method>
+      <line>288</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getDate</method>
+      <line>303</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>155</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>16</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T17:10:42.951235700Z</date>
+  <millis>1669655442951</millis>
+  <nanos>235700</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:12:29.448250500Z</date>
+  <millis>1669655549448</millis>
+  <nanos>250500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: Error parsing time stamp</message>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getDate</method>
+      <line>288</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getDate</method>
+      <line>303</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>155</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>16</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T17:12:29.468348500Z</date>
+  <millis>1669655549468</millis>
+  <nanos>348500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:17:00.917684400Z</date>
+  <millis>1669655820917</millis>
+  <nanos>684400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: Error parsing time stamp</message>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getDate</method>
+      <line>288</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getDate</method>
+      <line>303</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>155</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>16</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T17:17:00.945668200Z</date>
+  <millis>1669655820945</millis>
+  <nanos>668200</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:18:26.259986800Z</date>
+  <millis>1669655906259</millis>
+  <nanos>986800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:19:22.225979Z</date>
+  <millis>1669655962225</millis>
+  <nanos>979000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:19:50.203490800Z</date>
+  <millis>1669655990203</millis>
+  <nanos>490800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:21:54.372960800Z</date>
+  <millis>1669656114372</millis>
+  <nanos>960800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>

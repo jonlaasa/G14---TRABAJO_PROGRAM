@@ -13,7 +13,7 @@ public class Main {
 
 	public static void main(String[] args) {
 //		BDRegistro.abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
-		VentanaInicio v = new VentanaInicio();
+		VentanaVuelo v = new VentanaVuelo();
 		v.setVisible(true);
 		
 

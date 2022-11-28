@@ -113,7 +113,7 @@ public class VentanaVuelo extends JFrame {
 		
 		//CARGAMOS EL MODELO
 		for(Vuelo vuelo: listaVuelos) {
-			modeloTabla.addRow(new Object [] {new Date (vuelo.getFecha()),vuelo.getDuracion(),vuelo.getOrigen(),
+			modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracion(),vuelo.getOrigen(),
 					vuelo.getDestino(),vuelo.getPrecio(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
 			});
 		}

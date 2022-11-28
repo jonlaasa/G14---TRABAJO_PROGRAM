@@ -152,17 +152,18 @@ private static Connection conn;
 				ResultSet rs = st.executeQuery(resp);
 				while(rs.next()) {
 					int codigoVuelo = rs.getInt("Codigo");
-					long FechaVuelo = rs.getDate("Fecha").getTime();
+					String FechaVuelo = rs.getString("Fecha");
 					int duracion = rs.getInt("Duracion");
 					String origen = rs.getString("Origen");
 					String destino = rs.getString("Destino");
 					Double precio = rs.getDouble("Precio");
 					TipoServicio tipo = TipoServicio.vuelo;
 					int plazasRestantes = rs.getInt("Plazas_restantes");
+					String companya= rs.getString("Companya");
 					
 					
 					Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, duracion, origen,
-							destino, precio, tipo,plazasRestantes);
+							destino, precio, tipo,plazasRestantes,companya);
 					System.out.println(vueloNuevo);
 					listaConVuelos.add(vueloNuevo);
 					

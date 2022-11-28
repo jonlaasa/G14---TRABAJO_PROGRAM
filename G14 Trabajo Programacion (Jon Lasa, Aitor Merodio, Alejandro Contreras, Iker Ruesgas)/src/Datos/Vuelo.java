@@ -13,7 +13,7 @@ public class Vuelo extends Servicio {
 
 	
 	//Constructor de vuelo con parametros
-	public Vuelo(int codigo, long fecha, int duracion, String origen, String destino, double precio,
+	public Vuelo(int codigo, String fecha, int duracion, String origen, String destino, double precio,
 			TipoServicio tipoServicio, int plazas, String companya 
 			) {
 		super(codigo, fecha, duracion, origen, destino, precio, tipoServicio, plazas);
@@ -24,7 +24,7 @@ public class Vuelo extends Servicio {
 	
 	 //Constructor de vuelo sin compañia
 
-	public Vuelo(int codigo, long fecha, int duracion, String origen, String destino, double precio,
+	public Vuelo(int codigo, String fecha, int duracion, String origen, String destino, double precio,
 			TipoServicio tipoServicio, int plazas) {
 		super(codigo, fecha, duracion, origen, destino, precio, tipoServicio, plazas);
 		this.companya="Sin compañia";
