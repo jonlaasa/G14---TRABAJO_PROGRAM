@@ -108,8 +108,8 @@ public class VentanaVuelo extends JFrame {
 		
 		
 		//LLENAMOS LA LISTA de VUELOS ACTUALES CON LOS VUELOS  DE BD
-		
-		listaVuelos = BDServicio.mostrarVuelosTotal();
+		BDServicio bd = new BDServicio();
+		listaVuelos = bd.mostrarVuelosTotal();
 		
 		//CARGAMOS EL MODELO
 		for(Vuelo vuelo: listaVuelos) {

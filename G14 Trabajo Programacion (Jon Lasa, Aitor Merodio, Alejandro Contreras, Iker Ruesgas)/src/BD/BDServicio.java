@@ -141,7 +141,7 @@ private static Connection conn;
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
 		public static ArrayList <Vuelo> mostrarVuelosTotal() {
-			BDServicio.abrirBaseDatos("baseDeDatos/serviciosCompanya.bd");
+			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList <Vuelo> listaConVuelos = new ArrayList <Vuelo> ();
 			

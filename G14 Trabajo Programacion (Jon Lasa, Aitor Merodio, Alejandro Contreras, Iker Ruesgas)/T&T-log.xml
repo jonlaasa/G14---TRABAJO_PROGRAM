@@ -2692,3 +2692,453 @@
   <message>Conexion cerrada</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:49:31.862783700Z</date>
+  <millis>1669654171862</millis>
+  <nanos>783700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL INTENTAR ACCEDER A LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: path to 'baseDeDatos/serviciosCompanya.bd': 'C:\Users\jontx\git\a\G14 Trabajo Programacion (Jon Lasa, Aitor Merodio, Alejandro Contreras, Iker Ruesgas)\baseDeDatos' does not exist</message>
+    <frame>
+      <class>org.sqlite.SQLiteConnection</class>
+      <method>open</method>
+      <line>259</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.SQLiteConnection</class>
+      <method>&lt;init&gt;</method>
+      <line>65</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Connection</class>
+      <method>&lt;init&gt;</method>
+      <line>28</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc4.JDBC4Connection</class>
+      <method>&lt;init&gt;</method>
+      <line>19</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.JDBC</class>
+      <method>createConnection</method>
+      <line>104</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.JDBC</class>
+      <method>connect</method>
+      <line>77</line>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+      <line>681</line>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+      <line>252</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>abrirBaseDatos</method>
+      <line>29</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>144</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:51:15.137535400Z</date>
+  <millis>1669654275137</millis>
+  <nanos>535400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL INTENTAR ACCEDER A LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: path to 'baseDeDatos/serviciosCompanya.bd': 'C:\Users\jontx\git\a\G14 Trabajo Programacion (Jon Lasa, Aitor Merodio, Alejandro Contreras, Iker Ruesgas)\baseDeDatos' does not exist</message>
+    <frame>
+      <class>org.sqlite.SQLiteConnection</class>
+      <method>open</method>
+      <line>259</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.SQLiteConnection</class>
+      <method>&lt;init&gt;</method>
+      <line>65</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Connection</class>
+      <method>&lt;init&gt;</method>
+      <line>28</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc4.JDBC4Connection</class>
+      <method>&lt;init&gt;</method>
+      <line>19</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.JDBC</class>
+      <method>createConnection</method>
+      <line>104</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.JDBC</class>
+      <method>connect</method>
+      <line>77</line>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+      <line>681</line>
+    </frame>
+    <frame>
+      <class>java.sql.DriverManager</class>
+      <method>getConnection</method>
+      <line>252</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>abrirBaseDatos</method>
+      <line>29</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>144</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:52:56.590637300Z</date>
+  <millis>1669654376590</millis>
+  <nanos>637300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>152</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T16:52:56.625616200Z</date>
+  <millis>1669654376625</millis>
+  <nanos>616200</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:02:30.076898400Z</date>
+  <millis>1669654950076</millis>
+  <nanos>898400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: vuelo)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>lambda$executeQuery$1</method>
+      <line>75</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>withConnectionTimeout</method>
+      <line>429</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>152</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T17:02:30.099863400Z</date>
+  <millis>1669654950099</millis>
+  <nanos>863400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:02:45.287934700Z</date>
+  <millis>1669654965287</millis>
+  <nanos>934700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: no such column: 'Codigo'</message>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>findColumn</method>
+      <line>50</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getInt</method>
+      <line>344</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>154</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T17:02:45.308919500Z</date>
+  <millis>1669654965308</millis>
+  <nanos>919500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:03:31.036732300Z</date>
+  <millis>1669655011036</millis>
+  <nanos>732300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: Error parsing time stamp</message>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getDate</method>
+      <line>288</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getDate</method>
+      <line>303</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>155</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>112</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>14</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T17:03:31.055724Z</date>
+  <millis>1669655011055</millis>
+  <nanos>724000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
