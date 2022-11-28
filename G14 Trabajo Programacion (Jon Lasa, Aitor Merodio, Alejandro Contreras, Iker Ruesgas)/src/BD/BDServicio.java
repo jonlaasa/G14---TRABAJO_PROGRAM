@@ -27,6 +27,7 @@ private static Connection conn;
 		try {
 			Class.forName("org.sqlite.JDBC");
 			conn = DriverManager.getConnection("jdbc:sqlite:"+base);
+			log(Level.INFO, "Accediendo a la base de datos:" + base, null);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -94,25 +95,25 @@ private static Connection conn;
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS BUSES PARA MOSTRAR EN LA TABLA
 	public static ArrayList <Bus> mostrarBusesTotal() {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.bd");
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
 		//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 		ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
 		
 		try {
 			Statement st = conn.createStatement();
 			
-			String resp = "select * from buses";
+			String resp = "select * from bus";
 			ResultSet rs = st.executeQuery(resp);
 			while(rs.next()) {
-				int codigoVuelo = rs.getInt("Codigo");
-				long FechaVuelo = rs.getDate("Fecha").getTime();
+				int codigoVuelo = rs.getInt("Cod_bus");
+				String FechaVuelo = rs.getString("Fecha");
 				int duracion = rs.getInt("Duracion");
 				String origen = rs.getString("Origen");
 				String destino = rs.getString("Destino");
 				Double precio = rs.getDouble("Precio");
 				TipoServicio tipo = TipoServicio.vuelo;
 				int plazasRestantes = rs.getInt("Plazas_restantes");
-				String companya = rs.getString("Compania");
+				String companya = rs.getString("Companya_bus");
 				
 				
 				
@@ -151,7 +152,7 @@ private static Connection conn;
 				String resp = "select * from vuelo";
 				ResultSet rs = st.executeQuery(resp);
 				while(rs.next()) {
-					int codigoVuelo = rs.getInt("Codigo");
+					int codigoVuelo = rs.getInt("Cod_vuelo");
 					String FechaVuelo = rs.getString("Fecha");
 					int duracion = rs.getInt("Duracion");
 					String origen = rs.getString("Origen");
@@ -159,12 +160,11 @@ private static Connection conn;
 					Double precio = rs.getDouble("Precio");
 					TipoServicio tipo = TipoServicio.vuelo;
 					int plazasRestantes = rs.getInt("Plazas_restantes");
-					String companya= rs.getString("Companya");
+					String companya= rs.getString("Companya_vuelo");
 					
 					
 					Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, duracion, origen,
 							destino, precio, tipo,plazasRestantes,companya);
-					System.out.println(vueloNuevo);
 					listaConVuelos.add(vueloNuevo);
 					
 					
@@ -183,10 +183,6 @@ private static Connection conn;
 			
 		}
 		
-	
-	
-	
-	
 	
 	public void setLogger(Logger logger) {
 		this.logger = logger;

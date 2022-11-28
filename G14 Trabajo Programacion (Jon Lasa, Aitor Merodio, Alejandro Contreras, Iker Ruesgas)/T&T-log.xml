@@ -4683,3 +4683,435 @@
   <message>Conexion cerrada</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:38:21.178031500Z</date>
+  <millis>1669657101178</millis>
+  <nanos>31500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-11-28T17:38:21.245992500Z</date>
+  <millis>1669657101245</millis>
+  <nanos>992500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:40:26.213434100Z</date>
+  <millis>1669657226213</millis>
+  <nanos>434100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-11-28T17:40:26.257410600Z</date>
+  <millis>1669657226257</millis>
+  <nanos>410600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:42:06.129607600Z</date>
+  <millis>1669657326129</millis>
+  <nanos>607600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-11-28T17:42:06.174583200Z</date>
+  <millis>1669657326174</millis>
+  <nanos>583200</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:43:26.957955500Z</date>
+  <millis>1669657406957</millis>
+  <nanos>955500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-11-28T17:43:26.998933800Z</date>
+  <millis>1669657406998</millis>
+  <nanos>933800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:43:51.137595400Z</date>
+  <millis>1669657431137</millis>
+  <nanos>595400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos/serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-11-28T17:43:51.167579100Z</date>
+  <millis>1669657431167</millis>
+  <nanos>579100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER BUSES DE LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: no such column: 'Codigo'</message>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>findColumn</method>
+      <line>50</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getInt</method>
+      <line>344</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarBusesTotal</method>
+      <line>108</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaBus</class>
+      <method>&lt;init&gt;</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>17</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T17:43:51.172576600Z</date>
+  <millis>1669657431172</millis>
+  <nanos>576600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T17:43:51.174574500Z</date>
+  <millis>1669657431174</millis>
+  <nanos>574500</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:44:12.676548600Z</date>
+  <millis>1669657452676</millis>
+  <nanos>548600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos/serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-11-28T17:44:12.706537400Z</date>
+  <millis>1669657452706</millis>
+  <nanos>537400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER BUSES DE LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: no such column: 'Compania'</message>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>findColumn</method>
+      <line>50</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getString</method>
+      <line>374</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarBusesTotal</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaBus</class>
+      <method>&lt;init&gt;</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>17</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T17:44:12.710529600Z</date>
+  <millis>1669657452710</millis>
+  <nanos>529600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T17:44:12.711528700Z</date>
+  <millis>1669657452711</millis>
+  <nanos>528700</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:44:24.312827200Z</date>
+  <millis>1669657464312</millis>
+  <nanos>827200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos/serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-11-28T17:44:24.355801900Z</date>
+  <millis>1669657464355</millis>
+  <nanos>801900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER BUSES DE LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: no such column: 'Companya'</message>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>findColumn</method>
+      <line>50</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getString</method>
+      <line>374</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarBusesTotal</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaBus</class>
+      <method>&lt;init&gt;</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>17</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-28T17:44:24.358796600Z</date>
+  <millis>1669657464358</millis>
+  <nanos>796600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T17:44:24.359796Z</date>
+  <millis>1669657464359</millis>
+  <nanos>796000</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:45:10.706178800Z</date>
+  <millis>1669657510706</millis>
+  <nanos>178800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos/serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-11-28T17:45:10.776139300Z</date>
+  <millis>1669657510776</millis>
+  <nanos>139300</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T17:45:10.778138100Z</date>
+  <millis>1669657510778</millis>
+  <nanos>138100</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:55:13.178041100Z</date>
+  <millis>1669658113178</millis>
+  <nanos>41100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos/serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-11-28T17:55:13.214019400Z</date>
+  <millis>1669658113214</millis>
+  <nanos>19400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2022-11-28T17:55:13.215019100Z</date>
+  <millis>1669658113215</millis>
+  <nanos>19100</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>

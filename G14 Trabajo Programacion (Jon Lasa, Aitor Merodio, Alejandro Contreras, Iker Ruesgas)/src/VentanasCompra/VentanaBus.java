@@ -22,14 +22,24 @@ import javax.swing.JRadioButton;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import com.toedter.calendar.JCalendar;
 
+import BD.BDServicio;
+import Datos.Bus;
+import Datos.Vuelo;
+
 import java.awt.Button;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Vector;
 import java.awt.event.ActionEvent;
 import java.awt.Panel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultListModel;
 import javax.swing.JCheckBox;
 import javax.swing.ScrollPaneConstants;
 import java.awt.Dimension;
@@ -40,7 +50,10 @@ public class VentanaBus extends JFrame {
 	private DefaultTableModel modeloTabla;
 	private JCalendar calendarioIda;
 	private JCalendar calendarioVuelta;
-	private JTable tableVuelos;
+	private JTable tableBus;
+	private DefaultListModel<Bus> mBus = new DefaultListModel<>();
+	private ArrayList<Bus> listaBus;
+	
 
 
 	/**
@@ -77,44 +90,44 @@ public class VentanaBus extends JFrame {
 		lblDestino.setBounds(22, 56, 58, 25);
 		contentPane.add(lblDestino);
 		
-		
-		
 		JPanel panelTabla = new JPanel();
 		panelTabla.setBounds(10, 266, 574, 260);
 		contentPane.add(panelTabla);
 		
-		modeloTabla = new DefaultTableModel( new Object [] {"CODIGO","FECHA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
-		tableVuelos=new JTable(modeloTabla);
+		modeloTabla = new DefaultTableModel( new Object [] {
+				"FECHA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
+		tableBus=new JTable(modeloTabla);
 		// Cambios de anchura
 		
-		tableVuelos.getColumnModel().getColumn(1).setMinWidth(75);
+		tableBus.getColumnModel().getColumn(1).setMinWidth(75);
 		
-		tableVuelos.getColumnModel().getColumn(3).setMinWidth(75);
-		tableVuelos.getColumnModel().getColumn(4).setMinWidth(75);
+		tableBus.getColumnModel().getColumn(3).setMinWidth(75);
+		tableBus.getColumnModel().getColumn(4).setMinWidth(75);
 		
 		panelTabla.setLayout(new BorderLayout());
 		
-		JScrollPane scroll = new JScrollPane(tableVuelos,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane scroll = new JScrollPane(tableBus,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		
 		panelTabla.add(scroll);
 		
 		
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45",0,0,0,0});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
-		modeloTabla.addRow(new Object [] {002,"444","45"});
+		//LLENAMOS LA LISTA de VUELOS ACTUALES CON LOS VUELOS  DE BD
+		
+		listaBus = BDServicio.mostrarBusesTotal();
+		
+		//CARGAMOS EL MODELO
+		for(Bus bus: listaBus) {
+			modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getDuracion(),bus.getOrigen(),
+					bus.getDestino(),bus.getPrecio(),bus.getCompanya(),bus.getPlazasRestantes()
+			});
+		}
+		
+		
+	
+		
+	
+		
+		
 		
 		
 		JLabel lblPrecio = new JLabel("Precio");
@@ -202,6 +215,40 @@ public class VentanaBus extends JFrame {
 		
 		bg.add(menorMayor);
 		bg.add(mayorMenor);
+		
+		
+		
+		//CREAMOS EVENTO DE RATON PARA AL HACER CONTROL CLICK RESTAURAR COMO INICILAMENTE (POR SI NO TENEMOS OPCIONES DESPUES DE FILTRAR EJ.)
+		//daigual donde hagamos el click + control
+		
+		
+				KeyListener key = new KeyAdapter() {
+					@Override
+					public void keyReleased(KeyEvent f) {
+						if (f.isControlDown() && f.getKeyCode() == KeyEvent.VK_PLUS) {
+							//entonces llenamos la lista que manejamos primero
+							
+							listaBus=BDServicio.mostrarBusesTotal();
+							//DESPUES LLENAMOS EL MODELO
+							for(Bus bus: listaBus) {
+								modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getDuracion(),bus.getOrigen(),
+										bus.getDestino(),bus.getPrecio(),bus.getCompanya(),bus.getPlazasRestantes()
+								});
+							}
+							
+						}
+					}
+				};
+				
+				tableBus
+				.addKeyListener(key);
+				this.addKeyListener(key);
+				buttonAceptar.addKeyListener(key);
+				buttonBuscarVuelo.addKeyListener(key);
+				buttonVolver.addKeyListener(key);
+				
+				//A LOS COMPONENTES COMBO TAMBIEN?
+
 		
 
 		

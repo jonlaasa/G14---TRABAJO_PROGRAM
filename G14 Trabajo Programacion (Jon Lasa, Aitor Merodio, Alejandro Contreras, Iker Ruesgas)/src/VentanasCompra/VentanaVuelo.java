@@ -27,6 +27,9 @@ import Datos.Vuelo;
 
 import java.awt.Button;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Vector;
@@ -108,8 +111,7 @@ public class VentanaVuelo extends JFrame {
 		
 		
 		//LLENAMOS LA LISTA de VUELOS ACTUALES CON LOS VUELOS  DE BD
-		BDServicio bd = new BDServicio();
-		listaVuelos = bd.mostrarVuelosTotal();
+		listaVuelos = BDServicio.mostrarVuelosTotal();
 		
 		//CARGAMOS EL MODELO
 		for(Vuelo vuelo: listaVuelos) {
@@ -117,10 +119,6 @@ public class VentanaVuelo extends JFrame {
 					vuelo.getDestino(),vuelo.getPrecio(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
 			});
 		}
-		
-		
-		
-	
 		
 		
 		
@@ -211,6 +209,36 @@ public class VentanaVuelo extends JFrame {
 		bg.add(menorMayor);
 		bg.add(mayorMenor);
 		
+		
+		//CREAMOS EVENTO DE RATON PARA AL HACER CONTROL CLICK RESTAURAR COMO INICILAMENTE (POR SI NO TENEMOS OPCIONES DESPUES DE FILTRAR EJ.)
+		//daigual donde hagamos el click + control
+		
+		
+				KeyListener key = new KeyAdapter() {
+					@Override
+					public void keyReleased(KeyEvent f) {
+						if (f.isControlDown() && f.getKeyCode() == KeyEvent.VK_PLUS) {
+							//entonces llenamos la lista que manejamos primero
+							
+							listaVuelos=BDServicio.mostrarVuelosTotal();
+							//DESPUES LLENAMOS EL MODELO
+							for(Vuelo vuelo: listaVuelos) {
+								modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracion(),vuelo.getOrigen(),
+										vuelo.getDestino(),vuelo.getPrecio(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
+								});
+							}
+							
+						}
+					}
+				};
+				
+				tableVuelos.addKeyListener(key);
+				this.addKeyListener(key);
+				buttonAceptar.addKeyListener(key);
+				buttonBuscarVuelo.addKeyListener(key);
+				buttonVolver.addKeyListener(key);
+				
+				//A LOS COMPONENTES COMBO TAMBIEN?
 
 		
 		

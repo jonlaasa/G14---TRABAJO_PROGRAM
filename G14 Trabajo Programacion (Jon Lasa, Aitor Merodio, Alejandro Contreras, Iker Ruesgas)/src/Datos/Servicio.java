@@ -53,9 +53,8 @@ public class Servicio {
 	public Servicio() {}
 		
 	//Constructor con tipoServicio y fecha solo
-	public Servicio(long fecha, TipoServicio tipoServicio)  {
-		super();
-	         setCodigo(codigo);
+	public Servicio(String fecha, TipoServicio tipoServicio)  {
+	         setCodigo(0);
 			setFecha("");
 			setDuracion(0);
 			setOrigen("");

@@ -29,6 +29,12 @@ public class Vuelo extends Servicio {
 		super(codigo, fecha, duracion, origen, destino, precio, tipoServicio, plazas);
 		this.companya="Sin compañia";
 	}
+	
+	//Constructor sin parametros, basandonos en el super de SERVICIO
+		public Vuelo(String fecha, TipoServicio tipoServicio) {
+			super(fecha, tipoServicio);
+			setCompanya("Sin compa�ia");
+		}
 
 
 
