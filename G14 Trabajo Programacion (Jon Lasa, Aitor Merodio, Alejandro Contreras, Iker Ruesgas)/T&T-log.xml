@@ -814,3 +814,1299 @@
   <message>Iniciando aplicacion T&amp;T, en hora: Sat Nov 26 12:15:09 CET 2022</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:00:53.807531Z</date>
+  <millis>1669651253807</millis>
+  <nanos>531000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:00:53 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:00:55.428067200Z</date>
+  <millis>1669651255428</millis>
+  <nanos>67200</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:00:56.641504600Z</date>
+  <millis>1669651256641</millis>
+  <nanos>504600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Volviendo a ventana de inicio</message>
+</record>
+<record>
+  <date>2022-11-28T16:00:56.643513400Z</date>
+  <millis>1669651256643</millis>
+  <nanos>513400</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:00:56 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:00:58.685357900Z</date>
+  <millis>1669651258685</millis>
+  <nanos>357900</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:01:06.783633400Z</date>
+  <millis>1669651266783</millis>
+  <nanos>633400</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Volviendo a ventana de inicio</message>
+</record>
+<record>
+  <date>2022-11-28T16:01:06.786627900Z</date>
+  <millis>1669651266786</millis>
+  <nanos>627900</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:01:06 CET 2022</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:01:41.739348600Z</date>
+  <millis>1669651301739</millis>
+  <nanos>348600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:01:41 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:01:42.726764700Z</date>
+  <millis>1669651302726</millis>
+  <nanos>764700</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:01:48.651402Z</date>
+  <millis>1669651308651</millis>
+  <nanos>402000</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:01:48.655972400Z</date>
+  <millis>1669651308655</millis>
+  <nanos>972400</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+<record>
+  <date>2022-11-28T16:01:53.725573200Z</date>
+  <millis>1669651313725</millis>
+  <nanos>573200</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Volviendo a ventana de inicio</message>
+</record>
+<record>
+  <date>2022-11-28T16:01:53.727571600Z</date>
+  <millis>1669651313727</millis>
+  <nanos>571600</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:01:53 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:01:54.347302700Z</date>
+  <millis>1669651314347</millis>
+  <nanos>302700</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:02:21.475562400Z</date>
+  <millis>1669651341475</millis>
+  <nanos>562400</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:05:42.288911Z</date>
+  <millis>1669651542288</millis>
+  <nanos>911000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:05:42 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:05:43.340275Z</date>
+  <millis>1669651543340</millis>
+  <nanos>275000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:06:03.815529600Z</date>
+  <millis>1669651563815</millis>
+  <nanos>529600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:06:44.053403300Z</date>
+  <millis>1669651604053</millis>
+  <nanos>403300</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:11:07.383900700Z</date>
+  <millis>1669651867383</millis>
+  <nanos>900700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:11:07 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:11:08.505717800Z</date>
+  <millis>1669651868505</millis>
+  <nanos>717800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:11:22.986504600Z</date>
+  <millis>1669651882986</millis>
+  <nanos>504600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:14:02.567796600Z</date>
+  <millis>1669652042567</millis>
+  <nanos>796600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:14:02 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:14:03.637471400Z</date>
+  <millis>1669652043637</millis>
+  <nanos>471400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:14:13.134532300Z</date>
+  <millis>1669652053134</millis>
+  <nanos>532300</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:16:13.418714900Z</date>
+  <millis>1669652173418</millis>
+  <nanos>714900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:16:13 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:16:14.446484900Z</date>
+  <millis>1669652174446</millis>
+  <nanos>484900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:16:20.909566300Z</date>
+  <millis>1669652180909</millis>
+  <nanos>566300</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:16:20.912644400Z</date>
+  <millis>1669652180912</millis>
+  <nanos>644400</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+<record>
+  <date>2022-11-28T16:16:22.087346700Z</date>
+  <millis>1669652182087</millis>
+  <nanos>346700</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:16:22.088375100Z</date>
+  <millis>1669652182088</millis>
+  <nanos>375100</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+<record>
+  <date>2022-11-28T16:16:23.184855500Z</date>
+  <millis>1669652183184</millis>
+  <nanos>855500</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Volviendo a ventana de inicio</message>
+</record>
+<record>
+  <date>2022-11-28T16:16:23.186852600Z</date>
+  <millis>1669652183186</millis>
+  <nanos>852600</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:16:23 CET 2022</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:17:42.502654200Z</date>
+  <millis>1669652262502</millis>
+  <nanos>654200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:17:42 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:17:43.433290600Z</date>
+  <millis>1669652263433</millis>
+  <nanos>290600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:17:48.619902200Z</date>
+  <millis>1669652268619</millis>
+  <nanos>902200</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:17:48.620899800Z</date>
+  <millis>1669652268620</millis>
+  <nanos>899800</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+<record>
+  <date>2022-11-28T16:17:50.466448300Z</date>
+  <millis>1669652270466</millis>
+  <nanos>448300</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:18:21.277708800Z</date>
+  <millis>1669652301277</millis>
+  <nanos>708800</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:21:13.116927900Z</date>
+  <millis>1669652473116</millis>
+  <nanos>927900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:21:13 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:21:14.677174600Z</date>
+  <millis>1669652474677</millis>
+  <nanos>174600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:21:27.500009500Z</date>
+  <millis>1669652487500</millis>
+  <nanos>9500</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:21:57.571319200Z</date>
+  <millis>1669652517571</millis>
+  <nanos>319200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:21:57 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:21:58.575251900Z</date>
+  <millis>1669652518575</millis>
+  <nanos>251900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:22:06.269527400Z</date>
+  <millis>1669652526269</millis>
+  <nanos>527400</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:22:39.385465200Z</date>
+  <millis>1669652559385</millis>
+  <nanos>465200</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:22:39 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:22:44.205749900Z</date>
+  <millis>1669652564205</millis>
+  <nanos>749900</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:22:45.494555600Z</date>
+  <millis>1669652565494</millis>
+  <nanos>555600</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:22:45.494555600Z</date>
+  <millis>1669652565494</millis>
+  <nanos>555600</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:24:48.850813600Z</date>
+  <millis>1669652688850</millis>
+  <nanos>813600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:24:48 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:24:50.525388600Z</date>
+  <millis>1669652690525</millis>
+  <nanos>388600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:25:16.329351200Z</date>
+  <millis>1669652716329</millis>
+  <nanos>351200</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:29:37.478482600Z</date>
+  <millis>1669652977478</millis>
+  <nanos>482600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:29:37 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:29:38.531468900Z</date>
+  <millis>1669652978531</millis>
+  <nanos>468900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:29:49.457439300Z</date>
+  <millis>1669652989457</millis>
+  <nanos>439300</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:32:43.107618500Z</date>
+  <millis>1669653163107</millis>
+  <nanos>618500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:32:43 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:32:44.561972100Z</date>
+  <millis>1669653164561</millis>
+  <nanos>972100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:32:51.442032400Z</date>
+  <millis>1669653171442</millis>
+  <nanos>32400</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:37:26.803393100Z</date>
+  <millis>1669653446803</millis>
+  <nanos>393100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:37:26 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:37:28.546955700Z</date>
+  <millis>1669653448546</millis>
+  <nanos>955700</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:37:29.380200100Z</date>
+  <millis>1669653449380</millis>
+  <nanos>200100</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Volviendo a ventana de inicio</message>
+</record>
+<record>
+  <date>2022-11-28T16:37:29.382201900Z</date>
+  <millis>1669653449382</millis>
+  <nanos>201900</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:37:29 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:37:29.914400100Z</date>
+  <millis>1669653449914</millis>
+  <nanos>400100</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:40:10.922271500Z</date>
+  <millis>1669653610922</millis>
+  <nanos>271500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:40:10 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:40:12.083722200Z</date>
+  <millis>1669653612083</millis>
+  <nanos>722200</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:40:22.377278500Z</date>
+  <millis>1669653622377</millis>
+  <nanos>278500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:40:22 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:40:24.521585700Z</date>
+  <millis>1669653624521</millis>
+  <nanos>585700</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:40:25.943523Z</date>
+  <millis>1669653625943</millis>
+  <nanos>523000</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:40:25.947511900Z</date>
+  <millis>1669653625947</millis>
+  <nanos>511900</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:41:15.470418100Z</date>
+  <millis>1669653675470</millis>
+  <nanos>418100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:41:15 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:41:16.596023Z</date>
+  <millis>1669653676596</millis>
+  <nanos>23000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:41:18.139749400Z</date>
+  <millis>1669653678139</millis>
+  <nanos>749400</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:41:18.143738700Z</date>
+  <millis>1669653678143</millis>
+  <nanos>738700</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:45:57.299011700Z</date>
+  <millis>1669653957299</millis>
+  <nanos>11700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:45:57 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:45:58.251264500Z</date>
+  <millis>1669653958251</millis>
+  <nanos>264500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:46:07.457850500Z</date>
+  <millis>1669653967457</millis>
+  <nanos>850500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:46:07 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:46:08.461773900Z</date>
+  <millis>1669653968461</millis>
+  <nanos>773900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T16:46:20.028032Z</date>
+  <millis>1669653980028</millis>
+  <nanos>32000</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:46:25.716679700Z</date>
+  <millis>1669653985716</millis>
+  <nanos>679700</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:46:25 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:46:26.687794600Z</date>
+  <millis>1669653986687</millis>
+  <nanos>794600</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:46:32.070742200Z</date>
+  <millis>1669653992070</millis>
+  <nanos>742200</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:46:32.071770800Z</date>
+  <millis>1669653992071</millis>
+  <nanos>770800</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+<record>
+  <date>2022-11-28T16:46:41.775612800Z</date>
+  <millis>1669654001775</millis>
+  <nanos>612800</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:46:41.776609200Z</date>
+  <millis>1669654001776</millis>
+  <nanos>609200</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:48:43.060954500Z</date>
+  <millis>1669654123060</millis>
+  <nanos>954500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:51:11.317701500Z</date>
+  <millis>1669654271317</millis>
+  <nanos>701500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:52:56.833795300Z</date>
+  <millis>1669654376833</millis>
+  <nanos>795300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:53:28.290993400Z</date>
+  <millis>1669654408290</millis>
+  <nanos>993400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:56:05.927838800Z</date>
+  <millis>1669654565927</millis>
+  <nanos>838800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:56:59.503551600Z</date>
+  <millis>1669654619503</millis>
+  <nanos>551600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:58:13.663151500Z</date>
+  <millis>1669654693663</millis>
+  <nanos>151500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T16:58:31.194069700Z</date>
+  <millis>1669654711194</millis>
+  <nanos>69700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 17:58:31 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T16:58:32.100913700Z</date>
+  <millis>1669654712100</millis>
+  <nanos>913700</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-28T16:58:37.149711700Z</date>
+  <millis>1669654717149</millis>
+  <nanos>711700</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-28T16:58:38.235179700Z</date>
+  <millis>1669654718235</millis>
+  <nanos>179700</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: admin</message>
+</record>
+<record>
+  <date>2022-11-28T16:58:38.279858900Z</date>
+  <millis>1669654718279</millis>
+  <nanos>858900</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-28T17:01:21.185323800Z</date>
+  <millis>1669654881185</millis>
+  <nanos>323800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Mon Nov 28 18:01:21 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-28T17:01:22.312213900Z</date>
+  <millis>1669654882312</millis>
+  <nanos>213900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-28T17:01:34.004969200Z</date>
+  <millis>1669654894004</millis>
+  <nanos>969200</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>

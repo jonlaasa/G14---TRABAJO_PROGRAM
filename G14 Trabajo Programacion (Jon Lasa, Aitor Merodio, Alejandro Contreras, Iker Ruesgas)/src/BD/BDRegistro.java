@@ -1,10 +1,14 @@
 package BD;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,8 +25,11 @@ public class BDRegistro {
 	private static Connection conn=null;
 	
 	private static Logger logger;
+
 	
-	public static  Connection abrirBaseDatos(String base) {
+	
+	public static  Connection abrirBaseDatos(String base){
+		
 		try {
 			Class.forName("org.sqlite.JDBC");
 		} catch (ClassNotFoundException e) {
@@ -61,11 +68,13 @@ public class BDRegistro {
 	
 	public boolean registrar(Usuario usr) throws Exception {
 		
-		Connection con = abrirBaseDatos("baseDatos");
-		String sql = "INSERT INTO Usuario (Nombre,	Apellidos, Usuario, Contrasenya, DNI, puntosDeusto,Mail ) VALUES(?,?,?,?,?,?)";
-		
+		Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+		String sql = "INSERT INTO Usuario (Nombre,	Apellidos, Usuario, Contrasenya, DNI, puntosDeusto,Mail ) VALUES(?,?,?,?,?,?,?)";
+		System.out.println(1);
 		try {
+			System.out.println(2);
 			pst=con.prepareStatement(sql);
+			System.out.println(3);
 			pst.setString(1, usr.getNombre());
 			pst.setString(2, usr.getApellido());
 			pst.setString(3, usr.getNombreUsuario());
@@ -73,8 +82,11 @@ public class BDRegistro {
 			pst.setString(5, usr.getDni());
 			pst.setInt(6, 0);
 			pst.setString(7, usr.getCorreoElectronico());
+			System.out.println(4);
 			pst.execute();
+			System.out.println(5);
 			JOptionPane.showMessageDialog(null, "Registro completado");
+			System.out.println(6);
 			return true;
 		}catch(SQLException e){
 			JOptionPane.showMessageDialog(null, "Registro fallido");
@@ -84,7 +96,7 @@ public class BDRegistro {
 	}
 	
 	public boolean login(String usr, String contra ) throws Exception{
-		Connection con = abrirBaseDatos("baseDatos");
+		Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
 		String sql ="SELECT Usuario,Contrasenya FROM Usuario where Usuario=?and Contrasenya=?"; 
 		PreparedStatement rst = con.prepareStatement(sql);
 		rst.setString(1, usr);
@@ -102,7 +114,7 @@ public class BDRegistro {
 	}
 		
 		public boolean loginAdmin(String usr, String contra, int cod ){
-			Connection con = abrirBaseDatos("serviciosCompanya");
+			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
 			String sql ="SELECT Usuario,Contrasenya,codAcceso FROM Admin where Usuario=? and Contrasenya=? and codAcceso=?"; 
 			PreparedStatement rst;
 			try {
