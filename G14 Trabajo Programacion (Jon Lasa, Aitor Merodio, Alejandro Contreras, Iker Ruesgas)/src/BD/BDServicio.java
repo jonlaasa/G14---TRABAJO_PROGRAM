@@ -19,26 +19,22 @@ import Enum.TipoServicio;
 
 public class BDServicio {
 	
-private static Connection conn=null;
+private static Connection conn;
 	
 	private static Logger logger;
 	
 	public static  Connection abrirBaseDatos(String base) {
 		try {
 			Class.forName("org.sqlite.JDBC");
+			conn = DriverManager.getConnection("jdbc:sqlite:"+base);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		try {
-			conn = DriverManager.getConnection("jdbc:sqlite:"+base);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		 catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL INTENTAR ACCEDER A LA BASE DE DATOS", e);
 			e.printStackTrace();
 		}
-		log(Level.INFO, "Conexion establecida",null);
 		return conn;
 
 		
@@ -60,6 +56,7 @@ private static Connection conn=null;
 	
 	
 	public static void compraServicio (Compra compra) {
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.bd");
 		//Primero obtenemos el tipoDeServicio
 		TipoServicio tipoServicio=compra.getTipoServicio();
 		//Obtenemos el codigo UNICO del usuario
@@ -89,13 +86,15 @@ private static Connection conn=null;
 			e.printStackTrace();
 		}
 		
+		BDServicio.cerrarConexion();
+		
 	
 	}
 	
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS BUSES PARA MOSTRAR EN LA TABLA
 	public static ArrayList <Bus> mostrarBusesTotal() {
-		
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.bd");
 		//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 		ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
 		
@@ -132,6 +131,7 @@ private static Connection conn=null;
 		}
 		
 		log(Level.INFO, "DEVOLVIENDO BUSES DE LA BASE DE DATOS", null);
+		BDServicio.cerrarConexion();
 		return listaConBus;
 		
 		
@@ -141,14 +141,14 @@ private static Connection conn=null;
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
 		public static ArrayList <Vuelo> mostrarVuelosTotal() {
-			
+			BDServicio.abrirBaseDatos("baseDeDatos/serviciosCompanya.bd");
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList <Vuelo> listaConVuelos = new ArrayList <Vuelo> ();
 			
 			try {
 				Statement st = conn.createStatement();
 				
-				String resp = "select * from vuelos";
+				String resp = "select * from vuelo";
 				ResultSet rs = st.executeQuery(resp);
 				while(rs.next()) {
 					int codigoVuelo = rs.getInt("Codigo");
@@ -163,6 +163,7 @@ private static Connection conn=null;
 					
 					Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, duracion, origen,
 							destino, precio, tipo,plazasRestantes);
+					System.out.println(vueloNuevo);
 					listaConVuelos.add(vueloNuevo);
 					
 					
@@ -175,7 +176,7 @@ private static Connection conn=null;
 				e.printStackTrace();
 			}
 			
-			log(Level.INFO, "DEVOLVIENDO VUELOS DE LA BASE DE DATOS", null);
+			BDServicio.cerrarConexion();
 			return listaConVuelos;
 			
 			
