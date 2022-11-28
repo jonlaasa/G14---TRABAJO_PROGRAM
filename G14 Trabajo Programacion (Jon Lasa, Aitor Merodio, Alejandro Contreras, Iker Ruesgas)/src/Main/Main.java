@@ -3,6 +3,7 @@ package Main;
 
 
 
+import BD.BDRegistro;
 import VentanasCompra.VentanaVuelo;
 import VentanasCompra.VentanaVuelo;
 import VentanasMenu.VentanaMenu;
@@ -11,7 +12,8 @@ import VentanasRegistro.VentanaInicio;
 public class Main {
 
 	public static void main(String[] args) {
-		VentanaVuelo v = new VentanaVuelo ();
+//		BDRegistro.abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+		VentanaInicio v = new VentanaInicio();
 		v.setVisible(true);
 		
 
