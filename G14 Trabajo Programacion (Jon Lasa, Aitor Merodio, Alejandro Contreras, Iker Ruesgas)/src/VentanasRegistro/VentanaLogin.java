@@ -113,10 +113,9 @@ public class VentanaLogin extends JFrame {
 		btnIniciarSesion.addActionListener(e->{
 			String usr=usuario.getText();
 			String contra=contrasenya.getText();
-			BDRegistro bd = new BDRegistro();
 			
 			try {
-				if(bd.login(usr, contra)==true) {
+				if(BDRegistro.login(usr, contra)==true) {
 					JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
 					BDRegistro.log(Level.INFO, "Sesion iniciada con exito del usuario: "+usr , null);
 					VentanaMenu vr = null;

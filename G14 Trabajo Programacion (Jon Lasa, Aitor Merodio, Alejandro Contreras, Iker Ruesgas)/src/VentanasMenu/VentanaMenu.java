@@ -44,7 +44,7 @@ public class VentanaMenu extends JFrame {
 	public VentanaMenu() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 451, 334);
+		setBounds(100, 100, 700, 450);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(new Color(0, 204, 255));
@@ -56,14 +56,14 @@ public class VentanaMenu extends JFrame {
 		//new ImageIcon("imagenes//iconoRegistro.png
 		menuBar.add(mnNewMenu);
 		
-		JMenu mnNewMenu_1 = new JMenu("Vuelos");
-		menuBar.add(mnNewMenu_1);
+		JMenu jmVuelos = new JMenu("Vuelos");
+		menuBar.add(jmVuelos);
 		
-		JMenu mnNewMenu_2 = new JMenu("Buses");
-		menuBar.add(mnNewMenu_2);
+		JMenu jmBuses = new JMenu("Buses");
+		menuBar.add(jmBuses);
 		
-		JMenu mnNewMenu_3 = new JMenu("Interrail");
-		menuBar.add(mnNewMenu_3);
+		JMenu jmInterrail = new JMenu("Interrail");
+		menuBar.add(jmInterrail);
 		
 		JMenu mnNewMenu_4 = new JMenu("TOP");
 		menuBar.add(mnNewMenu_4);
@@ -79,50 +79,50 @@ public class VentanaMenu extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("imagenes/icons/kisspng-airplane-computer-icons-aircraft-icon-a5-air-transport-5b10f05fb9f810.1049603215278367677617.jpg"));
-		lblNewLabel.setBounds(157, 35, 60, 23);
-		contentPane.add(lblNewLabel);
+		JLabel ftAvion = new JLabel("New label");
+		ftAvion.setIcon(new ImageIcon("imagenes/icons/kisspng-airplane-computer-icons-aircraft-icon-a5-air-transport-5b10f05fb9f810.1049603215278367677617.jpg"));
+		ftAvion.setBounds(240, 114, 60, 23);
+		contentPane.add(ftAvion);
 		
-		JButton btnNewButton_1 = new JButton("Vuelos");
-		btnNewButton_1.setIcon(null);
-		btnNewButton_1.setBounds(10, 35, 137, 23);
-		contentPane.add(btnNewButton_1);
+		JButton btnVuelos = new JButton("Vuelos");
+		btnVuelos.setIcon(null);
+		btnVuelos.setBounds(58, 114, 137, 23);
+		contentPane.add(btnVuelos);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("imagenes/icons/kisspng-visakhapatnam-bus-computer-icons-icons-download-bus-png-5ab0d27c5d2195.9444277015215376603815.jpg"));
-		lblNewLabel_1.setBounds(157, 101, 60, 23);
-		contentPane.add(lblNewLabel_1);
+		JLabel ftBus = new JLabel("New label");
+		ftBus.setIcon(new ImageIcon("imagenes/icons/kisspng-visakhapatnam-bus-computer-icons-icons-download-bus-png-5ab0d27c5d2195.9444277015215376603815.jpg"));
+		ftBus.setBounds(240, 173, 60, 23);
+		contentPane.add(ftBus);
 		
-		JButton btnNewButton_2 = new JButton("Buses");
-		btnNewButton_2.setBounds(10, 101, 137, 23);
-		contentPane.add(btnNewButton_2);
+		JButton btnBuses = new JButton("Buses");
+		btnBuses.setBounds(58, 173, 137, 23);
+		contentPane.add(btnBuses);
 		
-		JButton btnNewButton_3 = new JButton("Viaje Combinado");
-		btnNewButton_3.setBounds(10, 167, 133, 23);
-		contentPane.add(btnNewButton_3);
+		JButton btnViajeCombinado = new JButton("Viaje Combinado");
+		btnViajeCombinado.setBounds(62, 232, 133, 23);
+		contentPane.add(btnViajeCombinado);
 		
-		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("imagenes/icons/descarga.jpg"));
-		lblNewLabel_2.setBounds(170, 159, 60, 37);
-		contentPane.add(lblNewLabel_2);
+		JLabel ftCombinado = new JLabel("");
+		ftCombinado.setIcon(new ImageIcon("imagenes/icons/descarga.jpg"));
+		ftCombinado.setBounds(240, 218, 60, 37);
+		contentPane.add(ftCombinado);
 		
 		JLabel lblNewLabel_3 = new JLabel("EUROPA");
-		lblNewLabel_3.setBounds(41, 11, 80, 14);
+		lblNewLabel_3.setBounds(99, 89, 80, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("NACIONAL");
-		lblNewLabel_4.setBounds(41, 76, 60, 14);
+		lblNewLabel_4.setBounds(99, 148, 60, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("NACIONAL");
-		lblNewLabel_5.setBounds(41, 146, 60, 14);
+		lblNewLabel_5.setBounds(99, 208, 60, 14);
 		contentPane.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_6 = new JLabel("");
-		lblNewLabel_6.setIcon(new ImageIcon("imagenes/icons/avionNN.jpg"));
-		lblNewLabel_6.setBounds(272, 11, 139, 179);
-		contentPane.add(lblNewLabel_6);
+		JLabel ftLogo = new JLabel("");
+		ftLogo.setIcon(new ImageIcon("imagenes/icons/avionNN.jpg"));
+		ftLogo.setBounds(458, 76, 139, 179);
+		contentPane.add(ftLogo);
 		
 		
 		

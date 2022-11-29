@@ -26,7 +26,7 @@ public class Usuario extends Registro {
 	
 	//Constructor con parametros
 	
-	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String correoElectronico,String dni)  {
+	public Usuario(int Codigo,String nombre, String apellido, String usuario, String contrasenya, String correoElectronico,String dni,int puntos)  {
 		super(nombre, apellido, usuario);
 		setContrasenya(contrasenya);
 		setCorreoElectronico(correoElectronico);

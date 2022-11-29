@@ -3,11 +3,13 @@ package BD;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.ProcessHandle.Info;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -66,7 +68,7 @@ public class BDRegistro {
 	
 	
 	
-	public boolean registrar(Usuario usr) throws Exception {
+	public static boolean registrar(Usuario usr) throws Exception {
 		
 		Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
 		String sql = "INSERT INTO Usuario (Nombre,	Apellidos, Usuario, Contrasenya, DNI, puntosDeusto,Mail ) VALUES(?,?,?,?,?,?,?)";
@@ -95,7 +97,7 @@ public class BDRegistro {
 		
 	}
 	
-	public boolean login(String usr, String contra ) throws Exception{
+	public static boolean login(String usr, String contra ) throws Exception{
 		Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
 		String sql ="SELECT Usuario,Contrasenya FROM Usuario where Usuario=?and Contrasenya=?"; 
 		PreparedStatement rst = con.prepareStatement(sql);
@@ -106,22 +108,23 @@ public class BDRegistro {
 		
 		
 		if(rs.next()) {
+			cerrarConexion();
 			return true;
 		}else {
+			cerrarConexion();
 			return false;
 		}
 		
 	}
 		
-		public boolean loginAdmin(String usr, String contra, int cod ){
+		public boolean loginAdmin(String usr, String contra ){
 			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
-			String sql ="SELECT Usuario,Contrasenya,codAcceso FROM Admin where Usuario=? and Contrasenya=? and codAcceso=?"; 
+			String sql ="SELECT Usuario,Contrasenya,codAcceso FROM Admin where Usuario=? and Contrasenya=?"; 
 			PreparedStatement rst;
 			try {
 				rst = con.prepareStatement(sql);
 				rst.setString(1, usr);
 				rst.setString(2, contra);
-				rst.setInt(3, cod);
 				ResultSet rs = rst.executeQuery();
 				if(rs.next()) {
 					log(Level.INFO, "Sesion iniciada con administrador: " + rs.getString("Usuario"), null);
@@ -166,6 +169,32 @@ public class BDRegistro {
 
 
 	
+		public static Usuario obtenerUsuario(String usr) throws SQLException{
+			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+			String sql = "select * from Usuario where nombreUsuario='"+usr+"'";
+			
+			Statement st = con.createStatement();
+			ResultSet rst = st.executeQuery(sql);
+			
+			while(rst.next()) {
+				int id = rst.getInt("id");
+				String nombre = rst.getString("Nombre");
+				String apellido = rst.getString("Apellidos");
+				//String nombreUsuario = rst.getString("nombreUsuario");
+				String contrasenya = rst.getString("Contrasenya");
+				String dni = rst.getString("DNI");
+				int puntos = rst.getInt("puntosDeusto");
+				String mail = rst.getString("Mail");
+				Usuario usuario = new Usuario(id,nombre,apellido,usr,contrasenya,mail,dni,puntos);
+				System.out.println(usuario);
+				return usuario;
+			}
+			return null;
+			
+			
+			
+			
+		}
 	
 	
 

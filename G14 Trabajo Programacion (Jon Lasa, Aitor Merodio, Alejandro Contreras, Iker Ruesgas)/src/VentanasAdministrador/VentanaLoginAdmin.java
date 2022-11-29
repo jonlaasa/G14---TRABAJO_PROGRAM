@@ -95,12 +95,10 @@ public class VentanaLoginAdmin extends JFrame {
 		btnIniciarSesion.addActionListener(e->{
 			String usr=usuario.getText();
 			String contra=contrasenya.getText();
-			String cod = codAcceso.getText();
-			int codigo = Integer.parseInt(cod);
 			BDRegistro bd = new BDRegistro();
 			
 			try {
-				if(bd.loginAdmin(usr, contra, codigo)==true) {
+				if(bd.loginAdmin(usr, contra)==true) {
 					JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
 					VentanaMenu vr = null;
 					vr = new VentanaMenu();

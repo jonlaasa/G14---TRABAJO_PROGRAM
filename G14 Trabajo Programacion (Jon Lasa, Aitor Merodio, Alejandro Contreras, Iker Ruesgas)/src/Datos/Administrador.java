@@ -8,6 +8,7 @@ public class Administrador extends Registro {
 	
 	private int codAcceso;
 	
+	
 	//hereda de Registro + codigo de Acceso a modo de identificador
 	
 	
