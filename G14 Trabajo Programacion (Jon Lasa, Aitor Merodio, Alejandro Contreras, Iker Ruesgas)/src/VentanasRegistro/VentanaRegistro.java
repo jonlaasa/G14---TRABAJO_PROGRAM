@@ -156,8 +156,6 @@ public class VentanaRegistro extends JFrame {
 		
 
 		btnRegistrarse.addActionListener(e -> {
-			BDRegistro modSql = new BDRegistro();
-			Usuario mod = new Usuario();
 			String usr=usuario.getText();
 			String nom=nombre.getText();
 			String dn=dni.getText();
@@ -167,12 +165,6 @@ public class VentanaRegistro extends JFrame {
 			String correo=mail.getText();
 			
 			
-				mod.setNombreUsuario(usr);
-				mod.setContrasenya(contra);
-				mod.setApellido(ape);
-				mod.setNombre(nom);
-				mod.setDni(dn);
-				mod.setCorreoElectronico(correo);
 				
 				
 				try {
@@ -187,7 +179,7 @@ public class VentanaRegistro extends JFrame {
 					Utils.comprobarContrasenyas(contra, contraRepe);
 					
 					try {
-						modSql.registrar(mod);
+						BDRegistro.registrar(new Usuario(nom,ape,usr,contra,correo,dn));
 						log.log(Level.INFO, "USUARIO REGISTRADO EN LA BASE DE DATOS");
 					} catch (LongitudStringException e2) {
 						log.log(Level.SEVERE, "Longitud de datos de registro no valida:");

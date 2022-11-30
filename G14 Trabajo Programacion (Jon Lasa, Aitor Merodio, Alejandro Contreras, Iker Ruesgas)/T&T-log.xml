@@ -7914,3 +7914,830 @@
   <message>Inicio de sesion no valido</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-30T08:14:03.156227Z</date>
+  <millis>1669796043156</millis>
+  <nanos>227000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Wed Nov 30 09:14:03 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-30T08:14:10.758711700Z</date>
+  <millis>1669796050758</millis>
+  <nanos>711700</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-30T08:14:14.137310600Z</date>
+  <millis>1669796054137</millis>
+  <nanos>310600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a INICIO DE SESION DE ADMINISTRADOR</message>
+</record>
+<record>
+  <date>2022-11-30T08:14:33.412722300Z</date>
+  <millis>1669796073412</millis>
+  <nanos>722300</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:14:33.418056200Z</date>
+  <millis>1669796073418</millis>
+  <nanos>56200</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al establecer conexion </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such column: codAcceso)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.CorePreparedStatement</class>
+      <method>&lt;init&gt;</method>
+      <line>46</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3PreparedStatement</class>
+      <method>&lt;init&gt;</method>
+      <line>31</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc4.JDBC4PreparedStatement</class>
+      <method>&lt;init&gt;</method>
+      <line>25</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc4.JDBC4Connection</class>
+      <method>prepareStatement</method>
+      <line>34</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Connection</class>
+      <method>prepareStatement</method>
+      <line>226</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Connection</class>
+      <method>prepareStatement</method>
+      <line>206</line>
+    </frame>
+    <frame>
+      <class>BD.BDRegistro</class>
+      <method>loginAdmin</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>VentanasAdministrador.VentanaLoginAdmin</class>
+      <method>lambda$1</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-30T08:17:46.826558200Z</date>
+  <millis>1669796266826</millis>
+  <nanos>558200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Wed Nov 30 09:17:46 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-30T08:17:48.263493100Z</date>
+  <millis>1669796268263</millis>
+  <nanos>493100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-30T08:17:50.410224Z</date>
+  <millis>1669796270410</millis>
+  <nanos>224000</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a INICIO DE SESION DE ADMINISTRADOR</message>
+</record>
+<record>
+  <date>2022-11-30T08:17:56.345996400Z</date>
+  <millis>1669796276345</millis>
+  <nanos>996400</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:17:56.351980400Z</date>
+  <millis>1669796276351</millis>
+  <nanos>980400</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con administrador: admin</message>
+</record>
+<record>
+  <date>2022-11-30T08:17:56.352990500Z</date>
+  <millis>1669796276352</millis>
+  <nanos>990500</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:18:01.708413400Z</date>
+  <millis>1669796281708</millis>
+  <nanos>413400</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:18:19.025437300Z</date>
+  <millis>1669796299025</millis>
+  <nanos>437300</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-30T08:18:22.786421100Z</date>
+  <millis>1669796302786</millis>
+  <nanos>421100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Wed Nov 30 09:18:22 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-30T08:18:28.820079100Z</date>
+  <millis>1669796308820</millis>
+  <nanos>79100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-30T08:18:29.794659500Z</date>
+  <millis>1669796309794</millis>
+  <nanos>659500</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a INICIO DE SESION DE ADMINISTRADOR</message>
+</record>
+<record>
+  <date>2022-11-30T08:18:37.002314100Z</date>
+  <millis>1669796317002</millis>
+  <nanos>314100</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:18:37.008271300Z</date>
+  <millis>1669796317008</millis>
+  <nanos>271300</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con administrador: admin</message>
+</record>
+<record>
+  <date>2022-11-30T08:18:37.009268700Z</date>
+  <millis>1669796317009</millis>
+  <nanos>268700</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:18:45.053982100Z</date>
+  <millis>1669796325053</millis>
+  <nanos>982100</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-30T08:19:49.423828100Z</date>
+  <millis>1669796389423</millis>
+  <nanos>828100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Wed Nov 30 09:19:49 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-30T08:19:50.631350100Z</date>
+  <millis>1669796390631</millis>
+  <nanos>350100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-30T08:19:51.481672900Z</date>
+  <millis>1669796391481</millis>
+  <nanos>672900</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a INICIO DE SESION DE ADMINISTRADOR</message>
+</record>
+<record>
+  <date>2022-11-30T08:19:58.086994Z</date>
+  <millis>1669796398086</millis>
+  <nanos>994000</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:19:58.092976400Z</date>
+  <millis>1669796398092</millis>
+  <nanos>976400</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con administrador: admin</message>
+</record>
+<record>
+  <date>2022-11-30T08:19:58.093949100Z</date>
+  <millis>1669796398093</millis>
+  <nanos>949100</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:20:04.608911400Z</date>
+  <millis>1669796404608</millis>
+  <nanos>911400</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-30T08:21:00.843199Z</date>
+  <millis>1669796460843</millis>
+  <nanos>199000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Wed Nov 30 09:21:00 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-30T08:21:01.612366600Z</date>
+  <millis>1669796461612</millis>
+  <nanos>366600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-30T08:21:02.440044500Z</date>
+  <millis>1669796462440</millis>
+  <nanos>44500</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a INICIO DE SESION DE ADMINISTRADOR</message>
+</record>
+<record>
+  <date>2022-11-30T08:21:08.007384400Z</date>
+  <millis>1669796468007</millis>
+  <nanos>384400</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:21:08.012928500Z</date>
+  <millis>1669796468012</millis>
+  <nanos>928500</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con administrador: admin</message>
+</record>
+<record>
+  <date>2022-11-30T08:21:08.013925800Z</date>
+  <millis>1669796468013</millis>
+  <nanos>925800</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:21:13.377232400Z</date>
+  <millis>1669796473377</millis>
+  <nanos>232400</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-30T08:24:44.588049900Z</date>
+  <millis>1669796684588</millis>
+  <nanos>49900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Wed Nov 30 09:24:44 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-30T08:24:46.480861900Z</date>
+  <millis>1669796686480</millis>
+  <nanos>861900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-30T08:24:47.572040500Z</date>
+  <millis>1669796687572</millis>
+  <nanos>40500</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a INICIO DE SESION DE ADMINISTRADOR</message>
+</record>
+<record>
+  <date>2022-11-30T08:24:52.518381900Z</date>
+  <millis>1669796692518</millis>
+  <nanos>381900</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:24:52.523334800Z</date>
+  <millis>1669796692523</millis>
+  <nanos>334800</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con administrador: admin</message>
+</record>
+<record>
+  <date>2022-11-30T08:24:52.524364200Z</date>
+  <millis>1669796692524</millis>
+  <nanos>364200</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:24:58.357755900Z</date>
+  <millis>1669796698357</millis>
+  <nanos>755900</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-30T08:31:15.099088100Z</date>
+  <millis>1669797075099</millis>
+  <nanos>88100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Wed Nov 30 09:31:15 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-30T08:31:16.330644300Z</date>
+  <millis>1669797076330</millis>
+  <nanos>644300</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-30T08:31:29.545996400Z</date>
+  <millis>1669797089545</millis>
+  <nanos>996400</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:31:54.132802800Z</date>
+  <millis>1669797114132</millis>
+  <nanos>802800</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-30T08:32:06.577310Z</date>
+  <millis>1669797126577</millis>
+  <nanos>310000</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>

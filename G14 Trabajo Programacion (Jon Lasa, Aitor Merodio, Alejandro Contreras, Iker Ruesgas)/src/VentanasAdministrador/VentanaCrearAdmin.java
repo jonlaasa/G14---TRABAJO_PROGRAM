@@ -13,6 +13,7 @@ import VentanasMenu.VentanaMenu;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import java.awt.Font;
 import java.sql.SQLException;
@@ -94,12 +95,22 @@ public class VentanaCrearAdmin extends JFrame {
 		});
 		
 		btnCrear.addActionListener(e->{
+			Administrador admin = new Administrador();
+			
 			String nombre = tfNombre.getText();
 			String apellido = tfApellidos.getText();
 			String usuario = tfUsuario.getText();
 			String contrasenya=tfContrasenya.getText();
+			
+			admin.setNombre(nombre);
+			admin.setApellido(apellido);
+			admin.setContrasenya(contrasenya);
+			admin.setNombreUsuario(usuario);
+			
+			
 			try {
-				BDRegistro.crearAdmin(new Administrador(nombre,apellido,usuario,contrasenya));
+				BDRegistro.crearAdmin(admin);
+				JOptionPane.showMessageDialog(null, "Registro completado");
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

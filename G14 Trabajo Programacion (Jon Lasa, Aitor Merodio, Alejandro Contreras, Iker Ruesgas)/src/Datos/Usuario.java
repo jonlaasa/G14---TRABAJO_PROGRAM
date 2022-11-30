@@ -32,12 +32,16 @@ public class Usuario extends Registro {
 		setCorreoElectronico(correoElectronico);
 		setDni(dni); 
 		setPuntos(puntos);
-		
+		}
 	
-		
-		
-	}
+	//Constructor sin id y puntos
 	
+	public Usuario(String nombre, String apellido, String usuario, String contrasenya, String correoElectronico,String dni)  {
+		super(nombre, apellido, usuario);
+		setContrasenya(contrasenya);
+		setCorreoElectronico(correoElectronico);
+		setDni(dni); 
+		}
 	
 	//Constructor sin Parametros
 	

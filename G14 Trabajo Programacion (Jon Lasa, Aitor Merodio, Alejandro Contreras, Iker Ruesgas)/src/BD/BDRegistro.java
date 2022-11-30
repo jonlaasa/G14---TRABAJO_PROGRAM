@@ -72,7 +72,7 @@ public class BDRegistro {
 	public static boolean registrar(Usuario usr) throws Exception {
 		
 		Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
-		String sql = "INSERT INTO Usuario (Nombre,	Apellidos, Usuario, Contrasenya, DNI, puntosDeusto,Mail ) VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO Usuario (Nombre,	Apellidos, nombreUsuario, Contrasenya, DNI, puntosDeusto,Mail ) VALUES(?,?,?,?,?,?,?)";
 	
 		try {
 
@@ -116,7 +116,7 @@ public class BDRegistro {
 		
 		public static boolean loginAdmin(String usr, String contra ){
 			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
-			String sql ="SELECT Usuario,Contrasenya,codAcceso FROM Admin where Usuario=? and Contrasenya=?"; 
+			String sql ="SELECT Usuario,Contrasenya FROM Admin where Usuario=? and Contrasenya=?"; 
 			PreparedStatement rst;
 			try {
 				rst = con.prepareStatement(sql);
@@ -211,15 +211,13 @@ public class BDRegistro {
 			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
 			String sql = "insert into Admin (nombre,apellido,usuario,contrasenya) values(?,?,?,?)";
 			
-			PreparedStatement ps = con.prepareStatement(sql);
-			
+			PreparedStatement pst = con.prepareStatement(sql);
 			
 			try {
-				ps.setString(0, admin.getNombre());
-				ps.setString(1, admin.getApellido());
-				ps.setString(2, admin.getNombreUsuario());
-				ps.setString(3, admin.getContrasenya());
-				
+				pst.setString(1, admin.getNombre());
+				pst.setString(2, admin.getApellido());
+				pst.setString(3, admin.getNombreUsuario());
+				pst.setString(4, admin.getContrasenya());
 			}catch (Exception e) {
 				// TODO: handle exception
 			}
