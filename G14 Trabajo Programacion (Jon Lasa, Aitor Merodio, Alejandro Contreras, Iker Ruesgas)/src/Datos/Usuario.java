@@ -31,7 +31,7 @@ public class Usuario extends Registro {
 		setContrasenya(contrasenya);
 		setCorreoElectronico(correoElectronico);
 		setDni(dni); 
-		setPuntos(0);
+		setPuntos(puntos);
 		
 	
 		
@@ -114,12 +114,12 @@ public class Usuario extends Registro {
 	
 	@Override
 	public String toString() {
-		return "Usuario: " + "Nombre: " + getNombre() +" Apellido: " + getApellido() + "Nombre usuario: "  + getNombreUsuario() + " [contrasenya=" + contrasenya + ", dni=" + dni  
-			 + ", puntos=" + puntos;
+		return "Usuario [Nombre:" + getNombre()+" Apellido: " + getApellido() +" Nombre usuario: "  + getNombreUsuario() +"contrasenya=" + contrasenya + ", dni=" + dni + ", puntos=" + puntos + ", correoElectronico="
+				+ correoElectronico + ", codigo=" + codigo + "]";
 	}
 	
 	
-	
+
 	
 	
 	

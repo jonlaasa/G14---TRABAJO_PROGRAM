@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
+import Datos.Administrador;
 import Datos.Usuario;
 
 
@@ -72,11 +73,10 @@ public class BDRegistro {
 		
 		Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
 		String sql = "INSERT INTO Usuario (Nombre,	Apellidos, Usuario, Contrasenya, DNI, puntosDeusto,Mail ) VALUES(?,?,?,?,?,?,?)";
-		System.out.println(1);
+	
 		try {
-			System.out.println(2);
+
 			pst=con.prepareStatement(sql);
-			System.out.println(3);
 			pst.setString(1, usr.getNombre());
 			pst.setString(2, usr.getApellido());
 			pst.setString(3, usr.getNombreUsuario());
@@ -84,11 +84,8 @@ public class BDRegistro {
 			pst.setString(5, usr.getDni());
 			pst.setInt(6, 0);
 			pst.setString(7, usr.getCorreoElectronico());
-			System.out.println(4);
 			pst.execute();
-			System.out.println(5);
 			JOptionPane.showMessageDialog(null, "Registro completado");
-			System.out.println(6);
 			return true;
 		}catch(SQLException e){
 			JOptionPane.showMessageDialog(null, "Registro fallido");
@@ -99,7 +96,7 @@ public class BDRegistro {
 	
 	public static boolean login(String usr, String contra ) throws Exception{
 		Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
-		String sql ="SELECT Usuario,Contrasenya FROM Usuario where Usuario=?and Contrasenya=?"; 
+		String sql ="SELECT nombreUsuario,Contrasenya FROM Usuario where nombreUsuario=?and Contrasenya=?"; 
 		PreparedStatement rst = con.prepareStatement(sql);
 		rst.setString(1, usr);
 		rst.setString(2, contra);
@@ -117,7 +114,7 @@ public class BDRegistro {
 		
 	}
 		
-		public boolean loginAdmin(String usr, String contra ){
+		public static boolean loginAdmin(String usr, String contra ){
 			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
 			String sql ="SELECT Usuario,Contrasenya,codAcceso FROM Admin where Usuario=? and Contrasenya=?"; 
 			PreparedStatement rst;
@@ -180,22 +177,59 @@ public class BDRegistro {
 				int id = rst.getInt("id");
 				String nombre = rst.getString("Nombre");
 				String apellido = rst.getString("Apellidos");
-				//String nombreUsuario = rst.getString("nombreUsuario");
 				String contrasenya = rst.getString("Contrasenya");
 				String dni = rst.getString("DNI");
 				int puntos = rst.getInt("puntosDeusto");
 				String mail = rst.getString("Mail");
 				Usuario usuario = new Usuario(id,nombre,apellido,usr,contrasenya,mail,dni,puntos);
-				System.out.println(usuario);
 				return usuario;
 			}
 			return null;
-			
-			
-			
-			
-		}
+			}
 	
 	
 
+		
+		public static Administrador obtenerAdministrador(String admin) throws SQLException {
+			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+			String sql = "select * from admin where usuario='"+admin+"'";
+			Statement st = con.createStatement();
+			ResultSet rst = st.executeQuery(sql);
+			
+			while(rst.next()) {
+				int id=rst.getInt("id");
+				String nombre=rst.getString("nombre");
+				String apellido=rst.getString("apellido");
+				String contrasenya = rst.getString("contrasenya");
+				Administrador administradorActual = new Administrador(nombre,apellido,admin,contrasenya,id);
+				return administradorActual;
+			}
+			return null;
+			}
+		
+		public static boolean crearAdmin(Administrador admin) throws SQLException{
+			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+			String sql = "insert into Admin (nombre,apellido,usuario,contrasenya) values(?,?,?,?)";
+			
+			PreparedStatement ps = con.prepareStatement(sql);
+			
+			
+			try {
+				ps.setString(0, admin.getNombre());
+				ps.setString(1, admin.getApellido());
+				ps.setString(2, admin.getNombreUsuario());
+				ps.setString(3, admin.getContrasenya());
+				
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+		
+				
+		
+			
+			
+			
+			return false;
+			
+		}
 }

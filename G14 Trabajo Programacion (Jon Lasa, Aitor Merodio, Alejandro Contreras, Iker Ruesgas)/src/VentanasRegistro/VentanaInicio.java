@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import BD.BDRegistro;
+import Datos.Usuario;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;

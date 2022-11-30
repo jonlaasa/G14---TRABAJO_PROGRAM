@@ -13,6 +13,7 @@ import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import BD.BDRegistro;
+import Datos.Administrador;
 import VentanasMenu.VentanaMenu;
 import VentanasRegistro.VentanaInicio;
 import VentanasRegistro.VentanaLogin;
@@ -95,13 +96,14 @@ public class VentanaLoginAdmin extends JFrame {
 		btnIniciarSesion.addActionListener(e->{
 			String usr=usuario.getText();
 			String contra=contrasenya.getText();
-			BDRegistro bd = new BDRegistro();
+			
 			
 			try {
-				if(bd.loginAdmin(usr, contra)==true) {
+				if(BDRegistro.loginAdmin(usr, contra)==true) {
+					Administrador administradorActual = BDRegistro.obtenerAdministrador(usr);
 					JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
-					VentanaMenu vr = null;
-					vr = new VentanaMenu();
+					VentanaInicioAdmin vr = null;
+					vr = new VentanaInicioAdmin(administradorActual);
 					vr.setVisible(true);
 					dispose();	
 				}

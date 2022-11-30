@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import BD.BDRegistro;
+import Datos.Usuario;
 import VentanasAdministrador.VentanaLoginAdmin;
 import VentanasMenu.VentanaMenu;
 
@@ -116,10 +117,11 @@ public class VentanaLogin extends JFrame {
 			
 			try {
 				if(BDRegistro.login(usr, contra)==true) {
+					Usuario usuarioActual =BDRegistro.obtenerUsuario(usr);
 					JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
 					BDRegistro.log(Level.INFO, "Sesion iniciada con exito del usuario: "+usr , null);
 					VentanaMenu vr = null;
-					vr = new VentanaMenu();
+					vr = new VentanaMenu(usuarioActual);
 					vr.setVisible(true);
 					dispose();	
 				}

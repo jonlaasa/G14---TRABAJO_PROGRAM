@@ -12,15 +12,17 @@ import VentanasCompra.VentanaVuelo;
 import VentanasMenu.VentanaMenu;
 import VentanasMenu.VentanaPerfil;
 import VentanasRegistro.VentanaInicio;
+import VentanasRegistro.VentanaLogin;
+import VentanasRegistro.VentanaMetodoPago;
 
 public class Main {
 
 	public static void main(String[] args) throws SQLException {
 //		BDRegistro.abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
-//		VentanaPerfil v = new VentanaPerfil();
-//		v.setVisible(true);
-		BDRegistro.obtenerUsuario("alberto");
-		
+		VentanaInicio v = new VentanaInicio();
+		v.setVisible(true);
+//		BDRegistro.obtenerUsuario("alberto");
+		 
 
 	}
 }

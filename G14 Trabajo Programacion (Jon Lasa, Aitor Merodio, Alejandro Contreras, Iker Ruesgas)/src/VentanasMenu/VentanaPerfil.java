@@ -5,6 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Datos.Usuario;
+import VentanasRegistro.VentanaDescripcion;
+
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -17,31 +21,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextField;
 import java.awt.Color;
+import java.awt.Font;
 
 public class VentanaPerfil extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaPerfil frame = new VentanaPerfil();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
-	public VentanaPerfil() {
+	public VentanaPerfil(Usuario usrActual) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(700, 350, 500, 350);
@@ -52,41 +39,76 @@ public class VentanaPerfil extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("Usuario:");
-		lblNewLabel_1.setBounds(48, 11, 196, 14);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblNombre = new JLabel("Nombre:");
+		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNombre.setBounds(59, 87, 79, 14);
+		contentPane.add(lblNombre);
 		
-		JLabel lblNewLabel_2 = new JLabel("Puntos T&T:");
-		lblNewLabel_2.setBounds(48, 58, 196, 14);
-		contentPane.add(lblNewLabel_2);
+		JLabel lblApellidos = new JLabel("Apellidos:");
+		lblApellidos.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblApellidos.setBounds(59, 128, 79, 14);
+		contentPane.add(lblApellidos);
 		
-		JButton btnNewButton = new JButton("Configuracion");
-		btnNewButton.setBounds(48, 121, 117, 23);
-		contentPane.add(btnNewButton);
+		JLabel lblMostrarUsuario = new JLabel(usrActual.getNombre());
+		lblMostrarUsuario.setBounds(157, 87, 110, 14);
+		contentPane.add(lblMostrarUsuario);
 		
-		JButton btnNewButton_1 = new JButton("Privacidad");
-		btnNewButton_1.setBounds(48, 162, 117, 23);
-		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Historial");
-		btnNewButton_2.setBounds(48, 202, 117, 23);
-		contentPane.add(btnNewButton_2);
-	}
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
-			}
+		
+		JLabel lblMostrarApellidos = new JLabel(usrActual.getApellido());
+		lblMostrarApellidos.setBounds(157, 128, 120, 14);
+		contentPane.add(lblMostrarApellidos);
+		
+		JLabel lblDni = new JLabel("DNI:");
+		lblDni.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblDni.setBounds(59, 165, 46, 14);
+		contentPane.add(lblDni);
+		
+		JLabel lblMostrarDni = new JLabel(usrActual.getDni());
+		lblMostrarDni.setBounds(157, 165, 120, 14);
+		contentPane.add(lblMostrarDni);
+		
+		JLabel lblMail = new JLabel("Mail:");
+		lblMail.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblMail.setBounds(59, 203, 73, 14);
+		contentPane.add(lblMail);
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setBounds(199, 263, 89, 23);
+		contentPane.add(btnVolver);
+		
+		JLabel lblMostrarMail = new JLabel(usrActual.getCorreoElectronico());
+		lblMostrarMail.setBounds(157, 199, 132, 23);
+		contentPane.add(lblMostrarMail);
+		
+		JLabel lblPerfil = new JLabel("Perfil");
+		lblPerfil.setForeground(new Color(255, 128, 0));
+		lblPerfil.setFont(new Font("Tahoma", Font.BOLD, 17));
+		lblPerfil.setBounds(215, 33, 52, 23);
+		contentPane.add(lblPerfil);
+		
+		JLabel lblPuntos = new JLabel("PUNTOS T&T");
+		lblPuntos.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblPuntos.setBounds(328, 87, 110, 14);
+		contentPane.add(lblPuntos);
+		
+		
+		
+		JLabel lblMostrarPuntos = new JLabel(String.valueOf(usrActual.getPuntos()));
+		lblMostrarPuntos.setForeground(new Color(0, 255, 255));
+		lblMostrarPuntos.setFont(new Font("Tahoma", Font.PLAIN, 53));
+		lblMostrarPuntos.setBounds(345, 87, 156, 173);
+		contentPane.add(lblMostrarPuntos);
+		
+		btnVolver.addActionListener(e->{
+			VentanaMenu vr = null;
+			vr = new VentanaMenu(usrActual);
+			vr.setVisible(true);
+			dispose();
+			
 		});
+		
+		
+		
 	}
 }

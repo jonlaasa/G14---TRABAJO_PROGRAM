@@ -5583,3 +5583,2334 @@
   <message>Conexion establecida</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T17:25:45.291343600Z</date>
+  <millis>1669742745291</millis>
+  <nanos>343600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T17:26:32.373047500Z</date>
+  <millis>1669742792373</millis>
+  <nanos>47500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T17:27:46.908965700Z</date>
+  <millis>1669742866908</millis>
+  <nanos>965700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T17:31:13.966401100Z</date>
+  <millis>1669743073966</millis>
+  <nanos>401100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T17:31:24.027365400Z</date>
+  <millis>1669743084027</millis>
+  <nanos>365400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion establecida</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T18:08:14.003823700Z</date>
+  <millis>1669745294003</millis>
+  <nanos>823700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:08:13 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T18:08:18.740735Z</date>
+  <millis>1669745298740</millis>
+  <nanos>735000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T18:08:32.020903100Z</date>
+  <millis>1669745312020</millis>
+  <nanos>903100</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T18:08:32.024892300Z</date>
+  <millis>1669745312024</millis>
+  <nanos>892300</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+<record>
+  <date>2022-11-29T18:08:58.931310600Z</date>
+  <millis>1669745338931</millis>
+  <nanos>310600</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T18:08:58.932336800Z</date>
+  <millis>1669745338932</millis>
+  <nanos>336800</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T18:10:16.829183500Z</date>
+  <millis>1669745416829</millis>
+  <nanos>183500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:10:16 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T18:10:17.782090900Z</date>
+  <millis>1669745417782</millis>
+  <nanos>90900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T18:10:24.982067700Z</date>
+  <millis>1669745424982</millis>
+  <nanos>67700</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T18:10:24.985271900Z</date>
+  <millis>1669745424985</millis>
+  <nanos>271900</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T18:10:45.860072200Z</date>
+  <millis>1669745445860</millis>
+  <nanos>72200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:10:45 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T18:10:47.291553400Z</date>
+  <millis>1669745447291</millis>
+  <nanos>553400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T18:10:56.330134800Z</date>
+  <millis>1669745456330</millis>
+  <nanos>134800</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T18:10:56.333531900Z</date>
+  <millis>1669745456333</millis>
+  <nanos>531900</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al intentar comprobar el usario con la base de datos</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T18:35:04.938177Z</date>
+  <millis>1669746904938</millis>
+  <nanos>177000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:35:04 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T18:35:05.816728100Z</date>
+  <millis>1669746905816</millis>
+  <nanos>728100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-29T18:35:06.593993600Z</date>
+  <millis>1669746906593</millis>
+  <nanos>993600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:35:06 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T18:35:07.946808300Z</date>
+  <millis>1669746907946</millis>
+  <nanos>808300</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-29T18:35:09.455277100Z</date>
+  <millis>1669746909455</millis>
+  <nanos>277100</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:35:09 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T18:35:10.405608200Z</date>
+  <millis>1669746910405</millis>
+  <nanos>608200</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T18:35:21.638008700Z</date>
+  <millis>1669746921638</millis>
+  <nanos>8700</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Volviendo a ventana de inicio</message>
+</record>
+<record>
+  <date>2022-11-29T18:35:21.639009700Z</date>
+  <millis>1669746921639</millis>
+  <nanos>9700</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:35:21 CET 2022</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T18:48:47.472924100Z</date>
+  <millis>1669747727472</millis>
+  <nanos>924100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:48:47 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T18:48:48.405198100Z</date>
+  <millis>1669747728405</millis>
+  <nanos>198100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T18:48:55.315284800Z</date>
+  <millis>1669747735315</millis>
+  <nanos>284800</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T18:48:55.320684300Z</date>
+  <millis>1669747735320</millis>
+  <nanos>684300</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T18:48:55.321649200Z</date>
+  <millis>1669747735321</millis>
+  <nanos>649200</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T18:48:56.281577900Z</date>
+  <millis>1669747736281</millis>
+  <nanos>577900</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: admin</message>
+</record>
+<record>
+  <date>2022-11-29T18:48:56.310499200Z</date>
+  <millis>1669747736310</millis>
+  <nanos>499200</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T18:55:06.757391600Z</date>
+  <millis>1669748106757</millis>
+  <nanos>391600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:55:06 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T18:55:07.607991600Z</date>
+  <millis>1669748107607</millis>
+  <nanos>991600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T18:55:12.732253300Z</date>
+  <millis>1669748112732</millis>
+  <nanos>253300</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T18:55:12.738407300Z</date>
+  <millis>1669748112738</millis>
+  <nanos>407300</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T18:55:12.739404300Z</date>
+  <millis>1669748112739</millis>
+  <nanos>404300</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T18:55:13.733910800Z</date>
+  <millis>1669748113733</millis>
+  <nanos>910800</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: admin</message>
+</record>
+<record>
+  <date>2022-11-29T18:55:13.761028800Z</date>
+  <millis>1669748113761</millis>
+  <nanos>28800</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T18:58:28.546546700Z</date>
+  <millis>1669748308546</millis>
+  <nanos>546700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:58:28 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T18:58:30.881550700Z</date>
+  <millis>1669748310881</millis>
+  <nanos>550700</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T18:58:39.689929900Z</date>
+  <millis>1669748319689</millis>
+  <nanos>929900</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T18:58:39.694916600Z</date>
+  <millis>1669748319694</millis>
+  <nanos>916600</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T18:58:39.695913800Z</date>
+  <millis>1669748319695</millis>
+  <nanos>913800</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T18:58:41.126576700Z</date>
+  <millis>1669748321126</millis>
+  <nanos>576700</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T18:58:41.156497900Z</date>
+  <millis>1669748321156</millis>
+  <nanos>497900</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T18:59:48.989779400Z</date>
+  <millis>1669748388989</millis>
+  <nanos>779400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 19:59:48 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T18:59:53.265785600Z</date>
+  <millis>1669748393265</millis>
+  <nanos>785600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:00.924350700Z</date>
+  <millis>1669748400924</millis>
+  <nanos>350700</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:00.931332100Z</date>
+  <millis>1669748400931</millis>
+  <nanos>332100</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:00.932329300Z</date>
+  <millis>1669748400932</millis>
+  <nanos>329300</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:01.944491500Z</date>
+  <millis>1669748401944</millis>
+  <nanos>491500</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:01.972415700Z</date>
+  <millis>1669748401972</millis>
+  <nanos>415700</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:00:28.089711Z</date>
+  <millis>1669748428089</millis>
+  <nanos>711000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:00:28 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:29.242212600Z</date>
+  <millis>1669748429242</millis>
+  <nanos>212600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:34.658362400Z</date>
+  <millis>1669748434658</millis>
+  <nanos>362400</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:34.663349Z</date>
+  <millis>1669748434663</millis>
+  <nanos>349000</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:34.664346300Z</date>
+  <millis>1669748434664</millis>
+  <nanos>346300</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:35.617449300Z</date>
+  <millis>1669748435617</millis>
+  <nanos>449300</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:00:35.643998400Z</date>
+  <millis>1669748435643</millis>
+  <nanos>998400</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:30:57.096716100Z</date>
+  <millis>1669750257096</millis>
+  <nanos>716100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:30:57 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:30:57.866643100Z</date>
+  <millis>1669750257866</millis>
+  <nanos>643100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:31:04.967090100Z</date>
+  <millis>1669750264967</millis>
+  <nanos>90100</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:31:04.973300300Z</date>
+  <millis>1669750264973</millis>
+  <nanos>300300</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:31:04.975297600Z</date>
+  <millis>1669750264975</millis>
+  <nanos>297600</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:31:06.149149700Z</date>
+  <millis>1669750266149</millis>
+  <nanos>149700</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:31:06.181064200Z</date>
+  <millis>1669750266181</millis>
+  <nanos>64200</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:33:13.738695700Z</date>
+  <millis>1669750393738</millis>
+  <nanos>695700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:33:13 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:33:14.733572400Z</date>
+  <millis>1669750394733</millis>
+  <nanos>572400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:33:22.648404400Z</date>
+  <millis>1669750402648</millis>
+  <nanos>404400</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:33:22.654671Z</date>
+  <millis>1669750402654</millis>
+  <nanos>671000</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:33:22.655668200Z</date>
+  <millis>1669750402655</millis>
+  <nanos>668200</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:33:24.088340400Z</date>
+  <millis>1669750404088</millis>
+  <nanos>340400</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:33:24.119258700Z</date>
+  <millis>1669750404119</millis>
+  <nanos>258700</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:34:54.002214300Z</date>
+  <millis>1669750494002</millis>
+  <nanos>214300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:34:53 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:34:54.863935100Z</date>
+  <millis>1669750494863</millis>
+  <nanos>935100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:35:01.530283800Z</date>
+  <millis>1669750501530</millis>
+  <nanos>283800</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:35:01.536269900Z</date>
+  <millis>1669750501536</millis>
+  <nanos>269900</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:35:01.537262400Z</date>
+  <millis>1669750501537</millis>
+  <nanos>262400</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:35:02.909235900Z</date>
+  <millis>1669750502909</millis>
+  <nanos>235900</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:35:02.947135900Z</date>
+  <millis>1669750502947</millis>
+  <nanos>135900</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:37:37.530931400Z</date>
+  <millis>1669750657530</millis>
+  <nanos>931400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:37:37 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:37:38.379128300Z</date>
+  <millis>1669750658379</millis>
+  <nanos>128300</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:37:48.167906800Z</date>
+  <millis>1669750668167</millis>
+  <nanos>906800</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:37:48.172893700Z</date>
+  <millis>1669750668172</millis>
+  <nanos>893700</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:37:48.173891Z</date>
+  <millis>1669750668173</millis>
+  <nanos>891000</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:37:49.197159600Z</date>
+  <millis>1669750669197</millis>
+  <nanos>159600</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:37:49.225085Z</date>
+  <millis>1669750669225</millis>
+  <nanos>85000</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:38:45.379926Z</date>
+  <millis>1669750725379</millis>
+  <nanos>926000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:38:45 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:38:46.742844600Z</date>
+  <millis>1669750726742</millis>
+  <nanos>844600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:38:52.720701Z</date>
+  <millis>1669750732720</millis>
+  <nanos>701000</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:38:52.725687700Z</date>
+  <millis>1669750732725</millis>
+  <nanos>687700</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:38:52.726685600Z</date>
+  <millis>1669750732726</millis>
+  <nanos>685600</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:38:53.780466400Z</date>
+  <millis>1669750733780</millis>
+  <nanos>466400</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:38:53.808390Z</date>
+  <millis>1669750733808</millis>
+  <nanos>390000</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:40:15.468965700Z</date>
+  <millis>1669750815468</millis>
+  <nanos>965700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:40:15 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:40:16.370675200Z</date>
+  <millis>1669750816370</millis>
+  <nanos>675200</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:40:24.590360300Z</date>
+  <millis>1669750824590</millis>
+  <nanos>360300</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:40:24.596344900Z</date>
+  <millis>1669750824596</millis>
+  <nanos>344900</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:40:24.597342Z</date>
+  <millis>1669750824597</millis>
+  <nanos>342000</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:40:25.587275500Z</date>
+  <millis>1669750825587</millis>
+  <nanos>275500</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:40:25.627701100Z</date>
+  <millis>1669750825627</millis>
+  <nanos>701100</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:44:36.217394700Z</date>
+  <millis>1669751076217</millis>
+  <nanos>394700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:44:36 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:44:37.360988Z</date>
+  <millis>1669751077360</millis>
+  <nanos>988000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:44:44.543246700Z</date>
+  <millis>1669751084543</millis>
+  <nanos>246700</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:44:44.548233600Z</date>
+  <millis>1669751084548</millis>
+  <nanos>233600</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:44:44.549231100Z</date>
+  <millis>1669751084549</millis>
+  <nanos>231100</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:44:45.516476500Z</date>
+  <millis>1669751085516</millis>
+  <nanos>476500</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:44:45.545315800Z</date>
+  <millis>1669751085545</millis>
+  <nanos>315800</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:52:59.034300900Z</date>
+  <millis>1669751579034</millis>
+  <nanos>300900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:52:59 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:52:59.912904100Z</date>
+  <millis>1669751579912</millis>
+  <nanos>904100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:53:38.772268700Z</date>
+  <millis>1669751618772</millis>
+  <nanos>268700</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:53:38.777255800Z</date>
+  <millis>1669751618777</millis>
+  <nanos>255800</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:53:38.778252300Z</date>
+  <millis>1669751618778</millis>
+  <nanos>252300</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:53:40.121577500Z</date>
+  <millis>1669751620121</millis>
+  <nanos>577500</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:53:40.152494700Z</date>
+  <millis>1669751620152</millis>
+  <nanos>494700</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:57:25.278789Z</date>
+  <millis>1669751845278</millis>
+  <nanos>789000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:57:25 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:57:26.633731400Z</date>
+  <millis>1669751846633</millis>
+  <nanos>731400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:57:33.407860500Z</date>
+  <millis>1669751853407</millis>
+  <nanos>860500</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:57:33.413844200Z</date>
+  <millis>1669751853413</millis>
+  <nanos>844200</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:57:33.414840400Z</date>
+  <millis>1669751853414</millis>
+  <nanos>840400</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:57:34.491374100Z</date>
+  <millis>1669751854491</millis>
+  <nanos>374100</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:57:34.519295900Z</date>
+  <millis>1669751854519</millis>
+  <nanos>295900</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T19:58:19.553608500Z</date>
+  <millis>1669751899553</millis>
+  <nanos>608500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 20:58:19 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T19:58:20.744866100Z</date>
+  <millis>1669751900744</millis>
+  <nanos>866100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T19:58:27.267433700Z</date>
+  <millis>1669751907267</millis>
+  <nanos>433700</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:58:27.272420400Z</date>
+  <millis>1669751907272</millis>
+  <nanos>420400</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T19:58:27.274416600Z</date>
+  <millis>1669751907274</millis>
+  <nanos>416600</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T19:58:28.118405Z</date>
+  <millis>1669751908118</millis>
+  <nanos>405000</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T19:58:28.143493300Z</date>
+  <millis>1669751908143</millis>
+  <nanos>493300</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T20:23:29.035477900Z</date>
+  <millis>1669753409035</millis>
+  <nanos>477900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 21:23:29 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T20:23:30.362646600Z</date>
+  <millis>1669753410362</millis>
+  <nanos>646600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T20:23:31.312275Z</date>
+  <millis>1669753411312</millis>
+  <nanos>275000</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a INICIO DE SESION DE ADMINISTRADOR</message>
+</record>
+<record>
+  <date>2022-11-29T20:23:32.365101900Z</date>
+  <millis>1669753412365</millis>
+  <nanos>101900</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a INICIO DE SESION DE ADMINISTRADOR</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T21:03:01.849855200Z</date>
+  <millis>1669755781849</millis>
+  <nanos>855200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 22:03:01 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T21:03:02.692900500Z</date>
+  <millis>1669755782692</millis>
+  <nanos>900500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T21:03:09.452532500Z</date>
+  <millis>1669755789452</millis>
+  <nanos>532500</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T21:03:09.458371Z</date>
+  <millis>1669755789458</millis>
+  <nanos>371000</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T21:03:09.459368800Z</date>
+  <millis>1669755789459</millis>
+  <nanos>368800</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T21:03:11.490950700Z</date>
+  <millis>1669755791490</millis>
+  <nanos>950700</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: alberto</message>
+</record>
+<record>
+  <date>2022-11-29T21:03:11.516881300Z</date>
+  <millis>1669755791516</millis>
+  <nanos>881300</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T21:49:27.038653Z</date>
+  <millis>1669758567038</millis>
+  <nanos>653000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 22:49:27 CET 2022</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T21:49:51.159700700Z</date>
+  <millis>1669758591159</millis>
+  <nanos>700700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 22:49:51 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T21:49:52.219537600Z</date>
+  <millis>1669758592219</millis>
+  <nanos>537600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T21:49:57.115189Z</date>
+  <millis>1669758597115</millis>
+  <nanos>189000</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T21:49:57.120175600Z</date>
+  <millis>1669758597120</millis>
+  <nanos>175600</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T21:49:57.121172800Z</date>
+  <millis>1669758597121</millis>
+  <nanos>172800</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T21:49:58.075671900Z</date>
+  <millis>1669758598075</millis>
+  <nanos>671900</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: admin</message>
+</record>
+<record>
+  <date>2022-11-29T21:49:58.103596100Z</date>
+  <millis>1669758598103</millis>
+  <nanos>596100</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+<record>
+  <date>2022-11-29T21:50:01.111783400Z</date>
+  <millis>1669758601111</millis>
+  <nanos>783400</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Tue Nov 29 22:50:01 CET 2022</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-29T23:53:59.349527Z</date>
+  <millis>1669766039349</millis>
+  <nanos>527000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Wed Nov 30 00:53:59 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T23:54:00.271048900Z</date>
+  <millis>1669766040271</millis>
+  <nanos>48900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2022-11-29T23:54:02.335188200Z</date>
+  <millis>1669766042335</millis>
+  <nanos>188200</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Wed Nov 30 00:54:02 CET 2022</message>
+</record>
+<record>
+  <date>2022-11-29T23:54:02.890512500Z</date>
+  <millis>1669766042890</millis>
+  <nanos>512500</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2022-11-29T23:54:04.703737Z</date>
+  <millis>1669766044703</millis>
+  <nanos>737000</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Accediendo a INICIO DE SESION DE ADMINISTRADOR</message>
+</record>
+<record>
+  <date>2022-11-29T23:54:11.608809300Z</date>
+  <millis>1669766051608</millis>
+  <nanos>809300</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T23:54:11.613765400Z</date>
+  <millis>1669766051613</millis>
+  <nanos>765400</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error al establecer conexion </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such column: codAcceso)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1135</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1146</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1106</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>264</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.CorePreparedStatement</class>
+      <method>&lt;init&gt;</method>
+      <line>46</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3PreparedStatement</class>
+      <method>&lt;init&gt;</method>
+      <line>31</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc4.JDBC4PreparedStatement</class>
+      <method>&lt;init&gt;</method>
+      <line>25</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc4.JDBC4Connection</class>
+      <method>prepareStatement</method>
+      <line>34</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Connection</class>
+      <method>prepareStatement</method>
+      <line>226</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Connection</class>
+      <method>prepareStatement</method>
+      <line>206</line>
+    </frame>
+    <frame>
+      <class>BD.BDRegistro</class>
+      <method>loginAdmin</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>VentanasAdministrador.VentanaLoginAdmin</class>
+      <method>lambda$1</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-11-29T23:54:34.547161200Z</date>
+  <millis>1669766074547</millis>
+  <nanos>161200</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T23:54:34.552150800Z</date>
+  <millis>1669766074552</millis>
+  <nanos>150800</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2022-11-29T23:54:34.552150800Z</date>
+  <millis>1669766074552</millis>
+  <nanos>150800</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2022-11-29T23:54:36.043678400Z</date>
+  <millis>1669766076043</millis>
+  <nanos>678400</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Sesion iniciada con exito del usuario: admin</message>
+</record>
+<record>
+  <date>2022-11-29T23:54:36.079579500Z</date>
+  <millis>1669766076079</millis>
+  <nanos>579500</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Inicio de sesion no valido</message>
+</record>
+</log>
