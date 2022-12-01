@@ -6,7 +6,8 @@ import Enum.TipoServicio;
 import Enum.TipoVuelo;
 import Enum.ZonaAsientoVuelo;
 
-public class Vuelo extends Servicio {
+public class Vuelo extends Servicio
+{
 	
 	private String companya;
 	

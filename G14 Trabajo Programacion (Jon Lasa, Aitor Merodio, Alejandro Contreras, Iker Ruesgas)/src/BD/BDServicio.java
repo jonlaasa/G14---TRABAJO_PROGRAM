@@ -183,6 +183,90 @@ private static Connection conn;
 			
 		}
 		
+		
+		//FALTA LAS FECHAS
+		public static ArrayList<Vuelo> listaServicioVueloFiltrado (String origen, String destino, String orden){
+			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
+			ArrayList <Vuelo> listaConVuelos = new ArrayList <Vuelo> ();
+			String sent="";
+			
+			try {
+				Statement st = conn.createStatement();
+				if(orden.equals("menor")) {
+				 sent= "select * from vuelo where origen='"+origen+"' and destino='"+destino+"' order by precio asc";
+				}else {
+				     sent= "select * from vuelo where origen='"+origen+"' and destino='"+destino+"' order by precio desc";
+				}
+				
+				ResultSet rs = st.executeQuery(sent);
+				while(rs.next()) {
+					int codigoVuelo = rs.getInt("Cod_vuelo");
+					String FechaVuelo = rs.getString("Fecha");
+					int duracion = rs.getInt("Duracion");
+					String origenV = rs.getString("Origen");
+					String destinoV = rs.getString("Destino");
+					Double precio = rs.getDouble("Precio");
+					TipoServicio tipo = TipoServicio.vuelo;
+					int plazasRestantes = rs.getInt("Plazas_restantes");
+					String companya= rs.getString("Companya_vuelo");
+					
+					
+					Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, duracion, origenV,
+							destinoV, precio, tipo,plazasRestantes,companya);
+					listaConVuelos.add(vueloNuevo);	
+					
+				}
+			}catch(SQLException sql) {
+				log(Level.SEVERE, "ERROR EN CONSULTA DE BASE DE DATOS CON FILTRADO DE VUELOS", sql);
+			}
+
+			return listaConVuelos;
+		}
+		
+		
+		
+		
+		
+		public static ArrayList<Bus> listaServicioBusFiltrado (String origen, String destino, String orden){
+			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
+			ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
+			String sent="";
+			
+			try {
+				Statement st = conn.createStatement();
+				if(orden.equals("menor")) {
+				 sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' order by precio asc";
+				}else {
+				     sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' order by precio desc";
+				}
+				
+				ResultSet rs = st.executeQuery(sent);
+				while(rs.next()) {
+					int codigoBus = rs.getInt("Cod_bus");
+					String FechaBus = rs.getString("Fecha");
+					int duracion = rs.getInt("Duracion");
+					String origenV = rs.getString("Origen");
+					String destinoV = rs.getString("Destino");
+					Double precio = rs.getDouble("Precio");
+					TipoServicio tipo = TipoServicio.bus;
+					int plazasRestantes = rs.getInt("Plazas_restantes");
+					String companya= rs.getString("Companya_vuelo");
+					
+					
+					Bus busNuevo = new Bus(codigoBus, FechaBus, duracion, origenV,
+							destinoV, precio, tipo,plazasRestantes,companya);
+					listaConBus.add(busNuevo);	
+					
+				}
+			}catch(SQLException sql) {
+				log(Level.SEVERE, "ERROR EN CONSULTA DE BASE DE DATOS CON FILTRADO DE BUS", sql);
+			}
+
+			return listaConBus;
+		}
+		
 	
 	public void setLogger(Logger logger) {
 		this.logger = logger;

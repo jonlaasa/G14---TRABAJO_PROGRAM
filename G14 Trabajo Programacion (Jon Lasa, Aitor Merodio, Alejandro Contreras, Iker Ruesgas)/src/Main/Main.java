@@ -3,7 +3,7 @@ package Main;
 
 
 
-import java.sql.SQLException;
+
 
 import BD.BDRegistro;
 import VentanasCompra.VentanaBus;
@@ -17,12 +17,11 @@ import VentanasRegistro.VentanaMetodoPago;
 
 public class Main {
 
-	public static void main(String[] args) throws SQLException {
-//		BDRegistro.abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+	public static void main(String[] args)	{
 		VentanaInicio v = new VentanaInicio();
 		v.setVisible(true);
-//		BDRegistro.obtenerUsuario("alberto");
+	
 		 
-
 	}
+	
 }

@@ -7,12 +7,13 @@ import Enum.TipoServicio;
 import Enum.TipoVuelo;
 import Enum.ZonaAsientoVuelo;
 
-public class VueloComprado extends Compra {
+public class VueloComprado extends Compra implements PrecioCompra {
 	
 	private Vuelo vuelo;
 	private ArrayList<RentingCoche> listaRenting; 
 	private TipoVuelo tipoVuelo;
 	private ZonaAsientoVuelo zonaAsientoVuelo;
+	private double precio;
 	
 	//Constructor con Parametros
 	public VueloComprado(int codigoUsuario, int cantidad, long fechaCompra, TipoServicio tipo,int codigoCompra,  Vuelo vuelo,
@@ -22,6 +23,9 @@ public class VueloComprado extends Compra {
 		this.listaRenting = listaRenting;
 		this.tipoVuelo=tipoVuelo;
 		this.zonaAsientoVuelo=zonaAsientoVuelo;
+		setPrecio();
+		
+		
 	}
 	
 	
@@ -30,6 +34,7 @@ public class VueloComprado extends Compra {
 	public VueloComprado(int codigoUsuario, int cantidad, long fechaCompra, TipoServicio tipoServicio,int codigoCompra, Vuelo vuelo) {
 		super(codigoUsuario, cantidad, fechaCompra,tipoServicio,codigoCompra);
 		this.listaRenting= new ArrayList<RentingCoche> ();
+		setPrecio();
 	}
 
 	public Vuelo getVuelo() {
@@ -66,6 +71,17 @@ public class VueloComprado extends Compra {
 
 	public void setZonaAsientoVuelo(ZonaAsientoVuelo zonaAsientoVuelo) {
 		this.zonaAsientoVuelo = zonaAsientoVuelo;
+	}
+	
+	
+	//Metodos de la interfaz, los cuales cambiaran de vuelo a bus a viaje comb...
+	public double getPrecio() {
+		return precio;
+	}
+
+
+	public void setPrecio( ) {
+		//Calculamos el precio
 	}
 
 

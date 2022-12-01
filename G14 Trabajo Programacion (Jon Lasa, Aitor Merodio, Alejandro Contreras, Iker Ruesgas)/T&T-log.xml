@@ -8741,3 +8741,763 @@
   <message>Conexion establecida</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:24:13.511656200Z</date>
+  <millis>1669904653511</millis>
+  <nanos>656200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Thu Dec 01 15:24:13 CET 2022</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:24:48.097077800Z</date>
+  <millis>1669904688097</millis>
+  <nanos>77800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Thu Dec 01 15:24:48 CET 2022</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:27:33.258718800Z</date>
+  <millis>1669904853258</millis>
+  <nanos>718800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Thu Dec 01 15:27:33 CET 2022</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:39:17.222398500Z</date>
+  <millis>1669905557222</millis>
+  <nanos>398500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T14:39:17.275365100Z</date>
+  <millis>1669905557275</millis>
+  <nanos>365100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>SEVERE</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS</message>
+  <exception>
+    <message>java.sql.SQLException: no such column: 'Companya_vuelo'</message>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>findColumn</method>
+      <line>50</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3ResultSet</class>
+      <method>getString</method>
+      <line>374</line>
+    </frame>
+    <frame>
+      <class>BD.BDServicio</class>
+      <method>mostrarVuelosTotal</method>
+      <line>163</line>
+    </frame>
+    <frame>
+      <class>VentanasCompra.VentanaVuelo</class>
+      <method>&lt;init&gt;</method>
+      <line>114</line>
+    </frame>
+    <frame>
+      <class>Main.Main</class>
+      <method>main</method>
+      <line>21</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-01T14:39:17.279362500Z</date>
+  <millis>1669905557279</millis>
+  <nanos>362500</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:40:12.318350100Z</date>
+  <millis>1669905612318</millis>
+  <nanos>350100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T14:40:12.376316600Z</date>
+  <millis>1669905612376</millis>
+  <nanos>316600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:40:54.351355500Z</date>
+  <millis>1669905654351</millis>
+  <nanos>355500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T14:40:54.399325900Z</date>
+  <millis>1669905654399</millis>
+  <nanos>325900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:43:47.135525400Z</date>
+  <millis>1669905827135</millis>
+  <nanos>525400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T14:43:47.185496Z</date>
+  <millis>1669905827185</millis>
+  <nanos>496000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:45:24.817731600Z</date>
+  <millis>1669905924817</millis>
+  <nanos>731600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T14:45:24.875699900Z</date>
+  <millis>1669905924875</millis>
+  <nanos>699900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:45:44.045632200Z</date>
+  <millis>1669905944045</millis>
+  <nanos>632200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T14:45:44.103598Z</date>
+  <millis>1669905944103</millis>
+  <nanos>598000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:46:15.974402200Z</date>
+  <millis>1669905975974</millis>
+  <nanos>402200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T14:46:16.027372500Z</date>
+  <millis>1669905976027</millis>
+  <nanos>372500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:46:27.354886800Z</date>
+  <millis>1669905987354</millis>
+  <nanos>886800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T14:46:27.408851800Z</date>
+  <millis>1669905987408</millis>
+  <nanos>851800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:46:50.967354200Z</date>
+  <millis>1669906010967</millis>
+  <nanos>354200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T14:46:51.017323900Z</date>
+  <millis>1669906011017</millis>
+  <nanos>323900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T14:48:50.048206600Z</date>
+  <millis>1669906130048</millis>
+  <nanos>206600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T14:48:50.102176300Z</date>
+  <millis>1669906130102</millis>
+  <nanos>176300</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:31:06.321685500Z</date>
+  <millis>1669908666321</millis>
+  <nanos>685500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:31:06.376653500Z</date>
+  <millis>1669908666376</millis>
+  <nanos>653500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:35:43.211280900Z</date>
+  <millis>1669908943211</millis>
+  <nanos>280900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:35:43.265184500Z</date>
+  <millis>1669908943265</millis>
+  <nanos>184500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:36:09.088116900Z</date>
+  <millis>1669908969088</millis>
+  <nanos>116900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:36:09.135090100Z</date>
+  <millis>1669908969135</millis>
+  <nanos>90100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:36:24.571650900Z</date>
+  <millis>1669908984571</millis>
+  <nanos>650900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:36:24.623621500Z</date>
+  <millis>1669908984623</millis>
+  <nanos>621500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:37:19.503434800Z</date>
+  <millis>1669909039503</millis>
+  <nanos>434800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:37:19.558363500Z</date>
+  <millis>1669909039558</millis>
+  <nanos>363500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:38:01.877287600Z</date>
+  <millis>1669909081877</millis>
+  <nanos>287600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:38:01.933253800Z</date>
+  <millis>1669909081933</millis>
+  <nanos>253800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:38:17.991229200Z</date>
+  <millis>1669909097991</millis>
+  <nanos>229200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:38:18.044198500Z</date>
+  <millis>1669909098044</millis>
+  <nanos>198500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:40:12.092063900Z</date>
+  <millis>1669909212092</millis>
+  <nanos>63900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:40:12.150033Z</date>
+  <millis>1669909212150</millis>
+  <nanos>33000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:40:20.376969Z</date>
+  <millis>1669909220376</millis>
+  <nanos>969000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:40:20.446927Z</date>
+  <millis>1669909220446</millis>
+  <nanos>927000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:40:47.517070400Z</date>
+  <millis>1669909247517</millis>
+  <nanos>70400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:40:47.578036Z</date>
+  <millis>1669909247578</millis>
+  <nanos>36000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:41:48.782360200Z</date>
+  <millis>1669909308782</millis>
+  <nanos>360200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:41:48.842326700Z</date>
+  <millis>1669909308842</millis>
+  <nanos>326700</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:42:07.037094200Z</date>
+  <millis>1669909327037</millis>
+  <nanos>94200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:42:07.077067Z</date>
+  <millis>1669909327077</millis>
+  <nanos>67000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:42:20.321439200Z</date>
+  <millis>1669909340321</millis>
+  <nanos>439200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:42:20.371410800Z</date>
+  <millis>1669909340371</millis>
+  <nanos>410800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-01T15:57:38.744763Z</date>
+  <millis>1669910258744</millis>
+  <nanos>763000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Accediendo a la base de datos:basesDeDatos//serviciosCompanya.db</message>
+</record>
+<record>
+  <date>2022-12-01T15:57:38.799733200Z</date>
+  <millis>1669910258799</millis>
+  <nanos>733200</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Conexion cerrada</message>
+</record>
+</log>

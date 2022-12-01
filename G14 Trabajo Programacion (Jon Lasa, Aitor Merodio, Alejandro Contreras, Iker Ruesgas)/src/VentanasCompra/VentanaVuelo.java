@@ -5,15 +5,22 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 import java.awt.Color;
+import java.awt.Component;
+
 import javax.swing.JTable;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+import javax.swing.ListCellRenderer;
 import javax.swing.JLabel;
+import javax.swing.JList;
+
 import java.awt.Font;
 import java.awt.Graphics;
 
@@ -33,11 +40,13 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Vector;
+import java.util.logging.Level;
 import java.awt.event.ActionEvent;
 import java.awt.Panel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
 import javax.swing.JCheckBox;
 import javax.swing.ScrollPaneConstants;
@@ -69,11 +78,11 @@ public class VentanaVuelo extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JComboBox comboBoxOrigen = new JComboBox();
+		JComboBox comboBoxOrigen = new JComboBox(new Object [] {"murcia","valencia"}) ;
 		comboBoxOrigen.setBounds(89, 28, 167, 22);
 		contentPane.add(comboBoxOrigen);
 		
-		JComboBox comboBoxDestino = new JComboBox();
+		JComboBox comboBoxDestino = new JComboBox(new Object [] {"murcia","valencia"});
 		comboBoxDestino.setBounds(89, 61, 167, 22);
 		contentPane.add(comboBoxDestino);
 		
@@ -201,6 +210,8 @@ public class VentanaVuelo extends JFrame {
 		JCheckBox menorMayor = new JCheckBox("Menor a mayor");
 		menorMayor.setBounds(410, 28, 110, 23);
 		contentPane.add(menorMayor);
+		//POR DEFECTO SELECCIONADO
+		menorMayor.setSelected(true);
 		
 		JCheckBox mayorMenor = new JCheckBox("Mayor a menor");
 		mayorMenor.setBounds(407, 56, 113, 23);
@@ -208,6 +219,131 @@ public class VentanaVuelo extends JFrame {
 		
 		bg.add(menorMayor);
 		bg.add(mayorMenor);
+		
+		
+		//EVENTOS DE FILTRADO
+		
+		buttonBuscarVuelo.addActionListener(e -> {
+			
+			BD.BDServicio.log(Level.INFO,"Realizando filtrado de los vuelos", null);
+			//Obtenenemos los origen y destino 
+//			
+			
+			String origen = comboBoxOrigen.getSelectedItem().toString();
+			String destino = comboBoxDestino.getSelectedItem().toString();
+			
+			//Ahora obtenemos el valor de precio ascendente o descendente
+			String filtroPrecio ="";
+			
+			boolean valor = menorMayor.isSelected();
+			if (valor ==true) {
+				filtroPrecio="menor";
+			}else {
+				filtroPrecio= "mayor";
+			}
+			//FALTA LA FECHA
+			
+			//LLAMAMOS AL METODO 
+			ArrayList<Vuelo> listaVuelosFiltrado = BD.BDServicio.listaServicioVueloFiltrado(origen, destino, filtroPrecio);
+			
+			listaVuelos=listaVuelosFiltrado;
+			
+			
+			//VACIAMOS Y LLENAMOS
+			
+			while (modeloTabla.getRowCount() > 0) {
+				modeloTabla.removeRow( 0 );
+			}
+			
+			//LLENAMOS
+			
+			for(Vuelo vuelo: listaVuelos) {
+				modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracion(),vuelo.getOrigen(),
+						vuelo.getDestino(),vuelo.getPrecio(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
+				});
+			
+			
+			}
+			
+		});
+		
+		
+		
+		
+		
+		//RENDERERS
+		tableVuelos.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+			
+			@Override
+			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
+					int row, int column) {
+				JLabel l = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+				if(isSelected) {
+					l.setBackground(Color.yellow);
+					
+				}else {
+					//SI TIENE POCAS PLAZAS EN ROJO
+					
+					int plazas =  (int) modeloTabla.getValueAt(row,6	);
+					if(plazas<10) {
+						l.setBackground(Color.red);
+					}else {
+						l.setBackground(Color.white);
+					}
+					
+					
+				}
+				return l;
+			}
+		});
+		
+		
+		
+		//RENDERER DE LA LISTA DE ORIGEN Y DESTINO
+		
+		comboBoxOrigen.setRenderer( new DefaultListCellRenderer() {
+
+			@Override
+			public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected,
+					boolean cellHasFocus) {
+				// TODO Auto-generated method stub
+
+				JLabel l= (JLabel)  super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+				
+				if(isSelected) {
+					l.setBackground(Color.orange);
+				}else {
+					l.setBackground(Color.white);
+				}
+				return l;
+			}
+		
+			
+		});
+		
+		
+		comboBoxDestino.setRenderer( new DefaultListCellRenderer() {
+
+			@Override
+			public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected,
+					boolean cellHasFocus) {
+				// TODO Auto-generated method stub
+
+				JLabel l= (JLabel)  super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+				
+				if(isSelected) {
+					l.setBackground(Color.orange);
+				}else {
+					l.setBackground(Color.white);
+				}
+				return l;
+			}
+		
+			
+		});
+	
+		
+		
 		
 		
 		//CREAMOS EVENTO DE RATON PARA AL HACER CONTROL CLICK RESTAURAR COMO INICILAMENTE (POR SI NO TENEMOS OPCIONES DESPUES DE FILTRAR EJ.)
@@ -221,7 +357,14 @@ public class VentanaVuelo extends JFrame {
 							//entonces llenamos la lista que manejamos primero
 							
 							listaVuelos=BDServicio.mostrarVuelosTotal();
-							//DESPUES LLENAMOS EL MODELO
+							//DESPUES LLENAMOS EL MODELO, VACIAMOS PRIMERO
+							
+							while (modeloTabla.getRowCount() > 0) {
+								modeloTabla.removeRow( 0 );
+							}
+							
+							//LLENAMOS
+							
 							for(Vuelo vuelo: listaVuelos) {
 								modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracion(),vuelo.getOrigen(),
 										vuelo.getDestino(),vuelo.getPrecio(),vuelo.getCompanya(),vuelo.getPlazasRestantes()

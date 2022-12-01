@@ -9,7 +9,7 @@ import logicaDeNegocio.PlazasRestantesException;
 import logicaDeNegocio.PrecioException;
 
 
-public class Servicio {
+public class Servicio  {
 	private int codigo;
 	private String fecha;
 	//Duracion en minutos
@@ -190,13 +190,7 @@ public class Servicio {
 			}
 		}
 	}
-	
-	
-	
-	
-	
-	
 
-	
+
 
 }
