@@ -22,6 +22,9 @@ import javax.swing.JRadioButton;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import com.toedter.calendar.JCalendar;
 
+import Datos.Usuario;
+import VentanasMenu.VentanaMenu;
+
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.util.Vector;
@@ -46,7 +49,7 @@ public class VentanaViajeCombinado extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VentanaViajeCombinado() {
+	public VentanaViajeCombinado(Usuario usuarioActual) {
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 650);
@@ -204,6 +207,12 @@ public class VentanaViajeCombinado extends JFrame {
 		bg.add(mayorMenor);
 		
 
+		buttonVolver.addActionListener(e->{
+			VentanaMenu vb = null;
+			vb = new VentanaMenu(usuarioActual);
+			vb.setVisible(true);
+			dispose();
+		});
 		
 		
 		

@@ -7,6 +7,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Datos.Usuario;
+import VentanasCompra.VentanaBus;
+import VentanasCompra.VentanaViajeCombinado;
+import VentanasCompra.VentanaVuelo;
 import VentanasRegistro.VentanaInicio;
 
 import javax.swing.JMenuBar;
@@ -150,5 +153,25 @@ public class VentanaMenu extends JFrame {
 			}
 		});
 		
+		
+		btnBuses.addActionListener(e->{
+			VentanaBus vb = null;
+			vb = new VentanaBus(usuarioActual);
+			vb.setVisible(true);
+			dispose();
+		});
+		btnVuelos.addActionListener(e->{
+			VentanaVuelo vb = null;
+			vb = new VentanaVuelo(usuarioActual);
+			vb.setVisible(true);
+			dispose();
+		});
+		
+		btnViajeCombinado.addActionListener(e->{
+			VentanaViajeCombinado vb = null;
+			vb = new VentanaViajeCombinado(usuarioActual);
+			vb.setVisible(true);
+			dispose();
+		});
 	}
 }

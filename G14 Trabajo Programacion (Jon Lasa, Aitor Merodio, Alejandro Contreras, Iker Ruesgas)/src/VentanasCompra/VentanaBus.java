@@ -24,8 +24,13 @@ import com.toedter.calendar.JCalendar;
 
 import BD.BDServicio;
 import Datos.Bus;
+<<<<<<< HEAD
 import Datos.Servicio;
+=======
+import Datos.Usuario;
+>>>>>>> branch 'master' of https://github.com/jonlaasa/G14---TRABAJO_PROGRAM
 import Datos.Vuelo;
+import VentanasMenu.VentanaMenu;
 
 import java.awt.Button;
 import java.awt.event.ActionListener;
@@ -62,7 +67,7 @@ public class VentanaBus extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VentanaBus() {
+	public VentanaBus(Usuario usuarioActual) {
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 650);
@@ -246,6 +251,7 @@ public class VentanaBus extends JFrame {
 				buttonVolver.addKeyListener(key);
 				
 				//A LOS COMPONENTES COMBO TAMBIEN?
+<<<<<<< HEAD
 	
 	}
 	
@@ -269,5 +275,18 @@ public class VentanaBus extends JFrame {
 		for (String destino: listaDestinos) {
 		comboBoxDestino.addItem(destino);
 		};
+=======
+
+		buttonVolver.addActionListener(e->{
+			VentanaMenu vb = null;
+			vb = new VentanaMenu(usuarioActual);
+			vb.setVisible(true);
+			dispose();
+		});
+
+		
+		
+		
+>>>>>>> branch 'master' of https://github.com/jonlaasa/G14---TRABAJO_PROGRAM
 	}
 }
