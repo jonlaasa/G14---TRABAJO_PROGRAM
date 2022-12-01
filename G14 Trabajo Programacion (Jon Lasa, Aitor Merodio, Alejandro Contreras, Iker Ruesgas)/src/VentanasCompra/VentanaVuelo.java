@@ -30,6 +30,7 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import com.toedter.calendar.JCalendar;
 
 import BD.BDServicio;
+import Datos.Servicio;
 import Datos.Vuelo;
 
 import java.awt.Button;
@@ -61,7 +62,9 @@ public class VentanaVuelo extends JFrame {
 	private JTable tableVuelos;
 	private DefaultListModel<Vuelo> mVuelos = new DefaultListModel<>();
 	private ArrayList<Vuelo> listaVuelos;
-	
+	private static Servicio Vuelo;
+	private JComboBox comboBoxDestino;
+	private JComboBox comboBoxOrigen;
 
 
 	/**
@@ -78,13 +81,15 @@ public class VentanaVuelo extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JComboBox comboBoxOrigen = new JComboBox(new Object [] {"murcia","valencia"}) ;
+		comboBoxOrigen = new JComboBox() ;
 		comboBoxOrigen.setBounds(89, 28, 167, 22);
 		contentPane.add(comboBoxOrigen);
+		cargarOrigenesBD();
 		
-		JComboBox comboBoxDestino = new JComboBox(new Object [] {"murcia","valencia"});
+		comboBoxDestino = new JComboBox();
 		comboBoxDestino.setBounds(89, 61, 167, 22);
 		contentPane.add(comboBoxDestino);
+		cargarDestinosBD();
 		
 		JLabel lblNewLabel = new JLabel("Origen");
 		lblNewLabel.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
@@ -124,8 +129,8 @@ public class VentanaVuelo extends JFrame {
 		
 		//CARGAMOS EL MODELO
 		for(Vuelo vuelo: listaVuelos) {
-			modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracion(),vuelo.getOrigen(),
-					vuelo.getDestino(),vuelo.getPrecio(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
+			modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracionString(),vuelo.getOrigen(),
+					vuelo.getDestino(),vuelo.getPrecioString(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
 			});
 		}
 		
@@ -241,6 +246,8 @@ public class VentanaVuelo extends JFrame {
 			}else {
 				filtroPrecio= "mayor";
 			}
+			
+			
 			//FALTA LA FECHA
 			
 			//LLAMAMOS AL METODO 
@@ -258,8 +265,8 @@ public class VentanaVuelo extends JFrame {
 			//LLENAMOS
 			
 			for(Vuelo vuelo: listaVuelos) {
-				modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracion(),vuelo.getOrigen(),
-						vuelo.getDestino(),vuelo.getPrecio(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
+				modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracionString(),vuelo.getOrigen(),
+						vuelo.getDestino(),vuelo.getPrecioString(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
 				});
 			
 			
@@ -386,6 +393,28 @@ public class VentanaVuelo extends JFrame {
 		
 		
 		
+	}
+
+	public void cargarOrigenesBD() {
+		// AÑADIR ORIGENES DISTINTOS DE LA BD
+		ArrayList<String> listaOrigenes = BD.BDServicio.mostrarDiferentesOrigenes(Vuelo);
+	
+			
+		//CARGAMOS LOS ORIGENES
+		for (String origen: listaOrigenes) {
+			comboBoxOrigen.addItem(origen);
+			}
+		}
+				
+	public void cargarDestinosBD() {
+		// AÑADIR DESTINOS DISTINTOS DE LA BD
+		ArrayList<String> listaDestinos = BD.BDServicio.mostrarDiferentesDestinos(Vuelo);
+		
+	
+		//CARGAMOS LOS DESTINOS
+		for (String destino: listaDestinos) {
+		comboBoxDestino.addItem(destino);
+		};
 	}
 }
 

@@ -1,10 +1,6 @@
 
 package Main;
 
-
-
-
-
 import BD.BDRegistro;
 import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaVuelo;
@@ -18,7 +14,7 @@ import VentanasRegistro.VentanaMetodoPago;
 public class Main {
 
 	public static void main(String[] args)	{
-		VentanaInicio v = new VentanaInicio();
+		VentanaVuelo v = new VentanaVuelo();
 		v.setVisible(true);
 	
 		 

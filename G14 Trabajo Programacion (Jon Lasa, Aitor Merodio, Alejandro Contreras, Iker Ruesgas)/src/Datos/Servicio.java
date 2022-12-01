@@ -1,5 +1,8 @@
 package Datos;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.sql.DataTruncation;
 import java.sql.Date;
 
 import Enum.TipoServicio;
@@ -165,32 +168,43 @@ public class Servicio  {
 	
 	
 	
-	//ESTO IGUAL NO ES NECESARIO
+	//METODOS DE VISUALIZACION DE DATOS
 
 	public String getDuracionString() {
 		int horas = duracion / 3600;
 		int minutos = (duracion % 3600) / 60;
 		if (horas<1) {
-			return String.format( minutos +" minutos");
+			return String.format( minutos +" mins");
 		}else if (horas<2) {
 			if (minutos==1) {
-				return String.format( horas + " hora, " + minutos +" minuto");
+				return String.format( horas + " h, " + minutos +" min");
 			}else if (minutos==0) {
-				return String.format( horas + " hora");
+				return String.format( horas + " h");
 			}else {
-				return String.format( horas + " hora, " + minutos +" minutos");
+				return String.format( horas + " h, " + minutos +" mins");
 			}
 		}else{
 			if (minutos<1) {
-				return String.format( horas + " horas");
+				return String.format( horas + " hrs");
 			}else if (minutos==1) {
-				return String.format( horas + " horas, " + minutos +" minuto");
+				return String.format( horas + " hrs, " + minutos +" min");
 			}else {
-				return String.format( horas + " horas, " + minutos +" minutos");
+				return String.format( horas + " hrs, " + minutos +" mins");
 			}
 		}
 	}
-
-
+	
+	public String getPrecioString() {
+		BigDecimal bd = new BigDecimal(String.valueOf(precio));
+		BigDecimal parteDecimal = bd.subtract(bd.setScale(0, RoundingMode.FLOOR)).movePointRight(bd.scale());
+		if (parteDecimal == bd.ZERO) {
+			int precioRedondeado = (int) Math.round(precio);
+			return String.format(precioRedondeado + "€");
+		}else {
+			return String.format(precio + "€");
+		}
+	}
+	
+ 
 
 }

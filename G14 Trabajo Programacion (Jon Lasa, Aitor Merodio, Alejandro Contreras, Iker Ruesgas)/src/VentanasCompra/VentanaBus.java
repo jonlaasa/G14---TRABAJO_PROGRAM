@@ -24,6 +24,7 @@ import com.toedter.calendar.JCalendar;
 
 import BD.BDServicio;
 import Datos.Bus;
+import Datos.Servicio;
 import Datos.Vuelo;
 
 import java.awt.Button;
@@ -53,7 +54,9 @@ public class VentanaBus extends JFrame {
 	private JTable tableBus;
 	private DefaultListModel<Bus> mBus = new DefaultListModel<>();
 	private ArrayList<Bus> listaBus;
-	
+	private static Servicio Bus;
+	private JComboBox comboBoxDestino;
+	private JComboBox comboBoxOrigen;
 
 
 	/**
@@ -70,13 +73,15 @@ public class VentanaBus extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JComboBox comboBoxOrigen = new JComboBox();
+		comboBoxOrigen = new JComboBox();
 		comboBoxOrigen.setBounds(89, 28, 167, 22);
 		contentPane.add(comboBoxOrigen);
+		cargarOrigenesBD();
 		
-		JComboBox comboBoxDestino = new JComboBox();
+		comboBoxDestino = new JComboBox();
 		comboBoxDestino.setBounds(89, 61, 167, 22);
 		contentPane.add(comboBoxDestino);
+		cargarDestinosBD();
 		
 		JLabel lblNewLabel = new JLabel("Origen");
 		lblNewLabel.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
@@ -117,16 +122,10 @@ public class VentanaBus extends JFrame {
 		
 		//CARGAMOS EL MODELO
 		for(Bus bus: listaBus) {
-			modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getDuracion(),bus.getOrigen(),
-					bus.getDestino(),bus.getPrecio(),bus.getCompanya(),bus.getPlazasRestantes()
+			modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getDuracionString(),bus.getOrigen(),
+					bus.getDestino(),bus.getPrecioString(),bus.getCompanya(),bus.getPlazasRestantes()
 			});
 		}
-		
-		
-	
-		
-	
-		
 		
 		
 		
@@ -231,8 +230,8 @@ public class VentanaBus extends JFrame {
 							listaBus=BDServicio.mostrarBusesTotal();
 							//DESPUES LLENAMOS EL MODELO
 							for(Bus bus: listaBus) {
-								modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getDuracion(),bus.getOrigen(),
-										bus.getDestino(),bus.getPrecio(),bus.getCompanya(),bus.getPlazasRestantes()
+								modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getDuracionString(),bus.getOrigen(),
+										bus.getDestino(),bus.getPrecioString(),bus.getCompanya(),bus.getPlazasRestantes()
 								});
 							}
 							
@@ -247,11 +246,28 @@ public class VentanaBus extends JFrame {
 				buttonVolver.addKeyListener(key);
 				
 				//A LOS COMPONENTES COMBO TAMBIEN?
-
+	
+	}
+	
+	public void cargarOrigenesBD() {
+		// AÑADIR ORIGENES DISTINTOS DE LA BD
+		ArrayList<String> listaOrigenes = BD.BDServicio.mostrarDiferentesOrigenes(Bus);
+	
+			
+		//CARGAMOS LOS ORIGENES
+		for (String origen: listaOrigenes) {
+			comboBoxOrigen.addItem(origen);
+			}
+		}
+				
+	public void cargarDestinosBD() {
+		// AÑADIR DESTINOS DISTINTOS DE LA BD
+		ArrayList<String> listaDestinos = BD.BDServicio.mostrarDiferentesDestinos(Bus);
 		
-
-		
-		
-		
+	
+		//CARGAMOS LOS DESTINOS
+		for (String destino: listaDestinos) {
+		comboBoxDestino.addItem(destino);
+		};
 	}
 }

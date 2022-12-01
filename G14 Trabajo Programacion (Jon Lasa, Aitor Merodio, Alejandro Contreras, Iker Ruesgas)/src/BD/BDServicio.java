@@ -3,6 +3,7 @@ package BD;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.logging.Logger;
 
 import Datos.Bus;
 import Datos.Compra;
+import Datos.Servicio;
 import Datos.Usuario;
 import Datos.Vuelo;
 import Enum.TipoServicio;
@@ -138,6 +140,74 @@ private static Connection conn;
 		
 	}
 	
+	//METODO QUE DELVUELVE LOS DIFERENTES ORIGENES DE LOS VUELOS O LOS BUSES
+	
+			public static ArrayList<String> mostrarDiferentesOrigenes(Servicio servicio){
+				BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+				//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
+				ArrayList<String> listaOrigenes= new ArrayList<String> () ;
+				
+				try {
+					Statement st = conn.createStatement();
+					String sent="";
+					
+					if(servicio instanceof Bus) {
+						sent= "select distinct ORIGEN from bus";
+					}else {
+						sent= "select distinct ORIGEN from vuelo";
+						}
+					
+					ResultSet rs = st.executeQuery(sent);
+					while(rs.next()) {
+						String origen = rs.getString("Origen");
+						
+						listaOrigenes.add(origen);
+						
+					}
+					
+				} catch (SQLException e) {
+					log(Level.SEVERE, "ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS", e);
+					e.printStackTrace();
+				}
+				
+				BDServicio.cerrarConexion();
+				return listaOrigenes;
+				
+			}
+	//METODO QUE DELVUELVE LOS DIFERENTES DESTINOS DE LOS VUELOS O LOS BUSES
+	
+		public static ArrayList<String> mostrarDiferentesDestinos(Servicio servicio){
+			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
+			ArrayList<String> listaDestinos= new ArrayList<String> () ;
+			
+			try {
+				Statement st = conn.createStatement();
+				String sent="";
+				
+				if(servicio instanceof Bus) {
+					 sent= "select distinct DESTINO from bus";
+				}else  {
+					 sent= "select distinct DESTINO from vuelo";
+					}
+				
+				ResultSet rs = st.executeQuery(sent);
+				while(rs.next()) {
+					String destino = rs.getString("Destino");
+					
+					listaDestinos.add(destino);
+					
+				}
+				
+			} catch (SQLException e) {
+				log(Level.SEVERE, "ERROR AL DEVOLVER VUELOS DE LA BASE DE DATOS", e);
+				e.printStackTrace();
+			}
+			
+			BDServicio.cerrarConexion();
+			return listaDestinos;
+			
+		}
 	
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
@@ -149,7 +219,7 @@ private static Connection conn;
 			try {
 				Statement st = conn.createStatement();
 				
-				String resp = "select * from vuelo";
+				String resp = "select * from VUELO";
 				ResultSet rs = st.executeQuery(resp);
 				while(rs.next()) {
 					int codigoVuelo = rs.getInt("Cod_vuelo");
