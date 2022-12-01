@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -220,14 +221,19 @@ public class BDRegistro {
 				pst.setString(4, admin.getContrasenya());
 			}catch (Exception e) {
 				// TODO: handle exception
-			}
-		
-				
-		
-			
-			
-			
-			return false;
-			
+			}		
+			return false;			
 		}
+		
+//		public static ArrayList<Usuario> mostrarUsuariosTotal(){
+//			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+//			
+//		}
+		
+		//Es para que me acuerde que tengo que hacer la proxima vez xd
+		
+//		public static ArrayList<Administrador> mostrarAdministradoresTotal(){
+//		Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+//		
+//	}
 }

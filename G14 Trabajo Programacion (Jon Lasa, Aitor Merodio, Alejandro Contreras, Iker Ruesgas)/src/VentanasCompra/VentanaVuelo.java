@@ -30,7 +30,9 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import com.toedter.calendar.JCalendar;
 
 import BD.BDServicio;
+import Datos.Usuario;
 import Datos.Vuelo;
+import VentanasMenu.VentanaMenu;
 
 import java.awt.Button;
 import java.awt.event.ActionListener;
@@ -67,7 +69,7 @@ public class VentanaVuelo extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VentanaVuelo() {
+	public VentanaVuelo(Usuario usuarioActual) {
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 650);
@@ -384,7 +386,12 @@ public class VentanaVuelo extends JFrame {
 				//A LOS COMPONENTES COMBO TAMBIEN?
 
 		
-		
+				buttonVolver.addActionListener(e->{
+					VentanaMenu vb = null;
+					vb = new VentanaMenu(usuarioActual);
+					vb.setVisible(true);
+					dispose();
+				});
 		
 	}
 }

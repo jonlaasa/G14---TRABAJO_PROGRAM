@@ -24,7 +24,9 @@ import com.toedter.calendar.JCalendar;
 
 import BD.BDServicio;
 import Datos.Bus;
+import Datos.Usuario;
 import Datos.Vuelo;
+import VentanasMenu.VentanaMenu;
 
 import java.awt.Button;
 import java.awt.event.ActionListener;
@@ -59,7 +61,7 @@ public class VentanaBus extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VentanaBus() {
+	public VentanaBus(Usuario usuarioActual) {
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 650);
@@ -248,7 +250,12 @@ public class VentanaBus extends JFrame {
 				
 				//A LOS COMPONENTES COMBO TAMBIEN?
 
-		
+		buttonVolver.addActionListener(e->{
+			VentanaMenu vb = null;
+			vb = new VentanaMenu(usuarioActual);
+			vb.setVisible(true);
+			dispose();
+		});
 
 		
 		
