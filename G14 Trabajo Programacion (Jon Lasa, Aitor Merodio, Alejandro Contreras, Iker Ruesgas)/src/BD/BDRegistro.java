@@ -225,15 +225,47 @@ public class BDRegistro {
 			return false;			
 		}
 		
-//		public static ArrayList<Usuario> mostrarUsuariosTotal(){
-//			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
-//			
-//		}
+		public static ArrayList<Usuario> mostrarUsuariosTotal() throws SQLException{
+			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+			String sql = "select * from Usuario";
+			ArrayList<Usuario> lista=new ArrayList<Usuario>();
+			Statement st = con.createStatement();
+			ResultSet rst = st.executeQuery(sql);
+			
+			while(rst.next()) {
+				int id = rst.getInt("id");
+				String usr = rst.getString("nombreUsuario");
+				String nombre = rst.getString("Nombre");
+				String apellido = rst.getString("Apellidos");
+				String contrasenya = rst.getString("Contrasenya");
+				String dni = rst.getString("DNI");
+				int puntos = rst.getInt("puntosDeusto");
+				String mail = rst.getString("Mail");
+				lista.add(new Usuario(id,nombre,apellido,usr,contrasenya,mail,dni,puntos));
+			}
+			
+			return lista;
+			
+			
+		}
 		
-		//Es para que me acuerde que tengo que hacer la proxima vez xd
+
 		
-//		public static ArrayList<Administrador> mostrarAdministradoresTotal(){
-//		Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
-//		
-//	}
+		public static ArrayList<Administrador> mostrarAdministradoresTotal() throws SQLException{
+		Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+		String sql = "select * from Admin";
+		ArrayList<Administrador> lista=new ArrayList<Administrador>();
+		Statement st = con.createStatement();
+		ResultSet rst = st.executeQuery(sql);
+		
+		while(rst.next()) {
+			int id=rst.getInt("id");
+			String nombre=rst.getString("nombre");
+			String apellido=rst.getString("apellido");
+			String contrasenya = rst.getString("contrasenya");
+			String admin = rst.getString("usuario");
+			lista.add(new Administrador(nombre,apellido,admin,contrasenya,id));
+		}
+		return lista;
+	}
 }

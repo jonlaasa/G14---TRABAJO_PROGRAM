@@ -312,7 +312,7 @@ private static Connection conn;
 				 sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
 						 +"' and '"+fechaFin+"' order by precio asc";
 				}else {
-				     sent=  sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
+				     sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
 							 +"' and '"+fechaFin+"' order by precio desc";
 				}
 				
