@@ -30,11 +30,11 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import com.toedter.calendar.JCalendar;
 
 import BD.BDServicio;
-<<<<<<< HEAD
+
 import Datos.Servicio;
-=======
+
+
 import Datos.Usuario;
->>>>>>> branch 'master' of https://github.com/jonlaasa/G14---TRABAJO_PROGRAM
 import Datos.Vuelo;
 import VentanasMenu.VentanaMenu;
 
@@ -43,6 +43,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Vector;
@@ -70,6 +71,8 @@ public class VentanaVuelo extends JFrame {
 	private static Servicio Vuelo;
 	private JComboBox comboBoxDestino;
 	private JComboBox comboBoxOrigen;
+	
+	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
 
 
 	/**
@@ -89,12 +92,11 @@ public class VentanaVuelo extends JFrame {
 		comboBoxOrigen = new JComboBox() ;
 		comboBoxOrigen.setBounds(89, 28, 167, 22);
 		contentPane.add(comboBoxOrigen);
-		cargarOrigenesBD();
+	
 		
 		comboBoxDestino = new JComboBox();
 		comboBoxDestino.setBounds(89, 61, 167, 22);
 		contentPane.add(comboBoxDestino);
-		cargarDestinosBD();
 		
 		JLabel lblNewLabel = new JLabel("Origen");
 		lblNewLabel.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
@@ -140,6 +142,24 @@ public class VentanaVuelo extends JFrame {
 		}
 		
 		
+		//Llenamos los origen y destino de los bus
+				//ORIGEN
+				ArrayList<String> listaOrigenes = BDServicio.mostrarDiferentesOrigenes("vuelo");
+				
+				
+				for (String origen: listaOrigenes) {
+					comboBoxOrigen.addItem(origen);
+					}
+				
+				// DESTINO
+				ArrayList<String> listaDestinos = BDServicio.mostrarDiferentesDestinos("vuelo");
+				
+				
+				for (String destino: listaDestinos) {
+				comboBoxDestino.addItem(destino);
+				};
+		
+		
 		
 		
 		JLabel lblPrecio = new JLabel("Precio");
@@ -161,14 +181,14 @@ public class VentanaVuelo extends JFrame {
 		lblFecha.setBounds(245, 100, 58, 25);
 		contentPane.add(lblFecha);
 		
-		JLabel lblInicio = new JLabel("Ida:");
+		JLabel lblInicio = new JLabel("Inicio");
 		lblInicio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblInicio.setForeground(Color.BLACK);
 		lblInicio.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
 		lblInicio.setBounds(146, 83, 58, 22);
 		contentPane.add(lblInicio);
 		
-		JLabel lblVuelta = new JLabel("Vuelta:");
+		JLabel lblVuelta = new JLabel("Fin:");
 		lblVuelta.setHorizontalAlignment(SwingConstants.LEFT);
 		lblVuelta.setForeground(Color.BLACK);
 		lblVuelta.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
@@ -200,10 +220,14 @@ public class VentanaVuelo extends JFrame {
 		calendarIda.setBounds(45, 102, 184, 153);
 		contentPane.add(calendarIda);
 		
+		calendarIda.setMinSelectableDate(new Date(System.currentTimeMillis()));
+		
 		JCalendar calendarVuelta = new JCalendar();
 		calendarVuelta.setWeekOfYearVisible(false);
 		calendarVuelta.setBounds(320, 100, 184, 153);
 		contentPane.add(calendarVuelta);
+		
+		calendarVuelta.setMinSelectableDate(new Date(System.currentTimeMillis()));
 		
 		Button buttonBuscarVuelo = new Button("BUSCAR");
 		buttonBuscarVuelo.setBounds(245, 208, 70, 19);
@@ -236,8 +260,7 @@ public class VentanaVuelo extends JFrame {
 		buttonBuscarVuelo.addActionListener(e -> {
 			
 			BD.BDServicio.log(Level.INFO,"Realizando filtrado de los vuelos", null);
-			//Obtenenemos los origen y destino 
-//			
+			//Obtenenemos los origen y destino 		
 			
 			String origen = comboBoxOrigen.getSelectedItem().toString();
 			String destino = comboBoxDestino.getSelectedItem().toString();
@@ -255,8 +278,11 @@ public class VentanaVuelo extends JFrame {
 			
 			//FALTA LA FECHA
 			
+			String fechaInicio = SDF_FECHA_FOTO.format(calendarIda.getDate());
+			String fechaFin = SDF_FECHA_FOTO.format(calendarVuelta.getDate());
+			
 			//LLAMAMOS AL METODO 
-			ArrayList<Vuelo> listaVuelosFiltrado = BD.BDServicio.listaServicioVueloFiltrado(origen, destino, filtroPrecio);
+			ArrayList<Vuelo> listaVuelosFiltrado = BD.BDServicio.listaServicioVueloFiltrado(origen, destino, filtroPrecio,fechaInicio, fechaFin);
 			
 			listaVuelos=listaVuelosFiltrado;
 			
@@ -405,26 +431,8 @@ public class VentanaVuelo extends JFrame {
 		
 	}
 
-	public void cargarOrigenesBD() {
-		// AÑADIR ORIGENES DISTINTOS DE LA BD
-		ArrayList<String> listaOrigenes = BD.BDServicio.mostrarDiferentesOrigenes(Vuelo);
 	
-			
-		//CARGAMOS LOS ORIGENES
-		for (String origen: listaOrigenes) {
-			comboBoxOrigen.addItem(origen);
-			}
-		}
-				
-	public void cargarDestinosBD() {
-		// AÑADIR DESTINOS DISTINTOS DE LA BD
-		ArrayList<String> listaDestinos = BD.BDServicio.mostrarDiferentesDestinos(Vuelo);
-		
+
 	
-		//CARGAMOS LOS DESTINOS
-		for (String destino: listaDestinos) {
-		comboBoxDestino.addItem(destino);
-		};
-	}
 }
 

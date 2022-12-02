@@ -24,11 +24,11 @@ import com.toedter.calendar.JCalendar;
 
 import BD.BDServicio;
 import Datos.Bus;
-<<<<<<< HEAD
+
 import Datos.Servicio;
-=======
+
 import Datos.Usuario;
->>>>>>> branch 'master' of https://github.com/jonlaasa/G14---TRABAJO_PROGRAM
+
 import Datos.Vuelo;
 import VentanasMenu.VentanaMenu;
 
@@ -37,9 +37,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Vector;
+import java.util.logging.Level;
 import java.awt.event.ActionEvent;
 import java.awt.Panel;
 import javax.swing.JScrollBar;
@@ -62,6 +64,7 @@ public class VentanaBus extends JFrame {
 	private static Servicio Bus;
 	private JComboBox comboBoxDestino;
 	private JComboBox comboBoxOrigen;
+	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
 
 
 	/**
@@ -81,12 +84,12 @@ public class VentanaBus extends JFrame {
 		comboBoxOrigen = new JComboBox();
 		comboBoxOrigen.setBounds(89, 28, 167, 22);
 		contentPane.add(comboBoxOrigen);
-		cargarOrigenesBD();
+		
 		
 		comboBoxDestino = new JComboBox();
 		comboBoxDestino.setBounds(89, 61, 167, 22);
 		contentPane.add(comboBoxDestino);
-		cargarDestinosBD();
+
 		
 		JLabel lblNewLabel = new JLabel("Origen");
 		lblNewLabel.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
@@ -131,6 +134,23 @@ public class VentanaBus extends JFrame {
 					bus.getDestino(),bus.getPrecioString(),bus.getCompanya(),bus.getPlazasRestantes()
 			});
 		}
+		
+		//Llenamos los origen y destino de los bus
+		//ORIGEN
+		ArrayList<String> listaOrigenes = BDServicio.mostrarDiferentesOrigenes("bus");
+		
+		
+		for (String origen: listaOrigenes) {
+			comboBoxOrigen.addItem(origen);
+			}
+		
+		// DESTINO
+		ArrayList<String> listaDestinos = BDServicio.mostrarDiferentesDestinos("bus");
+		
+		
+		for (String destino: listaDestinos) {
+		comboBoxDestino.addItem(destino);
+		};
 		
 		
 		
@@ -221,6 +241,59 @@ public class VentanaBus extends JFrame {
 		bg.add(mayorMenor);
 		
 		
+		//EVENTO DE BOTON, FILTRAR BUSES
+		
+		buttonBuscarVuelo.addActionListener(e -> {
+			
+			BD.BDServicio.log(Level.INFO,"Realizando filtrado de los buses", null);
+			//Obtenenemos los origen y destino 		
+			
+			String origen = comboBoxOrigen.getSelectedItem().toString();
+			String destino = comboBoxDestino.getSelectedItem().toString();
+			
+			//Ahora obtenemos el valor de precio ascendente o descendente
+			String filtroPrecio ="";
+			
+			boolean valor = menorMayor.isSelected();
+			if (valor ==true) {
+				filtroPrecio="menor";
+			}else {
+				filtroPrecio= "mayor";
+			}
+			
+			
+			//FALTA LA FECHA
+			
+			String fechaInicio = SDF_FECHA_FOTO.format(calendarIda.getDate());
+			String fechaFin = SDF_FECHA_FOTO.format(calendarVuelta.getDate());
+			
+			//LLAMAMOS AL METODO 
+			ArrayList<Bus> listaBusFiltrado = BD.BDServicio.listaServicioBusFiltrado(origen, destino, filtroPrecio,fechaInicio, fechaFin);
+			
+			listaBus=listaBusFiltrado;
+			
+			
+			//VACIAMOS Y LLENAMOS
+			
+			while (modeloTabla.getRowCount() > 0) {
+				modeloTabla.removeRow( 0 );
+			}
+			
+			//LLENAMOS
+			
+			for(Bus bus: listaBus) {
+				modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getDuracionString(),bus.getOrigen(),
+						bus.getDestino(),bus.getPrecioString(),bus.getCompanya(),bus.getPlazasRestantes()
+				});
+			
+			
+			}
+			
+		});
+		
+		
+		
+		
 		
 		//CREAMOS EVENTO DE RATON PARA AL HACER CONTROL CLICK RESTAURAR COMO INICILAMENTE (POR SI NO TENEMOS OPCIONES DESPUES DE FILTRAR EJ.)
 		//daigual donde hagamos el click + control
@@ -251,31 +324,8 @@ public class VentanaBus extends JFrame {
 				buttonVolver.addKeyListener(key);
 				
 				//A LOS COMPONENTES COMBO TAMBIEN?
-<<<<<<< HEAD
+
 	
-	}
-	
-	public void cargarOrigenesBD() {
-		// AÑADIR ORIGENES DISTINTOS DE LA BD
-		ArrayList<String> listaOrigenes = BD.BDServicio.mostrarDiferentesOrigenes(Bus);
-	
-			
-		//CARGAMOS LOS ORIGENES
-		for (String origen: listaOrigenes) {
-			comboBoxOrigen.addItem(origen);
-			}
-		}
-				
-	public void cargarDestinosBD() {
-		// AÑADIR DESTINOS DISTINTOS DE LA BD
-		ArrayList<String> listaDestinos = BD.BDServicio.mostrarDiferentesDestinos(Bus);
-		
-	
-		//CARGAMOS LOS DESTINOS
-		for (String destino: listaDestinos) {
-		comboBoxDestino.addItem(destino);
-		};
-=======
 
 		buttonVolver.addActionListener(e->{
 			VentanaMenu vb = null;
@@ -287,6 +337,5 @@ public class VentanaBus extends JFrame {
 		
 		
 		
->>>>>>> branch 'master' of https://github.com/jonlaasa/G14---TRABAJO_PROGRAM
 	}
 }

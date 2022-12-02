@@ -142,7 +142,7 @@ private static Connection conn;
 	
 	//METODO QUE DELVUELVE LOS DIFERENTES ORIGENES DE LOS VUELOS O LOS BUSES
 	
-			public static ArrayList<String> mostrarDiferentesOrigenes(Servicio servicio){
+			public static ArrayList<String> mostrarDiferentesOrigenes(String servicio){
 				BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
 				//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 				ArrayList<String> listaOrigenes= new ArrayList<String> () ;
@@ -151,7 +151,7 @@ private static Connection conn;
 					Statement st = conn.createStatement();
 					String sent="";
 					
-					if(servicio instanceof Bus) {
+					if(servicio.equals("bus")) {
 						sent= "select distinct ORIGEN from bus";
 					}else {
 						sent= "select distinct ORIGEN from vuelo";
@@ -176,7 +176,7 @@ private static Connection conn;
 			}
 	//METODO QUE DELVUELVE LOS DIFERENTES DESTINOS DE LOS VUELOS O LOS BUSES
 	
-		public static ArrayList<String> mostrarDiferentesDestinos(Servicio servicio){
+		public static ArrayList<String> mostrarDiferentesDestinos(String servicio){
 			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList<String> listaDestinos= new ArrayList<String> () ;
@@ -185,7 +185,7 @@ private static Connection conn;
 				Statement st = conn.createStatement();
 				String sent="";
 				
-				if(servicio instanceof Bus) {
+				if(servicio.equals("bus") ) {
 					 sent= "select distinct DESTINO from bus";
 				}else  {
 					 sent= "select distinct DESTINO from vuelo";
@@ -255,7 +255,7 @@ private static Connection conn;
 		
 		
 		//FALTA LAS FECHAS
-		public static ArrayList<Vuelo> listaServicioVueloFiltrado (String origen, String destino, String orden){
+		public static ArrayList<Vuelo> listaServicioVueloFiltrado (String origen, String destino, String orden,String fechaInicio, String fechaFin){
 			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList <Vuelo> listaConVuelos = new ArrayList <Vuelo> ();
@@ -264,9 +264,11 @@ private static Connection conn;
 			try {
 				Statement st = conn.createStatement();
 				if(orden.equals("menor")) {
-				 sent= "select * from vuelo where origen='"+origen+"' and destino='"+destino+"' order by precio asc";
+				 sent= "select * from vuelo where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
+						 +"' and '"+fechaFin+"' order by precio asc";
 				}else {
-				     sent= "select * from vuelo where origen='"+origen+"' and destino='"+destino+"' order by precio desc";
+				     sent= "select * from vuelo where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
+							 +"' and '"+fechaFin+"' order by precio desc";
 				}
 				
 				ResultSet rs = st.executeQuery(sent);
@@ -298,7 +300,7 @@ private static Connection conn;
 		
 		
 		
-		public static ArrayList<Bus> listaServicioBusFiltrado (String origen, String destino, String orden){
+		public static ArrayList<Bus> listaServicioBusFiltrado (String origen, String destino, String orden,String fechaInicio, String fechaFin){
 			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
@@ -307,9 +309,11 @@ private static Connection conn;
 			try {
 				Statement st = conn.createStatement();
 				if(orden.equals("menor")) {
-				 sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' order by precio asc";
+				 sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
+						 +"' and '"+fechaFin+"' order by precio asc";
 				}else {
-				     sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' order by precio desc";
+				     sent=  sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
+							 +"' and '"+fechaFin+"' order by precio desc";
 				}
 				
 				ResultSet rs = st.executeQuery(sent);
@@ -322,7 +326,7 @@ private static Connection conn;
 					Double precio = rs.getDouble("Precio");
 					TipoServicio tipo = TipoServicio.bus;
 					int plazasRestantes = rs.getInt("Plazas_restantes");
-					String companya= rs.getString("Companya_vuelo");
+					String companya= rs.getString("Companya_bus");
 					
 					
 					Bus busNuevo = new Bus(codigoBus, FechaBus, duracion, origenV,
