@@ -73,6 +73,12 @@ public class VentanaInicioAdmin extends JFrame {
 			dispose();
 		});
 		
+		mntmVerUsuarios.addActionListener(e->{
+			VentanaVerUsuarios vr = null;
+			vr = new VentanaVerUsuarios(administradorActual);
+			vr.setVisible(true);
+			dispose();
+		});
 		
 		
 		
