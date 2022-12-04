@@ -5,15 +5,21 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 import java.awt.Color;
+import java.awt.Component;
+
 import javax.swing.JTable;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+import javax.swing.ListCellRenderer;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
@@ -49,6 +55,7 @@ import java.awt.Panel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
 import javax.swing.JCheckBox;
 import javax.swing.ScrollPaneConstants;
@@ -234,6 +241,8 @@ public class VentanaBus extends JFrame {
 		JCheckBox menorMayor = new JCheckBox("Menor a mayor");
 		menorMayor.setBounds(410, 28, 110, 23);
 		contentPane.add(menorMayor);
+		//POR DEFECTO SELECCIONADO
+		menorMayor.setSelected(true);
 		
 		JCheckBox mayorMenor = new JCheckBox("Mayor a menor");
 		mayorMenor.setBounds(407, 56, 113, 23);
@@ -242,6 +251,33 @@ public class VentanaBus extends JFrame {
 		bg.add(menorMayor);
 		bg.add(mayorMenor);
 		
+		
+		//RENDER TABLA
+		
+		tableBus.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+			
+			@Override
+			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
+					int row, int column) {
+				JLabel l = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+				if(isSelected) {
+					l.setBackground(Color.orange);
+					
+				}else {
+					//SI TIENE POCAS PLAZAS EN ROJO
+					
+					int plazas =  (int) modeloTabla.getValueAt(row,6	);
+					if(plazas<10) {
+						l.setBackground(Color.red);
+					}else {
+						l.setBackground(Color.white);
+					}
+					
+					
+				}
+				return l;
+			}
+		});
 		
 		//EVENTO DE BOTON, FILTRAR BUSES
 		
@@ -314,19 +350,55 @@ public class VentanaBus extends JFrame {
 					vent.setVisible(true);
 					dispose();
 					
-				}
-				
-				
-				
-				
-				
-				
+				}	
 				
 				
 			}
 		});
 		
+		//RENDERER DE LA LISTA DE ORIGEN Y DESTINO
 		
+		comboBoxOrigen.setRenderer( new DefaultListCellRenderer() {
+
+			@Override
+			public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected,
+					boolean cellHasFocus) {
+				// TODO Auto-generated method stub
+
+				JLabel l= (JLabel)  super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+				
+				if(isSelected) {
+					l.setBackground(Color.green);
+				}else {
+					l.setBackground(Color.white);
+				}
+				return l;
+			}
+		
+			
+		});
+		
+		
+		comboBoxDestino.setRenderer( new DefaultListCellRenderer() {
+
+			@Override
+			public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected,
+					boolean cellHasFocus) {
+				// TODO Auto-generated method stub
+
+				JLabel l= (JLabel)  super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+				
+				if(isSelected) {
+					l.setBackground(Color.green);
+				}else {
+					l.setBackground(Color.white);
+				}
+				return l;
+			}
+		
+			
+		});
+	
 		
 		//CREAMOS EVENTO DE RATON PARA AL HACER CONTROL CLICK RESTAURAR COMO INICILAMENTE (POR SI NO TENEMOS OPCIONES DESPUES DE FILTRAR EJ.)
 		//daigual donde hagamos el click + control

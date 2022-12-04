@@ -229,11 +229,6 @@ public class VentanaVuelo extends JFrame {
 				
 				
 				
-				
-				
-				
-				
-				
 			}
 		});
 		buttonAceptar.setBackground(new Color(102, 204, 204));
@@ -336,6 +331,7 @@ public class VentanaVuelo extends JFrame {
 		
 		
 		//RENDERERS
+		
 		tableVuelos.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
 			
 			@Override
