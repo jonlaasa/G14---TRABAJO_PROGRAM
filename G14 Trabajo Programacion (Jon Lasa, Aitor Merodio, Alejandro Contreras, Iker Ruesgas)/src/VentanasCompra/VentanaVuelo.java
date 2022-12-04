@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.ListCellRenderer;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.Graphics;
@@ -208,6 +209,31 @@ public class VentanaVuelo extends JFrame {
 		Button buttonAceptar = new Button("ACEPTAR");
 		buttonAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				//OBTENEMOS EL VUELO
+				
+				Vuelo vueloSeleccionado =  listaVuelos.get( tableVuelos.getSelectedRow() );
+				
+				if(vueloSeleccionado==null) {
+					//SI NO HA SELECCIONADO NINGUNO, MENSAJE DE ERROR
+					JOptionPane.showMessageDialog( null, "Seleccione un vuelo para continuar", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}
+				else {
+					//PASAMOS A LA SIGUIENTE VENTANA DE LA COMPRA
+					BDServicio.log(Level.INFO, "Accediendo a la cantidad de billetes a seleccionar del vuelo", null);
+					VentanaBilletes vent= new VentanaBilletes(usuarioActual,vueloSeleccionado);
+					vent.setVisible(true);
+					dispose();
+					
+				}
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 		});
 		buttonAceptar.setBackground(new Color(102, 204, 204));

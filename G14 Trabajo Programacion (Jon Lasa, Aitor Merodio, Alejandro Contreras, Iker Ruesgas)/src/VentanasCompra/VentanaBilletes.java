@@ -6,42 +6,31 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Datos.Bus;
+import Datos.Servicio;
+import Datos.Usuario;
+import VentanasRegistro.VentanaMetodoPago;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
-public class VentanaBilletes extends JFrame implements ActionListener {
-	JLabel texto;
+public class VentanaBilletes extends JFrame {
 	JButton restar, sumar;
-	int contador=0;
 	private JPanel contentPane;
-	private JLabel lblNewLabel;
-	private JLabel lblNewLabel_1;
+	private JLabel mensajeEscoja;
+	private JLabel foto;
+	
+	
+	public VentanaBilletes(Usuario usuarioActual, Servicio servicio) {
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaBilletes frame = new VentanaBilletes();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public VentanaBilletes() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -57,53 +46,100 @@ public class VentanaBilletes extends JFrame implements ActionListener {
 		restar.setBackground(new Color(255, 255, 255));
 		restar.setBounds(10, 103, 47, 23);
 		contentPane.add(restar);
-		restar.addActionListener(this);
-		
-		texto= new JLabel("");
-		texto.setBounds(67, 103, 46, 23);
-		contentPane.add(texto);
 		
 		sumar = new JButton(" + ");
 		sumar.setBackground(new Color(255, 255, 255));
-		sumar.setBounds(94, 103, 47, 23);
+		sumar.setBounds(144, 103, 47, 23);
 		contentPane.add(sumar);
 		
-		lblNewLabel = new JLabel("Escoja el número de tickets que desee:");
-		lblNewLabel.setBounds(10, 67, 256, 14);
-		contentPane.add(lblNewLabel);
+		mensajeEscoja = new JLabel("Escoja el nï¿½mero de tickets que desee:");
+		mensajeEscoja.setBounds(10, 67, 256, 14);
+		contentPane.add(mensajeEscoja);
 		
-		lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(VentanaBilletes.class.getResource("imagenes/icons/boton/icon/icono-de-plano-bus-dise\u00F1o-del-logo-la-agencia-viajes-sobre-fondo-blanco-aislado-vector-eps-avi\u00F3n-us-186014994 (2).jpg")));
-		lblNewLabel_1.setBounds(231, 47, 193, 184);
-		contentPane.add(lblNewLabel_1);
+		foto = new JLabel("");
+		foto.setIcon(new ImageIcon("imagenes//icons//fotoBilletes.jpg"));
+		foto.setBounds(231, 47, 193, 184);
+		contentPane.add(foto);
 		
-		JButton btnNewButton = new JButton("Continuar");
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setBounds(10, 190, 89, 23);
-		contentPane.add(btnNewButton);
+		JButton continuar = new JButton("Continuar");
+		continuar.setBackground(new Color(255, 255, 255));
+		continuar.setBounds(10, 190, 89, 23);
+		contentPane.add(continuar);
 		
-		JLabel lblNewLabel_2 = new JLabel("Ya queda menos");
-		lblNewLabel_2.setBounds(10, 157, 181, 14);
-		contentPane.add(lblNewLabel_2);
-		sumar.addActionListener(this);
+		JLabel mensajeYaQueda = new JLabel("Ya queda menos");
+		mensajeYaQueda.setBounds(10, 157, 181, 14);
+		contentPane.add(mensajeYaQueda);
 		
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		if(e.getSource()== restar ) {
-			contador--;
-			if (contador<0){
-				contador=0;
+		JLabel lcantidad = new JLabel("1");
+		lcantidad.setBounds(78, 107, 46, 14);
+		contentPane.add(lcantidad);
+		
+		
+		//EVENTOS DE SELECCION DE CANTIDAD
+		sumar.addActionListener(e -> {
+			
+			//NO SE PUEDEN MAS DE DIEZ DE LA MISMA
+			int cantidadActual = Integer.parseInt(lcantidad.getText());
+			
+			if(cantidadActual<10) {
+				cantidadActual++;
+				lcantidad.setText(cantidadActual+"");
+				
+			}else {
+				
+				JOptionPane.showMessageDialog( null, "No se pueden selccionar mas de 10 billetes", "ERROR", JOptionPane.ERROR_MESSAGE);
 			}
-	    }
-		if(e.getSource()== sumar ) {
-			contador++;
-			if (contador>200) {
-				contador=200;
+		
+		});
+		
+		
+		//EVENTOS DE SELECCION DE CANTIDAD
+		restar.addActionListener(e -> {
+			
+			//NO SE PUEDEN MAS DE DIEZ DE LA MISMA
+			int cantidadActual = Integer.parseInt(lcantidad.getText());
+			
+			if(cantidadActual>1) {
+				cantidadActual--;
+				lcantidad.setText(cantidadActual+"");
+				
+			}else {
+				
+				JOptionPane.showMessageDialog( null, "No se pueden selccionar menos de 1 billete", "ERROR", JOptionPane.ERROR_MESSAGE);
 			}
-		}
-		texto.setText(contador+"");
+		
+		});
+		
+		
+		//CONTINUAMOS
+		
+		continuar.addActionListener(e -> {
+			//OBTENEMOS LA CANTIDAD
+			int cantidad = Integer.parseInt(lcantidad.getText());
+			//SI ES UN BUS, DE LA MISMA YA PODEMOS ESCRIBIRLO EN LA BASE DE DATOS
+			if(servicio instanceof Bus ) {
+				
+				//ACCEDEMOS A LA VENTANA DE METODO DE PAGO
+				VentanaMetodoPago vent = new VentanaMetodoPago(usuarioActual,servicio);
+				vent.setVisible(true);
+				dispose();
+				
+			}
+			else {
+				
+				//AQUI PASAMOS A LA VENTANA DE SELECCIONAR EL RENTING
+				
+				
+			}
+			
+		});
+		
+		
+		
+		
+		
 	}
 }
+
+
+//}

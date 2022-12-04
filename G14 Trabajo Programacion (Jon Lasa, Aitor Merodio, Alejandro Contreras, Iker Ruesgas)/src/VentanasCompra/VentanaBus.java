@@ -14,6 +14,8 @@ import java.awt.FlowLayout;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Graphics;
 
@@ -292,6 +294,37 @@ public class VentanaBus extends JFrame {
 		});
 		
 		
+		//EVENTO DE CONTINUAR
+		
+		buttonAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//OBTENEMOS EL VUELO
+				
+				Bus busSeleccionado =  listaBus.get( tableBus.getSelectedRow() );
+				
+				if(busSeleccionado==null) {
+					//SI NO HA SELECCIONADO NINGUNO, MENSAJE DE ERROR
+					JOptionPane.showMessageDialog( null, "Seleccione un bus para continuar", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}
+				else {
+					//PASAMOS A LA SIGUIENTE VENTANA DE LA COMPRA
+					BDServicio.log(Level.INFO, "Accediendo a la cantidad de billetes a seleccionar del vuelo", null);
+					VentanaBilletes vent= new VentanaBilletes(usuarioActual,busSeleccionado);
+					vent.setVisible(true);
+					dispose();
+					
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+			}
+		});
 		
 		
 		

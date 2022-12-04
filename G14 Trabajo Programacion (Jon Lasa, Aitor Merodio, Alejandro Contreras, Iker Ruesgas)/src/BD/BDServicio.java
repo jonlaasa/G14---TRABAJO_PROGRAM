@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import Datos.Bus;
+import Datos.BusComprado;
 import Datos.Compra;
 import Datos.Servicio;
 import Datos.Usuario;
@@ -341,10 +342,44 @@ private static Connection conn;
 			return listaConBus;
 		}
 		
+	public void escribirCompra(Usuario usuarioActual, Compra compra, Date fechaActual) {
+		
+		//SI LA COMPRA ES UN BUS, ACTUAREMOS DIFERENTE A SI ES UN VUELO O VIAJECOMBINADO
+		String sent ="";
+		
+		if ( compra instanceof  BusComprado) {
+			//Obtenemos el codigo del usuario, compra y fecha
+			int codUsu = usuarioActual.getCodigo();
+			int codServicio = compra.getCodigoServicio();
+			sent = "insert into Compra (COD_USU,COD_SERVICIO_COMPRADO,FECHA_COMPRA) VALUES ("+codUsu+","+codServicio+", '"+fechaActual
+					+"')";
+		
+				}else {
+					
+					//AQUI HACEMOS EL DEL VUELO.....
+		try {
+			Statement st = conn.createStatement();
+			st.executeUpdate(sent);
+			log(Level.INFO, "INSERTADA LA COMPRA EN LA BASE DE DATOS", null);
+			
+			}catch(SQLException sql) {
+				log(Level.SEVERE, "ERROR EN CONSULTA DE BASE DE DATOS CON FILTRADO DE VUELOS", sql);
+			}
+			
+			
+			
+			
+		}
+		
+		
+	}
+		
+		
 	
 	public void setLogger(Logger logger) {
 		this.logger = logger;
 	}
+	
 	
 	public static void log( Level level, String msg, Throwable excepcion ) {
 		if (logger==null) {  // Logger por defecto sera el local:

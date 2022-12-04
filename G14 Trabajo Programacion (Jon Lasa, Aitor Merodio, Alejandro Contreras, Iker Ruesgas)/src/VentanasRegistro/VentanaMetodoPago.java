@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import Datos.Servicio;
+import Datos.Usuario;
+
 public class VentanaMetodoPago extends JFrame {
 
 	private JPanel contentPane;
@@ -23,7 +26,7 @@ public class VentanaMetodoPago extends JFrame {
 	
 	
 	
-	public VentanaMetodoPago () {
+	public VentanaMetodoPago (Usuario usuarioActual, Servicio servicio) {
 		
 		inicializar();
 		
