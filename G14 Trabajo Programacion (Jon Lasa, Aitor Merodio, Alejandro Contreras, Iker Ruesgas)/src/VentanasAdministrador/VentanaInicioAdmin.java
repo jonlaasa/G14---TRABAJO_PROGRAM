@@ -1,6 +1,7 @@
 package VentanasAdministrador;
 
 import java.awt.EventQueue;
+import java.sql.SQLException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -75,7 +76,24 @@ public class VentanaInicioAdmin extends JFrame {
 		
 		mntmVerUsuarios.addActionListener(e->{
 			VentanaVerUsuarios vr = null;
-			vr = new VentanaVerUsuarios(administradorActual);
+			try {
+				vr = new VentanaVerUsuarios(administradorActual);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			vr.setVisible(true);
+			dispose();
+		});
+		
+		mntmverAdmin.addActionListener(e->{
+			VentanaVerAdmin vr = null;
+			try {
+				vr = new VentanaVerAdmin(administradorActual);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			vr.setVisible(true);
 			dispose();
 		});
