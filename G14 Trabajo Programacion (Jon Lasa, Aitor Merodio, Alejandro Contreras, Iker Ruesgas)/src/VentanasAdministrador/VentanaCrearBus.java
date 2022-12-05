@@ -8,9 +8,13 @@ import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JCalendar;
 
+import BD.BDRegistro;
+import BD.BDServicio;
 import Datos.Administrador;
+import Datos.Bus;
 
 import java.awt.TextArea;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,6 +23,8 @@ import java.awt.Canvas;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
 import java.awt.Label;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -45,7 +51,7 @@ public class VentanaCrearBus extends JFrame {
 		contentPane.setLayout(null);
 		
 		JMenuBar menuBar_1 = new JMenuBar();
-		menuBar_1.setBounds(242, 98, 113, 22);
+		menuBar_1.setBounds(162, 90, 113, 22);
 		contentPane.add(menuBar_1);
 		
 		JMenu mnFecha = new JMenu("Seleccionar fecha");
@@ -55,9 +61,6 @@ public class VentanaCrearBus extends JFrame {
 		JCalendar calendario = new JCalendar();
 		mnFecha.add(calendario);
 		calendario.setWeekOfYearVisible(false);
-		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Seleccionar");
-		mnFecha.add(mntmNewMenuItem);
 		
 		Label label = new Label("Crear nuevo servicio de bus");
 		label.setForeground(new Color(255, 128, 0));
@@ -162,18 +165,38 @@ public class VentanaCrearBus extends JFrame {
 		
 		
 		
-		
-		String fecha = SDF_FECHA_FOTO.format(calendario.getDate());
 	
-		JLabel lblFechaSeleccionada = new JLabel(fecha);
-		lblFechaSeleccionada.setBounds(162, 98, 70, 14);
-		contentPane.add(lblFechaSeleccionada);
+	
 		
 		btnVolver.addActionListener(e->{
 			VentanaInicioAdmin vb = null;
 			vb = new VentanaInicioAdmin(adminActual);
 			vb.setVisible(true);
 			dispose();
+		});
+		
+		btnCrear.addActionListener(e->{
+			String fecha =SDF_FECHA_FOTO.format(calendario.getDate());
+			int duracion = Integer.valueOf(tfDuracion.getText());
+			String origen = comboBoxOrigen.getToolTipText();
+			String destino = comboBoxDestino.getToolTipText();
+			double precio = Double.valueOf(tfDuracion.getText());
+			String plaza= comboBoxPlazas.getToolTipText();
+			int plazasFinal = 22;
+			String companya = comboBoxCompanya.getToolTipText();
+			if(plaza=="Bus estandar (50 plazas)") {
+				plazasFinal=50;
+			}
+			else if (plaza=="Bus especial (100 plazas)") {
+				plazasFinal=100;
+			}
+			try {
+				BDServicio.crearBus(new Bus(fecha,duracion,origen,destino,precio,plazasFinal,companya));
+				JOptionPane.showMessageDialog(null, "Bus creado");
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		});
 
 		

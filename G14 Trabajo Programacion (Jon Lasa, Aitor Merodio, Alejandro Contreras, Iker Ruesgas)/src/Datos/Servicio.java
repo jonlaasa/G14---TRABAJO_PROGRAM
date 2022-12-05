@@ -36,6 +36,16 @@ public class Servicio  {
 		setPlazasRestantes(plazas);
 	}
 	
+	//Constructor sin id y tipoServicio
+	public Servicio(String fecha,int duracion, String origen, String destino, double precio,int plazas)  {
+		super();
+		setFecha(fecha);
+		setDuracion(duracion);
+		setOrigen(origen);
+		setDestino(destino);
+		setPrecio(precio);
+		setPlazasRestantes(plazas);
+	}
 	
 	//Por defecto 100 plazas restantes
 	

@@ -25,6 +25,13 @@ public class Bus extends Servicio {
 		super(codigo, fecha, duracion,  origen, destino, precio, tipoServicio, plazarRestantes);
 		setCompanya(companya);
 	}
+	
+	//Constructor sin id y tipoServicio
+		public Bus(String fecha, int duracion,  String origen, String destino, double precio,
+				int plazasRestantes, String companya)  {
+			super(fecha, duracion,  origen, destino, precio, plazasRestantes);
+			setCompanya(companya);
+		}
 
 	
 	//Constructor sin parametros, basandonos en el super de SERVICIO
