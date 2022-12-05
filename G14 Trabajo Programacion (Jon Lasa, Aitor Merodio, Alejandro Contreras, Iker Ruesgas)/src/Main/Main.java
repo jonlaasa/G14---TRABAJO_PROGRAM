@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import BD.BDRegistro;
 import Datos.Usuario;
+import VentanasAdministrador.VentanaCrearBus;
 import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaVuelo;
 import VentanasRegistro.VentanaInicio;
@@ -20,10 +21,10 @@ public class Main {
 //		VentanaInicio v = new VentanaInicio();
 //		v.setVisible(true);
 	
-//		VentanaVuelo x = new VentanaVuelo(u);
-//		x.setVisible(true);
+		VentanaVuelo y = new VentanaVuelo(u);
+		y.setVisible(true);
 //		
-		VentanaBus x = new VentanaBus(u);
+		VentanaCrearBus x = new VentanaCrearBus();
 		x.setVisible(true);
 	}
 	

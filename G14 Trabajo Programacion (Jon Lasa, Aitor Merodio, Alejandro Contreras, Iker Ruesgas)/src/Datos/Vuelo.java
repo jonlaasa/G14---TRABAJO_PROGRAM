@@ -33,7 +33,7 @@ public class Vuelo extends Servicio
 	
 	//Constructor sin parametros, basandonos en el super de SERVICIO
 		public Vuelo(String fecha, TipoServicio tipoServicio) {
-			super(fecha, tipoServicio);
+			super(fecha,tipoServicio);
 			setCompanya("Sin compa�ia");
 		}
 

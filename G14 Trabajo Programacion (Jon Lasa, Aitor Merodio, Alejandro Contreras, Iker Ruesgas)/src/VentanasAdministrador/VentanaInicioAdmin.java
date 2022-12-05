@@ -9,11 +9,17 @@ import javax.swing.border.EmptyBorder;
 
 import Datos.Administrador;
 import VentanasMenu.VentanaMenu;
+import VentanasRegistro.VentanaInicio;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class VentanaInicioAdmin extends JFrame {
 
@@ -26,6 +32,7 @@ public class VentanaInicioAdmin extends JFrame {
 		setBounds(100, 100, 700, 400);
 		
 		JMenuBar menuBar_1 = new JMenuBar();
+		menuBar_1.setBackground(new Color(0, 255, 255));
 		setJMenuBar(menuBar_1);
 		
 		JMenu mnAdmin = new JMenu("Administradores");
@@ -55,17 +62,28 @@ public class VentanaInicioAdmin extends JFrame {
 		JMenuItem mntmCombinados = new JMenuItem("Combinados");
 		mnServicios.add(mntmCombinados);
 		
-		JMenu mnCerrarSesion = new JMenu("Cerrar sesion");
-		menuBar_1.add(mnCerrarSesion);
+		JMenu mnPerfil = new JMenu("Perfil");
+		menuBar_1.add(mnPerfil);
+		
+		JMenuItem mntmCerrarSesion = new JMenuItem("Cerrar Sesion");
+		mnPerfil.add(mntmCerrarSesion);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblUsuariosActuales = new JLabel("Usuarios actuales:");
-		lblUsuariosActuales.setBounds(80, 106, 127, 14);
+		JLabel lblUsuariosActuales = new JLabel("MENU DE ADMINISTARDORES");
+		lblUsuariosActuales.setForeground(new Color(255, 128, 0));
+		lblUsuariosActuales.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblUsuariosActuales.setBounds(206, 31, 284, 61);
 		contentPane.add(lblUsuariosActuales);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\alexc\\OneDrive\\Escritorio\\PROG 3\\Proyecto\\G14---TRABAJO_PROGRAM\\G14 Trabajo Programacion (Jon Lasa, Aitor Merodio, Alejandro Contreras, Iker Ruesgas)\\Imagenes\\icons\\avionNN.jpg"));
+		lblNewLabel_1.setBounds(266, 79, 155, 200);
+		contentPane.add(lblNewLabel_1);
 		
 		mntmCrearAdmin.addActionListener(e->{
 			VentanaCrearAdmin vr = null;
@@ -96,6 +114,17 @@ public class VentanaInicioAdmin extends JFrame {
 			}
 			vr.setVisible(true);
 			dispose();
+		});
+		
+		
+		mntmCerrarSesion.addActionListener(e->{
+			int opcion = JOptionPane.showConfirmDialog(null, "¿Estas seguro que quieres cerrar sesion?");
+			if(opcion==0) {
+				VentanaInicio vr = null;
+				vr=new VentanaInicio();
+				vr.setVisible(true);
+				dispose();
+			}
 		});
 		
 		

@@ -2,6 +2,7 @@ package BD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
@@ -23,6 +24,7 @@ import Enum.TipoServicio;
 public class BDServicio {
 	
 private static Connection conn;
+private static PreparedStatement pst;
 	
 	private static Logger logger;
 	
@@ -373,7 +375,40 @@ private static Connection conn;
 		
 		
 	}
-		
+	
+	
+	public static boolean  crearBus(Bus bus) throws SQLException {
+		Connection con = abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		String sql = "insert into bus (FECHA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?)";
+		try {
+			pst=con.prepareStatement(sql);
+			pst.setString(1, bus.getFecha());
+			pst.setInt(2, bus.getDuracion());
+			pst.setString(3, bus.getOrigen());
+			pst.setString(4, bus.getDestino());
+			pst.setDouble(5, bus.getPrecio());
+			pst.setInt(7, bus.getPlazasRestantes());
+			pst.setString(8, bus.getCompanya());	
+			return true;
+		}catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+			
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 	
 	public void setLogger(Logger logger) {
