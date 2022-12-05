@@ -398,7 +398,25 @@ private static PreparedStatement pst;
 	}
 	
 	
-	
+	public static boolean  crearVuelo(Vuelo vuelo) throws SQLException {
+		Connection con = abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		String sql = "insert into vuelo (FECHA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?)";
+		try {
+			pst=con.prepareStatement(sql);
+			pst.setString(1, vuelo.getFecha());
+			pst.setInt(2, vuelo.getDuracion());
+			pst.setString(3, vuelo.getOrigen());
+			pst.setString(4, vuelo.getDestino());
+			pst.setDouble(5, vuelo.getPrecio());
+			pst.setInt(7, vuelo.getPlazasRestantes());
+			pst.setString(8, vuelo.getCompanya());	
+			return true;
+		}catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+			
+	}
 	
 	
 	
