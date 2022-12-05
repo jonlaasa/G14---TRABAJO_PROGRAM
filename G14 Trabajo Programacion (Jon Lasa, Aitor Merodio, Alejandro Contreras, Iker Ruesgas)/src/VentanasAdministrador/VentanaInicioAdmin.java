@@ -126,8 +126,20 @@ public class VentanaInicioAdmin extends JFrame {
 				dispose();
 			}
 		});
+	
+		mntmBuses.addActionListener(e->{
+			VentanaCrearBus vcb=null;
+			vcb=new VentanaCrearBus(administradorActual);
+			vcb.setVisible(true);
+			dispose();
+		});
 		
-		
+		mntmVuelos.addActionListener(e->{
+			VentanaCrearVuelo vcb=null;
+			vcb=new VentanaCrearVuelo(administradorActual);
+			vcb.setVisible(true);
+			dispose();
+		});
 		
 		
 		

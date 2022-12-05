@@ -1,41 +1,34 @@
 package VentanasAdministrador;
 
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Label;
+import java.text.SimpleDateFormat;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JCalendar;
 
 import Datos.Administrador;
 
-import java.awt.TextArea;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.swing.JComboBox;
-import java.awt.Canvas;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import java.awt.Label;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import java.awt.Font;
-import java.awt.Color;
-import javax.swing.JLabel;
-
-public class VentanaCrearBus extends JFrame {
+public class VentanaCrearVuelo extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField tfDuracion;
 	private JTextField tfPrecio;
 	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
-	
 
-
-	public VentanaCrearBus(Administrador adminActual) {
+	public VentanaCrearVuelo(Administrador adminActual) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
@@ -59,7 +52,7 @@ public class VentanaCrearBus extends JFrame {
 		JMenuItem mntmNewMenuItem = new JMenuItem("Seleccionar");
 		mnFecha.add(mntmNewMenuItem);
 		
-		Label label = new Label("Crear nuevo servicio de bus");
+		Label label = new Label("Crear nuevo servicio de vuelo");
 		label.setForeground(new Color(255, 128, 0));
 		label.setFont(new Font("Dialog", Font.BOLD, 16));
 		label.setBounds(223, 37, 247, 39);
@@ -147,9 +140,9 @@ public class VentanaCrearBus extends JFrame {
 		
 		JComboBox<String> comboBoxPlazas = new JComboBox<String>();
 		comboBoxPlazas.setBounds(162, 275, 150, 22);
-		comboBoxPlazas.addItem("Minibus (22 plazas)");
-		comboBoxPlazas.addItem("Bus estandar (50 plazas)");
-		comboBoxPlazas.addItem("Bus especial (100 plazas)");
+		comboBoxPlazas.addItem("Airbus 319 (150 plazas)");
+		comboBoxPlazas.addItem("Boeing 737 (200 plazas)");
+		comboBoxPlazas.addItem("Boeing 777 (500 plazas)");
 		contentPane.add(comboBoxPlazas);
 		
 		JButton btnVolver = new JButton("Volver");
@@ -176,7 +169,6 @@ public class VentanaCrearBus extends JFrame {
 			dispose();
 		});
 
-		
-
 	}
+
 }
