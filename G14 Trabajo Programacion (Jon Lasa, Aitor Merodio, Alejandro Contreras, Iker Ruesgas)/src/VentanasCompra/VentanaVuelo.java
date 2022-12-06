@@ -116,14 +116,15 @@ public class VentanaVuelo extends JFrame {
 		contentPane.add(panelTabla);
 		
 		modeloTabla = new DefaultTableModel( new Object [] {
-				"FECHA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
+				"FECHA","HORA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
 		tableVuelos=new JTable(modeloTabla);
 		// Cambios de anchura
 		
-		tableVuelos.getColumnModel().getColumn(1).setMinWidth(75);
-		
-		tableVuelos.getColumnModel().getColumn(3).setMinWidth(75);
-		tableVuelos.getColumnModel().getColumn(4).setMinWidth(75);
+		tableVuelos.getColumnModel().getColumn(0).setMinWidth(75);
+		tableVuelos.getColumnModel().getColumn(1).setMaxWidth(50);
+		tableVuelos.getColumnModel().getColumn(2).setMinWidth(85);
+		tableVuelos.getColumnModel().getColumn(7).setMaxWidth(60);
+		tableVuelos.getColumnModel().getColumn(5).setMaxWidth(60);
 		
 		panelTabla.setLayout(new BorderLayout());
 		
@@ -137,7 +138,7 @@ public class VentanaVuelo extends JFrame {
 		
 		//CARGAMOS EL MODELO
 		for(Vuelo vuelo: listaVuelos) {
-			modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracionString(),vuelo.getOrigen(),
+			modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getHoraSalida(),vuelo.getDuracionString(),vuelo.getOrigen(),
 					vuelo.getDestino(),vuelo.getPrecioString(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
 			});
 		}
@@ -317,7 +318,7 @@ public class VentanaVuelo extends JFrame {
 			//LLENAMOS
 			
 			for(Vuelo vuelo: listaVuelos) {
-				modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracionString(),vuelo.getOrigen(),
+				modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getHoraSalida(),vuelo.getDuracionString(),vuelo.getOrigen(),
 						vuelo.getDestino(),vuelo.getPrecioString(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
 				});
 			
@@ -344,7 +345,7 @@ public class VentanaVuelo extends JFrame {
 				}else {
 					//SI TIENE POCAS PLAZAS EN ROJO
 					
-					int plazas =  (int) modeloTabla.getValueAt(row,6	);
+					int plazas =  (int) modeloTabla.getValueAt(row,7	);
 					if(plazas<10) {
 						l.setBackground(Color.red);
 					}else {
@@ -426,7 +427,7 @@ public class VentanaVuelo extends JFrame {
 							//LLENAMOS
 							
 							for(Vuelo vuelo: listaVuelos) {
-								modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getDuracion(),vuelo.getOrigen(),
+								modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getHoraSalida(),vuelo.getDuracion(),vuelo.getOrigen(),
 										vuelo.getDestino(),vuelo.getPrecio(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
 								});
 							}

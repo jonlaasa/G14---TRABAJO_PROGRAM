@@ -117,14 +117,15 @@ public class VentanaBus extends JFrame {
 		contentPane.add(panelTabla);
 		
 		modeloTabla = new DefaultTableModel( new Object [] {
-				"FECHA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
+				"FECHA","HORA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
 		tableBus=new JTable(modeloTabla);
 		// Cambios de anchura
 		
-		tableBus.getColumnModel().getColumn(1).setMinWidth(75);
-		
-		tableBus.getColumnModel().getColumn(3).setMinWidth(75);
-		tableBus.getColumnModel().getColumn(4).setMinWidth(75);
+		tableBus.getColumnModel().getColumn(0).setMinWidth(75);
+		tableBus.getColumnModel().getColumn(1).setMaxWidth(50);
+		tableBus.getColumnModel().getColumn(2).setMinWidth(85);
+		tableBus.getColumnModel().getColumn(7).setMaxWidth(60);
+		tableBus.getColumnModel().getColumn(5).setMaxWidth(60);
 		
 		panelTabla.setLayout(new BorderLayout());
 		
@@ -139,7 +140,7 @@ public class VentanaBus extends JFrame {
 		
 		//CARGAMOS EL MODELO
 		for(Bus bus: listaBus) {
-			modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getDuracionString(),bus.getOrigen(),
+			modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getHoraSalida(),bus.getDuracionString(),bus.getOrigen(),
 					bus.getDestino(),bus.getPrecioString(),bus.getCompanya(),bus.getPlazasRestantes()
 			});
 		}
@@ -266,7 +267,7 @@ public class VentanaBus extends JFrame {
 				}else {
 					//SI TIENE POCAS PLAZAS EN ROJO
 					
-					int plazas =  (int) modeloTabla.getValueAt(row,6	);
+					int plazas =  (int) modeloTabla.getValueAt(row,7	);
 					if(plazas<10) {
 						l.setBackground(Color.red);
 					}else {
@@ -320,7 +321,7 @@ public class VentanaBus extends JFrame {
 			//LLENAMOS
 			
 			for(Bus bus: listaBus) {
-				modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getDuracionString(),bus.getOrigen(),
+				modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getHoraSalida(),bus.getDuracionString(),bus.getOrigen(),
 						bus.getDestino(),bus.getPrecioString(),bus.getCompanya(),bus.getPlazasRestantes()
 				});
 			
@@ -413,7 +414,7 @@ public class VentanaBus extends JFrame {
 							listaBus=BDServicio.mostrarBusesTotal();
 							//DESPUES LLENAMOS EL MODELO
 							for(Bus bus: listaBus) {
-								modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getDuracionString(),bus.getOrigen(),
+								modeloTabla.addRow(new Object [] {bus.getFecha(),bus.getHoraSalida(),bus.getDuracionString(),bus.getOrigen(),
 										bus.getDestino(),bus.getPrecioString(),bus.getCompanya(),bus.getPlazasRestantes()
 								});
 							}

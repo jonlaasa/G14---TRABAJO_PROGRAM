@@ -26,13 +26,13 @@ public class Main {
 //		BDServicio.crearBus(bus);
 		
 		
-		VentanaInicio v = new VentanaInicio();
-		v.setVisible(true);
+//		VentanaInicio v = new VentanaInicio();
+//		v.setVisible(true);
 	
-//		VentanaVuelo y = new VentanaVuelo(u);
-//		y.setVisible(true);
-//		
-//		VentanaCrearBus x = new VentanaCrearBus(a);
+		VentanaVuelo y = new VentanaVuelo(u);
+		y.setVisible(true);
+		
+//		VentanaBus x = new VentanaBus(u);
 //		x.setVisible(true);
 	}
 	

@@ -112,6 +112,7 @@ private static PreparedStatement pst;
 			while(rs.next()) {
 				int codigoVuelo = rs.getInt("Cod_bus");
 				String FechaVuelo = rs.getString("Fecha");
+				String horaSalidaVuelo = rs.getString("Hora_salida");
 				int duracion = rs.getInt("Duracion");
 				String origen = rs.getString("Origen");
 				String destino = rs.getString("Destino");
@@ -122,7 +123,7 @@ private static PreparedStatement pst;
 				
 				
 				
-				Bus busNuevo = new Bus(codigoVuelo, FechaVuelo, duracion, origen,
+				Bus busNuevo = new Bus(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origen,
 						destino, precio, tipo,plazasRestantes,companya);
 				listaConBus.add(busNuevo);
 				
@@ -227,6 +228,7 @@ private static PreparedStatement pst;
 				while(rs.next()) {
 					int codigoVuelo = rs.getInt("Cod_vuelo");
 					String FechaVuelo = rs.getString("Fecha");
+					String horaSalidaVuelo = rs.getString("Hora_salida");
 					int duracion = rs.getInt("Duracion");
 					String origen = rs.getString("Origen");
 					String destino = rs.getString("Destino");
@@ -236,7 +238,7 @@ private static PreparedStatement pst;
 					String companya= rs.getString("Companya_vuelo");
 					
 					
-					Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, duracion, origen,
+					Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origen,
 							destino, precio, tipo,plazasRestantes,companya);
 					listaConVuelos.add(vueloNuevo);
 					
@@ -278,6 +280,7 @@ private static PreparedStatement pst;
 				while(rs.next()) {
 					int codigoVuelo = rs.getInt("Cod_vuelo");
 					String FechaVuelo = rs.getString("Fecha");
+					String horaSalidaVuelo = rs.getString("Hora_salida");
 					int duracion = rs.getInt("Duracion");
 					String origenV = rs.getString("Origen");
 					String destinoV = rs.getString("Destino");
@@ -287,7 +290,7 @@ private static PreparedStatement pst;
 					String companya= rs.getString("Companya_vuelo");
 					
 					
-					Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, duracion, origenV,
+					Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origenV,
 							destinoV, precio, tipo,plazasRestantes,companya);
 					listaConVuelos.add(vueloNuevo);	
 					
@@ -323,6 +326,7 @@ private static PreparedStatement pst;
 				while(rs.next()) {
 					int codigoBus = rs.getInt("Cod_bus");
 					String FechaBus = rs.getString("Fecha");
+					String horaSalidaBus = rs.getString("Hora_salida");
 					int duracion = rs.getInt("Duracion");
 					String origenV = rs.getString("Origen");
 					String destinoV = rs.getString("Destino");
@@ -332,7 +336,7 @@ private static PreparedStatement pst;
 					String companya= rs.getString("Companya_bus");
 					
 					
-					Bus busNuevo = new Bus(codigoBus, FechaBus, duracion, origenV,
+					Bus busNuevo = new Bus(codigoBus, FechaBus, horaSalidaBus, duracion, origenV,
 							destinoV, precio, tipo,plazasRestantes,companya);
 					listaConBus.add(busNuevo);	
 					
@@ -379,14 +383,15 @@ private static PreparedStatement pst;
 	
 	public static boolean  crearBus(Bus bus) throws SQLException {
 		Connection con = abrirBaseDatos("basesDeDatos\\serviciosCompanya.db");
-		String sql = "insert into bus (FECHA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?,?)";
+		String sql = "insert into bus (FECHA,DURACION,HORA_SALIDA,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?,?)";
 		try {
 			pst=con.prepareStatement(sql);
 			pst.setString(1, bus.getFecha());
-			pst.setInt(2, bus.getDuracion());
-			pst.setString(3, bus.getOrigen());
-			pst.setString(4, bus.getDestino());
-			pst.setDouble(5, bus.getPrecio());
+			pst.setString(2, bus.getHoraSalida());
+			pst.setInt(3, bus.getDuracion());
+			pst.setString(4, bus.getOrigen());
+			pst.setString(5, bus.getDestino());
+			pst.setDouble(6, bus.getPrecio());
 			pst.setInt(7, bus.getPlazasRestantes());
 			pst.setString(8, bus.getCompanya());	
 			return true;
@@ -400,14 +405,15 @@ private static PreparedStatement pst;
 	
 	public static boolean  crearVuelo(Vuelo vuelo) throws SQLException {
 		Connection con = abrirBaseDatos("basesDeDatos\\serviciosCompanya.db");
-		String sql = "insert into vuelo (FECHA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?,?)";
+		String sql = "insert into vuelo (FECHA,DURACION,HORA_SALIDA,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?,?)";
 		try {
 			pst=con.prepareStatement(sql);
 			pst.setString(1, vuelo.getFecha());
-			pst.setInt(2, vuelo.getDuracion());
-			pst.setString(3, vuelo.getOrigen());
-			pst.setString(4, vuelo.getDestino());
-			pst.setDouble(5, vuelo.getPrecio());
+			pst.setString(2, vuelo.getHoraSalida());
+			pst.setInt(3, vuelo.getDuracion());
+			pst.setString(4, vuelo.getOrigen());
+			pst.setString(5, vuelo.getDestino());
+			pst.setDouble(6, vuelo.getPrecio());
 			pst.setInt(7, vuelo.getPlazasRestantes());
 			pst.setString(8, vuelo.getCompanya());	
 			return true;
