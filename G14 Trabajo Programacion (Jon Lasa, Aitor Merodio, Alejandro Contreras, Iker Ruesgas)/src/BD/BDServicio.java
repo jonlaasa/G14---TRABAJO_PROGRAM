@@ -378,8 +378,8 @@ private static PreparedStatement pst;
 	
 	
 	public static boolean  crearBus(Bus bus) throws SQLException {
-		Connection con = abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
-		String sql = "insert into bus (FECHA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?)";
+		Connection con = abrirBaseDatos("basesDeDatos\\serviciosCompanya.db");
+		String sql = "insert into bus (FECHA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?,?)";
 		try {
 			pst=con.prepareStatement(sql);
 			pst.setString(1, bus.getFecha());
@@ -399,8 +399,8 @@ private static PreparedStatement pst;
 	
 	
 	public static boolean  crearVuelo(Vuelo vuelo) throws SQLException {
-		Connection con = abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
-		String sql = "insert into vuelo (FECHA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?)";
+		Connection con = abrirBaseDatos("basesDeDatos\\serviciosCompanya.db");
+		String sql = "insert into vuelo (FECHA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?,?)";
 		try {
 			pst=con.prepareStatement(sql);
 			pst.setString(1, vuelo.getFecha());

@@ -4,7 +4,9 @@ package Main;
 import java.sql.SQLException;
 
 import BD.BDRegistro;
+import BD.BDServicio;
 import Datos.Administrador;
+import Datos.Bus;
 import Datos.Usuario;
 import VentanasAdministrador.VentanaCrearBus;
 import VentanasCompra.VentanaBus;
@@ -14,20 +16,24 @@ import VentanasRegistro.VentanaInicio;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		
 //		PARA CREAR VENTANAS DE COMPRA MENU....
 		Usuario u = new Usuario();
-		Administrador a = new Administrador();
+//		Administrador a = new Administrador();
+//		Bus bus = new Bus("2023-02-20",3600,"Madrid","Bilbao",20,70,"Alsa");
+//		System.out.println(bus.getFecha());
+//		BDServicio.crearBus(bus);
 		
-//		VentanaInicio v = new VentanaInicio();
-//		v.setVisible(true);
+		
+		VentanaInicio v = new VentanaInicio();
+		v.setVisible(true);
 	
 //		VentanaVuelo y = new VentanaVuelo(u);
 //		y.setVisible(true);
 //		
-		VentanaCrearBus x = new VentanaCrearBus(a);
-		x.setVisible(true);
+//		VentanaCrearBus x = new VentanaCrearBus(a);
+//		x.setVisible(true);
 	}
 	
 }
