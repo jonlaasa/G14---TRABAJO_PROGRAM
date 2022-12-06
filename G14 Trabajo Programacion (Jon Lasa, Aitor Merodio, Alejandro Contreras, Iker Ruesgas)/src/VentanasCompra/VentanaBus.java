@@ -263,12 +263,14 @@ public class VentanaBus extends JFrame {
 				JLabel l = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 				if(isSelected) {
 					l.setBackground(Color.orange);
-					
-				}else {
+				} else if (row % 2 == 0) {
+					l.setBackground(new Color(205,205,205));
+				}	else {
 					//SI TIENE POCAS PLAZAS EN ROJO
 					
 					int plazas =  (int) modeloTabla.getValueAt(row,7	);
 					if(plazas<10) {
+						l.setFont( new Font( "Arial", Font.ITALIC, 12 ) );
 						l.setBackground(Color.red);
 					}else {
 						l.setBackground(Color.white);
