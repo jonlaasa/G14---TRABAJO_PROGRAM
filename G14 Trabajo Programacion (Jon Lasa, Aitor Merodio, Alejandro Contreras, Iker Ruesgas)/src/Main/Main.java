@@ -29,8 +29,7 @@ public class Main {
 //		VentanaInicio v = new VentanaInicio();
 //		v.setVisible(true);
 	
-		VentanaInicio y = new VentanaInicio(
-				);
+		VentanaInicio y = new VentanaInicio();
 		y.setVisible(true);
 		
 //		VentanaBus x = new VentanaBus(u);
