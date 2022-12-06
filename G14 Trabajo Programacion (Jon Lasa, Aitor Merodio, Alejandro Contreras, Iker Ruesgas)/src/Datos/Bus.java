@@ -20,16 +20,16 @@ public class Bus extends Servicio {
 
 	
 	//Constructor con parametros
-	public Bus(int codigo, String fecha, int duracion,  String origen, String destino, double precio, TipoServicio tipoServicio,
+	public Bus(int codigo, String fecha, String horaSalida, int duracion,  String origen, String destino, double precio, TipoServicio tipoServicio,
 			int plazarRestantes, String companya)  {
-		super(codigo, fecha, duracion,  origen, destino, precio, tipoServicio, plazarRestantes);
+		super(codigo, fecha, horaSalida, duracion,  origen, destino, precio, tipoServicio, plazarRestantes);
 		setCompanya(companya);
 	}
 	
 	//Constructor sin id y tipoServicio
-		public Bus(String fecha, int duracion,  String origen, String destino, double precio,
+		public Bus(String fecha, String horaSalida, int duracion,  String origen, String destino, double precio,
 				int plazasRestantes, String companya)  {
-			super(fecha, duracion,  origen, destino, precio, plazasRestantes);
+			super(fecha, horaSalida, duracion,  origen, destino, precio, plazasRestantes);
 			setCompanya(companya);
 		}
 
@@ -37,7 +37,7 @@ public class Bus extends Servicio {
 	//Constructor sin parametros, basandonos en el super de SERVICIO
 	public Bus(String fecha, TipoServicio tipoServicio) {
 		super(fecha, tipoServicio);
-		setCompanya("Sin compa�ia");
+		setCompanya("Sin companya");
 	}
 
 	//Get y set de la clase bus
@@ -48,8 +48,7 @@ public class Bus extends Servicio {
 
 
 	public void setCompanya(String companya) {
-		
-			this.companya = companya;
+		this.companya = companya;
 	
 	}
 

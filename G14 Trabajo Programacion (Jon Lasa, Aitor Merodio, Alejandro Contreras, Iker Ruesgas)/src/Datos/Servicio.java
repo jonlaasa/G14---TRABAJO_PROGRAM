@@ -15,7 +15,8 @@ import logicaDeNegocio.PrecioException;
 public class Servicio  {
 	private int codigo;
 	private String fecha;
-	//Duracion en minutos
+	private String horaSalida;
+	//Duracion en segundos
 	private int duracion;
 	private String origen;
 	private String destino;
@@ -24,10 +25,11 @@ public class Servicio  {
 	private int plazasRestantes;
 	
 	//Constructor con parametros
-	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas)  {
+	public Servicio(int codigo, String fecha, String horaSalida,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio, int plazas)  {
 		super();
 		setCodigo(codigo);
 		setFecha(fecha);
+		setHoraSalida(horaSalida);
 		setDuracion(duracion);
 		setOrigen(origen);
 		setDestino(destino);
@@ -37,7 +39,7 @@ public class Servicio  {
 	}
 	
 	//Constructor sin id y tipoServicio
-	public Servicio(String fecha,int duracion, String origen, String destino, double precio,int plazas)  {
+	public Servicio(String fecha, String horaSalida, int duracion, String origen, String destino, double precio,int plazas)  {
 		super();
 		setFecha(fecha);
 		setDuracion(duracion);
@@ -50,10 +52,11 @@ public class Servicio  {
 	//Por defecto 100 plazas restantes
 	
 	
-	public Servicio(int codigo, String fecha,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) {
+	public Servicio(int codigo, String fecha, String horaSalida,int duracion, String origen, String destino, double precio, TipoServicio tipoServicio) {
 		super();
 		setCodigo(codigo);
 		setFecha(fecha);
+		setHoraSalida(horaSalida);
 		setDuracion(duracion);
 		setOrigen(origen);
 		setDestino(destino);
@@ -67,8 +70,9 @@ public class Servicio  {
 		
 	//Constructor con tipoServicio y fecha solo
 	public Servicio(String fecha, TipoServicio tipoServicio)  {
-	         setCodigo(0);
-			setFecha("");
+	        setCodigo(0);
+	        setFecha(fecha);
+			setHoraSalida("");
 			setDuracion(0);
 			setOrigen("");
 			setDestino("");
@@ -103,7 +107,18 @@ public class Servicio  {
 	    
 	}
 	
+	
+	public String getHoraSalida() {
+		return horaSalida;
+	}
 
+	public void setHoraSalida(String horaSalida) {
+ 
+	    this.horaSalida=horaSalida;
+	    
+	    
+	}
+	
 	public int getDuracion() {
 		return duracion;
 	}
@@ -171,7 +186,7 @@ public class Servicio  {
 
 	@Override
 	public String toString() {
-		return "Servicio:  TipoServicio= "+ tipoServicio +  "fecha= " + fecha +  "Duracion en minutos= " + duracion +  ", origen=" + origen + ", destino=" + destino
+		return "Servicio:  TipoServicio= "+ tipoServicio +  "fecha= " + fecha + "Hora Salida= " + horaSalida+ "Duracion en segundos= " + duracion +  ", origen=" + origen + ", destino=" + destino
 				+ ", precio=" + precio + ", plazasRestantes=" + plazasRestantes
 				+ "]";
 	}

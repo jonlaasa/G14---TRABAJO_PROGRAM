@@ -13,13 +13,13 @@ public class TestBus {
 		Bus b1;
 		Bus b2;
 		Bus b3;
-		long fechaAhora= System.currentTimeMillis();
+//		long fechaAhora= System.currentTimeMillis();
 	@Before
 	public void setUp() throws Exception {
 		
-		b1 = new Bus(002,fechaAhora, 5000,"Algorta", "Castellon", 200.0,TipoServicio.bus, 100, "Alsa");
-		b2 = new Bus(0, 0,0,"","",0,TipoServicio.bus, 0,"");
-		b3 = new Bus(000, 0,0,null,null,0,TipoServicio.bus, 0,null);
+		b1 = new Bus(002,"2023-06-23","18:00", 5000,"Algorta", "Castellon", 200.0,TipoServicio.bus, 100, "Alsa");
+		b2 = new Bus(0, "","",0,"","",0,TipoServicio.bus, 0,"");
+		b3 = new Bus(000, null,null,0,null,null,0,TipoServicio.bus, 0,null);
 		
 		
 	}
@@ -34,7 +34,8 @@ public class TestBus {
 		assertEquals(5000, b1.getDuracion());
 		assertEquals("Algorta", b1.getOrigen());
 		assertEquals("Castellon", b1.getDestino());
-		assertEquals(fechaAhora, b1.getFecha());
+		assertEquals("2023-06-23", b1.getFecha());
+		assertEquals("18:00", b1.getHoraSalida());
 		//ERROR SOLO EN ESTE VALOR, ENTENDEMOS QUE NO ES POR FALLO DEL CONSTRUCTOR
 //		assertEquals(200.0,b1.getPrecio());
 		assertEquals(TipoServicio.bus, b1.getTipoServicio());
@@ -45,7 +46,8 @@ public class TestBus {
 		
 		assertEquals(000, b2.getCodigo());
 		//La duracion no comprobamos, ya que si no cumple, SALTA MENSAJE DE ERROR
-		assertEquals(0, b2.getFecha());
+		assertEquals("", b2.getFecha());
+		assertEquals("", b2.getHoraSalida());
 		assertEquals("", b2.getOrigen());
 		assertEquals("", b2.getDestino());
 		//ERROR SOLO EN ESTE VALOR, ENTENDEMOS QUE NO ES POR FALLO DEL CONSTRUCTOR
@@ -59,6 +61,8 @@ public class TestBus {
 		//ESCRIBIR CORRECTAMENTE Y DE MANERA VALIDA LOS VALORES.
 		
 		//Ejemplo
+		assertEquals(null, b3.getFecha());
+		assertEquals(null, b3.getHoraSalida());
 		assertEquals(null, b3.getOrigen());
 		assertEquals(null, b3.getDestino());
 		assertEquals(null, b3.getCompanya());

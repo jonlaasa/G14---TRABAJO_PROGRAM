@@ -11,13 +11,11 @@ public class Vuelo extends Servicio
 	
 	private String companya;
 	
-
-	
 	//Constructor de vuelo con parametros
-	public Vuelo(int codigo, String fecha, int duracion, String origen, String destino, double precio,
+	public Vuelo(int codigo, String fecha, String horaSalida, int duracion, String origen, String destino, double precio,
 			TipoServicio tipoServicio, int plazas, String companya 
 			) {
-		super(codigo, fecha, duracion, origen, destino, precio, tipoServicio, plazas);
+		super(codigo, fecha, horaSalida, duracion, origen, destino, precio, tipoServicio, plazas);
 		this.companya = companya;
 	}
 	
@@ -25,16 +23,16 @@ public class Vuelo extends Servicio
 	
 	 //Constructor de vuelo sin compañia
 
-	public Vuelo(int codigo, String fecha, int duracion, String origen, String destino, double precio,
+	public Vuelo(int codigo, String fecha, String horaSalida, int duracion, String origen, String destino, double precio,
 			TipoServicio tipoServicio, int plazas) {
-		super(codigo, fecha, duracion, origen, destino, precio, tipoServicio, plazas);
-		this.companya="Sin compañia";
+		super(codigo, fecha, horaSalida, duracion, origen, destino, precio, tipoServicio, plazas);
+		this.companya="Sin companya";
 	}
 	
 	//Constructor sin parametros, basandonos en el super de SERVICIO
 		public Vuelo(String fecha, TipoServicio tipoServicio) {
 			super(fecha,tipoServicio);
-			setCompanya("Sin compa�ia");
+			setCompanya("Sin companya");
 		}
 
 

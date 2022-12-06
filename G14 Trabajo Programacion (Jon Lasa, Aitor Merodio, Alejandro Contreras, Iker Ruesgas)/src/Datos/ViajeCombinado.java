@@ -12,7 +12,7 @@ public class ViajeCombinado extends Servicio {
 	
 	//Constructor con parametros
 	
-	public ViajeCombinado(int codigo, Date fecha, int duracion, String origen, String destino, double precio,
+	public ViajeCombinado(int codigo, Date fecha, String horaSalida, int duracion, String origen, String destino, double precio,
 			TipoServicio tipoServicio, int plazarRestantes, int ntrasbordo, ArrayList<String> nombreTrasbordo) {
 		this.ntrasbordo = ntrasbordo;
 		this.nombreTrasbordo = nombreTrasbordo;

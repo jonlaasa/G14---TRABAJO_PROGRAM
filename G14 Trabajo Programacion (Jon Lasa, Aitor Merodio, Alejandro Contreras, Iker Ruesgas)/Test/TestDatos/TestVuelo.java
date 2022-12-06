@@ -17,20 +17,21 @@ public class TestVuelo {
 	Vuelo v1;
 	Vuelo v2;
 	Vuelo v3;
-	long ahora= System.currentTimeMillis();
+//  long ahora= System.currentTimeMillis();
 
 	@Before
 	public void setUp() throws Exception {
-		v1= new Vuelo(5,ahora,200,"Madrid","Bilbao",89,TipoServicio.vuelo,100,"Ryanair");
-		v2= new Vuelo(-1,-1,-1,"","",-1,TipoServicio.vuelo,-1,"");
-		v3=new Vuelo (5,ahora,200,"Lugo","Bilbao",78,TipoServicio.vuelo,200);
+		v1= new Vuelo(5,"2023-4-11","9:15",200,"Madrid","Bilbao",89,TipoServicio.vuelo,100,"Ryanair");
+		v2= new Vuelo(-1,"","",0,"","",0,TipoServicio.vuelo,0,"");
+		v3=new Vuelo (5,null,null,200,null,null,78,null,200,null);
 	}
 
 
 	@Test
 	public void testConstructorConParametros() {
 		assertEquals(5, v1.getCodigo());
-		assertEquals(ahora, v1.getFecha());
+		assertEquals("2023-4-11", v1.getFecha());
+		assertEquals("9:15", v1.getHoraSalida());
 		assertEquals(200, v1.getDuracion());
 		assertEquals("Madrid", v1.getOrigen());
 		assertEquals("Bilbao", v1.getDestino());
@@ -47,14 +48,29 @@ public class TestVuelo {
 	@Test
 	public void testConstructorConParametrosVacios_Ceros() {
 		assertEquals(-1, v2.getCodigo());
-		assertEquals(-1, v2.getFecha());
-		assertEquals(-1, v2.getDuracion());
+		assertEquals("", v2.getFecha());
+		assertEquals("", v2.getHoraSalida());
+		assertEquals(0, v2.getDuracion());
 		assertEquals("", v2.getOrigen());
 		assertEquals("", v2.getDestino());
 		//Problema con los double pero sabemos que se cumple
 		//assertEquals(-1, v2.getPrecio());
 		assertEquals(TipoServicio.vuelo, v2.getTipoServicio());
 		assertEquals("", v2.getCompanya());
+	}	
+	
+	@Test
+	public void testConstructorConParametrosNulos() {
+		//AL CONSTRUCTOR SOLO SE LE PODRAN PASAR PARAMETROS A NULL,  EN LOS ORIGEN , DESTINO, EN FECHA Y EN HORA DE SALIDA LOS CUALES ESTAN PROBADOS
+		//PERO EN LA VENTANA MISMA, REALIZAREMOS LA VERIFICACION DE TODOS LOS VALORES, PARA
+		//ESCRIBIR CORRECTAMENTE Y DE MANERA VALIDA LOS VALORES.
+		
+		//Ejemplo
+		assertEquals(null, v3.getFecha());
+		assertEquals(null, v3.getHoraSalida());
+		assertEquals(null, v3.getOrigen());
+		assertEquals(null, v3.getDestino());
+
 	}
 	
 	//Comprobamos el constructor sin la compañia, solo necesario comprobar
@@ -62,7 +78,7 @@ public class TestVuelo {
 	
 	@Test
 	public void testConstructorConCompañiaNula() {
-		assertEquals("Sin compañia", v3.getCompanya());
+		assertEquals(null, v3.getCompanya());
 		
 	}
 	
@@ -75,7 +91,7 @@ public class TestVuelo {
 	public void testGetCompanya() {
 		assertEquals("Ryanair", v1.getCompanya());
 		assertEquals("", v2.getCompanya());
-		assertEquals("Sin compañia", v3.getCompanya());
+		assertEquals(null, v3.getCompanya());
 		
 	}
 	
