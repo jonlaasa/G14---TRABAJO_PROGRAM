@@ -115,8 +115,20 @@ public class VentanaVuelo extends JFrame {
 		panelTabla.setBounds(10, 266, 574, 260);
 		contentPane.add(panelTabla);
 		
+		
+		
 		modeloTabla = new DefaultTableModel( new Object [] {
-				"FECHA","HORA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
+				"FECHA","HORA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0) {
+			
+			 @Override
+			    public boolean isCellEditable(int row, int column) {
+			       //all cells false
+			       return false;
+			    }
+			
+			
+			
+		};
 		tableVuelos=new JTable(modeloTabla);
 		// Cambios de anchura
 		
@@ -131,6 +143,9 @@ public class VentanaVuelo extends JFrame {
 		JScrollPane scroll = new JScrollPane(tableVuelos,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		
 		panelTabla.add(scroll);
+		
+		//LA TABLA NO SERA EDITABLE 
+		
 		
 		
 		//LLENAMOS LA LISTA de VUELOS ACTUALES CON LOS VUELOS  DE BD
@@ -149,12 +164,14 @@ public class VentanaVuelo extends JFrame {
 				ArrayList<String> listaOrigenes = BDServicio.mostrarDiferentesOrigenes("vuelo");
 				
 				
+				
 				for (String origen: listaOrigenes) {
 					comboBoxOrigen.addItem(origen);
 					}
 				
 				// DESTINO
 				ArrayList<String> listaDestinos = BDServicio.mostrarDiferentesDestinos("vuelo");
+				
 				
 				
 				for (String destino: listaDestinos) {
@@ -232,6 +249,8 @@ public class VentanaVuelo extends JFrame {
 				
 			}
 		});
+		
+		
 		buttonAceptar.setBackground(new Color(102, 204, 204));
 		buttonAceptar.setActionCommand("buscarVuelo");
 		buttonAceptar.setBounds(359, 549, 124, 31);
@@ -322,10 +341,14 @@ public class VentanaVuelo extends JFrame {
 						vuelo.getDestino(),vuelo.getPrecioString(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
 				});
 			
-			
 			}
 			
+			tableVuelos.repaint();
+			
 		});
+		
+		
+		
 		
 		
 		
@@ -341,8 +364,6 @@ public class VentanaVuelo extends JFrame {
 				JLabel l = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 				if(isSelected) {
 					l.setBackground(Color.yellow);
-				} else if (row % 2 == 0) {
-					l.setBackground(new Color(205,205,205));
 				}else {
 					//SI TIENE POCAS PLAZAS EN ROJO
 					
@@ -369,6 +390,7 @@ public class VentanaVuelo extends JFrame {
 			@Override
 			public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected,
 					boolean cellHasFocus) {
+				
 				// TODO Auto-generated method stub
 
 				JLabel l= (JLabel)  super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
@@ -410,7 +432,7 @@ public class VentanaVuelo extends JFrame {
 		
 		
 		//CREAMOS EVENTO DE RATON PARA AL HACER CONTROL CLICK RESTAURAR COMO INICILAMENTE (POR SI NO TENEMOS OPCIONES DESPUES DE FILTRAR EJ.)
-		//daigual donde hagamos el click + control
+		//daigual donde hagamos el click + plus
 		
 		
 				KeyListener key = new KeyAdapter() {

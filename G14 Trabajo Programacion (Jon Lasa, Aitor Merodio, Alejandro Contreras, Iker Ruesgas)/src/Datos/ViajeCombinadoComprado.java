@@ -12,7 +12,7 @@ public class ViajeCombinadoComprado extends Compra {
 	private ArrayList<Compra> transporte;
 	
 	//Constructor con parametros
-	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, long fechaCompra,TipoServicio tipo, int codigoCompra, ViajeCombinado viajeCombinado,
+	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, String fechaCompra,TipoServicio tipo, int codigoCompra, ViajeCombinado viajeCombinado,
 			ArrayList<Compra> transporte) {
 		super(codigoUsuario, cantidad, fechaCompra,tipo, codigoCompra);
 		this.viajeCombinado = viajeCombinado;
@@ -21,7 +21,7 @@ public class ViajeCombinadoComprado extends Compra {
 	
 	//Constructor con transporte vacio para poder a�adirle nosotros?  
 	
-	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, long fechaCompra,TipoServicio tipo, int codigoCompra, ViajeCombinado viajeCombinado) {
+	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, String fechaCompra,TipoServicio tipo, int codigoCompra, ViajeCombinado viajeCombinado) {
 		super(codigoUsuario, cantidad, fechaCompra,tipo,codigoCompra);
 		this.viajeCombinado = viajeCombinado;
 		this.transporte =  new ArrayList<Compra> ();

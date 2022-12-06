@@ -9,21 +9,21 @@ public class Compra {
 	
 	private int codigoUsuario;
 	private int cantidad;
-	private long fechaCompra;
+	private String fechaCompra;
 	private TipoServicio tipoServicio;
-	private int codigoServicio;
+	private int codigoCompra;
 	
 	
 	//Constructor con parametros
 	
-	public Compra(int codigoUsuario, int cantidad, long fechaCompra,TipoServicio tipoServicio, int codigoServicio) {
+	public Compra(int codigoUsuario, int cantidad, String fechaCompra,TipoServicio tipoServicio, int codigoCompra) {
 		super();
 		this.codigoUsuario = codigoUsuario;
 		this.cantidad = cantidad;
 		this.fechaCompra = fechaCompra;
 		this.tipoServicio = tipoServicio;
-		this.codigoServicio=codigoServicio;
 	}
+	
 
 
 	public int getCodigoUsuario() {
@@ -46,12 +46,12 @@ public class Compra {
 	}
 
 
-	public long getFechaCompra() {
+	public String getFechaCompra() {
 		return fechaCompra;
 	}
 
 
-	public void setFechaCompra(long fechaCompra) {
+	public void setFechaCompra(String fechaCompra) {
 		this.fechaCompra = fechaCompra;
 	}
 	
@@ -64,17 +64,16 @@ public class Compra {
 		this.tipoServicio = tipoServicio;
 	}
 	
-	
-
-
-	public int getCodigoServicio() {
-		return codigoServicio;
+	public int getCodigoCompra() {
+		return codigoCompra;
 	}
 
 
-	public void setCodigoServicio(int codigoServicio) {
-		this.codigoServicio = codigoServicio;
+
+	public void setCodigoCompra(int codigoCompra) {
+		this.codigoCompra = codigoCompra;
 	}
+
 
 
 	@Override

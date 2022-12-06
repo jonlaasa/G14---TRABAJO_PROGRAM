@@ -8,13 +8,17 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Datos.Bus;
+import Datos.BusComprado;
 import Datos.Servicio;
 import Datos.Usuario;
-import VentanasRegistro.VentanaMetodoPago;
+import Enum.TipoServicio;
+import VentanasRegistro.VentanaMetodoPag;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -27,6 +31,7 @@ public class VentanaBilletes extends JFrame {
 	private JPanel contentPane;
 	private JLabel mensajeEscoja;
 	private JLabel foto;
+	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
 	
 	
 	public VentanaBilletes(Usuario usuarioActual, Servicio servicio) {
@@ -116,14 +121,20 @@ public class VentanaBilletes extends JFrame {
 		continuar.addActionListener(e -> {
 			//OBTENEMOS LA CANTIDAD
 			int cantidad = Integer.parseInt(lcantidad.getText());
+			Date fechaEnDate = new Date(System.currentTimeMillis());
+			String fechaActual = SDF_FECHA_FOTO.format(fechaEnDate);
 			//SI ES UN BUS, DE LA MISMA YA PODEMOS ESCRIBIRLO EN LA BASE DE DATOS
 			if(servicio instanceof Bus ) {
 				
+				//CREAMOS EL BUS COMPRADO con un codigo de compra que lo actualizaremos al insertarlo en la BD, ya que tiene codigo
+				//AUTOINCREMENTADO
+				
+				BusComprado busComprado = new BusComprado(usuarioActual.getCodigo(),cantidad,fechaActual,1, TipoServicio.bus, (Bus) servicio );
+				
 				//ACCEDEMOS A LA VENTANA DE METODO DE PAGO
-				VentanaMetodoPago vent = new VentanaMetodoPago(usuarioActual,servicio);
+				VentanaMetodoPag vent = new VentanaMetodoPag(usuarioActual,busComprado);
 				vent.setVisible(true);
 				dispose();
-				
 			}
 			else {
 				

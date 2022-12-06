@@ -117,7 +117,16 @@ public class VentanaBus extends JFrame {
 		contentPane.add(panelTabla);
 		
 		modeloTabla = new DefaultTableModel( new Object [] {
-				"FECHA","HORA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0);
+				"FECHA","HORA","DURACION","ORIGEN","DESTINO","PRECIO","COMPANYA","PLAZAS"},0) {
+			
+			@Override
+		    public boolean isCellEditable(int row, int column) {
+		       //all cells false
+		       return false;
+		    }
+			
+			
+		};
 		tableBus=new JTable(modeloTabla);
 		// Cambios de anchura
 		
@@ -263,9 +272,7 @@ public class VentanaBus extends JFrame {
 				JLabel l = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 				if(isSelected) {
 					l.setBackground(Color.orange);
-				} else if (row % 2 == 0) {
-					l.setBackground(new Color(205,205,205));
-				}	else {
+				}else {
 					//SI TIENE POCAS PLAZAS EN ROJO
 					
 					int plazas =  (int) modeloTabla.getValueAt(row,7	);
@@ -329,6 +336,7 @@ public class VentanaBus extends JFrame {
 			
 			
 			}
+			tableBus.repaint();
 			
 		});
 		

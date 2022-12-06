@@ -9,10 +9,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import Datos.Compra;
 import Datos.Servicio;
 import Datos.Usuario;
+import VentanasCompra.VentanaBus;
+import logicaDeNegocio.Utils;
 
-public class VentanaMetodoPago extends JFrame {
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class VentanaMetodoPag extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField titularTarjeta;
@@ -26,14 +32,14 @@ public class VentanaMetodoPago extends JFrame {
 	
 	
 	
-	public VentanaMetodoPago (Usuario usuarioActual, Servicio servicio) {
+	public VentanaMetodoPag (Usuario usuarioActual, Compra compra) {
 		
-		inicializar();
+		inicializar(usuarioActual,compra );
 		
 	}
 
 	
-	private void  inicializar() {
+	private void  inicializar(Usuario usuarioActual, Compra compra) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
@@ -125,9 +131,63 @@ public class VentanaMetodoPago extends JFrame {
 		codigoSeguridad.setBounds(254, 331, 64, 20);
 		contentPane.add(codigoSeguridad);
 		
-		JButton confirmar = new JButton("Confirmar");
-		confirmar.setBounds(438, 336, 121, 39);
+		JButton confirmar = new JButton("PAGAR Y FINALIZAR");
+		confirmar.setForeground(new Color(255, 128, 64));
+		confirmar.setBounds(533, 309, 141, 52);
 		contentPane.add(confirmar);
+		
+		JButton atras = new JButton("Atras");
+		atras.setBounds(398, 330, 86, 23);
+		contentPane.add(atras);
+		
+		//EVENTOS
+		
+		atras.addActionListener(e-> {
+			
+			//VOLVEMOS A ABRIR LA VENTANA DE COMPRA DE BUSES CON EL USUARIO ACTUAL
+			VentanaBus vent = new VentanaBus(usuarioActual);
+			vent.setVisible(true);
+			dispose();		
+		});
+		
+		
+		//EVENTO DE CONFIRMAR
+		confirmar.addActionListener(e-> {
+			
+		//LEEMOS TODOS LOS VALORES Y LOS COMPROBAMOS SI SON CORRECTOS (CUMPLEN UNAS CARACTERISTICAS)
+			
+			String nombreTitular= titularTarjeta.getText();
+			String direc= direccion.getText();
+			String ciu = ciudad.getText();
+			String cd = codigoPostal.getText();
+			String numT = numeroTarjeta.getText();
+			String feC = fechaCaducidad.getText();
+			String codS = codigoSeguridad.getText();
+			
+			try {
+				
+				
+				Utils.comprobarString(nombreTitular);
+				Utils.comprobarString(direc);
+				Utils.comprobarString(ciu);
+				Utils.comprobarNumerosConLongitud(cd, 5);
+				Utils.comprobarNumerosConLongitud(codS, 3);
+				Utils.comprobarNumerosConLongitud(feC, 4);
+				Utils.comprobarNumerosConLongitud(numT, 16);	
+				
+				//SI SE CUMPLEN??? VENTANA DE CONFIRMACION DE COMPRA CON LOS DATOS DE LA COMPRA
+				???
+				
+				
+				
+				
+			}catch (Exception e1) {
+				e1.printStackTrace();
+			}
+			
+		});
+		
+		
 		
 
 //

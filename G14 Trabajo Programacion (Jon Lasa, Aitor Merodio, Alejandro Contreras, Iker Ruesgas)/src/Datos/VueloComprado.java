@@ -16,7 +16,7 @@ public class VueloComprado extends Compra implements PrecioCompra {
 	private double precio;
 	
 	//Constructor con Parametros
-	public VueloComprado(int codigoUsuario, int cantidad, long fechaCompra, TipoServicio tipo,int codigoCompra,  Vuelo vuelo,
+	public VueloComprado(int codigoUsuario, int cantidad, String fechaCompra, TipoServicio tipo,int codigoCompra,  Vuelo vuelo,
 			ArrayList<RentingCoche> listaRenting, String asiento, TipoVuelo tipoVuelo,ZonaAsientoVuelo zonaAsientoVuelo) {
 		super(codigoUsuario, cantidad, fechaCompra, tipo,codigoCompra);
 		this.vuelo = vuelo;
@@ -31,7 +31,7 @@ public class VueloComprado extends Compra implements PrecioCompra {
 	
 	//Constructor sin asiento asignado y lista vacia
 	
-	public VueloComprado(int codigoUsuario, int cantidad, long fechaCompra, TipoServicio tipoServicio,int codigoCompra, Vuelo vuelo) {
+	public VueloComprado(int codigoUsuario, int cantidad, String fechaCompra, TipoServicio tipoServicio,int codigoCompra, Vuelo vuelo) {
 		super(codigoUsuario, cantidad, fechaCompra,tipoServicio,codigoCompra);
 		this.listaRenting= new ArrayList<RentingCoche> ();
 		setPrecio();
@@ -81,7 +81,8 @@ public class VueloComprado extends Compra implements PrecioCompra {
 
 
 	public void setPrecio( ) {
-		//Calculamos el precio
+		//CANTIDAD POR PRECIO DEL avion * cantidad + renting + zona vuelo ....
+		
 	}
 
 
