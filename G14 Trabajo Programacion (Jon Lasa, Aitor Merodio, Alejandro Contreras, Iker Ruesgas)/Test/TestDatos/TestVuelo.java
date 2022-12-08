@@ -10,7 +10,6 @@ import org.junit.Test;
 
 import Datos.Vuelo;
 import Enum.TipoServicio;
-import Enum.TipoVuelo;
 import Enum.ZonaAsientoVuelo;
 
 public class TestVuelo {
