@@ -7,7 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -22,9 +25,11 @@ import Datos.Vuelo;
 import Enum.TipoServicio;
 
 public class BDServicio {
-	
+
+
 private static Connection conn;
 private static PreparedStatement pst;
+private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy-MM-dd");
 	
 	private static Logger logger;
 	
@@ -258,8 +263,53 @@ private static PreparedStatement pst;
 			
 		}
 		
+		//METODO QUE CREA NUEVOS VUELOS CON LOS DATOS RECIBIDOS DESDE LA VENTANA CREAR VUELOS 
+		public static void crearVuelos (Date fecha, String horaSalida, int duracion ,String origen, String destino, double precio, int plazas,String companya, boolean semanal, boolean mensual)  {
+			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			String sent="";
+			try {
+				if (semanal==true) {
+					for (int i=1; i<8; i++ ) {	
+						Statement st = conn.createStatement();
+						Date fechanueva= sumarDias(fecha,i);
+						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
+						sent="INSERT INTO VUELO(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,COMPANYA_vuelo,PLAZAS_RESTANTES) VALUES ('"+fechatoString+"','"+horaSalida+"',"+duracion+",'"+origen+"','"+destino+"',"+precio+",'"+companya+"',"+plazas+")";
+						
+						st.executeUpdate(sent);
+								
+					}
+					log(Level.INFO, "VUELOS SEMANALES INSERTADOS EN LA BASE DE DATOS", null);
+					
+				} else {
+					for (int i=0; i<32; i++ ) {
+						Statement st = conn.createStatement();
+						Date fechanueva= sumarDias(fecha,i);
+						String fechatoString = SDF_FECHA_FOTO.format(fecha);
+						sent="INSERT INTO VUELO(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,COMPANYA_vuelo,PLAZAS_RESTANTES) VALUES ("+fechatoString+","+horaSalida+","+duracion+","+origen+","+destino+","+precio+","+companya+","+plazas+")";
+						
+						st.executeUpdate(sent);
+					}
+					log(Level.INFO, "VUELOS SEMANALES INSERTADOS EN LA BASE DE DATOS", null);
+				}
+				
+		} catch(SQLException sql) {
+			log(Level.SEVERE, "ERROR AL INSERTAR DATOS DE VUELO A LA BD", sql);
+		}
+
+	}
 		
-		//FALTA LAS FECHAS
+		
+		
+		private static Date sumarDias(Date fecha, int dias) {
+			Calendar calendar=Calendar.getInstance();
+			calendar.setTime(fecha);
+			calendar.add(Calendar.DAY_OF_YEAR, dias);
+			return calendar.getTime();
+		}
+
+
+
+		//FILTRA LOS VUELOS 
 		public static ArrayList<Vuelo> listaServicioVueloFiltrado (String origen, String destino, String orden,String fechaInicio, String fechaFin){
 			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
@@ -381,7 +431,7 @@ private static PreparedStatement pst;
 	}
 	
 	
-	public static boolean  crearBus(Bus bus) throws SQLException {
+	public static boolean  crearBu(Bus bus) throws SQLException {
 		Connection con = abrirBaseDatos("basesDeDatos\\serviciosCompanya.db");
 		String sql = "insert into bus (FECHA,DURACION,HORA_SALIDA,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?,?)";
 		try {
@@ -403,9 +453,9 @@ private static PreparedStatement pst;
 	}
 	
 	
-	public static boolean  crearVuelo(Vuelo vuelo) throws SQLException {
+	public static boolean  crearVuel(Vuelo vuelo) throws SQLException {
 		Connection con = abrirBaseDatos("basesDeDatos\\serviciosCompanya.db");
-		String sql = "insert into vuelo (FECHA,DURACION,HORA_SALIDA,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?,?)";
+		String sql = "insert into vuelo VALUES()";
 		try {
 			pst=con.prepareStatement(sql);
 			pst.setString(1, vuelo.getFecha());

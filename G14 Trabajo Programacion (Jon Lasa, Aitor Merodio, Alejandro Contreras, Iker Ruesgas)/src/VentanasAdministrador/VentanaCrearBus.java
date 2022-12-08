@@ -191,7 +191,7 @@ public class VentanaCrearBus extends JFrame {
 				plazasFinal=100;
 			}
 			try {
-				BDServicio.crearBus(new Bus(fecha,duracion,origen,destino,precio,plazasFinal,companya));
+				BDServicio.crearBus(new Bus(fecha,horaSalida,duracion,origen,destino,precio,plazasFinal,companya));
 				JOptionPane.showMessageDialog(null, "Bus creado");
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block

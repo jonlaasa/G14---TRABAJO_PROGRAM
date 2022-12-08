@@ -19,8 +19,13 @@ public class Vuelo extends Servicio
 		this.companya = companya;
 	}
 	
+	//Constructor sin codigo
 	
-	
+	public Vuelo( String fecha, String horaSalida, int duracion, String origen, String destino, double precio,
+			 int plazas, String companya ) {
+		this.companya = companya;
+		
+	}
 	 //Constructor de vuelo sin compañia
 
 	public Vuelo(int codigo, String fecha, String horaSalida, int duracion, String origen, String destino, double precio,
