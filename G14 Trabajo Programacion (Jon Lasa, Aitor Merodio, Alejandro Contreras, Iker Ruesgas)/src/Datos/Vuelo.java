@@ -3,7 +3,6 @@ package Datos;
 import java.sql.Date;
 
 import Enum.TipoServicio;
-import Enum.TipoVuelo;
 import Enum.ZonaAsientoVuelo;
 
 public class Vuelo extends Servicio

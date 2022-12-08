@@ -4,24 +4,21 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import Enum.TipoServicio;
-import Enum.TipoVuelo;
 import Enum.ZonaAsientoVuelo;
 
 public class VueloComprado extends Compra implements PrecioCompra {
 	
 	private Vuelo vuelo;
 	private ArrayList<RentingCoche> listaRenting; 
-	private TipoVuelo tipoVuelo;
 	private ZonaAsientoVuelo zonaAsientoVuelo;
 	private double precio;
 	
 	//Constructor con Parametros
 	public VueloComprado(int codigoUsuario, int cantidad, String fechaCompra, TipoServicio tipo,int codigoCompra,  Vuelo vuelo,
-			ArrayList<RentingCoche> listaRenting, String asiento, TipoVuelo tipoVuelo,ZonaAsientoVuelo zonaAsientoVuelo) {
+			ArrayList<RentingCoche> listaRenting, String asiento,ZonaAsientoVuelo zonaAsientoVuelo) {
 		super(codigoUsuario, cantidad, fechaCompra, tipo,codigoCompra);
 		this.vuelo = vuelo;
 		this.listaRenting = listaRenting;
-		this.tipoVuelo=tipoVuelo;
 		this.zonaAsientoVuelo=zonaAsientoVuelo;
 		setPrecio();
 		
@@ -53,17 +50,6 @@ public class VueloComprado extends Compra implements PrecioCompra {
 		this.listaRenting = listaRenting;
 	}
 
-	
-	public TipoVuelo getTipoVuelo() {
-		return tipoVuelo;
-	}
-
-
-	public void setTipoVuelo(TipoVuelo tipoVuelo) {
-		this.tipoVuelo = tipoVuelo;
-	}
-
-
 	public ZonaAsientoVuelo getZonaAsientoVuelo() {
 		return zonaAsientoVuelo;
 	}
@@ -88,7 +74,7 @@ public class VueloComprado extends Compra implements PrecioCompra {
 
 	@Override
 	public String toString() {
-		return "VueloComprado [vuelo=" + vuelo + ", listaRenting=" + listaRenting + ", tipoVuelo=" + tipoVuelo
+		return "VueloComprado [vuelo=" + vuelo + ", listaRenting=" + listaRenting 
 				+ ", zonaAsientoVuelo=" + zonaAsientoVuelo + "]";
 	}
 

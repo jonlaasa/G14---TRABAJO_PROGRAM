@@ -32,7 +32,7 @@ public class VentanaMetodoPag extends JFrame {
 	
 	
 	
-	public VentanaMetodoPag (Usuario usuarioActual, Compra compra) {
+	public VentanaMetodoPag (Usuario usuarioActual, Compra compra,Servicio serv) {
 		
 		inicializar(usuarioActual,compra );
 		
@@ -176,7 +176,7 @@ public class VentanaMetodoPag extends JFrame {
 				Utils.comprobarNumerosConLongitud(numT, 16);	
 				
 				//SI SE CUMPLEN??? VENTANA DE CONFIRMACION DE COMPRA CON LOS DATOS DE LA COMPRA
-				???
+				
 				
 				
 				
