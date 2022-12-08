@@ -31,15 +31,19 @@ public class Main {
 		
 //		VentanaInicio v = new VentanaInicio();
 //		v.setVisible(true);
+<<<<<<< HEAD
 	
 //		VentanaInicio y = new VentanaInicio();
 //		y.setVisible(true);
 		
 		VentanaCrearVuelo1 z = new VentanaCrearVuelo1(a);
 		z.setVisible(true);
+=======
+>>>>>>> branch 'master' of https://github.com/jonlaasa/G14---TRABAJO_PROGRAM
 		
-//		VentanaBus x = new VentanaBus(u);
-//		x.setVisible(true);
+		VentanaVuelo x = new VentanaVuelo(u);
+		
+		x.setVisible(true);
 	}
 	
 }

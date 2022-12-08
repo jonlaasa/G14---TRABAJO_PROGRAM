@@ -75,7 +75,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		int codigo = compra.getCodigoUsuario();
 		Date fecha = new Date(compra.getFechaCompra());
 		String tipo = compra.getTipoServicio().toString();
-		int codigoCompra = compra.getCodigoServicio();
+		int codigoCompra = compra.getCodigoCompra();
 		
 		//String de añadir
 		
@@ -406,7 +406,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		if ( compra instanceof  BusComprado) {
 			//Obtenemos el codigo del usuario, compra y fecha
 			int codUsu = usuarioActual.getCodigo();
-			int codServicio = compra.getCodigoServicio();
+			int codServicio = compra.getCodigoCompra();
 			sent = "insert into Compra (COD_USU,COD_SERVICIO_COMPRADO,FECHA_COMPRA) VALUES ("+codUsu+","+codServicio+", '"+fechaActual
 					+"')";
 		

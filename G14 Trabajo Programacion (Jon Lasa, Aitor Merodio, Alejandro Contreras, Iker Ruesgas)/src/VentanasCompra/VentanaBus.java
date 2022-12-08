@@ -112,6 +112,12 @@ public class VentanaBus extends JFrame {
 		lblDestino.setBounds(22, 56, 58, 25);
 		contentPane.add(lblDestino);
 		
+		JLabel filtroInicial = new JLabel("CONTROL + PLUS PARA RESTABLECER TABLA INICIAL");
+		filtroInicial.setForeground(new Color(255, 128, 0));
+		filtroInicial.setFont(new Font("Stencil", Font.PLAIN, 11));
+		filtroInicial.setBounds(269, 7, 305, 14);
+		contentPane.add(filtroInicial);
+		
 		JPanel panelTabla = new JPanel();
 		panelTabla.setBounds(10, 266, 574, 260);
 		contentPane.add(panelTabla);

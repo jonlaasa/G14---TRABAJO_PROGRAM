@@ -7,10 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import BD.BDServicio;
 import Datos.Bus;
 import Datos.BusComprado;
 import Datos.Servicio;
 import Datos.Usuario;
+import Datos.Vuelo;
 import Enum.TipoServicio;
 import VentanasRegistro.VentanaMetodoPag;
 
@@ -19,6 +21,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -132,15 +135,23 @@ public class VentanaBilletes extends JFrame {
 				BusComprado busComprado = new BusComprado(usuarioActual.getCodigo(),cantidad,fechaActual,1, TipoServicio.bus, (Bus) servicio );
 				
 				//ACCEDEMOS A LA VENTANA DE METODO DE PAGO
-				VentanaMetodoPag vent = new VentanaMetodoPag(usuarioActual,busComprado);
+				BDServicio.log(Level.INFO, "Accediendo a la ventana de METODO DE PAGO, para pagar el bus", null);
+				VentanaMetodoPag vent = new VentanaMetodoPag(usuarioActual,busComprado,servicio);
 				vent.setVisible(true);
 				dispose();
 			}
 			else {
+				if(servicio instanceof Vuelo) {
+					//CREAMOS VENTANA CON LOS SERVICIO ADICIONALES
+					BDServicio.log(Level.INFO, "Accediendo a la ventana de servicios adicionales de vuelo", null);
+					Vuelo vuelo = (Vuelo) servicio;
+					VentanaServicioAdicional vent = new VentanaServicioAdicional (usuarioActual,vuelo,cantidad);
+					vent.setVisible(true);
+					
+					
+				}
 				
-				//AQUI PASAMOS A LA VENTANA DE SELECCIONAR EL RENTING
-				
-				
+			
 			}
 			
 		});
