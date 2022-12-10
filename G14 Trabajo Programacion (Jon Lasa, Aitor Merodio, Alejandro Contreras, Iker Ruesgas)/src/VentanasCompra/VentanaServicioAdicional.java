@@ -8,13 +8,18 @@ import javax.swing.border.EmptyBorder;
 
 import Datos.BusComprado;
 import Datos.Compra;
+import Datos.RentingCoche;
 import Datos.Servicio;
 import Datos.Usuario;
 import Datos.Vuelo;
+import Datos.VueloComprado;
+import Enum.ClaseCoche;
 import VentanasMenu.VentanaMenu;
 
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.ArrayList;
+import java.util.Date;
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
@@ -71,7 +76,7 @@ public class VentanaServicioAdicional extends JFrame {
 		contentPane.add(mRenting);
 		
 		//LLENAMOS EL COMBO DE OPCIONES (3 CLASE/GAMAS POSIBLES)
-		String [] listaClase = new String [] {"NINGUNO","C","B","A"};
+		String [] listaClase = new String [] {"NINGUNO","GAMA BAJA","GAMA MEDIA","GAMA ALTA"};
 		JComboBox comboOpcion = new JComboBox(listaClase);
 		comboOpcion.setBounds(28, 343, 127, 22);
 		contentPane.add(comboOpcion);
@@ -99,6 +104,90 @@ public class VentanaServicioAdicional extends JFrame {
 		JButton atras = new JButton("ATRAS");
 		atras.setBounds(581, 347, 81, 18);
 		contentPane.add(atras);
+		
+		
+		
+		//EVENTOS
+		atras.addActionListener(e -> {
+			//VOLVEMOS A LA VENTANA DE SELECCCION DE CANTIDAD DE BILLETES
+			
+			VentanaBilletes vent = new VentanaBilletes(usuarioActual, vuelo);
+			vent.setVisible(true);
+			
+			
+		});
+		
+		//EVENTO DE CONTINUAR
+		//PRIMERO LEEMOS LOS VALORES 
+		
+		//EMPEZAMOS CON LA ZONA DE ASIENTO
+		int sumaAsiento = -1;
+		
+		String zonaAsiento = comboAsiento.getSelectedItem().toString();
+		
+		if (zonaAsiento.equals("ZONA TRASERA (+0 EU)")) {
+			
+			sumaAsiento=0;
+			
+		}else {
+			if(zonaAsiento.equals("ZONA CENTRAL (+10 EU)")) {
+				sumaAsiento=10;
+			}
+			else {
+				sumaAsiento=30;
+			}
+		}
+		
+		//DESPUES OBTENEMOS EL COCHE SELECCIONADO (SI ES ASI)
+		
+		//Creamos el array (SOLO TENDRA COMO MUCHO UN OBJETO DE LA CLASE RENTING COCHE)
+		
+		ArrayList<RentingCoche> rentingCoche = new ArrayList<RentingCoche> ();
+		//obtenemos el valor del combo de opcion y el numero de dias
+		
+		String opcionCoche = comboOpcion.getSelectedItem().toString();
+		int numDias = Integer.parseInt(comboDias.getSelectedItem().toString());
+	
+		if(opcionCoche.equals("GAMA BAJA")) {
+			
+			//CREAMOS COCHE DE ESTA GAMA Y LO INSERTAMOS A LA LISTA
+			RentingCoche renting = new RentingCoche (numDias,ClaseCoche.gamaBaja);
+			rentingCoche.add(renting);
+			
+			
+		}else {
+			if(opcionCoche.equals("GAMA MEDIA")) {
+				
+				//CREAMOS COCHE DE ESTA GAMA Y LO INSERTAMOS A LA LISTA
+				RentingCoche renting = new RentingCoche (numDias,ClaseCoche.gamaMedia);
+				rentingCoche.add(renting);
+			}else {
+				if(opcionCoche.equals("GAMA ALTA")) {
+					
+					//CREAMOS COCHE DE ESTA GAMA Y LO INSERTAMOS A LA LISTA
+					RentingCoche renting = new RentingCoche (numDias,ClaseCoche.gamaAlta);
+					rentingCoche.add(renting);
+					
+				}
+			}
+		}
+		
+		
+		//UNA VEZ TENEMOS EL PRECIO A ANYADIR Y LA LISTA CON EL COCHE ( EN CASO DE HABER), PODEMOS CREAR EL VUELO COMPRADO
+		
+		//LA FECHA DE LA COMPRA SERA LA ACTUAL
+		Date fechaEnDate = new Date(System.currentTimeMillis());
+		String fechaActual = SDF_FECHA_FOTO.format(fechaEnDate);
+		
+		VueloComprado vueloComprado = new VueloComprado (usuarioActual.getCodigo(),cantidad,)
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}	
 }

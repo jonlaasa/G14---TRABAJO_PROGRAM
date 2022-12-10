@@ -37,7 +37,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
 
-public class VentanaCrearVuelo1 extends JFrame {
+public class VentanaCrearVuelo extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField tfDuracion;
@@ -50,7 +50,7 @@ public class VentanaCrearVuelo1 extends JFrame {
 	private JComboBox<String> comboBoxPlazas;
 	
 
-	public VentanaCrearVuelo1(Administrador adminActual) {
+	public VentanaCrearVuelo(Administrador adminActual) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 650);
 		contentPane = new JPanel();
