@@ -76,7 +76,6 @@ public class VentanaCrearVuelo extends JFrame {
 		comboBoxOrigen.addItem("Praga");
 		comboBoxOrigen.addItem("Castellon");
 		comboBoxOrigen.addItem("Santander");
-		comboBoxOrigen.addItem("Praga");
 		comboBoxOrigen.addItem("Castellon");
 		contentPane.add(comboBoxOrigen);
 		
@@ -94,7 +93,6 @@ public class VentanaCrearVuelo extends JFrame {
 		comboBoxDestino.addItem("Praga");
 		comboBoxDestino.addItem("Castellon");
 		comboBoxDestino.addItem("Santander");
-		comboBoxDestino.addItem("Praga");
 		comboBoxDestino.addItem("Castellon");
 		contentPane.add(comboBoxDestino);
 		

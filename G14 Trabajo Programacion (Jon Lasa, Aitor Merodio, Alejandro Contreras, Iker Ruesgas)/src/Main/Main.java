@@ -2,6 +2,7 @@
 package Main;
 
 import java.sql.SQLException;
+import java.util.Date;
 
 import BD.BDRegistro;
 import BD.BDServicio;
@@ -33,14 +34,16 @@ public class Main {
 //		VentanaInicio y = new VentanaInicio();
 //		y.setVisible(true);
 		
-		VentanaCrearVuelo z = new VentanaCrearVuelo(a);
-		z.setVisible(true);
+//		VentanaCrearVuelo z = new VentanaCrearVuelo(a);
+//		z.setVisible(true);
 		
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
 		
 //		VentanaVuelo x = new VentanaVuelo(u);	
 //		x.setVisible(true);
+		
+		BDServicio.crearViajesCombinados();
 		
 	}
 	
