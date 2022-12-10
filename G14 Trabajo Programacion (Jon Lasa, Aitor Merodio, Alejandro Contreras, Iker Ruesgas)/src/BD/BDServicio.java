@@ -264,6 +264,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		}
 		
 		//METODO QUE CREA NUEVOS VUELOS CON LOS DATOS RECIBIDOS DESDE LA VENTANA CREAR VUELOS 
+		
 		public static void crearVuelos (Date fecha, String horaSalida, int duracion ,String origen, String destino, double precio, int plazas,String companya, boolean semanal, boolean mensual)  {
 			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
 			String sent="";
@@ -293,7 +294,42 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 				}
 				
 		} catch(SQLException sql) {
-			log(Level.SEVERE, "ERROR AL INSERTAR DATOS DE VUELO A LA BD", sql);
+			log(Level.SEVERE, "ERROR AL INSERTAR DATOS DE VUELOS A LA BD", sql);
+		}
+
+	}
+		//METODO QUE CREA NUEVOS BUSES CON LOS DATOS RECIBIDOS DESDE LA VENTANA CREAR BUSES 
+		
+		public static void crearBuses (Date fecha, String horaSalida, int duracion ,String origen, String destino, double precio, int plazas,String companya, boolean semanal, boolean mensual)  {
+			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			String sent="";
+			try {
+				if (semanal==true) {
+					for (int i=0; i<8; i++ ) {	
+						Statement st = conn.createStatement();
+						Date fechanueva= sumarDias(fecha,i);
+						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
+						sent="INSERT INTO BUS(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES ('"+fechatoString+"','"+horaSalida+"',"+duracion+",'"+origen+"','"+destino+"',"+precio+","+plazas+",'"+companya+"')";
+						
+						st.executeUpdate(sent);
+								
+					}
+					log(Level.INFO, "BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS", null);
+					
+				} else {
+					for (int i=0; i<32; i++ ) {
+						Statement st = conn.createStatement();
+						Date fechanueva= sumarDias(fecha,i);
+						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
+						sent="INSERT INTO BUS(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES ('"+fechatoString+"','"+horaSalida+"',"+duracion+",'"+origen+"','"+destino+"',"+precio+","+plazas+",'"+companya+"')";
+						
+						st.executeUpdate(sent);
+					}
+					log(Level.INFO, "BUSES MENSUALES INSERTADOS EN LA BASE DE DATOS", null);
+				}
+				
+		} catch(SQLException sql) {
+			log(Level.SEVERE, "ERROR AL INSERTAR DATOS DE BUSES A LA BD", sql);
 		}
 
 	}
