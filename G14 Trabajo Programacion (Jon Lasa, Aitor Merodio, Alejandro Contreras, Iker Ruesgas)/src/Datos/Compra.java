@@ -22,6 +22,7 @@ public class Compra {
 		this.cantidad = cantidad;
 		this.fechaCompra = fechaCompra;
 		this.tipoServicio = tipoServicio;
+		this.codigoCompra=codigoCompra;
 	}
 	
 

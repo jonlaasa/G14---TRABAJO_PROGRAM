@@ -15,7 +15,7 @@ public class VueloComprado extends Compra implements PrecioCompra {
 	
 	//Constructor con Parametros
 	public VueloComprado(int codigoUsuario, int cantidad, String fechaCompra, TipoServicio tipo,int codigoCompra,  Vuelo vuelo,
-			ArrayList<RentingCoche> listaRenting, String asiento,ZonaAsientoVuelo zonaAsientoVuelo) {
+			ArrayList<RentingCoche> listaRenting,ZonaAsientoVuelo zonaAsientoVuelo) {
 		super(codigoUsuario, cantidad, fechaCompra, tipo,codigoCompra);
 		this.vuelo = vuelo;
 		this.listaRenting = listaRenting;
@@ -26,11 +26,14 @@ public class VueloComprado extends Compra implements PrecioCompra {
 	}
 	
 	
-	//Constructor sin asiento asignado y lista vacia
+	//Constructor sin ZONA asignado y lista vacia
 	
 	public VueloComprado(int codigoUsuario, int cantidad, String fechaCompra, TipoServicio tipoServicio,int codigoCompra, Vuelo vuelo) {
 		super(codigoUsuario, cantidad, fechaCompra,tipoServicio,codigoCompra);
+		this.vuelo=vuelo;
 		this.listaRenting= new ArrayList<RentingCoche> ();
+		this.zonaAsientoVuelo= zonaAsientoVuelo.trasera;
+		
 		setPrecio();
 	}
 
@@ -67,7 +70,23 @@ public class VueloComprado extends Compra implements PrecioCompra {
 
 
 	public void setPrecio( ) {
-		//CANTIDAD POR PRECIO DEL avion * cantidad + renting + zona vuelo ....
+		//CANTIDAD POR PRECIO DEL avion * cantidad + renting + zona vuelo ...
+		double vueloSuma = getCantidad() * (getVuelo().getPrecio());
+		double sumaZonaAsiento = getZonaAsientoVuelo().precio();
+		
+		//PARA CALCULAR EL RENTING
+		double sumaRenting = 0;
+		if(listaRenting.size()==0) {
+			
+		}else {
+			RentingCoche renting = listaRenting.get(0);
+			sumaRenting=renting.getPrecio()*(renting.getDiasAlquilado());
+		}
+		
+		//FINALMENTE PONEMOS EL PRECIO
+		
+		this.precio=vueloSuma + sumaZonaAsiento + sumaRenting;
+		
 		
 	}
 

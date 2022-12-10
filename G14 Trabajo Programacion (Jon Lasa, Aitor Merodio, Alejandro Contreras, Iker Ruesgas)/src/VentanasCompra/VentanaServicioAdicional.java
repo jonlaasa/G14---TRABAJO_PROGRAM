@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import BD.BDServicio;
 import Datos.BusComprado;
 import Datos.Compra;
 import Datos.RentingCoche;
@@ -14,12 +15,17 @@ import Datos.Usuario;
 import Datos.Vuelo;
 import Datos.VueloComprado;
 import Enum.ClaseCoche;
+import Enum.TipoServicio;
+import Enum.ZonaAsientoVuelo;
 import VentanasMenu.VentanaMenu;
+import VentanasRegistro.VentanaMetodoPag;
 
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
@@ -29,6 +35,7 @@ import javax.swing.JComboBox;
 public class VentanaServicioAdicional extends JFrame {
 
 	private JPanel contentPane;
+	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
 	
 	
 	public VentanaServicioAdicional(Usuario usuarioActual, Vuelo vuelo, int cantidad) {
@@ -121,20 +128,21 @@ public class VentanaServicioAdicional extends JFrame {
 		//PRIMERO LEEMOS LOS VALORES 
 		
 		//EMPEZAMOS CON LA ZONA DE ASIENTO
-		int sumaAsiento = -1;
-		
 		String zonaAsiento = comboAsiento.getSelectedItem().toString();
+		ZonaAsientoVuelo zonaEnum = null;
 		
 		if (zonaAsiento.equals("ZONA TRASERA (+0 EU)")) {
 			
-			sumaAsiento=0;
+			
+			zonaEnum=ZonaAsientoVuelo.trasera;
 			
 		}else {
 			if(zonaAsiento.equals("ZONA CENTRAL (+10 EU)")) {
-				sumaAsiento=10;
+				
+				zonaEnum=ZonaAsientoVuelo.central;
 			}
 			else {
-				sumaAsiento=30;
+				zonaEnum=ZonaAsientoVuelo.delantera;
 			}
 		}
 		
@@ -179,7 +187,21 @@ public class VentanaServicioAdicional extends JFrame {
 		Date fechaEnDate = new Date(System.currentTimeMillis());
 		String fechaActual = SDF_FECHA_FOTO.format(fechaEnDate);
 		
-		VueloComprado vueloComprado = new VueloComprado (usuarioActual.getCodigo(),cantidad,)
+		
+		
+		VueloComprado vueloComprado = new VueloComprado (usuarioActual.getCodigo(),cantidad,fechaActual,TipoServicio.vuelo,
+				-1 ,vuelo,rentingCoche, zonaEnum);
+		
+		//EL PRECIO SE PONE SOLO, CALCULANDO LA SUMA DE LOS SERVICIOS (VUELO + ZONA DE ASIENTO + RENTING)
+		
+		//AHORA PASAMOS A LA VENTANA DE METODO DE PAGO
+		
+		
+		//ACCEDEMOS A LA VENTANA DE METODO DE PAGO
+		BDServicio.log(Level.INFO, "Accediendo a la ventana de METODO DE PAGO, para pagar el vuelo", null);
+		VentanaMetodoPag vent = new VentanaMetodoPag(usuarioActual,vueloComprado,vuelo);
+		vent.setVisible(true);
+		dispose();
 		
 		
 		
