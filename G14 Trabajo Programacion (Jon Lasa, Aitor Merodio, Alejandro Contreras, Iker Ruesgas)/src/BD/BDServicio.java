@@ -269,7 +269,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			String sent="";
 			try {
 				if (semanal==true) {
-					for (int i=1; i<8; i++ ) {	
+					for (int i=0; i<8; i++ ) {	
 						Statement st = conn.createStatement();
 						Date fechanueva= sumarDias(fecha,i);
 						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
@@ -284,12 +284,12 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 					for (int i=0; i<32; i++ ) {
 						Statement st = conn.createStatement();
 						Date fechanueva= sumarDias(fecha,i);
-						String fechatoString = SDF_FECHA_FOTO.format(fecha);
-						sent="INSERT INTO VUELO(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,COMPANYA_vuelo,PLAZAS_RESTANTES) VALUES ("+fechatoString+","+horaSalida+","+duracion+","+origen+","+destino+","+precio+","+companya+","+plazas+")";
+						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
+						sent="INSERT INTO VUELO(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,COMPANYA_vuelo,PLAZAS_RESTANTES) VALUES ('"+fechatoString+"','"+horaSalida+"',"+duracion+",'"+origen+"','"+destino+"',"+precio+",'"+companya+"',"+plazas+")";
 						
 						st.executeUpdate(sent);
 					}
-					log(Level.INFO, "VUELOS SEMANALES INSERTADOS EN LA BASE DE DATOS", null);
+					log(Level.INFO, "VUELOS MENSUALES INSERTADOS EN LA BASE DE DATOS", null);
 				}
 				
 		} catch(SQLException sql) {
@@ -430,60 +430,6 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		
 	}
 	
-	
-	public static boolean  crearBu(Bus bus) throws SQLException {
-		Connection con = abrirBaseDatos("basesDeDatos\\serviciosCompanya.db");
-		String sql = "insert into bus (FECHA,DURACION,HORA_SALIDA,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES(?,?,?,?,?,?,?,?)";
-		try {
-			pst=con.prepareStatement(sql);
-			pst.setString(1, bus.getFecha());
-			pst.setString(2, bus.getHoraSalida());
-			pst.setInt(3, bus.getDuracion());
-			pst.setString(4, bus.getOrigen());
-			pst.setString(5, bus.getDestino());
-			pst.setDouble(6, bus.getPrecio());
-			pst.setInt(7, bus.getPlazasRestantes());
-			pst.setString(8, bus.getCompanya());	
-			return true;
-		}catch (Exception e) {
-			// TODO: handle exception
-			return false;
-		}
-			
-	}
-	
-	
-	public static boolean  crearVuel(Vuelo vuelo) throws SQLException {
-		Connection con = abrirBaseDatos("basesDeDatos\\serviciosCompanya.db");
-		String sql = "insert into vuelo VALUES()";
-		try {
-			pst=con.prepareStatement(sql);
-			pst.setString(1, vuelo.getFecha());
-			pst.setString(2, vuelo.getHoraSalida());
-			pst.setInt(3, vuelo.getDuracion());
-			pst.setString(4, vuelo.getOrigen());
-			pst.setString(5, vuelo.getDestino());
-			pst.setDouble(6, vuelo.getPrecio());
-			pst.setInt(7, vuelo.getPlazasRestantes());
-			pst.setString(8, vuelo.getCompanya());	
-			return true;
-		}catch (Exception e) {
-			// TODO: handle exception
-			return false;
-		}
-			
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
 	
 	public void setLogger(Logger logger) {
 		this.logger = logger;

@@ -32,12 +32,12 @@ public class Main {
 //		VentanaInicio y = new VentanaInicio();
 //		y.setVisible(true);
 		
-//		VentanaCrearVuelo z = new VentanaCrearVuelo(a);
-//		z.setVisible(true);
+		VentanaCrearVuelo z = new VentanaCrearVuelo(a);
+		z.setVisible(true);
 		
-		VentanaVuelo x = new VentanaVuelo(u);
+//		VentanaVuelo x = new VentanaVuelo(u);	
+//		x.setVisible(true);
 		
-		x.setVisible(true);
 	}
 	
 }

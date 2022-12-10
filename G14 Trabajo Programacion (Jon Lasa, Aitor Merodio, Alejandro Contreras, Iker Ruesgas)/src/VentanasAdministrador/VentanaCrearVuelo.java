@@ -8,6 +8,7 @@ import java.awt.Label;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import javax.swing.DefaultListCellRenderer;
@@ -280,7 +281,7 @@ public class VentanaCrearVuelo extends JFrame {
 		});
 		
 		btnCrear.addActionListener(e->{
-			if (comboBoxDestino.getSelectedIndex()==-1 || comboBoxOrigen.getSelectedIndex()==-1 || textFieldCompanya.getText()=="" || tfDuracion.getText()=="" || tfHoraSalida.getText()=="" || tfPrecio.getText()=="") {
+			if (comboBoxDestino.getSelectedIndex()==-1 || comboBoxOrigen.getSelectedIndex()==-1 || textFieldCompanya.getText().toString()=="" || tfDuracion.getText().toString()=="" || tfHoraSalida.getText().toString()=="" || tfPrecio.getText().toString()=="") {
 				JOptionPane.showMessageDialog(null,"Por favor rellene todos los campos");
 			}else if (comboBoxDestino.getSelectedItem()==comboBoxOrigen.getSelectedItem()) {
 				JOptionPane.showMessageDialog(null,"Origen y destino incorrecto");
@@ -288,7 +289,7 @@ public class VentanaCrearVuelo extends JFrame {
 				String destino = comboBoxDestino.getSelectedItem().toString();
 				String origen = comboBoxOrigen.getSelectedItem().toString();
 				int plazas=100; //Default value
-				if (comboBoxPlazas.getSelectedItem()=="200 Estandar") {
+				if (comboBoxPlazas.getSelectedItem().toString()=="200 (Estandar)") {
 					plazas=200;
 				}else {
 					plazas=500;
@@ -299,20 +300,25 @@ public class VentanaCrearVuelo extends JFrame {
 				Date fecha =calendarFecha.getDate();
 				String horaSalida= tfHoraSalida.getText();
 				//Por defecto el button semanal estara activado
-				boolean semanal=true;
+				boolean semanal=false;
 				boolean mensual=false;
-				if (rbSemanal.isSelected()==true && rdbtnMensual.isSelected()==true) {
-					JOptionPane.showMessageDialog(null,"No es posible seleccionar dos periodos a la vez");
-					rdbtnMensual.setSelected(false);
-				} else if (rbSemanal.isSelected()==false && rdbtnMensual.isSelected()==false) {
-					JOptionPane.showMessageDialog(null,"Por favor seleccione un periodo");
-					rbSemanal.setSelected(true);
-				} else if (rbSemanal.isSelected()==false && rdbtnMensual.isSelected()==true) {
-					semanal=false;
-					mensual=true;
-				} else {
-					semanal=true;
-					mensual=false;
+					
+				// IMPLEMENTAR HILO
+				
+				while(semanal==false && mensual==false) {
+					if (rbSemanal.isSelected()==false && rdbtnMensual.isSelected()==true) {
+						semanal=false;
+						mensual=true;
+//					} else if (rbSemanal.isSelected()==false && rdbtnMensual.isSelected()==false) {
+//						JOptionPane.showMessageDialog(null,"Por favor seleccione un periodo");
+//					} else if (rbSemanal.isSelected()==true && rdbtnMensual.isSelected()==true) {
+//						JOptionPane.showMessageDialog(null,"No es posible seleccionar dos periodos a la vez");
+					} else {
+						semanal=true;
+						mensual=false;
+					}
+
+
 				}
 					BDServicio.crearVuelos(fecha,horaSalida,duracion,origen, destino, precio,plazas,companya,semanal,mensual);
 			
