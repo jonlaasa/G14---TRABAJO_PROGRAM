@@ -9,10 +9,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import BD.BDServicio;
 import Datos.Compra;
 import Datos.Servicio;
 import Datos.Usuario;
 import VentanasCompra.VentanaBus;
+import VentanasCompra.VentanaConfirmacionCompra;
 import logicaDeNegocio.Utils;
 
 import java.awt.event.ActionListener;
@@ -34,12 +36,12 @@ public class VentanaMetodoPag extends JFrame {
 	
 	public VentanaMetodoPag (Usuario usuarioActual, Compra compra,Servicio serv) {
 		
-		inicializar(usuarioActual,compra );
+		inicializar(usuarioActual,compra,serv );
 		
 	}
 
 	
-	private void  inicializar(Usuario usuarioActual, Compra compra) {
+	private void  inicializar(Usuario usuarioActual, Compra compra,Servicio serv) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
@@ -175,7 +177,18 @@ public class VentanaMetodoPag extends JFrame {
 				Utils.comprobarNumerosConLongitud(feC, 4);
 				Utils.comprobarNumerosConLongitud(numT, 16);	
 				
-				//SI SE CUMPLEN??? VENTANA DE CONFIRMACION DE COMPRA CON LOS DATOS DE LA COMPRA
+				//SI SE CUMPLEN??? //PRIMERO ESCRIBIMOS LA COMPRA EN LA BASE DE DATOS
+				
+				BDServicio.escribirCompra(compra);
+				
+				//DESPUES PASAMOS A LA VENTANA DE CONFIRMACION DE LA COMPRA
+				
+				VentanaConfirmacionCompra vent = new VentanaConfirmacionCompra(usuarioActual, compra, serv);
+				vent.setVisible(true);
+				dispose();
+				
+				
+				
 				
 				
 				
@@ -184,6 +197,7 @@ public class VentanaMetodoPag extends JFrame {
 			}catch (Exception e1) {
 				e1.printStackTrace();
 			}
+			
 			
 		});
 		

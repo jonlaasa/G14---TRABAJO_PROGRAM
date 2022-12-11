@@ -35,15 +35,16 @@ public class Main {
 //		y.setVisible(true);
 		
 //		VentanaCrearVuelo z = new VentanaCrearVuelo(a);
+		
 //		z.setVisible(true);
 		
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
 		
-//		VentanaVuelo x = new VentanaVuelo(u);	
-//		x.setVisible(true);
+		VentanaVuelo x = new VentanaVuelo(u);	
+		x.setVisible(true);
 		
-		BDServicio.crearViajesCombinados();
+//		BDServicio.crearViajesCombinados();
 		
 	}
 	

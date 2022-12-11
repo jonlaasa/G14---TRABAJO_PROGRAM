@@ -157,7 +157,8 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	public static boolean comprobarNumerosConLongitud(String a, int longitud) throws Exception {
 	
 		try {
-			Integer.parseInt(a);
+			Double.parseDouble(a);
+			
 			if(a.length()!=longitud) {
 				throw new Exception("Revisa valores numericos: Introducido "+a+" y tiene que introducir solamente"+longitud+"digitos");
 			}else {

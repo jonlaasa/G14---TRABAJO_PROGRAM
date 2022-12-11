@@ -10,6 +10,7 @@ import Datos.BusComprado;
 import Datos.Compra;
 import Datos.Servicio;
 import Datos.Usuario;
+import Datos.VueloComprado;
 import VentanasMenu.VentanaMenu;
 
 import javax.swing.JLabel;
@@ -60,6 +61,11 @@ public class VentanaConfirmacionCompra extends JFrame {
 		if (compra instanceof BusComprado) {
 			BusComprado busC = (BusComprado) compra;
 			precio= busC.getPrecio()+"";
+		}else {
+			if(compra instanceof VueloComprado) {
+				VueloComprado vueloC = (VueloComprado) compra;
+				precio = vueloC.getPrecio()+"";
+			}
 		}
 		
 		
@@ -70,7 +76,7 @@ public class VentanaConfirmacionCompra extends JFrame {
 		contentPane.add(mUsu);
 		
 		JButton bMenu = new JButton("VOLVER AL MENU");
-		bMenu.setBounds(512, 337, 132, 33);
+		bMenu.setBounds(476, 337, 165, 33);
 		contentPane.add(bMenu);
 		
 		JLabel mServ = new JLabel("SERVICIO COMPRADO: "+nServicio);

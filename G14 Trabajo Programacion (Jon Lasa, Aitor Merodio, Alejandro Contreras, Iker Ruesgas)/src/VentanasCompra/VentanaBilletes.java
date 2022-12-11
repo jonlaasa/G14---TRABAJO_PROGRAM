@@ -121,6 +121,8 @@ public class VentanaBilletes extends JFrame {
 		
 		//CONTINUAMOS
 		
+		
+		
 		continuar.addActionListener(e -> {
 			//OBTENEMOS LA CANTIDAD
 			int cantidad = Integer.parseInt(lcantidad.getText());

@@ -22,7 +22,9 @@ import Datos.Compra;
 import Datos.Servicio;
 import Datos.Usuario;
 import Datos.Vuelo;
+import Datos.VueloComprado;
 import Enum.TipoServicio;
+import VentanasCompra.VentanaConfirmacionCompra;
 
 public class BDServicio {
 
@@ -487,28 +489,54 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			return listaConBus;
 		}
 		
-	public void escribirCompra(Usuario usuarioActual, Compra compra, Date fechaActual) {
+	public static void escribirCompra(Compra compra) {
+		
+		
 		
 		//SI LA COMPRA ES UN BUS, ACTUAREMOS DIFERENTE A SI ES UN VUELO O VIAJECOMBINADO
 		String sent ="";
+		//DATOS EN COMUN PARA TODOS
+		int codUsu = compra.getCodigoUsuario();
+		int cantidad = compra.getCantidad();
+		String fecha = compra.getFechaCompra();
 		
 		if ( compra instanceof  BusComprado) {
 			//Obtenemos el codigo del usuario, compra y fecha
-			int codUsu = usuarioActual.getCodigo();
-			int codServicio = compra.getCodigoCompra();
-			sent = "insert into Compra (COD_USU,COD_SERVICIO_COMPRADO,FECHA_COMPRA) VALUES ("+codUsu+","+codServicio+", '"+fechaActual
-					+"')";
+			BusComprado busC = (BusComprado) compra;
+			int codBus = busC.getBus().getCodigo();
+			double precio = busC.getPrecio();
+			sent = "insert into busComprado (COD_USU,COD_BUS_COMPRADO,FECHA_COMPRA,CANTIDAD,PRECIO) VALUES ("+codUsu+","+codBus+", '"+fecha
+					+"'"+ ","+cantidad+","+precio+")";
 		
 				}else {
+					if(compra instanceof VueloComprado) {
+						VueloComprado vuelo = (VueloComprado) compra;
+						
+						int codVuelo = vuelo.getVuelo().getCodigo();
+						double precio = vuelo.getPrecio();
+						
+						
+						//AQUI INSTERTAMOS EL RENTING DEL COCHE, PARA OBTENEMOS LA ULTIMA  UNA CLAVE Y LA AÑADIMOS EN UN CAMPO,
+						//ADEMAS, EN LA BD DE RENTING COCHE LO AÑADIMOS!!!
+						
+						String zonaVuelo = vuelo.getZonaAsientoVuelo().toString();
+						
+						//creamos sentencia:
+						sent = "insert into vueloComprado (COD_USU,COD_VUELO_COMPRADO,FECHA_COMPRA,CANTIDAD,PRECIO,COD_COMPRA_RENTING,ZONA_ASIENTO_VUELO) VALUES ("+codUsu+","+codVuelo+", '"+fecha
+								+"'"+ ","+cantidad+","+precio+","+1+",'"+zonaVuelo+"')";
+						
+						
+					}
 					
-					//AQUI HACEMOS EL DEL VUELO.....
 		try {
+			BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
 			Statement st = conn.createStatement();
 			st.executeUpdate(sent);
 			log(Level.INFO, "INSERTADA LA COMPRA EN LA BASE DE DATOS", null);
 			
+			
 			}catch(SQLException sql) {
-				log(Level.SEVERE, "ERROR EN CONSULTA DE BASE DE DATOS CON FILTRADO DE VUELOS", sql);
+				log(Level.SEVERE, "ERROR AL INSERTAR COMPRA EN BASE DE DATOS", sql);
 			}
 			
 			

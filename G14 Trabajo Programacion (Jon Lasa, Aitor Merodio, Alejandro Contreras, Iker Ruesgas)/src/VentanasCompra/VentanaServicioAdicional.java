@@ -31,6 +31,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 public class VentanaServicioAdicional extends JFrame {
 
@@ -112,6 +113,37 @@ public class VentanaServicioAdicional extends JFrame {
 		atras.setBounds(581, 347, 81, 18);
 		contentPane.add(atras);
 		
+		JLabel mGama = new JLabel("GAMA BAJA");
+		mGama.setBounds(91, 289, 81, 22);
+		contentPane.add(mGama);
+		
+		JLabel mGamaM = new JLabel("GAMA MEDIA");
+		mGamaM.setBounds(307, 289, 81, 22);
+		contentPane.add(mGamaM);
+		
+		JLabel mGamaA = new JLabel("GAMA ALTA");
+		mGamaA.setBounds(497, 289, 81, 22);
+		contentPane.add(mGamaA);
+		
+		JLabel fotoGamaB = new JLabel("");
+		fotoGamaB.setBounds(10, 193, 206, 97);
+		contentPane.add(fotoGamaB);
+		
+		fotoGamaB.setIcon(new ImageIcon("imagenes//coche1.jpg"));
+		
+		JLabel fotoGamaM = new JLabel("");
+		fotoGamaM.setBounds(206, 193, 227, 97);
+		contentPane.add(fotoGamaM);
+		
+		fotoGamaM.setIcon(new ImageIcon("imagenes//coche2.jpg"));
+		
+		JLabel fotoGamaA = new JLabel("");
+		fotoGamaA.setBounds(422, 193, 252, 97);
+		contentPane.add(fotoGamaA);
+		
+		fotoGamaA.setIcon(new ImageIcon("imagenes//coche3.jpg"));
+		
+		
 		
 		
 		//EVENTOS
@@ -124,84 +156,89 @@ public class VentanaServicioAdicional extends JFrame {
 			
 		});
 		
-		//EVENTO DE CONTINUAR
-		//PRIMERO LEEMOS LOS VALORES 
 		
-		//EMPEZAMOS CON LA ZONA DE ASIENTO
-		String zonaAsiento = comboAsiento.getSelectedItem().toString();
-		ZonaAsientoVuelo zonaEnum = null;
-		
-		if (zonaAsiento.equals("ZONA TRASERA (+0 EU)")) {
+		continuar.addActionListener(e -> {
+			//EVENTO DE CONTINUAR
+			//PRIMERO LEEMOS LOS VALORES 
 			
+			//EMPEZAMOS CON LA ZONA DE ASIENTO
+			String zonaAsiento = comboAsiento.getSelectedItem().toString();
+			ZonaAsientoVuelo zonaEnum = null;
 			
-			zonaEnum=ZonaAsientoVuelo.trasera;
-			
-		}else {
-			if(zonaAsiento.equals("ZONA CENTRAL (+10 EU)")) {
+			if (zonaAsiento.equals("ZONA TRASERA (+0 EU)")) {
 				
-				zonaEnum=ZonaAsientoVuelo.central;
-			}
-			else {
-				zonaEnum=ZonaAsientoVuelo.delantera;
-			}
-		}
-		
-		//DESPUES OBTENEMOS EL COCHE SELECCIONADO (SI ES ASI)
-		
-		//Creamos el array (SOLO TENDRA COMO MUCHO UN OBJETO DE LA CLASE RENTING COCHE)
-		
-		ArrayList<RentingCoche> rentingCoche = new ArrayList<RentingCoche> ();
-		//obtenemos el valor del combo de opcion y el numero de dias
-		
-		String opcionCoche = comboOpcion.getSelectedItem().toString();
-		int numDias = Integer.parseInt(comboDias.getSelectedItem().toString());
-	
-		if(opcionCoche.equals("GAMA BAJA")) {
-			
-			//CREAMOS COCHE DE ESTA GAMA Y LO INSERTAMOS A LA LISTA
-			RentingCoche renting = new RentingCoche (numDias,ClaseCoche.gamaBaja);
-			rentingCoche.add(renting);
-			
-			
-		}else {
-			if(opcionCoche.equals("GAMA MEDIA")) {
 				
-				//CREAMOS COCHE DE ESTA GAMA Y LO INSERTAMOS A LA LISTA
-				RentingCoche renting = new RentingCoche (numDias,ClaseCoche.gamaMedia);
-				rentingCoche.add(renting);
+				zonaEnum=ZonaAsientoVuelo.trasera;
+				
 			}else {
-				if(opcionCoche.equals("GAMA ALTA")) {
+				if(zonaAsiento.equals("ZONA CENTRAL (+10 EU)")) {
 					
-					//CREAMOS COCHE DE ESTA GAMA Y LO INSERTAMOS A LA LISTA
-					RentingCoche renting = new RentingCoche (numDias,ClaseCoche.gamaAlta);
-					rentingCoche.add(renting);
-					
+					zonaEnum=ZonaAsientoVuelo.central;
+				}
+				else {
+					zonaEnum=ZonaAsientoVuelo.delantera;
 				}
 			}
-		}
+			
+			//DESPUES OBTENEMOS EL COCHE SELECCIONADO (SI ES ASI)
+			
+			//Creamos el array (SOLO TENDRA COMO MUCHO UN OBJETO DE LA CLASE RENTING COCHE)
+			
+			ArrayList<RentingCoche> rentingCoche = new ArrayList<RentingCoche> ();
+			//obtenemos el valor del combo de opcion y el numero de dias
+			
+			String opcionCoche = comboOpcion.getSelectedItem().toString();
+			int numDias = Integer.parseInt(comboDias.getSelectedItem().toString());
 		
+			if(opcionCoche.equals("GAMA BAJA")) {
+				
+				//CREAMOS COCHE DE ESTA GAMA Y LO INSERTAMOS A LA LISTA
+				RentingCoche renting = new RentingCoche (numDias,ClaseCoche.gamaBaja);
+				rentingCoche.add(renting);
+				
+				
+			}else {
+				if(opcionCoche.equals("GAMA MEDIA")) {
+					
+					//CREAMOS COCHE DE ESTA GAMA Y LO INSERTAMOS A LA LISTA
+					RentingCoche renting = new RentingCoche (numDias,ClaseCoche.gamaMedia);
+					rentingCoche.add(renting);
+				}else {
+					if(opcionCoche.equals("GAMA ALTA")) {
+						
+						//CREAMOS COCHE DE ESTA GAMA Y LO INSERTAMOS A LA LISTA
+						RentingCoche renting = new RentingCoche (numDias,ClaseCoche.gamaAlta);
+						rentingCoche.add(renting);
+						
+					}
+				}
+			}
+			
+			
+			//UNA VEZ TENEMOS EL PRECIO A ANYADIR Y LA LISTA CON EL COCHE ( EN CASO DE HABER), PODEMOS CREAR EL VUELO COMPRADO
+			
+			//LA FECHA DE LA COMPRA SERA LA ACTUAL
+			Date fechaEnDate = new Date(System.currentTimeMillis());
+			String fechaActual = SDF_FECHA_FOTO.format(fechaEnDate);
+			
+			
+			
+			VueloComprado vueloComprado = new VueloComprado (usuarioActual.getCodigo(),cantidad,fechaActual,TipoServicio.vuelo,
+					-1 ,vuelo,rentingCoche, zonaEnum);
+			
+			//EL PRECIO SE PONE SOLO, CALCULANDO LA SUMA DE LOS SERVICIOS (VUELO + ZONA DE ASIENTO + RENTING)
+			
+			//AHORA PASAMOS A LA VENTANA DE METODO DE PAGO
+			
+			
+			//ACCEDEMOS A LA VENTANA DE METODO DE PAGO
+			BDServicio.log(Level.INFO, "Accediendo a la ventana de METODO DE PAGO, para pagar el vuelo", null);
+			VentanaMetodoPag vent = new VentanaMetodoPag(usuarioActual,vueloComprado,vuelo);
+			vent.setVisible(true);
+			dispose();	
+			
+		});
 		
-		//UNA VEZ TENEMOS EL PRECIO A ANYADIR Y LA LISTA CON EL COCHE ( EN CASO DE HABER), PODEMOS CREAR EL VUELO COMPRADO
-		
-		//LA FECHA DE LA COMPRA SERA LA ACTUAL
-		Date fechaEnDate = new Date(System.currentTimeMillis());
-		String fechaActual = SDF_FECHA_FOTO.format(fechaEnDate);
-		
-		
-		
-		VueloComprado vueloComprado = new VueloComprado (usuarioActual.getCodigo(),cantidad,fechaActual,TipoServicio.vuelo,
-				-1 ,vuelo,rentingCoche, zonaEnum);
-		
-		//EL PRECIO SE PONE SOLO, CALCULANDO LA SUMA DE LOS SERVICIOS (VUELO + ZONA DE ASIENTO + RENTING)
-		
-		//AHORA PASAMOS A LA VENTANA DE METODO DE PAGO
-		
-		
-		//ACCEDEMOS A LA VENTANA DE METODO DE PAGO
-		BDServicio.log(Level.INFO, "Accediendo a la ventana de METODO DE PAGO, para pagar el vuelo", null);
-		VentanaMetodoPag vent = new VentanaMetodoPag(usuarioActual,vueloComprado,vuelo);
-		vent.setVisible(true);
-		dispose();
 		
 		
 		
