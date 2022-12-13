@@ -41,7 +41,7 @@ public class Main {
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
 		
-		VentanaVuelo x = new VentanaVuelo(u);	
+		VentanaInicio x = new VentanaInicio();	
 		x.setVisible(true);
 		
 //		BDServicio.crearViajesCombinados();

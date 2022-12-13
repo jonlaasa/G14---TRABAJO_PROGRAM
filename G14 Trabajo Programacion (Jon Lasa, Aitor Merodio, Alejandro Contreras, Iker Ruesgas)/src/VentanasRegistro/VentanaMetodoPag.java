@@ -135,7 +135,7 @@ public class VentanaMetodoPag extends JFrame {
 		
 		JButton confirmar = new JButton("PAGAR Y FINALIZAR");
 		confirmar.setForeground(new Color(255, 128, 64));
-		confirmar.setBounds(533, 309, 141, 52);
+		confirmar.setBounds(496, 315, 164, 52);
 		contentPane.add(confirmar);
 		
 		JButton atras = new JButton("Atras");
@@ -172,10 +172,10 @@ public class VentanaMetodoPag extends JFrame {
 				Utils.comprobarString(nombreTitular);
 				Utils.comprobarString(direc);
 				Utils.comprobarString(ciu);
-				Utils.comprobarNumerosConLongitud(cd, 5);
-				Utils.comprobarNumerosConLongitud(codS, 3);
-				Utils.comprobarNumerosConLongitud(feC, 4);
-				Utils.comprobarNumerosConLongitud(numT, 16);	
+				Utils.comprobarNumerosConLongitud(cd, 5,"Codigo Postal");
+				Utils.comprobarNumerosConLongitud(codS, 3,"Codigo de Seguridad");
+				Utils.comprobarNumerosConLongitud(feC, 4,"Fecha de Caducidad");
+				Utils.comprobarNumerosConLongitud(numT, 16,"Numero de Tarjeta");	
 				
 				//SI SE CUMPLEN??? //PRIMERO ESCRIBIMOS LA COMPRA EN LA BASE DE DATOS
 				

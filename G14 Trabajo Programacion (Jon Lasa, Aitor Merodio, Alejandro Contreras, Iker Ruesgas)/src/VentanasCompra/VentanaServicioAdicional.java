@@ -221,8 +221,6 @@ public class VentanaServicioAdicional extends JFrame {
 			Date fechaEnDate = new Date(System.currentTimeMillis());
 			String fechaActual = SDF_FECHA_FOTO.format(fechaEnDate);
 			
-			
-			
 			VueloComprado vueloComprado = new VueloComprado (usuarioActual.getCodigo(),cantidad,fechaActual,TipoServicio.vuelo,
 					-1 ,vuelo,rentingCoche, zonaEnum);
 			

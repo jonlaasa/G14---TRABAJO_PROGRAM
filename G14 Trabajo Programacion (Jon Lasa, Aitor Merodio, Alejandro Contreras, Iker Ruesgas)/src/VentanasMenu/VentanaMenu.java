@@ -126,7 +126,7 @@ public class VentanaMenu extends JFrame {
 		ftLogo.setIcon(new ImageIcon("imagenes/icons/avionNN.jpg"));
 		ftLogo.setBounds(458, 76, 139, 179);
 		contentPane.add(ftLogo);
-		
+
 		JLabel lblBienevenida = new JLabel("¡Bienvenido "+usuarioActual.getNombre()+"!");
 		lblBienevenida.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblBienevenida.setForeground(new Color(255, 128, 0));

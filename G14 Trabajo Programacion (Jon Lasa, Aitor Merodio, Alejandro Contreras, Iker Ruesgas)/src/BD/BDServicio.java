@@ -489,6 +489,34 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			return listaConBus;
 		}
 		
+		
+		
+		
+	public static int claveRenting() {
+		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		int clave=0;
+		try {
+			Statement st = conn.createStatement();
+			String sent = "select max(COD_RENTING) from renting";
+			ResultSet rs = st.executeQuery(sent);
+            if(rs.next()) {
+            	clave = rs.getInt(1);
+            }
+			
+		}catch(SQLException e) {
+			
+			e.printStackTrace();
+			log(Level.SEVERE, "ERROR AL INTENTAR OBTENER LA CLAVE CORRESPONDIENTE AL RENTING", e);
+		}
+		
+		return clave;
+		
+		
+	}
+	
+	
+	
+		
 	public static void escribirCompra(Compra compra) {
 		
 		
@@ -521,9 +549,21 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 						
 						String zonaVuelo = vuelo.getZonaAsientoVuelo().toString();
 						
-						//creamos sentencia:
+						//creamos sentencia, PERO PRIMERO OBTENEMOS LA CLAVE QUE LE CORRESPONDE, SI ES QUE HA SELECCIONADO RENTING, SINO
+						//-1 si no quiere renting
+						
+						int claveRenting =-1;
+						if(vuelo.getListaRenting().size()!=0) {
+							
+							//OBTENEMOS LA QUE LE CORRESPONDE
+							int nuevaClave = BDServicio.claveRenting()+1;
+							claveRenting=nuevaClave;
+							
+							//AHORA ANYADIMOS EL RENTING CON METODO DE BD
+							
+						}
 						sent = "insert into vueloComprado (COD_USU,COD_VUELO_COMPRADO,FECHA_COMPRA,CANTIDAD,PRECIO,COD_COMPRA_RENTING,ZONA_ASIENTO_VUELO) VALUES ("+codUsu+","+codVuelo+", '"+fecha
-								+"'"+ ","+cantidad+","+precio+","+1+",'"+zonaVuelo+"')";
+								+"'"+ ","+cantidad+","+precio+","+claveRenting+",'"+zonaVuelo+"')";
 						
 						
 					}

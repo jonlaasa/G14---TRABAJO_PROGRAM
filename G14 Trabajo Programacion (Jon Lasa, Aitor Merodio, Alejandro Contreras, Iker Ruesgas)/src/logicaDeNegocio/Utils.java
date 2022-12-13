@@ -16,7 +16,7 @@ public class Utils {
 			return true;
 		}
 		else {
-			JOptionPane.showMessageDialog(null, "Rellene todos los campos");
+			JOptionPane.showMessageDialog(null, "Rellene todos los campos","ERROR",JOptionPane.ERROR_MESSAGE);
 			throw new StringValidoException(a);
 		}
 	}
@@ -154,18 +154,19 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	}
 	
 	
-	public static boolean comprobarNumerosConLongitud(String a, int longitud) throws Exception {
+	public static boolean comprobarNumerosConLongitud(String a, int longitud, String campo) throws Exception {
 	
 		try {
 			Double.parseDouble(a);
 			
 			if(a.length()!=longitud) {
-				throw new Exception("Revisa valores numericos: Introducido "+a+" y tiene que introducir solamente"+longitud+"digitos");
+				JOptionPane.showMessageDialog(null, "Informacion incorrecta en: "+campo+". Tiene que introducir solamente "+longitud+" digitos","ERROR",JOptionPane.ERROR_MESSAGE);
+				throw new Exception("Revisa valores numericos: Introducido "+a+"en el campo " + campo+" y tiene que introducir solamente"+longitud+"digitos");
 			}else {
 				return true;
 			}
 		}catch(Exception e ) {
-			throw new Exception ("Revisa valores numericos: Introducido "+a+" y tiene que introducir solamente"+longitud+"digitos");
+			throw new Exception("Revisa valores numericos: Introducido "+a+"en el campo " + campo+" y tiene que introducir solamente"+longitud+"digitos");
 		}
 		
 		
