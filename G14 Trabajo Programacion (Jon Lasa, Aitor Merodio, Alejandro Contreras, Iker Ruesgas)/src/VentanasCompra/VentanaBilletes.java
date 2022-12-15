@@ -14,7 +14,7 @@ import Datos.Servicio;
 import Datos.Usuario;
 import Datos.Vuelo;
 import Enum.TipoServicio;
-import VentanasRegistro.VentanaMetodoPag;
+import VentanasRegistro.VentanaMetodoPago;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -138,7 +138,7 @@ public class VentanaBilletes extends JFrame {
 				
 				//ACCEDEMOS A LA VENTANA DE METODO DE PAGO
 				BDServicio.log(Level.INFO, "Accediendo a la ventana de METODO DE PAGO, para pagar el bus", null);
-				VentanaMetodoPag vent = new VentanaMetodoPag(usuarioActual,busComprado,servicio);
+				VentanaMetodoPago vent = new VentanaMetodoPago(usuarioActual,busComprado,servicio);
 				vent.setVisible(true);
 				dispose();
 			}

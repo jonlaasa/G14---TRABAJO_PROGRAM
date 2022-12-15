@@ -268,4 +268,69 @@ public class BDRegistro {
 		}
 		return lista;
 	}
+		
+		
+		public static int obtenerPuntos(int codigoUsuario) {
+			
+			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+			int puntos=0;
+			log(Level.INFO, "OBTENENIENDO LOS PUNTOS DEL USUARIO", null);
+			try {
+				Statement st = con.createStatement();
+				String sent = "select puntosDeusto from Usuario where id =" + codigoUsuario	;
+				ResultSet rs = st.executeQuery(sent);
+				if(rs.next()) {
+					
+					puntos= rs.getInt(0);
+				}
+				log(Level.INFO, "PUNTOS DEL USUARIO OBTENIDOS", null);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				
+				log(Level.SEVERE, "ERROR AL INTENTAR OBTENER LOS PUNTOS DEL USUARIO", e);
+				e.printStackTrace();
+			}
+			BDRegistro.cerrarConexion();
+
+			
+			return puntos;
+		
+			
+			
+			
+		}
+		
+		
+		public static void actualizarPuntos (int codUsuario, int puntos) {
+			
+			Connection con = abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+			
+			//OBTENEMOS CUANTOS PUNTOS TENIA ANTES
+			
+			int puntosAnteriores = BDRegistro.obtenerPuntos(codUsuario);
+			
+			try {
+				Statement st = con.createStatement();
+				String sent = "update usuario set puntos= "+ puntos+ " where id ="+codUsuario;
+				st.executeUpdate(sent);
+				log(Level.INFO, "ACTUALIZADOS LOS PUNTOS DEL USUARIO", null);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				
+				log(Level.SEVERE, "ERROR AL INTENTAR ACTUALIZAR LOS PUNTOS DEL USUARIO", e);
+				e.printStackTrace();
+			}
+			
+			BDRegistro.cerrarConexion();
+			
+			
+		}
+		
+		
+	
+		
+		
+		
+		
+		
 }

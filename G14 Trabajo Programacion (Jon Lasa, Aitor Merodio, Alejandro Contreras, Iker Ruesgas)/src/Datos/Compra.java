@@ -14,6 +14,7 @@ public class Compra {
 	private int codigoCompra;
 	
 	
+	
 	//Constructor con parametros
 	
 	public Compra(int codigoUsuario, int cantidad, String fechaCompra,TipoServicio tipoServicio, int codigoCompra) {

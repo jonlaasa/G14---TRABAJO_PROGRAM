@@ -18,7 +18,7 @@ import Enum.ClaseCoche;
 import Enum.TipoServicio;
 import Enum.ZonaAsientoVuelo;
 import VentanasMenu.VentanaMenu;
-import VentanasRegistro.VentanaMetodoPag;
+import VentanasRegistro.VentanaMetodoPago;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -231,7 +231,7 @@ public class VentanaServicioAdicional extends JFrame {
 			
 			//ACCEDEMOS A LA VENTANA DE METODO DE PAGO
 			BDServicio.log(Level.INFO, "Accediendo a la ventana de METODO DE PAGO, para pagar el vuelo", null);
-			VentanaMetodoPag vent = new VentanaMetodoPag(usuarioActual,vueloComprado,vuelo);
+			VentanaMetodoPago vent = new VentanaMetodoPago(usuarioActual,vueloComprado,vuelo);
 			vent.setVisible(true);
 			dispose();	
 			

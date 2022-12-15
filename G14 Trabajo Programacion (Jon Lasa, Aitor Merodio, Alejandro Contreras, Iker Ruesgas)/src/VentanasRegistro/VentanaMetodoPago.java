@@ -5,22 +5,28 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import BD.BDRegistro;
 import BD.BDServicio;
+import Datos.BusComprado;
 import Datos.Compra;
 import Datos.Servicio;
 import Datos.Usuario;
+import Datos.ViajeCombinadoComprado;
+import Datos.VueloComprado;
 import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaConfirmacionCompra;
 import logicaDeNegocio.Utils;
 
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
 import java.awt.event.ActionEvent;
 
-public class VentanaMetodoPag extends JFrame {
+public class VentanaMetodoPago extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField titularTarjeta;
@@ -34,7 +40,7 @@ public class VentanaMetodoPag extends JFrame {
 	
 	
 	
-	public VentanaMetodoPag (Usuario usuarioActual, Compra compra,Servicio serv) {
+	public VentanaMetodoPago (Usuario usuarioActual, Compra compra,Servicio serv) {
 		
 		inicializar(usuarioActual,compra,serv );
 		
@@ -133,16 +139,24 @@ public class VentanaMetodoPag extends JFrame {
 		codigoSeguridad.setBounds(254, 331, 64, 20);
 		contentPane.add(codigoSeguridad);
 		
-		JButton confirmar = new JButton("PAGAR Y FINALIZAR");
-		confirmar.setForeground(new Color(255, 128, 64));
-		confirmar.setBounds(496, 315, 164, 52);
-		contentPane.add(confirmar);
+		JButton pagarConMetodo = new JButton("PAGAR CON TARJETA");
+		pagarConMetodo.setForeground(new Color(255, 128, 64));
+		pagarConMetodo.setBounds(522, 322, 152, 46);
+		contentPane.add(pagarConMetodo);
 		
 		JButton atras = new JButton("Atras");
-		atras.setBounds(398, 330, 86, 23);
+		atras.setBounds(66, 377, 86, 23);
 		contentPane.add(atras);
 		
+		JButton pagarConPuntos = new JButton("PAGAR CON PUNTOS");
+		pagarConPuntos.setForeground(new Color(255, 128, 64));
+		pagarConPuntos.setBounds(372, 323, 140, 45);
+		contentPane.add(pagarConPuntos);
+		
 		//EVENTOS
+		
+		// EL PRECIO DE LA COMPRA (LO NECESITAREMOS EN VARIAS OCASIONES
+
 		
 		atras.addActionListener(e-> {
 			
@@ -154,7 +168,7 @@ public class VentanaMetodoPag extends JFrame {
 		
 		
 		//EVENTO DE CONFIRMAR
-		confirmar.addActionListener(e-> {
+		pagarConMetodo.addActionListener(e-> {
 			
 		//LEEMOS TODOS LOS VALORES Y LOS COMPROBAMOS SI SON CORRECTOS (CUMPLEN UNAS CARACTERISTICAS)
 			
@@ -181,6 +195,32 @@ public class VentanaMetodoPag extends JFrame {
 				
 				BDServicio.escribirCompra(compra);
 				
+				//AHORA ACTUALIZAMOS LOS PUNTOS
+				 double  precioCompra =0;
+					
+					if(compra instanceof VueloComprado) {
+						 precioCompra = ((VueloComprado) compra).getPrecio();
+					}else {
+						if(compra instanceof BusComprado) {
+						 precioCompra = ((BusComprado) compra).getPrecio();
+					}else {
+						 //VIAJE COMBINADO
+					}
+					}
+				
+				//CONSEGUIMOS CUANTOS DEBERIA CONSEGUIR
+
+				
+				
+				int puntosObtenidos = (int) Math.floor(precioCompra/10);
+				int puntosAnteriores = BDRegistro.obtenerPuntos(usuarioActual.getCodigo());
+				int puntosAnyadir = puntosAnteriores+puntosObtenidos;
+				
+				//ACTUALIZAMOS
+				
+				BDRegistro.actualizarPuntos(usuarioActual.getCodigo(), puntosAnyadir);
+				
+				
 				//DESPUES PASAMOS A LA VENTANA DE CONFIRMACION DE LA COMPRA
 				
 				VentanaConfirmacionCompra vent = new VentanaConfirmacionCompra(usuarioActual, compra, serv);
@@ -203,7 +243,66 @@ public class VentanaMetodoPag extends JFrame {
 		
 		
 		
-
-//
+		//EVENTO DE PAGAR CON PUNTOS
+		
+	pagarConPuntos.addActionListener(e -> {
+		
+		
+		//UNA VEZ TENEMOS EL PRECIO, OBTENEMOS LOS PUNTOS QUE TIENE Y EL DIENRO QUE ELLO IMPLICA 
+		
+		 double  precioCompra =0;
+			
+			if(compra instanceof VueloComprado) {
+				 precioCompra = ((VueloComprado) compra).getPrecio();
+			}else {
+				if(compra instanceof BusComprado) {
+				 precioCompra = ((BusComprado) compra).getPrecio();
+			}else {
+				 //VIAJE COMBINADO
+			}
+			}
+			
+			int puntosUsuario = BDRegistro.obtenerPuntos(usuarioActual.getCodigo());
+			double dineroConPuntos = puntosUsuario*10;
+			
+			if(dineroConPuntos >= precioCompra) {
+				
+				//ENTONCES SI ES VALIDO Y AVANZAMOS (ESCRIBIMOS COMPRA EN BASE DE DATOS)
+				BDServicio.log(Level.INFO, "COMPRA PAGADS CON PUNTOS", null);
+	            BDServicio.escribirCompra(compra);
+	            
+	            //AHORA RESTAMOS LOS QUE HAYA UTILIZADO
+	            
+	            double precioRestante = dineroConPuntos - precioCompra;
+	            int puntos = (int)Math.floor(precioRestante);
+	            
+	            //ACTUALIZAMOS PUNTOS EN LA BD
+	            
+	            BDRegistro.actualizarPuntos(usuarioActual.getCodigo(), puntos);
+				//DESPUES PASAMOS A LA VENTANA DE CONFIRMACION DE LA COMPRA
+				
+				VentanaConfirmacionCompra vent = new VentanaConfirmacionCompra(usuarioActual, compra, serv);
+				vent.setVisible(true);
+				dispose();
+				
+				
+			}
+			else {
+				
+				//MENSAJE DE ERROR
+				
+				JOptionPane.showMessageDialog(null, "NO TIENES LOS PUNTOS SUFICIENTES! Tienes:" + dineroConPuntos +" euros en puntos y la compra vale: "+precioCompra ,"ERROR",JOptionPane.ERROR_MESSAGE);
+				
+				
+				
+			}
+		
+		
+		
+			
+	});
+		
+		
+		
 	}
 }

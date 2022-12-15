@@ -177,10 +177,17 @@ public class VentanaRegistro extends JFrame {
 					Utils.comprobarStringUsuario(usr);
 					Utils.comprobarStringContra(contra);
 					Utils.comprobarContrasenyas(contra, contraRepe);
+					Utils.comprobarMail(correo);
 					
 					try {
 						BDRegistro.registrar(new Usuario(nom,ape,usr,contra,correo,dn));
 						log.log(Level.INFO, "USUARIO REGISTRADO EN LA BASE DE DATOS");
+						//VOLVEMOS A LA VENTANA DE INICIO DE SESION
+						
+						VentanaLogin vent = new VentanaLogin();
+						vent.setVisible(true);
+						dispose();
+						
 					} catch (LongitudStringException e2) {
 						log.log(Level.SEVERE, "Longitud de datos de registro no valida:");
 											

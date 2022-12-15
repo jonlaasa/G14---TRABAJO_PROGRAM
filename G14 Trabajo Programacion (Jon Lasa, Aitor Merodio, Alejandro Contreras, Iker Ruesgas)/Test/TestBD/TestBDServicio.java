@@ -3,7 +3,11 @@ package TestBD;
 import static org.junit.Assert.*;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,8 +15,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import BD.BDRegistro;
 import BD.BDServicio;
 import Datos.Bus;
+import Datos.BusComprado;
+import Datos.Vuelo;
+import Enum.TipoServicio;
 
 public class TestBDServicio {
 
@@ -36,6 +44,13 @@ public class TestBDServicio {
 		
 	}
 
+	//IMPORTANTE!!!!!!!!!
+	
+	///////ESTOS TEST PUEDEN FALLAR YA QUE AL ANYADIR NUEVOS,NO TIENE PORQUE DAR TRUE
+	
+	//SOLO HABRIA QUE PONER EL INDICADO Y COMPROBAR QUE FUNCIONA!!!!!!
+	
+	
 	@Test
 	public void testMostrarBusesTotal() {
 		
@@ -55,14 +70,14 @@ public class TestBDServicio {
 		assertEquals(origenp, "Sevilla");
 		assertEquals(destinop, "Lugo");
 		
-		//EL ULTIMO TIENE DE ORIGEN MURCIA Y DE DESTINO SEVILLA
+		//EL ULTIMO TIENE DE ORIGEN BARCELONA Y DE DESTINO SEVILLA
 		String origenu = listaBus.get(listaBus.size()-1).getOrigen();
 		String destinou = listaBus.get(listaBus.size()-1).getDestino();
 		
 		//COMPROBAMOS
 		
-		assertEquals(origenu, "Murcia");
-		assertEquals(destinou, "Sevilla");
+		assertEquals(origenu, "Barcelona");
+		assertEquals(destinou, "Bilbao");
 		
 	}
 	
@@ -80,7 +95,6 @@ public class TestBDServicio {
 		//DESPUES, SABEMOS QUE EL PRIMERO ES SEVILLA
 		
 		String origenPrimero = listaOrigenesBus.get(0);
-		
 		assertEquals("Sevilla", origenPrimero);
 		
 		//EL ULTIMO ES CASTELLON (sin repetir)
@@ -107,11 +121,11 @@ public class TestBDServicio {
 //		
 		assertEquals("Madrid", origenPrimero);
 //		
-//		//EL ULTIMO ES CASTELON (sin repetir)
+//		//EL ULTIMO ES LISBOA (sin repetir)
 //		
 		String origenUltimo = listaOrigenesVuelo.get(listaOrigenesVuelo.size()-1);
 //		
-		assertEquals("Castellon", origenUltimo);
+		assertEquals("Lisboa", origenUltimo);
 	}
 	
 	
@@ -154,12 +168,89 @@ public class TestBDServicio {
 		
 		assertEquals("Valencia", destinoPrimero);
 		
-		//EL ULTIMO ES Sevilla (sin repetir)
+		//EL ULTIMO ES Lugo (sin repetir)
 		
          String destinoUltimo = listaDestinosVuelo.get(listaDestinosVuelo.size()-1);
 		
-		assertEquals("Sevilla", destinoUltimo);
+		assertEquals("Lugo", destinoUltimo);
 	}
+	
+	
+	@Test
+	public void testMostrarVuelosTotal() {
+		
+		//LLAMAMOS AL METODO
+		ArrayList<Vuelo> listaVuelo = BDServicio.mostrarVuelosTotal();
+		
+		//primero comprobamos que no es vacia
+		
+		assertNotNull(listaVuelo);
+		
+		//DESPUES COMPROBAMOS LA BASE DE DATOS Y VEMOS QUE EL PRIMERO A MOSTRAR TIENE ORIGEN MADRID Y DESTINO VALENCIA
+		String origenp = listaVuelo.get(0).getOrigen();
+		String destinop = listaVuelo.get(0).getDestino();
+		
+		//COMPROBAMOS
+		
+		assertEquals(origenp, "Madrid");
+		assertEquals(destinop, "Valencia");
+		
+		//EL ULTIMO TIENE DE ORIGEN BILBAO Y DE DESTINO LUGO
+		String origenu = listaVuelo.get(listaVuelo.size()-1).getOrigen();
+		String destinou = listaVuelo.get(listaVuelo.size()-1).getDestino();
+		
+		//COMPROBAMOS
+		
+		assertEquals(origenu, "Bilbao");
+		assertEquals(destinou, "Lugo");
+		
+	}
+	
+	@Test
+	public void testCompraServicio() {
+		
+		//PRIMERO CREAMOS LA COMPRA;
+		//EJEMPLO, DE BUS
+		
+		//BusComprado bus = new BusComprado (3, 2, "2022-12-04",6,TipoServicio.bus, new Bus("2023-12-03",TipoServicio.bus) );
+		
+		//SI NO FUNCIONA ESTA INSERCION, PROBAMOS CON UNA YA EXISTENTE
+		
+		//INSERTAMOS
+		// BDServicio.compraServicio(bus);
+		 
+		 //AHORA MIRAMOS SI EXISTE (ya creado, con codigo de compra 0 )
+		 
+		 boolean existe = false;
+		 
+		 Connection conn = BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.bd");
+		 try {
+				Statement st = conn.createStatement();
+				
+				//BUSCAMOS
+				
+				String sent = "select * from bus where cod_compra= 0";
+				
+				ResultSet rs = st.executeQuery(sent);
+				if(rs.next()) {
+					existe=true;
+				}
+				
+			
+				//COMPROBAMOS
+			assertTrue(existe);
+				
+				
+				
+		 }catch (SQLException e) {
+			// TODO: handle exception
+		}
+		
+		BDServicio.cerrarConexion();
+		
+	}
+	
+	
 	
 	
 	
