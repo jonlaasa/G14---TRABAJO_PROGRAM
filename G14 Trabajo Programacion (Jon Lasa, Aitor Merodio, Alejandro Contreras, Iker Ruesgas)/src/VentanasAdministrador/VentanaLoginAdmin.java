@@ -31,6 +31,7 @@ public class VentanaLoginAdmin extends JFrame {
 		inicializar();
 	}
 	private void  inicializar() {
+		setLocationRelativeTo(null); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 515, 350);
 		contentPane = new JPanel();

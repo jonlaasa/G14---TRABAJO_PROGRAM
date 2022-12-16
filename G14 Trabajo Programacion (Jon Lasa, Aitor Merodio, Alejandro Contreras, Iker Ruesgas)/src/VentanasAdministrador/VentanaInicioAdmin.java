@@ -1,3 +1,4 @@
+
 package VentanasAdministrador;
 
 import java.awt.EventQueue;
@@ -28,6 +29,7 @@ public class VentanaInicioAdmin extends JFrame {
 
 	
 	public VentanaInicioAdmin(Administrador administradorActual) {
+		setLocationRelativeTo(null); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 400);
 		

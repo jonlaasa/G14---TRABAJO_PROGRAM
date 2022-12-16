@@ -44,6 +44,7 @@ public class Main {
 		VentanaInicio x = new VentanaInicio();	
 		x.setVisible(true);
 		
+		
 //		BDServicio.crearViajesCombinados();
 		
 	}

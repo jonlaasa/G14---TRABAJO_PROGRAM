@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import BD.BDRegistro;
 import Datos.Usuario;
 import VentanasRegistro.VentanaDescripcion;
 
@@ -30,6 +31,7 @@ public class VentanaPerfil extends JFrame {
 
 	public VentanaPerfil(Usuario usrActual) {
 		setResizable(false);
+		setLocationRelativeTo(null); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(700, 350, 500, 350);
 		contentPane = new JPanel();

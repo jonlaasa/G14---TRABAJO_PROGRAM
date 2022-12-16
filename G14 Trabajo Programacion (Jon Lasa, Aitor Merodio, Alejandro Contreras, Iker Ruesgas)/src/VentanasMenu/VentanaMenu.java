@@ -1,3 +1,4 @@
+
 package VentanasMenu;
 
 import java.awt.EventQueue;
@@ -15,6 +16,7 @@ import VentanasRegistro.VentanaInicio;
 import javax.swing.JMenuBar;
 import javax.swing.JPopupMenu;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JMenu;
@@ -28,6 +30,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.Toolkit;
 
 public class VentanaMenu extends JFrame {
 
@@ -37,7 +40,8 @@ public class VentanaMenu extends JFrame {
 
 	public VentanaMenu(Usuario usuarioActual) {
 		
-		
+
+		setLocationRelativeTo(null); 
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
@@ -77,6 +81,8 @@ public class VentanaMenu extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		//FALTAN LOS EVENTOS DE LOS DE ARRIBA (VUELOS...)
 		
 
 		setContentPane(contentPane);

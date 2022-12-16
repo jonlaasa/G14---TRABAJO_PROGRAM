@@ -50,6 +50,7 @@ public class VentanaViajeCombinado extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaViajeCombinado(Usuario usuarioActual) {
+		setLocationRelativeTo(null); 
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 650);

@@ -40,6 +40,7 @@ public class VentanaBilletes extends JFrame {
 	public VentanaBilletes(Usuario usuarioActual, Servicio servicio) {
 
 		setResizable(false);
+		setLocationRelativeTo(null); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

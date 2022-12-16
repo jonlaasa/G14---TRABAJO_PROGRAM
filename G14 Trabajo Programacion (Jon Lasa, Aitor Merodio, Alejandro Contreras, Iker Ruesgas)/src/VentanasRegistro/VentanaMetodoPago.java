@@ -52,6 +52,7 @@ public class VentanaMetodoPago extends JFrame {
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setLocationRelativeTo(null); 
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -268,7 +269,7 @@ public class VentanaMetodoPago extends JFrame {
 			if(dineroConPuntos >= precioCompra) {
 				
 				//ENTONCES SI ES VALIDO Y AVANZAMOS (ESCRIBIMOS COMPRA EN BASE DE DATOS)
-				BDServicio.log(Level.INFO, "COMPRA PAGADS CON PUNTOS", null);
+				BDServicio.log(Level.INFO, "COMPRA PAGADA CON PUNTOS, POR EL USUARIO: "+usuarioActual.getNombreUsuario(), null);
 	            BDServicio.escribirCompra(compra);
 	            
 	            //AHORA RESTAMOS LOS QUE HAYA UTILIZADO
@@ -290,7 +291,7 @@ public class VentanaMetodoPago extends JFrame {
 			else {
 				
 				//MENSAJE DE ERROR
-				
+				BDServicio.log(Level.INFO, "INTENTO DE PAGAR CON PUNTOS, PERO NO TIENE LOS SUFICIENTES EL USUARIO: "+usuarioActual.getNombreUsuario(), null);
 				JOptionPane.showMessageDialog(null, "NO TIENES LOS PUNTOS SUFICIENTES! Tienes:" + dineroConPuntos +" euros en puntos y la compra vale: "+precioCompra ,"ERROR",JOptionPane.ERROR_MESSAGE);
 				
 				

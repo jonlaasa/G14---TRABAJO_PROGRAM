@@ -27,12 +27,19 @@ public class VentanaInicio extends JFrame {
 	}
 
 	private void inicializar() {
+		
+		
+		//CREAMOS LA VENTANA DE FONDO
+		
+		VentanaFondo ventF = new VentanaFondo();
+		ventF.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setForeground(new Color(192, 192, 192));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setLocationRelativeTo(null); 
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

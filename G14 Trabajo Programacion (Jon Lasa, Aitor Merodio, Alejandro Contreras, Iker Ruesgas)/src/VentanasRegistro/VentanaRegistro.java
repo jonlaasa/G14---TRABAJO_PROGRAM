@@ -54,6 +54,8 @@ public class VentanaRegistro extends JFrame {
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		setLocationRelativeTo(null); 
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -181,7 +183,7 @@ public class VentanaRegistro extends JFrame {
 					
 					try {
 						BDRegistro.registrar(new Usuario(nom,ape,usr,contra,correo,dn));
-						log.log(Level.INFO, "USUARIO REGISTRADO EN LA BASE DE DATOS");
+						log.log(Level.INFO, "USUARIO REGISTRADO EN LA BASE DE DATOS, NOMBRE DE USUARIO: "+usuario);
 						//VOLVEMOS A LA VENTANA DE INICIO DE SESION
 						
 						VentanaLogin vent = new VentanaLogin();
