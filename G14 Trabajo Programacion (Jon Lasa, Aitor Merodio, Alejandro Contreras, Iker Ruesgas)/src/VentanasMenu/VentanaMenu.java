@@ -60,7 +60,7 @@ public class VentanaMenu extends JFrame {
 		menuBar.add(mnNewMenu_4);
 		
 		JMenu mnOpcionesPerfil = new JMenu("");
-		mnOpcionesPerfil.setIcon(new ImageIcon("C:\\Users\\alexc\\OneDrive\\Escritorio\\PROG3~1\\Proyecto\\G14---~1\\G14TRA~1\\Imagenes\\icons\\KISSPN~2.JPG"));
+		mnOpcionesPerfil.setIcon(new ImageIcon("Imagenes\\icons\\KISSPN~2.JPG"));
 		menuBar.add(mnOpcionesPerfil);
 		
 		JMenuItem mntmPerfil = new JMenuItem("Perfil");
