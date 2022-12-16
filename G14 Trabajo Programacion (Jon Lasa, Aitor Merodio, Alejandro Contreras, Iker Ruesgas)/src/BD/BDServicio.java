@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TreeSet;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -103,6 +104,9 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		
 	
 	}
+	
+	
+	
 	
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS BUSES PARA MOSTRAR EN LA TABLA
@@ -219,6 +223,75 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			return listaDestinos;
 			
 		}
+		
+		
+		public static TreeSet<String> mostrarOrigenesCombinados () {
+			
+			TreeSet<String> listaConOrigenes =  new TreeSet<String> ();
+			
+			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			
+			try {
+				log(Level.INFO, "INTENTANDO RECUPERAR DESTINOS ORIGEN DE LOS VUELOS PARA LOS VIAJES COMBINADOS", null);
+				Statement st = conn.createStatement();
+				String ret = "select * from vuelo where cod_vuelo in (select cod_vuelo from viajeCombinado)";
+				ResultSet rs = st.executeQuery(ret);
+				while (rs.next()) {
+					String origenNuevo = rs.getString("origen");
+					listaConOrigenes.add(origenNuevo);
+					
+					
+				}
+				log(Level.INFO, "DEVOLVIENDO CON EXITO LOS  ORIGEN DE LOS VUELOS PARA LOS VIAJES COMBINADOS", null);
+				
+				
+				
+			}catch (SQLException e) {
+				log(Level.SEVERE, "ERROR AL DEVOLVER ORIGENES DE LOS VIAJES COMBINADOS", e);
+				e.printStackTrace();
+			}
+			
+			
+			return listaConOrigenes;
+		
+			
+			
+		}
+		
+		
+	public static TreeSet<String> mostrarDestinosCombinados () {
+			
+			TreeSet<String> listaConDestinos =  new TreeSet<String> ();
+			
+			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			
+			try {
+				log(Level.INFO, "INTENTANDO RECUPERAR DESTINOS ORIGEN DE LOS VUELOS PARA LOS VIAJES COMBINADOS", null);
+				Statement st = conn.createStatement();
+				String ret = "select * from bus where cod_bus in (select cod_bus from viajeCombinado)";
+				ResultSet rs = st.executeQuery(ret);
+				while (rs.next()) {
+					String destinoNuevo = rs.getString("destino");
+					listaConDestinos.add(destinoNuevo);
+					
+					
+				}
+				log(Level.INFO, "DEVOLVIENDO CON EXITO LOS  DESTINOS BUS PARA LOS VIAJES COMBINADOS", null);
+				
+				
+				
+			}catch (SQLException e) {
+				log(Level.SEVERE, "ERROR AL DEVOLVER DESTINOS LOS VIAJES COMBINADOS", e);
+				e.printStackTrace();
+			}
+			
+			
+			return listaConDestinos;
+		
+			
+			
+		}
+	
 	
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
@@ -586,6 +659,105 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		
 		
 	}
+	
+	
+	//METODO PARA OBTENER UN VUELO A PARTIR DE SU CODIGO (LO USAREMOS PARA LOS VIAJES COMBINADOS)
+	
+	public static Vuelo vueloDesdeCodigo(int codVuelo) {
+		
+		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		Vuelo vuelo = null;
+	
+		
+		try {
+			Statement st = conn.createStatement();
+			
+			String resp = "select * from VUELO where cod_vuelo = "+codVuelo;
+			ResultSet rs = st.executeQuery(resp);
+			while(rs.next()) {
+				int codigoVuelo = rs.getInt("Cod_vuelo");
+				String FechaVuelo = rs.getString("Fecha");
+				String horaSalidaVuelo = rs.getString("Hora_salida");
+				int duracion = rs.getInt("Duracion");
+				String origen = rs.getString("Origen");
+				String destino = rs.getString("Destino");
+				Double precio = rs.getDouble("Precio");
+				TipoServicio tipo = TipoServicio.vuelo;
+				int plazasRestantes = rs.getInt("Plazas_restantes");
+				String companya= rs.getString("Companya_vuelo");
+				
+				
+				 vuelo = new Vuelo(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origen,
+						destino, precio, tipo,plazasRestantes,companya);
+				
+				
+	
+				
+				
+			}
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER BUSQUEDA DE VUELO POR CODIGO DE LA BASE DE DATOS", e);
+			e.printStackTrace();
+			
+		}
+		log(Level.INFO, "DEVOLVIENDO VUELOS DE LA BASE DE DATOS", null);
+		BDServicio.cerrarConexion();
+		return vuelo;
+		
+		
+		
+	}
+	
+	
+	
+	//OBTENER BUS DESDE CODIGO
+	
+	public static Bus busDesdeCodigo(int codBus) {
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+		//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
+		Bus bus = null;
+		
+		try {
+			Statement st = conn.createStatement();
+			
+			String resp = "select * from bus where cod_bus="+codBus;
+			ResultSet rs = st.executeQuery(resp);
+			while(rs.next()) {
+				int codigoVuelo = rs.getInt("Cod_bus");
+				String FechaVuelo = rs.getString("Fecha");
+				String horaSalidaVuelo = rs.getString("Hora_salida");
+				int duracion = rs.getInt("Duracion");
+				String origen = rs.getString("Origen");
+				String destino = rs.getString("Destino");
+				Double precio = rs.getDouble("Precio");
+				TipoServicio tipo = TipoServicio.vuelo;
+				int plazasRestantes = rs.getInt("Plazas_restantes");
+				String companya = rs.getString("Companya_bus");
+				
+				
+				
+				 bus = new Bus(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origen,
+						destino, precio, tipo,plazasRestantes,companya);
+				
+				
+				
+				
+				
+			}
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER  RESULTADO DE BUSQUEDA DE BUS POR CODIGO  DE LA BASE DE DATOS", e);
+			e.printStackTrace();
+		}
+		
+		log(Level.INFO, "DEVOLVIENDO BUS DE LA BASE DE DATOS", null);
+		BDServicio.cerrarConexion();
+		return bus;
+		
+		
+	}
+	
 	
 	
 	public void setLogger(Logger logger) {

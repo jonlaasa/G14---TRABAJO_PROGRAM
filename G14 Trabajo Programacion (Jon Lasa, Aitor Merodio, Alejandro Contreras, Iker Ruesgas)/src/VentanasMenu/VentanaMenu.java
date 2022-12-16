@@ -54,14 +54,23 @@ public class VentanaMenu extends JFrame {
 		JMenu jmVuelos = new JMenu("Vuelos");
 		menuBar.add(jmVuelos);
 		
+		JMenuItem compraVuelos =  new JMenuItem("Comprar vuelos");
+		jmVuelos.add(compraVuelos);
+		
+		
 		JMenu jmBuses = new JMenu("Buses");
 		menuBar.add(jmBuses);
 		
-		JMenu jmInterrail = new JMenu("Interrail");
-		menuBar.add(jmInterrail);
+
+		JMenuItem compraBuses =  new JMenuItem("Comprar buses");
+		jmBuses.add(compraBuses);
 		
-		JMenu mnNewMenu_4 = new JMenu("TOP");
-		menuBar.add(mnNewMenu_4);
+		JMenu jmICombinado = new JMenu("Viajes Combinados");
+		menuBar.add(jmICombinado);
+		
+		JMenuItem compraComb =  new JMenuItem("Comprar viajes combinados");
+		jmICombinado.add(compraComb);
+		
 		
 		JMenu mnOpcionesPerfil = new JMenu("");
 		mnOpcionesPerfil.setIcon(new ImageIcon("Imagenes\\icons\\KISSPN~2.JPG"));
@@ -82,9 +91,7 @@ public class VentanaMenu extends JFrame {
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
-		//FALTAN LOS EVENTOS DE LOS DE ARRIBA (VUELOS...)
 		
-
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -116,7 +123,8 @@ public class VentanaMenu extends JFrame {
 		ftCombinado.setBounds(240, 218, 60, 37);
 		contentPane.add(ftCombinado);
 		
-		JLabel lblNewLabel_3 = new JLabel("EUROPA");
+		JLabel lblNewLabel_3 = new JLabel("NACIONAL"
+				+ "");
 		lblNewLabel_3.setBounds(99, 89, 80, 14);
 		contentPane.add(lblNewLabel_3);
 		
@@ -139,7 +147,28 @@ public class VentanaMenu extends JFrame {
 		lblBienevenida.setBounds(253, 31, 225, 37);
 		contentPane.add(lblBienevenida);
 		
+		//EVENTOS DE BOTONES
 		
+		compraVuelos.addActionListener(e -> {
+			VentanaVuelo vb = new VentanaVuelo(usuarioActual);
+			vb.setVisible(true);
+			dispose();
+		});
+		
+		compraBuses.addActionListener(e -> {
+			VentanaBus vb = null;
+			vb = new VentanaBus(usuarioActual);
+			vb.setVisible(true);
+			dispose();
+		});
+		
+		compraComb.addActionListener(e -> {
+			VentanaViajeCombinado vb = null;
+			vb = new VentanaViajeCombinado(usuarioActual);
+			vb.setVisible(true);
+			dispose();
+	
+		});
 		
 		
 		mntmPerfil.addActionListener(e -> {		
@@ -158,6 +187,8 @@ public class VentanaMenu extends JFrame {
 				dispose();
 			}
 		});
+		
+		
 		
 		
 		btnBuses.addActionListener(e->{

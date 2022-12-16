@@ -142,7 +142,7 @@ public class VentanaMetodoPago extends JFrame {
 		
 		JButton pagarConMetodo = new JButton("PAGAR CON TARJETA");
 		pagarConMetodo.setForeground(new Color(255, 128, 64));
-		pagarConMetodo.setBounds(522, 322, 152, 46);
+		pagarConMetodo.setBounds(512, 318, 162, 46);
 		contentPane.add(pagarConMetodo);
 		
 		JButton atras = new JButton("Atras");
@@ -151,7 +151,7 @@ public class VentanaMetodoPago extends JFrame {
 		
 		JButton pagarConPuntos = new JButton("PAGAR CON PUNTOS");
 		pagarConPuntos.setForeground(new Color(255, 128, 64));
-		pagarConPuntos.setBounds(372, 323, 140, 45);
+		pagarConPuntos.setBounds(349, 319, 153, 45);
 		contentPane.add(pagarConPuntos);
 		
 		//EVENTOS

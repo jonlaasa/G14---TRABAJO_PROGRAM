@@ -12,7 +12,9 @@ import Datos.Usuario;
 import VentanasAdministrador.VentanaCrearBus;
 import VentanasAdministrador.VentanaCrearVuelo;
 import VentanasCompra.VentanaBus;
+import VentanasCompra.VentanaViajeCombinado;
 import VentanasCompra.VentanaVuelo;
+import VentanasMenu.VentanaMenu;
 import VentanasRegistro.VentanaInicio;
 
 
@@ -22,7 +24,7 @@ public class Main {
 		
 //		PARA CREAR VENTANAS DE COMPRA MENU....
 		Usuario u = new Usuario();
-		Administrador a = new Administrador();
+//		Administrador a = new Administrador();
 		
 //		Bus bus = new Bus("2023-02-20",3600,"Madrid","Bilbao",20,70,"Alsa");
 //		System.out.println(bus.getFecha());
@@ -41,7 +43,7 @@ public class Main {
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
 		
-		VentanaInicio x = new VentanaInicio();	
+		VentanaViajeCombinado x= new VentanaViajeCombinado(u);	
 		x.setVisible(true);
 		
 		
