@@ -2,13 +2,20 @@
 package Main;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 import BD.BDRegistro;
 import BD.BDServicio;
 import Datos.Administrador;
 import Datos.Bus;
+import Datos.RentingCoche;
 import Datos.Usuario;
+import Datos.Vuelo;
+import Datos.VueloComprado;
+import Enum.ClaseCoche;
+import Enum.TipoServicio;
+import Enum.ZonaAsientoVuelo;
 import VentanasAdministrador.VentanaCrearBus;
 import VentanasAdministrador.VentanaCrearVuelo;
 import VentanasCompra.VentanaBus;
@@ -22,7 +29,7 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException {
 		
-//		PARA CREAR VENTANAS DE COMPRA MENU....
+//		PARA CREAR VENTANAS DE COMPRA MENU...
 		Usuario u = new Usuario();
 //		Administrador a = new Administrador();
 		
@@ -46,8 +53,7 @@ public class Main {
 		VentanaViajeCombinado x= new VentanaViajeCombinado(u);	
 		x.setVisible(true);
 		
-		
-//		BDServicio.crearViajesCombinados();
+
 		
 	}
 	

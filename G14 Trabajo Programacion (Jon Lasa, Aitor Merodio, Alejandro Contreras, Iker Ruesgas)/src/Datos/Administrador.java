@@ -17,6 +17,8 @@ public class Administrador extends Registro {
 
 	public Administrador(String nombre, String apellido, String nombreUsuario,String contrasenya,int id){
 		super(nombre, apellido, nombreUsuario);
+		this.id=id;
+		this.contrasenya=contrasenya;
 		
 	}
 	
@@ -24,6 +26,7 @@ public class Administrador extends Registro {
 	
 		public Administrador(String nombre, String apellido, String nombreUsuario,String contrasenya) {
 			super(nombre, apellido, nombreUsuario);
+			this.contrasenya=contrasenya;
 		}
 	
 	
@@ -31,6 +34,8 @@ public class Administrador extends Registro {
 	
 	public Administrador() {
 		super();
+		this.id=000;
+		this.contrasenya="sin contrasenya";
 	}
 	
 	//Metodos get y set

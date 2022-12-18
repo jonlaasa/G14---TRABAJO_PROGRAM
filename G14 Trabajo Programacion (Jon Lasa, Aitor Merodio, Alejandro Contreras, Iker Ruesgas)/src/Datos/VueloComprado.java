@@ -72,17 +72,19 @@ public class VueloComprado extends Compra implements PrecioCompra {
 	public void setPrecio( ) {
 		//CANTIDAD POR PRECIO DEL avion * cantidad + renting + zona vuelo ...
 		double vueloSuma = getCantidad() * (getVuelo().getPrecio());
+	
 		double sumaZonaAsiento = getZonaAsientoVuelo().precio();
+		
+		
 		
 		//PARA CALCULAR EL RENTING
 		double sumaRenting = 0;
 		if(listaRenting.size()==0) {
-			
+			sumaRenting=0;
 		}else {
 			RentingCoche renting = listaRenting.get(0);
-			sumaRenting=renting.getPrecio()*(renting.getDiasAlquilado());
+			sumaRenting=renting.getPrecio();
 		}
-		
 		//FINALMENTE PONEMOS EL PRECIO
 		
 		this.precio=vueloSuma + sumaZonaAsiento + sumaRenting;
