@@ -7,46 +7,51 @@ import Enum.TipoServicio;
 
 public class ViajeCombinado extends Servicio {
 	
-	private int ntrasbordo;
-	private ArrayList<String> nombreTrasbordo;
+	private Vuelo vuelo;
+	private Bus bus;
 	
 	//Constructor con parametros
 	
-	public ViajeCombinado(int codigo, Date fecha, String horaSalida, int duracion, String origen, String destino, double precio,
-			TipoServicio tipoServicio, int plazarRestantes, int ntrasbordo, ArrayList<String> nombreTrasbordo) {
-		this.ntrasbordo = ntrasbordo;
-		this.nombreTrasbordo = nombreTrasbordo;
+	public ViajeCombinado(int codigo, String fecha, String horaSalida, int duracion, String origen, String destino, double precio,
+			TipoServicio tipoServicio, int plazarRestantes, Bus bus, Vuelo vuelo) {
+		super(codigo, fecha, horaSalida, duracion,  origen, destino, precio, tipoServicio, plazarRestantes);
+		this.vuelo=vuelo;
+		this.bus=bus;
 	}
 	
 	
-	//Constructor sin parametros usando los de la clase padre de la que hereda (SERVICIO)
-	public ViajeCombinado(Date fecha,TipoServicio tipoServicio) {
-		this.ntrasbordo = 0;
-		this.nombreTrasbordo = new ArrayList<String> ();
+	//Constructor con solo parametros vuelo y bus  usando los de la clase padre de la que hereda (SERVICIO)
+	public ViajeCombinado(String fecha,TipoServicio tipoServicio,Vuelo vuelo, Bus bus) {
+		super(fecha,tipoServicio);
+		this.vuelo = vuelo;
+		this.bus=bus;
 	}
 
-	public int getNtrasbordo() {
-		return ntrasbordo;
-	}
+	
 
-	public void setNtrasbordo(int ntrasbordo) {
-		this.ntrasbordo = ntrasbordo;
-	}
-
-	public ArrayList<String> getNombreTrasbordo() {
-		return nombreTrasbordo;
-	}
-
-	public void setNombreTrasbordo(ArrayList<String> nombreTrasbordo) {
-		this.nombreTrasbordo = nombreTrasbordo;
+	public Vuelo getVuelo() {
+		return vuelo;
 	}
 
 
-	@Override
+	public void setVuelo(Vuelo vuelo) {
+		this.vuelo = vuelo;
+	}
+
+
+	public Bus getBus() {
+		return bus;
+	}
+
+
+	public void setBus(Bus bus) {
+		this.bus = bus;
+	}
+
+
 	public String toString() {
-		return  super.toString()+ "ntrasbordo=" + ntrasbordo + ", nombreTrasbordo=" + nombreTrasbordo ;
+		return super.toString() + "Vuelo: "+vuelo.toString() + ", Bus: "+bus.toString();
 	}
-	
 	
 	
 	

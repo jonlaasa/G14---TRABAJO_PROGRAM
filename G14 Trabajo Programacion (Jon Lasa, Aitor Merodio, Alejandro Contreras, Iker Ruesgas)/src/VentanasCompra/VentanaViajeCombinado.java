@@ -70,7 +70,7 @@ public class VentanaViajeCombinado extends JFrame {
 	private JCalendar calendarioVuelta;
 	private JTable tableViajesCombinados;
 	private DefaultListModel<ViajeCombinado> mViajesCombinados = new DefaultListModel<>();
-	private ArrayList<Vuelo> listaViajesCombinados;
+	private ArrayList<ViajeCombinado> listaViajesCombinados;
 	private JComboBox comboBoxDestino;
 	private JComboBox comboBoxOrigen;
 	
@@ -143,12 +143,12 @@ public class VentanaViajeCombinado extends JFrame {
 		tableViajesCombinados=new JTable(modeloTabla);
 		// Cambios de anchura
 		
-		tableViajesCombinados.getColumnModel().getColumn(0).setMaxWidth(65);
+		tableViajesCombinados.getColumnModel().getColumn(0).setMaxWidth(80);
 		tableViajesCombinados.getColumnModel().getColumn(1).setMaxWidth(85);
 		tableViajesCombinados.getColumnModel().getColumn(2).setMaxWidth(110);
 		tableViajesCombinados.getColumnModel().getColumn(3).setMaxWidth(110);
 		tableViajesCombinados.getColumnModel().getColumn(4).setMaxWidth(110);
-		tableViajesCombinados.getColumnModel().getColumn(5).setMaxWidth(85);
+		tableViajesCombinados.getColumnModel().getColumn(5).setMaxWidth(75);
 		
 		panelTabla.setLayout(new BorderLayout());
 		
@@ -159,15 +159,16 @@ public class VentanaViajeCombinado extends JFrame {
 		
 		
 		
-		//LLENAMOS LA LISTA de VUELOS ACTUALES CON LOS VUELOS  DE BD
-//		listaVuelos = BDServicio.mostrarVuelosTotal();
+		//LLENAMOS LA LISTA de VIAJES COMBINADOS ACTUALES CON LOS VIAJES COMBINADOS  DE BD
+		listaViajesCombinados = BDServicio.mostrarViajesCombinadosTotal();
 		
-		//CARGAMOS EL MODELO
-//		for(Vuelo vuelo: listaVuelos) {
-//			modeloTabla.addRow(new Object [] {vuelo.getFecha(),vuelo.getHoraSalida(),vuelo.getDuracionString(),vuelo.getOrigen(),
-//					vuelo.getDestino(),vuelo.getPrecioString(),vuelo.getCompanya(),vuelo.getPlazasRestantes()
-//			});
-//		}
+//		//CARGAMOS EL MODELO
+		for(ViajeCombinado viaje: listaViajesCombinados) {
+			System.out.println(viaje);
+			modeloTabla.addRow(new Object [] {viaje.getFecha(),viaje.getHoraSalida(),viaje.getOrigen(),viaje.getVuelo().getDestino(),viaje.getDestino(),viaje.getPrecio()});
+		}
+		
+			
 		
 		//Llenamos los origen y destino de los bus
 				//ORIGEN 

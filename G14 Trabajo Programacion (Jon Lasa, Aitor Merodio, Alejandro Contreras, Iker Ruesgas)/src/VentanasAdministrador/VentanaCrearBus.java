@@ -77,7 +77,6 @@ public class VentanaCrearBus extends JFrame {
 		comboBoxOrigen.addItem("Cadiz");
 		comboBoxOrigen.addItem("Lisboa");
 		comboBoxOrigen.addItem("Santander");
-		comboBoxOrigen.addItem("Praga");
 		comboBoxOrigen.addItem("Castellon");
 		comboBoxOrigen.addItem("Santander");
 		comboBoxOrigen.addItem("Castellon");
@@ -94,7 +93,6 @@ public class VentanaCrearBus extends JFrame {
 		comboBoxDestino.addItem("Cadiz");
 		comboBoxDestino.addItem("Lisboa");
 		comboBoxDestino.addItem("Santander");
-		comboBoxDestino.addItem("Praga");
 		comboBoxDestino.addItem("Castellon");
 		comboBoxDestino.addItem("Santander");
 		comboBoxDestino.addItem("Castellon");

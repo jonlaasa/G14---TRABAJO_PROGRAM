@@ -41,7 +41,7 @@ public class VentanaFondo extends JFrame {
 		
 		ImageIcon imgIcon = new ImageIcon("imagenes//ft2.jpg");
 		Image image = imgIcon.getImage();
-		Image imagenModificada = image.getScaledInstance(1700,800,Image.SCALE_SMOOTH);
+		Image imagenModificada = image.getScaledInstance(screenSize.width,screenSize.height,Image.SCALE_SMOOTH);
 		ImageIcon nuevoIcono = new ImageIcon(imagenModificada);
 		background = new JLabel ("",nuevoIcono,JLabel.CENTER);
 		background.setBounds(0,0,1350,700);

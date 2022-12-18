@@ -22,6 +22,7 @@ import Datos.BusComprado;
 import Datos.Compra;
 import Datos.Servicio;
 import Datos.Usuario;
+import Datos.ViajeCombinado;
 import Datos.Vuelo;
 import Datos.VueloComprado;
 import Enum.TipoServicio;
@@ -293,6 +294,66 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		}
 	
 	
+	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
+	public static ArrayList <ViajeCombinado> mostrarViajesCombinadosTotal() {
+		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
+		ArrayList <ViajeCombinado> listaConCombinados = new ArrayList <ViajeCombinado> ();
+		log(Level.INFO, "INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES", null);
+		
+		try {
+			Statement st = conn.createStatement();
+			
+			String resp = "select * from viajeCombinado";
+			ResultSet rs = st.executeQuery(resp);
+			while(rs.next()) {
+				int codCombinado = rs.getInt("Cod_viajeCombinado");
+				String FechaViaje = rs.getString("Fecha");
+				int codVuelo = rs.getInt("Cod_vuelo");
+				int codBus= rs.getInt("cod_bus");
+				
+				
+				//OBTENEMOS EL CORRESPONDIENTE VUELO Y BUS
+				Vuelo vuelo = BDServicio.vueloDesdeCodigo(codVuelo);
+				Bus bus = BDServicio.busDesdeCodigo(codBus);
+				String horaSalida = vuelo.getHoraSalida();
+				int duracionTotal = vuelo.getDuracion() + bus.getDuracion();
+				String origen = vuelo.getOrigen();
+				String destino = bus.getDestino();
+				double precio = vuelo.getPrecio() + bus.getPrecio();
+				int plazasRestantes = 0;
+				if(bus.getPlazasRestantes()<vuelo.getPlazasRestantes()) {
+					plazasRestantes=bus.getPlazasRestantes();
+				}else {
+					plazasRestantes=vuelo.getPlazasRestantes();
+				}
+				
+				
+				
+				
+				
+				ViajeCombinado combinadoNuevo = new ViajeCombinado(codCombinado, FechaViaje,horaSalida, duracionTotal, origen, destino,
+						precio,TipoServicio.viajeCombinado,plazasRestantes,bus,vuelo);
+				listaConCombinados.add(combinadoNuevo);
+				
+			}
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER VIAJES COMBINADOS DE LA BASE DE DATOS", e);
+			e.printStackTrace();
+		}
+		log(Level.INFO, "DEVOLVIENDO LOS VIAJES COMBINADOS DISPONIBLES", null);
+		
+		BDServicio.cerrarConexion();
+		return listaConCombinados;
+		
+		
+	}
+	
+	
+	
+	
+	
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
 		public static ArrayList <Vuelo> mostrarVuelosTotal() {
@@ -337,6 +398,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			
 			
 		}
+		
 		
 		private static Date sumarDias(Date fecha, int dias) {
 			Calendar calendar=Calendar.getInstance();
@@ -676,12 +738,14 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			ResultSet rs = st.executeQuery(resp);
 			while(rs.next()) {
 				int codigoVuelo = rs.getInt("Cod_vuelo");
+				
 				String FechaVuelo = rs.getString("Fecha");
 				String horaSalidaVuelo = rs.getString("Hora_salida");
 				int duracion = rs.getInt("Duracion");
 				String origen = rs.getString("Origen");
 				String destino = rs.getString("Destino");
 				Double precio = rs.getDouble("Precio");
+				
 				TipoServicio tipo = TipoServicio.vuelo;
 				int plazasRestantes = rs.getInt("Plazas_restantes");
 				String companya= rs.getString("Companya_vuelo");
@@ -692,6 +756,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 				
 				
 	
+				
 				
 				
 			}
@@ -739,6 +804,8 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 				
 				 bus = new Bus(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origen,
 						destino, precio, tipo,plazasRestantes,companya);
+				 
+				
 				
 				
 				
@@ -753,6 +820,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		
 		log(Level.INFO, "DEVOLVIENDO BUS DE LA BASE DE DATOS", null);
 		BDServicio.cerrarConexion();
+		
 		return bus;
 		
 		
