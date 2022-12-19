@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import BD.BDRegistro;
 import Datos.Usuario;
 import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaViajeCombinado;
@@ -90,8 +91,7 @@ public class VentanaMenu extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
-		
+
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		

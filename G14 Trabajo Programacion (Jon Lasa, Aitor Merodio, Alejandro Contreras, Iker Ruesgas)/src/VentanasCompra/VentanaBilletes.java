@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import BD.BDRegistro;
 import BD.BDServicio;
 import Datos.Bus;
 import Datos.BusComprado;
@@ -83,7 +84,6 @@ public class VentanaBilletes extends JFrame {
 		lcantidad.setBounds(78, 107, 46, 14);
 		contentPane.add(lcantidad);
 		
-		
 		//EVENTOS DE SELECCION DE CANTIDAD
 		sumar.addActionListener(e -> {
 			
@@ -150,6 +150,7 @@ public class VentanaBilletes extends JFrame {
 					Vuelo vuelo = (Vuelo) servicio;
 					VentanaServicioAdicional vent = new VentanaServicioAdicional (usuarioActual,vuelo,cantidad);
 					vent.setVisible(true);
+					dispose();
 					
 					
 				}

@@ -253,7 +253,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 				e.printStackTrace();
 			}
 			
-			
+			BDServicio.cerrarConexion();
 			return listaConOrigenes;
 		
 			
@@ -287,7 +287,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 				e.printStackTrace();
 			}
 			
-			
+			BDServicio.cerrarConexion();
 			return listaConDestinos;
 		
 			
@@ -575,7 +575,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			}catch(SQLException sql) {
 				log(Level.SEVERE, "ERROR EN CONSULTA DE BASE DE DATOS CON FILTRADO DE VUELOS", sql);
 			}
-
+			BDServicio.cerrarConexion();
 			return listaConVuelos;
 		}
 		
@@ -621,7 +621,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			}catch(SQLException sql) {
 				log(Level.SEVERE, "ERROR EN CONSULTA DE BASE DE DATOS CON FILTRADO DE BUS", sql);
 			}
-
+			BDServicio.cerrarConexion();
 			return listaConBus;
 		}
 		
@@ -647,7 +647,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			}
 			
 			//TENEMOS YA LOS VIAJES CON ESE ORIGEN Y DESTINO
-
+			BDServicio.cerrarConexion();
 			return listaConViajesConbinados;
 		}
 		
@@ -671,7 +671,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			e.printStackTrace();
 			log(Level.SEVERE, "ERROR AL INTENTAR OBTENER LA CLAVE CORRESPONDIENTE AL RENTING", e);
 		}
-		
+		BDServicio.cerrarConexion();
 		return clave;
 		
 		
@@ -736,13 +736,15 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			Statement st = conn.createStatement();
 			st.executeUpdate(sent);
 			log(Level.INFO, "INSERTADA LA COMPRA EN LA BASE DE DATOS", null);
+			BDServicio.cerrarConexion();
 			
 			
 			}catch(SQLException sql) {
 				log(Level.SEVERE, "ERROR AL INSERTAR COMPRA EN BASE DE DATOS", sql);
+				BDServicio.cerrarConexion();
 			}
 			
-			
+		
 			
 			
 		}

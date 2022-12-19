@@ -46,7 +46,7 @@ public class VentanaLogin extends JFrame {
 		lblUsuario.setBounds(90, 105, 79, 31);
 		contentPane.add(lblUsuario);
 		
-		JLabel lblNewLabel_1 = new JLabel("Contrasea\u00F1a:");
+		JLabel lblNewLabel_1 = new JLabel("Contraseña:");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_1.setBounds(90, 165, 110, 31);
 		contentPane.add(lblNewLabel_1);
@@ -82,8 +82,6 @@ public class VentanaLogin extends JFrame {
 		contentPane.add(usuario);
 		usuario.setColumns(10);
 		
-		
-		
 		//UTILIZACION DE JAVA FUNCIONAL 
 
 		btnVolver.addActionListener(e -> {
@@ -117,17 +115,21 @@ public class VentanaLogin extends JFrame {
 			String contra=contrasenya.getText();
 			
 			try {
-				if(BDRegistro.login(usr, contra)==true) {
+				if(BDRegistro.login(usr, contra)==true) {	
 					Usuario usuarioActual =BDRegistro.obtenerUsuario(usr);
 					JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
 					BDRegistro.log(Level.INFO, "Sesion iniciada con exito del usuario: "+usr , null);
+					
 					VentanaMenu vr = null;
 					vr = new VentanaMenu(usuarioActual);
 					vr.setVisible(true);
 					dispose();	
 				}
-				else JOptionPane.showMessageDialog(null, "Inicio de sesion incorrecto");
-				BDRegistro.log(Level.SEVERE, "Inicio de sesion no valido" , null);
+				else {
+					JOptionPane.showMessageDialog(null, "Inicio de sesion incorrecto");
+					BDRegistro.log(Level.SEVERE, "Inicio de sesion no valido" , null);
+				}
+				
 				
 			} catch (Exception e1) {
 				BDRegistro.log(Level.SEVERE, "Error al intentar comprobar el usario con la base de datos" , null);

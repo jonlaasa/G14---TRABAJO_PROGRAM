@@ -51,7 +51,7 @@ public class Main {
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
 		
-		VentanaViajeComb x= new VentanaViajeComb(u);	
+		VentanaInicio x= new VentanaInicio();	
 		x.setVisible(true);
 		
 

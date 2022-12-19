@@ -154,6 +154,7 @@ public class VentanaMetodoPago extends JFrame {
 		pagarConPuntos.setBounds(349, 319, 153, 45);
 		contentPane.add(pagarConPuntos);
 		
+		
 		//EVENTOS
 		
 		// EL PRECIO DE LA COMPRA (LO NECESITAREMOS EN VARIAS OCASIONES
@@ -193,7 +194,6 @@ public class VentanaMetodoPago extends JFrame {
 				Utils.comprobarNumerosConLongitud(numT, 16,"Numero de Tarjeta");	
 				
 				//SI SE CUMPLEN??? //PRIMERO ESCRIBIMOS LA COMPRA EN LA BASE DE DATOS
-				
 				BDServicio.escribirCompra(compra);
 				
 				//AHORA ACTUALIZAMOS LOS PUNTOS
@@ -210,31 +210,25 @@ public class VentanaMetodoPago extends JFrame {
 					}
 				
 				//CONSEGUIMOS CUANTOS DEBERIA CONSEGUIR
-
-				
-				
 				int puntosObtenidos = (int) Math.floor(precioCompra/10);
-				int puntosAnteriores = BDRegistro.obtenerPuntos(usuarioActual.getCodigo());
-				int puntosAnyadir = puntosAnteriores+puntosObtenidos;
+			    int puntosAnteriores = BDRegistro.obtenerPuntos(usuarioActual.getCodigo());
+			    int puntosAnyadir = puntosAnteriores+puntosObtenidos;
+			    System.out.println(puntosAnyadir);
+			
 				
 				//ACTUALIZAMOS
+			   
 				
-				BDRegistro.actualizarPuntos(usuarioActual.getCodigo(), puntosAnyadir);
 				
+			    BDRegistro.actualizarPuntos(usuarioActual.getCodigo(), puntosAnyadir);
+
 				
 				//DESPUES PASAMOS A LA VENTANA DE CONFIRMACION DE LA COMPRA
 				
 				VentanaConfirmacionCompra vent = new VentanaConfirmacionCompra(usuarioActual, compra, serv);
 				vent.setVisible(true);
 				dispose();
-				
-				
-				
-				
-				
-				
-				
-				
+		
 			}catch (Exception e1) {
 				e1.printStackTrace();
 			}
