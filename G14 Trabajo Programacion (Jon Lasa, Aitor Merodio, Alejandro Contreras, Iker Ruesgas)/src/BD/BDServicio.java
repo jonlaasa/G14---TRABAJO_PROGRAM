@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.TreeSet;
 import java.util.logging.FileHandler;
@@ -623,6 +624,33 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 
 			return listaConBus;
 		}
+		
+		
+		//FILTRA LOS VUELOS 
+		public static ArrayList<ViajeCombinado> listaServicioCombinadoFiltrado (String origen, String destino, String orden){
+			ArrayList<ViajeCombinado> listaConTodos = BDServicio.mostrarViajesCombinadosTotal();
+			ArrayList<ViajeCombinado> listaConViajesConbinados = new ArrayList<ViajeCombinado>();
+			
+			for(ViajeCombinado viaje:listaConTodos) {
+				if(viaje.getVuelo().getOrigen().equals(origen)&& viaje.getBus().getDestino().equals(destino)) {
+					
+					listaConViajesConbinados.add(viaje);
+					
+				}
+			}
+			
+			if(orden.equals("menor")) {
+				Collections.sort(listaConViajesConbinados);
+			}
+			else {
+				Collections.sort(listaConViajesConbinados,Collections.reverseOrder());
+			}
+			
+			//TENEMOS YA LOS VIAJES CON ESE ORIGEN Y DESTINO
+
+			return listaConViajesConbinados;
+		}
+		
 		
 		
 		

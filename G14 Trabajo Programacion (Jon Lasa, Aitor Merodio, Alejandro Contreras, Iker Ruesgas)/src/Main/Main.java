@@ -19,6 +19,7 @@ import Enum.ZonaAsientoVuelo;
 import VentanasAdministrador.VentanaCrearBus;
 import VentanasAdministrador.VentanaCrearVuelo;
 import VentanasCompra.VentanaBus;
+import VentanasCompra.VentanaViajeComb;
 import VentanasCompra.VentanaViajeCombinado;
 import VentanasCompra.VentanaVuelo;
 import VentanasMenu.VentanaMenu;
@@ -50,7 +51,7 @@ public class Main {
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
 		
-		VentanaViajeCombinado x= new VentanaViajeCombinado(u);	
+		VentanaViajeComb x= new VentanaViajeComb(u);	
 		x.setVisible(true);
 		
 

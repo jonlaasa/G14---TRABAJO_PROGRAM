@@ -24,11 +24,11 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
 
 import javax.swing.SwingConstants;
 import javax.swing.JRadioButton;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
-import com.toedter.calendar.JCalendar;
 
 import BD.BDServicio;
 
@@ -58,16 +58,15 @@ import javax.swing.JScrollPane;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.ScrollPaneConstants;
 import java.awt.Dimension;
 
-public class VentanaViajeCombinado extends JFrame {
+public class VentanaViajeComb extends JFrame {
 
 	private JPanel contentPane;
 	private DefaultTableModel modeloTabla;
-	private JCalendar calendarioIda;
-	private JCalendar calendarioVuelta;
 	private JTable tableViajesCombinados;
 	private DefaultListModel<ViajeCombinado> mViajesCombinados = new DefaultListModel<>();
 	private ArrayList<ViajeCombinado> listaViajesCombinados;
@@ -80,7 +79,7 @@ public class VentanaViajeCombinado extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VentanaViajeCombinado(Usuario usuarioActual) {
+	public VentanaViajeComb(Usuario usuarioActual) {
 		setLocationRelativeTo(null); 
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -93,7 +92,7 @@ public class VentanaViajeCombinado extends JFrame {
 		contentPane.setLayout(null);
 		
 		comboBoxOrigen = new JComboBox() ;
-		comboBoxOrigen.setBounds(89, 28, 167, 22);
+		comboBoxOrigen.setBounds(89, 137, 167, 22);
 		contentPane.add(comboBoxOrigen);
 		
 		
@@ -101,25 +100,25 @@ public class VentanaViajeCombinado extends JFrame {
 		
 		
 		comboBoxDestino = new JComboBox();
-		comboBoxDestino.setBounds(89, 61, 167, 22);
+		comboBoxDestino.setBounds(89, 170, 167, 22);
 		contentPane.add(comboBoxDestino);
 		
 		JLabel lblNewLabel = new JLabel("Origen");
 		lblNewLabel.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
 		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setBounds(22, 20, 58, 25);
+		lblNewLabel.setBounds(21, 132, 58, 25);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblDestino = new JLabel("Destino");
 		lblDestino.setForeground(Color.BLACK);
 		lblDestino.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
-		lblDestino.setBounds(22, 56, 58, 25);
+		lblDestino.setBounds(21, 165, 58, 25);
 		contentPane.add(lblDestino);
 		
 		JLabel filtroInicial = new JLabel("CONTROL + PLUS PARA RESTABLECER TABLA INICIAL");
 		filtroInicial.setForeground(new Color(255, 128, 0));
 		filtroInicial.setFont(new Font("Stencil", Font.PLAIN, 11));
-		filtroInicial.setBounds(269, 7, 305, 14);
+		filtroInicial.setBounds(269, 11, 305, 30);
 		contentPane.add(filtroInicial);
 		
 		JPanel panelTabla = new JPanel();
@@ -193,35 +192,15 @@ public class VentanaViajeCombinado extends JFrame {
 		JLabel lblPrecio = new JLabel("Precio");
 		lblPrecio.setForeground(Color.BLACK);
 		lblPrecio.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
-		lblPrecio.setBounds(333, 23, 58, 25);
+		lblPrecio.setBounds(317, 86, 58, 25);
 		contentPane.add(lblPrecio);
 		
 		JLabel lblFiltart = new JLabel("Filtrar por:");
 		lblFiltart.setHorizontalAlignment(SwingConstants.LEFT);
 		lblFiltart.setForeground(Color.BLACK);
 		lblFiltart.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblFiltart.setBounds(333, 50, 58, 22);
+		lblFiltart.setBounds(317, 112, 58, 22);
 		contentPane.add(lblFiltart);
-		
-		JLabel lblFecha = new JLabel("Fecha");
-		lblFecha.setForeground(Color.BLACK);
-		lblFecha.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
-		lblFecha.setBounds(245, 100, 58, 25);
-		contentPane.add(lblFecha);
-		
-		JLabel lblInicio = new JLabel("Inicio");
-		lblInicio.setHorizontalAlignment(SwingConstants.LEFT);
-		lblInicio.setForeground(Color.BLACK);
-		lblInicio.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblInicio.setBounds(146, 83, 58, 22);
-		contentPane.add(lblInicio);
-		
-		JLabel lblVuelta = new JLabel("Fin:");
-		lblVuelta.setHorizontalAlignment(SwingConstants.LEFT);
-		lblVuelta.setForeground(Color.BLACK);
-		lblVuelta.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblVuelta.setBounds(315, 83, 58, 22);
-		contentPane.add(lblVuelta);
 		
 		Button buttonVolver = new Button("VOLVER");
 		buttonVolver.addActionListener(new ActionListener() {
@@ -263,19 +242,9 @@ public class VentanaViajeCombinado extends JFrame {
 		buttonAceptar.setBounds(359, 549, 124, 31);
 		contentPane.add(buttonAceptar);
 		
-		JCalendar calendarIda = new JCalendar();
-		calendarIda.setWeekOfYearVisible(false);
-		calendarIda.setBounds(45, 102, 184, 153);
-		contentPane.add(calendarIda);
+
 		
-		calendarIda.setMinSelectableDate(new Date(System.currentTimeMillis()));
-		
-		JCalendar calendarVuelta = new JCalendar();
-		calendarVuelta.setWeekOfYearVisible(false);
-		calendarVuelta.setBounds(320, 100, 184, 153);
-		contentPane.add(calendarVuelta);
-		
-		calendarVuelta.setMinSelectableDate(new Date(System.currentTimeMillis()));
+	
 		
 		Button buttonBuscarViajeCombinado = new Button("BUSCAR");
 		buttonBuscarViajeCombinado.setBounds(245, 208, 70, 19);
@@ -286,13 +255,13 @@ public class VentanaViajeCombinado extends JFrame {
 		ButtonGroup bg=new ButtonGroup();
 		
 		JCheckBox menorMayor = new JCheckBox("Menor a mayor");
-		menorMayor.setBounds(410, 28, 110, 23);
+		menorMayor.setBounds(410, 113, 110, 23);
 		contentPane.add(menorMayor);
 		//POR DEFECTO SELECCIONADO
 		menorMayor.setSelected(true);
 		
 		JCheckBox mayorMenor = new JCheckBox("Mayor a menor");
-		mayorMenor.setBounds(407, 56, 113, 23);
+		mayorMenor.setBounds(410, 146, 113, 23);
 		contentPane.add(mayorMenor);
 		
 		bg.add(menorMayor);
@@ -424,6 +393,19 @@ public class VentanaViajeCombinado extends JFrame {
 			
 		});
 		
+		
+	
+		
+		
+		JLabel labelFoto;
+		ImageIcon imgIcon = new ImageIcon("imagenes//vuelobus.jpg");
+		Image image = imgIcon.getImage();
+		Image imagenModificada = image.getScaledInstance(300,200,Image.SCALE_SMOOTH);
+		ImageIcon nuevoIcono = new ImageIcon(imagenModificada);
+		labelFoto = new JLabel ("",nuevoIcono,JLabel.CENTER);
+		labelFoto.setBounds(10, 0, 246, 121);
+		contentPane.add(labelFoto);
+		
 	
 		
 		
@@ -473,9 +455,5 @@ public class VentanaViajeCombinado extends JFrame {
 				});
 		
 	}
-
-	
-
-	
 }
 

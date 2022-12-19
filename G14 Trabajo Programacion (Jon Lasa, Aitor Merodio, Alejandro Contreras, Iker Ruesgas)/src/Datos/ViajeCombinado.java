@@ -1,14 +1,16 @@
 package Datos;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import Enum.TipoServicio;
 
-public class ViajeCombinado extends Servicio {
+public class ViajeCombinado extends Servicio implements Comparable<ViajeCombinado> {
 	
 	private Vuelo vuelo;
 	private Bus bus;
+	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
 	
 	//Constructor con parametros
 	
@@ -52,6 +54,26 @@ public class ViajeCombinado extends Servicio {
 	public String toString() {
 		return super.toString() + "Vuelo: "+vuelo.toString() + ", Bus: "+bus.toString();
 	}
+
+
+	@Override
+	public int compareTo(ViajeCombinado o) {
+		Double precio1 = this.getPrecio();
+		Double precio2 = o.getPrecio();
+		
+		if(precio1>precio2) {
+			return 1;
+		}
+		else {
+			if(precio1<precio2) {
+				return -1;
+			}else {
+				return 0;
+			}
+		}
+	}
+	
+	
 	
 	
 	
