@@ -28,7 +28,7 @@ public class VentanaFondo extends JFrame {
 		//TAMAÑO DE LA VENTANA DE FONDO
 		Toolkit tk=Toolkit.getDefaultToolkit(); //Initializing the Toolkit class.
 		Dimension screenSize = tk.getScreenSize(); //Get the Screen resolution of our device.
-		this.setSize(screenSize.width,screenSize.height);
+		this.setSize(screenSize);
 		
 		
 		
@@ -39,12 +39,13 @@ public class VentanaFondo extends JFrame {
 		
 		JLabel background;
 		
-		ImageIcon imgIcon = new ImageIcon("imagenes//ft2.jpg");
+		ImageIcon imgIcon = new ImageIcon("imagenes//fondoLogo.jpg");
 		Image image = imgIcon.getImage();
-		Image imagenModificada = image.getScaledInstance(screenSize.width,screenSize.height,Image.SCALE_SMOOTH);
+		Image imagenModificada = image.getScaledInstance(screenSize.width,screenSize.height,Image.SCALE_AREA_AVERAGING);
 		ImageIcon nuevoIcono = new ImageIcon(imagenModificada);
 		background = new JLabel ("",nuevoIcono,JLabel.CENTER);
-		background.setBounds(0,0,1350,700);
+		
+		background.setBounds(0,0,screenSize.width,screenSize.height);
 		add(background);
 		
 		

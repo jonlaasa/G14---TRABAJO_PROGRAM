@@ -30,7 +30,7 @@ public class Main {
 	public static void main(String[] args) throws SQLException {
 		
 //		PARA CREAR VENTANAS DE COMPRA MENU...
-		Usuario u = new Usuario();
+//		Usuario u = new Usuario();
 //		Administrador a = new Administrador();
 		
 //		Bus bus = new Bus("2023-02-20",3600,"Madrid","Bilbao",20,70,"Alsa");
@@ -49,11 +49,11 @@ public class Main {
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
 		
-		VentanaViajesC c =  new VentanaViajesC(u);
-		c.setVisible(true);
+//		VentanaViajesC c =  new VentanaViajesC(u);
+//		c.setVisible(true);
 		
-//		VentanaInicio x= new VentanaInicio();	
-//		x.setVisible(true);
+		VentanaInicio x= new VentanaInicio();	
+		x.setVisible(true);
 //		BDServicio.crearViajesCombinados();
 
 		
