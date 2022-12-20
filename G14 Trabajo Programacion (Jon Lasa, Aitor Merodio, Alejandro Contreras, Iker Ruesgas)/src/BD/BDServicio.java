@@ -741,6 +741,8 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 						
 					}
 					
+				}
+					
 		try {
 			BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
 			Statement st = conn.createStatement();
@@ -758,9 +760,6 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			
 			
 		}
-		
-		
-	}
 	
 	
 	//METODO PARA OBTENER UN VUELO A PARTIR DE SU CODIGO (LO USAREMOS PARA LOS VIAJES COMBINADOS)

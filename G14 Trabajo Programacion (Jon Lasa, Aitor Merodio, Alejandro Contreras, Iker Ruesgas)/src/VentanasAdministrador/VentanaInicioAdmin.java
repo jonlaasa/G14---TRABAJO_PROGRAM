@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
@@ -52,8 +53,12 @@ public class VentanaInicioAdmin extends JFrame {
 		JMenuItem mntmVerUsuarios = new JMenuItem("Ver usuarios");
 		mnUsuarios.add(mntmVerUsuarios);
 		
-		JMenu mnServicios = new JMenu("Servicios");
+		JMenu mnServicios = new JMenu("Crear Servicios");
 		menuBar_1.add(mnServicios);
+		
+		JMenu mnEstadisticas = new JMenu("Estadisticas de T&T");
+		menuBar_1.add(mnEstadisticas);
+		
 		
 		JMenuItem mntmVuelos = new JMenuItem("Vuelos");
 		mnServicios.add(mntmVuelos);
@@ -63,6 +68,10 @@ public class VentanaInicioAdmin extends JFrame {
 		
 		JMenuItem mntmCombinados = new JMenuItem("Combinados");
 		mnServicios.add(mntmCombinados);
+		
+		JMenuItem mntmEstadisticas = new JMenuItem("Ver estadisticas");
+		mnEstadisticas.add(mntmEstadisticas);
+		
 		
 		JMenu mnPerfil = new JMenu("Perfil");
 		menuBar_1.add(mnPerfil);
@@ -81,11 +90,16 @@ public class VentanaInicioAdmin extends JFrame {
 		lblUsuariosActuales.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblUsuariosActuales.setBounds(206, 31, 284, 61);
 		contentPane.add(lblUsuariosActuales);
+
+		JLabel labelFoto;
+		ImageIcon imgIcon = new ImageIcon("imagenes//logo.jpeg");
+		Image image = imgIcon.getImage();
+		Image imagenModificada = image.getScaledInstance(700,380,Image.SCALE_SMOOTH);
+		ImageIcon nuevoIcono = new ImageIcon(imagenModificada);
+		labelFoto = new JLabel ("",nuevoIcono,JLabel.CENTER);
+		labelFoto.setBounds(216, 93, 215, 184);
+		contentPane.add(labelFoto);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\alexc\\OneDrive\\Escritorio\\PROG 3\\Proyecto\\G14---TRABAJO_PROGRAM\\G14 Trabajo Programacion (Jon Lasa, Aitor Merodio, Alejandro Contreras, Iker Ruesgas)\\Imagenes\\icons\\avionNN.jpg"));
-		lblNewLabel_1.setBounds(266, 79, 155, 200);
-		contentPane.add(lblNewLabel_1);
 		
 		mntmCrearAdmin.addActionListener(e->{
 			VentanaCrearAdmin vr = null;
@@ -141,6 +155,17 @@ public class VentanaInicioAdmin extends JFrame {
 			vcb=new VentanaCrearVuelo(administradorActual);
 			vcb.setVisible(true);
 			dispose();
+		});
+		
+		
+		//ESTADISTICA EVENTO, CREAMOS VENTANA
+		mntmEstadisticas.addActionListener(e -> {
+			
+			VentanaMostrarEstadisticas v = new VentanaMostrarEstadisticas(administradorActual);
+			v.setVisible(true);
+			dispose();
+			
+			
 		});
 		
 		

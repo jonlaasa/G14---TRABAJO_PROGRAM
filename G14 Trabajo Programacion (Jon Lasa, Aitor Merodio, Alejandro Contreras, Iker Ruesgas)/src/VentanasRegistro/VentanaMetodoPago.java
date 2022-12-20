@@ -213,7 +213,7 @@ public class VentanaMetodoPago extends JFrame {
 				int puntosObtenidos = (int) Math.floor(precioCompra/10);
 			    int puntosAnteriores = BDRegistro.obtenerPuntos(usuarioActual.getCodigo());
 			    int puntosAnyadir = puntosAnteriores+puntosObtenidos;
-			    System.out.println(puntosAnyadir);
+			 
 			
 				
 				//ACTUALIZAMOS
@@ -257,9 +257,11 @@ public class VentanaMetodoPago extends JFrame {
 			}
 			}
 			
-			int puntosUsuario = BDRegistro.obtenerPuntos(usuarioActual.getCodigo());
-			double dineroConPuntos = puntosUsuario*10;
 			
+			int puntosUsuario = BDRegistro.obtenerPuntos(usuarioActual.getCodigo());
+			double dineroConPuntos = puntosUsuario;
+			
+			System.out.println("PUNTOS ACTUALES: "+puntosUsuario + " LA COMPRA VALE"+precioCompra);
 			if(dineroConPuntos >= precioCompra) {
 				
 				//ENTONCES SI ES VALIDO Y AVANZAMOS (ESCRIBIMOS COMPRA EN BASE DE DATOS)
@@ -267,9 +269,11 @@ public class VentanaMetodoPago extends JFrame {
 	            BDServicio.escribirCompra(compra);
 	            
 	            //AHORA RESTAMOS LOS QUE HAYA UTILIZADO
-	            
+	
 	            double precioRestante = dineroConPuntos - precioCompra;
 	            int puntos = (int)Math.floor(precioRestante);
+	            
+	            System.out.println("PUNTOS ACTUALES: "+puntos + " LA COMPRA VALE"+precioCompra);
 	            
 	            //ACTUALIZAMOS PUNTOS EN LA BD
 	            

@@ -1,6 +1,5 @@
 package VentanasCompra;
 
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,6 +14,7 @@ import Datos.Servicio;
 import Datos.Usuario;
 import Datos.Vuelo;
 import Enum.TipoServicio;
+import VentanasMenu.VentanaMenu;
 import VentanasRegistro.VentanaMetodoPago;
 
 import javax.swing.JTextField;
@@ -84,6 +84,11 @@ public class VentanaBilletes extends JFrame {
 		lcantidad.setBounds(78, 107, 46, 14);
 		contentPane.add(lcantidad);
 		
+		JButton btnAtras = new JButton("Atras");
+		btnAtras.setBackground(Color.WHITE);
+		btnAtras.setBounds(115, 190, 89, 23);
+		contentPane.add(btnAtras);
+		
 		//EVENTOS DE SELECCION DE CANTIDAD
 		sumar.addActionListener(e -> {
 			
@@ -117,6 +122,14 @@ public class VentanaBilletes extends JFrame {
 				JOptionPane.showMessageDialog( null, "No se pueden selccionar menos de 1 billete", "ERROR", JOptionPane.ERROR_MESSAGE);
 			}
 		
+		});
+		
+		//ATRAS
+		
+		btnAtras.addActionListener(e -> {
+			VentanaMenu m = new VentanaMenu(usuarioActual);
+			m.setVisible(true);
+			dispose();
 		});
 		
 		
@@ -167,5 +180,3 @@ public class VentanaBilletes extends JFrame {
 	}
 }
 
-
-//}

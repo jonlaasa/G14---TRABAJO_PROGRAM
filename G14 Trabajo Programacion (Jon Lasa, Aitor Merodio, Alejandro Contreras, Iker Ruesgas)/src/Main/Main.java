@@ -18,6 +18,7 @@ import Enum.TipoServicio;
 import Enum.ZonaAsientoVuelo;
 import VentanasAdministrador.VentanaCrearBus;
 import VentanasAdministrador.VentanaCrearVuelo;
+import VentanasAdministrador.VentanaInicioAdmin;
 import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaViajesC;
 import VentanasCompra.VentanaVuelo;
@@ -31,7 +32,7 @@ public class Main {
 		
 //		PARA CREAR VENTANAS DE COMPRA MENU...
 		Usuario u = new Usuario();
-//		Administrador a = new Administrador();
+	//	Administrador a = new Administrador();
 		
 //		Bus bus = new Bus("2023-02-20",3600,"Madrid","Bilbao",20,70,"Alsa");
 //		System.out.println(bus.getFecha());
@@ -49,7 +50,7 @@ public class Main {
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
 		
-		VentanaViajesC c =  new VentanaViajesC(u);
+		VentanaInicio c =  new VentanaInicio();
 		c.setVisible(true);
 		
 //		VentanaInicio x= new VentanaInicio();	

@@ -395,7 +395,7 @@ public class VentanaViajesC extends JFrame {
 		});
 		
 
-//		tableViajesCombinados.addKeyListener(key);
+		
 		
 	
 		
