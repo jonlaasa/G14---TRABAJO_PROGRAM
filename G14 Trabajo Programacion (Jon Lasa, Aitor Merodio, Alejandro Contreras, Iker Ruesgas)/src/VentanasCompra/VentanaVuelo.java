@@ -95,10 +95,6 @@ public class VentanaVuelo extends JFrame {
 		comboBoxOrigen.setBounds(89, 28, 167, 22);
 		contentPane.add(comboBoxOrigen);
 		
-		
-		
-		
-		
 		comboBoxDestino = new JComboBox();
 		comboBoxDestino.setBounds(89, 61, 167, 22);
 		contentPane.add(comboBoxDestino);

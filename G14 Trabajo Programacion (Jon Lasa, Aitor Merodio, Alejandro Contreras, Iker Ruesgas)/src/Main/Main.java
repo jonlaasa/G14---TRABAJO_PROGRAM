@@ -19,7 +19,7 @@ import Enum.ZonaAsientoVuelo;
 import VentanasAdministrador.VentanaCrearBus;
 import VentanasAdministrador.VentanaCrearVuelo;
 import VentanasCompra.VentanaBus;
-import VentanasCompra.VentanaViajeComb;
+import VentanasCompra.VentanaViajeCombinado;
 import VentanasCompra.VentanaViajeCombinado;
 import VentanasCompra.VentanaVuelo;
 import VentanasMenu.VentanaMenu;
@@ -45,15 +45,17 @@ public class Main {
 //		y.setVisible(true);
 		
 //		VentanaCrearVuelo z = new VentanaCrearVuelo(a);
-		
 //		z.setVisible(true);
 		
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
 		
-		VentanaInicio x= new VentanaInicio();	
-		x.setVisible(true);
+		VentanaViajeCombinado c =  new VentanaViajeCombinado(u);
+		c.setVisible(true);
 		
+//		VentanaInicio x= new VentanaInicio();	
+//		x.setVisible(true);
+//		BDServicio.crearViajesCombinados();
 
 		
 	}

@@ -78,8 +78,7 @@ public class VentanaCrearBus extends JFrame {
 		comboBoxOrigen.addItem("Lisboa");
 		comboBoxOrigen.addItem("Santander");
 		comboBoxOrigen.addItem("Castellon");
-		comboBoxOrigen.addItem("Santander");
-		comboBoxOrigen.addItem("Castellon");
+
 		contentPane.add(comboBoxOrigen);
 		
 		comboBoxDestino = new JComboBox<String>();
@@ -94,8 +93,7 @@ public class VentanaCrearBus extends JFrame {
 		comboBoxDestino.addItem("Lisboa");
 		comboBoxDestino.addItem("Santander");
 		comboBoxDestino.addItem("Castellon");
-		comboBoxDestino.addItem("Santander");
-		comboBoxDestino.addItem("Castellon");
+
 		contentPane.add(comboBoxDestino);
 		
 		tfDuracion = new JTextField();

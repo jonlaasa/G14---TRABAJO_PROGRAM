@@ -23,7 +23,7 @@ public class VentanaFondo extends JFrame {
 	}
 
 	private void inicializar() {
-		// TODO Auto-generated method stub
+
 		
 		//TAMAÑO DE LA VENTANA DE FONDO
 		Toolkit tk=Toolkit.getDefaultToolkit(); //Initializing the Toolkit class.
