@@ -6,19 +6,21 @@ import java.util.ArrayList;
 
 import Enum.TipoServicio;
 
-public class ViajeCombinado extends Servicio implements Comparable<ViajeCombinado> {
+public class ViajeCombinado extends Servicio {
 	
 	private Vuelo vuelo;
 	private Bus bus;
 	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
+	private String trasbordo;
 	
 	//Constructor con parametros
 	
-	public ViajeCombinado(int codigo, String fecha, String horaSalida, int duracion, String origen, String destino, double precio,
+	public ViajeCombinado(int codigo, String fecha, String horaSalida, int duracion, String origen, String destino, String trasbordo, double precio,
 			TipoServicio tipoServicio, int plazarRestantes, Bus bus, Vuelo vuelo) {
 		super(codigo, fecha, horaSalida, duracion,  origen, destino, precio, tipoServicio, plazarRestantes);
 		this.vuelo=vuelo;
 		this.bus=bus;
+		this.trasbordo=trasbordo;
 	}
 	
 	
@@ -27,9 +29,19 @@ public class ViajeCombinado extends Servicio implements Comparable<ViajeCombinad
 		super(fecha,tipoServicio);
 		this.vuelo = vuelo;
 		this.bus=bus;
+		this.trasbordo=trasbordo;
 	}
 
 	
+
+	public ViajeCombinado(String fecha, Vuelo vueloDesdeCodigo, Bus busDesdeCodigo) {
+		
+		this.setFecha(fecha);
+		this.vuelo=vuelo;
+		this.bus=bus;
+		
+	}
+
 
 	public Vuelo getVuelo() {
 		return vuelo;
@@ -49,30 +61,25 @@ public class ViajeCombinado extends Servicio implements Comparable<ViajeCombinad
 	public void setBus(Bus bus) {
 		this.bus = bus;
 	}
+	
+
+
+	public String getTrasbordo() {
+		return trasbordo;
+	}
+
+
+	public void setTrasbordo(String trasbordo) {
+		this.trasbordo = trasbordo;
+	}
 
 
 	public String toString() {
-		return super.toString() + "Vuelo: "+vuelo.toString() + ", Bus: "+bus.toString();
+		return super.toString() + "Trasbordo: "+trasbordo+ "Vuelo: "+vuelo.toString() + ", Bus: "+bus.toString();
 	}
 
 
-	@Override
-	public int compareTo(ViajeCombinado o) {
-		Double precio1 = this.getPrecio();
-		Double precio2 = o.getPrecio();
-		
-		if(precio1>precio2) {
-			return 1;
-		}
-		else {
-			if(precio1<precio2) {
-				return -1;
-			}else {
-				return 0;
-			}
-		}
-	}
-	
+
 	
 	
 	

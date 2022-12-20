@@ -311,7 +311,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			while(rs.next()) {
 				int codCombinado = rs.getInt("Cod_viajeCombinado");
 				String FechaViaje = rs.getString("Fecha");
-				int codVuelo = rs.getInt("Cod_vuelo");
+				int codVuelo = rs.getInt("cod_vuelo");
 				int codBus= rs.getInt("cod_bus");
 				
 				
@@ -321,6 +321,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 				String horaSalida = vuelo.getHoraSalida();
 				int duracionTotal = vuelo.getDuracion() + bus.getDuracion();
 				String origen = vuelo.getOrigen();
+				String trasbordo = vuelo.getDestino();
 				String destino = bus.getDestino();
 				double precio = vuelo.getPrecio() + bus.getPrecio();
 				int plazasRestantes = 0;
@@ -333,8 +334,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 				
 				
 				
-				
-				ViajeCombinado combinadoNuevo = new ViajeCombinado(codCombinado, FechaViaje,horaSalida, duracionTotal, origen, destino,
+				ViajeCombinado combinadoNuevo = new ViajeCombinado(codCombinado, FechaViaje,horaSalida, duracionTotal, origen, destino, trasbordo,
 						precio,TipoServicio.viajeCombinado,plazasRestantes,bus,vuelo);
 				listaConCombinados.add(combinadoNuevo);
 				
@@ -604,29 +604,62 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		
 		
 		//FILTRA LOS VIAJES COMBINADOS
-		public static ArrayList<ViajeCombinado> listaServicioCombinadoFiltrado (String origen, String destino, String orden){
-			ArrayList<ViajeCombinado> listaConTodos = BDServicio.mostrarViajesCombinadosTotal();
-			ArrayList<ViajeCombinado> listaConViajesConbinados = new ArrayList<ViajeCombinado>();
-			
-			for(ViajeCombinado viaje:listaConTodos) {
-				if(viaje.getVuelo().getOrigen().equals(origen)&& viaje.getBus().getDestino().equals(destino)) {
+		public static ArrayList<ViajeCombinado> listaServicioCombinadoFiltrado (String origen, String destino, String fechaInicio, String fechaFin){
+			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			ArrayList<ViajeCombinado> listaConViajesFiltradosporFecha = new ArrayList<ViajeCombinado>();
+			ArrayList<ViajeCombinado> listaConViajesFiltradosFinal = new ArrayList<ViajeCombinado>();
+			try {
+				//PRIMERO HAREMOS UNA CONSULTA A LA BD PARA FILTRAR POR FECHA Y CREAR UNA ARRAYLIST CON LOS QUE CUMPLAN
+				Statement st = conn.createStatement();
+				String sent= "select * from VIAJECOMBINADO where FECHA BETWEEN '"+fechaInicio+"' AND '"+fechaFin+"'";
+				ResultSet rs = st.executeQuery(sent);
+				while(rs.next()) {
+					int codigoViaje = rs.getInt("COD_VIAJECOMBINADO");
+					String Fecha = rs.getString("FECHA");
+					int codigoVuelo = rs.getInt("cod_vuelo");
+					int codigoBus = rs.getInt("cod_bus");
 					
-					listaConViajesConbinados.add(viaje);
+					//OBTENEMOS EL CORRESPONDIENTE VUELO Y BUS
+					Vuelo vuelo = BDServicio.vueloDesdeCodigo(codigoVuelo);
+					Bus bus = BDServicio.busDesdeCodigo(codigoBus);
+					String horaSalida = vuelo.getHoraSalida();
+					int duracionTotal = vuelo.getDuracion() + bus.getDuracion();
+					String origenV = vuelo.getOrigen();
+					String trasbordo = vuelo.getDestino();
+					String destinoV = bus.getDestino();
+					double precio = vuelo.getPrecio() + bus.getPrecio();
+					int plazasRestantes = 0;
+					if(bus.getPlazasRestantes()<vuelo.getPlazasRestantes()) {
+						plazasRestantes=bus.getPlazasRestantes();
+					}else {
+						plazasRestantes=vuelo.getPlazasRestantes();
+					}
+
+					
+					ViajeCombinado viajeN = new ViajeCombinado(codigoViaje,Fecha,horaSalida, duracionTotal, origenV, destinoV, trasbordo,
+							precio,TipoServicio.viajeCombinado,plazasRestantes,bus,vuelo);
+					listaConViajesFiltradosporFecha.add(viajeN);
+
+					} 
+					
+			}catch(SQLException sql) {
+					log(Level.SEVERE, "ERROR EN CONSULTA DE BASE DE DATOS CON FILTRADO DE VIAJES COMBINADOS", sql);
+		
+				}
+			BDServicio.cerrarConexion();
+			
+			
+			//AHORA USAREMOS ESTA LISTA FILTRADA PARA FILTRAR EL ORIGEN Y EL DESTINO 
+			for(ViajeCombinado viaje:listaConViajesFiltradosporFecha) {
+				if(viaje.getVuelo().getOrigen().equals(origen)&& viaje.getBus().getDestino().equals(destino)) {
+					listaConViajesFiltradosFinal.add(viaje);
 					
 				}
-			}
 			
-			if(orden.equals("menor")) {
-				Collections.sort(listaConViajesConbinados);
-			}
-			else {
-				Collections.sort(listaConViajesConbinados,Collections.reverseOrder());
-			}
-			
-			//TENEMOS YA LOS VIAJES CON ESE ORIGEN Y DESTINO
-			BDServicio.cerrarConexion();
-			return listaConViajesConbinados;
 		}
+			return listaConViajesFiltradosFinal;
+			
+	}
 		
 		
 		
@@ -745,7 +778,6 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			ResultSet rs = st.executeQuery(resp);
 			while(rs.next()) {
 				int codigoVuelo = rs.getInt("Cod_vuelo");
-				
 				String FechaVuelo = rs.getString("Fecha");
 				String horaSalidaVuelo = rs.getString("Hora_salida");
 				int duracion = rs.getInt("Duracion");

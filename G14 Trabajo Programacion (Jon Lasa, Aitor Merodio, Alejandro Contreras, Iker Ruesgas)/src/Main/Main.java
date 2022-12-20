@@ -19,8 +19,7 @@ import Enum.ZonaAsientoVuelo;
 import VentanasAdministrador.VentanaCrearBus;
 import VentanasAdministrador.VentanaCrearVuelo;
 import VentanasCompra.VentanaBus;
-import VentanasCompra.VentanaViajeCombinado;
-import VentanasCompra.VentanaViajeCombinado;
+import VentanasCompra.VentanaViajesC;
 import VentanasCompra.VentanaVuelo;
 import VentanasMenu.VentanaMenu;
 import VentanasRegistro.VentanaInicio;
@@ -41,7 +40,7 @@ public class Main {
 //		VentanaInicio v = new VentanaInicio();
 //		v.setVisible(true);
 	
-//		VentanaInicio y = new VentanaInicio();
+//		VentanaVuelo y = new VentanaVuelo(u);
 //		y.setVisible(true);
 		
 //		VentanaCrearVuelo z = new VentanaCrearVuelo(a);
@@ -50,7 +49,7 @@ public class Main {
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
 		
-		VentanaViajeCombinado c =  new VentanaViajeCombinado(u);
+		VentanaViajesC c =  new VentanaViajesC(u);
 		c.setVisible(true);
 		
 //		VentanaInicio x= new VentanaInicio();	

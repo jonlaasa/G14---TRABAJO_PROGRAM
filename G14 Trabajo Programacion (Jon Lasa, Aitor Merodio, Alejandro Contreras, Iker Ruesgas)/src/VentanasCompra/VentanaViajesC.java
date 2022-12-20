@@ -62,8 +62,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.ScrollPaneConstants;
 import java.awt.Dimension;
+import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JDateChooser;
 
-public class VentanaViajeCombinado extends JFrame {
+public class VentanaViajesC extends JFrame {
 
 	private JPanel contentPane;
 	private DefaultTableModel modeloTabla;
@@ -72,14 +74,16 @@ public class VentanaViajeCombinado extends JFrame {
 	private ArrayList<ViajeCombinado> listaViajesCombinados;
 	private JComboBox comboBoxDestino;
 	private JComboBox comboBoxOrigen;
+	private JCalendar calendarioInicio;
+	private JCalendar calendarioFin;
 	
-	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
+	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy-MM-dd");
 
 
 	/**
 	 * Create the frame.
 	 */
-	public VentanaViajeCombinado(Usuario usuarioActual) {
+	public VentanaViajesC(Usuario usuarioActual) {
 		setLocationRelativeTo(null); 
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,34 +96,34 @@ public class VentanaViajeCombinado extends JFrame {
 		contentPane.setLayout(null);
 		
 		comboBoxOrigen = new JComboBox() ;
-		comboBoxOrigen.setBounds(89, 137, 167, 22);
+		comboBoxOrigen.setBounds(21, 173, 177, 22);
 		contentPane.add(comboBoxOrigen);
 		
 		
 		comboBoxDestino = new JComboBox();
-		comboBoxDestino.setBounds(89, 170, 167, 22);
+		comboBoxDestino.setBounds(21, 229, 177, 22);
 		contentPane.add(comboBoxDestino);
 		
 		JLabel lblNewLabel = new JLabel("Origen");
 		lblNewLabel.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
 		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setBounds(21, 132, 58, 25);
+		lblNewLabel.setBounds(21, 149, 58, 25);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblDestino = new JLabel("Destino");
 		lblDestino.setForeground(Color.BLACK);
 		lblDestino.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
-		lblDestino.setBounds(21, 165, 58, 25);
+		lblDestino.setBounds(21, 206, 58, 25);
 		contentPane.add(lblDestino);
 		
 		JLabel filtroInicial = new JLabel("CONTROL + PLUS PARA RESTABLECER TABLA INICIAL");
 		filtroInicial.setForeground(new Color(255, 128, 0));
 		filtroInicial.setFont(new Font("Stencil", Font.PLAIN, 11));
-		filtroInicial.setBounds(269, 11, 305, 30);
+		filtroInicial.setBounds(141, 586, 305, 30);
 		contentPane.add(filtroInicial);
 		
 		JPanel panelTabla = new JPanel();
-		panelTabla.setBounds(10, 266, 574, 260);
+		panelTabla.setBounds(10, 273, 564, 273);
 		contentPane.add(panelTabla);
 		
 		//LA TABLA NO SERA EDITABLE 
@@ -136,24 +140,8 @@ public class VentanaViajeCombinado extends JFrame {
 		
 			
 		};
-		tableViajesCombinados=new JTable(modeloTabla);
-		
-		// Cambios de anchura
-		
-		tableViajesCombinados.getColumnModel().getColumn(0).setMinWidth(70);
-		tableViajesCombinados.getColumnModel().getColumn(1).setMaxWidth(50);
-		tableViajesCombinados.getColumnModel().getColumn(2).setMinWidth(90);
-		tableViajesCombinados.getColumnModel().getColumn(3).setMinWidth(60);
-		tableViajesCombinados.getColumnModel().getColumn(4).setMinWidth(85);
-		tableViajesCombinados.getColumnModel().getColumn(5).setMinWidth(65);
-		tableViajesCombinados.getColumnModel().getColumn(6).setMaxWidth(60);
-		tableViajesCombinados.getColumnModel().getColumn(7).setMaxWidth(50);
 		
 		panelTabla.setLayout(new BorderLayout());
-		
-		JScrollPane scroll = new JScrollPane(tableViajesCombinados,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		
-		panelTabla.add(scroll);
 		
 		
 		
@@ -163,7 +151,7 @@ public class VentanaViajeCombinado extends JFrame {
 		
 //		//CARGAMOS EL MODELO
 		for(ViajeCombinado viaje: listaViajesCombinados) {
-			modeloTabla.addRow(new Object [] {viaje.getFecha(),viaje.getHoraSalida(),viaje.getDuracionString(),viaje.getVuelo().getOrigen(),viaje.getVuelo().getDestino(),viaje.getBus().getDestino(),viaje.getPrecioString(),viaje.getPlazasRestantes()});
+			modeloTabla.addRow(new Object [] {viaje.getFecha(),viaje.getVuelo().getHoraSalida(),viaje.getDuracionString(),viaje.getOrigen(),viaje.getTrasbordo(),viaje.getDestino(),viaje.getPrecioString(),viaje.getPlazasRestantes()});
 		}
 		
 			
@@ -185,23 +173,6 @@ public class VentanaViajeCombinado extends JFrame {
 			comboBoxDestino.addItem(destino);
 		}
 		
-		
-		
-		
-		
-		JLabel lblPrecio = new JLabel("Precio");
-		lblPrecio.setForeground(Color.BLACK);
-		lblPrecio.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
-		lblPrecio.setBounds(317, 86, 58, 25);
-		contentPane.add(lblPrecio);
-		
-		JLabel lblFiltart = new JLabel("Filtrar por:");
-		lblFiltart.setHorizontalAlignment(SwingConstants.LEFT);
-		lblFiltart.setForeground(Color.BLACK);
-		lblFiltart.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblFiltart.setBounds(317, 112, 58, 22);
-		contentPane.add(lblFiltart);
-		
 		Button buttonVolver = new Button("VOLVER");
 		buttonVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -212,88 +183,64 @@ public class VentanaViajeCombinado extends JFrame {
 		contentPane.add(buttonVolver);
 		
 		Button buttonAceptar = new Button("ACEPTAR");
-		//buttonAceptar.addActionListener(new ActionListener() {
-			//public void actionPerformed(ActionEvent e) {
-//				
-//				//OBTENEMOS EL VUELO
-//				
-//				Vuelo vueloSeleccionado =  listaVuelos.get( tableVuelos.getSelectedRow() );
-//				
-//				if(vueloSeleccionado==null) {
-//					//SI NO HA SELECCIONADO NINGUNO, MENSAJE DE ERROR
-//					JOptionPane.showMessageDialog( null, "Seleccione un vuelo para continuar", "ERROR", JOptionPane.ERROR_MESSAGE);
-//				}
-//				else {
-//					//PASAMOS A LA SIGUIENTE VENTANA DE LA COMPRA
-//					BDServicio.log(Level.INFO, "Accediendo a la cantidad de billetes a seleccionar del vuelo", null);
-//					VentanaBilletes vent= new VentanaBilletes(usuarioActual,vueloSeleccionado);
-//					vent.setVisible(true);
-//					dispose();
-//					
-//				}
-//				
-//				
-//				
-//			}
-//		});
+		buttonAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//OBTENEMOS EL VUELO
+				
+				ViajeCombinado viajeSelec =  listaViajesCombinados.get( tableViajesCombinados.getSelectedRow() );
+				
+				if(viajeSelec==null) {
+					//SI NO HA SELECCIONADO NINGUNO, MENSAJE DE ERROR
+					JOptionPane.showMessageDialog( null, "Seleccione un Viaje Combinado para continuar", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}
+				else {
+					//PASAMOS A LA SIGUIENTE VENTANA DE LA COMPRA
+					BDServicio.log(Level.INFO, "Accediendo a la cantidad de billetes a seleccionar del Viaje Combinado", null);
+					VentanaBilletes vent= new VentanaBilletes(usuarioActual,viajeSelec);
+					vent.setVisible(true);
+					dispose();
+					
+				}
+				
+				
+				
+			}
+		});
 		
 		
 		buttonAceptar.setBackground(new Color(102, 204, 204));
-		buttonAceptar.setBounds(359, 549, 124, 31);
+		buttonAceptar.setBounds(424, 549, 70, 31);
 		contentPane.add(buttonAceptar);
 		
-
-		
-	
 		
 		Button buttonBuscarViajeCombinado = new Button("BUSCAR");
-		buttonBuscarViajeCombinado.setBounds(245, 208, 70, 19);
+		buttonBuscarViajeCombinado.setBounds(241, 241, 70, 19);
 		contentPane.add(buttonBuscarViajeCombinado);
 		
 		buttonBuscarViajeCombinado.setBackground(new Color(102, 204, 204));
 		
 		ButtonGroup bg=new ButtonGroup();
 		
-		JCheckBox menorMayor = new JCheckBox("Menor a mayor");
-		menorMayor.setBounds(410, 113, 110, 23);
-		contentPane.add(menorMayor);
-		//POR DEFECTO SELECCIONADO
-		menorMayor.setSelected(true);
-		
-		JCheckBox mayorMenor = new JCheckBox("Mayor a menor");
-		mayorMenor.setBounds(410, 146, 113, 23);
-		contentPane.add(mayorMenor);
-		
-		bg.add(menorMayor);
-		bg.add(mayorMenor);
-		
 		
 		//EVENTOS DE FILTRADO
-//		
+	
 		buttonBuscarViajeCombinado.addActionListener(e -> {
-//			
+			
 			BD.BDServicio.log(Level.INFO,"Realizando filtrado de los Viajes Combinados", null);
-			//Obtenenemos los origen y destino 		
-//			
+			
+			//Obtenenemos los origen, destino y las fechas		
+		
 			String origen = comboBoxOrigen.getSelectedItem().toString();
 			String destino = comboBoxDestino.getSelectedItem().toString();
+			String fechaInicio = SDF_FECHA_FOTO.format(calendarioInicio.getDate());
+			String fechaFin = SDF_FECHA_FOTO.format(calendarioFin.getDate());
 			
 			//Ahora obtenemos el valor de precio ascendente o descendente
 			String filtroPrecio ="";
 			
-			
-			boolean valor = menorMayor.isSelected();
-			if (valor ==true) {
-				filtroPrecio="menor";
-			}else {
-				filtroPrecio= "mayor";
-			}
-	
-		
-			
-			
-//			//LLAMAMOS AL METODO 
-			ArrayList<ViajeCombinado> listaViajesFiltrado = BD.BDServicio.listaServicioCombinadoFiltrado(origen, destino,filtroPrecio);
+			//LLAMAMOS AL METODO 
+			ArrayList<ViajeCombinado> listaViajesFiltrado = BD.BDServicio.listaServicioCombinadoFiltrado(origen, destino,fechaInicio, fechaFin);
 			
 			listaViajesCombinados=listaViajesFiltrado;
 		
@@ -301,50 +248,16 @@ public class VentanaViajeCombinado extends JFrame {
 			while (modeloTabla.getRowCount() > 0) {
 				modeloTabla.removeRow( 0 );
 			}
-			
-		
+
 			//LLENAMOS
 			
 		for(ViajeCombinado viaje: listaViajesCombinados) {
 
-			modeloTabla.addRow(new Object [] {viaje.getFecha(),viaje.getHoraSalida(),viaje.getOrigen(),viaje.getVuelo().getDestino(),viaje.getDestino(),viaje.getPrecio()});
+			modeloTabla.addRow(new Object [] {viaje.getFecha(),viaje.getHoraSalida(),viaje.getDuracionString() ,viaje.getOrigen(),viaje.getTrasbordo(),viaje.getDestino(),viaje.getPrecioString(),viaje.getPlazasRestantes()});
 		};
 			
 		tableViajesCombinados.repaint();
 			
-		});
-		
-		
-		
-		
-		
-		
-		
-		
-		//RENDERERS
-		
-		tableViajesCombinados.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
-			
-			@Override
-			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
-					int row, int column) {
-				JLabel l = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-				if(isSelected) {
-					l.setBackground(Color.yellow);
-				}else {
-					if(listaViajesCombinados.get(row).getPlazasRestantes()<10) {
-						l.setBackground(Color.red);
-					}else {
-						l.setBackground(Color.white);
-					}
-						
-					}
-					
-					
-				
-				
-				return l;
-			}
 		});
 		
 		
@@ -403,8 +316,86 @@ public class VentanaViajeCombinado extends JFrame {
 		Image imagenModificada = image.getScaledInstance(300,200,Image.SCALE_SMOOTH);
 		ImageIcon nuevoIcono = new ImageIcon(imagenModificada);
 		labelFoto = new JLabel ("",nuevoIcono,JLabel.CENTER);
-		labelFoto.setBounds(10, 0, 246, 121);
+		labelFoto.setBounds(10, 20, 270, 121);
 		contentPane.add(labelFoto);
+		
+		JLabel lblFecha = new JLabel("Fecha");
+		lblFecha.setForeground(Color.BLACK);
+		lblFecha.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
+		lblFecha.setBounds(306, 10, 58, 25);
+		contentPane.add(lblFecha);
+		
+		JLabel lblDesde = new JLabel("Desde:");
+		lblDesde.setHorizontalAlignment(SwingConstants.LEFT);
+		lblDesde.setForeground(Color.BLACK);
+		lblDesde.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		lblDesde.setBounds(330, 35, 58, 22);
+		contentPane.add(lblDesde);
+		
+		JLabel lblHasta = new JLabel("Hasta:");
+		lblHasta.setHorizontalAlignment(SwingConstants.LEFT);
+		lblHasta.setForeground(Color.BLACK);
+		lblHasta.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		lblHasta.setBounds(330, 153, 58, 22);
+		contentPane.add(lblHasta);
+		
+		calendarioInicio = new JCalendar();
+		calendarioInicio.setWeekOfYearVisible(false);
+		calendarioInicio.setBounds(374, 11, 184, 126);
+		contentPane.add(calendarioInicio);
+		tableViajesCombinados=new JTable(modeloTabla);
+		panelTabla.add(tableViajesCombinados);
+		
+		// Cambios de anchura
+		
+		tableViajesCombinados.getColumnModel().getColumn(0).setMinWidth(70);
+		tableViajesCombinados.getColumnModel().getColumn(1).setMaxWidth(50);
+		tableViajesCombinados.getColumnModel().getColumn(2).setMinWidth(90);
+		tableViajesCombinados.getColumnModel().getColumn(3).setMinWidth(60);
+		tableViajesCombinados.getColumnModel().getColumn(4).setMinWidth(85);
+		tableViajesCombinados.getColumnModel().getColumn(5).setMinWidth(65);
+		tableViajesCombinados.getColumnModel().getColumn(6).setMaxWidth(60);
+		tableViajesCombinados.getColumnModel().getColumn(7).setMaxWidth(50);
+		
+		JScrollPane scroll = new JScrollPane(tableViajesCombinados,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		scroll.setBounds(10, 273, 564, 270);
+		panelTabla.add(scroll);
+		
+		calendarioFin = new JCalendar();
+		calendarioFin.setWeekOfYearVisible(false);
+		calendarioFin.setBounds(374, 146, 184, 126);
+		contentPane.add(calendarioFin);
+		
+		
+		
+		//RENDERERS
+		
+		tableViajesCombinados.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+			
+			@Override
+			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
+					int row, int column) {
+				JLabel l = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+				if(isSelected) {
+					l.setBackground(Color.yellow);
+				}else {
+					if(listaViajesCombinados.get(row).getPlazasRestantes()<10) {
+						l.setBackground(Color.red);
+					}else {
+						l.setBackground(Color.white);
+					}
+						
+					}
+					
+					
+				
+				
+				return l;
+			}
+		});
+		
+
+//		tableViajesCombinados.addKeyListener(key);
 		
 	
 		
@@ -436,9 +427,6 @@ public class VentanaViajeCombinado extends JFrame {
 							}
 		
 				};
-	
-				
-				tableViajesCombinados.addKeyListener(key);
 				this.addKeyListener(key);
 				buttonAceptar.addKeyListener(key);
 				buttonBuscarViajeCombinado.addKeyListener(key);

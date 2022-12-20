@@ -10,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 import BD.BDRegistro;
 import Datos.Usuario;
 import VentanasCompra.VentanaBus;
-import VentanasCompra.VentanaViajeCombinado;
+import VentanasCompra.VentanaViajesC;
 import VentanasCompra.VentanaVuelo;
 import VentanasRegistro.VentanaInicio;
 
@@ -163,8 +163,8 @@ public class VentanaMenu extends JFrame {
 		});
 		
 		compraComb.addActionListener(e -> {
-			VentanaViajeCombinado vb = null;
-			vb = new VentanaViajeCombinado(usuarioActual);
+			VentanaViajesC vb = null;
+			vb = new VentanaViajesC(usuarioActual);
 			vb.setVisible(true);
 			dispose();
 	
@@ -205,8 +205,8 @@ public class VentanaMenu extends JFrame {
 		});
 		
 		btnViajeCombinado.addActionListener(e->{
-			VentanaViajeCombinado vb = null;
-			vb = new VentanaViajeCombinado(usuarioActual);
+			VentanaViajesC vb = null;
+			vb = new VentanaViajesC(usuarioActual);
 			vb.setVisible(true);
 			dispose();
 		});

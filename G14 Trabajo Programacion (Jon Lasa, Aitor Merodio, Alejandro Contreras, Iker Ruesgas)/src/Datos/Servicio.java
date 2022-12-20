@@ -221,11 +221,11 @@ public class Servicio  {
 	}
 	
 	public String getPrecioString() {
-		BigDecimal bd = new BigDecimal(String.valueOf(precio));
-		BigDecimal parteDecimal = bd.subtract(bd.setScale(0, RoundingMode.FLOOR)).movePointRight(bd.scale());
-		if (parteDecimal == bd.ZERO) {
-			int precioRedondeado = (int) Math.round(precio);
-			return String.format(precioRedondeado + "€");
+		String str = String.valueOf(precio);
+		int intNumber = Integer.parseInt(str.substring(0, str.indexOf('.')));
+		int decNumberInt = Integer.parseInt(str.substring(str.indexOf('.') + 1));
+		if (decNumberInt == 0) {
+			return String.format(intNumber + "€");
 		}else {
 			return String.format(precio + "€");
 		}
