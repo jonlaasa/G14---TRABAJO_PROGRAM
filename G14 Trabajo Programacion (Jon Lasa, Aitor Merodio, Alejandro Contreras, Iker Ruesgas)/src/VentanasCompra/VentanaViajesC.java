@@ -166,6 +166,7 @@ public class VentanaViajesC extends JFrame {
 //				
 //        		// DESTINO
 		TreeSet<String> listaDestinos = BDServicio.mostrarDestinosCombinados();
+		
 //				
 //				
 //				

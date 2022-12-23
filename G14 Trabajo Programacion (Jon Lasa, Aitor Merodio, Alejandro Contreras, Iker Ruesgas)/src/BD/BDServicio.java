@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.TreeSet;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -24,6 +25,7 @@ import Datos.Compra;
 import Datos.Servicio;
 import Datos.Usuario;
 import Datos.ViajeCombinado;
+import Datos.ViajeCombinadoComprado;
 import Datos.Vuelo;
 import Datos.VueloComprado;
 import Enum.TipoServicio;
@@ -42,7 +44,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		try {
 			Class.forName("org.sqlite.JDBC");
 			conn = DriverManager.getConnection("jdbc:sqlite:"+base);
-			log(Level.INFO, "Accediendo a la base de datos:" + base, null);
+			//log(Level.INFO, "Accediendo a la base de datos:" + base, null);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,7 +64,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		
 		
 		try {
-			log(Level.INFO, "Conexion cerrada",null);
+			//log(Level.INFO, "Conexion cerrada",null);
 			conn.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -264,12 +266,12 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		
 	public static TreeSet<String> mostrarDestinosCombinados () {
 			
-			TreeSet<String> listaConDestinos =  new TreeSet<String> ();
+		TreeSet<String> listaConDestinos =  new TreeSet<String> ();
 			
 			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
 			
 			try {
-				log(Level.INFO, "INTENTANDO RECUPERAR DESTINOS ORIGEN DE LOS VUELOS PARA LOS VIAJES COMBINADOS", null);
+				log(Level.INFO, "INTENTANDO RECUPERAR DESTINOS PARA LOS VIAJES COMBINADOS", null);
 				Statement st = conn.createStatement();
 				String ret = "select * from bus where cod_bus in (select cod_bus from viajeCombinado)";
 				ResultSet rs = st.executeQuery(ret);
@@ -729,14 +731,62 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 						if(vuelo.getListaRenting().size()!=0) {
 							
 							//OBTENEMOS LA QUE LE CORRESPONDE
-							int nuevaClave = BDServicio.claveRenting()+1;
-							claveRenting=nuevaClave;
+							claveRenting=BDServicio.claveRenting()+1;
 							
 							//AHORA ANYADIMOS EL RENTING CON METODO DE BD
 							
 						}
 						sent = "insert into vueloComprado (COD_USU,COD_VUELO_COMPRADO,FECHA_COMPRA,CANTIDAD,PRECIO,COD_COMPRA_RENTING,ZONA_ASIENTO_VUELO) VALUES ("+codUsu+","+codVuelo+", '"+fecha
 								+"'"+ ","+cantidad+","+precio+","+claveRenting+",'"+zonaVuelo+"')";
+						
+
+						//CREAMOS STRING PARA INTRODUCIR TAMBIEN LA COMPRA DE RENTING;
+						String claseCoche ="";
+						int dias=-1;
+						if(vuelo.getListaRenting().size()!=0) {
+							claseCoche=vuelo.getListaRenting().get(0).getClaseCoche().toString();
+							dias= vuelo.getListaRenting().get(0).getDiasAlquilado();
+							
+						}
+						
+						String rent = "insert into renting values ("+claveRenting+", '"+claseCoche+"' ,"+dias+")";
+						
+						//AHORA CREAMOS NUEVO STATEMENT.
+						BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+						try {
+							Statement sta = conn.createStatement();
+							if(vuelo.getListaRenting().size()!=0) {
+								sta.executeUpdate(rent);
+								log(Level.INFO, "INTRODUCIDA LA COMPRA DEL RENTING A LA BASE DE DATOS", null);
+							}
+				
+							sta.close();
+							BDServicio.cerrarConexion();
+							
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+
+						
+						
+					}
+					else {
+						
+						//ES UN VIAJE COMBINADO!!!
+						
+						ViajeCombinadoComprado viajeC = (ViajeCombinadoComprado) compra;
+						int codCombinado = viajeC.getViajeCombinado().getCodigo();
+						double precio = viajeC.getPrecio();
+						
+						
+						sent = "insert into viajeCombinadoComprado (COD_USU,COD_VIAJEC,"
+								+ "FECHA_COMPRA,CANTIDAD,PRECIO) VALUES ("+codUsu+","+codCombinado+", '"+fecha
+								+"'"+ ","+cantidad+","+precio+")";
+						
+						
+						
 						
 						
 					}
@@ -804,7 +854,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			e.printStackTrace();
 			
 		}
-		log(Level.INFO, "DEVOLVIENDO VUELOS DE LA BASE DE DATOS", null);
+		//log(Level.INFO, "DEVOLVIENDO VUELO DE LA BASE DE DATOS", null);
 		BDServicio.cerrarConexion();
 		return vuelo;
 		
@@ -856,7 +906,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			e.printStackTrace();
 		}
 		
-		log(Level.INFO, "DEVOLVIENDO BUS DE LA BASE DE DATOS", null);
+		//log(Level.INFO, "DEVOLVIENDO BUS DE LA BASE DE DATOS", null);
 		BDServicio.cerrarConexion();
 		
 		return bus;

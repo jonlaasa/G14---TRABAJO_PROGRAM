@@ -12,6 +12,8 @@ import Datos.Bus;
 import Datos.BusComprado;
 import Datos.Servicio;
 import Datos.Usuario;
+import Datos.ViajeCombinado;
+import Datos.ViajeCombinadoComprado;
 import Datos.Vuelo;
 import Enum.TipoServicio;
 import VentanasMenu.VentanaMenu;
@@ -164,6 +166,18 @@ public class VentanaBilletes extends JFrame {
 					VentanaServicioAdicional vent = new VentanaServicioAdicional (usuarioActual,vuelo,cantidad);
 					vent.setVisible(true);
 					dispose();
+					
+					
+				}
+				
+				else {
+					ViajeCombinadoComprado viaj = new ViajeCombinadoComprado(usuarioActual.getCodigo(),cantidad,fechaActual, TipoServicio.viajeCombinado,1, (ViajeCombinado) servicio );
+					System.out.println(viaj.getPrecio());
+					BDServicio.log(Level.INFO, "Accediendo a la ventana de METODO DE PAGO, para pagar el Viaje Combinado", null);
+					VentanaMetodoPago vent = new VentanaMetodoPago(usuarioActual,viaj,servicio);
+					vent.setVisible(true);
+					dispose();
+					
 					
 					
 				}

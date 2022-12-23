@@ -206,6 +206,7 @@ public class VentanaMetodoPago extends JFrame {
 						 precioCompra = ((BusComprado) compra).getPrecio();
 					}else {
 						 //VIAJE COMBINADO
+						precioCompra= ((ViajeCombinadoComprado) compra).getPrecio();
 					}
 					}
 				

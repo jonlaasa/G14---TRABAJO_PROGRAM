@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.TreeSet;
 import java.util.logging.Level;
 
 import org.junit.After;
@@ -19,6 +20,7 @@ import BD.BDRegistro;
 import BD.BDServicio;
 import Datos.Bus;
 import Datos.BusComprado;
+import Datos.ViajeCombinado;
 import Datos.Vuelo;
 import Enum.TipoServicio;
 
@@ -48,7 +50,7 @@ public class TestBDServicio {
 	
 	///////ESTOS TEST PUEDEN FALLAR YA QUE AL ANYADIR NUEVOS,NO TIENE PORQUE DAR TRUE
 	
-	//SOLO HABRIA QUE PONER EL INDICADO Y COMPROBAR QUE FUNCIONA!!!!!!
+	//SOLO HABRIA QUE PONER EL INDICADO Y COMPROBAR QUE FUNCIONA!!!!!! TENIENDO EN CUENTA
 	
 	
 	@Test
@@ -61,23 +63,25 @@ public class TestBDServicio {
 		
 		assertNotNull(listaBus);
 		
-		//DESPUES COMPROBAMOS LA BASE DE DATOS Y VEMOS QUE EL PRIMERO A MOSTRAR TIENE ORIGEN SEVILLA Y DESTINO LUGO
+		//DESPUES COMPROBAMOS LA BASE DE DATOS Y VEMOS QUE EL PRIMERO A MOSTRAR TIENE ORIGEN BARCELONA Y DESTINO Madrid
+		//ordenados POR FECHA 
+		
 		String origenp = listaBus.get(0).getOrigen();
 		String destinop = listaBus.get(0).getDestino();
 		
 		//COMPROBAMOS
 		
-		assertEquals(origenp, "Sevilla");
-		assertEquals(destinop, "Lugo");
+		assertEquals(origenp, "Barcelona");
+		assertEquals(destinop, "Madrid");
 		
-		//EL ULTIMO TIENE DE ORIGEN BARCELONA Y DE DESTINO SEVILLA
+		//EL ULTIMO TIENE DE ORIGEN BARCELONA Y DE DESTINO Lisboa
 		String origenu = listaBus.get(listaBus.size()-1).getOrigen();
 		String destinou = listaBus.get(listaBus.size()-1).getDestino();
 		
 		//COMPROBAMOS
 		
 		assertEquals(origenu, "Barcelona");
-		assertEquals(destinou, "Bilbao");
+		assertEquals(destinou, "Lisboa");
 		
 	}
 	
@@ -121,11 +125,11 @@ public class TestBDServicio {
 //		
 		assertEquals("Madrid", origenPrimero);
 //		
-//		//EL ULTIMO ES LISBOA (sin repetir)
+//		//EL ULTIMO ES CADIZ (sin repetir)
 //		
 		String origenUltimo = listaOrigenesVuelo.get(listaOrigenesVuelo.size()-1);
 //		
-		assertEquals("Lisboa", origenUltimo);
+		assertEquals("Cadiz", origenUltimo);
 	}
 	
 	
@@ -186,35 +190,31 @@ public class TestBDServicio {
 		
 		assertNotNull(listaVuelo);
 		
-		//DESPUES COMPROBAMOS LA BASE DE DATOS Y VEMOS QUE EL PRIMERO A MOSTRAR TIENE ORIGEN MADRID Y DESTINO VALENCIA
+		//DESPUES COMPROBAMOS LA BASE DE DATOS Y VEMOS QUE EL PRIMERO A MOSTRAR TIENE ORIGEN Valencia Y DESTINO Cadiz
 		String origenp = listaVuelo.get(0).getOrigen();
 		String destinop = listaVuelo.get(0).getDestino();
 		
 		//COMPROBAMOS
 		
-		assertEquals(origenp, "Madrid");
-		assertEquals(destinop, "Valencia");
+		assertEquals(origenp, "Valencia");
+		assertEquals(destinop, "Cadiz");
 		
-		//EL ULTIMO TIENE DE ORIGEN BILBAO Y DE DESTINO LUGO
+		//EL ULTIMO TIENE DE ORIGEN Barcelona Y DE DESTINO Bilbao
 		String origenu = listaVuelo.get(listaVuelo.size()-1).getOrigen();
 		String destinou = listaVuelo.get(listaVuelo.size()-1).getDestino();
 		
 		//COMPROBAMOS
 		
-		assertEquals(origenu, "Bilbao");
-		assertEquals(destinou, "Lugo");
+		assertEquals(origenu, "Barcelona");
+		assertEquals(destinou, "Bilbao");
 		
 	}
 	
 	@Test
 	public void testCompraServicio() {
 		
-		//PRIMERO CREAMOS LA COMPRA;
-		//EJEMPLO, DE BUS
 		
-		//BusComprado bus = new BusComprado (3, 2, "2022-12-04",6,TipoServicio.bus, new Bus("2023-12-03",TipoServicio.bus) );
-		
-		//SI NO FUNCIONA ESTA INSERCION, PROBAMOS CON UNA YA EXISTENTE
+		//PROBAMOS CON UNA YA EXISTENTE
 		
 		//INSERTAMOS
 		// BDServicio.compraServicio(bus);
@@ -250,11 +250,177 @@ public class TestBDServicio {
 		
 	}
 	
+	//TEST PARA COMPROBAR LOS ORIGENES DE LOS VIAJES COMBINADOS
+	@Test
+	public void testMostrarOrigenesCombinados() {
+		
+		//LLAMAMOS AL METODO CON BUS PRIMERO
+		TreeSet<String> listaOrigenesCombinados  = BDServicio.mostrarOrigenesCombinados();
+		
+		//primero comprobamos que no es vacia
+		
+		assertNotNull(listaOrigenesCombinados);
+		
+		//DESPUES, SABEMOS QUE EL PRIMERO ES Barcelona
+		
+		String origenPrimero = listaOrigenesCombinados.first();
+		assertEquals("Barcelona", origenPrimero);
+		
+		//EL ULTIMO ES VALENCIA (sin repetir)
+		
+         String origenUltimo = listaOrigenesCombinados.last();
+		
+		assertEquals("Valencia", origenUltimo);
+	}
+	
+	//TEST PARA COMPROBAR LOS DESTINOS DE LOS VIAJES COMBINADOS
+	
+	
+	@Test
+	public void testMostrarDestinosCombinados() {
+		
+		//LLAMAMOS AL METODO CON BUS PRIMERO
+		TreeSet<String> listaDestinosCombinados  = BDServicio.mostrarDestinosCombinados();
+		
+		//primero comprobamos que no es vacia
+		
+		assertNotNull(listaDestinosCombinados);
+		
+		//DESPUES, SABEMOS QUE EL PRIMERO ES Barcelona (ORDENADOS DE MANERA ALFABETICA)
+		
+		String destinoPrimero = listaDestinosCombinados.first();
+		assertEquals("Barcelona", destinoPrimero);
+		
+		//EL ULTIMO ES VALENCIA (sin repetir) esta ordenado de manera alfabetica
+		
+         String origenUltimo = listaDestinosCombinados.last();
+		
+		assertEquals("Valencia", origenUltimo);
+	}
+	
+	//TEST PARA MOSTRAR VIAJE COMBINADOS TOTAL
+	@Test
+	public void testMostrarViajeCombinadoTotal() {
+		
+		//LLAMAMOS AL METODO
+		ArrayList<ViajeCombinado> listaViaje = BDServicio.mostrarViajesCombinadosTotal();
+		
+		//primero comprobamos que no es vacia
+		
+		//ESTAN ORDENADOS POR FECHA
+		
+		assertNotNull(listaViaje);
+		
+		//DESPUES COMPROBAMOS LA BASE DE DATOS Y VEMOS QUE EL PRIMERO A MOSTRAR TIENE ORIGEN Valencia Y DESTINO Cadiz
+		String origenp = listaViaje.get(0).getOrigen();
+		String destinop = listaViaje.get(0).getDestino();
+		
+		//COMPROBAMOS
+		
+		assertEquals(origenp, "Barcelona");
+		assertEquals(destinop, "Santander");
+		
+		//EL ULTIMO TIENE DE ORIGEN Barcelona Y DE DESTINO Bilbao
+		String origenu = listaViaje.get(listaViaje.size()-1).getOrigen();
+		String destinou = listaViaje.get(listaViaje.size()-1).getDestino();
+		
+		//COMPROBAMOS
+		
+		assertEquals(origenu, "Valencia");
+		assertEquals(destinou, "Bilbao");
+		
+	}
 	
 	
 	
+	//TEST PARA MOSTRAR VUELOS CON FILTRO
+	@Test
+	public void testServicioVueloFiltrado() {
+		
+		//LLAMAMOS AL METODO CON UN EJEMPLO (DE VALENCIA A MADRID DE MAYOR A MENOR, ENTRE EL 20 DE DICIEMBRE DE
+		//2022 Y EL 1 DE JUNIO DE 2023 
+		ArrayList<Vuelo> listaVuelosFiltrado = BDServicio.listaServicioVueloFiltrado("Madrid", "Valencia", "mayor", "2022-12-20", "2023-06-01");
+		
+		//primero comprobamos que no es vacia
+		
+		//ESTAN ORDENADOS POR FECHA
+		
+		assertNotNull(listaVuelosFiltrado);
+		
+		//DESPUES COMPROBAMOS LA BASE DE DATOS Y VEMOS QUE EL PRIMERO A MOSTRAR TIENE ORIGEN Valencia Y DESTINO Cadiz
+		String origenp = listaVuelosFiltrado.get(0).getOrigen();
+		String destinop = listaVuelosFiltrado.get(0).getDestino();
+		
+		//COMPROBAMOS
+		
+		assertEquals(origenp, "Madrid");
+		assertEquals(destinop, "Valencia");
+		
+		// LA BUSQUEDA SOLO DEBERIA DEVOLVER UN UNICO VUELO,POR TANTO COMPROBAMOS
+		
+		assertEquals(1, listaVuelosFiltrado.size());
+		
+	}
+	
+	//TEST PARA COMPROBAR FILTRO DE BUS
+	
+	@Test
+	public void testServicioBusFiltrado() {
+		
+		//LLAMAMOS AL METODO CON UN EJEMPLO (DE Sevilla A Lugo DE MAYOR A MENOR, ENTRE EL 20 DE DICIEMBRE DE
+		//2022 Y EL 22 DE DICIEMBRE DE 2023 
+		ArrayList<Bus> listaBusFiltrado = BDServicio.listaServicioBusFiltrado("Sevilla", "Lugo",
+				"mayor", "2022-12-20", "2023-12-20");
+		
+		//primero comprobamos que no es vacia
+		
+		//ESTAN ORDENADOS POR FECHA
+		
+		assertNotNull(listaBusFiltrado);
+		
+		//DESPUES COMPROBAMOS LA BASE DE DATOS Y VEMOS QUE EL PRIMERO A MOSTRAR TIENE ORIGEN Valencia Y DESTINO Cadiz
+		String origenp = listaBusFiltrado.get(0).getOrigen();
+		String destinop = listaBusFiltrado.get(0).getDestino();
+		
+		//COMPROBAMOS
+		
+		assertEquals(origenp, "Sevilla");
+		assertEquals(destinop, "Lugo");
+		
+		// LA BUSQUEDA SOLO DEBERIA DEVOLVER UN UNICO VUELO,POR TANTO COMPROBAMOS
+		
+		assertEquals(1, listaBusFiltrado.size());
+		
+	}
 	
 	
+	//FALTA EL FILTRADO DE LOS VIAJES COMBINADOS TAMBIEN.
+	
+	
+	
+	//TEST PARA COMPROBAR CUAL ES LA SIGUIENTE CLAVE VALIDA PARA LA TABLA DE RENTING
+	//PARA ELLO OBTENEMOS CUAL ES LA ULTIMA
+	
+	@Test
+	public void testClaveRenting() {
+		
+		//LLAMAMOS AL METODO Y OBTENEMOS LA CLAVE
+			int clave = BDServicio.claveRenting();
+		
+		//primero comprobamos que no es null
+		
+		
+		assertNotNull(clave);
+		
+		//DESPUES COMPROBAMOS LA BASE DE DATOS Y VEMOS QUE EL ultimo ES: 1(ACTUAL)
+		//esto ira variando, por lo tanto hay que mirar la base de datos y cambiar el 1 por el que tocaria en el momento
+		//que hacemos el test
+		
+		
+		assertEquals(1, clave);
+		
+		
+	}
 	
 	
 	
