@@ -120,7 +120,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		try {
 			Statement st = conn.createStatement();
 			
-			String resp = "select * from bus";
+			String resp = "select * from bus order by fecha";
 			ResultSet rs = st.executeQuery(resp);
 			while(rs.next()) {
 				int codigoVuelo = rs.getInt("Cod_bus");
@@ -306,7 +306,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		try {
 			Statement st = conn.createStatement();
 			
-			String resp = "select * from viajeCombinado";
+			String resp = "select * from viajeCombinado order by fecha";
 			ResultSet rs = st.executeQuery(resp);
 			while(rs.next()) {
 				int codCombinado = rs.getInt("Cod_viajeCombinado");
@@ -366,7 +366,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			try {
 				Statement st = conn.createStatement();
 				
-				String resp = "select * from VUELO";
+				String resp = "select * from VUELO order by fecha";
 				ResultSet rs = st.executeQuery(resp);
 				while(rs.next()) {
 					int codigoVuelo = rs.getInt("Cod_vuelo");

@@ -33,7 +33,7 @@ public class Main {
 //		PARA CREAR VENTANAS DE COMPRA MENU...
 
 		Usuario u = new Usuario();
-	//	Administrador a = new Administrador();
+		Administrador a = new Administrador();
 
 //		Usuario u = new Usuario();
 //		Administrador a = new Administrador();
@@ -45,8 +45,8 @@ public class Main {
 //		VentanaInicio v = new VentanaInicio();
 //		v.setVisible(true);
 	
-//		VentanaVuelo y = new VentanaVuelo(u);
-//		y.setVisible(true);
+		VentanaVuelo y = new VentanaVuelo(u);
+		y.setVisible(true);
 		
 //		VentanaCrearVuelo z = new VentanaCrearVuelo(a);
 //		z.setVisible(true);
@@ -55,8 +55,8 @@ public class Main {
 //		w.setVisible(true);
 		
 
-		VentanaInicio c =  new VentanaInicio();
-		c.setVisible(true);
+//		VentanaInicio c =  new VentanaInicio();
+//		c.setVisible(true);
 
 //		VentanaViajesC c =  new VentanaViajesC(u);
 //		c.setVisible(true);
