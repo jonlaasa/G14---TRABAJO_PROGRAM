@@ -19,6 +19,7 @@ import Enum.ZonaAsientoVuelo;
 import VentanasAdministrador.VentanaCrearBus;
 import VentanasAdministrador.VentanaCrearVuelo;
 import VentanasAdministrador.VentanaInicioAdmin;
+import VentanasAdministrador.VentanaMostrarEstadistica;
 import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaViajesC;
 import VentanasCompra.VentanaVuelo;
@@ -60,7 +61,8 @@ public class Main {
 //		VentanaViajesC c =  new VentanaViajesC(u);
 //		c.setVisible(true);
 		
-		
+		VentanaMostrarEstadistica es = new VentanaMostrarEstadistica(a);
+		es.setVisible(true);
 
 //		BDServicio.crearViajesCombinados();
 
