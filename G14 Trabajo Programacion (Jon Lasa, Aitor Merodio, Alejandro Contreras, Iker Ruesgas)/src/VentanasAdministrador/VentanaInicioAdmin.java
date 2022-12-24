@@ -161,7 +161,7 @@ public class VentanaInicioAdmin extends JFrame {
 		//ESTADISTICA EVENTO, CREAMOS VENTANA
 		mntmEstadisticas.addActionListener(e -> {
 			
-			VentanaMostrarEstadisticas v = new VentanaMostrarEstadisticas(administradorActual);
+			VentanaMostrarEstadistica v = new VentanaMostrarEstadistica(administradorActual);
 			v.setVisible(true);
 			dispose();
 			

@@ -57,8 +57,10 @@ public class Main {
 //		VentanaInicio c =  new VentanaInicio();
 //		c.setVisible(true);
 
-		VentanaViajesC c =  new VentanaViajesC(u);
-		c.setVisible(true);
+//		VentanaViajesC c =  new VentanaViajesC(u);
+//		c.setVisible(true);
+		
+		
 
 //		BDServicio.crearViajesCombinados();
 
