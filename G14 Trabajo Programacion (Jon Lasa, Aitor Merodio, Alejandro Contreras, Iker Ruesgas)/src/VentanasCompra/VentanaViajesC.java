@@ -382,6 +382,7 @@ public class VentanaViajesC extends JFrame {
 				}else {
 					if(listaViajesCombinados.get(row).getPlazasRestantes()<10) {
 						l.setBackground(Color.red);
+						l.setFont( new Font( "Arial", Font.ITALIC, 12 ) );
 					}else {
 						l.setBackground(Color.white);
 					}
@@ -396,10 +397,6 @@ public class VentanaViajesC extends JFrame {
 		});
 		
 
-		
-		
-	
-		
 		
 		//CREAMOS EVENTO DE RATON PARA AL HACER CONTROL CLICK RESTAURAR COMO INICILAMENTE (POR SI NO TENEMOS OPCIONES DESPUES DE FILTRAR EJ.)
 		//daigual donde hagamos el click + plus
@@ -423,7 +420,7 @@ public class VentanaViajesC extends JFrame {
 						//LLENAMOS
 							
 			  for(ViajeCombinado viaje: listaViajesCombinados) {
-				modeloTabla.addRow(new Object [] {viaje.getFecha(),viaje.getHoraSalida(),viaje.getOrigen(),viaje.getVuelo().getDestino(),viaje.getDestino(),viaje.getPrecio()});
+				modeloTabla.addRow(new Object [] {viaje.getFecha(),viaje.getHoraSalida(),viaje.getDuracionString() ,viaje.getOrigen(),viaje.getTrasbordo(),viaje.getDestino(),viaje.getPrecioString(),viaje.getPlazasRestantes()});
 			}
 							}
 		

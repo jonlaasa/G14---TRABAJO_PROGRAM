@@ -45,21 +45,20 @@ public class Main {
 //		VentanaInicio v = new VentanaInicio();
 //		v.setVisible(true);
 	
-		VentanaInicio y = new VentanaInicio();
-		y.setVisible(true);
+//		VentanaInicio y = new VentanaInicio();
+//		y.setVisible(true);
 		
 //		VentanaCrearVuelo z = new VentanaCrearVuelo(a);
 //		z.setVisible(true);
 		
 //		VentanaCrearBus w = new VentanaCrearBus(a);
 //		w.setVisible(true);
-		
 
 //		VentanaInicio c =  new VentanaInicio();
 //		c.setVisible(true);
 
-//		VentanaViajesC c =  new VentanaViajesC(u);
-//		c.setVisible(true);
+		VentanaViajesC c =  new VentanaViajesC(u);
+		c.setVisible(true);
 
 //		BDServicio.crearViajesCombinados();
 
