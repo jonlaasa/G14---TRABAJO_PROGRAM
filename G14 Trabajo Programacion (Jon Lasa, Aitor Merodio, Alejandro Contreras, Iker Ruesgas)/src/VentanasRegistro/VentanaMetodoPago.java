@@ -23,6 +23,15 @@ import VentanasCompra.VentanaConfirmacionCompra;
 import logicaDeNegocio.Utils;
 
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.awt.event.ActionEvent;
 
@@ -154,6 +163,47 @@ public class VentanaMetodoPago extends JFrame {
 		pagarConPuntos.setBounds(349, 319, 153, 45);
 		contentPane.add(pagarConPuntos);
 		
+		ArrayList <String> valoresProperties = new ArrayList<String> ();
+		///FICHERO PROPERTIES QUE GUARDA LOS DATOS ANTERIORES!!!
+		try {
+			FileReader fd = new FileReader("usuariosPago.txt");
+			BufferedReader br = new BufferedReader(fd);
+			String linea;
+			linea=br.readLine();
+			if(linea.equals(usuarioActual.getNombreUsuario())) {
+				
+			while ((linea=br.readLine())!=null) {
+					valoresProperties.add(linea);
+	
+				}
+			}
+		}catch(Exception e) {
+				e.printStackTrace();
+			}
+		
+		
+		
+		if(valoresProperties.size()!=0) {
+			codigoSeguridad.setText(valoresProperties.get(6));
+			fechaCaducidad.setText(valoresProperties.get(5));
+			numeroTarjeta.setText(valoresProperties.get(4));
+			codigoPostal.setText(valoresProperties.get(3));
+			ciudad.setText(valoresProperties.get(2));
+			direccion.setText(valoresProperties.get(1));
+			titularTarjeta.setText(valoresProperties.get(0));
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		///UNA VEZ YA HEMOS LEIDO EL FICHERO LO IMPRIMIMOS PARA VERLO
+		
+		System.out.println(valoresProperties);
+		
 		
 		//EVENTOS
 		
@@ -167,6 +217,8 @@ public class VentanaMetodoPago extends JFrame {
 			vent.setVisible(true);
 			dispose();		
 		});
+		
+		ArrayList<String> listaParaEscribir = new 	ArrayList<String>();
 		
 		
 		//EVENTO DE CONFIRMAR
@@ -182,6 +234,13 @@ public class VentanaMetodoPago extends JFrame {
 			String feC = fechaCaducidad.getText();
 			String codS = codigoSeguridad.getText();
 			
+			
+			
+			//llamamos al metodo de escritura
+			
+			escribirFicheroProperties(listaParaEscribir, usuarioActual);
+			
+			
 			try {
 				
 				
@@ -191,7 +250,19 @@ public class VentanaMetodoPago extends JFrame {
 				Utils.comprobarNumerosConLongitud(cd, 5,"Codigo Postal");
 				Utils.comprobarNumerosConLongitud(codS, 3,"Codigo de Seguridad");
 				Utils.comprobarNumerosConLongitud(feC, 4,"Fecha de Caducidad");
-				Utils.comprobarNumerosConLongitud(numT, 16,"Numero de Tarjeta");	
+				Utils.comprobarNumerosConLongitud(numT, 16,"Numero de Tarjeta");
+				
+				
+				listaParaEscribir.add(nombreTitular);
+				listaParaEscribir.add(nombreTitular);
+				listaParaEscribir.add(ciu);
+				listaParaEscribir.add(cd);
+				listaParaEscribir.add(numT);
+				listaParaEscribir.add(feC);
+				listaParaEscribir.add(codS);
+				
+				escribirFicheroProperties(listaParaEscribir, usuarioActual);
+				
 				
 				//SI SE CUMPLEN??? //PRIMERO ESCRIBIMOS LA COMPRA EN LA BASE DE DATOS
 				BDServicio.escribirCompra(compra);
@@ -245,6 +316,8 @@ public class VentanaMetodoPago extends JFrame {
 		
 		
 		//UNA VEZ TENEMOS EL PRECIO, OBTENEMOS LOS PUNTOS QUE TIENE Y EL DIENRO QUE ELLO IMPLICA 
+		
+		
 		
 		 double  precioCompra =0;
 			
@@ -303,6 +376,27 @@ public class VentanaMetodoPago extends JFrame {
 	});
 		
 		
+		
+	}
+	
+	
+	public static void escribirFicheroProperties(ArrayList<String> valoresActuales,Usuario usuarioActual) {
+	
+		try{
+			  FileWriter fw=new FileWriter("usuariosPago.txt" );
+		     fw.write(usuarioActual.getNombreUsuario()+"\n");
+				
+		     for(String valor:valoresActuales) {
+		 		fw.write(valor+"\n");
+		 		System.out.println(valor);
+		 		}
+
+		     // Hay que cerrar el fichero
+		     fw.close();
+		  } catch (IOException ioe){
+		     ioe.printStackTrace();
+		  }
+	
 		
 	}
 }
