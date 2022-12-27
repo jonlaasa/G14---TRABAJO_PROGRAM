@@ -43,8 +43,8 @@ public class Main {
 //		System.out.println(bus.getFecha());
 //		BDServicio.crearBus(bus);
 		
-//		VentanaInicio v = new VentanaInicio();
-//		v.setVisible(true);
+		VentanaInicio v = new VentanaInicio();
+		v.setVisible(true);
 	
 //		VentanaInicio y = new VentanaInicio();
 //		y.setVisible(true);
@@ -61,8 +61,8 @@ public class Main {
 //		VentanaViajesC c =  new VentanaViajesC(u);
 //		c.setVisible(true);
 		
-		VentanaMostrarEstadistica es = new VentanaMostrarEstadistica(a);
-		es.setVisible(true);
+//		VentanaMostrarEstadistica es = new VentanaMostrarEstadistica(a);
+//		es.setVisible(true);
 
 //		BDServicio.crearViajesCombinados();
 

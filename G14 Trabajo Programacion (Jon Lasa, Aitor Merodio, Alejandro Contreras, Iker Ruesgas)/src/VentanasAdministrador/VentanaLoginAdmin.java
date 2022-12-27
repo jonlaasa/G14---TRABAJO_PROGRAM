@@ -25,7 +25,6 @@ public class VentanaLoginAdmin extends JFrame {
 	private JPanel contentPane;
 	private JPasswordField contrasenya;
 	private JTextField usuario;
-	private JPasswordField codAcceso;
 
 	public  VentanaLoginAdmin() {
 		inicializar();
@@ -42,14 +41,14 @@ public class VentanaLoginAdmin extends JFrame {
 	
 		JLabel lblUsuario = new JLabel("Usuario:");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblUsuario.setBounds(60, 84, 79, 31);
+		lblUsuario.setBounds(98, 116, 79, 31);
 		contentPane.add(lblUsuario);
 		
 
 		
 		JLabel lblNewLabel_1 = new JLabel("Contrasea\u00F1a:");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(60, 143, 110, 31);
+		lblNewLabel_1.setBounds(98, 175, 110, 31);
 		contentPane.add(lblNewLabel_1);
 		
 		
@@ -65,11 +64,11 @@ public class VentanaLoginAdmin extends JFrame {
 		
 
 		contrasenya = new JPasswordField();
-		contrasenya.setBounds(180, 150, 136, 20);
+		contrasenya.setBounds(282, 182, 136, 20);
 		contentPane.add(contrasenya);
 		
 		usuario = new JTextField();
-		usuario.setBounds(180, 91, 136, 20);
+		usuario.setBounds(282, 123, 136, 20);
 		contentPane.add(usuario);
 		usuario.setColumns(10);
 		
@@ -77,15 +76,6 @@ public class VentanaLoginAdmin extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setBounds(292, 263, 116, 23);
 		contentPane.add(btnVolver);
-		
-		JLabel lblCodAcceso = new JLabel("Codigo acceso:");
-		lblCodAcceso.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblCodAcceso.setBounds(60, 204, 110, 23);
-		contentPane.add(lblCodAcceso);
-		
-		codAcceso = new JPasswordField();
-		codAcceso.setBounds(180, 207, 136, 20);
-		contentPane.add(codAcceso);
 		
 		btnVolver.addActionListener(e -> {
 			VentanaLogin vr = null;
