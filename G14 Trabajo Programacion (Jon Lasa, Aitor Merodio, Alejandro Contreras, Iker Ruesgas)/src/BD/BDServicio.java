@@ -1074,6 +1074,146 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		return destino;
 	}
 	
+	
+	//6-COMPRAS POR CADA MES(DEVUELVE ARRAYLIST)
+	
+	public static ArrayList<Integer> comprasAnualesTotales() {
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+		String resp="";
+		ArrayList<Integer> resultados= new ArrayList<Integer>();
+		ArrayList<Integer> resultados2= new ArrayList<Integer>();
+		ArrayList<Integer> resultados3= new ArrayList<Integer>();
+		try {
+			Statement st = conn.createStatement();
+			int indice=0;
+			int comprasMes=0;
+			for (int i=1; i<13; i++) {
+				String mes = String.format("%02d", i);
+				resp="SELECT COUNT(*) FROM VUELOCOMPRADO WHERE FECHA_COMPRA LIKE '2022/"+mes+"%';";
+				ResultSet rs = st.executeQuery(resp);
+				comprasMes = rs.getInt(1);
+				resultados.add(indice,comprasMes);
+				indice++;
+			}
+			indice=0;
+			for (int i=1; i<13; i++) {
+				String mes = String.format("%02d", i);
+				resp="SELECT COUNT(*) FROM BUSCOMPRADO WHERE FECHA_COMPRA LIKE '2022/"+mes+"%';";
+				ResultSet rs = st.executeQuery(resp);
+				comprasMes = rs.getInt(1);
+				int valorAnterior= resultados.get(indice);
+				comprasMes=comprasMes+valorAnterior;
+				resultados2.add(indice,comprasMes);
+				indice++;
+			}
+			indice=0;
+			for (int i=1; i<13; i++) {
+				String mes = String.format("%02d", i);
+				resp="SELECT COUNT(*) FROM VIAJECOMBINADOCOMPRADO WHERE FECHA_COMPRA LIKE '2022/"+mes+"%';";
+				ResultSet rs = st.executeQuery(resp);
+				comprasMes = rs.getInt(1);
+				int valorAnterior= resultados2.get(indice);
+				comprasMes=comprasMes+valorAnterior;
+				resultados3.add(indice,comprasMes);
+				indice++;
+			}
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER COMPRAS ANUALES", e);
+			e.printStackTrace();
+		}
+		
+		log(Level.INFO, "DEVOLVIENDO COMPRAS ANUALES", null);
+		BDServicio.cerrarConexion();
+		return resultados3;
+	}
+	
+	//7-COMPRAS POR CADA TIPO DE SERVICIO (DEVUELVE ARRAYLIST: ORDEN VUELO,BUS,VIAJECOMBINADO)
+	
+	public static ArrayList<Integer> comprasServicio() {
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+		String resp="";
+		ArrayList<Integer> resultados= new ArrayList<Integer>();
+		ArrayList<String> servicios= new ArrayList<String>();
+		servicios.add("VUELOCOMPRADO");
+		servicios.add("BUSCOMPRADO");
+		servicios.add("VIAJECOMBINADOCOMPRADO");
+		try {
+			Statement st = conn.createStatement();
+			int indice=0;
+			
+			for (String servicio:servicios) {
+				resp="SELECT COUNT(*) FROM "+servicio+";";
+				ResultSet rs = st.executeQuery(resp);
+				int numeroCompras = rs.getInt(1);
+				resultados.add(indice,numeroCompras);
+				indice++;
+				
+			}
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER COMPRAS POR SERVICIO", e);
+			e.printStackTrace();
+		}
+		
+		log(Level.INFO, "DEVOLVIENDO COMPRAS POR SERVICIO", null);
+		BDServicio.cerrarConexion();
+		return resultados;
+	}
+	
+	//8-COMPRAS POR CADA DESTINO(DEVUELVE ARRAYLIST: ORDEN BARCELONA, MADRID, VALENCIA, LUGO, MURCIA, BILBAO, CADIZ, LISBOA, SANTANDER, CASTELLON)
+
+	
+	public static ArrayList<Integer> comprasDestino() {
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+		String resp="";
+		ArrayList<Integer> resultados= new ArrayList<Integer>();
+		ArrayList<Integer> resultados2= new ArrayList<Integer>();
+
+		ArrayList<String> destinos= new ArrayList<String>();
+		destinos.add("Barcelona");
+		destinos.add("Madrid");
+		destinos.add("Valencia");
+		destinos.add("Lugo");
+		destinos.add("Murcia");
+		destinos.add("Bilbao");
+		destinos.add("Cadiz");
+		destinos.add("Lisboa");
+		destinos.add("Santander");
+		destinos.add("Castellon");
+		
+		try {
+			Statement st = conn.createStatement();
+			int indice=0;
+			for (String destino:destinos) {
+				resp="SELECT COUNT(*) FROM VUELO V,VUELOCOMPRADO VC WHERE V.COD_VUELO=VC.COD_VUELO_COMPRADO AND V.DESTINO='"+destino+"';";
+				ResultSet rs = st.executeQuery(resp);
+				int numeroCompras = rs.getInt(1);
+				resultados.add(indice,numeroCompras);
+				indice++;
+			}
+			indice=0;
+			for (String destino:destinos) {
+				resp="SELECT COUNT(*) FROM BUS B,BUSCOMPRADO BC WHERE B.COD_BUS=BC.COD_BUS_COMPRADO AND B.DESTINO='"+destino+"';";
+				ResultSet rs = st.executeQuery(resp);
+				int numeroCompras = rs.getInt(1);
+				int valorAnterior= resultados.get(indice);
+				numeroCompras=numeroCompras+valorAnterior;
+				resultados2.add(indice,numeroCompras);
+				indice++;
+			}
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER COMPRAS POR DESTINO", e);
+			e.printStackTrace();
+		}
+		
+		log(Level.INFO, "DEVOLVIENDO COMPRAS POR DESTINO", null);
+		BDServicio.cerrarConexion();
+		return resultados2;
+	}
+	
+	
+	
 //	public static boolean vueloMasVacio() throws SQLException {
 //		
 //		Connection con = BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.bd");

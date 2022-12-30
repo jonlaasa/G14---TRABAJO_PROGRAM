@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.jfree.data.category.DefaultCategoryDataset;
+
 import BD.BDServicio;
 import Datos.Administrador;
 
@@ -21,6 +23,8 @@ import javax.swing.JButton;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -156,6 +160,26 @@ public class VentanaMostrarEstadistica extends JFrame {
 		
 		botongrafico.addActionListener(e->{
 			//CODIGO PARA HACER GRAFICOS
+			String tipodegrafico= comboBoxAvanzado.getSelectedItem().toString();
+			DefaultCategoryDataset datos = new DefaultCategoryDataset();
+			ArrayList<Integer> resultados= new ArrayList<Integer>();
+			if (tipodegrafico=="NUMERO DE COMPRAS/MES") {
+				resultados=BDServicio.comprasAnualesTotales();
+				for (int resultado : resultados) {
+					System.out.println(resultado);
+				}
+			} else if (tipodegrafico=="NUMERO DE COMPRAS/TIPO DE SERVICIO") {
+				resultados=BDServicio.comprasServicio();
+				for (int resultado : resultados) {
+					System.out.println(resultado);
+				}
+			} else {
+				resultados=BDServicio.comprasDestino();
+				for (int resultado : resultados) {
+					System.out.println(resultado);
+				}
+			}
+			
 		});
 	}
 }
