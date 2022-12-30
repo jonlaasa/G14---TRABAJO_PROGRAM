@@ -6,10 +6,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import BD.BDServicio;
 import Datos.Administrador;
 
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import java.awt.Font;
@@ -19,6 +21,7 @@ import javax.swing.JButton;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -38,6 +41,12 @@ public class VentanaMostrarEstadistica extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JButton botonVolver = new JButton("VOLVER");
+		botonVolver.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
+		botonVolver.setBackground(new Color(255, 255, 224));
+		botonVolver.setBounds(10, 574, 96, 26);
+		contentPane.add(botonVolver);
+		
 		JLabel lblNewLabel = new JLabel("ESTADISTICAS GENERALES");
 		lblNewLabel.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 17));
 		lblNewLabel.setBounds(21, 35, 201, 22);
@@ -45,12 +54,17 @@ public class VentanaMostrarEstadistica extends JFrame {
 		
 		JComboBox comboBoxGeneral = new JComboBox();
 		comboBoxGeneral.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 15));
-		comboBoxGeneral.setBounds(21, 68, 379, 22);
+		comboBoxGeneral.setBounds(21, 68, 263, 22);
+		comboBoxGeneral.addItem("MEDIA DE PRECIO DE COMPRA");
+		comboBoxGeneral.addItem("COMPRA MAS CARA");
+		comboBoxGeneral.addItem("COMPRA MAS BARATA");
+		comboBoxGeneral.addItem("USUARIO CON MAS COMPRAS");
+		comboBoxGeneral.addItem("DESTINO MAS VISITADO");
 		contentPane.add(comboBoxGeneral);
 		
 		JPanel panelGrafico = new JPanel();
 		panelGrafico.setBackground(new Color(255, 255, 224));
-		panelGrafico.setBounds(21, 248, 525, 352);
+		panelGrafico.setBounds(21, 237, 525, 352);
 		contentPane.add(panelGrafico);
 		
 		JButton botonBuscarSimple = new JButton("");
@@ -73,9 +87,13 @@ public class VentanaMostrarEstadistica extends JFrame {
 		JComboBox comboBoxAvanzado = new JComboBox();
 		comboBoxAvanzado.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 15));
 		comboBoxAvanzado.setBounds(21, 193, 379, 22);
+		comboBoxAvanzado.addItem("NUMERO DE COMPRAS/MES");
+		comboBoxAvanzado.addItem("NUMERO DE COMPRAS/TIPO DE SERVICIO");
+		comboBoxAvanzado.addItem("NUMERO DE COMPRAS/DESTINOS");
+		
 		contentPane.add(comboBoxAvanzado);
 		
-		
+		 
 		textField = new JTextField();
 		textField.setEditable(false);
 		textField.setBounds(21, 109, 379, 22);
@@ -100,6 +118,44 @@ public class VentanaMostrarEstadistica extends JFrame {
 
 		contentPane.add(labelFondo);
 		
-
+		JComboBox comboBoxServicio = new JComboBox();
+		comboBoxServicio.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 15));
+		comboBoxServicio.setBounds(296, 68, 104, 22);
+		comboBoxServicio.addItem("VUELO");
+		comboBoxServicio.addItem("BUS");
+		comboBoxServicio.addItem("VIAJE COMBINADO");
+		contentPane.add(comboBoxServicio);
+		
+		botonVolver.addActionListener(e->{
+			VentanaInicioAdmin vb = null;
+			vb = new VentanaInicioAdmin(u);
+			vb.setVisible(true);
+			dispose();
+		});
+		
+		//BOTON PARA CONSULTAS SIMPLES
+		
+		botonBuscarSimple.addActionListener(e->{
+			String resultado="";
+			String servicio= comboBoxServicio.getSelectedItem().toString();
+			if (comboBoxGeneral.getSelectedItem().toString()=="MEDIA DE PRECIO DE COMPRA") {
+				resultado=BDServicio.mediaCompras(servicio);
+			} else if (comboBoxGeneral.getSelectedItem().toString()=="COMPRA MAS CARA") {
+				resultado=BDServicio.compraMax(servicio);
+			} else if (comboBoxGeneral.getSelectedItem().toString()=="COMPRA MAS BARATA") {
+				resultado=BDServicio.compraMin(servicio);
+			} else if (comboBoxGeneral.getSelectedItem().toString()=="USUARIO CON MAS COMPRAS") {
+				resultado=BDServicio.usuarioMasCompra(servicio);
+			} else {
+				resultado=BDServicio.destinoMasvisitado(servicio);
+			}
+			textField.setText(resultado);
+		});
+		
+		//BOTON PARA GRAFICOS
+		
+		botongrafico.addActionListener(e->{
+			//CODIGO PARA HACER GRAFICOS
+		});
 	}
 }

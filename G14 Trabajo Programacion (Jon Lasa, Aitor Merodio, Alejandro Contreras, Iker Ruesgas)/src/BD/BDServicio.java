@@ -916,37 +916,195 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		
 	}
 	
-	public static  boolean vueloMasVacio() throws SQLException {
-		
-		Connection con = BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.bd");
-		String sql = "SELECT * FROM vuelo WHERE PLAZAS_RESTANTES = (SELECT MIN(PLAZAS_RESTANTES) FROM vuelo)";
-		Statement st = conn.createStatement();
-		ResultSet rs = st.executeQuery(sql);
-		while(rs.next()) {
-			int codigoVuelo = rs.getInt("Cod_vuelo");
-			String FechaVuelo = rs.getString("Fecha");
-			String horaSalidaVuelo = rs.getString("Hora_salida");
-			int duracion = rs.getInt("Duracion");
-			String origenV = rs.getString("Origen");
-			String destinoV = rs.getString("Destino");
-			Double precio = rs.getDouble("Precio");
-			TipoServicio tipo = TipoServicio.vuelo;
-			int plazasRestantes = rs.getInt("Plazas_restantes");
-			String companya= rs.getString("Companya_vuelo");
-			
-			try {
-				Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origenV,destinoV, precio, tipo,plazasRestantes,companya);
-				return true;
-			}catch (Exception e) {
-				// TODO: handle exception
-				return false;
+	//METODOS DE ESTADISTICA DEL ADMINISTRADOR:
+		//ESTOS METODOS SON LLAMADOS DESDE LA VENTANA DE MOSTRAR ESTADISTICA Y RECIBEN COMO PARAMETRO EL TIPO DE SERVICIO
+	
+	//1-MEDIA DE PRECIO DE COMPRA
+	
+	public static String mediaCompras(String servicio) {
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+		String resp="";
+		Double precioMedio=0.0;
+		try {
+			Statement st = conn.createStatement();
+			if (servicio=="VUELO") {
+				resp="select avg(CANTIDAD*PRECIO) FROM VUELOCOMPRADO";
+			} else if (servicio=="BUS") {
+				resp="select avg(CANTIDAD*PRECIO) FROM BUSCOMPRADO";
+			} else {
+				resp="select avg(CANTIDAD*PRECIO) FROM VIAJECOMBINADOCOMPRADO";
 			}
 			
+			ResultSet rs = st.executeQuery(resp);
+			
+			precioMedio= rs.getDouble(1);
+			
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER RESULTADO DE PRECIO MEDIO", e);
+			e.printStackTrace();
 		}
-		return false;
 		
-		
+		log(Level.INFO, "DEVOLVIENDO PRECIO MEDIO", null);
+		BDServicio.cerrarConexion();
+		return precioMedio.toString();
 	}
+	
+	//2-COMPRA MAS CARA
+	
+	public static String compraMax(String servicio) {
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+		String resp="";
+		Double precio=0.0;
+		try {
+			Statement st = conn.createStatement();
+			if (servicio=="VUELO") {
+				resp="select max(CANTIDAD*PRECIO) FROM VUELOCOMPRADO";
+			} else if (servicio=="BUS") {
+				resp="select max(CANTIDAD*PRECIO) FROM BUSCOMPRADO";
+			} else {
+				resp="select max(CANTIDAD*PRECIO) FROM VIAJECOMBINADOCOMPRADO";
+			}
+			
+			ResultSet rs = st.executeQuery(resp);
+			
+			precio= rs.getDouble(1);
+			
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER RESULTADO DE PRECIO MAXIMO", e);
+			e.printStackTrace();
+		}
+		
+		log(Level.INFO, "DEVOLVIENDO PRECIO MAXIMO", null);
+		BDServicio.cerrarConexion();
+		return precio.toString();
+	}
+	
+	
+	//3-COMPRA MAS BARATA
+	
+	public static String compraMin(String servicio) {
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+		String resp="";
+		Double precio=0.0;
+		try {
+			Statement st = conn.createStatement();
+			if (servicio=="VUELO") {
+				resp="select min(CANTIDAD*PRECIO) FROM VUELOCOMPRADO";
+			} else if (servicio=="BUS") {
+				resp="select min(CANTIDAD*PRECIO) FROM BUSCOMPRADO";
+			} else {
+				resp="select min(CANTIDAD*PRECIO) FROM VIAJECOMBINADOCOMPRADO";
+			}
+			
+			ResultSet rs = st.executeQuery(resp);
+			
+			precio= rs.getDouble(1);
+			
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER RESULTADO DE PRECIO MINIMO", e);
+			e.printStackTrace();
+		}
+		
+		log(Level.INFO, "DEVOLVIENDO PRECIO MINIMO", null);
+		BDServicio.cerrarConexion();
+		return precio.toString();
+	}
+	
+	//4-USUARIO QUE MAS COMPRA
+	
+	public static String usuarioMasCompra(String servicio) {
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+		String resp="";
+		String usuario="";
+		try {
+			Statement st = conn.createStatement();
+			if (servicio=="VUELO") {
+				resp="SELECT COD_USU FROM VUELOCOMPRADO GROUP BY COD_USU,COD_VUELO_COMPRADO HAVING(max(COD_VUELO_COMPRADO));";
+			} else if (servicio=="BUS")  {
+				resp="SELECT COD_USU FROM BUSCOMPRADO GROUP BY COD_USU,COD_BUS_COMPRADO HAVING(max(COD_BUS_COMPRADO));";     
+			} else {
+				resp="SELECT COD_USU FROM VIAJECOMBINADOCOMPRADO GROUP BY COD_USU,COD_VIAJEC HAVING(max(COD_VIAJEC));";
+			}
+			
+			ResultSet rs = st.executeQuery(resp);
+			
+			usuario= rs.getString(1);
+			
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER RESULTADO USUARIO QUE MAS COMPRA", e);
+			e.printStackTrace();
+		}
+		
+		log(Level.INFO, "DEVOLVIENDO USUARIO QUE MAS COMPRA", null);
+		BDServicio.cerrarConexion();
+		return "COD_USUARIO: "+usuario;
+	}
+	
+	
+	//5-DESTINO MAS VISITADO
+	
+	public static String destinoMasvisitado(String servicio) {
+		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+		String resp="";
+		String destino="";
+		try {
+			Statement st = conn.createStatement();
+			if (servicio=="VUELO") {
+				resp="SELECT V.DESTINO FROM VUELO V,VUELOCOMPRADO VC WHERE V.COD_VUELO=VC.COD_VUELO_COMPRADO GROUP BY DESTINO,COD_VUELO HAVING(max(COD_VUELO));";
+			} else  {
+				resp="SELECT B.DESTINO FROM BUS B,BUSCOMPRADO BC WHERE B.COD_BUS=BC.COD_BUS_COMPRADO GROUP BY DESTINO,COD_BUS HAVING(max(COD_BUS));";     //POR LOGICA EL DESTINO MAS VISITADO DEL BUS SERA EL MISMO QUE EL DE LOS VIAJES COMBINADOS
+			}
+			
+			ResultSet rs = st.executeQuery(resp);
+			
+			destino= rs.getString(1);
+			
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER RESULTADO DESTINO MAS VISITADO", e);
+			e.printStackTrace();
+		}
+		
+		log(Level.INFO, "DEVOLVIENDO DESTINO MAS VISITADO", null);
+		BDServicio.cerrarConexion();
+		return destino;
+	}
+	
+//	public static boolean vueloMasVacio() throws SQLException {
+//		
+//		Connection con = BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.bd");
+//		String sql = "SELECT * FROM vuelo WHERE PLAZAS_RESTANTES = (SELECT MIN(PLAZAS_RESTANTES) FROM vuelo)";
+//		Statement st = conn.createStatement();
+//		ResultSet rs = st.executeQuery(sql);
+//		while(rs.next()) {
+//			int codigoVuelo = rs.getInt("Cod_vuelo");
+//			String FechaVuelo = rs.getString("Fecha");
+//			String horaSalidaVuelo = rs.getString("Hora_salida");
+//			int duracion = rs.getInt("Duracion");
+//			String origenV = rs.getString("Origen");
+//			String destinoV = rs.getString("Destino");
+//			Double precio = rs.getDouble("Precio");
+//			TipoServicio tipo = TipoServicio.vuelo;
+//			int plazasRestantes = rs.getInt("Plazas_restantes");
+//			String companya= rs.getString("Companya_vuelo");
+//			
+//			try {
+//				Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origenV,destinoV, precio, tipo,plazasRestantes,companya);
+//				return true;
+//			}catch (Exception e) {
+//				// TODO: handle exception
+//				return false;
+//			}
+//			
+//		}
+//		return false;
+//		
+//		
+//	}
 	
 	
 	
