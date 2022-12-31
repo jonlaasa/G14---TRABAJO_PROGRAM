@@ -766,11 +766,8 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 							BDServicio.cerrarConexion();
 							
 						} catch (SQLException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						
-
 						
 						
 					}
@@ -917,6 +914,7 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 	}
 	
 	//METODOS DE ESTADISTICA DEL ADMINISTRADOR:
+		
 		//ESTOS METODOS SON LLAMADOS DESDE LA VENTANA DE MOSTRAR ESTADISTICA Y RECIBEN COMO PARAMETRO EL TIPO DE SERVICIO
 	
 	//1-MEDIA DE PRECIO DE COMPRA

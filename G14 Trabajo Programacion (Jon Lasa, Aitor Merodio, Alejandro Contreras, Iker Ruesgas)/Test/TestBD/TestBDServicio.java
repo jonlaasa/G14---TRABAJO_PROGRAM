@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.TreeSet;
 import java.util.logging.Level;
 
@@ -28,10 +29,11 @@ public class TestBDServicio {
 
 	
 	//en los test probaremos que el funcionamiento de la base de datos y los metodos de bases de datos es correcto
+	
 	@Before
 	public void setUp() throws Exception {
 		
-		//INICIALIZAR LA BD NO ES NECESARIO YA QUE SE INICIALIZA Y CIERRA EN CADA METODO (ASI LO HEMIS DECIDIDO)
+		//INICIALIZAR LA BD NO ES NECESARIO YA QUE SE INICIALIZA Y CIERRA EN CADA METODO (ASI LO HEMOS DECIDIDO)
 	}
 
 
@@ -422,8 +424,156 @@ public class TestBDServicio {
 		
 	}
 	
+	//TEST PARA COMPROBAR LAS CONSULTAS DE LA VENTANA ESTADISTICA
+	
+	@Test
+	public void testmediaCompras() {
+		
+		//LLAMAMOS AL METEDO Y LE PASAMOS COMO PARAMETRO UN SERVICIO string (EJEMPLO: VUELO)
+		String media = BDServicio.mediaCompras("VUELO");
+		
+		//PRIMERO COMPROBAMOS QUE NO SEA NULL
+		assertNotNull(media);
+		
+		//DESPUES COMPROBAMOS SI LA MEDIA ES IGUAL A LA MEDIA CALCULADA A MANO DE LA BASE DE DATOS
+			//esto ira variando, por lo tanto hay que mirar la base de datos y cambiar 
+			//que hacemos el test
+		
+		//Despues de calcular la media de los vuelos comprados nos da 300
+		assertEquals("300.0", media);
+	}
+	
+	@Test
+	public void testcompraMax() {
+		
+		//LLAMAMOS AL METEDO Y LE PASAMOS COMO PARAMETRO UN SERVICIO string (EJEMPLO: VUELO)
+		String max = BDServicio.compraMax("VUELO");
+		
+		//PRIMERO COMPROBAMOS QUE NO SEA NULL
+		assertNotNull(max);
+		
+		//DESPUES COMPROBAMOS SI EL MAXIMO ES EL MISMO QUE EL DE LA BASE DE DATOS
+			//esto ira variando, por lo tanto hay que mirar la base de datos y cambiar 
+			//que hacemos el test
+		
+		//El valor mas alto de la tabla vuelo comprados es 380
+		assertEquals("380.0", max);
+	}
+	
+	@Test
+	public void testcompraMin() {
+		
+		//LLAMAMOS AL METEDO Y LE PASAMOS COMO PARAMETRO UN SERVICIO string (EJEMPLO: VUELO)
+		String min = BDServicio.compraMin("VUELO");
+		
+		//PRIMERO COMPROBAMOS QUE NO SEA NULL
+		assertNotNull(min);
+		
+		//DESPUES COMPROBAMOS SI EL MINIMO ES EL MISMO QUE EL DE LA BASE DE DATOS
+			//esto ira variando, por lo tanto hay que mirar la base de datos y cambiar 
+			//que hacemos el test
+		
+		//El valor mas bajo de la tabla vuelo comprados es 140
+		assertEquals("140.0", min);
+	}
+	
+	@Test
+	public void testusuarioMasCompra() {
+		
+		//LLAMAMOS AL METEDO Y LE PASAMOS COMO PARAMETRO UN SERVICIO string (EJEMPLO: VUELO)
+		String usuario = BDServicio.usuarioMasCompra("VUELO");
+		
+		//PRIMERO COMPROBAMOS QUE NO SEA NULL
+		assertNotNull(usuario);
+		
+		//DESPUES COMPROBAMOS SI EL USUARIO QUE MAS COMPRA ES EL MISMO QUE EL DE LA BASE DE DATOS
+			//esto ira variando, por lo tanto hay que mirar la base de datos y cambiar 
+			//que hacemos el test
+		
+		//El usuario que mas vuelos compra es el usuario 5 (El formato de string es asi porque asi lo hemos decidido)
+		assertEquals("COD_USUARIO: 5", usuario);
+	}
+	
+	@Test
+	public void testdestinoMasvisitado() {
+		
+		//LLAMAMOS AL METEDO Y LE PASAMOS COMO PARAMETRO UN SERVICIO string (EJEMPLO: VUELO)
+		String destino = BDServicio.destinoMasvisitado("VUELO");
+		
+		//PRIMERO COMPROBAMOS QUE NO SEA NULL
+		assertNotNull(destino);
+		
+		//DESPUES COMPROBAMOS SI EL DESTINO ES EL MISMO QUE EL DE LA BASE DE DATOS
+			//esto ira variando, por lo tanto hay que mirar la base de datos y cambiar 
+			//que hacemos el test
+		
+		//El destino mas visitados por vuelos es Cadiz
+		assertEquals("Cadiz", destino);
+	}
+	
+	@Test
+	public void testcomprasAnualesTotales() {
+		
+		//LLAMAMOS AL METEDO PARA CREAR UNA ARRAYLIST DE ENTEROS
+		ArrayList<Integer> compras = BDServicio.comprasAnualesTotales();
+		
+		//PRIMERO COMPROBAMOS QUE NO SEA NULL
+		assertNotNull(compras);
+		
+		//DESPUES COMPROBAMOS SI LA LISTA COPRRESPONDE CON LOS DATOS DE LA BASE DE DATOS
+			//esto ira variando, por lo tanto hay que mirar la base de datos y cambiar 
+			//que hacemos el test
+		
+		//SEGUN LA BASE DE DATOS LAS COMPRAS ANUALES REALIZADAS SON LAS SIGUIENTES (ORDENADAS POR MES): 0,0,2,0,0,0,0,1,0,0,1,9
+			//CREAMOS UN ARRAYLIST CON ESTOS DATOS:
+		ArrayList<Integer> datosBD= new ArrayList<>();
+		datosBD.addAll(Arrays.asList(0,0,2,0,0,0,0,1,0,0,1,9));
+		assertEquals(datosBD, compras);
+	}
+	
+	@Test
+	public void testcomprasServicio() {
+		
+		//LLAMAMOS AL METEDO PARA CREAR UNA ARRAYLIST DE ENTEROS
+		ArrayList<Integer> compras = BDServicio.comprasServicio();
+		
+		//PRIMERO COMPROBAMOS QUE NO SEA NULL
+		assertNotNull(compras);
+		
+		//DESPUES COMPROBAMOS SI LA LISTA COPRRESPONDE CON LOS DATOS DE LA BASE DE DATOS
+			//esto ira variando, por lo tanto hay que mirar la base de datos y cambiar 
+			//que hacemos el test
+		
+		//SEGUN LA BASE DE DATOS LAS COMPRAS POR SERVICIO SON LAS SIGUIENTES (ORDENADAS POR VUELO,BUS Y VIAJE COMBINADO): 9,2,2
+			//CREAMOS UN ARRAYLIST CON ESTOS DATOS:
+		ArrayList<Integer> datosBD= new ArrayList<>();
+		datosBD.addAll(Arrays.asList(9,2,2));
+		assertEquals(datosBD, compras);
+	}
+	
+	@Test
+	public void testcomprasDestino() {
+		
+		//LLAMAMOS AL METEDO PARA CREAR UNA ARRAYLIST DE ENTEROS
+		ArrayList<Integer> compras = BDServicio.comprasDestino();
+		
+		//PRIMERO COMPROBAMOS QUE NO SEA NULL
+		assertNotNull(compras);
+		
+		//DESPUES COMPROBAMOS SI LA LISTA COPRRESPONDE CON LOS DATOS DE LA BASE DE DATOS
+			//esto ira variando, por lo tanto hay que mirar la base de datos y cambiar 
+			//que hacemos el test
+		
+		//SEGUN LA BASE DE DATOS LAS COMPRAS POR DESTINO SON LAS SIGUIENTES (ORDENADAS A NUESTRO CRITERIO): 0,7,0,0,0,0,2,2,0,0
+			//CREAMOS UN ARRAYLIST CON ESTOS DATOS:
+		ArrayList<Integer> datosBD= new ArrayList<>();
+		datosBD.addAll(Arrays.asList(0,7,0,0,0,0,2,2,0,0));
+		assertEquals(datosBD, compras);
+	}
 	
 	
+	
+
 	
 	
 	
