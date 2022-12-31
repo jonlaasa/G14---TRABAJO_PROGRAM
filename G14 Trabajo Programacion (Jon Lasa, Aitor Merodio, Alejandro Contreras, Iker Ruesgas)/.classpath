@@ -17,7 +17,12 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="Librerias/jfreechart.jar">
+	<classpathentry kind="lib" path="Librerias/jfreechart-1.0.19.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="Librerias/jcommon-1.0.23.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

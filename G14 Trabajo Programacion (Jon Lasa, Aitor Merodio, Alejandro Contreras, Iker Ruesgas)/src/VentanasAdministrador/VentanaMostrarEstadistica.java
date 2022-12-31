@@ -6,6 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import BD.BDServicio;
@@ -28,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Dimension;
 
 public class VentanaMostrarEstadistica extends JFrame {
 
@@ -164,20 +169,35 @@ public class VentanaMostrarEstadistica extends JFrame {
 			DefaultCategoryDataset datos = new DefaultCategoryDataset();
 			ArrayList<Integer> resultados= new ArrayList<Integer>();
 			if (tipodegrafico=="NUMERO DE COMPRAS/MES") {
+				
 				resultados=BDServicio.comprasAnualesTotales();
-				for (int resultado : resultados) {
-					System.out.println(resultado);
-				}
+				
+				datos.addValue(resultados.get(0), "Compras", "Enero");
+				datos.addValue(resultados.get(1),"Compras","Febrero");
+				datos.addValue(resultados.get(2),"Compras","Marzo");
+				datos.addValue(resultados.get(3),"Compras","Abril");
+				datos.addValue(resultados.get(4),"Compras","Mayo");
+				datos.addValue(resultados.get(5),"Compras","Junio");
+				datos.addValue(resultados.get(6),"Compras","Julio");
+				datos.addValue(resultados.get(7),"Compras","Agosto");
+				datos.addValue(resultados.get(8),"Compras","Septiembre");
+				datos.addValue(resultados.get(9),"Compras","Octubre");
+				datos.addValue(resultados.get(10),"Compras","Noviembre");
+				datos.addValue(resultados.get(11),"Compras","Diciembre");
+				
+				JFreeChart grafico_barras = ChartFactory.createBarChart("COMPRAS ANUALES", "Meses", "Compras",datos, PlotOrientation.VERTICAL, false, true, false);
+				ChartPanel panelg =  new ChartPanel(grafico_barras);
+				panelg.setPreferredSize(new Dimension(200, 220));
+				panelGrafico.add(panelg);
+				pack();
+				
+				
 			} else if (tipodegrafico=="NUMERO DE COMPRAS/TIPO DE SERVICIO") {
 				resultados=BDServicio.comprasServicio();
-				for (int resultado : resultados) {
-					System.out.println(resultado);
-				}
+				
 			} else {
 				resultados=BDServicio.comprasDestino();
-				for (int resultado : resultados) {
-					System.out.println(resultado);
-				}
+				
 			}
 			
 		});
