@@ -11,6 +11,8 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
 
 import BD.BDServicio;
 import Datos.Administrador;
@@ -22,6 +24,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Paint;
 
 import javax.swing.JButton;
 import javax.swing.Icon;
@@ -30,6 +33,7 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -168,36 +172,78 @@ public class VentanaMostrarEstadistica extends JFrame {
 			String tipodegrafico= comboBoxAvanzado.getSelectedItem().toString();
 			DefaultCategoryDataset datos = new DefaultCategoryDataset();
 			ArrayList<Integer> resultados= new ArrayList<Integer>();
+			
 			if (tipodegrafico=="NUMERO DE COMPRAS/MES") {
 				
 				resultados=BDServicio.comprasAnualesTotales();
+				panelGrafico.removeAll();
 				
-				datos.addValue(resultados.get(0), "Compras", "Enero");
-				datos.addValue(resultados.get(1),"Compras","Febrero");
-				datos.addValue(resultados.get(2),"Compras","Marzo");
-				datos.addValue(resultados.get(3),"Compras","Abril");
-				datos.addValue(resultados.get(4),"Compras","Mayo");
-				datos.addValue(resultados.get(5),"Compras","Junio");
-				datos.addValue(resultados.get(6),"Compras","Julio");
-				datos.addValue(resultados.get(7),"Compras","Agosto");
-				datos.addValue(resultados.get(8),"Compras","Septiembre");
-				datos.addValue(resultados.get(9),"Compras","Octubre");
-				datos.addValue(resultados.get(10),"Compras","Noviembre");
-				datos.addValue(resultados.get(11),"Compras","Diciembre");
+				datos.addValue(resultados.get(0), "Enero", "Ene");
+				datos.addValue(resultados.get(1),"Febrero","Feb");
+				datos.addValue(resultados.get(2),"Marzo","Mar");
+				datos.addValue(resultados.get(3),"Abril","Abr");
+				datos.addValue(resultados.get(4),"Mayo","May");
+				datos.addValue(resultados.get(5),"Junio","Jun");
+				datos.addValue(resultados.get(6),"Julio","Jul");
+				datos.addValue(resultados.get(7),"Agosto","Ags");
+				datos.addValue(resultados.get(8),"Septiembre","Sep");
+				datos.addValue(resultados.get(9),"Octubre","Oct");
+				datos.addValue(resultados.get(10),"Noviembre","Nov");
+				datos.addValue(resultados.get(11),"Diciembre","Dic");
 				
-				JFreeChart grafico_barras = ChartFactory.createBarChart("COMPRAS ANUALES", "Meses", "Compras",datos, PlotOrientation.VERTICAL, false, true, false);
+				JFreeChart grafico_barras = ChartFactory.createBarChart3D("COMPRAS MENSUALES 2022", "Meses", "Compras",datos, PlotOrientation.VERTICAL, false, true, false);
+				grafico_barras.setBackgroundPaint(new Color(255, 255, 224));
 				ChartPanel panelg =  new ChartPanel(grafico_barras);
-				panelg.setPreferredSize(new Dimension(200, 220));
+				panelg.setPreferredSize(panelGrafico.getSize());
+			
 				panelGrafico.add(panelg);
+				panelGrafico.setVisible(true);
 				pack();
-				
+				setBounds(100, 100, 600, 650);
 				
 			} else if (tipodegrafico=="NUMERO DE COMPRAS/TIPO DE SERVICIO") {
 				resultados=BDServicio.comprasServicio();
+				panelGrafico.removeAll();
+				
+				DefaultPieDataset datos2 = new DefaultPieDataset();
+				datos2.setValue("Vuelos",resultados.get(0));
+				datos2.setValue("Buses",resultados.get(1));
+				datos2.setValue("Viajes Combinados",resultados.get(2));
+				
+				JFreeChart grafico_tarta = ChartFactory.createPieChart3D("SERVICIOS COMPRADOS 2022", datos2, true, true, false);
+				grafico_tarta.setBackgroundPaint(new Color(255, 255, 224));
+				grafico_tarta.setBorderPaint(Color.CYAN);
+				ChartPanel panelg =  new ChartPanel(grafico_tarta);
+				panelg.setPreferredSize(panelGrafico.getSize());
+				panelGrafico.add(panelg);
+				panelGrafico.setVisible(true);
+				pack();
+				setBounds(100, 100, 600, 650);
 				
 			} else {
 				resultados=BDServicio.comprasDestino();
+				panelGrafico.removeAll();
 				
+				datos.addValue(resultados.get(0),"Barcelona", "BRC");
+				datos.addValue(resultados.get(1),"Madrid","MDR");
+				datos.addValue(resultados.get(2),"Valencia","VAL");
+				datos.addValue(resultados.get(3),"Lugo","LGO");
+				datos.addValue(resultados.get(4),"Murcia","MRC");
+				datos.addValue(resultados.get(5),"Bilbao","BIO");
+				datos.addValue(resultados.get(6),"Cadiz","CDZ");
+				datos.addValue(resultados.get(7),"Lisboa","LIS");
+				datos.addValue(resultados.get(8),"Santander","SNT");
+				datos.addValue(resultados.get(9),"Castellon","CAS");
+
+				
+				JFreeChart grafico_barras = ChartFactory.createBarChart3D("COMPRAS POR DESTINOS 2022", "Destinos", "Compras",datos, PlotOrientation.VERTICAL, false, true, false);
+				grafico_barras.setBackgroundPaint(new Color(255, 255, 224));
+				ChartPanel panelg =  new ChartPanel(grafico_barras);
+				panelg.setPreferredSize(panelGrafico.getSize());
+				panelGrafico.add(panelg);
+				panelGrafico.setVisible(true);
+				pack();
+				setBounds(100, 100, 600, 650);
 			}
 			
 		});
