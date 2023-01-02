@@ -1,4 +1,3 @@
-
 package VentanasAdministrador;
 
 import java.awt.EventQueue;
@@ -71,6 +70,12 @@ public class VentanaInicioAdmin extends JFrame {
 		
 		JMenuItem mntmEstadisticas = new JMenuItem("Ver estadisticas");
 		mnEstadisticas.add(mntmEstadisticas);
+		
+		JMenuItem mntmVerBus = new JMenuItem("Ver Buses");
+		mnEstadisticas.add(mntmVerBus);
+		
+		JMenuItem mntmVerVuelos = new JMenuItem("Ver Vuelos");
+		mnEstadisticas.add(mntmVerVuelos);
 		
 		
 		JMenu mnPerfil = new JMenu("Perfil");
@@ -153,6 +158,29 @@ public class VentanaInicioAdmin extends JFrame {
 		mntmVuelos.addActionListener(e->{
 			VentanaCrearVuelo vcb=null;
 			vcb=new VentanaCrearVuelo(administradorActual);
+			vcb.setVisible(true);
+			dispose();
+		});
+		
+		mntmVerBus.addActionListener(e->{
+			VentanaVerBus vcb=null;
+			try {
+				vcb=new VentanaVerBus(administradorActual);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			vcb.setVisible(true);
+			dispose();
+		});
+		mntmVerVuelos.addActionListener(e->{
+			VentanaVerVuelos vcb=null;
+			try {
+				vcb=new VentanaVerVuelos(administradorActual);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			vcb.setVisible(true);
 			dispose();
 		});

@@ -1245,6 +1245,42 @@ public static  ArrayList <Vuelo> verVuelo() throws SQLException {
 		
 		
 	}
+
+
+
+public static  ArrayList <Bus> verBus() throws SQLException {
+	
+	BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+	String sql = "SELECT * FROM bus";
+	Statement st = conn.createStatement();
+	ResultSet rs = st.executeQuery(sql);
+	ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
+	while(rs.next()) {
+		int codigoVuelo = rs.getInt("COD_BUS");
+		String FechaVuelo = rs.getString("FECHA");
+		String horaSalidaVuelo = rs.getString("HORA_SALIDA");
+		int duracion = rs.getInt("DURACION");
+		String origenV = rs.getString("ORIGEN");
+		String destinoV = rs.getString("DESTINO");
+		Double precio = rs.getDouble("PRECIO");
+		TipoServicio tipo = TipoServicio.vuelo;
+		int plazasRestantes = rs.getInt("PLAZAS_RESTANTES");
+		String companya= rs.getString("COMPANYA_BUS");
+		
+		try {
+			Bus busNuevo = new Bus(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origenV,destinoV, precio, tipo,plazasRestantes,companya);
+			listaConBus.add(busNuevo);	
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			return null;
+		}
+		
+	}
+	return listaConBus;
+	
+	
+}
 	
 	
 	

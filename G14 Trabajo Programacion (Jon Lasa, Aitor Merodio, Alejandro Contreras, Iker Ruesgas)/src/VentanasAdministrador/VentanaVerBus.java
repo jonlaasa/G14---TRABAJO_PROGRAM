@@ -13,6 +13,7 @@ import javax.swing.table.DefaultTableModel;
 import BD.BDRegistro;
 import BD.BDServicio;
 import Datos.Administrador;
+import Datos.Bus;
 import Datos.Usuario;
 import Datos.Vuelo;
 import VentanasMenu.VentanaMenu;
@@ -22,15 +23,15 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 
-public class VentanaVerVuelos extends JFrame {
+public class VentanaVerBus extends JFrame {
 
 	private JPanel contentPane;
 	private DefaultTableModel modeloTabla;
 	private JTable tableUsr;
-	private ArrayList<Vuelo> listaUsr;
+	private ArrayList<Bus> listaBus;
 
 
-	public VentanaVerVuelos(Administrador adminActual) throws SQLException {
+	public VentanaVerBus(Administrador adminActual) throws SQLException {
 		setLocationRelativeTo(null); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
@@ -60,10 +61,10 @@ public class VentanaVerVuelos extends JFrame {
 		
 		
 		
-		listaUsr= BDServicio.verVuelo();
+		listaBus= BDServicio.verBus();
 		
-		for (Vuelo usr:listaUsr) {
-			modeloTabla.addRow(new Object [] {usr.getCodigo(),usr.getFecha(),usr.getHoraSalida(),usr.getDuracionString(),usr.getOrigen(),usr.getDestino(),usr.getPrecioString(),usr.getCompanya(),usr.getPlazasRestantes()
+		for (Bus bus:listaBus) {
+			modeloTabla.addRow(new Object [] {bus.getCodigo(),bus.getFecha(),bus.getHoraSalida(),bus.getDuracionString(),bus.getOrigen(),bus.getDestino(),bus.getPrecioString(),bus.getCompanya(),bus.getPlazasRestantes()
 			});
 		}
 		
