@@ -1212,37 +1212,39 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 	
 	
 	
-//	public static boolean vueloMasVacio() throws SQLException {
-//		
-//		Connection con = BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.bd");
-//		String sql = "SELECT * FROM vuelo WHERE PLAZAS_RESTANTES = (SELECT MIN(PLAZAS_RESTANTES) FROM vuelo)";
-//		Statement st = conn.createStatement();
-//		ResultSet rs = st.executeQuery(sql);
-//		while(rs.next()) {
-//			int codigoVuelo = rs.getInt("Cod_vuelo");
-//			String FechaVuelo = rs.getString("Fecha");
-//			String horaSalidaVuelo = rs.getString("Hora_salida");
-//			int duracion = rs.getInt("Duracion");
-//			String origenV = rs.getString("Origen");
-//			String destinoV = rs.getString("Destino");
-//			Double precio = rs.getDouble("Precio");
-//			TipoServicio tipo = TipoServicio.vuelo;
-//			int plazasRestantes = rs.getInt("Plazas_restantes");
-//			String companya= rs.getString("Companya_vuelo");
-//			
-//			try {
-//				Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origenV,destinoV, precio, tipo,plazasRestantes,companya);
-//				return true;
-//			}catch (Exception e) {
-//				// TODO: handle exception
-//				return false;
-//			}
-//			
-//		}
-//		return false;
-//		
-//		
-//	}
+public static  ArrayList <Vuelo> verVuelo() throws SQLException {
+		
+		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		String sql = "SELECT * FROM vuelo";
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+		ArrayList <Vuelo> listaConVuelos = new ArrayList <Vuelo> ();
+		while(rs.next()) {
+			int codigoVuelo = rs.getInt("Cod_vuelo");
+			String FechaVuelo = rs.getString("Fecha");
+			String horaSalidaVuelo = rs.getString("Hora_salida");
+			int duracion = rs.getInt("Duracion");
+			String origenV = rs.getString("Origen");
+			String destinoV = rs.getString("Destino");
+			Double precio = rs.getDouble("Precio");
+			TipoServicio tipo = TipoServicio.vuelo;
+			int plazasRestantes = rs.getInt("Plazas_restantes");
+			String companya= rs.getString("Companya_vuelo");
+			
+			try {
+				Vuelo vueloNuevo = new Vuelo(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origenV,destinoV, precio, tipo,plazasRestantes,companya);
+				listaConVuelos.add(vueloNuevo);	
+				
+			}catch (Exception e) {
+				// TODO: handle exception
+				return null;
+			}
+			
+		}
+		return listaConVuelos;
+		
+		
+	}
 	
 	
 	
