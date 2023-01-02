@@ -54,7 +54,7 @@ public class ViajeCombinadoComprado extends Compra implements PrecioCompra {
 		// TODO Auto-generated method stub
 		double precioVuelo = this.viajeCombinado.getVuelo().getPrecio();
 		double precioBus = this.viajeCombinado.getBus().getPrecio();
-		this.precio=precioVuelo+precioBus;
+		this.precio=(precioVuelo+precioBus)*getCantidad();
 		
 		
 	}

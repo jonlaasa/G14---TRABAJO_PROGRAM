@@ -10,7 +10,6 @@ public class ViajeCombinado extends Servicio {
 	
 	private Vuelo vuelo;
 	private Bus bus;
-	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
 	private String trasbordo;
 	
 	//Constructor con parametros
@@ -29,7 +28,7 @@ public class ViajeCombinado extends Servicio {
 		super(fecha,tipoServicio);
 		this.vuelo = vuelo;
 		this.bus=bus;
-		this.trasbordo=trasbordo;
+		this.trasbordo=null;
 	}
 
 	
@@ -72,7 +71,6 @@ public class ViajeCombinado extends Servicio {
 	public void setTrasbordo(String trasbordo) {
 		this.trasbordo = trasbordo;
 	}
-
 
 	public String toString() {
 		return super.toString() + "Trasbordo: "+trasbordo+ "Vuelo: "+vuelo.toString() + ", Bus: "+bus.toString();

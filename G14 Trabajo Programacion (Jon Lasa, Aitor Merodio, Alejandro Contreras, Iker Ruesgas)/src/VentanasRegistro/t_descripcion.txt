@@ -1,33 +1,35 @@
 T&T LA REVOLUCION DE LAS AGENCIAS DE VIAJE. 
-	Nuestra aplicación, se describe como una aplicación para
+	Nuestra aplicacion, se describe como una aplicaciï¿½n para
 compras de billetes de vuelos buses y viajes combinados a nivel
-nacional con precios competitivos y una aplicación web intuitiva
+nacional (+ Lisboa) con precios competitivos y una aplicaciï¿½n web intuitiva
 y muy senclla de utilizar y manejar. En ella, los usuarios se
- registraran y podrán acceder a la compra de los diferentes 
+ registraran y podran acceder a la compra de los diferentes 
 servicios al igual que a las consultas realizadas sobre los 
-diferentes  destinos. La aplicación se ira actualizando de
+diferentes  destinos. La aplicacion se ira actualizando de
 manera constante para poder ofrecer los viajes mas deseados en
-diferentes épocas del año con destinos a Barcelona, Madrid, Valencia,
+diferentes epocas del anyo con destinos a Barcelona, Madrid, Valencia,
 Sevilla, y muchos otros mas. 
 
-	La compañía T&T tiene origen en Bilbao, por lo que se le dará
+	La compaÃ±ia T&T tiene origen en Bilbao, por lo que se le dar
 prioridad a los  residentes en el Euskal Herria, generando de esta
 forma mas viajes con destino final en Bilbao.  Inicialmente, tal y
 como hemos mencionado anteriormente, nos centraremos a nivel nacional
-(España),sin embargo, tenemos pensado en un futuro poder expandirnos 
-hacia otros países.
+(EspaÃ±a) + Portugal (Lisboa) ,sin embargo, tenemos pensado en un futuro poder expandirnos 
+hacia mas paises.
 
-	Los servicios principales serán la compra de vuelos, buses y
+	Los servicios principales seran la compra de vuelos, buses y
 viajes combinados. Los viajes combinados, constan de viajes formados
-por la combinación de buses y vuelos,de modo que nuestro servicio
-este totalmente enlazado para poder ofrecer una aplicación optima
+por la combinacion de vuelos y buses,de modo que nuestro servicio
+este totalmente enlazado para poder ofrecer una aplicaciï¿½n optima
 de ello.
 
 	Es importante mencionar, que ofreceremos un servicio de
-renting de coches allá  donde sea su destino. De este modo
-podrá desplazarse sin problema alguno por el destino que haya
-escogido. En el servicio se especificara la clase del coche así
-como los días que utilizara este servicio, así podremos calcular su coste aproximado.
+renting de coches alli  donde sea su destino de vuelo. De este modo
+podra desplazarse sin problema alguno por el destino que haya
+escogido. En el servicio se especificara la clase del coche asi
+como los dias  que utilizara este servicio, asi podremos calcular su coste aproximado.
+En el caso de los vuelos tambien, podra escoger la zona de asiento en el avion, con su
+coste adicional. 
 
 Muchas gracias por escogernos esperamos que cada viaje sea una experiencia UNICA!!!
 
