@@ -22,6 +22,7 @@ import javax.swing.JTable;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 
 public class VentanaVerBus extends JFrame {
 
@@ -58,6 +59,12 @@ public class VentanaVerBus extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setBounds(282, 363, 89, 23);
 		contentPane.add(btnVolver);
+		
+		
+//		String[] options = {"Todos los buses", "Buses llenos", "Ultimas plazas"};
+//		JComboBox comboBox = new JComboBox(options);
+//		comboBox.setBounds(51, 46, 137, 22);
+//		contentPane.add(comboBox);
 		
 		
 		
