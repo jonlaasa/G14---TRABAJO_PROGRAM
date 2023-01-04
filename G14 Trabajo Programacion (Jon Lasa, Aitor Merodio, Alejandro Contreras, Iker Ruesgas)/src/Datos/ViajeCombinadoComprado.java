@@ -12,21 +12,15 @@ public class ViajeCombinadoComprado extends Compra implements PrecioCompra {
 	private double precio;
 	
 	//Constructor con parametros
-	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, String fechaCompra,TipoServicio tipo, int codigoCompra, ViajeCombinado viajeCombinado,
-			ArrayList<Compra> transporte) {
+	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, String fechaCompra,TipoServicio tipo, int codigoCompra,
+			ViajeCombinado viajeCombinado) {
 		super(codigoUsuario, cantidad, fechaCompra,tipo, codigoCompra);
 		this.viajeCombinado = viajeCombinado;
 		setPrecio();
 		
 	}
 	
-	//Constructor con transporte vacio para poder a�adirle nosotros?  
-	
-	public ViajeCombinadoComprado(int codigoUsuario, int cantidad, String fechaCompra,TipoServicio tipo, int codigoCompra, ViajeCombinado viajeCombinado) {
-		super(codigoUsuario, cantidad, fechaCompra,tipo,codigoCompra);
-		this.viajeCombinado = viajeCombinado;
-		setPrecio();
-	}
+
 
 	public ViajeCombinado getViajeCombinado() {
 		return viajeCombinado;
