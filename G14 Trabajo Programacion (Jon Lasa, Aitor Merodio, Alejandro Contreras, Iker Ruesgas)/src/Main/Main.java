@@ -33,9 +33,8 @@ public class Main {
 		
 
 		
-//		Usuario u = new Usuario();
-//		Administrador a = new Administrador();
-
+		//Usuario u = new Usuario();
+		//Administrador a = new Administrador();
 
 
 
@@ -44,8 +43,8 @@ public class Main {
 		es.setVisible(true);
 
 
-
 		
 	}
+	
 	
 }

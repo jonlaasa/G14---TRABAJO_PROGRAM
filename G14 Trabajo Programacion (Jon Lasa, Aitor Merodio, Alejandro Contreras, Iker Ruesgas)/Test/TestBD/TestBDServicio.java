@@ -398,7 +398,61 @@ public class TestBDServicio {
 	
 	//FALTA EL FILTRADO DE LOS VIAJES COMBINADOS TAMBIEN.
 	
+	@Test
+	public void testServicioCombinadoFiltrado() {
+		
+		//LLAMAMOS AL METODO CON UN EJEMPLO (DE Sevilla A Lugo DE MAYOR A MENOR, ENTRE EL 1 DE DICIEMBRE  DE
+		//2022 Y EL 1 DE ENERO DE 2023 
+		ArrayList<ViajeCombinado> listaViajeCFiltrado = BDServicio.listaServicioCombinadoFiltrado("Barcelona", "Santander",
+				 "2022-12-01", "2023-01-01");
+		
+		//primero comprobamos que no es vacia
+		
+
+		// ESTAN ORDENADOS POR FECHA
+		
+		assertNotNull(listaViajeCFiltrado);
+//		
+		//DESPUES COMPROBAMOS LA BASE DE DATOS Y VEMOS QUE SOLO TIENE UNO VALIDO
+		String origenp = listaViajeCFiltrado.get(0).getOrigen();
+		String destinop = listaViajeCFiltrado.get(0).getDestino();
+//		
+//		//COMPROBAMOS
+//		
+
+		assertEquals(origenp, "Barcelona");
+		assertEquals(destinop, "Santander");
+//		
+		// LA BUSQUEDA SOLO DEBERIA DEVOLVER UN UN VIAJE COMBINADO, (SOLO HAY UNO CON ESAS CONDICIONES),POR TANTO COMPROBAMOS
+//		
+		assertEquals(1, listaViajeCFiltrado.size());
+		
+		
+		//PROBAMOS VALENCIA BILBAO (1 DE ENERO DE 2023 - 1 DE ENERO DE 2024)
+		
+		ArrayList<ViajeCombinado> listaViajeCFiltrado2 = BDServicio.listaServicioCombinadoFiltrado("Valencia", "Bilbao",
+				 "2023-01-01", "2024-01-01");
+		
+		//primero comprobamos que no es vacia
+		
+
+		// ESTAN ORDENADOS POR FECHA
+		
+		assertNotNull(listaViajeCFiltrado2);
+		String origenp2 = listaViajeCFiltrado2.get(1).getOrigen();
+		String destinop2 = listaViajeCFiltrado2.get(11).getDestino();
+		assertEquals(origenp2, "Valencia");
+		assertEquals(destinop2, "Bilbao");
+		
+		// LA BUSQUEDA SOLO DEBERIA DEVOLVER 46 VIAJE COMBINADO, ,POR TANTO COMPROBAMOS 
+		//IMPORTANTE!! PUEDE DAR ERROR A MEDIDA QUE HAY MAS VUELOS!!!
+		
+		assertEquals(46, listaViajeCFiltrado2.size());
+		
+		
+	}
 	
+
 	
 	//TEST PARA COMPROBAR CUAL ES LA SIGUIENTE CLAVE VALIDA PARA LA TABLA DE RENTING
 	//PARA ELLO OBTENEMOS CUAL ES LA ULTIMA
@@ -423,6 +477,81 @@ public class TestBDServicio {
 		
 		
 	}
+	
+	//TEST PARA COMPROBAR EL FUNCIONAMENTO DEL METODO, QUE DANDO UN CODIGO DE VUELO, DEBERIA DEVOLVER EL VUELO (ACCEDIENDO A LA BD)
+	
+	@Test
+	public void testVueloDesdeCodigo() {
+		
+		//INICIALIZAMOS
+		Vuelo v1= null;
+		Vuelo v2= null;
+		Vuelo v3 = null;
+		
+		//DOS CODIGOS AL AZAR.
+		int cod1 = 3;
+		int cod2= 100;
+		int cod3= -40;
+		//LLAMAMOS AL METODO Y OBTENEMOS LOS VUELOS 
+			v1 = BDServicio.vueloDesdeCodigo(cod1);
+			v2 = BDServicio.vueloDesdeCodigo(cod2);
+			v3 = BDServicio.vueloDesdeCodigo(cod3);
+			
+			//UNA VEZ LOS OBTENEMOS, MIRAMOS LA BD, Y POR EJEMPLO COMPROBAMOS SU HORA DE SALIDA
+			// el de v1 deberia ser: 13:15
+			//el de v2 deberia ser : 14:00
+			
+			assertEquals("13:15", v1.getHoraSalida());
+			assertEquals("14:00", v2.getHoraSalida());
+			
+			
+			//el vuelo v3 deberia ser nulo, ya que no existe vuelo con ese codigo
+			
+			assertNull(v3);
+			
+			
+			
+		
+	}
+	
+	
+	
+	
+	//TEST PARA COMPROBAR EL FUNCIONAMENTO DEL METODO, QUE DANDO UN CODIGO DE BUS, DEBERIA DEVOLVER EL BUS (ACCEDIENDO A LA BD)
+	@Test
+	public void testBusDesdeCodigo() {
+		
+		//INICIALIZAMOS
+		Bus b1= null;
+		Bus b2= null;
+		Bus b3 = null;
+		
+		//DOS CODIGOS AL AZAR.
+		int cod1 = 5;
+		int cod2= 80;
+		int cod3= -20;
+		//LLAMAMOS AL METODO Y OBTENEMOS LOS VUELOS 
+			b1 = BDServicio.busDesdeCodigo(cod1);
+			b2 = BDServicio.busDesdeCodigo(cod2);
+			b3 = BDServicio.busDesdeCodigo(cod3);
+			
+			//UNA VEZ LOS OBTENEMOS, MIRAMOS LA BD, Y POR EJEMPLO COMPROBAMOS SU HORA DE SALIDA
+			// el de b1 deberia ser: 14:45
+			//el de b2 deberia ser : 15:00
+			
+			assertEquals("14:45", b1.getHoraSalida());
+			assertEquals("15:00", b2.getHoraSalida());
+			
+			
+			//el bus b3 deberia ser nulo, ya que no existe bus con ese codigo
+			
+			assertNull(b3);
+			
+			
+			
+		
+	}
+
 	
 	//TEST PARA COMPROBAR LAS CONSULTAS DE LA VENTANA ESTADISTICA
 	
@@ -570,6 +699,9 @@ public class TestBDServicio {
 		datosBD.addAll(Arrays.asList(0,7,0,0,0,0,2,2,0,0));
 		assertEquals(datosBD, compras);
 	}
+	
+	
+	
 	
 	
 	

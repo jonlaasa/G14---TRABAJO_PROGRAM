@@ -65,8 +65,7 @@ public class VentanaInicioAdmin extends JFrame {
 		JMenuItem mntmBuses = new JMenuItem("Buses");
 		mnServicios.add(mntmBuses);
 		
-		JMenuItem mntmCombinados = new JMenuItem("Combinados");
-		mnServicios.add(mntmCombinados);
+
 		
 		JMenuItem mntmEstadisticas = new JMenuItem("Ver estadisticas");
 		mnEstadisticas.add(mntmEstadisticas);
