@@ -95,8 +95,8 @@ public class VueloComprado extends Compra implements PrecioCompra {
 
 	@Override
 	public String toString() {
-		return "VueloComprado [vuelo=" + vuelo + ", listaRenting=" + listaRenting 
-				+ ", zonaAsientoVuelo=" + zonaAsientoVuelo + "]";
+		return "Origen: "+vuelo.getOrigen()+" "+ "Destino: "+vuelo.getDestino()+" " + "Fecha:"+vuelo.getFecha()+" Cantidad: "+
+	    getCantidad();
 	}
 
 

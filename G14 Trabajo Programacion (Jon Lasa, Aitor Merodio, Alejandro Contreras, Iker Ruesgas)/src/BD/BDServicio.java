@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 import Datos.Bus;
 import Datos.BusComprado;
 import Datos.Compra;
+import Datos.RentingCoche;
 import Datos.Servicio;
 import Datos.Usuario;
 import Datos.ViajeCombinado;
@@ -31,6 +32,7 @@ import Datos.ViajeCombinadoComprado;
 import Datos.Vuelo;
 import Datos.VueloComprado;
 import Enum.TipoServicio;
+import Enum.ZonaAsientoVuelo;
 import VentanasCompra.VentanaConfirmacionCompra;
 
 public class BDServicio {
@@ -861,6 +863,108 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		
 	}
 	
+	//METODO PARA OBTENER VUELOS COMPRADOS DE CADA USUARIO (DADO SU CODIGO DE USUARIO) PARA MOSTRAR EN EL PERFIL
+	
+	public static ArrayList<VueloComprado> vuelosCompradosUsuario(int codUsuario) {
+		
+		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		ArrayList<VueloComprado> vuelosUsuarios= new ArrayList<>();
+	
+		
+		try {
+			Statement st = conn.createStatement();
+			
+			String resp = "select * from vueloComprado where cod_usu = "+codUsuario;
+			ResultSet rs = st.executeQuery(resp);
+			while(rs.next()) {
+				int codigoVuelo = rs.getInt("Cod_vuelo_comprado");
+				
+				//OBTENEMOS EL VUELO 
+				
+				Vuelo vuelo = vueloDesdeCodigo(codigoVuelo);
+				
+				String zonaAsiento = rs.getString("zona_asiento_vuelo");
+				
+				
+				String FechaCompra = rs.getString("Fecha_compra");
+				int cantidad = rs.getInt("Cantidad");
+				
+				//el servicio renting es algo aparte, no nos interesa para mostrarlo en el perfil
+				
+				//el codigo de compra tampoco es necesario mostrarle al usuario 
+				
+				//ESTO ESTARA CONFIGURADO EN EL TOSTRING DE CADA CLASE, YA QUE ES ESTO LO QUE USAREMOS PARA MOSTRAR
+				 VueloComprado vueloComprado = new VueloComprado(codUsuario, cantidad, FechaCompra, TipoServicio.vuelo, -1,vuelo,
+						new ArrayList<RentingCoche>(),ZonaAsientoVuelo.valueOf(zonaAsiento));
+				 
+				//añadimos
+				 
+				 vuelosUsuarios.add(vueloComprado);
+
+				
+			}
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER BUSQUEDA DE VUELO POR CODIGO DE LA BASE DE DATOS", e);
+			e.printStackTrace();
+			
+		}
+		//log(Level.INFO, "DEVOLVIENDO VUELO DE LA BASE DE DATOS", null);
+		BDServicio.cerrarConexion();
+		return vuelosUsuarios;
+		
+		
+		
+	}
+	
+	//METODO PARA OBTENER BUSES COMPRADOS DE CADA USUARIO (DADO SU CODIGO DE USUARIO) PARA MOSTRAR EN EL PERFIL
+	
+	public static ArrayList<BusComprado> busesCompradosUsuario(int codUsuario) {
+		
+		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		ArrayList<BusComprado> busesUsuarios= new ArrayList<>();
+	
+		
+		try {
+			Statement st = conn.createStatement();
+			
+			String resp = "select * from busComprado where cod_usu = "+codUsuario;
+			ResultSet rs = st.executeQuery(resp);
+			while(rs.next()) {
+				int codigoBus = rs.getInt("Cod_bus_comprado");
+				
+				//OBTENEMOS EL BUS 
+				
+				Bus bus = busDesdeCodigo(codigoBus);
+				
+				String FechaCompra = rs.getString("Fecha_compra");
+				int cantidad = rs.getInt("Cantidad");
+				
+				
+				//el codigo de compra tampoco es necesario mostrarle al usuario 
+				
+				//ESTO ESTARA CONFIGURADO EN EL TOSTRING DE CADA CLASE, YA QUE ES ESTO LO QUE USAREMOS PARA MOSTRAR
+				 BusComprado vueloComprado = new BusComprado(codUsuario, cantidad, FechaCompra,-1, TipoServicio.bus, -1,bus);
+				 
+				 
+				 
+				//añadimos
+				 
+				 busesUsuarios.add(vueloComprado);
+
+				
+			}
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER BUSQUEDA DE BUS POR CODIGO DE LA BASE DE DATOS", e);
+			e.printStackTrace();
+			
+		}
+		//log(Level.INFO, "DEVOLVIENDO VUELO DE LA BASE DE DATOS", null);
+		BDServicio.cerrarConexion();
+		return busesUsuarios;
+	
+	}
 	
 	
 	//OBTENER BUS DESDE CODIGO

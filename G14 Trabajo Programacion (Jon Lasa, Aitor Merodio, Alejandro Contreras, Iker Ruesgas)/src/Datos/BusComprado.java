@@ -47,7 +47,7 @@ public class BusComprado extends Compra implements PrecioCompra {
 
 	
 	public String toString() {
-		return super.toString() + "Bus: " + bus ;
+		return "Origen: "+bus.getOrigen()+" "+ "Destino: "+bus.getDestino()+" " + "Fecha:"+bus.getFecha()+" Cantidad: "+ getCantidad();
 	}
 
 	

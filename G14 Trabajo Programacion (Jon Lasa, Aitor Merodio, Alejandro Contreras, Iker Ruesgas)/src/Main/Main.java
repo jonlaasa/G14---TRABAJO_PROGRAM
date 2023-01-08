@@ -24,6 +24,7 @@ import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaViajesC;
 import VentanasCompra.VentanaVuelo;
 import VentanasMenu.VentanaMenu;
+import VentanasMenu.VentanaPerfil;
 import VentanasRegistro.VentanaInicio;
 
 
@@ -32,8 +33,6 @@ public class Main {
 	public static void main(String[] args) throws SQLException {
 		
 
-		
-		//Usuario u = new Usuario();
 		//Administrador a = new Administrador();
 
 
