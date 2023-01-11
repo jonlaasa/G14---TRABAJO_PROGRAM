@@ -11,6 +11,8 @@ import BD.BDServicio;
 import Datos.BusComprado;
 import Datos.Compra;
 import Datos.Usuario;
+import Datos.ViajeCombinado;
+import Datos.ViajeCombinadoComprado;
 import Datos.VueloComprado;
 import VentanasRegistro.VentanaDescripcion;
 
@@ -149,6 +151,7 @@ public class VentanaPerfil extends JFrame {
 			
 			mapaCompras.put("Vuelo", new ArrayList<Compra>());
 			mapaCompras.put("Bus", new ArrayList<Compra>());
+			mapaCompras.put("Viaje Combinado", new ArrayList<Compra>());
 			// Arraylist con los vuelos de ese usuario
 			
 			ArrayList <VueloComprado> listaConVuelos = BDServicio.vuelosCompradosUsuario(usrActual.getCodigo());
@@ -172,14 +175,16 @@ public class VentanaPerfil extends JFrame {
 			}
 			
 			mapaCompras.replace("Bus", listaAnyadir2);
-			
 			//ASI TAMBIEN CON LOS VIAJES COMBINADOS
+		
+			ArrayList <ViajeCombinadoComprado> listaConCombinados = BDServicio.viajesCombinadosCompradosUsuario(usrActual.getCodigo());
 			
+			ArrayList<Compra> listaAnyadir3 = mapaCompras.get("Viaje Combinado");
 			
-			
-			
-			
-			
+			for(ViajeCombinadoComprado viaje: listaConCombinados) {
+				listaAnyadir3.add(viaje);
+			}
+	
 	//FINALMENTE MOSTRAMOS EN EL LABEL
 			//HILO!!!! CON ESPERA DE 2 SEGUNDOS
 			

@@ -34,7 +34,8 @@ public class ViajeCombinadoComprado extends Compra implements PrecioCompra {
 
 	@Override
 	public String toString() {
-		return super.toString()+ "ViajeCombinadoComprado [viajeCombinado=" + viajeCombinado;
+		return "Origen: "+viajeCombinado.getVuelo().getOrigen()+" "+ "Destino: "+viajeCombinado.getBus().getDestino()+
+				" " + "Fecha:"+viajeCombinado.getVuelo().getFecha()+" Cantidad: "+ getCantidad();
 	}
 
 	@Override

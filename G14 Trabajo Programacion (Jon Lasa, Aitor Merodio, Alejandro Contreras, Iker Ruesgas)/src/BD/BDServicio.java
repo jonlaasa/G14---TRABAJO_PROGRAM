@@ -863,6 +863,61 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 		
 	}
 	
+	//METODO PARA OBTENER UN VIAJE COMBINADO A PARTIR DE SU CODIGO (LO USAREMOS PARA LOS VIAJES COMBINADOS COMPRADOS)
+	
+	public static ViajeCombinado viajeDesdeCodigo(int codViajeC) {
+		
+		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		ViajeCombinado viajeC  = null;
+	
+		
+		try {
+			Statement st = conn.createStatement();
+			
+			String resp = "select * from viajeCombinado where COD_VIAJECOMBINADO = "+codViajeC;
+			ResultSet rs = st.executeQuery(resp);
+			while(rs.next()) {
+				int codigoVuelo = rs.getInt("Cod_vuelo");
+				//obtenemos el vuelo
+				
+				Vuelo vuelo = BDServicio.vueloDesdeCodigo(codigoVuelo);
+				
+				int codigoBus = rs.getInt("cod_bus");
+				
+				Bus bus = BDServicio.busDesdeCodigo(codigoBus);
+				String FechaVuelo = rs.getString("Fecha");
+				
+				String horaSalidaVuelo =  vuelo.getHoraSalida();
+				int duracion = vuelo.getDuracion() + bus.getDuracion();
+				
+				String origen = vuelo.getOrigen();
+				
+				String destino = bus.getDestino();
+				
+				String transbordo = vuelo.getDestino();
+				
+				Double precio = vuelo.getPrecio()+bus.getPrecio();
+				
+				int plazasRestantes = vuelo.getPlazasRestantes();
+
+				  viajeC = new ViajeCombinado(codViajeC, FechaVuelo, horaSalidaVuelo, duracion, origen,
+						destino, transbordo,precio,TipoServicio.viajeCombinado,plazasRestantes,bus,vuelo);	
+			}
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL DEVOLVER BUSQUEDA DE VIAJE COMBINADO POR CODIGO DE LA BASE DE DATOS", e);
+			e.printStackTrace();
+			
+		}
+		//log(Level.INFO, "DEVOLVIENDO VUELO DE LA BASE DE DATOS", null);
+		BDServicio.cerrarConexion();
+		return viajeC;
+		
+		
+		
+	}
+	
+
 	//METODO PARA OBTENER VUELOS COMPRADOS DE CADA USUARIO (DADO SU CODIGO DE USUARIO) PARA MOSTRAR EN EL PERFIL
 	
 	public static ArrayList<VueloComprado> vuelosCompradosUsuario(int codUsuario) {
@@ -960,13 +1015,64 @@ private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyy
 			e.printStackTrace();
 			
 		}
-		//log(Level.INFO, "DEVOLVIENDO VUELO DE LA BASE DE DATOS", null);
+		//log(Level.INFO, "DEVOLVIENDO BUSES COMPRADOS DE LA BASE DE DATOS", null);
 		BDServicio.cerrarConexion();
 		return busesUsuarios;
 	
 	}
 	
 	
+	
+	
+	//METODO PARA OBTENER VIAJES COMBINADOS  COMPRADOS DE CADA USUARIO (DADO SU CODIGO DE USUARIO) PARA MOSTRAR EN EL PERFIL
+	
+		public static ArrayList<ViajeCombinadoComprado> viajesCombinadosCompradosUsuario(int codUsuario) {
+			
+			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			ArrayList<ViajeCombinadoComprado> combinadosUsuarios= new ArrayList<>();
+		
+			
+			try {
+				Statement st = conn.createStatement();
+				
+				String resp = "select * from viajeCombinadoComprado where cod_usu = "+codUsuario;
+				ResultSet rs = st.executeQuery(resp);
+				while(rs.next()) {
+					int codigoViajeCombinado = rs.getInt("Cod_viajec");
+					
+					//OBTENEMOS EL VIAJE COMBINADO
+					
+					ViajeCombinado viajeC = viajeDesdeCodigo(codigoViajeCombinado);
+					String FechaCompra = rs.getString("Fecha_compra");
+					int cantidad = rs.getInt("Cantidad");
+					
+					
+					
+					//el codigo de compra tampoco es necesario mostrarle al usuario 
+					
+					//ESTO ESTARA CONFIGURADO EN EL TOSTRING DE CADA CLASE, YA QUE ES ESTO LO QUE USAREMOS PARA MOSTRAR
+					 ViajeCombinadoComprado viajeComprado = new ViajeCombinadoComprado(codUsuario, cantidad, FechaCompra,TipoServicio.viajeCombinado, -1,viajeC);
+					 
+					 
+					 
+					//añadimos
+					 
+					 combinadosUsuarios.add(viajeComprado);
+
+					
+				}
+				
+			} catch (SQLException e) {
+				log(Level.SEVERE, "ERROR AL DEVOLVER BUSQUEDA DE VIAJE COMBINADO POR CODIGO DE LA BASE DE DATOS", e);
+				e.printStackTrace();
+				
+			}
+			//log(Level.INFO, "DEVOLVIENDO VIAJES COMBINADOS COMPRADOS DE LA BASE DE DATOS", null);
+			BDServicio.cerrarConexion();
+			return combinadosUsuarios;
+		
+		}
+
 	//OBTENER BUS DESDE CODIGO
 	
 	public static Bus busDesdeCodigo(int codBus) {

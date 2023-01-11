@@ -176,7 +176,7 @@ public class VentanaConfirmacionCompra extends JFrame {
 			
 			VentanaMenu vent = new VentanaMenu(usuarioActual);
 			vent.setVisible(true);
-	
+			dispose();
 			
 		});
 		
