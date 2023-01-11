@@ -13,7 +13,7 @@ import logicaDeNegocio.LongitudStringException;
 import logicaDeNegocio.Utils;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JButton;

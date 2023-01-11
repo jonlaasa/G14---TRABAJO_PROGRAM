@@ -22,18 +22,12 @@ import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaConfirmacionCompra;
 import logicaDeNegocio.Utils;
 
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.logging.Level;
-import java.awt.event.ActionEvent;
 
 public class VentanaMetodoPago extends JFrame {
 

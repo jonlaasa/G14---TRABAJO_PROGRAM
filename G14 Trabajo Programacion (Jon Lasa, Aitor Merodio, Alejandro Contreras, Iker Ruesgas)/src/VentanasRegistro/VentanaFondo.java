@@ -1,21 +1,16 @@
 package VentanasRegistro;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.Toolkit;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import java.awt.Font;
 import java.awt.Image;
 
 public class VentanaFondo extends JFrame {
 
-	private JPanel contentPane;
+
 
 	public VentanaFondo() {
 		

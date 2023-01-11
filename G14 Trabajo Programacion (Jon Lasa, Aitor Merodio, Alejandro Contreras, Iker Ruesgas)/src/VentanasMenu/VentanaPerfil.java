@@ -1,39 +1,26 @@
 package VentanasMenu;
 
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import BD.BDRegistro;
+
 import BD.BDServicio;
 import Datos.BusComprado;
 import Datos.Compra;
 import Datos.Usuario;
-import Datos.ViajeCombinado;
 import Datos.ViajeCombinadoComprado;
 import Datos.VueloComprado;
-import VentanasRegistro.VentanaDescripcion;
 
-import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
 
 public class VentanaPerfil extends JFrame {
 

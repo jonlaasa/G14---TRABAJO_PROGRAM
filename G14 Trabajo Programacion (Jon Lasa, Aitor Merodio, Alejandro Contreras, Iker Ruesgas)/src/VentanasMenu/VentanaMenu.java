@@ -1,12 +1,9 @@
 package VentanasMenu;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import BD.BDRegistro;
 import Datos.Usuario;
 import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaViajesC;
@@ -14,23 +11,15 @@ import VentanasCompra.VentanaVuelo;
 import VentanasRegistro.VentanaInicio;
 
 import javax.swing.JMenuBar;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JMenu;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
-import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
-import java.awt.Toolkit;
 
 public class VentanaMenu extends JFrame {
 
