@@ -1,6 +1,5 @@
 package VentanasAdministrador;
 
-import java.awt.EventQueue;
 import java.sql.SQLException;
 
 import javax.swing.JFrame;
@@ -90,7 +89,7 @@ public class VentanaInicioAdmin extends JFrame {
 		JLabel lblUsuariosActuales = new JLabel("MENU DE ADMINISTARDORES");
 		lblUsuariosActuales.setForeground(new Color(255, 128, 0));
 		lblUsuariosActuales.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblUsuariosActuales.setBounds(206, 31, 284, 61);
+		lblUsuariosActuales.setBounds(206, 28, 284, 61);
 		contentPane.add(lblUsuariosActuales);
 
 		JLabel labelFoto;
@@ -98,8 +97,8 @@ public class VentanaInicioAdmin extends JFrame {
 		Image image = imgIcon.getImage();
 		Image imagenModificada = image.getScaledInstance(700,380,Image.SCALE_SMOOTH);
 		ImageIcon nuevoIcono = new ImageIcon(imagenModificada);
-		labelFoto = new JLabel ("",nuevoIcono,JLabel.CENTER);
-		labelFoto.setBounds(216, 93, 215, 184);
+		labelFoto = new JLabel ("",new ImageIcon(VentanaInicioAdmin.class.getResource("/ImagenesPNG/logo.jpeg")),JLabel.CENTER);
+		labelFoto.setBounds(172, 76, 296, 295);
 		contentPane.add(labelFoto);
 		
 		
@@ -197,3 +196,4 @@ public class VentanaInicioAdmin extends JFrame {
 		
 	}
 }
+

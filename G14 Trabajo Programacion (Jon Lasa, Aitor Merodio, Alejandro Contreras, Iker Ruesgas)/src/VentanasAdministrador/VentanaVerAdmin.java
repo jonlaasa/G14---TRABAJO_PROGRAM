@@ -13,6 +13,9 @@ import javax.swing.table.DefaultTableModel;
 
 import BD.BDRegistro;
 import Datos.Administrador;
+import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Font;
 
 public class VentanaVerAdmin extends JFrame {
 	
@@ -50,6 +53,12 @@ public class VentanaVerAdmin extends JFrame {
 		btnVolver.setBounds(282, 363, 89, 23);
 		contentPane.add(btnVolver);
 		
+		JLabel lblAdministradores = new JLabel("LISTA DE ADMINISTRADORES:");
+		lblAdministradores.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblAdministradores.setForeground(new Color(255, 128, 64));
+		lblAdministradores.setBounds(220, 30, 228, 46);
+		contentPane.add(lblAdministradores);
+		
 		
 		
 		listaAdmin= BDRegistro.mostrarAdministradoresTotal();
@@ -67,5 +76,4 @@ public class VentanaVerAdmin extends JFrame {
 		});
 	
 	}
-
 }
