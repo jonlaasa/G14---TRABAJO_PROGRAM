@@ -6,18 +6,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.TreeSet;
-import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,15 +20,12 @@ import Datos.Bus;
 import Datos.BusComprado;
 import Datos.Compra;
 import Datos.RentingCoche;
-import Datos.Servicio;
-import Datos.Usuario;
 import Datos.ViajeCombinado;
 import Datos.ViajeCombinadoComprado;
 import Datos.Vuelo;
 import Datos.VueloComprado;
 import Enum.TipoServicio;
 import Enum.ZonaAsientoVuelo;
-import VentanasCompra.VentanaConfirmacionCompra;
 
 public class BDServicio {
 

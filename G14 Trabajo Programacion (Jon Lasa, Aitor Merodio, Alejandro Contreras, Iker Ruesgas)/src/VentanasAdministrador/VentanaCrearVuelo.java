@@ -2,14 +2,11 @@ package VentanasAdministrador;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Label;
-import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
+
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JButton;
@@ -17,9 +14,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -28,14 +23,11 @@ import javax.swing.border.EmptyBorder;
 import com.toedter.calendar.JCalendar;
 
 import Datos.Administrador;
-import java.awt.SystemColor;
 import javax.swing.SwingConstants;
-import com.toedter.calendar.JDateChooser;
 
 import BD.BDServicio;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
 import javax.swing.JRadioButton;
 
 public class VentanaCrearVuelo extends JFrame {

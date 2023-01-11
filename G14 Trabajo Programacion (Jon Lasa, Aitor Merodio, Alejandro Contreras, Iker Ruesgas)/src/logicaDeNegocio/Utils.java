@@ -2,7 +2,6 @@ package logicaDeNegocio;
 
 import javax.swing.JOptionPane;
 
-import Datos.Usuario;
 
 public class Utils {
 	

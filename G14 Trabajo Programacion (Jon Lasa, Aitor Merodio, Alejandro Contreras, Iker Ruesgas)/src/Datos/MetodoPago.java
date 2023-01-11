@@ -1,7 +1,6 @@
 package Datos;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 
 
 public class MetodoPago {

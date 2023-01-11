@@ -1,16 +1,8 @@
 package Datos;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.sql.DataTruncation;
-import java.sql.Date;
-import java.util.Calendar;
+
 
 import Enum.TipoServicio;
-import logicaDeNegocio.DuracionException;
-import logicaDeNegocio.FechaException;
-import logicaDeNegocio.PlazasRestantesException;
-import logicaDeNegocio.PrecioException;
 
 
 public class Servicio  {

@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Datos.Administrador;
-import VentanasMenu.VentanaMenu;
 import VentanasRegistro.VentanaInicio;
 
 import javax.swing.JMenuBar;
@@ -16,7 +15,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Color;

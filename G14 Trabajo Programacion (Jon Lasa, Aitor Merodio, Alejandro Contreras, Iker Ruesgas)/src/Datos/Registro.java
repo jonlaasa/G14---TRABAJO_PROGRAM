@@ -1,7 +1,5 @@
 package Datos;
 
-import javax.swing.JOptionPane;
-import logicaDeNegocio.LongitudStringException;
 
 public class Registro {
 	

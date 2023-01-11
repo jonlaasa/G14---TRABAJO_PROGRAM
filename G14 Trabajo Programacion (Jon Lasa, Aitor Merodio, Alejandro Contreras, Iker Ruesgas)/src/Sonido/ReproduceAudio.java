@@ -1,25 +1,17 @@
 package Sonido;
-import java.applet.Applet;
-import java.applet.AudioClip;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
+
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.nio.file.FileSystems;
+
 import java.util.Scanner;
 
-import javax.sound.sampled.AudioFileFormat;
+
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.swing.AbstractAction;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
+
 
 /**
  * Ejemplo de reproducción de ficheros de sonido.

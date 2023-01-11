@@ -1,11 +1,5 @@
 package Datos;
 
-import java.util.ArrayList;
-
-import javax.swing.JOptionPane;
-
-import logicaDeNegocio.LongitudStringException;
-import logicaDeNegocio.StringValidoException;
 
 public class Usuario extends Registro {
 	

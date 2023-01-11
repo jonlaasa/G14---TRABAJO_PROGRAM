@@ -9,24 +9,18 @@ import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JCalendar;
 
-import BD.BDRegistro;
 import BD.BDServicio;
 import Datos.Administrador;
-import Datos.Bus;
 
-import java.awt.TextArea;
-import java.sql.SQLException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.swing.JComboBox;
-import java.awt.Canvas;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
+
 import javax.swing.JOptionPane;
 
-import java.awt.Label;
+
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JButton;

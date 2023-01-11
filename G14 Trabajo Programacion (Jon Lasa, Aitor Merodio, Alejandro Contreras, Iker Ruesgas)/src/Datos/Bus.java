@@ -1,14 +1,10 @@
 package Datos;
 
 
-import java.sql.Date;
-import java.text.ParseException;
+
 
 import Enum.TipoServicio;
-import logicaDeNegocio.DuracionException;
-import logicaDeNegocio.FechaException;
-import logicaDeNegocio.PlazasRestantesException;
-import logicaDeNegocio.PrecioException;
+
 
 public class Bus extends Servicio {
 	

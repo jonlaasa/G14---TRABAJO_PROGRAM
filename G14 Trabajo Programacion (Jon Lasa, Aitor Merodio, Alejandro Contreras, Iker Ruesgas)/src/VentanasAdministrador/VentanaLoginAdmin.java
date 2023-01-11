@@ -1,7 +1,6 @@
 package VentanasAdministrador;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 
 import javax.swing.JButton;
@@ -14,8 +13,6 @@ import javax.swing.border.EmptyBorder;
 
 import BD.BDRegistro;
 import Datos.Administrador;
-import VentanasMenu.VentanaMenu;
-import VentanasRegistro.VentanaInicio;
 import VentanasRegistro.VentanaLogin;
 
 import javax.swing.JTextField;
