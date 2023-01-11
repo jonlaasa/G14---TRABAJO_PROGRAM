@@ -1,4 +1,3 @@
-
 package VentanasMenu;
 
 import java.awt.EventQueue;
@@ -79,9 +78,6 @@ public class VentanaMenu extends JFrame {
 		
 		JMenuItem mntmPerfil = new JMenuItem("Perfil");
 		mnOpcionesPerfil.add(mntmPerfil);
-		
-		JMenuItem mntmConfiguracion = new JMenuItem("Configuracio");
-		mnOpcionesPerfil.add(mntmConfiguracion);
 		
 		JMenuItem mntmHistorial = new JMenuItem("Historial");
 		mnOpcionesPerfil.add(mntmHistorial);
