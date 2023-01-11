@@ -1,7 +1,6 @@
 package VentanasAdministrador;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -13,10 +12,8 @@ import javax.swing.table.DefaultTableModel;
 import BD.BDRegistro;
 import Datos.Administrador;
 import Datos.Usuario;
-import VentanasMenu.VentanaMenu;
 
 import javax.swing.JTable;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 

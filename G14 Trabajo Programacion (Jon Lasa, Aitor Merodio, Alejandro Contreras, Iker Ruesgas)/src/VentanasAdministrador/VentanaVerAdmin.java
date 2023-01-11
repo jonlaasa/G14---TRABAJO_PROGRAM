@@ -1,6 +1,5 @@
 package VentanasAdministrador;
 
-import java.awt.EventQueue;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -14,7 +13,6 @@ import javax.swing.table.DefaultTableModel;
 
 import BD.BDRegistro;
 import Datos.Administrador;
-import Datos.Usuario;
 
 public class VentanaVerAdmin extends JFrame {
 	

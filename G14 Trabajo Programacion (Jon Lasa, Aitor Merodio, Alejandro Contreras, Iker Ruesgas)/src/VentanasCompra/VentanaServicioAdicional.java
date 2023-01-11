@@ -1,23 +1,18 @@
 package VentanasCompra;
 
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import BD.BDServicio;
-import Datos.BusComprado;
-import Datos.Compra;
 import Datos.RentingCoche;
-import Datos.Servicio;
 import Datos.Usuario;
 import Datos.Vuelo;
 import Datos.VueloComprado;
 import Enum.ClaseCoche;
 import Enum.TipoServicio;
 import Enum.ZonaAsientoVuelo;
-import VentanasMenu.VentanaMenu;
 import VentanasRegistro.VentanaMetodoPago;
 
 import javax.swing.JLabel;
@@ -31,7 +26,6 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JTextField;
 
 public class VentanaServicioAdicional extends JFrame {
 

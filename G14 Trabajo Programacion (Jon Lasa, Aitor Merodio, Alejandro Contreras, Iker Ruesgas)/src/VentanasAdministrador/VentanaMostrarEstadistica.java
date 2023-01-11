@@ -1,6 +1,5 @@
 package VentanasAdministrador;
 
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,31 +11,21 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
-import org.jfree.data.general.PieDataset;
 
 import BD.BDServicio;
 import Datos.Administrador;
 
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.Paint;
 
 import javax.swing.JButton;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import java.awt.event.ActionListener;
-import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
-import java.awt.event.ActionEvent;
 import java.awt.Color;
-import java.awt.Dimension;
 
 public class VentanaMostrarEstadistica extends JFrame {
 

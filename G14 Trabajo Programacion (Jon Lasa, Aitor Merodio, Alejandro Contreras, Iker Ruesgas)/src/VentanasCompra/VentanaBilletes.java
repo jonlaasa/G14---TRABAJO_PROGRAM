@@ -1,12 +1,10 @@
 package VentanasCompra;
 
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import BD.BDRegistro;
 import BD.BDServicio;
 import Datos.Bus;
 import Datos.BusComprado;
@@ -19,13 +17,10 @@ import Enum.TipoServicio;
 import VentanasMenu.VentanaMenu;
 import VentanasRegistro.VentanaMetodoPago;
 
-import javax.swing.JTextField;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
-import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 

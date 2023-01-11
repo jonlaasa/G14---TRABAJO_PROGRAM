@@ -1,33 +1,26 @@
 package VentanasCompra;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
 
 import java.awt.Color;
 import java.awt.Component;
 
 import javax.swing.JTable;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import javax.swing.JComboBox;
-import javax.swing.JTextField;
-import javax.swing.ListCellRenderer;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
-import java.awt.Graphics;
+
 
 import javax.swing.SwingConstants;
-import javax.swing.JRadioButton;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
+
 import com.toedter.calendar.JCalendar;
 
 import BD.BDServicio;
@@ -47,18 +40,15 @@ import java.awt.event.KeyListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.awt.event.ActionEvent;
-import java.awt.Panel;
-import javax.swing.JScrollBar;
+
 import javax.swing.JScrollPane;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
 import javax.swing.JCheckBox;
-import javax.swing.ScrollPaneConstants;
-import java.awt.Dimension;
+
 
 public class VentanaVuelo extends JFrame {
 

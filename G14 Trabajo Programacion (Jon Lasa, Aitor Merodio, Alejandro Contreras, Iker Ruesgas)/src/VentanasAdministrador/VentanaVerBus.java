@@ -1,7 +1,6 @@
 package VentanasAdministrador;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -10,19 +9,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import BD.BDRegistro;
 import BD.BDServicio;
 import Datos.Administrador;
 import Datos.Bus;
-import Datos.Usuario;
-import Datos.Vuelo;
-import VentanasMenu.VentanaMenu;
+
 
 import javax.swing.JTable;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 
 public class VentanaVerBus extends JFrame {
 
