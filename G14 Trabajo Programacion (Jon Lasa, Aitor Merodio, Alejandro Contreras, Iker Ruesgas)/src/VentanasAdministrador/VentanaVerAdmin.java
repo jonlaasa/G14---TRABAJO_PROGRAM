@@ -16,6 +16,8 @@ import Datos.Administrador;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VentanaVerAdmin extends JFrame {
 	
@@ -31,6 +33,8 @@ public class VentanaVerAdmin extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 51, 51));
+		contentPane.setForeground(new Color(0, 51, 51));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -49,15 +53,23 @@ public class VentanaVerAdmin extends JFrame {
 		scroll.setBounds(51, 79, 574, 260);
 		contentPane.add(scroll);
 		
-		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(282, 363, 89, 23);
+		JButton btnVolver = new JButton("Menu Principal");
+		btnVolver.setBounds(168, 362, 137, 23);
 		contentPane.add(btnVolver);
 		
 		JLabel lblAdministradores = new JLabel("LISTA DE ADMINISTRADORES:");
-		lblAdministradores.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblAdministradores.setFont(new Font("Eras Light ITC", Font.BOLD, 16));
 		lblAdministradores.setForeground(new Color(255, 128, 64));
 		lblAdministradores.setBounds(220, 30, 228, 46);
 		contentPane.add(lblAdministradores);
+		
+		JButton btnCrearAdmin = new JButton("Nuevo Administrador");
+		btnCrearAdmin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnCrearAdmin.setBounds(348, 362, 160, 23);
+		contentPane.add(btnCrearAdmin);
 		
 		
 		
@@ -71,6 +83,14 @@ public class VentanaVerAdmin extends JFrame {
 		btnVolver.addActionListener(e->{
 			VentanaInicioAdmin vb = null;
 			vb = new VentanaInicioAdmin(adminActual);
+			vb.setVisible(true);
+			dispose();
+		});
+		
+		
+		btnCrearAdmin.addActionListener(e->{
+			VentanaCrearAdmin vb = null;
+			vb = new VentanaCrearAdmin(adminActual);
 			vb.setVisible(true);
 			dispose();
 		});
