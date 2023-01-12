@@ -33,6 +33,7 @@ public class BDServicio {
 private static Connection conn;
 private static PreparedStatement pst;
 private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy-MM-dd");
+public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd";
 	
 	private static Logger logger;
 	

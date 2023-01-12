@@ -25,9 +25,9 @@ public class BDRegistro {
 	private static Connection conn;
 	
 	private static Logger logger;
+	
+	public static final String baseDatos ="basesDeDatos\\serviciosUsuarios.db";
 
-	
-	
 	public static  Connection abrirBaseDatos(String base){
 		
 		try {
