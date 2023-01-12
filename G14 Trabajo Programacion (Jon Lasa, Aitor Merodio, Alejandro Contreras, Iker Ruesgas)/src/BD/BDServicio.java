@@ -85,9 +85,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 		
 		try {
 			Statement st = conn.createStatement();
-			String añadir = "Insert into Compra values ("+codigo+", "+"'"+fecha+
+			String anyadir = "Insert into Compra values ("+codigo+", "+"'"+fecha+
 					"' ,"+compra.getCantidad()+", '"+tipo+"' ,"+ codigoCompra;
-			int valor = st.executeUpdate(añadir);
+			int valor = st.executeUpdate(anyadir);
 			if(valor==0) {
 				log(Level.SEVERE,"Compra no ha podido ser registrada",null);
 				

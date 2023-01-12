@@ -560,7 +560,7 @@ public class TestBDServicio {
 		//OBTENEMOS EL USUARIO JONLASA POR EJEMPLO
 		Usuario u= null;
 		try {
-			u = BDRegistro.obtenerUsuario("jonlasa");
+			u = BDRegistro.obtenerUsuario("jonlasa",TestBDRegistro.baseDatosTest);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -583,7 +583,7 @@ public class TestBDServicio {
 		//SIN EMBARGO EL USUARIO ALEJANDRO NO HA COMPRADO NINGUNO
 		Usuario usuario2 = null;
 		try {
-			 usuario2 = BDRegistro.obtenerUsuario("alejandro");
+			 usuario2 = BDRegistro.obtenerUsuario("alejandro",TestBDRegistro.baseDatosTest);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -603,7 +603,7 @@ public class TestBDServicio {
 		//OBTENEMOS EL USUARIO JONLASA POR EJEMPLO
 		Usuario u= null;
 		try {
-			u = BDRegistro.obtenerUsuario("jonlasa");
+			u = BDRegistro.obtenerUsuario("jonlasa",TestBDRegistro.baseDatosTest);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -626,7 +626,7 @@ public class TestBDServicio {
 		//SIN EMBARGO EL USUARIO ALEJANDRO NO HA COMPRADO NINGUNO
 		Usuario usuario2 = null;
 		try {
-			 usuario2 = BDRegistro.obtenerUsuario("alejandro");
+			 usuario2 = BDRegistro.obtenerUsuario("alejandro",TestBDRegistro.baseDatosTest);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

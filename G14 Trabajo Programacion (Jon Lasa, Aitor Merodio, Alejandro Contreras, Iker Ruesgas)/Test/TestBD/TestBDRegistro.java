@@ -19,7 +19,7 @@ import Datos.Usuario;
 
 public class TestBDRegistro {
 	
-	private static final String baseDatosTest ="basesDeDatos\\serviciosUsuariosJUnit.db";
+	public static final String baseDatosTest ="basesDeDatos\\serviciosUsuariosJUnit.db";
 	
 	@Test
 	public void testInicializarYCerrarBd() {
