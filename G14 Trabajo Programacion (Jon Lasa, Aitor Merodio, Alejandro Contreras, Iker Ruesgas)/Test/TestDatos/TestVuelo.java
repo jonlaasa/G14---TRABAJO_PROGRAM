@@ -76,7 +76,7 @@ public class TestVuelo {
 	//la compañia
 	
 	@Test
-	public void testConstructorConCompañiaNula() {
+	public void testConstructorConCompanyaNula() {
 		assertEquals(null, v3.getCompanya());
 		
 	}
