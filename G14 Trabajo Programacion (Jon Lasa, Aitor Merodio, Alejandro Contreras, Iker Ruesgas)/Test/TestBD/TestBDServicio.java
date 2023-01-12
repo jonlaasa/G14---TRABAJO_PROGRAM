@@ -21,8 +21,10 @@ import BD.BDRegistro;
 import BD.BDServicio;
 import Datos.Bus;
 import Datos.BusComprado;
+import Datos.Usuario;
 import Datos.ViajeCombinado;
 import Datos.Vuelo;
+import Datos.VueloComprado;
 import Enum.TipoServicio;
 
 public class TestBDServicio {
@@ -545,13 +547,97 @@ public class TestBDServicio {
 			
 			//el bus b3 deberia ser nulo, ya que no existe bus con ese codigo
 			
+	
 			assertNull(b3);
-			
-			
-			
-		
 	}
+	//TEST PARA COMPROBAR EL FUNCIONAMENTO DEL METODO, QUE DANDO UN CODIGO DE USUARIO, DEBERIA DEVOLVER LOS VUELOS COMPRADOS 
+	@Test	
+	public void testVuelosCompradosUsuarios() {
 
+		//OBTENEMOS EL USUARIO JONLASA POR EJEMPLO
+		Usuario u= null;
+		try {
+			u = BDRegistro.obtenerUsuario("jonlasa");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//LLAMAMOS AL METODO Y OBTENEMOS SUS VUELOS COMPRADOS
+		
+		ArrayList<VueloComprado> listaConComprados = BDServicio.vuelosCompradosUsuario(u.getCodigo());
+		
+		//AHORA MIRAMOS LA BASE DE DATOS Y COMPROBAMOS QUE EL PRIMERO DE LOS VUELOS COMPRADOS TIENE
+		//CODVUELO = 4 Y PRECIO =70.
+		
+		//EL PRIMERO 
+		
+		VueloComprado vueloPrimero = listaConComprados.get(0);
+		
+		assertEquals(4,vueloPrimero.getVuelo().getCodigo() );
+		assertEquals(70,(int)vueloPrimero.getPrecio() );
+		
+		//SIN EMBARGO EL USUARIO ALEJANDRO NO HA COMPRADO NINGUNO
+		Usuario usuario2 = null;
+		try {
+			 usuario2 = BDRegistro.obtenerUsuario("alejandro");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//lista de sus vuelos comprados
+		
+		ArrayList<VueloComprado> listaConVuelosUsuario2 = BDServicio.vuelosCompradosUsuario(usuario2.getCodigo());
+		
+		assertEquals(0, listaConVuelosUsuario2.size());
+
+	}
+	@Test
+	//TEST PARA COMPROBAR EL FUNCIONAMENTO DEL METODO, QUE DANDO UN CODIGO DE USUARIO, DEBERIA DEVOLVER LOS BUSES COMPRADOS 
+	public void testBusesCompradosUsuarios() {
+
+		//OBTENEMOS EL USUARIO JONLASA POR EJEMPLO
+		Usuario u= null;
+		try {
+			u = BDRegistro.obtenerUsuario("jonlasa");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//LLAMAMOS AL METODO Y OBTENEMOS SUS Buses COMPRADOS
+		
+		ArrayList<BusComprado> listaConComprados = BDServicio.busesCompradosUsuario(u.getCodigo());
+		
+		//AHORA MIRAMOS LA BASE DE DATOS Y COMPROBAMOS QUE EL PRIMERO DE LOS VUELOS COMPRADOS TIENE
+		//CODBUS = 4 Y PRECIO =70.
+		
+		//EL PRIMERO 
+		
+		BusComprado busPrimero = listaConComprados.get(0);
+		
+		assertEquals(5,busPrimero.getBus().getCodigo() );
+		assertEquals(160,(int)busPrimero.getPrecio() );
+		
+		//SIN EMBARGO EL USUARIO ALEJANDRO NO HA COMPRADO NINGUNO
+		Usuario usuario2 = null;
+		try {
+			 usuario2 = BDRegistro.obtenerUsuario("alejandro");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//lista de sus vuelos comprados
+		
+		ArrayList<BusComprado> listaConVuelosUsuario2 = BDServicio.busesCompradosUsuario(usuario2.getCodigo());
+		
+		assertEquals(0, listaConVuelosUsuario2.size());
+
+	}
+	
+	
 	
 	//TEST PARA COMPROBAR LAS CONSULTAS DE LA VENTANA ESTADISTICA
 	
