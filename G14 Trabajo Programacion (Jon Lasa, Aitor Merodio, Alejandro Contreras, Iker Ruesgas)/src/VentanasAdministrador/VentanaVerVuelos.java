@@ -16,6 +16,9 @@ import Datos.Vuelo;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class VentanaVerVuelos extends JFrame {
 
@@ -30,6 +33,7 @@ public class VentanaVerVuelos extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 51, 51));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -49,9 +53,19 @@ public class VentanaVerVuelos extends JFrame {
 		scroll.setBounds(51, 79, 574, 260);
 		contentPane.add(scroll);
 		
-		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(282, 363, 89, 23);
+		JButton btnVolver = new JButton("Menu Principal");
+		btnVolver.setBounds(148, 366, 164, 23);
 		contentPane.add(btnVolver);
+		
+		JButton btnNewButton = new JButton("Nuevo Vuelo");
+		btnNewButton.setBounds(369, 366, 172, 23);
+		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel = new JLabel("LISTA DE VUELOS:");
+		lblNewLabel.setForeground(new Color(255, 128, 0));
+		lblNewLabel.setFont(new Font("Eras Light ITC", Font.BOLD, 16));
+		lblNewLabel.setBounds(246, 38, 255, 30);
+		contentPane.add(lblNewLabel);
 		
 		
 		

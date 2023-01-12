@@ -16,6 +16,9 @@ import Datos.Usuario;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class VentanaVerUsuarios extends JFrame {
 
@@ -30,6 +33,7 @@ public class VentanaVerUsuarios extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 51, 51));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -48,9 +52,15 @@ public class VentanaVerUsuarios extends JFrame {
 		scroll.setBounds(51, 79, 574, 260);
 		contentPane.add(scroll);
 		
-		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(282, 363, 89, 23);
+		JButton btnVolver = new JButton("Menu Principal");
+		btnVolver.setBounds(258, 363, 134, 23);
 		contentPane.add(btnVolver);
+		
+		JLabel lblNewLabel = new JLabel("LISTA DE USUARIOS:");
+		lblNewLabel.setForeground(new Color(255, 128, 0));
+		lblNewLabel.setFont(new Font("Eras Light ITC", Font.BOLD, 16));
+		lblNewLabel.setBounds(244, 30, 173, 36);
+		contentPane.add(lblNewLabel);
 		
 		
 		
@@ -70,3 +80,4 @@ public class VentanaVerUsuarios extends JFrame {
 	
 	}
 }
+

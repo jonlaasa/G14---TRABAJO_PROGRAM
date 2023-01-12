@@ -17,6 +17,9 @@ import Datos.Bus;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class VentanaVerBus extends JFrame {
 
@@ -31,6 +34,7 @@ public class VentanaVerBus extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 51, 51));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -50,9 +54,19 @@ public class VentanaVerBus extends JFrame {
 		scroll.setBounds(51, 79, 574, 260);
 		contentPane.add(scroll);
 		
-		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(282, 363, 89, 23);
+		JButton btnVolver = new JButton("Menu Principal");
+		btnVolver.setBounds(180, 363, 122, 23);
 		contentPane.add(btnVolver);
+		
+		JLabel lblNewLabel = new JLabel("LISTA DE BUSES:");
+		lblNewLabel.setFont(new Font("Eras Light ITC", Font.BOLD, 16));
+		lblNewLabel.setForeground(new Color(255, 128, 0));
+		lblNewLabel.setBounds(254, 24, 247, 44);
+		contentPane.add(lblNewLabel);
+		
+		JButton btnCrearBus = new JButton("Nuevo Bus");
+		btnCrearBus.setBounds(356, 363, 145, 23);
+		contentPane.add(btnCrearBus);
 		
 		
 //		String[] options = {"Todos los buses", "Buses llenos", "Ultimas plazas"};
@@ -72,6 +86,14 @@ public class VentanaVerBus extends JFrame {
 		btnVolver.addActionListener(e->{
 			VentanaInicioAdmin vb = null;
 			vb = new VentanaInicioAdmin(adminActual);
+			vb.setVisible(true);
+			dispose();
+		});
+		
+		
+		btnCrearBus.addActionListener(e->{
+			VentanaCrearBus vb = null;
+			vb = new VentanaCrearBus(adminActual);
 			vb.setVisible(true);
 			dispose();
 		});
