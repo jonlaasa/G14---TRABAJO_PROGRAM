@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 import Datos.Administrador;
 import Datos.Usuario;
 
-
+//BASE DE DATOS DE SERVICIOS COMPANYA
 
 public class BDRegistro {
 	
