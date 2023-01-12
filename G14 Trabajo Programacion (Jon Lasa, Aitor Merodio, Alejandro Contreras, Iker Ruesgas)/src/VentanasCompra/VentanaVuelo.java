@@ -145,7 +145,7 @@ public class VentanaVuelo extends JFrame {
 		
 		
 		//LLENAMOS LA LISTA de VUELOS ACTUALES CON LOS VUELOS  DE BD
-		listaVuelos = BDServicio.mostrarVuelosTotal();
+		listaVuelos = BDServicio.mostrarVuelosTotal(BDServicio.baseDatosServicio);
 		
 		//CARGAMOS EL MODELO
 		for(Vuelo vuelo: listaVuelos) {
@@ -157,7 +157,7 @@ public class VentanaVuelo extends JFrame {
 		
 		//Llenamos los origen y destino de los bus
 				//ORIGEN
-				ArrayList<String> listaOrigenes = BDServicio.mostrarDiferentesOrigenes("vuelo");
+				ArrayList<String> listaOrigenes = BDServicio.mostrarDiferentesOrigenes("vuelo",BDServicio.baseDatosServicio);
 				
 				
 				
@@ -166,7 +166,7 @@ public class VentanaVuelo extends JFrame {
 					}
 				
 				// DESTINO
-				ArrayList<String> listaDestinos = BDServicio.mostrarDiferentesDestinos("vuelo");
+				ArrayList<String> listaDestinos = BDServicio.mostrarDiferentesDestinos("vuelo",BDServicio.baseDatosServicio);
 				
 				
 				
@@ -319,7 +319,8 @@ public class VentanaVuelo extends JFrame {
 			String fechaFin = SDF_FECHA_FOTO.format(calendarVuelta.getDate());
 			
 			//LLAMAMOS AL METODO 
-			ArrayList<Vuelo> listaVuelosFiltrado = BD.BDServicio.listaServicioVueloFiltrado(origen, destino, filtroPrecio,fechaInicio, fechaFin);
+			ArrayList<Vuelo> listaVuelosFiltrado = BD.BDServicio.listaServicioVueloFiltrado(origen,
+					destino, filtroPrecio,fechaInicio, fechaFin,BDServicio.baseDatosServicio);
 			
 			listaVuelos=listaVuelosFiltrado;
 			
@@ -436,7 +437,7 @@ public class VentanaVuelo extends JFrame {
 						if (f.isControlDown() && f.getKeyCode() == KeyEvent.VK_PLUS) {
 							//entonces llenamos la lista que manejamos primero
 							
-							listaVuelos=BDServicio.mostrarVuelosTotal();
+							listaVuelos=BDServicio.mostrarVuelosTotal(BDServicio.baseDatosServicio);
 							//DESPUES LLENAMOS EL MODELO, VACIAMOS PRIMERO
 							
 							while (modeloTabla.getRowCount() > 0) {

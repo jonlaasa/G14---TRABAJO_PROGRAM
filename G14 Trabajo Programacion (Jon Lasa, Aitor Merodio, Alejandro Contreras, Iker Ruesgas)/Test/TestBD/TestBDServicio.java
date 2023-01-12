@@ -28,6 +28,8 @@ import Datos.VueloComprado;
 import Enum.TipoServicio;
 
 public class TestBDServicio {
+	
+	public static final String baseDatosPrueba ="basesDeDatos/serviciosCompanyaJUnit.db";
 
 	
 	//en los test probaremos que el funcionamiento de la base de datos y los metodos de bases de datos es correcto
@@ -41,7 +43,7 @@ public class TestBDServicio {
 
 	@Test
 	public void testInicializarYCerrarBd() {
-		Connection c = BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+		Connection c = BDServicio.abrirBaseDatos(baseDatosPrueba);
 		//COMPROBAMOS QUE NO ES NULA
 		
 		assertNotNull(c);
@@ -61,7 +63,7 @@ public class TestBDServicio {
 	public void testMostrarBusesTotal() {
 		
 		//LLAMAMOS AL METODO
-		ArrayList<Bus> listaBus = BDServicio.mostrarBusesTotal();
+		ArrayList<Bus> listaBus = BDServicio.mostrarBusesTotal(baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -94,7 +96,7 @@ public class TestBDServicio {
 	public void testMostrarOrigenesBus() {
 		
 		//LLAMAMOS AL METODO CON BUS PRIMERO
-		ArrayList<String> listaOrigenesBus  = BDServicio.mostrarDiferentesOrigenes("bus");
+		ArrayList<String> listaOrigenesBus  = BDServicio.mostrarDiferentesOrigenes("bus",baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -117,7 +119,7 @@ public class TestBDServicio {
 	public void testMostrarOrigenesVuelo() {
 		
 		//LLAMAMOS AL METODO CON BUS PRIMERO
-		ArrayList<String> listaOrigenesVuelo = BDServicio.mostrarDiferentesOrigenes("vuelo");
+		ArrayList<String> listaOrigenesVuelo = BDServicio.mostrarDiferentesOrigenes("vuelo",baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -141,7 +143,7 @@ public class TestBDServicio {
 	public void testMostrarDestinosBus() {
 		
 		//LLAMAMOS AL METODO CON BUS PRIMERO
-		ArrayList<String> listaDestinosBus  = BDServicio.mostrarDiferentesDestinos("bus");
+		ArrayList<String> listaDestinosBus  = BDServicio.mostrarDiferentesDestinos("bus",baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -164,7 +166,7 @@ public class TestBDServicio {
 	public void testMostrarDestinosVuelo() {
 		
 		//LLAMAMOS AL METODO CON BUS PRIMERO
-		ArrayList<String> listaDestinosVuelo  = BDServicio.mostrarDiferentesDestinos("vuelo");
+		ArrayList<String> listaDestinosVuelo  = BDServicio.mostrarDiferentesDestinos("vuelo",baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -188,7 +190,7 @@ public class TestBDServicio {
 	public void testMostrarVuelosTotal() {
 		
 		//LLAMAMOS AL METODO
-		ArrayList<Vuelo> listaVuelo = BDServicio.mostrarVuelosTotal();
+		ArrayList<Vuelo> listaVuelo = BDServicio.mostrarVuelosTotal(baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -227,7 +229,7 @@ public class TestBDServicio {
 		 
 		 boolean existe = false;
 		 
-		 Connection conn = BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.bd");
+		 Connection conn = BDServicio.abrirBaseDatos(baseDatosPrueba);
 		 try {
 				Statement st = conn.createStatement();
 				
@@ -259,7 +261,7 @@ public class TestBDServicio {
 	public void testMostrarOrigenesCombinados() {
 		
 		//LLAMAMOS AL METODO CON BUS PRIMERO
-		TreeSet<String> listaOrigenesCombinados  = BDServicio.mostrarOrigenesCombinados();
+		TreeSet<String> listaOrigenesCombinados  = BDServicio.mostrarOrigenesCombinados(baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -284,7 +286,7 @@ public class TestBDServicio {
 	public void testMostrarDestinosCombinados() {
 		
 		//LLAMAMOS AL METODO CON BUS PRIMERO
-		TreeSet<String> listaDestinosCombinados  = BDServicio.mostrarDestinosCombinados();
+		TreeSet<String> listaDestinosCombinados  = BDServicio.mostrarDestinosCombinados(baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -307,7 +309,7 @@ public class TestBDServicio {
 	public void testMostrarViajeCombinadoTotal() {
 		
 		//LLAMAMOS AL METODO
-		ArrayList<ViajeCombinado> listaViaje = BDServicio.mostrarViajesCombinadosTotal();
+		ArrayList<ViajeCombinado> listaViaje = BDServicio.mostrarViajesCombinadosTotal(baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -343,7 +345,8 @@ public class TestBDServicio {
 		
 		//LLAMAMOS AL METODO CON UN EJEMPLO (DE VALENCIA A MADRID DE MAYOR A MENOR, ENTRE EL 20 DE DICIEMBRE DE
 		//2022 Y EL 1 DE JUNIO DE 2023 
-		ArrayList<Vuelo> listaVuelosFiltrado = BDServicio.listaServicioVueloFiltrado("Madrid", "Valencia", "mayor", "2022-12-20", "2023-06-01");
+		ArrayList<Vuelo> listaVuelosFiltrado = BDServicio.listaServicioVueloFiltrado("Madrid", "Valencia", "mayor",
+				"2022-12-20", "2023-06-01",baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -374,7 +377,7 @@ public class TestBDServicio {
 		//LLAMAMOS AL METODO CON UN EJEMPLO (DE Sevilla A Lugo DE MAYOR A MENOR, ENTRE EL 20 DE DICIEMBRE DE
 		//2022 Y EL 22 DE DICIEMBRE DE 2023 
 		ArrayList<Bus> listaBusFiltrado = BDServicio.listaServicioBusFiltrado("Sevilla", "Lugo",
-				"mayor", "2022-12-20", "2023-12-20");
+				"mayor", "2022-12-20", "2023-12-20",baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -406,7 +409,7 @@ public class TestBDServicio {
 		//LLAMAMOS AL METODO CON UN EJEMPLO (DE Sevilla A Lugo DE MAYOR A MENOR, ENTRE EL 1 DE DICIEMBRE  DE
 		//2022 Y EL 1 DE ENERO DE 2023 
 		ArrayList<ViajeCombinado> listaViajeCFiltrado = BDServicio.listaServicioCombinadoFiltrado("Barcelona", "Santander",
-				 "2022-12-01", "2023-01-01");
+				 "2022-12-01", "2023-01-01",baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -433,7 +436,7 @@ public class TestBDServicio {
 		//PROBAMOS VALENCIA BILBAO (1 DE ENERO DE 2023 - 1 DE ENERO DE 2024)
 		
 		ArrayList<ViajeCombinado> listaViajeCFiltrado2 = BDServicio.listaServicioCombinadoFiltrado("Valencia", "Bilbao",
-				 "2023-01-01", "2024-01-01");
+				 "2023-01-01", "2024-01-01",baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
@@ -463,7 +466,7 @@ public class TestBDServicio {
 	public void testClaveRenting() {
 		
 		//LLAMAMOS AL METODO Y OBTENEMOS LA CLAVE
-			int clave = BDServicio.claveRenting();
+			int clave = BDServicio.claveRenting(baseDatosPrueba);
 		
 		//primero comprobamos que no es null
 		
@@ -495,9 +498,9 @@ public class TestBDServicio {
 		int cod2= 100;
 		int cod3= -40;
 		//LLAMAMOS AL METODO Y OBTENEMOS LOS VUELOS 
-			v1 = BDServicio.vueloDesdeCodigo(cod1);
-			v2 = BDServicio.vueloDesdeCodigo(cod2);
-			v3 = BDServicio.vueloDesdeCodigo(cod3);
+			v1 = BDServicio.vueloDesdeCodigo(cod1,baseDatosPrueba);
+			v2 = BDServicio.vueloDesdeCodigo(cod2,baseDatosPrueba);
+			v3 = BDServicio.vueloDesdeCodigo(cod3,baseDatosPrueba);
 			
 			//UNA VEZ LOS OBTENEMOS, MIRAMOS LA BD, Y POR EJEMPLO COMPROBAMOS SU HORA DE SALIDA
 			// el de v1 deberia ser: 13:15
@@ -533,9 +536,9 @@ public class TestBDServicio {
 		int cod2= 80;
 		int cod3= -20;
 		//LLAMAMOS AL METODO Y OBTENEMOS LOS VUELOS 
-			b1 = BDServicio.busDesdeCodigo(cod1);
-			b2 = BDServicio.busDesdeCodigo(cod2);
-			b3 = BDServicio.busDesdeCodigo(cod3);
+			b1 = BDServicio.busDesdeCodigo(cod1,baseDatosPrueba);
+			b2 = BDServicio.busDesdeCodigo(cod2,baseDatosPrueba);
+			b3 = BDServicio.busDesdeCodigo(cod3,baseDatosPrueba);
 			
 			//UNA VEZ LOS OBTENEMOS, MIRAMOS LA BD, Y POR EJEMPLO COMPROBAMOS SU HORA DE SALIDA
 			// el de b1 deberia ser: 14:45
@@ -565,7 +568,7 @@ public class TestBDServicio {
 		
 		//LLAMAMOS AL METODO Y OBTENEMOS SUS VUELOS COMPRADOS
 		
-		ArrayList<VueloComprado> listaConComprados = BDServicio.vuelosCompradosUsuario(u.getCodigo());
+		ArrayList<VueloComprado> listaConComprados = BDServicio.vuelosCompradosUsuario(u.getCodigo(),baseDatosPrueba);
 		
 		//AHORA MIRAMOS LA BASE DE DATOS Y COMPROBAMOS QUE EL PRIMERO DE LOS VUELOS COMPRADOS TIENE
 		//CODVUELO = 4 Y PRECIO =70.
@@ -588,7 +591,7 @@ public class TestBDServicio {
 		
 		//lista de sus vuelos comprados
 		
-		ArrayList<VueloComprado> listaConVuelosUsuario2 = BDServicio.vuelosCompradosUsuario(usuario2.getCodigo());
+		ArrayList<VueloComprado> listaConVuelosUsuario2 = BDServicio.vuelosCompradosUsuario(usuario2.getCodigo(),baseDatosPrueba);
 		
 		assertEquals(0, listaConVuelosUsuario2.size());
 
@@ -608,7 +611,7 @@ public class TestBDServicio {
 		
 		//LLAMAMOS AL METODO Y OBTENEMOS SUS Buses COMPRADOS
 		
-		ArrayList<BusComprado> listaConComprados = BDServicio.busesCompradosUsuario(u.getCodigo());
+		ArrayList<BusComprado> listaConComprados = BDServicio.busesCompradosUsuario(u.getCodigo(),baseDatosPrueba);
 		
 		//AHORA MIRAMOS LA BASE DE DATOS Y COMPROBAMOS QUE EL PRIMERO DE LOS VUELOS COMPRADOS TIENE
 		//CODBUS = 4 Y PRECIO =70.
@@ -631,7 +634,7 @@ public class TestBDServicio {
 		
 		//lista de sus vuelos comprados
 		
-		ArrayList<BusComprado> listaConVuelosUsuario2 = BDServicio.busesCompradosUsuario(usuario2.getCodigo());
+		ArrayList<BusComprado> listaConVuelosUsuario2 = BDServicio.busesCompradosUsuario(usuario2.getCodigo(),baseDatosPrueba);
 		
 		assertEquals(0, listaConVuelosUsuario2.size());
 
@@ -645,7 +648,7 @@ public class TestBDServicio {
 	public void testmediaCompras() {
 		
 		//LLAMAMOS AL METEDO Y LE PASAMOS COMO PARAMETRO UN SERVICIO string (EJEMPLO: VUELO)
-		String media = BDServicio.mediaCompras("VUELO");
+		String media = BDServicio.mediaCompras("VUELO",baseDatosPrueba);
 		
 		//PRIMERO COMPROBAMOS QUE NO SEA NULL
 		assertNotNull(media);
@@ -662,7 +665,7 @@ public class TestBDServicio {
 	public void testcompraMax() {
 		
 		//LLAMAMOS AL METEDO Y LE PASAMOS COMO PARAMETRO UN SERVICIO string (EJEMPLO: VUELO)
-		String max = BDServicio.compraMax("VUELO");
+		String max = BDServicio.compraMax("VUELO",baseDatosPrueba);
 		
 		//PRIMERO COMPROBAMOS QUE NO SEA NULL
 		assertNotNull(max);
@@ -679,7 +682,7 @@ public class TestBDServicio {
 	public void testcompraMin() {
 		
 		//LLAMAMOS AL METEDO Y LE PASAMOS COMO PARAMETRO UN SERVICIO string (EJEMPLO: VUELO)
-		String min = BDServicio.compraMin("VUELO");
+		String min = BDServicio.compraMin("VUELO",baseDatosPrueba);
 		
 		//PRIMERO COMPROBAMOS QUE NO SEA NULL
 		assertNotNull(min);
@@ -696,7 +699,7 @@ public class TestBDServicio {
 	public void testusuarioMasCompra() {
 		
 		//LLAMAMOS AL METEDO Y LE PASAMOS COMO PARAMETRO UN SERVICIO string (EJEMPLO: VUELO)
-		String usuario = BDServicio.usuarioMasCompra("VUELO");
+		String usuario = BDServicio.usuarioMasCompra("VUELO",baseDatosPrueba);
 		
 		//PRIMERO COMPROBAMOS QUE NO SEA NULL
 		assertNotNull(usuario);
@@ -713,7 +716,7 @@ public class TestBDServicio {
 	public void testdestinoMasvisitado() {
 		
 		//LLAMAMOS AL METEDO Y LE PASAMOS COMO PARAMETRO UN SERVICIO string (EJEMPLO: VUELO)
-		String destino = BDServicio.destinoMasvisitado("VUELO");
+		String destino = BDServicio.destinoMasvisitado("VUELO",baseDatosPrueba);
 		
 		//PRIMERO COMPROBAMOS QUE NO SEA NULL
 		assertNotNull(destino);
@@ -730,7 +733,7 @@ public class TestBDServicio {
 	public void testcomprasAnualesTotales() {
 		
 		//LLAMAMOS AL METEDO PARA CREAR UNA ARRAYLIST DE ENTEROS
-		ArrayList<Integer> compras = BDServicio.comprasAnualesTotales();
+		ArrayList<Integer> compras = BDServicio.comprasAnualesTotales(baseDatosPrueba);
 		
 		//PRIMERO COMPROBAMOS QUE NO SEA NULL
 		assertNotNull(compras);
@@ -750,7 +753,7 @@ public class TestBDServicio {
 	public void testcomprasServicio() {
 		
 		//LLAMAMOS AL METEDO PARA CREAR UNA ARRAYLIST DE ENTEROS
-		ArrayList<Integer> compras = BDServicio.comprasServicio();
+		ArrayList<Integer> compras = BDServicio.comprasServicio(baseDatosPrueba);
 		
 		//PRIMERO COMPROBAMOS QUE NO SEA NULL
 		assertNotNull(compras);
@@ -770,7 +773,7 @@ public class TestBDServicio {
 	public void testcomprasDestino() {
 		
 		//LLAMAMOS AL METEDO PARA CREAR UNA ARRAYLIST DE ENTEROS
-		ArrayList<Integer> compras = BDServicio.comprasDestino();
+		ArrayList<Integer> compras = BDServicio.comprasDestino(baseDatosPrueba);
 		
 		//PRIMERO COMPROBAMOS QUE NO SEA NULL
 		assertNotNull(compras);

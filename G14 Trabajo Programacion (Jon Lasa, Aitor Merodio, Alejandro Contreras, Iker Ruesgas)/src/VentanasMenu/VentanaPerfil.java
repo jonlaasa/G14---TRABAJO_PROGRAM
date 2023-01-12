@@ -141,7 +141,7 @@ public class VentanaPerfil extends JFrame {
 			mapaCompras.put("Viaje Combinado", new ArrayList<Compra>());
 			// Arraylist con los vuelos de ese usuario
 			
-			ArrayList <VueloComprado> listaConVuelos = BDServicio.vuelosCompradosUsuario(usrActual.getCodigo());
+			ArrayList <VueloComprado> listaConVuelos = BDServicio.vuelosCompradosUsuario(usrActual.getCodigo(),BDServicio.baseDatosServicio);
 			
 			ArrayList<Compra> listaAnyadir = mapaCompras.get("Vuelo");
 			
@@ -153,7 +153,7 @@ public class VentanaPerfil extends JFrame {
 			
 			
 			//LO MISMO CON EL BUS
-			ArrayList <BusComprado> listaConBuses = BDServicio.busesCompradosUsuario(usrActual.getCodigo());
+			ArrayList <BusComprado> listaConBuses = BDServicio.busesCompradosUsuario(usrActual.getCodigo(),BDServicio.baseDatosServicio);
 			
 			ArrayList<Compra> listaAnyadir2 = mapaCompras.get("Bus");
 			
@@ -164,7 +164,7 @@ public class VentanaPerfil extends JFrame {
 			mapaCompras.replace("Bus", listaAnyadir2);
 			//ASI TAMBIEN CON LOS VIAJES COMBINADOS
 		
-			ArrayList <ViajeCombinadoComprado> listaConCombinados = BDServicio.viajesCombinadosCompradosUsuario(usrActual.getCodigo());
+			ArrayList <ViajeCombinadoComprado> listaConCombinados = BDServicio.viajesCombinadosCompradosUsuario(usrActual.getCodigo(),BDServicio.baseDatosServicio);
 			
 			ArrayList<Compra> listaAnyadir3 = mapaCompras.get("Viaje Combinado");
 			

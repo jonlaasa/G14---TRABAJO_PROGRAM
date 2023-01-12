@@ -69,7 +69,7 @@ public class VentanaVerVuelos extends JFrame {
 		
 		
 		
-		listaUsr= BDServicio.verVuelo();
+		listaUsr= BDServicio.verVuelo(BDServicio.baseDatosServicio);
 		
 		for (Vuelo usr:listaUsr) {
 			modeloTabla.addRow(new Object [] {usr.getCodigo(),usr.getFecha(),usr.getHoraSalida(),usr.getDuracionString(),usr.getOrigen(),usr.getDestino(),usr.getPrecioString(),usr.getCompanya(),usr.getPlazasRestantes()

@@ -76,7 +76,7 @@ public class VentanaVerBus extends JFrame {
 		
 		
 		
-		listaBus= BDServicio.verBus();
+		listaBus= BDServicio.verBus(BDServicio.baseDatosServicio);
 		
 		for (Bus bus:listaBus) {
 			modeloTabla.addRow(new Object [] {bus.getCodigo(),bus.getFecha(),bus.getHoraSalida(),bus.getDuracionString(),bus.getOrigen(),bus.getDestino(),bus.getPrecioString(),bus.getCompanya(),bus.getPlazasRestantes()

@@ -134,7 +134,7 @@ public class VentanaViajesC extends JFrame {
 		
 		
 		//LLENAMOS LA LISTA de VIAJES COMBINADOS ACTUALES CON LOS VIAJES COMBINADOS  DE BD
-		listaViajesCombinados = BDServicio.mostrarViajesCombinadosTotal();
+		listaViajesCombinados = BDServicio.mostrarViajesCombinadosTotal(BDServicio.baseDatosServicio);
 		
 //		//CARGAMOS EL MODELO
 		for(ViajeCombinado viaje: listaViajesCombinados) {
@@ -145,14 +145,14 @@ public class VentanaViajesC extends JFrame {
 		
 		//Llenamos los origen y destino de los bus
 				//ORIGEN 
-		TreeSet<String> listaOrigenes = BDServicio.mostrarOrigenesCombinados();
+		TreeSet<String> listaOrigenes = BDServicio.mostrarOrigenesCombinados(BDServicio.baseDatosServicio);
 		
 		for (String origen: listaOrigenes) {
 			comboBoxOrigen.addItem(origen);
 		}					
 //				
 //        		// DESTINO
-		TreeSet<String> listaDestinos = BDServicio.mostrarDestinosCombinados();
+		TreeSet<String> listaDestinos = BDServicio.mostrarDestinosCombinados(BDServicio.baseDatosServicio);
 		
 //				
 //				
@@ -228,7 +228,8 @@ public class VentanaViajesC extends JFrame {
 			String filtroPrecio ="";
 			
 			//LLAMAMOS AL METODO 
-			ArrayList<ViajeCombinado> listaViajesFiltrado = BD.BDServicio.listaServicioCombinadoFiltrado(origen, destino,fechaInicio, fechaFin);
+			ArrayList<ViajeCombinado> listaViajesFiltrado = BD.BDServicio.listaServicioCombinadoFiltrado(origen,
+					destino,fechaInicio, fechaFin,BDServicio.baseDatosServicio);
 			
 			listaViajesCombinados=listaViajesFiltrado;
 		
@@ -396,7 +397,7 @@ public class VentanaViajesC extends JFrame {
 		}
 			//entonces llenamos la lista que manejamos primero
 			
-			listaViajesCombinados=BDServicio.mostrarViajesCombinadosTotal();
+			listaViajesCombinados=BDServicio.mostrarViajesCombinadosTotal(BDServicio.baseDatosServicio);
 			//DESPUES LLENAMOS EL MODELO, VACIAMOS PRIMERO
 			
 			while (modeloTabla.getRowCount() > 0) {

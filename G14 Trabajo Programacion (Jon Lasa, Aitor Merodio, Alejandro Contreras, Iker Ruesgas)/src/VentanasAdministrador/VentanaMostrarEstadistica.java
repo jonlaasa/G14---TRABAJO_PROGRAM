@@ -141,15 +141,15 @@ public class VentanaMostrarEstadistica extends JFrame {
 			String resultado="";
 			String servicio= comboBoxServicio.getSelectedItem().toString();
 			if (comboBoxGeneral.getSelectedItem().toString()=="MEDIA DE PRECIO DE COMPRA") {
-				resultado=BDServicio.mediaCompras(servicio);
+				resultado=BDServicio.mediaCompras(servicio,BDServicio.baseDatosServicio);
 			} else if (comboBoxGeneral.getSelectedItem().toString()=="COMPRA MAS CARA") {
-				resultado=BDServicio.compraMax(servicio);
+				resultado=BDServicio.compraMax(servicio,BDServicio.baseDatosServicio);
 			} else if (comboBoxGeneral.getSelectedItem().toString()=="COMPRA MAS BARATA") {
-				resultado=BDServicio.compraMin(servicio);
+				resultado=BDServicio.compraMin(servicio,BDServicio.baseDatosServicio);
 			} else if (comboBoxGeneral.getSelectedItem().toString()=="USUARIO CON MAS COMPRAS") {
-				resultado=BDServicio.usuarioMasCompra(servicio);
+				resultado=BDServicio.usuarioMasCompra(servicio,BDServicio.baseDatosServicio);
 			} else {
-				resultado=BDServicio.destinoMasvisitado(servicio);
+				resultado=BDServicio.destinoMasvisitado(servicio,BDServicio.baseDatosServicio);
 			}
 			textField.setText(resultado);
 		});
@@ -164,7 +164,7 @@ public class VentanaMostrarEstadistica extends JFrame {
 			
 			if (tipodegrafico=="NUMERO DE COMPRAS/MES") {
 				
-				resultados=BDServicio.comprasAnualesTotales();
+				resultados=BDServicio.comprasAnualesTotales(BDServicio.baseDatosServicio);
 				panelGrafico.removeAll();
 				
 				datos.addValue(resultados.get(0), "Enero", "Ene");
@@ -191,7 +191,7 @@ public class VentanaMostrarEstadistica extends JFrame {
 				setBounds(100, 100, 600, 650);
 				
 			} else if (tipodegrafico=="NUMERO DE COMPRAS/TIPO DE SERVICIO") {
-				resultados=BDServicio.comprasServicio();
+				resultados=BDServicio.comprasServicio(BDServicio.baseDatosServicio);
 				panelGrafico.removeAll();
 				
 				DefaultPieDataset datos2 = new DefaultPieDataset();
@@ -210,7 +210,7 @@ public class VentanaMostrarEstadistica extends JFrame {
 				setBounds(100, 100, 600, 650);
 				
 			} else {
-				resultados=BDServicio.comprasDestino();
+				resultados=BDServicio.comprasDestino(BDServicio.baseDatosServicio);
 				panelGrafico.removeAll();
 				
 				datos.addValue(resultados.get(0),"Barcelona", "BRC");

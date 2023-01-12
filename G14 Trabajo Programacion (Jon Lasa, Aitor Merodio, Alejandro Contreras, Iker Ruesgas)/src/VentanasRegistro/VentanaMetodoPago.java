@@ -43,6 +43,7 @@ public class VentanaMetodoPago extends JFrame {
 	
 	
 	
+	
 	public VentanaMetodoPago (Usuario usuarioActual, Compra compra,Servicio serv) {
 		
 		inicializar(usuarioActual,compra,serv );
@@ -259,7 +260,7 @@ public class VentanaMetodoPago extends JFrame {
 				
 				
 				//SI SE CUMPLEN??? //PRIMERO ESCRIBIMOS LA COMPRA EN LA BASE DE DATOS
-				BDServicio.escribirCompra(compra);
+				BDServicio.escribirCompra(compra,BDServicio.baseDatosServicio);
 				
 				//AHORA ACTUALIZAMOS LOS PUNTOS
 				 double  precioCompra =0;
@@ -334,7 +335,7 @@ public class VentanaMetodoPago extends JFrame {
 				
 				//ENTONCES SI ES VALIDO Y AVANZAMOS (ESCRIBIMOS COMPRA EN BASE DE DATOS)
 				BDServicio.log(Level.INFO, "COMPRA PAGADA CON PUNTOS, POR EL USUARIO: "+usuarioActual.getNombreUsuario(), null);
-	            BDServicio.escribirCompra(compra);
+	            BDServicio.escribirCompra(compra,BDServicio.baseDatosServicio);
 	            
 	            //AHORA RESTAMOS LOS QUE HAYA UTILIZADO
 	

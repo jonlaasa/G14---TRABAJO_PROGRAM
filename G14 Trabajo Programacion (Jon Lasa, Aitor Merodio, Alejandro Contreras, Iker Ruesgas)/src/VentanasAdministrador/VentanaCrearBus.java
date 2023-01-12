@@ -312,7 +312,7 @@ public class VentanaCrearBus extends JFrame {
 
 
 				}
-					BDServicio.crearBuses(fecha, horaSalida, duracion, origen, destino, precio, plazas, companya, semanal, mensual);
+					BDServicio.crearBuses(fecha, horaSalida, duracion, origen, destino, precio, plazas, companya, semanal, mensual,BDServicio.baseDatosServicio);
 			
 				
 //				BDServicio.log(Level.INFO, "NUEVOS BUSES CREADOS", null);
