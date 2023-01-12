@@ -19,9 +19,11 @@ import Datos.Usuario;
 
 public class TestBDRegistro {
 	
+	private static final String baseDatosTest ="basesDeDatos\\serviciosUsuariosJUnit.db";
+	
 	@Test
 	public void testInicializarYCerrarBd() {
-		Connection c = BDServicio.abrirBaseDatos("basesDeDatos/serviciosUsuarios.db");
+		Connection c = BDServicio.abrirBaseDatos(BDRegistro.baseDatos);
 		//COMPROBAMOS QUE NO ES NULA
 		
 		assertNotNull(c);
@@ -59,7 +61,7 @@ public class TestBDRegistro {
 		// BUSCAMOS EN LA BASE DE DATOS Y COMPROBAMOS QUE HACE EL LOGIN CORRECTAMENTE
 		boolean registrado=false;
 		try {
-			registrado=BDRegistro.login("iruesgas", "ruesgasi");
+			registrado=BDRegistro.login("iruesgas", "ruesgasi",baseDatosTest);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -76,7 +78,7 @@ public class TestBDRegistro {
 		// BUSCAMOS EN LA BASE DE DATOS Y COMPROBAMOS QUE EL LOGIN DE ADMIN LO RECOGE CORRECTAMENTE
 		boolean registrado=false;
 		try {
-			registrado=BDRegistro.loginAdmin("admin", "admin");
+			registrado=BDRegistro.loginAdmin("admin", "admin",baseDatosTest);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -94,7 +96,7 @@ public class TestBDRegistro {
 		// BUSCAMOS EN LA BASE DE DATOS EL ADMINISTRADOR
 		Administrador admin=null;
 		try {
-			admin=BDRegistro.obtenerAdministrador("admin");
+			admin=BDRegistro.obtenerAdministrador("admin",baseDatosTest);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -137,7 +139,7 @@ public class TestBDRegistro {
 		ArrayList<Usuario> listaUsuarios =  new ArrayList<>();
 		
 		try {
-			listaUsuarios = BDRegistro.mostrarUsuariosTotal();
+			listaUsuarios = BDRegistro.mostrarUsuariosTotal(baseDatosTest);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -150,7 +152,7 @@ public class TestBDRegistro {
 		
 		//el ultimo tiene el nombre iker 
 		String nombreUltimo = listaUsuarios.get(listaUsuarios.size()-1).getNombre();
-		assertEquals(nombreUltimo, "iker");
+		assertEquals(nombreUltimo, "alejandro");
 
 	}
 	
@@ -162,7 +164,7 @@ public class TestBDRegistro {
 		ArrayList<Administrador> listaAdministradores =  new ArrayList<>();
 		
 		try {
-			listaAdministradores = BDRegistro.mostrarAdministradoresTotal();
+			listaAdministradores = BDRegistro.mostrarAdministradoresTotal(baseDatosTest);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -184,7 +186,7 @@ public class TestBDRegistro {
 		int puntosUsuarioAle = -1;
 		
 		try {
-			puntosUsuarioAle = BDRegistro.obtenerPuntos(2);
+			puntosUsuarioAle = BDRegistro.obtenerPuntos(2,baseDatosTest);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -192,14 +194,14 @@ public class TestBDRegistro {
 		}
 		//ahora miramos la bd y vemos que el  tiene 0 puntos;
 		
-		assertEquals(0, puntosUsuarioAle);
+		assertEquals(50, puntosUsuarioAle);
 		
 		//COMPROBAMOS TAMBIEN CON JONLASA, TIENE ID 5 Y 179 PUNTOS
 		
 		int puntosJon = -1;
 		
 		try {
-			puntosJon = BDRegistro.obtenerPuntos(5);
+			puntosJon = BDRegistro.obtenerPuntos(5,baseDatosTest);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -207,7 +209,7 @@ public class TestBDRegistro {
 		}
 		
 		
-		assertEquals(179, puntosJon);	
+		assertEquals(190, puntosJon);	
 
 	}
 	
@@ -221,10 +223,10 @@ public class TestBDRegistro {
 		
 		try {
 			//ACTUALIZAMOS
-			BDRegistro.actualizarPuntos(2, 50);
+			BDRegistro.actualizarPuntos(2, 50,baseDatosTest);
 			//OBTENEMOS
 			
-			puntosUsuarioActualizadosAle=BDRegistro.obtenerPuntos(2);
+			puntosUsuarioActualizadosAle=BDRegistro.obtenerPuntos(2,baseDatosTest);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

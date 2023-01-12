@@ -73,7 +73,7 @@ public class VentanaVerAdmin extends JFrame {
 		
 		
 		
-		listaAdmin= BDRegistro.mostrarAdministradoresTotal();
+		listaAdmin= BDRegistro.mostrarAdministradoresTotal(BDRegistro.baseDatos);
 		
 		for (Administrador admin:listaAdmin) {
 			modeloTabla.addRow(new Object [] {admin.getCodAcceso(),admin.getNombre(),admin.getApellido(),admin.getNombreUsuario()

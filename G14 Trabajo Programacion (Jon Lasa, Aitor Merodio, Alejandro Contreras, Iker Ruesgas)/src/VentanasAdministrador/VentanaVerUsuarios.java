@@ -64,7 +64,7 @@ public class VentanaVerUsuarios extends JFrame {
 		
 		
 		
-		listaUsr= BDRegistro.mostrarUsuariosTotal();
+		listaUsr= BDRegistro.mostrarUsuariosTotal(BDRegistro.baseDatos);
 		
 		for (Usuario usr:listaUsr) {
 			modeloTabla.addRow(new Object [] {usr.getCodigo(),usr.getNombre(),usr.getApellido(),usr.getNombreUsuario(),usr.getDni(),usr.getPuntos(),usr.getCorreoElectronico()

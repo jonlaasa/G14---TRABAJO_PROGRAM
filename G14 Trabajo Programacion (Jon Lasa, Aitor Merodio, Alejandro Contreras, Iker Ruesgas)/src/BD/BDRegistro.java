@@ -66,9 +66,9 @@ public class BDRegistro {
 	
 	
 	
-	public static boolean registrar(Usuario usr) throws Exception {
+	public static boolean registrar(Usuario usr, String ruta) throws Exception {
 		
-		abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+		abrirBaseDatos(ruta);
 		String sql = "INSERT INTO Usuario (Nombre,	Apellidos, nombreUsuario, Contrasenya, DNI, puntosDeusto,Mail ) VALUES(?,?,?,?,?,?,?)";
 	
 		try {
@@ -94,8 +94,8 @@ public class BDRegistro {
 		
 	}
 	
-	public static boolean login(String usr, String contra ) throws SQLException{
-		abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+	public static boolean login(String usr, String contra, String ruta ) throws SQLException{
+		abrirBaseDatos(ruta);
 		String sql ="SELECT nombreUsuario,Contrasenya FROM Usuario where nombreUsuario=?and Contrasenya=?"; 
 		PreparedStatement rst = conn.prepareStatement(sql);
 		rst.setString(1, usr);
@@ -116,8 +116,8 @@ public class BDRegistro {
 		
 	}
 		
-		public static boolean loginAdmin(String usr, String contra ){
-			abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+		public static boolean loginAdmin(String usr, String contra, String ruta ){
+			abrirBaseDatos(ruta);
 			String sql ="SELECT Usuario,Contrasenya FROM Admin where Usuario=? and Contrasenya=?"; 
 			PreparedStatement rst;
 			try {
@@ -173,8 +173,8 @@ public class BDRegistro {
 
 
 	
-		public static Usuario obtenerUsuario(String usr) throws SQLException{
-			abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+		public static Usuario obtenerUsuario(String usr, String ruta) throws SQLException{
+			abrirBaseDatos(ruta);
 			String sql = "select * from Usuario where nombreUsuario='"+usr+"'";
 			
 			Statement st = conn.createStatement();
@@ -201,8 +201,8 @@ public class BDRegistro {
 	
 
 		
-		public static Administrador obtenerAdministrador(String admin) throws SQLException {
-			abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+		public static Administrador obtenerAdministrador(String admin, String ruta) throws SQLException {
+			abrirBaseDatos(ruta);
 			String sql = "select * from admin where usuario='"+admin+"'";
 			Statement st = conn.createStatement();
 			ResultSet rst = st.executeQuery(sql);
@@ -237,8 +237,8 @@ public class BDRegistro {
 			return false;			
 		}
 		
-		public static ArrayList<Usuario> mostrarUsuariosTotal() throws SQLException{
-			abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+		public static ArrayList<Usuario> mostrarUsuariosTotal(String ruta) throws SQLException{
+			abrirBaseDatos(ruta);
 			String sql = "select * from Usuario";
 			ArrayList<Usuario> lista=new ArrayList<Usuario>();
 			Statement st = conn.createStatement();
@@ -263,8 +263,8 @@ public class BDRegistro {
 		
 
 		
-		public static ArrayList<Administrador> mostrarAdministradoresTotal() throws SQLException{
-		abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+		public static ArrayList<Administrador> mostrarAdministradoresTotal(String ruta) throws SQLException{
+		abrirBaseDatos(ruta);
 		String sql = "select * from Admin";
 		ArrayList<Administrador> lista=new ArrayList<Administrador>();
 		Statement st = conn.createStatement();
@@ -283,9 +283,9 @@ public class BDRegistro {
 	}
 		
 		
-		public static int obtenerPuntos(int codigoUsuario) {
+		public static int obtenerPuntos(int codigoUsuario, String ruta) {
 			
-			abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+			abrirBaseDatos(ruta);
 			int puntos=0;
 			log(Level.INFO, "OBTENENIENDO LOS PUNTOS DEL USUARIO", null);
 			try {
@@ -315,10 +315,10 @@ public class BDRegistro {
 		}
 		
 		
-		public static void actualizarPuntos (int codUsuario, int puntos) {
+		public static void actualizarPuntos (int codUsuario, int puntos, String ruta) {
 			
 			
-			abrirBaseDatos("basesDeDatos\\serviciosUsuarios.db");
+			abrirBaseDatos(ruta);
 			PreparedStatement st=null;
 			
 			

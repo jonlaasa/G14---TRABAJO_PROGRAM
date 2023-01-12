@@ -182,7 +182,7 @@ public class VentanaRegistro extends JFrame {
 					Utils.comprobarMail(correo);
 					
 					try {
-						BDRegistro.registrar(new Usuario(nom,ape,usr,contra,correo,dn));
+						BDRegistro.registrar(new Usuario(nom,ape,usr,contra,correo,dn),BDRegistro.baseDatos);
 						log.log(Level.INFO, "USUARIO REGISTRADO EN LA BASE DE DATOS, NOMBRE DE USUARIO: "+usuario);
 						//VOLVEMOS A LA VENTANA DE INICIO DE SESION
 						

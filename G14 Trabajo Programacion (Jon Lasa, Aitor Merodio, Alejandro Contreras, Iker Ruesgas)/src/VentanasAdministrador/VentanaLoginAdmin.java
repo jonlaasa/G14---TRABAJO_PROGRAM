@@ -87,8 +87,8 @@ public class VentanaLoginAdmin extends JFrame {
 			
 			
 			try {
-				if(BDRegistro.loginAdmin(usr, contra)==true) {
-					Administrador administradorActual = BDRegistro.obtenerAdministrador(usr);
+				if(BDRegistro.loginAdmin(usr, contra,BDRegistro.baseDatos)==true) {
+					Administrador administradorActual = BDRegistro.obtenerAdministrador(usr,BDRegistro.baseDatos);
 					JOptionPane.showMessageDialog(null, "Inicio de sesion correcto");
 					VentanaInicioAdmin vr = null;
 					vr = new VentanaInicioAdmin(administradorActual);

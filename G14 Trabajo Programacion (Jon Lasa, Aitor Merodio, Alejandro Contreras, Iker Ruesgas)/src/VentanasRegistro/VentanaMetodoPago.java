@@ -278,7 +278,7 @@ public class VentanaMetodoPago extends JFrame {
 				
 				//CONSEGUIMOS CUANTOS DEBERIA CONSEGUIR
 				int puntosObtenidos = (int) Math.floor(precioCompra/10);
-			    int puntosAnteriores = BDRegistro.obtenerPuntos(usuarioActual.getCodigo());
+			    int puntosAnteriores = BDRegistro.obtenerPuntos(usuarioActual.getCodigo(),BDRegistro.baseDatos);
 			    int puntosAnyadir = puntosAnteriores+puntosObtenidos;
 			 
 			
@@ -287,7 +287,7 @@ public class VentanaMetodoPago extends JFrame {
 			   
 				
 				
-			    BDRegistro.actualizarPuntos(usuarioActual.getCodigo(), puntosAnyadir);
+			    BDRegistro.actualizarPuntos(usuarioActual.getCodigo(), puntosAnyadir,BDRegistro.baseDatos);
 
 				
 				//DESPUES PASAMOS A LA VENTANA DE CONFIRMACION DE LA COMPRA
@@ -327,7 +327,7 @@ public class VentanaMetodoPago extends JFrame {
 			}
 			
 			
-			int puntosUsuario = BDRegistro.obtenerPuntos(usuarioActual.getCodigo());
+			int puntosUsuario = BDRegistro.obtenerPuntos(usuarioActual.getCodigo(),BDRegistro.baseDatos);
 			double dineroConPuntos = puntosUsuario;
 			
 			System.out.println("PUNTOS ACTUALES: "+puntosUsuario + " LA COMPRA VALE"+precioCompra);
@@ -346,7 +346,7 @@ public class VentanaMetodoPago extends JFrame {
 	            
 	            //ACTUALIZAMOS PUNTOS EN LA BD
 	            
-	            BDRegistro.actualizarPuntos(usuarioActual.getCodigo(), puntos);
+	            BDRegistro.actualizarPuntos(usuarioActual.getCodigo(), puntos,BDRegistro.baseDatos);
 				//DESPUES PASAMOS A LA VENTANA DE CONFIRMACION DE LA COMPRA
 				
 				VentanaConfirmacionCompra vent = new VentanaConfirmacionCompra(usuarioActual, compra, serv);
