@@ -70,8 +70,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 }
 	
 	
-	public static void compraServicio (Compra compra) {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.bd");
+	public static void compraServicio (Compra compra,String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		//Primero obtenemos el tipoDeServicio
 		TipoServicio tipoServicio=compra.getTipoServicio();
 		//Obtenemos el codigo UNICO del usuario
@@ -111,8 +111,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS BUSES PARA MOSTRAR EN LA TABLA
-	public static ArrayList <Bus> mostrarBusesTotal() {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+	public static ArrayList <Bus> mostrarBusesTotal(String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 		ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
 		
@@ -158,8 +158,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//METODO QUE DELVUELVE LOS DIFERENTES ORIGENES DE LOS VUELOS O LOS BUSES
 	
-			public static ArrayList<String> mostrarDiferentesOrigenes(String servicio){
-				BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			public static ArrayList<String> mostrarDiferentesOrigenes(String servicio,String ruta){
+				BDServicio.abrirBaseDatos(ruta);
 				//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 				ArrayList<String> listaOrigenes= new ArrayList<String> () ;
 				
@@ -193,8 +193,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 			
 	//METODO QUE DELVUELVE LOS DIFERENTES DESTINOS DE LOS VUELOS O LOS BUSES
 	
-		public static ArrayList<String> mostrarDiferentesDestinos(String servicio){
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		public static ArrayList<String> mostrarDiferentesDestinos(String servicio,String ruta){
+			BDServicio.abrirBaseDatos(ruta);
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList<String> listaDestinos= new ArrayList<String> () ;
 			
@@ -227,11 +227,11 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 		}
 		
 		
-		public static TreeSet<String> mostrarOrigenesCombinados () {
+		public static TreeSet<String> mostrarOrigenesCombinados (String ruta) {
 			
 			TreeSet<String> listaConOrigenes =  new TreeSet<String> ();
 			
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			BDServicio.abrirBaseDatos(ruta);
 			
 			try {
 				log(Level.INFO, "INTENTANDO RECUPERAR DESTINOS ORIGEN DE LOS VUELOS PARA LOS VIAJES COMBINADOS", null);
@@ -261,11 +261,11 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 		}
 		
 		
-	public static TreeSet<String> mostrarDestinosCombinados () {
+	public static TreeSet<String> mostrarDestinosCombinados (String ruta) {
 			
 		TreeSet<String> listaConDestinos =  new TreeSet<String> ();
 			
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			BDServicio.abrirBaseDatos(ruta);
 			
 			try {
 				log(Level.INFO, "INTENTANDO RECUPERAR DESTINOS PARA LOS VIAJES COMBINADOS", null);
@@ -296,8 +296,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS VIAJES COMBINADOS PARA MOSTRAR EN LA TABLA
-	public static ArrayList <ViajeCombinado> mostrarViajesCombinadosTotal() {
-		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+	public static ArrayList <ViajeCombinado> mostrarViajesCombinadosTotal(String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 		ArrayList <ViajeCombinado> listaConCombinados = new ArrayList <ViajeCombinado> ();
 		log(Level.INFO, "INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES", null);
@@ -315,8 +315,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 				
 				
 				//OBTENEMOS EL CORRESPONDIENTE VUELO Y BUS
-				Vuelo vuelo = BDServicio.vueloDesdeCodigo(codVuelo);
-				Bus bus = BDServicio.busDesdeCodigo(codBus);
+				Vuelo vuelo = BDServicio.vueloDesdeCodigo(codVuelo,ruta);
+				Bus bus = BDServicio.busDesdeCodigo(codBus,ruta);
 				String horaSalida = vuelo.getHoraSalida();
 				int duracionTotal = vuelo.getDuracion() + bus.getDuracion();
 				String origen = vuelo.getOrigen();
@@ -357,8 +357,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
-		public static ArrayList <Vuelo> mostrarVuelosTotal() {
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		public static ArrayList <Vuelo> mostrarVuelosTotal(String ruta) {
+			BDServicio.abrirBaseDatos(ruta);
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList <Vuelo> listaConVuelos = new ArrayList <Vuelo> ();
 			
@@ -410,8 +410,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 		
 		//METODO QUE CREA NUEVOS VUELOS CON LOS DATOS RECIBIDOS DESDE LA VENTANA CREAR VUELOS 
 		
-		public static void crearVuelos (Date fecha, String horaSalida, int duracion ,String origen, String destino, double precio, int plazas,String companya, boolean semanal, boolean mensual)  {
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		public static void crearVuelos (Date fecha, String horaSalida, int duracion ,String origen, String destino, double precio, int plazas,String companya, boolean semanal, boolean mensual,String ruta)  {
+			BDServicio.abrirBaseDatos(ruta);
 			String sent="";
 			try {
 				if (semanal==true) {
@@ -445,8 +445,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	}
 		//METODO QUE CREA NUEVOS BUSES CON LOS DATOS RECIBIDOS DESDE LA VENTANA CREAR BUSES 
 		
-		public static void crearBuses (Date fecha, String horaSalida, int duracion ,String origen, String destino, double precio, int plazas,String companya, boolean semanal, boolean mensual)  {
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		public static void crearBuses (Date fecha, String horaSalida, int duracion ,String origen, String destino, double precio, int plazas,String companya, boolean semanal, boolean mensual,String ruta)  {
+			BDServicio.abrirBaseDatos(ruta);
 			String sent="";
 			try {
 				if (semanal==true) {
@@ -481,7 +481,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 		
 		//METODO QUE CREA NUEVOS VIAJES COMBINADOS MANUALMENTE
 		
-		public static void crearViajesCombinados ()  {
+		public static void crearViajesCombinados (String ruta)  {
 			
 			//DATOS EJEMPLO
 			Date fecha= new Date(122,11,23);
@@ -489,7 +489,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 			int codigobus=941;
 			
 
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			BDServicio.abrirBaseDatos(ruta);
 			String sent="";
 			try {
 					for (int i=0; i<32; i++ ) {
@@ -513,8 +513,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 
 
 		//FILTRA LOS VUELOS 
-		public static ArrayList<Vuelo> listaServicioVueloFiltrado (String origen, String destino, String orden,String fechaInicio, String fechaFin){
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		public static ArrayList<Vuelo> listaServicioVueloFiltrado (String origen, String destino, String orden,String fechaInicio, String fechaFin,String ruta){
+			BDServicio.abrirBaseDatos(ruta);
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList <Vuelo> listaConVuelos = new ArrayList <Vuelo> ();
 			String sent="";
@@ -559,8 +559,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 		
 		
 		
-		public static ArrayList<Bus> listaServicioBusFiltrado (String origen, String destino, String orden,String fechaInicio, String fechaFin){
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		public static ArrayList<Bus> listaServicioBusFiltrado (String origen, String destino, String orden,String fechaInicio, String fechaFin,String ruta){
+			BDServicio.abrirBaseDatos(ruta);
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
 			String sent="";
@@ -603,8 +603,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 		
 		
 		//FILTRA LOS VIAJES COMBINADOS
-		public static ArrayList<ViajeCombinado> listaServicioCombinadoFiltrado (String origen, String destino, String fechaInicio, String fechaFin){
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		public static ArrayList<ViajeCombinado> listaServicioCombinadoFiltrado (String origen, String destino, String fechaInicio, String fechaFin,String ruta){
+			BDServicio.abrirBaseDatos(ruta);
 			ArrayList<ViajeCombinado> listaConViajesFiltradosporFecha = new ArrayList<ViajeCombinado>();
 			ArrayList<ViajeCombinado> listaConViajesFiltradosFinal = new ArrayList<ViajeCombinado>();
 			try {
@@ -619,8 +619,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 					int codigoBus = rs.getInt("cod_bus");
 					
 					//OBTENEMOS EL CORRESPONDIENTE VUELO Y BUS
-					Vuelo vuelo = BDServicio.vueloDesdeCodigo(codigoVuelo);
-					Bus bus = BDServicio.busDesdeCodigo(codigoBus);
+					Vuelo vuelo = BDServicio.vueloDesdeCodigo(codigoVuelo,ruta);
+					Bus bus = BDServicio.busDesdeCodigo(codigoBus,ruta);
 					String horaSalida = vuelo.getHoraSalida();
 					int duracionTotal = vuelo.getDuracion() + bus.getDuracion();
 					String origenV = vuelo.getOrigen();
@@ -664,8 +664,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 		
 		
 		
-	public static int claveRenting() {
-		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+	public static int claveRenting(String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		int clave=0;
 		try {
 			Statement st = conn.createStatement();
@@ -689,7 +689,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	
 		
-	public static void escribirCompra(Compra compra) {
+	public static void escribirCompra(Compra compra,String ruta) {
 		
 		
 		
@@ -728,7 +728,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 						if(vuelo.getListaRenting().size()!=0) {
 							
 							//OBTENEMOS LA QUE LE CORRESPONDE
-							claveRenting=BDServicio.claveRenting()+1;
+							claveRenting=BDServicio.claveRenting(ruta)+1;
 							
 							//AHORA ANYADIMOS EL RENTING CON METODO DE BD
 							
@@ -749,7 +749,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 						String rent = "insert into renting values ("+claveRenting+", '"+claseCoche+"' ,"+dias+")";
 						
 						//AHORA CREAMOS NUEVO STATEMENT.
-						BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+						BDServicio.abrirBaseDatos(ruta);
 						try {
 							Statement sta = conn.createStatement();
 							if(vuelo.getListaRenting().size()!=0) {
@@ -788,7 +788,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 				}
 					
 		try {
-			BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+			BDServicio.abrirBaseDatos(ruta);
 			Statement st = conn.createStatement();
 			st.executeUpdate(sent);
 			log(Level.INFO, "INSERTADA LA COMPRA EN LA BASE DE DATOS", null);
@@ -808,9 +808,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//METODO PARA OBTENER UN VUELO A PARTIR DE SU CODIGO (LO USAREMOS PARA LOS VIAJES COMBINADOS)
 	
-	public static Vuelo vueloDesdeCodigo(int codVuelo) {
+	public static Vuelo vueloDesdeCodigo(int codVuelo,String ruta) {
 		
-		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		BDServicio.abrirBaseDatos(ruta);
 		Vuelo vuelo = null;
 	
 		
@@ -858,9 +858,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//METODO PARA OBTENER UN VIAJE COMBINADO A PARTIR DE SU CODIGO (LO USAREMOS PARA LOS VIAJES COMBINADOS COMPRADOS)
 	
-	public static ViajeCombinado viajeDesdeCodigo(int codViajeC) {
+	public static ViajeCombinado viajeDesdeCodigo(int codViajeC,String ruta) {
 		
-		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		BDServicio.abrirBaseDatos(ruta);
 		ViajeCombinado viajeC  = null;
 	
 		
@@ -873,11 +873,11 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 				int codigoVuelo = rs.getInt("Cod_vuelo");
 				//obtenemos el vuelo
 				
-				Vuelo vuelo = BDServicio.vueloDesdeCodigo(codigoVuelo);
+				Vuelo vuelo = BDServicio.vueloDesdeCodigo(codigoVuelo,ruta);
 				
 				int codigoBus = rs.getInt("cod_bus");
 				
-				Bus bus = BDServicio.busDesdeCodigo(codigoBus);
+				Bus bus = BDServicio.busDesdeCodigo(codigoBus,ruta);
 				String FechaVuelo = rs.getString("Fecha");
 				
 				String horaSalidaVuelo =  vuelo.getHoraSalida();
@@ -913,9 +913,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 
 	//METODO PARA OBTENER VUELOS COMPRADOS DE CADA USUARIO (DADO SU CODIGO DE USUARIO) PARA MOSTRAR EN EL PERFIL
 	
-	public static ArrayList<VueloComprado> vuelosCompradosUsuario(int codUsuario) {
+	public static ArrayList<VueloComprado> vuelosCompradosUsuario(int codUsuario,String ruta) {
 		
-		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		BDServicio.abrirBaseDatos(ruta);
 		ArrayList<VueloComprado> vuelosUsuarios= new ArrayList<>();
 	
 		
@@ -929,7 +929,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 				
 				//OBTENEMOS EL VUELO 
 				
-				Vuelo vuelo = vueloDesdeCodigo(codigoVuelo);
+				Vuelo vuelo = vueloDesdeCodigo(codigoVuelo,ruta);
 				
 				String zonaAsiento = rs.getString("zona_asiento_vuelo");
 				
@@ -967,9 +967,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//METODO PARA OBTENER BUSES COMPRADOS DE CADA USUARIO (DADO SU CODIGO DE USUARIO) PARA MOSTRAR EN EL PERFIL
 	
-	public static ArrayList<BusComprado> busesCompradosUsuario(int codUsuario) {
+	public static ArrayList<BusComprado> busesCompradosUsuario(int codUsuario,String ruta) {
 		
-		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		BDServicio.abrirBaseDatos(ruta);
 		ArrayList<BusComprado> busesUsuarios= new ArrayList<>();
 	
 		
@@ -983,7 +983,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 				
 				//OBTENEMOS EL BUS 
 				
-				Bus bus = busDesdeCodigo(codigoBus);
+				Bus bus = busDesdeCodigo(codigoBus,ruta);
 				
 				String FechaCompra = rs.getString("Fecha_compra");
 				int cantidad = rs.getInt("Cantidad");
@@ -1019,9 +1019,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//METODO PARA OBTENER VIAJES COMBINADOS  COMPRADOS DE CADA USUARIO (DADO SU CODIGO DE USUARIO) PARA MOSTRAR EN EL PERFIL
 	
-		public static ArrayList<ViajeCombinadoComprado> viajesCombinadosCompradosUsuario(int codUsuario) {
+		public static ArrayList<ViajeCombinadoComprado> viajesCombinadosCompradosUsuario(int codUsuario,String ruta) {
 			
-			BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+			BDServicio.abrirBaseDatos(ruta);
 			ArrayList<ViajeCombinadoComprado> combinadosUsuarios= new ArrayList<>();
 		
 			
@@ -1035,7 +1035,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 					
 					//OBTENEMOS EL VIAJE COMBINADO
 					
-					ViajeCombinado viajeC = viajeDesdeCodigo(codigoViajeCombinado);
+					ViajeCombinado viajeC = viajeDesdeCodigo(codigoViajeCombinado,ruta);
 					String FechaCompra = rs.getString("Fecha_compra");
 					int cantidad = rs.getInt("Cantidad");
 					
@@ -1068,8 +1068,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 
 	//OBTENER BUS DESDE CODIGO
 	
-	public static Bus busDesdeCodigo(int codBus) {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+	public static Bus busDesdeCodigo(int codBus,String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 		Bus bus = null;
 		
@@ -1122,8 +1122,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//1-MEDIA DE PRECIO DE COMPRA
 	
-	public static String mediaCompras(String servicio) {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+	public static String mediaCompras(String servicio,String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		String resp="";
 		Double precioMedio=0.0;
 		try {
@@ -1153,8 +1153,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//2-COMPRA MAS CARA
 	
-	public static String compraMax(String servicio) {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+	public static String compraMax(String servicio,String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		String resp="";
 		Double precio=0.0;
 		try {
@@ -1185,8 +1185,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//3-COMPRA MAS BARATA
 	
-	public static String compraMin(String servicio) {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+	public static String compraMin(String servicio,String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		String resp="";
 		Double precio=0.0;
 		try {
@@ -1216,8 +1216,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//4-USUARIO QUE MAS COMPRA
 	
-	public static String usuarioMasCompra(String servicio) {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+	public static String usuarioMasCompra(String servicio,String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		String resp="";
 		String usuario="";
 		try {
@@ -1248,8 +1248,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//5-DESTINO MAS VISITADO
 	
-	public static String destinoMasvisitado(String servicio) {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+	public static String destinoMasvisitado(String servicio,String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		String resp="";
 		String destino="";
 		try {
@@ -1278,8 +1278,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//6-COMPRAS POR CADA MES(DEVUELVE ARRAYLIST)
 	
-	public static ArrayList<Integer> comprasAnualesTotales() {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+	public static ArrayList<Integer> comprasAnualesTotales(String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		String resp="";
 		ArrayList<Integer> resultados= new ArrayList<Integer>();
 		ArrayList<Integer> resultados2= new ArrayList<Integer>();
@@ -1331,8 +1331,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	//7-COMPRAS POR CADA TIPO DE SERVICIO (DEVUELVE ARRAYLIST: ORDEN VUELO,BUS,VIAJECOMBINADO)
 	
-	public static ArrayList<Integer> comprasServicio() {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+	public static ArrayList<Integer> comprasServicio(String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		String resp="";
 		ArrayList<Integer> resultados= new ArrayList<Integer>();
 		ArrayList<String> servicios= new ArrayList<String>();
@@ -1365,8 +1365,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	//8-COMPRAS POR CADA DESTINO(DEVUELVE ARRAYLIST: ORDEN BARCELONA, MADRID, VALENCIA, LUGO, MURCIA, BILBAO, CADIZ, LISBOA, SANTANDER, CASTELLON)
 
 	
-	public static ArrayList<Integer> comprasDestino() {
-		BDServicio.abrirBaseDatos("basesDeDatos/serviciosCompanya.db");
+	public static ArrayList<Integer> comprasDestino(String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
 		String resp="";
 		ArrayList<Integer> resultados= new ArrayList<Integer>();
 		ArrayList<Integer> resultados2= new ArrayList<Integer>();
@@ -1415,9 +1415,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.bd
 	
 	
 	
-public static  ArrayList <Vuelo> verVuelo() throws SQLException {
+public static  ArrayList <Vuelo> verVuelo(String ruta) throws SQLException {
 		
-		BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+		BDServicio.abrirBaseDatos(ruta);
 		String sql = "SELECT * FROM vuelo";
 		Statement st = conn.createStatement();
 		ResultSet rs = st.executeQuery(sql);
@@ -1451,9 +1451,9 @@ public static  ArrayList <Vuelo> verVuelo() throws SQLException {
 
 
 
-public static  ArrayList <Bus> verBus() throws SQLException {
+public static  ArrayList <Bus> verBus(String ruta) throws SQLException {
 	
-	BDServicio.abrirBaseDatos("basesDeDatos//serviciosCompanya.db");
+	BDServicio.abrirBaseDatos(ruta);
 	String sql = "SELECT * FROM bus";
 	Statement st = conn.createStatement();
 	ResultSet rs = st.executeQuery(sql);
