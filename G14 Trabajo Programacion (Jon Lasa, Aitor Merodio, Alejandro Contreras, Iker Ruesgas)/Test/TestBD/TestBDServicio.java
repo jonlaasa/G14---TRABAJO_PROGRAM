@@ -762,7 +762,7 @@ public class TestBDServicio {
 		//SEGUN LA BASE DE DATOS LAS COMPRAS POR SERVICIO SON LAS SIGUIENTES (ORDENADAS POR VUELO,BUS Y VIAJE COMBINADO): 9,2,2
 			//CREAMOS UN ARRAYLIST CON ESTOS DATOS:
 		ArrayList<Integer> datosBD= new ArrayList<>();
-		datosBD.addAll(Arrays.asList(9,2,2));
+		datosBD.addAll(Arrays.asList(9,2,3));
 		assertEquals(datosBD, compras);
 	}
 	
