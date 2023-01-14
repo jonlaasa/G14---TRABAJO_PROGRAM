@@ -49,7 +49,7 @@ public class VentanaRegistro extends JFrame {
 
 	private void  inicializar() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 450);
+		setBounds(100, 100, 751, 492);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
@@ -59,66 +59,66 @@ public class VentanaRegistro extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Usuario:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel.setBounds(80, 200, 84, 14);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel.setBounds(72, 252, 84, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Apellidos:");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(80, 140, 84, 14);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel_1.setBounds(72, 168, 84, 20);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombre:");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_2.setBounds(80, 105, 84, 14);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel_2.setBounds(72, 124, 84, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("DNI:");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_3.setBounds(80, 170, 84, 14);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel_3.setBounds(72, 212, 84, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_5 = new JLabel("Contrase\u00F1a:");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_5.setBounds(77, 274, 113, 14);
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel_5.setBounds(72, 338, 113, 14);
 		contentPane.add(lblNewLabel_5);
 		
 		usuario = new JTextField();
-		usuario.setBounds(189, 197, 110, 20);
+		usuario.setBounds(189, 251, 138, 20);
 		contentPane.add(usuario);
 		usuario.setColumns(10);
 		
 		dni = new JTextField();
-		dni.setBounds(189, 167, 110, 20);
+		dni.setBounds(189, 211, 138, 20);
 		contentPane.add(dni);
 		dni.setColumns(10);
 		
 		apellido = new JTextField();
-		apellido.setBounds(189, 137, 110, 20);
+		apellido.setBounds(189, 167, 138, 20);
 		contentPane.add(apellido);
 		apellido.setColumns(10);
 		
 		nombre = new JTextField();
 		nombre.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		nombre.setBounds(189, 102, 110, 20);
+		nombre.setBounds(189, 123, 138, 20);
 		contentPane.add(nombre);
 		nombre.setColumns(10);
 		
 		contrasenya = new JPasswordField();
-		contrasenya.setBounds(189, 273, 110, 20);
+		contrasenya.setBounds(189, 337, 138, 20);
 		contentPane.add(contrasenya);
 		
 		JLabel lblNewLabel_6 = new JLabel("Repetir Contrase\u00F1a:");
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_6.setBounds(315, 274, 153, 14);
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel_6.setBounds(340, 335, 198, 20);
 		contentPane.add(lblNewLabel_6);
 		
 		contrasenyaRepetida = new JPasswordField();
-		contrasenyaRepetida.setBounds(462, 273, 113, 20);
+		contrasenyaRepetida.setBounds(518, 337, 144, 20);
 		contentPane.add(contrasenyaRepetida);
 		
 		btnVolverRegistro = new JButton("Volver");
-		btnVolverRegistro.setBounds(210, 335, 89, 23);
+		btnVolverRegistro.setBounds(198, 401, 121, 23);
 		contentPane.add(btnVolverRegistro);
 		
 		JButton btnRegistrarse = new JButton("Registrarse");
@@ -126,24 +126,30 @@ public class VentanaRegistro extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnRegistrarse.setBounds(363, 335, 89, 23);
+		btnRegistrarse.setBounds(395, 401, 127, 23);
 		contentPane.add(btnRegistrarse);
 		
 		JLabel lblNewLabel_4 = new JLabel("Por favor, rellene todos los campos");
 		lblNewLabel_4.setForeground(new Color(255, 128, 0));
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 19));
-		lblNewLabel_4.setBounds(189, 25, 349, 50);
+		lblNewLabel_4.setFont(new Font("Eras Light ITC", Font.BOLD, 19));
+		lblNewLabel_4.setBounds(208, 60, 349, 50);
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_7 = new JLabel("Mail:");
-		lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_7.setBounds(80, 237, 73, 14);
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel_7.setBounds(72, 294, 73, 14);
 		contentPane.add(lblNewLabel_7);
 		
 		mail = new JTextField();
-		mail.setBounds(189, 236, 110, 20);
+		mail.setBounds(189, 293, 138, 20);
 		contentPane.add(mail);
 		mail.setColumns(10);
+		
+		JLabel lblNewLabel_8 = new JLabel("REGISTRO DE USUARIO");
+		lblNewLabel_8.setForeground(new Color(255, 128, 64));
+		lblNewLabel_8.setFont(new Font("Eras Light ITC", Font.BOLD, 20));
+		lblNewLabel_8.setBounds(242, 11, 271, 70);
+		contentPane.add(lblNewLabel_8);
 		
 		
 		
