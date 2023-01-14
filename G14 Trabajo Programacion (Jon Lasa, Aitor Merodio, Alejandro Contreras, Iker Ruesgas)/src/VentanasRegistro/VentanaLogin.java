@@ -22,6 +22,7 @@ import java.util.logging.Level;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class VentanaLogin extends JFrame {
 
@@ -43,45 +44,55 @@ public class VentanaLogin extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblUsuario = new JLabel("Usuario:");
-		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblUsuario.setBounds(90, 105, 79, 31);
+		lblUsuario.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblUsuario.setBounds(137, 170, 79, 31);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblNewLabel_1 = new JLabel("Contraseña:");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(90, 165, 110, 31);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel_1.setBounds(138, 227, 110, 31);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblIniciarSesion = new JLabel("Iniciar Sesion");
 		lblIniciarSesion.setForeground(new Color(255, 128, 0));
-		lblIniciarSesion.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		lblIniciarSesion.setBounds(173, 32, 157, 43);
+		lblIniciarSesion.setFont(new Font("Eras Light ITC", Font.BOLD, 26));
+		lblIniciarSesion.setBounds(243, 69, 214, 73);
 		contentPane.add(lblIniciarSesion);
 		
 		JButton btnIniciarSesion = new JButton("Iniciar Sesion");
-		btnIniciarSesion.setBounds(20, 266, 116, 23);
+		btnIniciarSesion.setBounds(137, 360, 116, 23);
 		contentPane.add(btnIniciarSesion);
 		
 		JButton btnAdmin = new JButton("Administrador");
-		btnAdmin.setBounds(146, 266, 116, 23);
+		btnAdmin.setBounds(538, 22, 116, 23);
 		contentPane.add(btnAdmin);
 		
 		JButton btnRegistrarse = new JButton("Registrarse");
-		btnRegistrarse.setBounds(269, 266, 116, 23);
+		btnRegistrarse.setBounds(283, 360, 116, 23);
 		contentPane.add(btnRegistrarse);
 		
 		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(395, 266, 116, 23);
+		btnVolver.setBounds(425, 360, 116, 23);
 		contentPane.add(btnVolver);
 		
 		contrasenya = new JPasswordField();
-		contrasenya.setBounds(222, 172, 122, 20);
+		contrasenya.setBounds(273, 234, 194, 20);
 		contentPane.add(contrasenya);
 		
 		usuario = new JTextField();
-		usuario.setBounds(222, 112, 122, 20);
+		usuario.setBounds(273, 177, 194, 20);
 		contentPane.add(usuario);
 		usuario.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(VentanaLogin.class.getResource("/ImagenesPNG/logoUsuario (2).png")));
+		lblNewLabel.setBounds(95, 144, 45, 83);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(VentanaLogin.class.getResource("/ImagenesPNG/logoLlave.png")));
+		lblNewLabel_2.setBounds(95, 212, 54, 51);
+		contentPane.add(lblNewLabel_2);
 		
 		//UTILIZACION DE JAVA FUNCIONAL 
 
@@ -144,7 +155,3 @@ public class VentanaLogin extends JFrame {
 		});
 	}
 }
-
-
-
-
