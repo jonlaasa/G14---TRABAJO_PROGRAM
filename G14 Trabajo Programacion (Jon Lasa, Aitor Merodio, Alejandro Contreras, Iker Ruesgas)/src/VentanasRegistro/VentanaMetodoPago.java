@@ -234,10 +234,16 @@ public class VentanaMetodoPago extends JFrame {
 				Utils.comprobarString(nombreTitular);
 				Utils.comprobarString(direc);
 				Utils.comprobarString(ciu);
-				Utils.comprobarNumerosConLongitud(cd, 5,"Codigo Postal");
+				Utils.comprobarString(cd);
+				Utils.comprobarString(codS);
+				Utils.comprobarString(feC);
+				Utils.comprobarString(numT);
+				Utils.comprobarNumerosConLongitud(cd, 5,"Codigo Postal");			
+				Utils.comprobarNumeroTarjeta(numT,"Numero de Tarjeta");
+				Utils.comprobarFechaCaducidad(feC,"Fecha de Caducidad");
 				Utils.comprobarNumerosConLongitud(codS, 3,"Codigo de Seguridad");
-				Utils.comprobarNumerosConLongitud(feC, 4,"Fecha de Caducidad");
-				Utils.comprobarNumerosConLongitud(numT, 16,"Numero de Tarjeta");
+				
+	
 				
 				
 				listaParaEscribir.add(nombreTitular);

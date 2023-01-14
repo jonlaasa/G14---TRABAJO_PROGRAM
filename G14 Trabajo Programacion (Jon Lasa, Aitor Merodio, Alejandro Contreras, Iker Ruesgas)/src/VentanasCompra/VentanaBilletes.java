@@ -59,7 +59,7 @@ public class VentanaBilletes extends JFrame {
 		sumar.setBounds(144, 103, 47, 23);
 		contentPane.add(sumar);
 		
-		mensajeEscoja = new JLabel("Escoja el n�mero de tickets que desee:");
+		mensajeEscoja = new JLabel("Escoja el numero de tickets que desee:");
 		mensajeEscoja.setBounds(10, 67, 256, 14);
 		contentPane.add(mensajeEscoja);
 		

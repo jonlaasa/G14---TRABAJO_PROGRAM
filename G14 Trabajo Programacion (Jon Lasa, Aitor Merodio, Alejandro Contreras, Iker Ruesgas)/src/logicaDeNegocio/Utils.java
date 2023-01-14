@@ -127,7 +127,7 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	public static boolean comprobarStringContra(String a) throws LongitudStringException{
 		try {
 			if(a.length()<=6) {
-				JOptionPane.showMessageDialog(null,"La contrase�a debe contener mas de 6 caracteres" );
+				JOptionPane.showMessageDialog(null,"La contrasenya debe contener mas de 6 caracteres" );
 				throw new LongitudStringException("Longitud no VALIDA (TIENE QUE SER MAYOR QUE 6 : " + a);
 			}	
 			else {
@@ -144,13 +144,13 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 		
 		
 	public static boolean comprobarContrasenyas(String a,String b) throws Exception {
-	if(a.equals(b)) {
-		return true;
-	}else {
-		JOptionPane.showMessageDialog(null, "Las contrase�as no coinciden");
-		throw new Exception("Las contrase�a no coinciden");
+		if(a.equals(b)) {
+			return true;
+		}else {
+			JOptionPane.showMessageDialog(null, "Las contrasenyas no coinciden");
+			throw new Exception("Las contrasenya no coinciden");
+			}
 		}
-	}
 	
 	
 	public static boolean comprobarNumerosConLongitud(String a, int longitud, String campo) throws Exception {
@@ -159,22 +159,52 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 			Double.parseDouble(a);
 			
 			if(a.length()!=longitud) {
-				JOptionPane.showMessageDialog(null, "Informacion incorrecta en: "+campo+". Tiene que introducir solamente "+longitud+" digitos","ERROR",JOptionPane.ERROR_MESSAGE);
-				throw new Exception("Revisa valores numericos: Introducido "+a+"en el campo " + campo+" y tiene que introducir solamente"+longitud+"digitos");
+				JOptionPane.showMessageDialog(null, "Informacion incorrecta en: "+campo+". Tiene que introducir "+longitud+" digitos","ERROR",JOptionPane.ERROR_MESSAGE);
+				throw new Exception("Revisa valores numericos: Introducido "+a+"en el campo " + campo+" y tiene que introducir "+longitud+"digitos");
 			}else {
 				return true;
 			}
 		}catch(Exception e ) {
-			throw new Exception("Revisa valores numericos: Introducido "+a+"en el campo " + campo+" y tiene que introducir solamente"+longitud+"digitos");
+			throw new Exception("Revisa valores numericos: Introducido "+a+"en el campo " + campo+" y tiene que introducir "+longitud+"digitos");
 		}
 		
 		
 	}
 	
+	public static boolean comprobarNumeroTarjeta(String num,String campo) throws Exception {
+		try {
+			String cadena1 = num.replaceAll("-", "");
+			String cadena2 = cadena1.replaceAll(" ", "");
+
+			if(cadena2.length()!=16) {
+				JOptionPane.showMessageDialog(null, "Informacion incorrecta en: "+campo+". Tiene que introducir 16 digitos","ERROR",JOptionPane.ERROR_MESSAGE);
+				throw new Exception("Revisa valores numericos: Introducido "+num+"en el campo " + campo+" y tiene que introducir 16 digitos");
+			} else {
+				return true;
+			}
+			
+		} catch (Exception e) {
+			throw new Exception("Revisa valores numericos: Introducido "+num+"en el campo " + campo+" y tiene que introducir 16 digitos");
+		}
+	}
 	
 	
-	
-	
+	public static boolean comprobarFechaCaducidad(String fechaC,String campo) throws Exception {
+		try {
+			String cadena1 = fechaC.replaceAll("/", "");
+			String cadena2 = cadena1.replaceAll(" ", "");
+			
+			if(cadena2.length()!=4) {
+				JOptionPane.showMessageDialog(null, "Informacion incorrecta en: "+campo+". Tiene que introducir 4 digitos","ERROR",JOptionPane.ERROR_MESSAGE);
+				throw new Exception("Revisa valores numericos: Introducido "+fechaC+"en el campo " + campo+" y tiene que introducir 4 digitos");
+			} else {
+				return true;
+			}
+			
+		} catch (Exception e) {
+			throw new Exception("Revisa valores numericos: Introducido "+fechaC+"en el campo " + campo+" y tiene que introducir 4 digitos");
+		}
+	}
 	
 		
 		
