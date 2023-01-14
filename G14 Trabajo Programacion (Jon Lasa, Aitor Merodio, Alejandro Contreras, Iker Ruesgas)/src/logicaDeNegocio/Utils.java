@@ -173,10 +173,10 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	
 	public static boolean comprobarNumeroTarjeta(String num,String campo) throws Exception {
 		try {
-			String cadena1 = num.replaceAll("-", "");
-			String cadena2 = cadena1.replaceAll(" ", "");
+			String num1 = num.replaceAll("-", "");
+			String num2 = num1.replaceAll(" ", "");
 
-			if(cadena2.length()!=16) {
+			if(num2.length()!=16) {
 				JOptionPane.showMessageDialog(null, "Informacion incorrecta en: "+campo+". Tiene que introducir 16 digitos","ERROR",JOptionPane.ERROR_MESSAGE);
 				throw new Exception("Revisa valores numericos: Introducido "+num+"en el campo " + campo+" y tiene que introducir 16 digitos");
 			} else {
@@ -191,10 +191,10 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	
 	public static boolean comprobarFechaCaducidad(String fechaC,String campo) throws Exception {
 		try {
-			String cadena1 = fechaC.replaceAll("/", "");
-			String cadena2 = cadena1.replaceAll(" ", "");
+			String fecha1 = fechaC.replaceAll("/", "");
+			String fecha2 = fecha1.replaceAll(" ", "");
 			
-			if(cadena2.length()!=4) {
+			if(fecha2.length()!=4) {
 				JOptionPane.showMessageDialog(null, "Informacion incorrecta en: "+campo+". Tiene que introducir 4 digitos","ERROR",JOptionPane.ERROR_MESSAGE);
 				throw new Exception("Revisa valores numericos: Introducido "+fechaC+"en el campo " + campo+" y tiene que introducir 4 digitos");
 			} else {

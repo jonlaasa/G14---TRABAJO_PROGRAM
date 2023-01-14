@@ -67,8 +67,6 @@ public class VentanaMenu extends JFrame {
 		JMenuItem mntmPerfil = new JMenuItem("Perfil");
 		mnOpcionesPerfil.add(mntmPerfil);
 		
-		JMenuItem mntmHistorial = new JMenuItem("Historial");
-		mnOpcionesPerfil.add(mntmHistorial);
 		
 		JMenuItem mntmCerrarSesion = new JMenuItem("Cerrar Sesion");
 		mnOpcionesPerfil.add(mntmCerrarSesion);
