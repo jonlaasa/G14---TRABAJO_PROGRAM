@@ -40,9 +40,11 @@ public class VentanaServicioAdicional extends JFrame {
 
 
 	private void inicializar(Usuario usuarioActual ,Vuelo vuelo, int cantidad) {
-		setLocationRelativeTo(null); 
+		 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
+		setLocationRelativeTo(null);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 

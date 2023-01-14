@@ -27,12 +27,12 @@ public class VentanaLoginAdmin extends JFrame {
 		inicializar();
 	}
 	private void  inicializar() {
-		setLocationRelativeTo(null); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 515, 350);
+		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
+		setLocationRelativeTo(null);
+		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 	
@@ -43,7 +43,7 @@ public class VentanaLoginAdmin extends JFrame {
 		
 
 		
-		JLabel lblNewLabel_1 = new JLabel("Contrasea\u00F1a:");
+		JLabel lblNewLabel_1 = new JLabel("Contrase\u00F1a:");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_1.setBounds(98, 175, 110, 31);
 		contentPane.add(lblNewLabel_1);

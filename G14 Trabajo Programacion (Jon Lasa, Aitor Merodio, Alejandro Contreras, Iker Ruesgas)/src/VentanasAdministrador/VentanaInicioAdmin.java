@@ -26,9 +26,9 @@ public class VentanaInicioAdmin extends JFrame {
 
 	
 	public VentanaInicioAdmin(Administrador administradorActual) {
-		setLocationRelativeTo(null); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 400);
+		setBounds(100, 100, 700, 450);
+		setLocationRelativeTo(null);
 		
 		JMenuBar menuBar_1 = new JMenuBar();
 		menuBar_1.setBackground(new Color(0, 255, 255));

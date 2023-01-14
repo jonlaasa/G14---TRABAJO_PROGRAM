@@ -29,11 +29,10 @@ public class VentanaMenu extends JFrame {
 
 	public VentanaMenu(Usuario usuarioActual) {
 		
-
-		setLocationRelativeTo(null); 
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
+		setLocationRelativeTo(null);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(new Color(0, 204, 255));

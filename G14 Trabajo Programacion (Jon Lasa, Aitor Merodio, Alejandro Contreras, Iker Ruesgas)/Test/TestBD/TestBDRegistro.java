@@ -35,6 +35,8 @@ public class TestBDRegistro {
 	
 	
 //	@Test
+//
+//	
 //	public void testRegistrarYObtenerUsuario() {
 //		//CREAMOS UN USUARIO Y LO REGISTRAMOS
 //		

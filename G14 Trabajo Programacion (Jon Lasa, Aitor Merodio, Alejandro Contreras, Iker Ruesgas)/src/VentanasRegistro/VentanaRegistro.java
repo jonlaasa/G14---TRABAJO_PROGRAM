@@ -42,9 +42,7 @@ public class VentanaRegistro extends JFrame {
 
 	
 	public VentanaRegistro () {
-		
 		inicializar();
-		
 		
 	}
 
@@ -165,9 +163,6 @@ public class VentanaRegistro extends JFrame {
 			String contra=contrasenya.getText();
 			String contraRepe=contrasenyaRepetida.getText();
 			String correo=mail.getText();
-			
-			
-				
 				
 				try {
 					//Comprobaciones de los parametros del registro
@@ -196,7 +191,6 @@ public class VentanaRegistro extends JFrame {
 					}	
 					
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 				

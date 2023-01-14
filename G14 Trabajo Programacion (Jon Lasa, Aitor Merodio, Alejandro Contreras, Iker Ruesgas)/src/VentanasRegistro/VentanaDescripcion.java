@@ -17,7 +17,7 @@ public class VentanaDescripcion extends JFrame {
 		
 		//Creamos la  ventana Descripcion 
 		setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
-		setSize( 500, 600 );
+		setBounds(100, 100, 700, 450);
 		setLocationRelativeTo( null );
 		JPanel panelArriba = new JPanel();
 		JLabel labelDescripcion = new JLabel("Descripcion de T&T");

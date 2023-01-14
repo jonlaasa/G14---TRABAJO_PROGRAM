@@ -41,16 +41,11 @@ public class VentanaMetodoPago extends JFrame {
 	private JTextField codigoSeguridad;
 	
 	
-	
-	
-	
 	public VentanaMetodoPago (Usuario usuarioActual, Compra compra,Servicio serv) {
 		
 		inicializar(usuarioActual,compra,serv );
-		
 	}
 
-	
 	private void  inicializar(Usuario usuarioActual, Compra compra,Servicio serv) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
@@ -190,10 +185,7 @@ public class VentanaMetodoPago extends JFrame {
 			
 			
 		}
-		
-		
-		
-		
+
 		
 		///UNA VEZ YA HEMOS LEIDO EL FICHERO LO IMPRIMIMOS PARA VERLO
 		
@@ -310,7 +302,7 @@ public class VentanaMetodoPago extends JFrame {
 	pagarConPuntos.addActionListener(e -> {
 		
 		
-		//UNA VEZ TENEMOS EL PRECIO, OBTENEMOS LOS PUNTOS QUE TIENE Y EL DIENRO QUE ELLO IMPLICA 
+		//UNA VEZ TENEMOS EL PRECIO, OBTENEMOS LOS PUNTOS QUE TIENE Y EL DINERO QUE ELLO IMPLICA 
 		
 		
 		
@@ -364,14 +356,9 @@ public class VentanaMetodoPago extends JFrame {
 				
 				
 			}
-		
-		
-		
 			
 	});
-		
-		
-		
+	
 	}
 	
 	

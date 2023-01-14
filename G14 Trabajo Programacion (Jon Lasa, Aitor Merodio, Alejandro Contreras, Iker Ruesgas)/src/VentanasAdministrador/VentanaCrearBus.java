@@ -48,14 +48,15 @@ public class VentanaCrearBus extends JFrame {
 	
 
 	public VentanaCrearBus(Administrador adminActual) {
-		setLocationRelativeTo(null); 
+
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 650);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 51, 51));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
+		setLocationRelativeTo(null);
+		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 	

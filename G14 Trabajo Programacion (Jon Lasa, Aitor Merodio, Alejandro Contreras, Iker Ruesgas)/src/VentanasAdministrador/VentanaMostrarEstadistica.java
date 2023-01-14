@@ -39,7 +39,8 @@ public class VentanaMostrarEstadistica extends JFrame {
 		setBounds(100, 100, 600, 650);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
+		setLocationRelativeTo(null);
+		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -189,6 +190,8 @@ public class VentanaMostrarEstadistica extends JFrame {
 				panelGrafico.setVisible(true);
 				pack();
 				setBounds(100, 100, 600, 650);
+				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				setLocationRelativeTo(null);
 				
 			} else if (tipodegrafico=="NUMERO DE COMPRAS/TIPO DE SERVICIO") {
 				resultados=BDServicio.comprasServicio(BDServicio.baseDatosServicio);
@@ -208,6 +211,8 @@ public class VentanaMostrarEstadistica extends JFrame {
 				panelGrafico.setVisible(true);
 				pack();
 				setBounds(100, 100, 600, 650);
+				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				setLocationRelativeTo(null);
 				
 			} else {
 				resultados=BDServicio.comprasDestino(BDServicio.baseDatosServicio);
@@ -233,6 +238,8 @@ public class VentanaMostrarEstadistica extends JFrame {
 				panelGrafico.setVisible(true);
 				pack();
 				setBounds(100, 100, 600, 650);
+				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				setLocationRelativeTo(null);
 			}
 			
 		});

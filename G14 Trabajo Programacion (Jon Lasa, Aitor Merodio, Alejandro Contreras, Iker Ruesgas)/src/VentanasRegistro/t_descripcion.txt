@@ -1,7 +1,7 @@
 T&T LA REVOLUCION DE LAS AGENCIAS DE VIAJE. 
-	Nuestra aplicacion, se describe como una aplicaci�n para
+	Nuestra aplicacion, se describe como una aplicacion para
 compras de billetes de vuelos buses y viajes combinados a nivel
-nacional (+ Lisboa) con precios competitivos y una aplicaci�n web intuitiva
+nacional (+ Lisboa) con precios competitivos y una aplicacion web intuitiva
 y muy senclla de utilizar y manejar. En ella, los usuarios se
  registraran y podran acceder a la compra de los diferentes 
 servicios al igual que a las consultas realizadas sobre los 

@@ -64,7 +64,7 @@ public class VentanaInicio extends JFrame {
 		lblNewLabel.setBounds(27, 56, 594, 373);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnDescripcion = new JButton("Conocenos");
+		JButton btnDescripcion = new JButton("Conocenos!");
 		btnDescripcion.setBounds(502, 11, 135, 23);
 		contentPane.add(btnDescripcion);
 		

@@ -26,22 +26,18 @@ import VentanasCompra.VentanaVuelo;
 import VentanasMenu.VentanaMenu;
 import VentanasMenu.VentanaPerfil;
 import VentanasRegistro.VentanaInicio;
+import VentanasRegistro.VentanaMetodoPago;
 
 
 public class Main {
 
 	public static void main(String[] args) throws SQLException {
 		
-
 		//Administrador a = new Administrador();
-
-
-
-
-		VentanaInicio es = new VentanaInicio();
-		es.setVisible(true);
-
-
+		//Usuario u = new Usuario();
+		
+		VentanaInicio v = new VentanaInicio();
+		v.setVisible(true);
 		
 	}
 	

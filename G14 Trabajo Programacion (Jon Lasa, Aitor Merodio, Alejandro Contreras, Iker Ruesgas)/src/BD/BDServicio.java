@@ -1415,7 +1415,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 	
 	
 	
-public static  ArrayList <Vuelo> verVuelo(String ruta) throws SQLException {
+	public static  ArrayList <Vuelo> verVuelo(String ruta) throws SQLException {
 		
 		BDServicio.abrirBaseDatos(ruta);
 		String sql = "SELECT * FROM vuelo";
@@ -1451,24 +1451,24 @@ public static  ArrayList <Vuelo> verVuelo(String ruta) throws SQLException {
 
 
 
-public static  ArrayList <Bus> verBus(String ruta) throws SQLException {
+	public static  ArrayList <Bus> verBus(String ruta) throws SQLException {
 	
-	BDServicio.abrirBaseDatos(ruta);
-	String sql = "SELECT * FROM bus";
-	Statement st = conn.createStatement();
-	ResultSet rs = st.executeQuery(sql);
-	ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
-	while(rs.next()) {
-		int codigoVuelo = rs.getInt("COD_BUS");
-		String FechaVuelo = rs.getString("FECHA");
-		String horaSalidaVuelo = rs.getString("HORA_SALIDA");
-		int duracion = rs.getInt("DURACION");
-		String origenV = rs.getString("ORIGEN");
-		String destinoV = rs.getString("DESTINO");
-		Double precio = rs.getDouble("PRECIO");
-		TipoServicio tipo = TipoServicio.vuelo;
-		int plazasRestantes = rs.getInt("PLAZAS_RESTANTES");
-		String companya= rs.getString("COMPANYA_BUS");
+		BDServicio.abrirBaseDatos(ruta);
+		String sql = "SELECT * FROM bus";
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+		ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
+		while(rs.next()) {
+			int codigoVuelo = rs.getInt("COD_BUS");
+			String FechaVuelo = rs.getString("FECHA");
+			String horaSalidaVuelo = rs.getString("HORA_SALIDA");
+			int duracion = rs.getInt("DURACION");
+			String origenV = rs.getString("ORIGEN");
+			String destinoV = rs.getString("DESTINO");
+			Double precio = rs.getDouble("PRECIO");
+			TipoServicio tipo = TipoServicio.vuelo;
+			int plazasRestantes = rs.getInt("PLAZAS_RESTANTES");
+			String companya= rs.getString("COMPANYA_BUS");
 		
 		try {
 			Bus busNuevo = new Bus(codigoVuelo, FechaVuelo, horaSalidaVuelo, duracion, origenV,destinoV, precio, tipo,plazasRestantes,companya);

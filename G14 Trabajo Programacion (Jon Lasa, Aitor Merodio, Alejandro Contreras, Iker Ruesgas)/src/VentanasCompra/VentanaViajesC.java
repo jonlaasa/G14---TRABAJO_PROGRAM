@@ -71,10 +71,12 @@ public class VentanaViajesC extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaViajesC(Usuario usuarioActual) {
-		setLocationRelativeTo(null); 
+		 
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 650);
+		setLocationRelativeTo(null);
+		
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 240, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
