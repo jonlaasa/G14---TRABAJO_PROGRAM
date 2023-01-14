@@ -65,7 +65,7 @@ public class VentanaBilletes extends JFrame {
 		
 		foto = new JLabel("");
 		foto.setIcon(new ImageIcon("imagenes//icons//fotoBilletes.jpg"));
-		foto.setBounds(231, 47, 193, 184);
+		foto.setBounds(276, 48, 193, 184);
 		contentPane.add(foto);
 		
 		JButton continuar = new JButton("Continuar");
