@@ -16,6 +16,7 @@ import Datos.Administrador;
 import VentanasRegistro.VentanaLogin;
 
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 
 public class VentanaLoginAdmin extends JFrame {
 
@@ -27,6 +28,12 @@ public class VentanaLoginAdmin extends JFrame {
 		inicializar();
 	}
 	private void  inicializar() {
+		
+	
+		
+		
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
@@ -35,50 +42,68 @@ public class VentanaLoginAdmin extends JFrame {
 		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-	
-		JLabel lblUsuario = new JLabel("Usuario:");
-		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblUsuario.setBounds(98, 116, 79, 31);
+		
+		
+		
+		JLabel lblUsuario = new JLabel("Administrador:");
+		lblUsuario.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblUsuario.setBounds(168, 181, 146, 31);
 		contentPane.add(lblUsuario);
 		
 
 		
 		JLabel lblNewLabel_1 = new JLabel("Contrase\u00F1a:");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(98, 175, 110, 31);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel_1.setBounds(168, 261, 110, 31);
 		contentPane.add(lblNewLabel_1);
 		
 		
 		JLabel lblIniciarSesion = new JLabel("Administrador");
 		lblIniciarSesion.setForeground(new Color(255, 128, 0));
-		lblIniciarSesion.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		lblIniciarSesion.setBounds(190, 22, 157, 43);
+		lblIniciarSesion.setFont(new Font("Eras Light ITC", Font.BOLD, 26));
+		lblIniciarSesion.setBounds(244, 60, 218, 64);
 		contentPane.add(lblIniciarSesion);
 		
 		JButton btnIniciarSesion = new JButton("Iniciar Sesion");
-		btnIniciarSesion.setBounds(105, 263, 116, 23);
+		btnIniciarSesion.setBounds(190, 356, 124, 23);
 		contentPane.add(btnIniciarSesion);
 		
 
 		contrasenya = new JPasswordField();
-		contrasenya.setBounds(282, 182, 136, 20);
+		contrasenya.setBounds(321, 268, 203, 20);
 		contentPane.add(contrasenya);
 		
 		usuario = new JTextField();
-		usuario.setBounds(282, 123, 136, 20);
+		usuario.setBounds(321, 188, 203, 20);
 		contentPane.add(usuario);
 		usuario.setColumns(10);
 		
 
 		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(292, 263, 116, 23);
+		btnVolver.setBounds(380, 356, 124, 23);
 		contentPane.add(btnVolver);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(VentanaLoginAdmin.class.getResource("/ImagenesPNG/pngegg (1).png")));
+		lblNewLabel.setBounds(125, 177, 46, 45);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(VentanaLoginAdmin.class.getResource("/ImagenesPNG/logoLlave.png")));
+		lblNewLabel_2.setBounds(125, 246, 85, 64);
+		contentPane.add(lblNewLabel_2);
+		
+		
+		
 		
 		btnVolver.addActionListener(e -> {
 			VentanaLogin vr = null;
 			vr = new VentanaLogin();
 			vr.setVisible(true);
 			dispose();
+			
+			
+		
 		});
 		
 		btnIniciarSesion.addActionListener(e->{
@@ -107,5 +132,6 @@ public class VentanaLoginAdmin extends JFrame {
 			
 		});
 		
+		JOptionPane.showMessageDialog(null, "Apartado exclusivo para Administradores");
 	}
 }
