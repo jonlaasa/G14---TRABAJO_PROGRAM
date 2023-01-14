@@ -40,56 +40,56 @@ public class VentanaPerfil extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNombre = new JLabel("Nombre:");
-		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNombre.setBounds(47, 60, 79, 14);
+		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNombre.setBounds(47, 100, 79, 14);
 		contentPane.add(lblNombre);
 		
 		JLabel lblApellidos = new JLabel("Apellidos:");
-		lblApellidos.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblApellidos.setBounds(47, 87, 79, 14);
+		lblApellidos.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblApellidos.setBounds(47, 135, 79, 14);
 		contentPane.add(lblApellidos);
 		
 		JLabel lblMostrarUsuario = new JLabel(usrActual.getNombre());
-		lblMostrarUsuario.setBounds(157, 61, 110, 14);
+		lblMostrarUsuario.setBounds(149, 101, 110, 14);
 		contentPane.add(lblMostrarUsuario);
 		
 		
 		
 		JLabel lblMostrarApellidos = new JLabel(usrActual.getApellido());
-		lblMostrarApellidos.setBounds(157, 88, 120, 14);
+		lblMostrarApellidos.setBounds(149, 136, 120, 14);
 		contentPane.add(lblMostrarApellidos);
 		
 		JLabel lblDni = new JLabel("DNI:");
-		lblDni.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblDni.setBounds(47, 116, 46, 14);
+		lblDni.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblDni.setBounds(47, 172, 46, 14);
 		contentPane.add(lblDni);
 		
 		JLabel lblMostrarDni = new JLabel(usrActual.getDni());
-		lblMostrarDni.setBounds(157, 117, 120, 14);
+		lblMostrarDni.setBounds(149, 173, 120, 14);
 		contentPane.add(lblMostrarDni);
 		
 		JLabel lblMail = new JLabel("Mail:");
-		lblMail.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblMail.setBounds(47, 145, 73, 14);
+		lblMail.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblMail.setBounds(47, 205, 73, 14);
 		contentPane.add(lblMail);
 		
 		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(368, 277, 89, 23);
+		btnVolver.setBounds(513, 355, 89, 23);
 		contentPane.add(btnVolver);
 		
 		JLabel lblMostrarMail = new JLabel(usrActual.getCorreoElectronico());
-		lblMostrarMail.setBounds(157, 142, 132, 23);
+		lblMostrarMail.setBounds(149, 202, 132, 23);
 		contentPane.add(lblMostrarMail);
 		
-		JLabel lblPerfil = new JLabel("Perfil");
+		JLabel lblPerfil = new JLabel("PERFIL");
 		lblPerfil.setForeground(new Color(255, 128, 0));
-		lblPerfil.setFont(new Font("Tahoma", Font.BOLD, 17));
-		lblPerfil.setBounds(215, 27, 52, 23);
+		lblPerfil.setFont(new Font("Tahoma", Font.BOLD, 21));
+		lblPerfil.setBounds(292, 29, 132, 33);
 		contentPane.add(lblPerfil);
 		
 		JLabel lblPuntos = new JLabel("PUNTOS T&T");
 		lblPuntos.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblPuntos.setBounds(341, 60, 110, 14);
+		lblPuntos.setBounds(492, 100, 110, 14);
 		contentPane.add(lblPuntos);
 		
 		
@@ -97,22 +97,22 @@ public class VentanaPerfil extends JFrame {
 		JLabel lblMostrarPuntos = new JLabel(String.valueOf(usrActual.getPuntos()));
 		lblMostrarPuntos.setForeground(new Color(0, 255, 255));
 		lblMostrarPuntos.setFont(new Font("Tahoma", Font.PLAIN, 53));
-		lblMostrarPuntos.setBounds(351, 60, 106, 153);
+		lblMostrarPuntos.setBounds(502, 100, 131, 153);
 		contentPane.add(lblMostrarPuntos);
 		
 		JButton btnMostrarCompras = new JButton("Mostrar Compras");
-		btnMostrarCompras.setBounds(10, 177, 148, 23);
+		btnMostrarCompras.setBounds(47, 274, 148, 23);
 		contentPane.add(btnMostrarCompras);
 		
 		JLabel lMostrarCompras = new JLabel("Aqui se mostraran las compras");
 		lMostrarCompras.setForeground(new Color(255, 128, 64));
 		lMostrarCompras.setBackground(new Color(255, 128, 64));
-		lMostrarCompras.setBounds(10, 211, 447, 77);
+		lMostrarCompras.setBounds(47, 328, 447, 77);
 		contentPane.add(lMostrarCompras);
 		
 		JLabel lblNewLabel_1 = new JLabel("Cada 2 segundos se mostrara una compra");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.ITALIC, 11));
-		lblNewLabel_1.setBounds(204, 181, 244, 14);
+		lblNewLabel_1.setBounds(225, 278, 244, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		btnVolver.addActionListener(e->{
