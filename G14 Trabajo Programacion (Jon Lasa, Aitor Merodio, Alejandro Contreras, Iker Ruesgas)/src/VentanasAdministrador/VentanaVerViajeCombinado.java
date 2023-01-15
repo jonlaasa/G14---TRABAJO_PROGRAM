@@ -9,9 +9,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import BD.BDRegistro;
+import BD.BDServicio;
 import Datos.Administrador;
-import Datos.Usuario;
+import Datos.ViajeCombinado;
+import Datos.Vuelo;
 
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
@@ -20,16 +21,16 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class VentanaVerUsuarios extends JFrame {
+public class VentanaVerViajeCombinado extends JFrame {
 
 	private JPanel contentPane;
 	private DefaultTableModel modeloTabla;
 	private JTable tableUsr;
-	private ArrayList<Usuario> listaUsr;
+	private ArrayList<ViajeCombinado> listaViaje;
 
 
-	public VentanaVerUsuarios(Administrador adminActual) throws SQLException {
-
+	public VentanaVerViajeCombinado(Administrador adminActual) throws SQLException {
+		
 		this.setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
@@ -44,7 +45,8 @@ public class VentanaVerUsuarios extends JFrame {
 		
 		
 		modeloTabla = new DefaultTableModel( new Object [] {
-				"Id","Nombre","Apellidos","Usuario","DNI","Puntos T&T","Mail"},0);
+				"Id","Fecha","HoraSalida","Duracion","Origen","Transbordo","Destino","Precio","Plazas"},0);
+		
 		
 		tableUsr = new JTable(modeloTabla);
 		tableUsr.setBounds(398, 290, -226, -173);
@@ -55,21 +57,27 @@ public class VentanaVerUsuarios extends JFrame {
 		contentPane.add(scroll);
 		
 		JButton btnVolver = new JButton("Menu Principal");
-		btnVolver.setBounds(258, 363, 134, 23);
+		btnVolver.setBounds(216, 372, 164, 23);
 		contentPane.add(btnVolver);
 		
-		JLabel lblNewLabel = new JLabel("LISTA DE USUARIOS:");
+		
+		JLabel lblNewLabel = new JLabel("LISTA DE VIAJES COMBINADOS:");
 		lblNewLabel.setForeground(new Color(255, 128, 0));
 		lblNewLabel.setFont(new Font("Eras Light ITC", Font.BOLD, 16));
-		lblNewLabel.setBounds(244, 30, 173, 36);
+		lblNewLabel.setBounds(246, 38, 255, 30);
 		contentPane.add(lblNewLabel);
 		
+		tableUsr.getColumnModel().getColumn(0).setMaxWidth(40);
+		tableUsr.getColumnModel().getColumn(1).setMinWidth(80);
 		
 		
-		listaUsr= BDRegistro.mostrarUsuariosTotal(BDRegistro.baseDatos);
 		
-		for (Usuario usr:listaUsr) {
-			modeloTabla.addRow(new Object [] {usr.getCodigo(),usr.getNombre(),usr.getApellido(),usr.getNombreUsuario(),usr.getDni(),usr.getPuntos(),usr.getCorreoElectronico()
+		
+		listaViaje= BDServicio.mostrarViajesCombinadosTotal(BDServicio.baseDatosServicio);
+		
+		for (ViajeCombinado viajeC:listaViaje) {
+			modeloTabla.addRow(new Object [] {viajeC.getCodigo(),viajeC.getFecha(),viajeC.getHoraSalida(),viajeC.getDuracionString(),viajeC.getOrigen(),viajeC.getTrasbordo(),
+					viajeC.getDestino(),viajeC.getPrecioString(),viajeC.getPlazasRestantes()
 			});
 		}
 		
@@ -82,4 +90,3 @@ public class VentanaVerUsuarios extends JFrame {
 	
 	}
 }
-

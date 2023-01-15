@@ -26,6 +26,8 @@ public class VentanaInicioAdmin extends JFrame {
 
 	
 	public VentanaInicioAdmin(Administrador administradorActual) {
+		
+		this.setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		setLocationRelativeTo(null);
@@ -72,6 +74,9 @@ public class VentanaInicioAdmin extends JFrame {
 		
 		JMenuItem mntmVerVuelos = new JMenuItem("Ver Vuelos");
 		mnEstadisticas.add(mntmVerVuelos);
+		
+		JMenuItem mntmVerViajesCombinados = new JMenuItem("Ver V.Combinados");
+		mnEstadisticas.add(mntmVerViajesCombinados);
 		
 		
 		JMenu mnPerfil = new JMenu("Perfil");
@@ -173,6 +178,21 @@ public class VentanaInicioAdmin extends JFrame {
 			VentanaVerVuelos vcb=null;
 			try {
 				vcb=new VentanaVerVuelos(administradorActual);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			vcb.setVisible(true);
+			dispose();
+		});
+		
+		
+		
+		
+		mntmVerViajesCombinados.addActionListener(e->{
+			VentanaVerViajeCombinado vcb=null;
+			try {
+				vcb=new VentanaVerViajeCombinado(administradorActual);
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

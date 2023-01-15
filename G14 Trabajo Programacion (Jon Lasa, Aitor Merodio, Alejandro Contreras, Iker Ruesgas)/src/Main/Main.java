@@ -33,10 +33,10 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException {
 		
-		//Administrador a = new Administrador();
+		Administrador a = new Administrador();
 		//Usuario u = new Usuario();
 		
-		VentanaInicio v = new VentanaInicio();
+		VentanaInicioAdmin v = new VentanaInicioAdmin(a);
 		v.setVisible(true);
 		
 	}

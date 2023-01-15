@@ -68,6 +68,7 @@ public class VentanaBus extends JFrame {
 	 */
 	public VentanaBus(Usuario usuarioActual) {
 		 
+		this.setResizable(false);
 		setBackground(new Color(192, 192, 192));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 650);

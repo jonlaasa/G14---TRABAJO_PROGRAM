@@ -15,6 +15,7 @@ public class VentanaDescripcion extends JFrame {
 	
 	public VentanaDescripcion() {
 		
+		this.setResizable(false);
 		//Creamos la  ventana Descripcion 
 		setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
 		setBounds(100, 100, 700, 450);

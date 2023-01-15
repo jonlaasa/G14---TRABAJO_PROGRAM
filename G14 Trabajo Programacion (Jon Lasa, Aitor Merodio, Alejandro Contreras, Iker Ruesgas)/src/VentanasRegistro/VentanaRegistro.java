@@ -48,6 +48,8 @@ public class VentanaRegistro extends JFrame {
 
 
 	private void  inicializar() {
+		
+		this.setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 751, 492);
 		contentPane = new JPanel();
