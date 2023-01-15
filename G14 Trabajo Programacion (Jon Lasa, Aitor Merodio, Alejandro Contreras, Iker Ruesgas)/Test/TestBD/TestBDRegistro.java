@@ -34,26 +34,25 @@ public class TestBDRegistro {
 	
 	
 	
-//	@Test
-//
-//	
-//	public void testRegistrarYObtenerUsuario() {
+	@Test
+
+	
+	public void testObtenerUsuario() {
 //		//CREAMOS UN USUARIO Y LO REGISTRAMOS
-//		
-//		Usuario nuevoUsuario = new Usuario (20, "iker","ruesgas","iruesgas","ruesgasi", "iker.ruesgas@gmail.es", "79123456M",50);
-//		//LUEGO LO BUSCAMOS EN LA BASE DE DATOS Y COMPROBAMOS QUE LO RECOGE CORRECTAMENTE
-//		Usuario buscado= null;
-//		try {
-//			BDRegistro.registrar(nuevoUsuario);
-//			buscado = BDRegistro.obtenerUsuario("iruesgas");
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		assertNotNull(buscado);
-//	
-//		
-//	}
+		
+		//EL USUARIO QUE BUSCAMOS TIENE NOMBRE DE USUARIO  iruesgas
+		//LUEGO LO BUSCAMOS EN LA BASE DE DATOS Y COMPROBAMOS QUE LO RECOGE CORRECTAMENTE
+		Usuario buscado= null;
+		try {
+			buscado = BDRegistro.obtenerUsuario("iruesgas",baseDatosTest);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+
+		assertNotNull(buscado);
+		
+	}
 	
 	
 	@Test
@@ -95,7 +94,7 @@ public class TestBDRegistro {
 	@Test
 	public void testObtenerAdmin() {
 		
-		// BUSCAMOS EN LA BASE DE DATOS EL ADMINISTRADOR
+		// BUSCAMOS EN LA BASE DE DATOS EL ADMINISTRADOR con nombre admin
 		Administrador admin=null;
 		try {
 			admin=BDRegistro.obtenerAdministrador("admin",baseDatosTest);
@@ -110,8 +109,9 @@ public class TestBDRegistro {
 	}
 		
 		
-		
-//		@Test
+	//ESTE SERIA EL TEST PARA CREAR ADMINSTRADORES, PERO SI LO PROBAMOS CON EL MISMO, ESTE YA ESTARA CREADO Y NO TENDRA SENTIDO LA PRUEBA	
+
+	//@Test
 //		public void testCrearAdmin() {
 //			//CREAMOS UN ADMIN Y LO REGISTRAMOS
 //		
@@ -127,8 +127,9 @@ public class TestBDRegistro {
 //		 catch (Exception e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
+	//      result=false;
 //			}
-//		assertFalse(result);
+	//assertTrue(result);
 //	
 //		
 //}
