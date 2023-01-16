@@ -37,8 +37,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
@@ -189,14 +191,14 @@ public class VentanaBus extends JFrame {
 		lblFecha.setBounds(245, 100, 58, 25);
 		contentPane.add(lblFecha);
 		
-		JLabel lblInicio = new JLabel("Ida:");
+		JLabel lblInicio = new JLabel("Desde:");
 		lblInicio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblInicio.setForeground(Color.BLACK);
 		lblInicio.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
 		lblInicio.setBounds(146, 83, 58, 22);
 		contentPane.add(lblInicio);
 		
-		JLabel lblVuelta = new JLabel("Vuelta:");
+		JLabel lblVuelta = new JLabel("Hasta: ");
 		lblVuelta.setHorizontalAlignment(SwingConstants.LEFT);
 		lblVuelta.setForeground(Color.BLACK);
 		lblVuelta.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
@@ -301,14 +303,18 @@ public class VentanaBus extends JFrame {
 			
 			//FALTA LA FECHA
 			
-			String fechaInicio = SDF_FECHA_FOTO.format(calendarIda.getDate());
-			String fechaFin = SDF_FECHA_FOTO.format(calendarVuelta.getDate());
+			Date fechaInicio = calendarIda.getDate();
+			Date fechaFin = calendarVuelta.getDate();
 			
 			//LLAMAMOS AL METODO 
-			ArrayList<Bus> listaBusFiltrado = BDServicio.listaServicioBusFiltrado(origen,
-					destino, filtroPrecio,fechaInicio, fechaFin,BDServicio.baseDatosServicio);
-			
-			System.out.println(listaBusFiltrado);
+			ArrayList<Bus> listaBusFiltrado = new ArrayList<>();
+			try {
+				listaBusFiltrado = BDServicio.listaServicioBusFiltrado(origen,
+						destino, filtroPrecio,fechaInicio, fechaFin,BDServicio.baseDatosServicio);
+			} catch (ParseException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 			listaBus=listaBusFiltrado;
 			

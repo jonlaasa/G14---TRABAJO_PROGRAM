@@ -563,7 +563,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 			return listaConVuelos;
 		}
 		
-		public static ArrayList<Bus> listaServicioBusFiltrado (String origen, String destino, String orden,String fechaInicio, String fechaFin,String ruta){
+		public static ArrayList<Bus> listaServicioBusFiltrado (String origen, String destino,
+				String orden,Date fechaInicio, Date fechaFin,String ruta) throws ParseException{
 			BDServicio.abrirBaseDatos(ruta);
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
@@ -571,11 +572,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 			try {
 				Statement st = conn.createStatement();
 				if(orden.equals("menor")) {
-				 sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
-						 +"' and '"+fechaFin+"' order by precio,fecha asc";
+				 sent= "select * from bus  order by precio,fecha asc";
 				}else {
-				     sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
-							 +"' and '"+fechaFin+"' order by precio desc,fecha asc";
+				     sent= "select * from bus order by precio desc,fecha asc";
 				}
 				
 				ResultSet rs = st.executeQuery(sent);
@@ -595,10 +594,11 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 					Bus busNuevo = new Bus(codigoBus, FechaBus, horaSalidaBus, duracion, origenV,
 							destinoV, precio, tipo,plazasRestantes,companya);
 					
-					System.out.println(busNuevo);
 					listaConBus.add(busNuevo);	
 					
 				}
+				listaConBus = Bus.busFiltrado(listaConBus, 0, new ArrayList<Bus> (), origen, destino, fechaInicio, fechaFin);
+				
 			}catch(SQLException sql) {
 				log(Level.SEVERE, "ERROR EN CONSULTA DE BASE DE DATOS CON FILTRADO DE BUS", sql);
 			}

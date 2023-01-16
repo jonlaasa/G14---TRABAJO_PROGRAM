@@ -36,7 +36,7 @@ public class Main {
 		Administrador a = new Administrador();
 		Usuario u = new Usuario();
 		
-		VentanaViajesC v = new VentanaViajesC(u);
+		VentanaBus v = new VentanaBus(u);
 		v.setVisible(true);
 		
 	}

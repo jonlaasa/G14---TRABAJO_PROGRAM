@@ -384,12 +384,18 @@ public class TestBDServicio {
 	//TEST PARA COMPROBAR FILTRO DE BUS
 	
 	@Test
-	public void testServicioBusFiltrado() {
+	public void testServicioBusFiltrado() throws ParseException {
+		
+		String fecha1= "2022-12-20";
+		String fecha2="2023-12-20";
+		
+		java.util.Date fecha = SDF_FECHA_FOTO.parse(fecha1);
+		java.util.Date fechados = SDF_FECHA_FOTO.parse(fecha2);
 		
 		//LLAMAMOS AL METODO CON UN EJEMPLO (DE Sevilla A Lugo DE MAYOR A MENOR, ENTRE EL 20 DE DICIEMBRE DE
 		//2022 Y EL 22 DE DICIEMBRE DE 2023 
 		ArrayList<Bus> listaBusFiltrado = BDServicio.listaServicioBusFiltrado("Sevilla", "Lugo",
-				"mayor", "2022-12-20", "2023-12-20",baseDatosPrueba);
+				"mayor", fecha, fechados,baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		

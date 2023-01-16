@@ -197,14 +197,14 @@ public class VentanaVuelo extends JFrame {
 		lblFecha.setBounds(245, 100, 58, 25);
 		contentPane.add(lblFecha);
 		
-		JLabel lblInicio = new JLabel("Inicio");
+		JLabel lblInicio = new JLabel("Desde:");
 		lblInicio.setHorizontalAlignment(SwingConstants.LEFT);
 		lblInicio.setForeground(Color.BLACK);
 		lblInicio.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
 		lblInicio.setBounds(146, 83, 58, 22);
 		contentPane.add(lblInicio);
 		
-		JLabel lblVuelta = new JLabel("Fin:");
+		JLabel lblVuelta = new JLabel("Hasta:");
 		lblVuelta.setHorizontalAlignment(SwingConstants.LEFT);
 		lblVuelta.setForeground(Color.BLACK);
 		lblVuelta.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
