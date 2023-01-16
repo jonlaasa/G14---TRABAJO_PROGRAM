@@ -34,9 +34,9 @@ public class Main {
 	public static void main(String[] args) throws SQLException {
 		
 		Administrador a = new Administrador();
-		//Usuario u = new Usuario();
+		Usuario u = new Usuario();
 		
-		VentanaInicioAdmin v = new VentanaInicioAdmin(a);
+		VentanaViajesC v = new VentanaViajesC(u);
 		v.setVisible(true);
 		
 	}

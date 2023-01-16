@@ -60,7 +60,7 @@ public class VentanaBus extends JFrame {
 	private static Servicio Bus;
 	private JComboBox comboBoxDestino;
 	private JComboBox comboBoxOrigen;
-	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
+	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy-MM-dd");
 
 
 	/**
@@ -209,7 +209,6 @@ public class VentanaBus extends JFrame {
 			}
 		});
 		buttonVolver.setBackground(new Color(102, 204, 204));
-		buttonVolver.setActionCommand("buscarVuelo");
 		buttonVolver.setBounds(72, 549, 63, 31);
 		contentPane.add(buttonVolver);
 		
@@ -219,7 +218,6 @@ public class VentanaBus extends JFrame {
 			}
 		});
 		buttonAceptar.setBackground(new Color(102, 204, 204));
-		buttonAceptar.setActionCommand("buscarVuelo");
 		buttonAceptar.setBounds(359, 549, 124, 31);
 		contentPane.add(buttonAceptar);
 		
@@ -233,15 +231,10 @@ public class VentanaBus extends JFrame {
 		calendarVuelta.setBounds(320, 100, 184, 153);
 		contentPane.add(calendarVuelta);
 		
-		Button buttonBuscarVuelo = new Button("BUSCAR");
-		buttonBuscarVuelo.setBounds(245, 208, 70, 19);
-		contentPane.add(buttonBuscarVuelo);
-		buttonBuscarVuelo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		buttonBuscarVuelo.setActionCommand("buscarVuelo");
-		buttonBuscarVuelo.setBackground(new Color(102, 204, 204));
+		Button buttonBuscarBus = new Button("BUSCAR");
+		buttonBuscarBus.setBounds(245, 208, 70, 19);
+		contentPane.add(buttonBuscarBus);
+		buttonBuscarBus.setBackground(new Color(102, 204, 204));
 		
 		ButtonGroup bg=new ButtonGroup();
 		
@@ -288,11 +281,10 @@ public class VentanaBus extends JFrame {
 		
 		//EVENTO DE BOTON, FILTRAR BUSES
 		
-		buttonBuscarVuelo.addActionListener(e -> {
+		buttonBuscarBus.addActionListener(e -> {
 			
-			BD.BDServicio.log(Level.INFO,"Realizando filtrado de los buses", null);
+			BDServicio.log(Level.INFO,"Realizando filtrado de los buses", null);
 			//Obtenenemos los origen y destino 		
-			
 			String origen = comboBoxOrigen.getSelectedItem().toString();
 			String destino = comboBoxDestino.getSelectedItem().toString();
 			
@@ -313,8 +305,10 @@ public class VentanaBus extends JFrame {
 			String fechaFin = SDF_FECHA_FOTO.format(calendarVuelta.getDate());
 			
 			//LLAMAMOS AL METODO 
-			ArrayList<Bus> listaBusFiltrado = BD.BDServicio.listaServicioBusFiltrado(origen,
+			ArrayList<Bus> listaBusFiltrado = BDServicio.listaServicioBusFiltrado(origen,
 					destino, filtroPrecio,fechaInicio, fechaFin,BDServicio.baseDatosServicio);
+			
+			System.out.println(listaBusFiltrado);
 			
 			listaBus=listaBusFiltrado;
 			
@@ -434,7 +428,7 @@ public class VentanaBus extends JFrame {
 				tableBus.addKeyListener(key);
 				this.addKeyListener(key);
 				buttonAceptar.addKeyListener(key);
-				buttonBuscarVuelo.addKeyListener(key);
+				buttonBuscarBus.addKeyListener(key);
 				buttonVolver.addKeyListener(key);
 				
 				//A LOS COMPONENTES COMBO TAMBIEN?

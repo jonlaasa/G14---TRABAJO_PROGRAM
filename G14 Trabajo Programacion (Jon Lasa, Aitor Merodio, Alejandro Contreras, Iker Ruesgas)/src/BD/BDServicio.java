@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -513,7 +514,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 
 
 		//FILTRA LOS VUELOS 
-		public static ArrayList<Vuelo> listaServicioVueloFiltrado (String origen, String destino, String orden,String fechaInicio, String fechaFin,String ruta){
+		public static ArrayList<Vuelo> listaServicioVueloFiltrado (String origen, String destino, String orden,Date fechaInicio, Date fechaFin,String ruta) throws ParseException{
 			BDServicio.abrirBaseDatos(ruta);
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList <Vuelo> listaConVuelos = new ArrayList <Vuelo> ();
@@ -522,11 +523,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 			try {
 				Statement st = conn.createStatement();
 				if(orden.equals("menor")) {
-				 sent= "select * from vuelo where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
-						 +"' and '"+fechaFin+"' order by precio asc";
+				 sent= "select * from vuelo order by precio,fecha asc";
 				}else {
-				     sent= "select * from vuelo where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
-							 +"' and '"+fechaFin+"' order by precio desc";
+				     sent= "select * from vuelo  order by precio desc,fecha asc";
 				}
 				
 				ResultSet rs = st.executeQuery(sent);
@@ -547,32 +546,36 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 							destinoV, precio, tipo,plazasRestantes,companya);
 					listaConVuelos.add(vueloNuevo);	
 					
+					
 				}
+				
+				
+			//UNA VEZ OBTENEMOS TODOS LOS VUELOS, PODEMOS LLAMAR AL METODO RECURSIVO, PARA OBTENER EL FILTRADO CORRECTO
+				
+				listaConVuelos = Vuelo.vueloFiltrado(listaConVuelos, 0, new ArrayList<Vuelo> (), origen, destino, fechaInicio, fechaFin);
+				
+				
 			}catch(SQLException sql) {
 				log(Level.SEVERE, "ERROR EN CONSULTA DE BASE DE DATOS CON FILTRADO DE VUELOS", sql);
 			}
+			
 			BDServicio.cerrarConexion();
 			return listaConVuelos;
 		}
-		
-		
-		
-		
 		
 		public static ArrayList<Bus> listaServicioBusFiltrado (String origen, String destino, String orden,String fechaInicio, String fechaFin,String ruta){
 			BDServicio.abrirBaseDatos(ruta);
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
 			ArrayList <Bus> listaConBus = new ArrayList <Bus> ();
 			String sent="";
-			
 			try {
 				Statement st = conn.createStatement();
 				if(orden.equals("menor")) {
 				 sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
-						 +"' and '"+fechaFin+"' order by precio asc";
+						 +"' and '"+fechaFin+"' order by precio,fecha asc";
 				}else {
 				     sent= "select * from bus where origen='"+origen+"' and destino='"+destino+"' and fecha between '"+fechaInicio
-							 +"' and '"+fechaFin+"' order by precio desc";
+							 +"' and '"+fechaFin+"' order by precio desc,fecha asc";
 				}
 				
 				ResultSet rs = st.executeQuery(sent);
@@ -591,6 +594,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 					
 					Bus busNuevo = new Bus(codigoBus, FechaBus, horaSalidaBus, duracion, origenV,
 							destinoV, precio, tipo,plazasRestantes,companya);
+					
+					System.out.println(busNuevo);
 					listaConBus.add(busNuevo);	
 					
 				}
@@ -610,7 +615,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 			try {
 				//PRIMERO HAREMOS UNA CONSULTA A LA BD PARA FILTRAR POR FECHA Y CREAR UNA ARRAYLIST CON LOS QUE CUMPLAN
 				Statement st = conn.createStatement();
-				String sent= "select * from VIAJECOMBINADO where FECHA BETWEEN '"+fechaInicio+"' AND '"+fechaFin+"'";
+				String sent= "select * from VIAJECOMBINADO where FECHA BETWEEN '"+fechaInicio+"' AND '"+fechaFin+"' order by fecha asc";
 				ResultSet rs = st.executeQuery(sent);
 				while(rs.next()) {
 					int codigoViaje = rs.getInt("COD_VIAJECOMBINADO");

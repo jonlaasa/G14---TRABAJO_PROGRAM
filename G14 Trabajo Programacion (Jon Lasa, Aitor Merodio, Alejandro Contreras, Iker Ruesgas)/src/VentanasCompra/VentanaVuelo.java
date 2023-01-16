@@ -37,6 +37,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -63,7 +64,7 @@ public class VentanaVuelo extends JFrame {
 	private JComboBox comboBoxDestino;
 	private JComboBox comboBoxOrigen;
 	
-	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
+	
 
 
 	public VentanaVuelo(Usuario usuarioActual) {
@@ -311,16 +312,21 @@ public class VentanaVuelo extends JFrame {
 			}else {
 				filtroPrecio= "mayor";
 			}
+	
+			// AHORA LO PASAMOS A DATE
 			
-			
-			//FALTA LA FECHA
-			
-			String fechaInicio = SDF_FECHA_FOTO.format(calendarIda.getDate());
-			String fechaFin = SDF_FECHA_FOTO.format(calendarVuelta.getDate());
+			Date fechaIni = calendarIda.getDate();
+			Date  fechaFi = calendarVuelta.getDate();
 			
 			//LLAMAMOS AL METODO 
-			ArrayList<Vuelo> listaVuelosFiltrado = BD.BDServicio.listaServicioVueloFiltrado(origen,
-					destino, filtroPrecio,fechaInicio, fechaFin,BDServicio.baseDatosServicio);
+			ArrayList<Vuelo> listaVuelosFiltrado = new ArrayList<>();
+			try {
+				listaVuelosFiltrado = BDServicio.listaServicioVueloFiltrado(origen,
+						destino, filtroPrecio,fechaIni, fechaFi,BDServicio.baseDatosServicio);
+			} catch (ParseException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 			listaVuelos=listaVuelosFiltrado;
 			

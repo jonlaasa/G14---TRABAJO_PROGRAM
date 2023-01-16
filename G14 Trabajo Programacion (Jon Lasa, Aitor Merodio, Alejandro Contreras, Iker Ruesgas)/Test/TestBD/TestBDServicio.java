@@ -3,9 +3,12 @@ package TestBD;
 import static org.junit.Assert.*;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeSet;
@@ -31,6 +34,7 @@ public class TestBDServicio {
 	
 	public static final String baseDatosPrueba ="basesDeDatos/serviciosCompanyaJUnit.db";
 
+	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy-MM-dd");
 	
 	//en los test probaremos que el funcionamiento de la base de datos y los metodos de bases de datos es correcto
 	
@@ -341,12 +345,20 @@ public class TestBDServicio {
 	
 	//TEST PARA MOSTRAR VUELOS CON FILTRO
 	@Test
-	public void testServicioVueloFiltrado() {
+	public void testServicioVueloFiltrado() throws ParseException {
+		
+		String fecha1= "2022-12-20";
+		String fecha2="2023-06-01";
+		
+		java.util.Date fecha = SDF_FECHA_FOTO.parse(fecha1);
+		java.util.Date fechados = SDF_FECHA_FOTO.parse(fecha2);
+		
+		//las pasamos a date
 		
 		//LLAMAMOS AL METODO CON UN EJEMPLO (DE VALENCIA A MADRID DE MAYOR A MENOR, ENTRE EL 20 DE DICIEMBRE DE
 		//2022 Y EL 1 DE JUNIO DE 2023 
 		ArrayList<Vuelo> listaVuelosFiltrado = BDServicio.listaServicioVueloFiltrado("Madrid", "Valencia", "mayor",
-				"2022-12-20", "2023-06-01",baseDatosPrueba);
+				fecha, fechados,baseDatosPrueba);
 		
 		//primero comprobamos que no es vacia
 		
