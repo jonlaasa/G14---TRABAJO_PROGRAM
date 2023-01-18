@@ -2,12 +2,19 @@ package TestDatos;
 
 import static org.junit.Assert.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import BD.BDServicio;
+import Datos.Bus;
 import Datos.Vuelo;
 import Enum.TipoServicio;
 import Enum.ZonaAsientoVuelo;
@@ -16,7 +23,7 @@ public class TestVuelo {
 	Vuelo v1;
 	Vuelo v2;
 	Vuelo v3;
-//  long ahora= System.currentTimeMillis();
+	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy-MM-dd");
 
 	@Before
 	public void setUp() throws Exception {
@@ -104,6 +111,30 @@ public class TestVuelo {
 		assertEquals(null, v1.getCompanya());
 		
 	}
+
+	//TEST PARA PROBAR EL METODOS RECURSIVO DE FILTRADO
+	
+	@Test
+	public void testbusFiltrado() throws ParseException {
+		
+		//PRIMERO OBTENEMOS LOS BUSES
+		
+		ArrayList<Vuelo> listaResultado = new ArrayList<>();
+		
+		ArrayList<Vuelo> listaVueloTotal = BDServicio.mostrarVuelosTotal(BDServicio.baseDatosServicio);
+		
+		//ahora filtramos entre estas fechas por ejemplo y origen Madrid y destino  MAYOR A MENOR
+		
+		Date fecha1 = SDF_FECHA_FOTO.parse("2023-01-18");
+		Date fecha2 = SDF_FECHA_FOTO.parse("2023-03-18");
+		
+		listaResultado = Vuelo.vueloFiltrado(listaVueloTotal, 0, new ArrayList<>(), "Bilbao", "Barcelona", fecha1, fecha2);
+		//miramos en la base de datos y vemos que tiene 23 plazas el primero del resultado, y el ultimo, 44 
+		assertEquals(listaResultado.get(0).getPlazasRestantes(), 14);
+		assertEquals(listaResultado.get(listaResultado.size()-1).getPlazasRestantes(), 200);
+		
+	}
+	
 	
 	
 

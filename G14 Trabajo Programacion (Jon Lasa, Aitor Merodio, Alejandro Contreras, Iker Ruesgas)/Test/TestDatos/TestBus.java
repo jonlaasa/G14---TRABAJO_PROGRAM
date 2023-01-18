@@ -2,9 +2,16 @@ package TestDatos;
 
 import static org.junit.Assert.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import BD.BDServicio;
 import Enum.TipoServicio;
 import logicaDeNegocio.DuracionException;
 import Datos.Bus;
@@ -13,7 +20,7 @@ public class TestBus {
 		Bus b1;
 		Bus b2;
 		Bus b3;
-//		long fechaAhora= System.currentTimeMillis();
+		private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy-MM-dd");
 	@Before
 	public void setUp() throws Exception {
 		
@@ -103,6 +110,28 @@ public class TestBus {
 		
 	}
 	
+	//TEST PARA PROBAR EL METODOS RECURSIVO DE FILTRADO
+	
+	@Test
+	public void testbusFiltrado() throws ParseException {
+		
+		//PRIMERO OBTENEMOS LOS BUSES
+		
+		ArrayList<Bus> listaResultado = new ArrayList<>();
+		
+		ArrayList<Bus> listaBusTotal = BDServicio.mostrarBusesTotal(BDServicio.baseDatosServicio);
+		
+		//ahora filtramos entre estas fechas por ejemplo y origen Madrid y destino Barcelona MENOR A MAYOR
+		
+		Date fecha1 = SDF_FECHA_FOTO.parse("2023-01-18");
+		Date fecha2 = SDF_FECHA_FOTO.parse("2023-03-18");
+		
+		listaResultado = Bus.busFiltrado(listaBusTotal, 0, new ArrayList<>(), "Madrid", "Barcelona", fecha1, fecha2);
+		//miramos en la base de datos y vemos que tiene 23 plazas el primero del resultado, y el ultimo, 44 
+		assertEquals(listaResultado.get(0).getPlazasRestantes(), 23);
+		assertEquals(listaResultado.get(listaResultado.size()-1).getPlazasRestantes(), 44);
+		
+	}
 	
 	
 	
