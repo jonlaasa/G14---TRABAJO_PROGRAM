@@ -18,6 +18,7 @@ import Datos.Servicio;
 import Datos.Usuario;
 import Datos.ViajeCombinadoComprado;
 import Datos.VueloComprado;
+import Enum.TipoServicio;
 import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaConfirmacionCompra;
 import logicaDeNegocio.Utils;
@@ -191,7 +192,6 @@ public class VentanaMetodoPago extends JFrame {
 		
 		///UNA VEZ YA HEMOS LEIDO EL FICHERO LO IMPRIMIMOS PARA VERLO
 		
-		System.out.println(valoresProperties);
 		
 		
 		//EVENTOS
@@ -288,6 +288,45 @@ public class VentanaMetodoPago extends JFrame {
 				
 				
 			    BDRegistro.actualizarPuntos(usuarioActual.getCodigo(), puntosAnyadir,BDRegistro.baseDatos);
+			    
+			    //AHORA RESTAMOS LAS PLAZAS
+			    int cant = compra.getCantidad();
+			    if(compra instanceof VueloComprado) {
+			    	
+			    	
+			    	VueloComprado vueloCom = (VueloComprado) compra;
+			    	int codVuelo = vueloCom.getVuelo().getCodigo();
+			    	int plazas = vueloCom.getVuelo().getPlazasRestantes();
+			    	int nuevas= plazas-cant;
+			    	BDServicio.restarPlaza(codVuelo, nuevas, TipoServicio.vuelo, BDServicio.baseDatosServicio);
+			    	
+			    }
+			    else {
+			    	if(compra instanceof BusComprado) {
+			    		BusComprado busCom = (BusComprado) compra;
+				    	int codVuelo = busCom.getBus().getCodigo();
+				    	int plazas = busCom.getBus().getPlazasRestantes();
+				    	int nuevas= plazas-cant;
+				    	BDServicio.restarPlaza(codVuelo, nuevas, TipoServicio.bus, BDServicio.baseDatosServicio);
+			    		
+			    		
+			    	}else {
+			    		
+			    		ViajeCombinadoComprado viajeCom = (ViajeCombinadoComprado) compra;
+			    		int codVuelo = viajeCom.getViajeCombinado().getVuelo().getCodigo();
+				    	int plazas = viajeCom.getViajeCombinado().getVuelo().getPlazasRestantes();
+				    	int nuevas= plazas-cant;
+				    	BDServicio.restarPlaza(codVuelo, nuevas, TipoServicio.vuelo, BDServicio.baseDatosServicio);
+				    	
+			    		int codBus = viajeCom.getViajeCombinado().getVuelo().getCodigo();
+				    	int plazasBus= viajeCom.getViajeCombinado().getVuelo().getPlazasRestantes();
+				    	int nuevasDos = plazasBus-cant;
+				    	BDServicio.restarPlaza(codBus, nuevasDos, TipoServicio.bus, BDServicio.baseDatosServicio);
+				    	
+			    		
+			    	}
+			    	
+			    }
 
 				
 				//DESPUES PASAMOS A LA VENTANA DE CONFIRMACION DE LA COMPRA
@@ -323,6 +362,7 @@ public class VentanaMetodoPago extends JFrame {
 				 precioCompra = ((BusComprado) compra).getPrecio();
 			}else {
 				 //VIAJE COMBINADO
+				precioCompra = ((ViajeCombinadoComprado)compra).getPrecio();
 			}
 			}
 			
@@ -348,6 +388,47 @@ public class VentanaMetodoPago extends JFrame {
 	            
 	            BDRegistro.actualizarPuntos(usuarioActual.getCodigo(), puntos,BDRegistro.baseDatos);
 				//DESPUES PASAMOS A LA VENTANA DE CONFIRMACION DE LA COMPRA
+	            
+	            //ACTUALIZAMOS LAS PLAZAS RESTANTES, IGUAL QUE ARRIBA
+	            
+	            int cant = compra.getCantidad();
+			    if(compra instanceof VueloComprado) {
+			    	
+			    	
+			    	VueloComprado vueloCom = (VueloComprado) compra;
+			    	int codVuelo = vueloCom.getVuelo().getCodigo();
+			    	int plazas = vueloCom.getVuelo().getPlazasRestantes();
+			    	int nuevas= plazas-cant;
+			    	BDServicio.restarPlaza(codVuelo, nuevas, TipoServicio.vuelo, BDServicio.baseDatosServicio);
+			    	
+			    }
+			    else {
+			    	if(compra instanceof BusComprado) {
+			    		BusComprado busCom = (BusComprado) compra;
+				    	int codVuelo = busCom.getBus().getCodigo();
+				    	int plazas = busCom.getBus().getPlazasRestantes();
+				    	int nuevas= plazas-cant;
+				    	BDServicio.restarPlaza(codVuelo, nuevas, TipoServicio.bus, BDServicio.baseDatosServicio);
+			    		
+			    		
+			    	}else {
+			    		
+			    		ViajeCombinadoComprado viajeCom = (ViajeCombinadoComprado) compra;
+			    		int codVuelo = viajeCom.getViajeCombinado().getVuelo().getCodigo();
+				    	int plazas = viajeCom.getViajeCombinado().getVuelo().getPlazasRestantes();
+				    	int nuevas= plazas-cant;
+				    	BDServicio.restarPlaza(codVuelo, nuevas, TipoServicio.vuelo, BDServicio.baseDatosServicio);
+				    	
+			    		int codBus = viajeCom.getViajeCombinado().getVuelo().getCodigo();
+				    	int plazasBus= viajeCom.getViajeCombinado().getVuelo().getPlazasRestantes();
+				    	int nuevasDos = plazasBus-cant;
+				    	BDServicio.restarPlaza(codBus, nuevasDos, TipoServicio.bus, BDServicio.baseDatosServicio);
+				    	
+			    		
+			    	}
+			    	
+			    }
+
 				
 				VentanaConfirmacionCompra vent = new VentanaConfirmacionCompra(usuarioActual, compra, serv);
 				vent.setVisible(true);

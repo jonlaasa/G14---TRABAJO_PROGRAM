@@ -40,6 +40,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.awt.event.ActionEvent;
@@ -334,6 +335,7 @@ public class VentanaViajesC extends JFrame {
 		calendarioInicio = new JCalendar();
 		calendarioInicio.setWeekOfYearVisible(false);
 		calendarioInicio.setBounds(374, 11, 184, 126);
+		calendarioInicio.setMinSelectableDate(new Date(System.currentTimeMillis()));
 		contentPane.add(calendarioInicio);
 		tableViajesCombinados=new JTable(modeloTabla);
 		panelTabla.add(tableViajesCombinados);
@@ -356,6 +358,7 @@ public class VentanaViajesC extends JFrame {
 		calendarioFin = new JCalendar();
 		calendarioFin.setWeekOfYearVisible(false);
 		calendarioFin.setBounds(374, 146, 184, 126);
+		calendarioFin.setMinSelectableDate(new Date(System.currentTimeMillis()));
 		contentPane.add(calendarioFin);
 		
 		

@@ -35,6 +35,9 @@ private static Connection conn;
 private static PreparedStatement pst;
 private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy-MM-dd");
 public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db";
+public static Date fechaActualDate = new Date(System.currentTimeMillis());
+public static String fechaActualString = SDF_FECHA_FOTO.format(fechaActualDate);
+
 	
 	private static Logger logger;
 	
@@ -120,7 +123,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 		try {
 			Statement st = conn.createStatement();
 			
-			String resp = "select * from bus order by fecha";
+			String resp = "select * from bus where fecha > '"+fechaActualString +"' and plazas_restantes>0 order by fecha";
 			ResultSet rs = st.executeQuery(resp);
 			while(rs.next()) {
 				int codigoVuelo = rs.getInt("Cod_bus");
@@ -306,7 +309,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 		try {
 			Statement st = conn.createStatement();
 			
-			String resp = "select * from viajeCombinado order by fecha";
+			String resp = "select * from viajeCombinado where fecha > '"+fechaActualString+"'"
+					+ "order by fecha";
 			ResultSet rs = st.executeQuery(resp);
 			while(rs.next()) {
 				int codCombinado = rs.getInt("Cod_viajeCombinado");
@@ -366,7 +370,8 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 			try {
 				Statement st = conn.createStatement();
 				
-				String resp = "select * from VUELO order by fecha";
+				String resp = "select * from VUELO where fecha >'"+fechaActualString +"'  and plazas_restantes>0"
+						+ " order by fecha";
 				ResultSet rs = st.executeQuery(resp);
 				while(rs.next()) {
 					int codigoVuelo = rs.getInt("Cod_vuelo");
@@ -411,14 +416,19 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 		
 		//METODO QUE CREA NUEVOS VUELOS CON LOS DATOS RECIBIDOS DESDE LA VENTANA CREAR VUELOS 
 		
+		// POR DEFECTO, LO HAREMOS DURANTE 8 SEMANAS O MESES, (DEPENDE LO ESCOGIDO), AQUI YA ES UNA ELECCION NUESTRA
+		
+		
 		public static void crearVuelos (Date fecha, String horaSalida, int duracion ,String origen, String destino, double precio, int plazas,String companya, boolean semanal, boolean mensual,String ruta)  {
 			BDServicio.abrirBaseDatos(ruta);
 			String sent="";
+			 int sumar=0;
 			try {
 				if (semanal==true) {
 					for (int i=0; i<8; i++ ) {	
 						Statement st = conn.createStatement();
-						Date fechanueva= sumarDias(fecha,i);
+						 sumar = sumar+7;
+						Date fechanueva= sumarDias(fecha,sumar);
 						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
 						sent="INSERT INTO VUELO(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,COMPANYA_vuelo,PLAZAS_RESTANTES) VALUES ('"+fechatoString+"','"+horaSalida+"',"+duracion+",'"+origen+"','"+destino+"',"+precio+",'"+companya+"',"+plazas+")";
 						
@@ -428,9 +438,10 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 					log(Level.INFO, "VUELOS SEMANALES INSERTADOS EN LA BASE DE DATOS", null);
 					
 				} else {
-					for (int i=0; i<32; i++ ) {
+					for (int i=0; i<8; i++ ) {
 						Statement st = conn.createStatement();
-						Date fechanueva= sumarDias(fecha,i);
+						sumar=sumar+30;
+						Date fechanueva= sumarDias(fecha,sumar);
 						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
 						sent="INSERT INTO VUELO(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,COMPANYA_vuelo,PLAZAS_RESTANTES) VALUES ('"+fechatoString+"','"+horaSalida+"',"+duracion+",'"+origen+"','"+destino+"',"+precio+",'"+companya+"',"+plazas+")";
 						
@@ -449,11 +460,13 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 		public static void crearBuses (Date fecha, String horaSalida, int duracion ,String origen, String destino, double precio, int plazas,String companya, boolean semanal, boolean mensual,String ruta)  {
 			BDServicio.abrirBaseDatos(ruta);
 			String sent="";
+			int sumar=0;
 			try {
 				if (semanal==true) {
 					for (int i=0; i<8; i++ ) {	
 						Statement st = conn.createStatement();
-						Date fechanueva= sumarDias(fecha,i);
+						sumar=sumar+7;
+						Date fechanueva= sumarDias(fecha,sumar);
 						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
 						sent="INSERT INTO BUS(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES ('"+fechatoString+"','"+horaSalida+"',"+duracion+",'"+origen+"','"+destino+"',"+precio+","+plazas+",'"+companya+"')";
 						
@@ -463,9 +476,10 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 					log(Level.INFO, "BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS", null);
 					
 				} else {
-					for (int i=0; i<32; i++ ) {
+					for (int i=0; i<8; i++ ) {
 						Statement st = conn.createStatement();
-						Date fechanueva= sumarDias(fecha,i);
+						sumar=sumar+30;
+						Date fechanueva= sumarDias(fecha,sumar);
 						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
 						sent="INSERT INTO BUS(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES ('"+fechatoString+"','"+horaSalida+"',"+duracion+",'"+origen+"','"+destino+"',"+precio+","+plazas+",'"+companya+"')";
 						
@@ -523,9 +537,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 			try {
 				Statement st = conn.createStatement();
 				if(orden.equals("menor")) {
-				 sent= "select * from vuelo order by precio,fecha asc";
+				 sent= "select * from vuelo where plazas_restantes>0 order by precio,fecha asc";
 				}else {
-				     sent= "select * from vuelo  order by precio desc,fecha asc";
+				     sent= "select * from vuelo where plazas_restantes>0 order by precio desc,fecha asc";
 				}
 				
 				ResultSet rs = st.executeQuery(sent);
@@ -572,9 +586,9 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 			try {
 				Statement st = conn.createStatement();
 				if(orden.equals("menor")) {
-				 sent= "select * from bus  order by precio,fecha asc";
+				 sent= "select * from bus where plazas_restantes>0 order by precio,fecha asc";
 				}else {
-				     sent= "select * from bus order by precio desc,fecha asc";
+				     sent= "select * from bus where plazas_restantes>0 order by precio desc,fecha asc";
 				}
 				
 				ResultSet rs = st.executeQuery(sent);
@@ -597,6 +611,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 					listaConBus.add(busNuevo);	
 					
 				}
+				//METODO RECURSIVO PARA FILTRADO
 				listaConBus = Bus.busFiltrado(listaConBus, 0, new ArrayList<Bus> (), origen, destino, fechaInicio, fechaFin);
 				
 			}catch(SQLException sql) {
@@ -1121,6 +1136,37 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 		
 	}
 	
+	public static void restarPlaza(int codServicio, int plazasNuevas, TipoServicio tipo,String ruta) {
+		BDServicio.abrirBaseDatos(ruta);
+		String sent ="";
+		
+		if(tipo.equals(TipoServicio.vuelo)) {
+			sent="update vuelo set plazas_restantes="+plazasNuevas + " where cod_vuelo="+codServicio;
+			
+		}else {
+			sent="update bus set plazas_restantes="+plazasNuevas + " where cod_bus="+codServicio;
+			
+		}
+		
+		
+		try {
+			Statement st = conn.createStatement();
+			st.executeUpdate(sent);
+			
+		} catch (SQLException e) {
+			log(Level.SEVERE, "ERROR AL ACTUALIZAR LAS PLAZAS RESTANTES", e);
+			e.printStackTrace();
+		}
+		
+		//log(Level.INFO, "DEVOLVIENDO BUS DE LA BASE DE DATOS", null);
+		BDServicio.cerrarConexion();
+	
+	}
+	
+	
+	
+	
+	
 	//METODOS DE ESTADISTICA DEL ADMINISTRADOR:
 		
 		//ESTOS METODOS SON LLAMADOS DESDE LA VENTANA DE MOSTRAR ESTADISTICA Y RECIBEN COMO PARAMETRO EL TIPO DE SERVICIO
@@ -1512,6 +1558,7 @@ public static final String baseDatosServicio ="basesDeDatos/serviciosCompanya.db
 		else
 			logger.log( level, msg, excepcion );
 	}
+	
 
 
 	

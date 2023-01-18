@@ -7,9 +7,10 @@ import java.awt.Font;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -206,20 +207,26 @@ public class VentanaCrearVuelo extends JFrame {
 		lblPeriodo.setBounds(65, 468, 139, 14);
 		contentPane.add(lblPeriodo);
 		
-		JRadioButton rbSemanal = new JRadioButton("Semanal");
-		rbSemanal.setSelected(true);
-		rbSemanal.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		rbSemanal.setBackground(new Color(0, 51, 51));
-		rbSemanal.setForeground(new Color(255, 255, 255));
-		rbSemanal.setBounds(214, 464, 109, 23);
-		contentPane.add(rbSemanal);
+  ButtonGroup bg=new ButtonGroup();
 		
-		JRadioButton rdbtnMensual = new JRadioButton("Mensual");
-		rdbtnMensual.setForeground(Color.WHITE);
-		rdbtnMensual.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		rdbtnMensual.setBackground(new Color(0, 51, 51));
-		rdbtnMensual.setBounds(324, 464, 109, 23);
-		contentPane.add(rdbtnMensual);
+		JCheckBox semanal = new JCheckBox("Semanal");
+		semanal.setBackground(new Color(0, 51, 51));
+		semanal.setForeground(new Color(255, 255, 255));
+		semanal.setBounds(214, 464, 109, 23);
+		contentPane.add(semanal);
+		//POR DEFECTO SELECCIONADO
+		semanal.setSelected(true);
+		
+		JCheckBox mensual = new JCheckBox("Mensual");
+		mensual.setForeground(Color.WHITE);
+		mensual.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		mensual.setBackground(new Color(0, 51, 51));
+		mensual.setBounds(324, 464, 109, 23);
+		contentPane.add(mensual);
+		
+		bg.add(semanal);
+		bg.add(mensual);
+		
 		
 		//RENDERES PARA LOS COMBOX
 		
@@ -288,27 +295,20 @@ public class VentanaCrearVuelo extends JFrame {
 				Date fecha =calendarFecha.getDate();
 				String horaSalida= tfHoraSalida.getText();
 				//Por defecto el button semanal estara activado
-				boolean semanal=false;
-				boolean mensual=false;
+				boolean semanalBox=false;
+				boolean mensualBox=false;
 					
-				// IMPLEMENTAR HILO
 				
-				while(semanal==false && mensual==false) {
-					if (rbSemanal.isSelected()==false && rdbtnMensual.isSelected()==true) {
-						semanal=false;
-						mensual=true;
-//					} else if (rbSemanal.isSelected()==false && rdbtnMensual.isSelected()==false) {
-//						JOptionPane.showMessageDialog(null,"Por favor seleccione un periodo");
-//					} else if (rbSemanal.isSelected()==true && rdbtnMensual.isSelected()==true) {
-//						JOptionPane.showMessageDialog(null,"No es posible seleccionar dos periodos a la vez");
-					} else {
-						semanal=true;
-						mensual=false;
-					}
-
-
+				if(semanal.isSelected()) {
+					semanalBox=true;
+					mensualBox=false;
+					
+				}else {
+					semanalBox=false;
+					mensualBox=true;
 				}
-					BDServicio.crearVuelos(fecha,horaSalida,duracion,origen, destino, precio,plazas,companya,semanal,mensual,BDServicio.baseDatosServicio);
+					BDServicio.crearVuelos(fecha,horaSalida,duracion,origen, destino, precio,plazas,companya,
+							semanalBox,mensualBox,BDServicio.baseDatosServicio);
 			
 				
 //				BDServicio.log(Level.INFO, "NUEVOS VUELOS CREADOS", null);

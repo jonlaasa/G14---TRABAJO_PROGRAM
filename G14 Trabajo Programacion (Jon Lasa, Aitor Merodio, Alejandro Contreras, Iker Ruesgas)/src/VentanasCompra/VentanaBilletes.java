@@ -137,6 +137,45 @@ public class VentanaBilletes extends JFrame {
 		continuar.addActionListener(e -> {
 			//OBTENEMOS LA CANTIDAD
 			int cantidad = Integer.parseInt(lcantidad.getText());
+			
+			//COMPROBAMOS SI LA CANTIDAD ES VALIDA CON LAS PLAZAS RESTANTES
+			
+			boolean valido =false;
+			int plazasRestantes= -1;
+			
+			if(servicio instanceof Vuelo) {
+				int plazasServ = ((Vuelo) servicio).getPlazasRestantes();
+				plazasRestantes=plazasServ;
+				if(cantidad<=plazasServ) {
+					valido=true;
+				}
+				
+			} else {
+				
+				if(servicio instanceof Bus) {
+					int plazasServ = ((Bus) servicio).getPlazasRestantes();
+					plazasRestantes=plazasServ;
+					if(cantidad<=plazasServ) {
+						valido=true;
+					}
+				
+				
+			}else {
+				
+				int plazasServ = ((ViajeCombinado) servicio).getPlazasRestantes();
+				plazasRestantes=plazasServ;
+				if(cantidad<=plazasServ) {
+					valido=true;
+				}
+			}
+			}
+				
+				
+				
+				if(valido==true) {
+					
+				
+				
 			Date fechaEnDate = new Date(System.currentTimeMillis());
 			String fechaActual = SDF_FECHA_FOTO.format(fechaEnDate);
 			//SI ES UN BUS, DE LA MISMA YA PODEMOS ESCRIBIRLO EN LA BASE DE DATOS
@@ -172,19 +211,18 @@ public class VentanaBilletes extends JFrame {
 					VentanaMetodoPago vent = new VentanaMetodoPago(usuarioActual,viaj,servicio);
 					vent.setVisible(true);
 					dispose();
-					
-					
-					
+	
 				}
+	
+			}
 				
 			
-			}
+		}else {
 			
-		});
-		
-		
-		
-		
-		
+			JOptionPane.showMessageDialog( null, "Solo disponibles: "+ plazasRestantes+" plazas", "ERROR", JOptionPane.ERROR_MESSAGE);
+			
+		}
+
+		});	
 	}
 }

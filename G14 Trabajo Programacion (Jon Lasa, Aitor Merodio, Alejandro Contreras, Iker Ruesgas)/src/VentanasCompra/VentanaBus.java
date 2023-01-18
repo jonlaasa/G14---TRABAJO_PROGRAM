@@ -227,11 +227,13 @@ public class VentanaBus extends JFrame {
 		calendarIda.setWeekOfYearVisible(false);
 		calendarIda.setBounds(45, 102, 184, 153);
 		contentPane.add(calendarIda);
+		calendarIda.setMinSelectableDate(new Date(System.currentTimeMillis()));
 		
 		JCalendar calendarVuelta = new JCalendar();
 		calendarVuelta.setWeekOfYearVisible(false);
 		calendarVuelta.setBounds(320, 100, 184, 153);
 		contentPane.add(calendarVuelta);
+		calendarVuelta.setMinSelectableDate(new Date(System.currentTimeMillis()));
 		
 		Button buttonBuscarBus = new Button("BUSCAR");
 		buttonBuscarBus.setBounds(245, 208, 70, 19);
