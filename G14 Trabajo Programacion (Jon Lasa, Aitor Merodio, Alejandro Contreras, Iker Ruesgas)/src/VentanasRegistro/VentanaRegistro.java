@@ -16,8 +16,10 @@ import javax.swing.JLabel;
 
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
@@ -124,10 +126,7 @@ public class VentanaRegistro extends JFrame {
 		contentPane.add(btnVolverRegistro);
 		
 		JButton btnRegistrarse = new JButton("Registrarse");
-		btnRegistrarse.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+
 		btnRegistrarse.setBounds(395, 401, 127, 23);
 		contentPane.add(btnRegistrarse);
 		
@@ -153,7 +152,13 @@ public class VentanaRegistro extends JFrame {
 		lblNewLabel_8.setBounds(242, 11, 271, 70);
 		contentPane.add(lblNewLabel_8);
 		
+		ImageIcon imagenFondo =  new ImageIcon("src/ImagenesPNG/vueloruta.png");
+		ImageIcon nuevoIcono = new ImageIcon(imagenFondo.getImage().getScaledInstance(248,300,Image.SCALE_AREA_AVERAGING));
 		
+		JLabel panelIconoVuelo = new JLabel("",nuevoIcono,JLabel.CENTER);		
+		panelIconoVuelo.setBounds(487, 24, 248, 300);
+		
+		contentPane.add(panelIconoVuelo);
 		
 		btnVolverRegistro.addActionListener(e -> {
 			VentanaInicio vr = null;
@@ -207,4 +212,3 @@ public class VentanaRegistro extends JFrame {
 		
 	}
 }
-
