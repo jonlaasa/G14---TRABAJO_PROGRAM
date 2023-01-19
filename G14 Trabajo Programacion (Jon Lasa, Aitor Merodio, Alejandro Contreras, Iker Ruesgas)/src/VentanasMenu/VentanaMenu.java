@@ -20,6 +20,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Insets;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
 
 public class VentanaMenu extends JFrame {
 
@@ -35,32 +39,39 @@ public class VentanaMenu extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JMenuBar menuBar = new JMenuBar();
+		menuBar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		menuBar.setMargin(new Insets(5, 0, 0, 0));
 		menuBar.setBackground(new Color(0, 204, 255));
 		menuBar.setForeground(Color.BLACK);
 		setJMenuBar(menuBar);
 		
 		JMenu jmVuelos = new JMenu("Vuelos");
+		jmVuelos.setFont(new Font("Tahoma", Font.BOLD, 12));
 		menuBar.add(jmVuelos);
 		
 		JMenuItem compraVuelos =  new JMenuItem("Comprar vuelos");
 		jmVuelos.add(compraVuelos);
-		
-		
+
 		JMenu jmBuses = new JMenu("Buses");
+		jmBuses.setFont(new Font("Tahoma", Font.BOLD, 12));
 		menuBar.add(jmBuses);
 		
-
 		JMenuItem compraBuses =  new JMenuItem("Comprar buses");
 		jmBuses.add(compraBuses);
 		
 		JMenu jmICombinado = new JMenu("Viajes Combinados");
+		jmICombinado.setFont(new Font("Tahoma", Font.BOLD, 12));
 		menuBar.add(jmICombinado);
+		
+		JMenu jmEspacio = new JMenu("                                                                                                                                   "); //Este JMenu lo añadimos por estetica ya que queremos que el icono del perfil quede a la derecha
+		jmEspacio.setEnabled(false);
+		menuBar.add(jmEspacio);
 		
 		JMenuItem compraComb =  new JMenuItem("Comprar viajes combinados");
 		jmICombinado.add(compraComb);
 		
-		
 		JMenu mnOpcionesPerfil = new JMenu("");
+		mnOpcionesPerfil.setHorizontalAlignment(SwingConstants.TRAILING);
 		mnOpcionesPerfil.setIcon(new ImageIcon("Imagenes\\icons\\KISSPN~2.JPG"));
 		menuBar.add(mnOpcionesPerfil);
 		
@@ -77,57 +88,79 @@ public class VentanaMenu extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel ftAvion = new JLabel("ftAvion");
-		ftAvion.setIcon(new ImageIcon("imagenes/icons/kisspng-airplane-computer-icons-aircraft-icon-a5-air-transport-5b10f05fb9f810.1049603215278367677617.jpg"));
-		ftAvion.setBounds(240, 114, 60, 23);
+		ImageIcon imagenFondoA =  new ImageIcon("src/ImagenesPNG/AvionFiltro.jpg");
+		ImageIcon nuevoIconoA = new ImageIcon(imagenFondoA.getImage().getScaledInstance(201,128,Image.SCALE_AREA_AVERAGING));
+		
+		JLabel ftAvion = new JLabel("", nuevoIconoA, JLabel.CENTER);
+		ftAvion.setBounds(15, 124, 201, 128);
 		contentPane.add(ftAvion);
 		
-		JButton btnVuelos = new JButton("Vuelos");
+		JButton btnVuelos = new JButton("Vuelo");
+		btnVuelos.setForeground(new Color(0, 0, 255));
+		btnVuelos.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnVuelos.setIcon(null);
-		btnVuelos.setBounds(58, 114, 137, 23);
+		btnVuelos.setBounds(56, 276, 137, 23);
 		contentPane.add(btnVuelos);
 		
-		JLabel ftBus = new JLabel("ftBus");
-		ftBus.setIcon(new ImageIcon("imagenes/icons/kisspng-visakhapatnam-bus-computer-icons-icons-download-bus-png-5ab0d27c5d2195.9444277015215376603815.jpg"));
-		ftBus.setBounds(240, 173, 60, 23);
+		ImageIcon imagenFondoBus =  new ImageIcon("src/ImagenesPNG/BusFiltro.png");
+		ImageIcon nuevoIconoBus = new ImageIcon(imagenFondoBus.getImage().getScaledInstance(201,128,Image.SCALE_AREA_AVERAGING));
+		
+		JLabel ftBus = new JLabel("",nuevoIconoBus, JLabel.CENTER);
+		ftBus.setBounds(237, 124, 201, 128);
 		contentPane.add(ftBus);
 		
-		JButton btnBuses = new JButton("Buses");
-		btnBuses.setBounds(58, 173, 137, 23);
+		JButton btnBuses = new JButton("Bus");
+		btnBuses.setForeground(new Color(34, 139, 34));
+		btnBuses.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnBuses.setBounds(266, 276, 143, 23);
 		contentPane.add(btnBuses);
 		
 		JButton btnViajeCombinado = new JButton("Viaje Combinado");
-		btnViajeCombinado.setBounds(62, 232, 133, 23);
+		btnViajeCombinado.setForeground(new Color(255, 140, 0));
+		
+		btnViajeCombinado.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnViajeCombinado.setBounds(479, 276, 143, 23);
 		contentPane.add(btnViajeCombinado);
 		
-		JLabel ftCombinado = new JLabel("ftCombinado");
-		ftCombinado.setIcon(new ImageIcon("imagenes/icons/descarga.jpg"));
-		ftCombinado.setBounds(240, 218, 60, 37);
+		ImageIcon imagenFondoVC =  new ImageIcon("src/ImagenesPNG/ViajecFiltro.jpg");
+		ImageIcon nuevoIconoVC = new ImageIcon(imagenFondoVC.getImage().getScaledInstance(201,128,Image.SCALE_AREA_AVERAGING));
+		
+		JLabel ftCombinado = new JLabel("",nuevoIconoVC, JLabel.CENTER);
+		ftCombinado.setBounds(460, 124, 201, 128);
 		contentPane.add(ftCombinado);
 		
-		JLabel lblNewLabel_3 = new JLabel("NACIONAL"
-				+ "");
-		lblNewLabel_3.setBounds(99, 89, 80, 14);
-		contentPane.add(lblNewLabel_3);
+		ImageIcon imagenFondo =  new ImageIcon("src/ImagenesPNG/triangulosD.png");
+		ImageIcon nuevoIcono = new ImageIcon(imagenFondo.getImage().getScaledInstance(271,259,Image.SCALE_AREA_AVERAGING));
 		
-		JLabel lblNewLabel_4 = new JLabel("NACIONAL");
-		lblNewLabel_4.setBounds(99, 148, 60, 14);
-		contentPane.add(lblNewLabel_4);
+		JLabel LabeltriangulosD = new JLabel("",nuevoIcono,JLabel.CENTER);		
+		LabeltriangulosD.setBounds(487, 171, 271, 259);
+		contentPane.add(LabeltriangulosD);
 		
-		JLabel lblNewLabel_5 = new JLabel("NACIONAL");
-		lblNewLabel_5.setBounds(99, 208, 60, 14);
-		contentPane.add(lblNewLabel_5);
+		ImageIcon imagenFondoI =  new ImageIcon("src/ImagenesPNG/triangulosI.png");
+		ImageIcon nuevoIconoI = new ImageIcon(imagenFondoI.getImage().getScaledInstance(271,259,Image.SCALE_AREA_AVERAGING));
 		
-		JLabel ftLogo = new JLabel("");
-		ftLogo.setIcon(new ImageIcon("imagenes/icons/avionNN.jpg"));
-		ftLogo.setBounds(458, 76, 139, 179);
-		contentPane.add(ftLogo);
+		JLabel LabeltriangulosI = new JLabel("", nuevoIconoI,JLabel.CENTER);
+		LabeltriangulosI.setBounds(-55, 171, 271, 259);
+		contentPane.add(LabeltriangulosI);
 
 		JLabel lblBienevenida = new JLabel("¡Bienvenido "+usuarioActual.getNombre()+"!");
-		lblBienevenida.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblBienevenida.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblBienevenida.setForeground(new Color(255, 128, 0));
-		lblBienevenida.setBounds(253, 31, 225, 37);
+		lblBienevenida.setBounds(178, 33, 246, 37);
 		contentPane.add(lblBienevenida);
+		
+		ImageIcon imagenFondoN =  new ImageIcon("src/ImagenesPNG/ViajesP.png");
+		ImageIcon nuevoIconoN = new ImageIcon(imagenFondoN.getImage().getScaledInstance(193,73,Image.SCALE_AREA_AVERAGING));
+		
+		JLabel labelN = new JLabel("", nuevoIconoN, JLabel.CENTER);
+		labelN.setBounds(434, 22, 193, 73);
+		contentPane.add(labelN);
+		
+		JLabel lblNewLabel = new JLabel("Seleccione el tipo de viaje que quiera comprar:");
+		lblNewLabel.setForeground(new Color(100, 149, 237));
+		lblNewLabel.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		lblNewLabel.setBounds(15, 94, 232, 14);
+		contentPane.add(lblNewLabel);
 		
 		//EVENTOS DE BOTONES
 		
