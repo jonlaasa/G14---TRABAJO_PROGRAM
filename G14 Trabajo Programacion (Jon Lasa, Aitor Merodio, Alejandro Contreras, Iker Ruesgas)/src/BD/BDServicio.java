@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TreeSet;
+import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -1547,11 +1548,11 @@ public static String fechaActualString = SDF_FECHA_FOTO.format(fechaActualDate);
 		if (logger==null) {  // Logger por defecto sera el local:
 			logger = Logger.getLogger( "Log-BD" );  // Nombre del logger
 			logger.setLevel( Level.ALL );  // Loguea todos los niveles
-//			try {
-//				logger.addHandler( new FileHandler( "T&T-log.xml", true ) );  // Y saca el log a fichero xml
-//			} catch (Exception e) {
-//				logger.log( Level.SEVERE, "No se pudo crear fichero de log", e );
-//			}
+			try {
+				logger.addHandler( new FileHandler( "T&T-log.xml", true ) );  // Y saca el log a fichero xml
+			} catch (Exception e) {
+				logger.log( Level.SEVERE, "No se pudo crear fichero de log", e );
+			}
 		}
 		if (excepcion==null)
 			logger.log( level, msg );

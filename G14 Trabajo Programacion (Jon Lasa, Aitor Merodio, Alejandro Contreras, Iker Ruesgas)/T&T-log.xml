@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-20T14:50:42.891876500Z</date>
+  <millis>1674226242891</millis>
+  <nanos>876500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-20T14:50:56.263443500Z</date>
+  <millis>1674226256263</millis>
+  <nanos>443500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-20T14:50:56.352263600Z</date>
+  <millis>1674226256352</millis>
+  <nanos>263600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-20T14:56:05.655815100Z</date>
+  <millis>1674226565655</millis>
+  <nanos>815100</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-20T14:56:11.117233800Z</date>
+  <millis>1674226571117</millis>
+  <nanos>233800</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-20T14:57:28.458392700Z</date>
+  <millis>1674226648458</millis>
+  <nanos>392700</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-20T14:57:31.892119700Z</date>
+  <millis>1674226651892</millis>
+  <nanos>119700</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>BUSES MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-20T14:57:37.551046500Z</date>
+  <millis>1674226657551</millis>
+  <nanos>46500</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
