@@ -26,20 +26,25 @@ import javax.swing.JOptionPane;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Image;
 
 public class VentanaBilletes extends JFrame {
 	JButton restar, sumar;
 	private JPanel contentPane;
 	private JLabel mensajeEscoja;
-	private JLabel foto;
+	private JLabel fotoTicket;
 	private final static SimpleDateFormat SDF_FECHA_FOTO = new SimpleDateFormat("yyyy/MM/dd");
 	
 	
 	public VentanaBilletes(Usuario usuarioActual, Servicio servicio) {
 
-		setResizable(false);
+		this.setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 512, 316);
+		setBounds(100, 100, 700, 450);
+		
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -48,43 +53,70 @@ public class VentanaBilletes extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		ImageIcon imagenFondo =  new ImageIcon("src/ImagenesPNG/triangulosD.png");
+		ImageIcon nuevoIcono = new ImageIcon(imagenFondo.getImage().getScaledInstance(271,259,Image.SCALE_AREA_AVERAGING));
+		
+		ImageIcon imagenFondoI =  new ImageIcon("src/ImagenesPNG/triangulosI.png");
+		ImageIcon nuevoIconoI = new ImageIcon(imagenFondoI.getImage().getScaledInstance(271,259,Image.SCALE_AREA_AVERAGING));
+		
+		ImageIcon imagenFondoT =  new ImageIcon("src/ImagenesPNG/Ticket.png");
+		ImageIcon nuevoIconoT = new ImageIcon(imagenFondoT.getImage().getScaledInstance(271,259,Image.SCALE_AREA_AVERAGING));
+		
+		fotoTicket = new JLabel("",nuevoIconoT, JLabel.CENTER);
+		fotoTicket.setBounds(166, 28, 361, 172);
+		contentPane.add(fotoTicket);
+		
 		restar = new JButton(" - ");
+		restar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		restar.setForeground(new Color(0, 0, 0));
 		restar.setBackground(new Color(255, 255, 255));
-		restar.setBounds(10, 103, 47, 23);
+		restar.setBounds(243, 218, 58, 44);
 		contentPane.add(restar);
 		
 		sumar = new JButton(" + ");
+		sumar.addActionListener(new ActionListener() {
+		});
+		sumar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		sumar.setBackground(new Color(255, 255, 255));
-		sumar.setBounds(144, 103, 47, 23);
+		sumar.setBounds(384, 219, 58, 44);
 		contentPane.add(sumar);
 		
-		mensajeEscoja = new JLabel("Escoja el numero de tickets que desee:");
-		mensajeEscoja.setBounds(10, 67, 256, 14);
+		mensajeEscoja = new JLabel("Escoja el numero de tickets que desee");
+		mensajeEscoja.setForeground(new Color(100, 149, 237));
+		mensajeEscoja.setFont(new Font("Tahoma", Font.ITALIC, 12));
+		mensajeEscoja.setBounds(243, 274, 256, 14);
 		contentPane.add(mensajeEscoja);
-		
-		foto = new JLabel("");
-		foto.setIcon(new ImageIcon("imagenes//icons//fotoBilletes.jpg"));
-		foto.setBounds(276, 48, 193, 184);
-		contentPane.add(foto);
 		
 		JButton continuar = new JButton("Continuar");
 		continuar.setBackground(new Color(255, 255, 255));
-		continuar.setBounds(10, 190, 89, 23);
+		continuar.setBounds(553, 343, 89, 23);
 		contentPane.add(continuar);
 		
-		JLabel mensajeYaQueda = new JLabel("Ya queda menos");
-		mensajeYaQueda.setBounds(10, 157, 181, 14);
+		JLabel mensajeYaQueda = new JLabel("Ya queda menos...");
+		mensajeYaQueda.setFont(new Font("Tahoma", Font.ITALIC, 14));
+		mensajeYaQueda.setBounds(408, 343, 135, 23);
 		contentPane.add(mensajeYaQueda);
 		
 		JLabel lcantidad = new JLabel("1");
-		lcantidad.setBounds(78, 107, 46, 14);
+		lcantidad.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lcantidad.setHorizontalAlignment(SwingConstants.CENTER);
+		lcantidad.setForeground(Color.BLACK);
+		lcantidad.setBackground(new Color(192, 192, 192));
+		lcantidad.setBounds(316, 219, 58, 44);
 		contentPane.add(lcantidad);
 		
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.setBackground(Color.WHITE);
-		btnAtras.setBounds(115, 190, 89, 23);
+		btnAtras.setBounds(57, 343, 89, 23);
 		contentPane.add(btnAtras);
+		
+		JLabel LabeltriangulosD = new JLabel("",nuevoIcono,JLabel.CENTER);		
+		LabeltriangulosD.setBounds(487, 171, 271, 259);
+		contentPane.add(LabeltriangulosD);
+		
+		JLabel LabeltriangulosI = new JLabel("", nuevoIconoI,JLabel.CENTER);
+		LabeltriangulosI.setBounds(-55, 171, 271, 259);
+		contentPane.add(LabeltriangulosI);
 		
 		//EVENTOS DE SELECCION DE CANTIDAD
 		sumar.addActionListener(e -> {
@@ -131,8 +163,6 @@ public class VentanaBilletes extends JFrame {
 		
 		
 		//CONTINUAMOS
-		
-		
 		
 		continuar.addActionListener(e -> {
 			//OBTENEMOS LA CANTIDAD

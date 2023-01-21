@@ -114,7 +114,6 @@ public static String fechaActualString = SDF_FECHA_FOTO.format(fechaActualDate);
 	
 	
 	
-	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS BUSES PARA MOSTRAR EN LA TABLA
 	public static ArrayList <Bus> mostrarBusesTotal(String ruta) {
 		BDServicio.abrirBaseDatos(ruta);

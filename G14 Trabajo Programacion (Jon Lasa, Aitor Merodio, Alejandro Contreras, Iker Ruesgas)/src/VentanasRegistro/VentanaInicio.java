@@ -56,10 +56,10 @@ public class VentanaInicio extends JFrame {
 		btnIniciarSesion.setBounds(403, 316, 53, 54);
 		contentPane.add(btnIniciarSesion);
 
-		JLabel lblBienvenido = new JLabel("Bienvenido");
+		JLabel lblBienvenido = new JLabel("Bienvenid@!");
 		lblBienvenido.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblBienvenido.setForeground(new Color(255, 128, 0));
-		lblBienvenido.setBounds(286, 35, 127, 71);
+		lblBienvenido.setBounds(283, 21, 127, 71);
 		contentPane.add(lblBienvenido);
 		
 		JButton btnDescripcion = new JButton("Conocenos!");
@@ -92,7 +92,7 @@ public class VentanaInicio extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("imagenes\\logo.jpeg"));
-		lblNewLabel.setBounds(27, 56, 594, 373);
+		lblNewLabel.setBounds(26, 38, 594, 373);
 		contentPane.add(lblNewLabel);
 		
 		Date fecha = new Date(System.currentTimeMillis());

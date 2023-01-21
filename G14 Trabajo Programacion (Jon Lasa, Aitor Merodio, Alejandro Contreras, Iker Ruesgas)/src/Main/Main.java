@@ -10,6 +10,7 @@ import BD.BDServicio;
 import Datos.Administrador;
 import Datos.Bus;
 import Datos.RentingCoche;
+import Datos.Servicio;
 import Datos.Usuario;
 import Datos.Vuelo;
 import Datos.VueloComprado;
@@ -20,6 +21,7 @@ import VentanasAdministrador.VentanaCrearBus;
 import VentanasAdministrador.VentanaCrearVuelo;
 import VentanasAdministrador.VentanaInicioAdmin;
 import VentanasAdministrador.VentanaMostrarEstadistica;
+import VentanasCompra.VentanaBilletes;
 import VentanasCompra.VentanaBus;
 import VentanasCompra.VentanaViajesC;
 import VentanasCompra.VentanaVuelo;
@@ -36,9 +38,11 @@ public class Main {
 		Administrador a = new Administrador();
 		Usuario u = new Usuario();
 		
-		VentanaInicio v = new VentanaInicio();
-		v.setVisible(true);
+//		VentanaInicio v = new VentanaInicio();
+//		v.setVisible(true);
 		
+		VentanaVuelo b = new VentanaVuelo(u);
+		b.setVisible(true);
 	}
 	
 	

@@ -143,10 +143,10 @@ public class VentanaMenu extends JFrame {
 		LabeltriangulosI.setBounds(-55, 171, 271, 259);
 		contentPane.add(LabeltriangulosI);
 
-		JLabel lblBienevenida = new JLabel("¡Bienvenido "+usuarioActual.getNombre()+"!");
+		JLabel lblBienevenida = new JLabel("¡Bienvenid@ <dynamic>!");
 		lblBienevenida.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblBienevenida.setForeground(new Color(255, 128, 0));
-		lblBienevenida.setBounds(178, 33, 246, 37);
+		lblBienevenida.setBounds(181, 33, 252, 37);
 		contentPane.add(lblBienevenida);
 		
 		ImageIcon imagenFondoN =  new ImageIcon("src/ImagenesPNG/ViajesP.png");

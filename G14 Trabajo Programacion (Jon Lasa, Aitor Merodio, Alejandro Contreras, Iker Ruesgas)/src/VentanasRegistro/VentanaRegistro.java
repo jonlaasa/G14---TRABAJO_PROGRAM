@@ -34,11 +34,11 @@ public class VentanaRegistro extends JFrame {
 	private JTextField usuario;
 	private JTextField dni;
 	private JTextField apellido;
-	private JTextField nombre;
 	private JPasswordField contrasenya;
 	private JPasswordField contrasenyaRepetida;
 	private JButton btnVolverRegistro;
 	private JTextField mail;
+	private JTextField nombre;
 	
 
 
@@ -102,12 +102,6 @@ public class VentanaRegistro extends JFrame {
 		contentPane.add(apellido);
 		apellido.setColumns(10);
 		
-		nombre = new JTextField();
-		nombre.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		nombre.setBounds(189, 123, 138, 20);
-		contentPane.add(nombre);
-		nombre.setColumns(10);
-		
 		contrasenya = new JPasswordField();
 		contrasenya.setBounds(189, 337, 138, 20);
 		contentPane.add(contrasenya);
@@ -160,6 +154,11 @@ public class VentanaRegistro extends JFrame {
 		
 		contentPane.add(panelIconoVuelo);
 		
+		nombre = new JTextField();
+		nombre.setColumns(10);
+		nombre.setBounds(189, 123, 138, 20);
+		contentPane.add(nombre);
+		
 		btnVolverRegistro.addActionListener(e -> {
 			VentanaInicio vr = null;
 			vr = new VentanaInicio();
@@ -183,7 +182,7 @@ public class VentanaRegistro extends JFrame {
 					Utils.comprobarString(contra);					
 					Utils.comprobarString(ape);
 					Utils.comprobarString(nom);
-					Utils.comprobarString(dn);
+					Utils.validarDni(dn);
 					Utils.comprobarStringUsuario(usr);
 					Utils.comprobarStringContra(contra);
 					Utils.comprobarContrasenyas(contra, contraRepe);

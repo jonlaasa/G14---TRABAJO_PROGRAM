@@ -6,9 +6,6 @@ import javax.swing.JOptionPane;
 public class Utils {
 	
 	
-	
-
-	
 	//METODO PARA COMPROBAR SI EL STRING ES VALIDO
 	public static boolean comprobarString(String a) throws StringValidoException{
 		if (!a.equals("")&&!a.equals(null)&&!a.equals(" ")) {
@@ -28,6 +25,7 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	    	  return true;
 	      }
 	      else {
+	    	  JOptionPane.showMessageDialog(null, "Correo no valido","ERROR",JOptionPane.ERROR_MESSAGE);
 	    	  throw new CorreoNoValidoException("Correo incorrecto: " + a);
 	    	  
 	      }
@@ -92,12 +90,12 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	public static boolean comprobarStringUsuario(String a) throws LongitudStringException, CaracterNoValidoExcepcion{
 		try {
 			if(a.length()<=6) {
-				JOptionPane.showMessageDialog(null,"El usuario debe contener mas de 6 caracteres" );
+				JOptionPane.showMessageDialog(null,"El usuario debe contener mas de 6 caracteres","ERROR",JOptionPane.ERROR_MESSAGE );
 				throw new LongitudStringException("Longitud no VALIDA (TIENE QUE SER MAYOR QUE 6 : " + a);
 			}
 			char[] palabra = a.toCharArray();
 			if(!Character.isLetter(palabra[0])) {
-				JOptionPane.showMessageDialog(null,"El usuario debe empezar por una letra" );
+				JOptionPane.showMessageDialog(null,"El usuario debe empezar por una letra","ERROR",JOptionPane.ERROR_MESSAGE );
 				throw new CaracterNoValidoExcepcion("Primer caracter no valido, tiene que empezar por letra : " + a);
 			}
 			else {
@@ -127,7 +125,7 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	public static boolean comprobarStringContra(String a) throws LongitudStringException{
 		try {
 			if(a.length()<=6) {
-				JOptionPane.showMessageDialog(null,"La contrasenya debe contener mas de 6 caracteres" );
+				JOptionPane.showMessageDialog(null,"La contrasenya debe contener mas de 6 caracteres" ,"ERROR",JOptionPane.ERROR_MESSAGE);
 				throw new LongitudStringException("Longitud no VALIDA (TIENE QUE SER MAYOR QUE 6 : " + a);
 			}	
 			else {
@@ -142,16 +140,29 @@ public static boolean comprobarMail(String a) throws CorreoNoValidoException {
 	
 
 		
-		
 	public static boolean comprobarContrasenyas(String a,String b) throws Exception {
 		if(a.equals(b)) {
 			return true;
 		}else {
-			JOptionPane.showMessageDialog(null, "Las contrasenyas no coinciden");
+			JOptionPane.showMessageDialog(null, "Las contrasenyas no coinciden","ERROR",JOptionPane.ERROR_MESSAGE);
 			throw new Exception("Las contrasenya no coinciden");
 			}
 		}
 	
+	public static boolean validarDni(String a) throws Exception {
+		
+		try {
+			
+			if(a.length()!=9 || Character.isLetter(a.charAt(8)) == false ) {
+				JOptionPane.showMessageDialog(null, "Informacion incorrecta en: DNI. Revise los datos introducidos","ERROR",JOptionPane.ERROR_MESSAGE);
+				throw new Exception("Revisa valores: Introducido "+a+"en el campo DNI. Revise los datos introducidos");
+			}else {
+				return true;
+			}
+		}catch(Exception e ) {
+			throw new Exception("Revisa valores: Introducido "+a+"en el campo DNI. Revise los datos introducidos");
+		}
+	}
 	
 	public static boolean comprobarNumerosConLongitud(String a, int longitud, String campo) throws Exception {
 	

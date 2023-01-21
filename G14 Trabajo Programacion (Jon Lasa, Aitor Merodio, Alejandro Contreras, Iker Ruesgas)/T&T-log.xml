@@ -98,3 +98,843 @@
   <message>BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T16:42:00.632743900Z</date>
+  <millis>1674319320632</millis>
+  <nanos>743900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 17:42:00 CET 2023</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T16:42:32.357992700Z</date>
+  <millis>1674319352357</millis>
+  <nanos>992700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 17:42:32 CET 2023</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T16:45:04.104899300Z</date>
+  <millis>1674319504104</millis>
+  <nanos>899300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 17:45:04 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-21T16:45:05.777679100Z</date>
+  <millis>1674319505777</millis>
+  <nanos>679100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2023-01-21T16:45:10.856309600Z</date>
+  <millis>1674319510856</millis>
+  <nanos>309600</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 17:45:10 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-21T16:45:11.913019800Z</date>
+  <millis>1674319511913</millis>
+  <nanos>19800</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2023-01-21T16:45:28.073780Z</date>
+  <millis>1674319528073</millis>
+  <nanos>780000</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+<record>
+  <date>2023-01-21T16:46:49.563915400Z</date>
+  <millis>1674319609563</millis>
+  <nanos>915400</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-21T16:46:57.111685300Z</date>
+  <millis>1674319617111</millis>
+  <nanos>685300</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-21T16:47:08.222783400Z</date>
+  <millis>1674319628222</millis>
+  <nanos>783400</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-21T16:47:08.224780500Z</date>
+  <millis>1674319628224</millis>
+  <nanos>780500</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-21T16:47:08.225778100Z</date>
+  <millis>1674319628225</millis>
+  <nanos>778100</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-21T16:47:08.230186700Z</date>
+  <millis>1674319628230</millis>
+  <nanos>186700</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-21T16:47:09.416221500Z</date>
+  <millis>1674319629416</millis>
+  <nanos>221500</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Sesion iniciada con exito del usuario: maria_j</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T16:50:10.559830100Z</date>
+  <millis>1674319810559</millis>
+  <nanos>830100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 17:50:10 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-21T16:50:11.273493Z</date>
+  <millis>1674319811273</millis>
+  <nanos>493000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T16:52:29.997607300Z</date>
+  <millis>1674319949997</millis>
+  <nanos>607300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 17:52:29 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-21T16:52:31.384591Z</date>
+  <millis>1674319951384</millis>
+  <nanos>591000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T16:56:31.968879900Z</date>
+  <millis>1674320191968</millis>
+  <nanos>879900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 17:56:31 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-21T16:56:32.648944600Z</date>
+  <millis>1674320192648</millis>
+  <nanos>944600</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:11:44.301809400Z</date>
+  <millis>1674321104301</millis>
+  <nanos>809400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 18:11:44 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-21T17:11:45.423568400Z</date>
+  <millis>1674321105423</millis>
+  <nanos>568400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:12:58.242055Z</date>
+  <millis>1674321178242</millis>
+  <nanos>55000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 18:12:58 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-21T17:12:59.343982700Z</date>
+  <millis>1674321179343</millis>
+  <nanos>982700</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:15:49.770253600Z</date>
+  <millis>1674321349770</millis>
+  <nanos>253600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 18:15:49 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-21T17:15:50.735436800Z</date>
+  <millis>1674321350735</millis>
+  <nanos>436800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2023-01-21T17:16:13.284955700Z</date>
+  <millis>1674321373284</millis>
+  <nanos>955700</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-21T17:16:13.288936100Z</date>
+  <millis>1674321373288</millis>
+  <nanos>936100</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-21T17:16:13.289931700Z</date>
+  <millis>1674321373289</millis>
+  <nanos>931700</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-21T17:16:13.291930700Z</date>
+  <millis>1674321373291</millis>
+  <nanos>930700</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-21T17:16:14.614890400Z</date>
+  <millis>1674321374614</millis>
+  <nanos>890400</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Sesion iniciada con exito del usuario: maria_j</message>
+</record>
+<record>
+  <date>2023-01-21T17:17:11.298569600Z</date>
+  <millis>1674321431298</millis>
+  <nanos>569600</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Realizando filtrado de los vuelos</message>
+</record>
+<record>
+  <date>2023-01-21T17:17:21.432402700Z</date>
+  <millis>1674321441432</millis>
+  <nanos>402700</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Realizando filtrado de los vuelos</message>
+</record>
+<record>
+  <date>2023-01-21T17:17:23.928363300Z</date>
+  <millis>1674321443928</millis>
+  <nanos>363300</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Realizando filtrado de los vuelos</message>
+</record>
+<record>
+  <date>2023-01-21T17:17:26.360381100Z</date>
+  <millis>1674321446360</millis>
+  <nanos>381100</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Realizando filtrado de los vuelos</message>
+</record>
+<record>
+  <date>2023-01-21T17:17:34.696387400Z</date>
+  <millis>1674321454696</millis>
+  <nanos>387400</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-21T17:17:47.919786700Z</date>
+  <millis>1674321467919</millis>
+  <nanos>786700</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la ventana de servicios adicionales de vuelo</message>
+</record>
+<record>
+  <date>2023-01-21T17:18:01.088452700Z</date>
+  <millis>1674321481088</millis>
+  <nanos>452700</nanos>
+  <sequence>13</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la ventana de METODO DE PAGO, para pagar el vuelo</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:22:57.733221100Z</date>
+  <millis>1674321777733</millis>
+  <nanos>221100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:24:47.615668500Z</date>
+  <millis>1674321887615</millis>
+  <nanos>668500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-21T17:24:49.720018900Z</date>
+  <millis>1674321889720</millis>
+  <nanos>18900</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la ventana de servicios adicionales de vuelo</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:25:37.982150900Z</date>
+  <millis>1674321937982</millis>
+  <nanos>150900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-21T17:25:40.919741100Z</date>
+  <millis>1674321940919</millis>
+  <nanos>741100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la ventana de servicios adicionales de vuelo</message>
+</record>
+<record>
+  <date>2023-01-21T17:25:42.983437800Z</date>
+  <millis>1674321942983</millis>
+  <nanos>437800</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la ventana de METODO DE PAGO, para pagar el vuelo</message>
+</record>
+<record>
+  <date>2023-01-21T17:25:46.569585400Z</date>
+  <millis>1674321946569</millis>
+  <nanos>585400</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-21T17:25:46.570579100Z</date>
+  <millis>1674321946570</millis>
+  <nanos>579100</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>OBTENENIENDO LOS PUNTOS DEL USUARIO</message>
+</record>
+<record>
+  <date>2023-01-21T17:25:46.572612100Z</date>
+  <millis>1674321946572</millis>
+  <nanos>612100</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>PUNTOS DEL USUARIO OBTENIDOS</message>
+</record>
+<record>
+  <date>2023-01-21T17:25:46.573623600Z</date>
+  <millis>1674321946573</millis>
+  <nanos>623600</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-21T17:25:46.573623600Z</date>
+  <millis>1674321946573</millis>
+  <nanos>623600</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>INTENTO DE PAGAR CON PUNTOS, PERO NO TIENE LOS SUFICIENTES EL USUARIO: </message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:26:05.552733300Z</date>
+  <millis>1674321965552</millis>
+  <nanos>733300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 18:26:05 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-21T17:26:08.558910400Z</date>
+  <millis>1674321968558</millis>
+  <nanos>910400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:26:28.949244Z</date>
+  <millis>1674321988949</millis>
+  <nanos>244000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sat Jan 21 18:26:28 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-21T17:26:29.662988300Z</date>
+  <millis>1674321989662</millis>
+  <nanos>988300</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a REGISTRO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:30:26.772893100Z</date>
+  <millis>1674322226772</millis>
+  <nanos>893100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:37:47.783225300Z</date>
+  <millis>1674322667783</millis>
+  <nanos>225300</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:38:42.964146600Z</date>
+  <millis>1674322722964</millis>
+  <nanos>146600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-21T17:38:45.799555400Z</date>
+  <millis>1674322725799</millis>
+  <nanos>555400</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-21T17:38:52.535256200Z</date>
+  <millis>1674322732535</millis>
+  <nanos>256200</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-21T17:38:56.503253100Z</date>
+  <millis>1674322736503</millis>
+  <nanos>253100</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:39:06.876370Z</date>
+  <millis>1674322746876</millis>
+  <nanos>370000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:39:51.062567900Z</date>
+  <millis>1674322791062</millis>
+  <nanos>567900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:41:00.461011600Z</date>
+  <millis>1674322860461</millis>
+  <nanos>11600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-21T17:42:54.324115100Z</date>
+  <millis>1674322974324</millis>
+  <nanos>115100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+</log>
