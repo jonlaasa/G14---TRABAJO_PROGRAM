@@ -315,6 +315,8 @@ public class VentanaCrearBus extends JFrame {
 					
 					BDServicio.crearBuses(fecha, horaSalida, duracion, origen, destino, precio, plazas, companya, semanalBox,
 							mensualBox,BDServicio.baseDatosServicio);
+					
+					JOptionPane.showMessageDialog(null, "Bus creado","OPERACION COMPLETADA",JOptionPane.INFORMATION_MESSAGE);
 			
 				
 //				BDServicio.log(Level.INFO, "NUEVOS BUSES CREADOS", null);

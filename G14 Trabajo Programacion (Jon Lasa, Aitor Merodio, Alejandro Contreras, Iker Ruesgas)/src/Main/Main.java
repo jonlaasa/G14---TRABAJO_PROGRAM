@@ -41,7 +41,7 @@ public class Main {
 //		VentanaInicio v = new VentanaInicio();
 //		v.setVisible(true);
 		
-		VentanaVuelo b = new VentanaVuelo(u);
+		VentanaInicio b = new VentanaInicio();
 		b.setVisible(true);
 	}
 	

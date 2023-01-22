@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T12:15:34.241738400Z</date>
+  <millis>1674389734241</millis>
+  <nanos>738400</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:15:36.039610100Z</date>
+  <millis>1674389736039</millis>
+  <nanos>610100</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-22T12:15:39.062839800Z</date>
+  <millis>1674389739062</millis>
+  <nanos>839800</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la ventana de METODO DE PAGO, para pagar el bus</message>
+</record>
+<record>
+  <date>2023-01-22T12:16:38.409982700Z</date>
+  <millis>1674389798409</millis>
+  <nanos>982700</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>INSERTADA LA COMPRA EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:16:38.419966400Z</date>
+  <millis>1674389798419</millis>
+  <nanos>966400</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T12:16:38.423963800Z</date>
+  <millis>1674389798423</millis>
+  <nanos>963800</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>OBTENENIENDO LOS PUNTOS DEL USUARIO</message>
+</record>
+<record>
+  <date>2023-01-22T12:16:38.430960500Z</date>
+  <millis>1674389798430</millis>
+  <nanos>960500</nanos>
+  <sequence>13</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>PUNTOS DEL USUARIO OBTENIDOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:16:38.435958Z</date>
+  <millis>1674389798435</millis>
+  <nanos>958000</nanos>
+  <sequence>14</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T12:16:38.442954200Z</date>
+  <millis>1674389798442</millis>
+  <nanos>954200</nanos>
+  <sequence>15</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T12:16:38.467943500Z</date>
+  <millis>1674389798467</millis>
+  <nanos>943500</nanos>
+  <sequence>16</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ACTUALIZADOS LOS PUNTOS DEL USUARIO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T12:17:06.533856700Z</date>
+  <millis>1674389826533</millis>
+  <nanos>856700</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:17:12.212846500Z</date>
+  <millis>1674389832212</millis>
+  <nanos>846500</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-22T12:17:18.795766400Z</date>
+  <millis>1674389838795</millis>
+  <nanos>766400</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Accediendo a la ventana de METODO DE PAGO, para pagar el bus</message>
+</record>
+<record>
+  <date>2023-01-22T12:17:20.429685800Z</date>
+  <millis>1674389840429</millis>
+  <nanos>685800</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>INSERTADA LA COMPRA EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:17:20.439669400Z</date>
+  <millis>1674389840439</millis>
+  <nanos>669400</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T12:17:20.443668100Z</date>
+  <millis>1674389840443</millis>
+  <nanos>668100</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>OBTENENIENDO LOS PUNTOS DEL USUARIO</message>
+</record>
+<record>
+  <date>2023-01-22T12:17:20.450671800Z</date>
+  <millis>1674389840450</millis>
+  <nanos>671800</nanos>
+  <sequence>13</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>PUNTOS DEL USUARIO OBTENIDOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:17:20.454671700Z</date>
+  <millis>1674389840454</millis>
+  <nanos>671700</nanos>
+  <sequence>14</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T12:17:20.461656300Z</date>
+  <millis>1674389840461</millis>
+  <nanos>656300</nanos>
+  <sequence>15</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T12:17:20.484104200Z</date>
+  <millis>1674389840484</millis>
+  <nanos>104200</nanos>
+  <sequence>16</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ACTUALIZADOS LOS PUNTOS DEL USUARIO</message>
+</record>
+</log>

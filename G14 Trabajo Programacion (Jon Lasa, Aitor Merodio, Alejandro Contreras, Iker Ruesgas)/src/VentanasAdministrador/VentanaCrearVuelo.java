@@ -309,6 +309,8 @@ public class VentanaCrearVuelo extends JFrame {
 				}
 					BDServicio.crearVuelos(fecha,horaSalida,duracion,origen, destino, precio,plazas,companya,
 							semanalBox,mensualBox,BDServicio.baseDatosServicio);
+					
+					JOptionPane.showMessageDialog(null, "Vuelo creado","OPERACION COMPLETADA",JOptionPane.INFORMATION_MESSAGE);
 			
 				
 //				BDServicio.log(Level.INFO, "NUEVOS VUELOS CREADOS", null);

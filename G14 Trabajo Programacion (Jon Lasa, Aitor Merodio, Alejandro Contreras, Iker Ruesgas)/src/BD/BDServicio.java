@@ -1548,7 +1548,7 @@ public static String fechaActualString = SDF_FECHA_FOTO.format(fechaActualDate);
 			logger = Logger.getLogger( "Log-BD" );  // Nombre del logger
 			logger.setLevel( Level.ALL );  // Loguea todos los niveles
 			try {
-				logger.addHandler( new FileHandler( "T&T-log.xml", true ) );  // Y saca el log a fichero xml
+				logger.addHandler( new FileHandler( "T&T-log-Servicio.xml", true ) );  // Y saca el log a fichero xml
 			} catch (Exception e) {
 				logger.log( Level.SEVERE, "No se pudo crear fichero de log", e );
 			}

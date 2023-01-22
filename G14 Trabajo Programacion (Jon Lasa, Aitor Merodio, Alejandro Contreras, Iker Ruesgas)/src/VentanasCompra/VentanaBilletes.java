@@ -74,8 +74,6 @@ public class VentanaBilletes extends JFrame {
 		contentPane.add(restar);
 		
 		sumar = new JButton(" + ");
-		sumar.addActionListener(new ActionListener() {
-		});
 		sumar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		sumar.setBackground(new Color(255, 255, 255));
 		sumar.setBounds(384, 219, 58, 44);
