@@ -2050,3 +2050,631 @@
   <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T14:01:00.815421500Z</date>
+  <millis>1674396060815</millis>
+  <nanos>421500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sun Jan 22 15:01:00 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:02.694696Z</date>
+  <millis>1674396062694</millis>
+  <nanos>696000</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:13.460799400Z</date>
+  <millis>1674396073460</millis>
+  <nanos>799400</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:13.465752500Z</date>
+  <millis>1674396073465</millis>
+  <nanos>752500</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:13.466750400Z</date>
+  <millis>1674396073466</millis>
+  <nanos>750400</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:13.468789Z</date>
+  <millis>1674396073468</millis>
+  <nanos>789000</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:14.422403500Z</date>
+  <millis>1674396074422</millis>
+  <nanos>403500</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Sesion iniciada con exito del usuario: alejandro</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:16.700308Z</date>
+  <millis>1674396076700</millis>
+  <nanos>308000</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:17.456604100Z</date>
+  <millis>1674396077456</millis>
+  <nanos>604100</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:20.563108800Z</date>
+  <millis>1674396080563</millis>
+  <nanos>108800</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:20.747617100Z</date>
+  <millis>1674396080747</millis>
+  <nanos>617100</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:20.938621100Z</date>
+  <millis>1674396080938</millis>
+  <nanos>621100</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:21.144980500Z</date>
+  <millis>1674396081144</millis>
+  <nanos>980500</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:21.332119700Z</date>
+  <millis>1674396081332</millis>
+  <nanos>119700</nanos>
+  <sequence>13</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:21.514809600Z</date>
+  <millis>1674396081514</millis>
+  <nanos>809600</nanos>
+  <sequence>14</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:21.714591Z</date>
+  <millis>1674396081714</millis>
+  <nanos>591000</nanos>
+  <sequence>15</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:21.931167800Z</date>
+  <millis>1674396081931</millis>
+  <nanos>167800</nanos>
+  <sequence>16</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:01:22.241040800Z</date>
+  <millis>1674396082241</millis>
+  <nanos>40800</nanos>
+  <sequence>17</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T14:07:55.346275400Z</date>
+  <millis>1674396475346</millis>
+  <nanos>275400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sun Jan 22 15:07:55 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-22T14:07:56.134524500Z</date>
+  <millis>1674396476134</millis>
+  <nanos>524500</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:03.419749200Z</date>
+  <millis>1674396483419</millis>
+  <nanos>749200</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:03.424735800Z</date>
+  <millis>1674396483424</millis>
+  <nanos>735800</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:03.425733100Z</date>
+  <millis>1674396483425</millis>
+  <nanos>733100</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:03.427727900Z</date>
+  <millis>1674396483427</millis>
+  <nanos>727900</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:04.317884100Z</date>
+  <millis>1674396484317</millis>
+  <nanos>884100</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Sesion iniciada con exito del usuario: alejandro</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:05.450026500Z</date>
+  <millis>1674396485450</millis>
+  <nanos>26500</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:06.067798900Z</date>
+  <millis>1674396486067</millis>
+  <nanos>798900</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:06.252424900Z</date>
+  <millis>1674396486252</millis>
+  <nanos>424900</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T14:08:32.132984100Z</date>
+  <millis>1674396512132</millis>
+  <nanos>984100</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sun Jan 22 15:08:32 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:33.078502200Z</date>
+  <millis>1674396513078</millis>
+  <nanos>502200</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:42.538007100Z</date>
+  <millis>1674396522538</millis>
+  <nanos>7100</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:42.542993800Z</date>
+  <millis>1674396522542</millis>
+  <nanos>993800</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:42.543991100Z</date>
+  <millis>1674396522543</millis>
+  <nanos>991100</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:42.545988Z</date>
+  <millis>1674396522545</millis>
+  <nanos>988000</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:43.430064700Z</date>
+  <millis>1674396523430</millis>
+  <nanos>64700</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Sesion iniciada con exito del usuario: alejandro</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:44.434337300Z</date>
+  <millis>1674396524434</millis>
+  <nanos>337300</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:44.836410800Z</date>
+  <millis>1674396524836</millis>
+  <nanos>410800</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:08:44.988446400Z</date>
+  <millis>1674396524988</millis>
+  <nanos>446400</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T14:10:37.073822700Z</date>
+  <millis>1674396637073</millis>
+  <nanos>822700</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Iniciando aplicacion T&amp;T, en hora: Sun Jan 22 15:10:37 CET 2023</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:37.758367100Z</date>
+  <millis>1674396637758</millis>
+  <nanos>367100</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a Inicio de sesion</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:43.579241100Z</date>
+  <millis>1674396643579</millis>
+  <nanos>241100</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:43.584197800Z</date>
+  <millis>1674396643584</millis>
+  <nanos>197800</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:43.585195400Z</date>
+  <millis>1674396643585</millis>
+  <nanos>195400</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:43.587219600Z</date>
+  <millis>1674396643587</millis>
+  <nanos>219600</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:44.348665100Z</date>
+  <millis>1674396644348</millis>
+  <nanos>665100</nanos>
+  <sequence>6</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Sesion iniciada con exito del usuario: alejandro</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:45.439299400Z</date>
+  <millis>1674396645439</millis>
+  <nanos>299400</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:45.486203400Z</date>
+  <millis>1674396645486</millis>
+  <nanos>203400</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:45.488198600Z</date>
+  <millis>1674396645488</millis>
+  <nanos>198600</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO RECUPERAR DESTINOS ORIGEN DE LOS VUELOS PARA LOS VIAJES COMBINADOS</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:45.490164400Z</date>
+  <millis>1674396645490</millis>
+  <nanos>164400</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO CON EXITO LOS  ORIGEN DE LOS VUELOS PARA LOS VIAJES COMBINADOS</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:45.492158900Z</date>
+  <millis>1674396645492</millis>
+  <nanos>158900</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO RECUPERAR DESTINOS PARA LOS VIAJES COMBINADOS</message>
+</record>
+<record>
+  <date>2023-01-22T14:10:45.494153800Z</date>
+  <millis>1674396645494</millis>
+  <nanos>153800</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO CON EXITO LOS  DESTINOS BUS PARA LOS VIAJES COMBINADOS</message>
+</record>
+</log>
