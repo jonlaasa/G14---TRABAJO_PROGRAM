@@ -91,6 +91,20 @@ public class VentanaInicioAdmin extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		ImageIcon imagenFondod =  new ImageIcon("src/ImagenesPNG/triangulosD.png");
+		ImageIcon nuevoIconod = new ImageIcon(imagenFondod.getImage().getScaledInstance(271,259,Image.SCALE_AREA_AVERAGING));
+		
+		JLabel LabeltriangulosD = new JLabel("",nuevoIconod,JLabel.CENTER);		
+		LabeltriangulosD.setBounds(487, 171, 271, 259);
+		contentPane.add(LabeltriangulosD);
+		
+		ImageIcon imagenFondoI =  new ImageIcon("src/ImagenesPNG/triangulosI.png");
+		ImageIcon nuevoIconoI = new ImageIcon(imagenFondoI.getImage().getScaledInstance(271,259,Image.SCALE_AREA_AVERAGING));
+		
+		JLabel LabeltriangulosI = new JLabel("", nuevoIconoI,JLabel.CENTER);
+		LabeltriangulosI.setBounds(-55, 171, 271, 259);
+		contentPane.add(LabeltriangulosI);
+		
 		JLabel lblUsuariosActuales = new JLabel("MENU DE ADMINISTARDORES");
 		lblUsuariosActuales.setForeground(new Color(255, 128, 0));
 		lblUsuariosActuales.setFont(new Font("Tahoma", Font.BOLD, 16));

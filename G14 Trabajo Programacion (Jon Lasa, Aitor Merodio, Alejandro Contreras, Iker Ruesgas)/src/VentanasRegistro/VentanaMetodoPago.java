@@ -2,6 +2,9 @@ package VentanasRegistro;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -144,7 +147,7 @@ public class VentanaMetodoPago extends JFrame {
 		
 		JButton pagarConMetodo = new JButton("PAGAR CON TARJETA");
 		pagarConMetodo.setForeground(new Color(255, 128, 64));
-		pagarConMetodo.setBounds(512, 318, 162, 46);
+		pagarConMetodo.setBounds(527, 368, 147, 32);
 		contentPane.add(pagarConMetodo);
 		
 		JButton atras = new JButton("Atras");
@@ -153,8 +156,16 @@ public class VentanaMetodoPago extends JFrame {
 		
 		JButton pagarConPuntos = new JButton("PAGAR CON PUNTOS");
 		pagarConPuntos.setForeground(new Color(255, 128, 64));
-		pagarConPuntos.setBounds(349, 319, 153, 45);
+		pagarConPuntos.setBounds(365, 368, 135, 32);
 		contentPane.add(pagarConPuntos);
+		
+		ImageIcon imagenFondo =  new ImageIcon("src/ImagenesPNG/tarjeta.png");
+		ImageIcon nuevoIcono = new ImageIcon(imagenFondo.getImage().getScaledInstance(271,259,Image.SCALE_AREA_AVERAGING));
+		
+		JLabel tarjeta = new JLabel("",nuevoIcono,JLabel.CENTER);		
+		tarjeta.setBounds(487, 171, 271, 259);
+		contentPane.add(tarjeta);
+		
 		
 		ArrayList <String> valoresProperties = new ArrayList<String> ();
 		///FICHERO PROPERTIES QUE GUARDA LOS DATOS ANTERIORES!!!

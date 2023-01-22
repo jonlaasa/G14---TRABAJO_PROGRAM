@@ -246,3 +246,43 @@
   <message>ACTUALIZADOS LOS PUNTOS DEL USUARIO</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T12:37:16.294729100Z</date>
+  <millis>1674391036294</millis>
+  <nanos>729100</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:37:18.523037100Z</date>
+  <millis>1674391038523</millis>
+  <nanos>37100</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-22T12:37:20.457991300Z</date>
+  <millis>1674391040457</millis>
+  <nanos>991300</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la ventana de METODO DE PAGO, para pagar el bus</message>
+</record>
+</log>
