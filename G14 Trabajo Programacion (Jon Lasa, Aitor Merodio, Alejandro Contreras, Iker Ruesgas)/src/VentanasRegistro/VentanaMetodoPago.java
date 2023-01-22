@@ -147,7 +147,7 @@ public class VentanaMetodoPago extends JFrame {
 		
 		JButton pagarConMetodo = new JButton("PAGAR CON TARJETA");
 		pagarConMetodo.setForeground(new Color(255, 128, 64));
-		pagarConMetodo.setBounds(527, 368, 147, 32);
+		pagarConMetodo.setBounds(500, 365, 160, 39);
 		contentPane.add(pagarConMetodo);
 		
 		JButton atras = new JButton("Atras");
@@ -156,14 +156,14 @@ public class VentanaMetodoPago extends JFrame {
 		
 		JButton pagarConPuntos = new JButton("PAGAR CON PUNTOS");
 		pagarConPuntos.setForeground(new Color(255, 128, 64));
-		pagarConPuntos.setBounds(365, 368, 135, 32);
+		pagarConPuntos.setBounds(337, 365, 153, 39);
 		contentPane.add(pagarConPuntos);
 		
 		ImageIcon imagenFondo =  new ImageIcon("src/ImagenesPNG/tarjeta.png");
 		ImageIcon nuevoIcono = new ImageIcon(imagenFondo.getImage().getScaledInstance(271,259,Image.SCALE_AREA_AVERAGING));
 		
 		JLabel tarjeta = new JLabel("",nuevoIcono,JLabel.CENTER);		
-		tarjeta.setBounds(487, 171, 271, 259);
+		tarjeta.setBounds(473, 160, 271, 259);
 		contentPane.add(tarjeta);
 		
 		

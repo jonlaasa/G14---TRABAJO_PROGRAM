@@ -300,6 +300,7 @@ public static String fechaActualString = SDF_FECHA_FOTO.format(fechaActualDate);
 	
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS VIAJES COMBINADOS PARA MOSTRAR EN LA TABLA
+	
 	public static ArrayList <ViajeCombinado> mostrarViajesCombinadosTotal(String ruta) {
 		BDServicio.abrirBaseDatos(ruta);
 		//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
@@ -362,6 +363,7 @@ public static String fechaActualString = SDF_FECHA_FOTO.format(fechaActualDate);
 	
 	
 	//METODO QUE DEVUELVE UNA LISTA CON LOS VUELOS PARA MOSTRAR EN LA TABLA
+	
 		public static ArrayList <Vuelo> mostrarVuelosTotal(String ruta) {
 			BDServicio.abrirBaseDatos(ruta);
 			//creamos statement para acceder y arrayList de vuelos VACIO INICIALMENTE
@@ -418,7 +420,6 @@ public static String fechaActualString = SDF_FECHA_FOTO.format(fechaActualDate);
 		
 		// POR DEFECTO, LO HAREMOS DURANTE 8 SEMANAS O MESES, (DEPENDE LO ESCOGIDO), AQUI YA ES UNA ELECCION NUESTRA
 		
-		
 		public static void crearVuelos (Date fecha, String horaSalida, int duracion ,String origen, String destino, double precio, int plazas,String companya, boolean semanal, boolean mensual,String ruta)  {
 			BDServicio.abrirBaseDatos(ruta);
 			String sent="";
@@ -465,25 +466,26 @@ public static String fechaActualString = SDF_FECHA_FOTO.format(fechaActualDate);
 				if (semanal==true) {
 					for (int i=0; i<8; i++ ) {	
 						Statement st = conn.createStatement();
-						sumar=sumar+7;
+						
 						Date fechanueva= sumarDias(fecha,sumar);
 						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
 						sent="INSERT INTO BUS(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES ('"+fechatoString+"','"+horaSalida+"',"+duracion+",'"+origen+"','"+destino+"',"+precio+","+plazas+",'"+companya+"')";
-						
 						st.executeUpdate(sent);
-								
+						
+						sumar=sumar+7;		
 					}
 					log(Level.INFO, "BUSES SEMANALES INSERTADOS EN LA BASE DE DATOS", null);
 					
 				} else {
 					for (int i=0; i<8; i++ ) {
 						Statement st = conn.createStatement();
-						sumar=sumar+30;
+						
 						Date fechanueva= sumarDias(fecha,sumar);
 						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
 						sent="INSERT INTO BUS(FECHA,HORA_SALIDA,DURACION,ORIGEN,DESTINO,PRECIO,PLAZAS_RESTANTES,COMPANYA_BUS) VALUES ('"+fechatoString+"','"+horaSalida+"',"+duracion+",'"+origen+"','"+destino+"',"+precio+","+plazas+",'"+companya+"')";
 						
 						st.executeUpdate(sent);
+						sumar=sumar+30;
 					}
 					log(Level.INFO, "BUSES MENSUALES INSERTADOS EN LA BASE DE DATOS", null);
 				}
@@ -497,25 +499,24 @@ public static String fechaActualString = SDF_FECHA_FOTO.format(fechaActualDate);
 		//METODO QUE CREA NUEVOS VIAJES COMBINADOS MANUALMENTE
 		
 		public static void crearViajesCombinados (String ruta)  {
-			
 			//DATOS EJEMPLO
-			Date fecha= new Date(122,11,23);
-			int codigovuelo=1396;
-			int codigobus=941;
-			
-
+			Date fecha= new Date(123,0,23);
+			int codigovuelo=1892;
+			int codigobus=1101;
 			BDServicio.abrirBaseDatos(ruta);
 			String sent="";
+			int sumar=0;
 			try {
-					for (int i=0; i<32; i++ ) {
+					for (int i=0; i<8; i++ ) {
 						Statement st = conn.createStatement();
-						Date fechanueva= sumarDias(fecha,i);
+						Date fechanueva= sumarDias(fecha,sumar);
 						codigobus++;
 						codigovuelo++;
 						String fechatoString = SDF_FECHA_FOTO.format(fechanueva);
 						sent="INSERT INTO VIAJECOMBINADO(FECHA,cod_vuelo,cod_bus) VALUES ('"+fechatoString+"',"+codigobus+","+codigovuelo+")";
 						
 						st.executeUpdate(sent);
+						sumar=sumar+30;
 					}
 					log(Level.INFO, "VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS", null);
 				

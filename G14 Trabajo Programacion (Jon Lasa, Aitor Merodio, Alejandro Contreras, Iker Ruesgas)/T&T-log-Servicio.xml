@@ -286,3 +286,1063 @@
   <message>Accediendo a la ventana de METODO DE PAGO, para pagar el bus</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T12:56:29.282603200Z</date>
+  <millis>1674392189282</millis>
+  <nanos>603200</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-22T12:56:33.185423800Z</date>
+  <millis>1674392193185</millis>
+  <nanos>423800</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la ventana de servicios adicionales de vuelo</message>
+</record>
+<record>
+  <date>2023-01-22T12:56:41.026542300Z</date>
+  <millis>1674392201026</millis>
+  <nanos>542300</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la ventana de METODO DE PAGO, para pagar el vuelo</message>
+</record>
+<record>
+  <date>2023-01-22T12:57:14.785864100Z</date>
+  <millis>1674392234785</millis>
+  <nanos>864100</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INSERTADA LA COMPRA EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:57:14.789861800Z</date>
+  <millis>1674392234789</millis>
+  <nanos>861800</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T12:57:14.790857Z</date>
+  <millis>1674392234790</millis>
+  <nanos>857000</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>OBTENENIENDO LOS PUNTOS DEL USUARIO</message>
+</record>
+<record>
+  <date>2023-01-22T12:57:14.792896700Z</date>
+  <millis>1674392234792</millis>
+  <nanos>896700</nanos>
+  <sequence>13</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>PUNTOS DEL USUARIO OBTENIDOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:57:14.792896700Z</date>
+  <millis>1674392234792</millis>
+  <nanos>896700</nanos>
+  <sequence>14</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T12:57:14.793840200Z</date>
+  <millis>1674392234793</millis>
+  <nanos>840200</nanos>
+  <sequence>15</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T12:57:14.800095300Z</date>
+  <millis>1674392234800</millis>
+  <nanos>95300</nanos>
+  <sequence>16</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ACTUALIZADOS LOS PUNTOS DEL USUARIO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T12:59:29.711713200Z</date>
+  <millis>1674392369711</millis>
+  <nanos>713200</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:59:30.914109800Z</date>
+  <millis>1674392370914</millis>
+  <nanos>109800</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-22T12:59:37.025393Z</date>
+  <millis>1674392377025</millis>
+  <nanos>393000</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la ventana de METODO DE PAGO, para pagar el bus</message>
+</record>
+<record>
+  <date>2023-01-22T12:59:42.468776600Z</date>
+  <millis>1674392382468</millis>
+  <nanos>776600</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INSERTADA LA COMPRA EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:59:42.474767400Z</date>
+  <millis>1674392382474</millis>
+  <nanos>767400</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T12:59:42.474767400Z</date>
+  <millis>1674392382474</millis>
+  <nanos>767400</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>OBTENENIENDO LOS PUNTOS DEL USUARIO</message>
+</record>
+<record>
+  <date>2023-01-22T12:59:42.475764100Z</date>
+  <millis>1674392382475</millis>
+  <nanos>764100</nanos>
+  <sequence>13</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>PUNTOS DEL USUARIO OBTENIDOS</message>
+</record>
+<record>
+  <date>2023-01-22T12:59:42.475764100Z</date>
+  <millis>1674392382475</millis>
+  <nanos>764100</nanos>
+  <sequence>14</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T12:59:42.476763400Z</date>
+  <millis>1674392382476</millis>
+  <nanos>763400</nanos>
+  <sequence>15</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T12:59:42.484940200Z</date>
+  <millis>1674392382484</millis>
+  <nanos>940200</nanos>
+  <sequence>16</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ACTUALIZADOS LOS PUNTOS DEL USUARIO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:01:05.930363900Z</date>
+  <millis>1674392465930</millis>
+  <nanos>363900</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:07.658218800Z</date>
+  <millis>1674392467658</millis>
+  <nanos>218800</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:09.977375200Z</date>
+  <millis>1674392469977</millis>
+  <nanos>375200</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la ventana de METODO DE PAGO, para pagar el bus</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:12.748957Z</date>
+  <millis>1674392472748</millis>
+  <nanos>957000</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INSERTADA LA COMPRA EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:12.753950500Z</date>
+  <millis>1674392472753</millis>
+  <nanos>950500</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:12.754947800Z</date>
+  <millis>1674392472754</millis>
+  <nanos>947800</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>OBTENENIENDO LOS PUNTOS DEL USUARIO</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:12.754947800Z</date>
+  <millis>1674392472754</millis>
+  <nanos>947800</nanos>
+  <sequence>13</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>PUNTOS DEL USUARIO OBTENIDOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:12.755942500Z</date>
+  <millis>1674392472755</millis>
+  <nanos>942500</nanos>
+  <sequence>14</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:12.756939900Z</date>
+  <millis>1674392472756</millis>
+  <nanos>939900</nanos>
+  <sequence>15</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:12.762923900Z</date>
+  <millis>1674392472762</millis>
+  <nanos>923900</nanos>
+  <sequence>16</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ACTUALIZADOS LOS PUNTOS DEL USUARIO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:01:43.072814900Z</date>
+  <millis>1674392503072</millis>
+  <nanos>814900</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:43.081258400Z</date>
+  <millis>1674392503081</millis>
+  <nanos>258400</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:43.083066600Z</date>
+  <millis>1674392503083</millis>
+  <nanos>66600</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO RECUPERAR DESTINOS ORIGEN DE LOS VUELOS PARA LOS VIAJES COMBINADOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:43.085091800Z</date>
+  <millis>1674392503085</millis>
+  <nanos>91800</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO CON EXITO LOS  ORIGEN DE LOS VUELOS PARA LOS VIAJES COMBINADOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:43.087059200Z</date>
+  <millis>1674392503087</millis>
+  <nanos>59200</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO RECUPERAR DESTINOS PARA LOS VIAJES COMBINADOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:01:43.089057500Z</date>
+  <millis>1674392503089</millis>
+  <nanos>57500</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO CON EXITO LOS  DESTINOS BUS PARA LOS VIAJES COMBINADOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:02:06.161009300Z</date>
+  <millis>1674392526161</millis>
+  <nanos>9300</nanos>
+  <sequence>13</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:02:07.872947600Z</date>
+  <millis>1674392527872</millis>
+  <nanos>947600</nanos>
+  <sequence>14</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la cantidad de billetes a seleccionar del vuelo</message>
+</record>
+<record>
+  <date>2023-01-22T13:02:10.112350100Z</date>
+  <millis>1674392530112</millis>
+  <nanos>350100</nanos>
+  <sequence>15</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Accediendo a la ventana de METODO DE PAGO, para pagar el bus</message>
+</record>
+<record>
+  <date>2023-01-22T13:02:11.803072200Z</date>
+  <millis>1674392531803</millis>
+  <nanos>72200</nanos>
+  <sequence>16</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INSERTADA LA COMPRA EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:02:11.804071600Z</date>
+  <millis>1674392531804</millis>
+  <nanos>71600</nanos>
+  <sequence>17</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T13:02:11.805069Z</date>
+  <millis>1674392531805</millis>
+  <nanos>69000</nanos>
+  <sequence>18</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>OBTENENIENDO LOS PUNTOS DEL USUARIO</message>
+</record>
+<record>
+  <date>2023-01-22T13:02:11.806066300Z</date>
+  <millis>1674392531806</millis>
+  <nanos>66300</nanos>
+  <sequence>19</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>PUNTOS DEL USUARIO OBTENIDOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:02:11.806066300Z</date>
+  <millis>1674392531806</millis>
+  <nanos>66300</nanos>
+  <sequence>20</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion cerrada</message>
+</record>
+<record>
+  <date>2023-01-22T13:02:11.807063800Z</date>
+  <millis>1674392531807</millis>
+  <nanos>63800</nanos>
+  <sequence>21</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Conexion establecida</message>
+</record>
+<record>
+  <date>2023-01-22T13:02:11.813862500Z</date>
+  <millis>1674392531813</millis>
+  <nanos>862500</nanos>
+  <sequence>22</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDRegistro</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ACTUALIZADOS LOS PUNTOS DEL USUARIO</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:06:39.649455400Z</date>
+  <millis>1674392799649</millis>
+  <nanos>455400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>VUELOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:07:09.654648800Z</date>
+  <millis>1674392829654</millis>
+  <nanos>648800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>VUELOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:07:53.655299400Z</date>
+  <millis>1674392873655</millis>
+  <nanos>299400</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>VUELOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:08:05.403723600Z</date>
+  <millis>1674392885403</millis>
+  <nanos>723600</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>VUELOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:09:27.125823900Z</date>
+  <millis>1674392967125</millis>
+  <nanos>823900</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>VUELOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:10:07.296602100Z</date>
+  <millis>1674393007296</millis>
+  <nanos>602100</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>VUELOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:16:53.982505Z</date>
+  <millis>1674393413982</millis>
+  <nanos>505000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>BUSES MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:17:13.295924800Z</date>
+  <millis>1674393433295</millis>
+  <nanos>924800</nanos>
+  <sequence>1</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>BUSES MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:20:14.145187900Z</date>
+  <millis>1674393614145</millis>
+  <nanos>187900</nanos>
+  <sequence>2</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>BUSES MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:20:40.061986Z</date>
+  <millis>1674393640061</millis>
+  <nanos>986000</nanos>
+  <sequence>3</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>BUSES MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:22:44.465070400Z</date>
+  <millis>1674393764465</millis>
+  <nanos>70400</nanos>
+  <sequence>4</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>BUSES MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:23:01.109079300Z</date>
+  <millis>1674393781109</millis>
+  <nanos>79300</nanos>
+  <sequence>5</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>BUSES MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:43:11.095135400Z</date>
+  <millis>1674394991095</millis>
+  <nanos>135400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:44:07.560124900Z</date>
+  <millis>1674395047560</millis>
+  <nanos>124900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:44:20.108214Z</date>
+  <millis>1674395060108</millis>
+  <nanos>214000</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:44:32.261471800Z</date>
+  <millis>1674395072261</millis>
+  <nanos>471800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:44:42.734176800Z</date>
+  <millis>1674395082734</millis>
+  <nanos>176800</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:49:55.313786400Z</date>
+  <millis>1674395395313</millis>
+  <nanos>786400</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:50:04.261249600Z</date>
+  <millis>1674395404261</millis>
+  <nanos>249600</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:52:12.243554200Z</date>
+  <millis>1674395532243</millis>
+  <nanos>554200</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:52:50.473336500Z</date>
+  <millis>1674395570473</millis>
+  <nanos>336500</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:53:23.948641900Z</date>
+  <millis>1674395603948</millis>
+  <nanos>641900</nanos>
+  <sequence>0</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>VIAJES COMBINADOS MENSUALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:54:46.387837900Z</date>
+  <millis>1674395686387</millis>
+  <nanos>837900</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:54:49.107551600Z</date>
+  <millis>1674395689107</millis>
+  <nanos>551600</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:54:49.787883700Z</date>
+  <millis>1674395689787</millis>
+  <nanos>883700</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:54:49.988792500Z</date>
+  <millis>1674395689988</millis>
+  <nanos>792500</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:54:51.644772800Z</date>
+  <millis>1674395691644</millis>
+  <nanos>772800</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+<record>
+  <date>2023-01-22T13:54:55.268056800Z</date>
+  <millis>1674395695268</millis>
+  <nanos>56800</nanos>
+  <sequence>12</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:54:55.555797800Z</date>
+  <millis>1674395695555</millis>
+  <nanos>797800</nanos>
+  <sequence>13</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:54:55.740653Z</date>
+  <millis>1674395695740</millis>
+  <nanos>653000</nanos>
+  <sequence>14</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:56:32.761096800Z</date>
+  <millis>1674395792761</millis>
+  <nanos>96800</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>VUELOS SEMANALES INSERTADOS EN LA BASE DE DATOS</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-22T13:58:36.915212400Z</date>
+  <millis>1674395916915</millis>
+  <nanos>212400</nanos>
+  <sequence>7</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:58:37.421045900Z</date>
+  <millis>1674395917421</millis>
+  <nanos>45900</nanos>
+  <sequence>8</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:58:37.580675900Z</date>
+  <millis>1674395917580</millis>
+  <nanos>675900</nanos>
+  <sequence>9</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:58:37.764765200Z</date>
+  <millis>1674395917764</millis>
+  <nanos>765200</nanos>
+  <sequence>10</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>INTENTANDO ACCEDER A LOS VIAJES COMBINADOS DISPONIBLES</message>
+</record>
+<record>
+  <date>2023-01-22T13:58:41.503531100Z</date>
+  <millis>1674395921503</millis>
+  <nanos>531100</nanos>
+  <sequence>11</sequence>
+  <logger>Log-BD</logger>
+  <level>INFO</level>
+  <class>BD.BDServicio</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>DEVOLVIENDO BUSES DE LA BASE DE DATOS</message>
+</record>
+</log>

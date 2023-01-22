@@ -37,6 +37,7 @@ public class VentanaConfirmacionCompra extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setLocationRelativeTo(null);
 
@@ -45,7 +46,6 @@ public class VentanaConfirmacionCompra extends JFrame {
 		
 		JLabel mconf = new JLabel("CONFIRMACION DE LA COMPRA");
 		mconf.setBounds(191, 11, 310, 60);
-		mconf.setForeground(new Color(255, 128, 0));
 		mconf.setFont(new Font("Tahoma", Font.BOLD, 15));
 		contentPane.add(mconf);
 		

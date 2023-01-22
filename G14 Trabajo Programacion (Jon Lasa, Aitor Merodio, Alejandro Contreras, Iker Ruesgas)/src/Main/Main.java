@@ -38,11 +38,9 @@ public class Main {
 		Administrador a = new Administrador();
 		Usuario u = new Usuario();
 		
-//		VentanaInicio v = new VentanaInicio();
-//		v.setVisible(true);
-		
-		VentanaInicio b = new VentanaInicio();
-		b.setVisible(true);
+		VentanaInicio v = new VentanaInicio();
+		v.setVisible(true);
+
 	}
 	
 	
